@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (DIR_COLORS)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</title><link>http://shahinism.com/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خیلی وقت بود که دنبال این بودم که بفهمم چطوری خروجی ls رو توی bash رنگی کنم و از این حالت مرده‌ی سادش در بیارم‌. خوبی این رنگ‌بندی موقعی معلوم می‌شه که توی دایرکتوری‌های تو در تو گم می‌شی‌. خلاصه یه پست از &lt;a title="pyroozan on Googleplus" href="https://plus.google.com/u/0/105766466440674771215/about" target="_blank"&gt;پیروزان&lt;/a&gt; عزیز امروز بانی خیر شد و من رو مجبور کرد که به سمت حل این مشکل برم و چیزایی یاد بگیرم‌. البته ناگفته نمونه که پیروزان هم چیز جالبی معرفی کرد که در ادامه‌ی مطلب توضیح استفاده ازش رو می‌دم‌.&lt;/p&gt;
+&lt;p&gt;برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;ls --color
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;alias &lt;/span&gt;&lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"ls --color=always"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این &lt;a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank"&gt;کانال git&lt;/a&gt; منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;dircolors -b LS_COLORS&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نمونه‌ای از خروجی این فایل به صورت زیره‌:&lt;/p&gt;
+&lt;p&gt;&lt;img class="aligncenter" title="LS_COLOR" src="https://a248.e.akamai.net/assets.github.com/img/e235af63c2be86cf4e4167b7f098e28192b63488/687474703a2f2f646576656c2e6a6170682e73652f4c535f434f4c4f52532f4c535f434f4c4f52532e706e67" alt="نمونه‌ای از خروجی فایل LS_COLOR" width="238" height="136"&gt;&lt;/p&gt;</description><category>bash</category><category>bashrc</category><category>DIR_COLORS</category><category>اسلکور</category><category>حل مشکل</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.com/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html</guid><pubDate>Fri, 02 Dec 2011 13:16:48 GMT</pubDate></item></channel></rss>

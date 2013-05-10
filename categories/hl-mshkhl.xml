@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (حل مشکل)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>این ایمکس دوست داشتنی (Backup‌ها و Autosave‌ها)</title><link>http://shahinism.com/posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;یکی از ویژگی‌های خوب‌، به درد بخور ولی سرسام آوری که در اکثر ویرایشگرهای لینوکسی با پدر و مادر دیده‌ایم‌، قابلیت پشتیبان گیریست‌! قابلیتی که هر چند می‌دانیم که خیلی به آن نیاز پیدا خواهیم کرد‌، عموما از ریختش خوشمان نمی‌آید. عموما شیوهٔ کار این پشتیبان‌گیر‌ها به این صورت است که در همان جایی که فایل اصلی وجود دارد‌، یک فایل پشتیبان به صورت خودکار ایجاد می‌کنند و هیچ وقت هم آن را پاک نمی‌کنند‌! خوب برای آدم‌های وسواسی‌ای مثل من‌، این کمی اذیت کننده است که آن‌ها را در کنار فایل‌های اصلی‌ام ببینم‌!
+ساده‌ترین راه‌کار‌، خاموش کردنش است‌! ولی خاموش کردن هم خطرناک است. قربانش بروم نیست کلا همه چیز‌مان قابل اطمینان است‌، مطمئن باشید سر حساس‌ترین ادیت‌تان‌، برق سیستم قطع می‌شود (این خط‌| ، این نشان D:).&lt;/p&gt;
+&lt;p&gt;این است که برای ایمکس یک جای مخصوص درست می‌کنیم که این پشتیبان‌ها را در آن جا بریزد. این‌طوری نه ساختار سیستم فایل‌مان را شلخته می‌کنیم‌، و نه از نعمت وجود پشتیبان‌ها بی‌بهره می‌شویم.&lt;/p&gt;
+
+
+&lt;div class="code"&gt;&lt;pre&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;custom-set-variables&lt;/span&gt;
+ &lt;span class="c1"&gt;;; custom-set-variables was added by Custom.&lt;/span&gt;
+ &lt;span class="c1"&gt;;; If you edit it by hand, you could mess it up, so be careful.&lt;/span&gt;
+ &lt;span class="c1"&gt;;; Your init file should contain only one such instance.&lt;/span&gt;
+ &lt;span class="c1"&gt;;; If there is more than one, they won't work right.&lt;/span&gt;
+ &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;auto-save-file-name-transforms&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;quote&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;".*"&lt;/span&gt; &lt;span class="s"&gt;"~/.emacs.d/autosaves/\\1"&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+ &lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;backup-directory-alist&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;quote&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;".*"&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s"&gt;"~/.emacs.d/backups/"&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب‌، تمام نکتهٔ اصلی ماجرا این‌جاست که ما با تابع custom-set-variables سر و کار داریم. این تابع را در واقع قرار نیست که ما صدا بزنیم (ولی این یک‌بار اشکال ندارد‌). حقیقتش نیاز هم نیست‌، چون این تنظیمات را می‌توان با خود ایمکس انجام داد. کافیست از منوی ایمکس‌، Options و Customize Emacs را انتخاب کنیم‌، بخش مورد نظر را پیدا و انگولکش کنیم و سپس Apply &amp;amp; Save و خود ایمکس همچین چیزی را برای‌مان اضافه می‌کند! ولی خوب من حال سر و کله زدن با این منو‌ها را ندارم. پس باید بروم و همین متغیر‌ها که می‌بینید را مستقیما تغییر دهم. خوب آن وقت یک کمی کثیف‌کاری می‌شود. چرا؟ چون آن وقت این Customize ایمکس تنظیمات ما را نمی‌خواند و ممکن است برای یک همچین تنظیم پایه‌ای‌، مشکل بزاید برای‌مان.&lt;/p&gt;
+&lt;p&gt;باauto-save-file-name-transforms ما در واقع شیوهٔ نام‌گذاری Autosave‌ها را با یک Regex تغییر می‌دهیم. خود ایمکس‌، آن بخش آدرس دایرکتوری را‌، به مسیر جدید فایل تبدیل می‌کند و فایل‌ها را در آن‌جا ذخیره می‌کند. Autosave‌ها به صورت #FileName#  و به صورت خودکار ذخیره می‌شوند و شامل آخرین تغییرات یک بافر هستند.&lt;/p&gt;
+&lt;p&gt;دقیقا همین کار را هم با متغیرbackup-directory-alist انجام می‌دهیم که وظیفهٔ تغییر نام backup‌ها را بر عهده دارد. این پشتیبان‌ها در واقع آخرین وضعیت Save شدهٔ یک بافر را ارائه می‌دهند و به صورت FileName~ ‎ نام‌گذاری می‌شوند.&lt;/p&gt;
+&lt;p&gt;حالا نکته این‌جاست که احتمالا بعد از Restart ایمکس‌، با این اخطار روبرو می‌شوید که دایرکتوری Autosaves که آدرس داده‌اید وجود ندارد. یک کار این است که آن را به صورت دستی ایجادش کنید. فقط یک بار لازم است. و بعد ایمکس‌تان را اجرا کنید. یک کار دیگر هم می‌توان با دستور لیسپ زیر‌، چک کرد که اگر دایرکتوری وجود نداشت‌، خود ایمکس ایجادش کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-directory&lt;/span&gt; &lt;span class="s"&gt;"~/.emacs.d/autosaves/"&lt;/span&gt; &lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;من این تنظیمات را از &lt;a href="http://snarfed.org/gnu_emacs_backup_files"&gt;این پست&lt;/a&gt; یاد گرفتم. وبلاگ قدیمی‌ایست‌، و چیز‌های خوبی در مورد ایمکس می‌توان ازش یاد گرفت.&lt;/p&gt;</description><category>Autosave</category><category>Backup</category><category>Emacs</category><category>ایمکس</category><category>حل مشکل</category><category>دوره</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html</guid><pubDate>Sun, 14 Apr 2013 09:13:41 GMT</pubDate></item><item><title>expect دستیار باهوش شما در شل اسکریپت‌ها!</title><link>http://shahinism.com/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اگر تا به حال شل اسکریپت نوشته باشید‌، اگر حد اعتیادتان به آن اندازه باشد که بخواهید هر کاری را آسان‌تر کنید‌، اگر تنبلی‌تان گرفته باشد که بعد از آسان شدن کار‌هایتان با یک شل اسکریپت‌، رمز‌های جاهای مختلف را به یاد آورید تا اسکریپت‌تان درست کار کند‌‌، یا آن‌قدر به مغزتان فشار آورید که جواب صحیح یک سوال اسکریپت را پیدا کنید‌، آن وقت‌ می‌توانید درک کنید که expect چه ابزار خارق‌العاده‌ای است.
+کار expect خیلی ساده است‌، بعد از اجرای اسکریپت‌تان‌، منتظر می‌ماند که اتفاق خاصی رخ دهد‌، مثلا دستوری در اسکریپت از شما رمز بخواهد‌، آن وقت expect وارد میدان می‌شود و رمز را وارد می‌کند. یعنی دیگر نیازی نیست که شما دخالتی داشته باشید. اگر فکر می‌کنید که خوب این که کار سختی نیست و از این حرف‌ها که خوب اول باید بگویم که کور خوانده‌اید و دوم این که بی‌خیال ادامهٔ این متن شوید ;-)&lt;/p&gt;
+&lt;p&gt;حالا شیوهٔ عملکرد expect معلوم شد‌، بهتر است نگاهی بیاندازیم به وضعیت من. بنا به دلایل کاملا غیر عادی و نامعلومی‌، در کشوری کاملا آزاد‌، نیاز دارم که از sshuttle برای انجام برخی امور استفاده کنم. این برنامه برای انجام دادن درست کار‌هایش‌، نیاز به iptables دارد که خوب من دوست ندارم که کاربر عادی‌ام به آن دسترسی داشته باشد. پس همین دوست نداشتن من یک مرحلهٔ اضافه در فرآیند استفاده از sshuttle هزینه دارد. یعنی یک همچین چیزی:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;su
+
+Vared Kardan Ramz
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /home/shahin/bin/sshutle
+
+./sshuttle ...
+
+Vared Kardan Ramz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که خوب بعد از اولین تلاش کانکت نمی‌شود و باید دوباره دستور را بزنم و منتظر بمانم تا پرامپت رمز ssh ظاهر شود و باقی قضایا. خوب کمی سخت است. البته این را هم اضافه کنم که خوب می‌دانم می‌توانم کانکت بدون رمز ssh داشته باشم‌. می‌توانم دستور را درون یک path قرار دهم. می‌توانم‌، می‌توانم‌… ولی این روشی است که من کار می‌کنم ;-)&lt;/p&gt;
+&lt;p&gt;این است که دست به دامن expect می‌شوم و همچین اسکریپتی می‌نویسم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/expect -f&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;{[&lt;/span&gt;llength &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; !&lt;span class="o"&gt;=&lt;/span&gt; 5&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    puts &lt;span class="s2"&gt;"usage: ssh.exp client_root_pass username password server port"&lt;/span&gt;
+&lt;span class="nb"&gt;exit &lt;/span&gt;1
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;set &lt;/span&gt;rootpass &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 0 0&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;username &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 1 1&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;password &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 2 2&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;server &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 3 3&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;port &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 4 4&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;set &lt;/span&gt;timeout -1
+
+
+
+spawn su -c &lt;span class="s2"&gt;"/home/shahin/bin/sshuttle/sshuttle --dns -r $username@$server:$port 0/0 -vv"&lt;/span&gt;
+
+match_max 100000
+
+expect &lt;span class="s2"&gt;"Password:*"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"$rootpass\r"&lt;/span&gt;
+
+
+
+expect &lt;span class="s2"&gt;"*?assword:*"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"$password\r"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"\r"&lt;/span&gt;
+
+expect eof
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا همانطور که معلوم است کافی است همچین دستوری را تایپ کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;./ssh.exp client_root_pass username password server port
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا می‌شود این اسکریپت را بدون هیچ ضرر اضافه‌ای به path اضافه کرد و حالش را برد. برای این که بفهمید این اسکریپت چطور کار می‌کند راهنما‌های زیادی در اینترنت می‌یابید. man page خود برنامه هم می‌تواند کمک خوبی باشد. ضمن این که اگر اسکریپت نویسی بدانید‌، چیز زیادی برای یاد گرفتن پیش‌رویتان نیست ;-)&lt;/p&gt;</description><category>expect</category><category>iptables</category><category>sshuttle</category><category>برنامه نویسی</category><category>حل مشکل</category><category>شل اسکریپت</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</guid><pubDate>Thu, 10 Jan 2013 15:09:09 GMT</pubDate></item><item><title>دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!</title><link>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همانطور که می‌دانید‌، چند ماهی می‌شود که از i3 استفاده می‌کنیم‌، ولی در i3bar به جای i3status (به دلیل سادگی بیش از اندازه‌اش D:) از Conky بهره می‌گیرم. کانکی اطلاعات خیلی خوبی ارائه می‌دهد و کار‌های جالبی هم می‌توان روی خروجی‌اش انجام داد‌. ولی وقتی قرار است آن را به i3status بخورانم‌، باید از آپشن shell روی Conky استفاده کنم که دیگر خبری از آن جینگولک بازی‌های معروف Conky نیست‌. همه چیز خیلی ساده می‌شود. تصویر زیر وضعیت فعلی i3barام را نشان می‌دهد‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"&gt;&lt;img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ کلیک کنید&lt;/p&gt;
+&lt;p&gt;و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:&lt;/p&gt;
+&lt;p&gt;پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.&lt;/li&gt;
+    &lt;li&gt;صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)&lt;/li&gt;
+    &lt;li&gt;مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.&lt;/li&gt;
+    &lt;li&gt;سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این &lt;a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank"&gt;آموزش&lt;/a&gt; آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).&lt;/li&gt;
+    &lt;li&gt;وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.&lt;/li&gt;
+    &lt;li&gt;وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در &lt;a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank"&gt;این‌جا&lt;/a&gt; دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
+&lt;p&gt;اسکریپت حاضر است و از &lt;a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank"&gt;این‌جا&lt;/a&gt; قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:&lt;/p&gt;
+&lt;h5&gt;تاریخ&lt;/h5&gt;
+
+&lt;p&gt;خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="s2"&gt;"%a %Y.%m.%d %H:%M"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!&lt;/p&gt;
+&lt;h5&gt;اطلاعات شبکه&lt;/h5&gt;
+
+&lt;p&gt;اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getNetBytes
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;Brecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($2)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;Btransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($10)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)&lt;/p&gt;
+&lt;p&gt;حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)&lt;/p&gt;
+&lt;p&gt;نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!&lt;/p&gt;
+&lt;h5&gt;وضعیت RAM&lt;/h5&gt;
+
+&lt;p&gt;گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getRamInfo
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;totalMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"Mem:"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $2/1024)}'&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;usedMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"buffers/cache"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $3/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;memInPercent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$totalMemory $usedMemory"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.0f", $2/($1/100)) }'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!&lt;/p&gt;
+&lt;h5&gt;وضعیت CPU&lt;/h5&gt;
+
+&lt;p&gt;خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getCpuInfo&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+
+&lt;span class="nv"&gt;addr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"^cpu${CORE}"&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat /proc/stat | grep &lt;span class="nv"&gt;$addr&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# Get the total CPU statistics.&lt;/span&gt;
+
+&lt;span class="nb"&gt;unset &lt;/span&gt;CPU&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# Discard the "cpu" prefix.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="p"&gt;[4]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="c"&gt;# Get the idle CPU time.&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the total CPU time.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Catch current cores last state&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the CPU usage since we last checked.&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.&lt;/p&gt;
+&lt;p&gt;با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)&lt;/p&gt;
+&lt;h5&gt;پایان کار&lt;/h5&gt;
+
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+getNetBytes
+
+getRamInfo
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; COUNT &amp;amp;lt; &lt;span class="nv"&gt;$CORES&lt;/span&gt;; COUNT++ &lt;span class="o"&gt;))&lt;/span&gt;;&lt;span class="k"&gt;do&lt;/span&gt;
+
+getCpuInfo &lt;span class="nv"&gt;$COUNT&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\c&lt;/span&gt;pu&lt;span class="nv"&gt;$COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$DIFF_USAGE&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$cpu0"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu1"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu2"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu3"&lt;/span&gt; &lt;span class="s2"&gt;"$usedMemory"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$totalMemory"&lt;/span&gt; &lt;span class="s2"&gt;"$memInPercent"&lt;/span&gt; &lt;span class="s2"&gt;"$dlSpeed"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$upSpeed"&lt;/span&gt; &lt;span class="s2"&gt;"$traffic"&lt;/span&gt; &lt;span class="s2"&gt;"$date"&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBRecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Brecived&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBTransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Btransmited&lt;/span&gt;
+
+sleep 1
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.&lt;/p&gt;
+&lt;p&gt;همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.&lt;/p&gt;
+&lt;p&gt;حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;CPU: 48,3,40,3 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 8,4,76,4 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 24,5,64,6 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"&gt;&lt;img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید&lt;/p&gt;</description><category>awk</category><category>bash</category><category>printf</category><category>shell scripting</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دسته‌بندی نشده</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</guid><pubDate>Sat, 24 Nov 2012 15:07:09 GMT</pubDate></item><item><title>تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</title><link>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین اول کار بگویم که این روش تنها مخصوص موقعی است که PDF به صورت دیجیتالی تولید شده باشد و کاراکتر‌ها تصویر نباشند‌‌، که خوب برای کاراکتر‌های تصویری‌، نیاز به روش‌های اپتیکال است که فعلا در این بحث ما نمی‌گنجد‌. &lt;del&gt;برای نمونه من از کتاب _* که معرفی دوست خوبم &lt;a title="وبلاگ شخصی ایمان" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; است استفاده می‌کنم‌.&lt;/del&gt; نمونهٔ اولیه بنا به دلایلی معلوم با&lt;a title="Ashamloo" href="http://dl.dropbox.com/u/25017694/Blog_files/Ahanha_Va_Ehsas_(www.txt.ir).pdf"&gt; کتابی&lt;/a&gt; از احمد شاملو عوض شد!
+اول از همه PDF را با برنامهٔ PDFخوان پیش‌فرض میزکار KDE یعنی Okular باز می‌کنیم‌. یک نگاه به قد و بالایش می‌اندازیم و سپس از منوی فایل‌، گزینهٔ Export as و سپس Plain text را انتخاب می‌کنیم‌. خروجی این عمل ما یک فایل متنی است که فکر می‌کنیم همه کار را به درستی انجام داده‌. (البته من که اول اصلا فکرش را هم نمی‌کردم که بتوان خروجی فارسی گرفت) در نگاه اول کارمان تمام شده است‌. ولی بگذارید آن را با یک ویرایشگر باز کنیم‌. آن را با ایمکس باز می‌کنم و از آن‌جایی که تنظیم فونت‌هایم را از روی روشی که فرود عزیز در stackoverflow&lt;a title="emacs font for western and other like rtl" href="http://stackoverflow.com/questions/11012627/emacs-font-for-western-and-other-like-rtl" target="_blank"&gt; پیشنهاد کرده‌&lt;/a&gt;، انجام داده‌ام نکته‌ای عجیب به نظر می‌رسد‌!&lt;/p&gt;
+&lt;p&gt;مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و &lt;a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank"&gt;وضع اینترنت‌ام&lt;/a&gt; هم معلوم است‌، از دوست &lt;a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank"&gt;libreoffice کار قهارم&lt;/a&gt; می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))&lt;/p&gt;
+&lt;p&gt;پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp;amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.&lt;/p&gt;
+&lt;p&gt;پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def read_file&lt;span class="o"&gt;(&lt;/span&gt;file_name&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;the_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; codecs.open&lt;span class="o"&gt;(&lt;/span&gt;file_name, &lt;span class="nv"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;return &lt;/span&gt;the_file
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_characters&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print char
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_unicode_code&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def replace_unicode_char&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+print unichr&lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;(&lt;/span&gt;line&lt;span class="o"&gt;))&lt;/span&gt;.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.&lt;/p&gt;
+&lt;p&gt;من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از&lt;a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"&gt; این‌جا &lt;/a&gt;دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt -u &amp;amp;gt; chrcodes.txt
+
+sort -u chrcodes.txt &amp;amp;gt; uniq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i uniq.txt &amp;amp;gt; uniqchr.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به &lt;a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank"&gt;Arabic Presentation Forms-B&lt;/a&gt; داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+&lt;span class="k"&gt;if &lt;/span&gt;ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt; in &lt;span class="o"&gt;(&lt;/span&gt;64343, 64344, 64345&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"پ"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sys.stdout.softspace&lt;span class="o"&gt;=&lt;/span&gt;False
+
+try:
+
+print char.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+
+except UnicodeDecodeError:
+
+print char,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt &amp;amp;gt; validashamloo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب کار تقریبا تمام شد‌. ولی خوب‌، کامپیوتر است دیگر‌. همیشه که درست عمل نمی‌کند‌. فایل خروجی نمونهٔ مرا در&lt;a title="ashamloo text file" href="http://dl.dropbox.com/u/25017694/Blog_files/ashamloo.txt.xz" target="_blank"&gt; این‌جا&lt;/a&gt; می‌بینید‌. خالی از اشکال هم نیست‌، ولی خوب طبیعتا مشکلات زیادی را برایم حل می‌کند (دیگر لازم نیست به آن فونت کذایی Arial زل بزنم). دیگر باقی کار‌ها می‌افتد گردن یک ویراستار به درد بخور‌. (البته شاید بتوان از &lt;a title="نسخهٔ جدید ویرایشگر متن نگار" href="http://shahinism.com/blog/1391/07/10/%d9%86%d8%b3%d8%ae%d9%87%d9%94-%d8%ac%d8%af%db%8c%d8%af-%d9%88%db%8c%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%b1-%d9%85%d8%aa%d9%86-%d9%86%da%af%d8%a7%d8%b1/" target="_blank"&gt;نگار&lt;/a&gt; هم کمک گرفت‌، که فعلا دارم شدیدا رویش کار می‌کنم‌. نسخهٔ فعلی‌اش مشکلاتی دارد‌، ولی امیدوارم بتوانم حل‌شان کنم‌)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; Okular از قرار‌، قادر نیست PDF‌هایی که رمزگذاری شده‌اند را باز کند (خودم امتحان نکردم) در آن صورت یک ابزار پایتونی برای این کار وجود دارد که در آینده در موردش می‌نویسم‌. تا این‌جای کار‌، خروجی‌های این تابع زیاد با روش ذکر شده همخوانی ندارد‌، پس باید به فکر دستکاری‌اش باشم‌. اسم این تابع هم در صورتی که دل‌تان می‌خواهد کشفش کنید pdfminer است.&lt;/p&gt;</description><category>KDE</category><category>LaTeX</category><category>ocr</category><category>okular</category><category>PDF</category><category>Python</category><category>tex</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کتاب</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</guid><pubDate>Thu, 22 Nov 2012 14:31:08 GMT</pubDate></item><item><title>ترمینال dropdown (مثل quake) در مدیر پنجرهٔ i3</title><link>http://shahinism.com/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اولین بار که در KDE با Yakuake کار کردم‌، آن‌قدر برایم لذت‌بخش بود که بد جوری معتادش شدم‌. همین شد که بعد از &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/" target="_blank"&gt;مهاجرتم به Awesome&lt;/a&gt; هم خوشبختانه توانستم با کلی کپی/پیست اسکریپت‌های Lua &lt;a title="یک پوسته برای مدیر پنجره Awesome" href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" target="_blank"&gt;یک نمونه&lt;/a&gt; برای خودم دست و پا کنم‌.
+اما &lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank"&gt;وقتی به i3&lt;/a&gt; آمدم‌، چون دیگر خبری از آن زبان‌های اسکریپت‌نویسی قوی نبود‌، فکر می‌کردم غیر ممکن است همچین چیزی داشتن‌! البته یک بار هم سعی کردم &lt;a title="tilda home page" href="http://downloads.sourceforge.net/tilda" target="_blank"&gt;tilda&lt;/a&gt; را استفاده کنم (که طبق معمول از بیت‌های نیم‌سوز فرود کشفش کرده بودم). اما حقیقتش چند مشکل کتاب‌خانه‌ای اجازه نداد درست کامپایلش کنم و زیاد هم پیگیرش نشدم‌.&lt;/p&gt;
+&lt;p&gt;گذشت تا امروز که دیدم Arch باز‌ها یک&lt;a title="HOWTO: get a quake-like urxvt terminal in openbox" href="http://downloads.sourceforge.net/tilda" target="_blank"&gt; کلکی سوار&lt;/a&gt; کرده‌اند و توانسته‌اند urxvt را به صورت quake در OpenBox (یک راهنمای عالی برای کار با این مدیرپنجره را دوست خوبم &lt;a title="وبلاگ ایمان امینی!" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; در &lt;a title="Openbox on linuxreview wiki" href="http://wiki.linuxreview.ir/OpenBox" target="_blank"&gt;ویکی لینوکس ریویو&lt;/a&gt; فراهم کرده) اجرا کنند‌. بماند که کلی ژانگولر بازی در آوردم که پیاده‌اش کنم و اخرش نتوانستم در i3 اجرایش کنم‌.&lt;/p&gt;
+&lt;p&gt;این شد که طبق معمول دست به&lt;a title="problem on i3 faq site" href="http://faq.i3wm.org/question/671/kuake-like-behavior-with-urxvt/" target="_blank"&gt; دامن i3 &lt;/a&gt;باز‌ها شدم و با کمال تعجب دیدم که نوشابه در کوزه و ما دنبال آب می‌گردیم‌! قضیه از این قرار است که i3 با تمام کوچکی‌اش یک قابلیت خیلی ماه دارد به اسم scratchpad. که یعنی می‌توانید با آن هر موقع خواستید هر پنجره‌ای را غیب کنید و هر وقت دیگر خواستید ظاهر کنید‌. این است که برای مثال ما که مصادف شده با مهاجرتم به ترمینال urxvt‌، این چنین i3 را کانفیگ می‌کنیم تا به نتیجهٔ دلخواه‌مان برسیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; move to scratchpad, border 1pixel
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; focus; resize grow width 300px
+
+bindsym F12 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; scratchpad show, move position 110px 0px
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;آن بخش instance را داشته باشید تا در آخر کار بهش برگردیم‌. در خط اول می‌گوییم که اگر پنجرهٔ مورد نظرمان صدا شد‌، بفرستش به scratchpad و کلا آن بردارش را (که دور تمام پنجره‌ها در i3 وجود دارد) را حذف کن. در خط دوم هم همان پنجرهٔ مورد نظر را کمی عریض‌تر می‌کنیم‌. و در آخر کار هم در خط سوم می‌گوییم که هر وقت کلید F12 را زدیم‌، پنجرهٔ موردنظرمان را که برده‌ای آن پشت مشت‌ها‌، در فلان مختصات صفحه ظاهر کن‌.&lt;/p&gt;
+&lt;p&gt;در مورد این توضیحات بالا می‌توانید به راحتی در &lt;a title="i3 user guide" href="http://i3wm.org/docs/userguide.html" target="_blank"&gt;راهنمای کاربران i3 &lt;/a&gt;اطلاعات به درد بخوری پیدا کنید‌. و اما می‌ماند نکات کنکوری:&lt;/p&gt;
+&lt;p&gt;تا این‌جای کار‌، ما گفتیم که اگه پنجرهٔ مورد نظرمان را دیدی‌، چه کار کن‌. اما حالا مسئله این‌جاست که این پنجره را چطور ایجاد کنیم‌. طوری که منحصر به فرد باشد‌. هر چه باشد نمی‌خواهم هر بار که urxvt را صدا زدم همان بالا باز شود‌. گاهی به یک ترمینال گنده نیاز دارم‌!&lt;/p&gt;
+&lt;p&gt;urxvt یک قابلیت خیلی به درد بخور دارد و آن هم این که می‌توان آن را به صورت daemon اجرا کرد‌. بعد هم هر وقت خواستیم ترمینالی باز کنیم‌، یک کلاینت از همان daemon باز می‌شود که مزیتش سرعت بالای در دسترس قرار گرفتن پنجره است‌.&lt;/p&gt;
+&lt;p&gt;این است که اول از همه ترتیبی می‌دهیم که با باز شده i3 به صورت خودکار این daemon هم اجرا شود:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;exec &lt;/span&gt;urxvtd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا هم نوبت به ساخت پنجره‌مان می‌رسد‌. ظاهر خوشی ندارد که هر بار به صورت دستی بازش کنم‌، چون بلافاصله غیب می‌شود و باید با F12 صدایش کرد‌. این است که این را هم می‌گذارم خود i3 موقع بالا آمدن اجرا کند‌. به هر حال ما که یک نمونه از این کلاینت بیشتر نمی‌خواهیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;exec &lt;/span&gt;urxvtc -name dropdown_urxvt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ها‌، همین‌جاست که به i3 می‌فهمانیم که کدام پنجره منظورمان است‌. حالا کافیست که یک بار i3 را ریست کنیم و F12 را بزنیم‌. نتیجهٔ کار عالیست:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png"&gt;&lt;img class="aligncenter" title="dropdown urxvt in i3" src="http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png" alt="dropdown urxvt in i3" width="491" height="369"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; درست است که طی حل این ماجرا راه‌های عجیب و غریبی را غیر از آسان‌ترین راهی که جلوی رویم بود انتخاب کردم‌، ولی چیز‌های جالبی یاد گرفتم که در پست‌های آینده در موردشان خواهم گفت ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۲:&lt;/strong&gt; ممکن است روی نسخهٔ استیبل i3 (در این تاریخ) با دستور focus که در این آموزش استفاده شده مشکل دارین‌. آخرین نسخهٔ git این مشکل را بر طرف کرده‌!&lt;/p&gt;</description><category>awesome</category><category>i3wm</category><category>KDE</category><category>quake</category><category>terminator</category><category>urxvt</category><category>yakuake</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html</guid><pubDate>Mon, 22 Oct 2012 00:33:53 GMT</pubDate></item><item><title>سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم!</title><link>http://shahinism.com/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;از آب گل آلود ماهی گرفتن به این می‌گویند D:. به حول قوهٔ الهی و بعد از اول شدنمان در دنیا‌، سروری که از فرت آزادی بیان و عقیده از آن به عنوان چاقوی سوئیسی استفاده می‌کردیم‌، قیمتش ظرف یک دورهٔ یک ماهه‌، دو برابر شد‌ (تازه بماند که چقدر فروشنده پوست خربزه زیر بقلمان گذاشت که ضرر می‌کند). این شد که تصمیم گرفتیم سروری با منابع کمتر ابتیاع کنیم و خوب به خاطر این که نمی‌خواستیم به سرور بخت برگشته‌مان آن‌قدر فشار بیاوریم که زرتش در برود‌، تصمیم گرفتیم که بی‌خیال وب سرور شویم‌ (و البته کلی جینگولک دیگر)!
+خوب این بی‌خیال شدن یعنی دیگر نمی‌توانستیم در نهایت گشادی فایل‌هایی که خیر‌خواهانه از سمت کشور‌هایی کاملا دموکراتیک و آزاد از دسترسمان خارج شده بود -تا مبادا خدای نکرده‌، بزنیم کسی را با آن اوخ کنیم- را دانلود کنیم روی سرور و بعد با وب سرور بخورانیم به دانلود منیجر همه فن حریفمان‌، همچین هم نمی‌شد اسم سرورمان را گذاشت چاقوس سوییسی D:&lt;/p&gt;
+&lt;p&gt;این شد که تصمیم گرفتم که راهی غیر از وب سرور برای انتقال فایل از سرور (که می‌توان دقیقا یک کامپیوتر با یک اتصال اینترنت به درد بخور فرضش کرد) به کامپیوتر خودمان پیدا کنم‌. در این مسیر همراهم باشید و عمرا قصه نخورید که چرا در سیستم عامل استکباریتان‌، خواب چنین وسایلی را به راحتی نمی‌بینیند:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h5&gt;Konqueror:&lt;/h5&gt;
+&lt;p&gt;خوب اولین ابزار دم دستمان مرورگر پیش‌فرض KDE است‌. برای دیدن فایل‌های روی وب‌سرور تنها کافیست در آدرس‌بار چنین چیزی بنویسیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;fish://USER@IPSERVER
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خودش پس از شروع به جستجو پسوورد می‌پرسد که همان پسوورد ssh (پسوورد یوزر) خواهد بود‌. و دیگر می‌توانید با فایل‌ها جوری رفتار کنید که انگار روی کامپیوتر خودتان قرار دارند‌. ولی خوب بدیهی است که با سرعت اینترنت بالای ما‌، خیلی دردناک است‌. برای فایل‌های کوچک حداکثر تا دو سه مگابایتی می‌توان با یک کپی پیست ساده سر و ته قضیه را هم آورد‌. ولی اگر فایل دو گیگ باشد‌، باید دنبال چارهٔ بهتر گشت‌.&lt;/p&gt;
+&lt;h5&gt;scp&lt;/h5&gt;
+
+&lt;p&gt;یا همان Safe CoPy‌، که به این صورت مورد استعمال قرار می‌گیرد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;scp USER@IPSERVER:PATH_TO_FILE _Path_to_download_
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;بعد از اجرا یک پرامپتی می‌آید و پسوورد می‌پرسد (عین ssh خودمان) و عملیات کپی انجام می‌شود‌. بدبختی‌اش این‌جاست که چون ما خیلی به سرعت انتقالمان اطمینان داریم‌، یک بار زبانم لال، فایلمان ناقص دانلود شود‌ (لنگر است دیگر‌، می‌افتد‌)، دیگر نمی‌توان Resume‌اش کرد و باید دوباره از اول شروع کنید‌.&lt;/p&gt;
+&lt;p&gt;scp خوب است‌، ولی باز هم زیاد به درد موقعیت ما نمی‌خورد‌. می‌رویم گزینهٔ بعدی.&lt;/p&gt;
+&lt;h5&gt;Filezilla&lt;/h5&gt;
+
+&lt;p&gt;این فایلزیلای پدر سوخته را احتمالا از روی استفاده‌هایش برای FTP می‌شناسید‌. خوب خوشبختانه این‌ها از پروتکلی به اسم SFTP هم پشتیبانی می‌کنند که منظورش این است که SSH می‌تواند برای وصل شدن به سرور مقصد قرار گیرد‌. پس کافیست از منوی فایل روی Site manager کلیک کنید و صفحهٔ باز شده را مثل عکس زیر کانفیگ کنید:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png"&gt;&lt;img class="aligncenter" title="Filezilla site manager" src="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png" alt="Filezilla site manager" width="419" height="331"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;و بعد هم روی connect بزنید و تمام‌. خیلی راحت وصل می‌شوید و می‌توانید با Drog &amp;amp; Drop فایل را انتقال دهید به سیستم‌تان‌. آسان بود‌. ولی خوب ما فقیر فقرا که ساعت ۲ تا ۷ صبح سرعت اینترنت‌مان سر به فلک می‌کشد‌، با تک نخی بودن مدل دانلود‌مان احتمالا طی پنج ساعت نمی‌توانیم ۲ درصد یک فایل دو گیگی را دانلود کنیم‌. می‌توانیم؟&lt;/p&gt;
+&lt;p&gt;پس فایلزیلا هم با تمام خوبی‌هایش بهتر است برود جلو بوق بزند‌. ما باید برای مساله‌مان دنبال یک راه حل بهتر باشیم‌.&lt;/p&gt;
+&lt;h5&gt;rsync&lt;/h5&gt;
+
+&lt;p&gt;یاد‌تان می‌آید گفتیم که scp سرعت خوبی داشت ولی Resume نمی‌کرد‌. یک ابزار دیگر هم داریم که جینگولک بازی‌هایش در زمان Resume فوق‌العاده است و زبان زد خاص و عام‌. مثل این نقل قول:&lt;/p&gt;
+&lt;blockquote&gt;ای کسانی که ویندوز آورده‌اید‌، اگر راست می‌گویید rsync بیاورید «&lt;del&gt;منبع نامعلوم&lt;/del&gt;&lt;a href="http://shahinism.com/blog/1391/07/26/%d8%b3%db%8c%d8%b1-%d8%b5%d8%b9%d9%88%d8%af%db%8c-%d9%88-%d8%b1%d9%88%d8%b4%e2%80%8c%d9%87%d8%a7%db%8c-%d9%85%d8%ae%d8%aa%d9%84%d9%81%db%8c-%da%a9%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%af%d8%a7%d9%86/#comment-537"&gt; منبع خودش اومد اعتراف کرد ;-)&lt;/a&gt;»&lt;/blockquote&gt;
+
+&lt;p&gt;این می‌شود که از آن به صورت زیر استفاده می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;rsync -az --progress --rsh&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'ssh'&lt;/span&gt; --partial USER@IPSERVER:PATH_TO_FILE _Path_to_download
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خیلی هم خوب‌. یکی از ویژگی‌هایش این است که می‌توانید آدرس یک پوشه را برای دانلود بهش بخورانید و دیگر دست به دستور نزنید و فقط هر وقت خواستید رانش کنید‌. خودش آخرین فایل‌های آن پوشه را می‌گیرد‌. اما امان از سرعت‌. این جینگولک بازی‌های rsync روی قابلیت‌های فوق‌العاده resume‌اش هزینه دارد و آن هم سرعت است‌! که ما به آن هم خیلی نیاز داریم‌. برای این کار بسته به موقعیت می‌توانیم آن آرگومان z را حذف کنیم‌. ولی حقیقتش برای ما فرق چندانی نداشت‌.&lt;/p&gt;
+&lt;p&gt;این است که rsync هم می‌گذاریم برای وقتی که لازمش داریم و می‌رویم دنبال یک راه حل بهتر که هم Resume کند‌، هم چند نخه دانلود کند‌، و از آن مهم‌تر این که هی مجبورمان نکند پسوورد بزنیم! آخر چه کسی حالش را دارد ساعت ۲ صبح پسوورد یادش بیاورد؟&lt;/p&gt;
+&lt;h5&gt;lftp&lt;/h5&gt;
+
+&lt;p&gt;فوق‌العاده‌ است‌. فوق‌العاده‌. و این‌طوری استفاده می‌شود:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;lftp -c &lt;span class="s2"&gt;"mirror -c --use-pget-n=10 --verbose sftp://USER:PASSWORD@IPSERVER/PATH_TO_FILE"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;هوم‌، یک کمی طولانی شد‌. ولی بگذارید کمی در موردش صحبت کنیم‌. چون واقعا لازم به توضیح است:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;‎-c اول یعنی این که دستور روبرو را اجرا کن‌.&lt;/li&gt;
+    &lt;li&gt;mirror یک برنامه توکار برای lftp است‌. یکی دیگر مثلا pget است‌. هر کدام به درد جایی می‌خورد و این mirror الان به درد ما‌. (از pget هم می‌توان استفاده کرد ولی این یکی بیشتر به مزاقم نشست).&lt;/li&gt;
+    &lt;li&gt;‎-c این آرگومان مال mirror است و یعنی Resume کن اگر می‌توانی D:&lt;/li&gt;
+    &lt;li&gt;‎--user-pget-n=10 یعنی فایل را ده قسمت کن و همه را با هم بگیر‌. این همان قابلیت چند نخی است که باعث افزایش سرعت می‌شود و دانلود منیجر‌های مدرن با آن پز می‌دهند ;-)&lt;/li&gt;
+    &lt;li&gt;USER:PASSWORD یعنی این‌ور یوزر را می‌نویسیم و آن‌ورش رمز عبورش را!&lt;/li&gt;
+    &lt;li&gt;PATH_TO_FILE این‌بار کمی با باقی مواقع فرق دارد‌. قبلا آدرس را از پوشهٔ خانگی یوزری که وارد شده بود وارد می‌کردیم و موضوع حل بود‌. ولی اینجا آدرس را از ریشه (/) می‌نویسیم‌. یعنی اگر در پوشهٔ خانگی‌تان است می‌شود این:&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;/home/USER/File
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lftp هم مانند rsync (شاید هم scp) زورش را دارد که پوشه‌ای که به آن خورانده‌ایم را دانلود کند‌.&lt;/p&gt;
+&lt;p&gt;همین دیگر‌. دیدید؟ باز هم بگویید بد است‌. لامصب را می‌بینید که چقدر به فکر جیب آدم است؟ با هر پولی و با هر سازی که دلتان خواست برایش بنوازید‌، برای‌تان آن‌قدر خوب رقص می‌کند که انگشت به دهن می‌بانید ;-)&lt;/p&gt;</description><category>filezilla</category><category>KDE</category><category>konqueror</category><category>lftp</category><category>rsync</category><category>scp</category><category>ssh</category><category>اینترنت</category><category>حل مشکل</category><category>سرور</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html</guid><pubDate>Wed, 17 Oct 2012 17:27:43 GMT</pubDate></item><item><title>Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</title><link>http://shahinism.com/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حقیقتش مشکل خاصی نبود ولی وقتی به چشم می‌آمد خیلی تو ذوق می‌زد‌! منظورم همین Notification‌هایی است که وقتی مثلا Thunderbird ایمیلی دریافت می‌کند روی صفحه ظاهر می‌شوند (یا هر نرم‌افزار دیگری که بخواهد چیزی به اطلاع آدم برساند). روی KDE یا Gnome ابزار‌های مربوطه‌شان به صورت خودکار لود می‌شد و احتمالا این احساس به آدم دست می‌داد که این‌ها مربوط به خود میزکارند که خوب احساس دروغی بود D: روی &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/"&gt;Awesome کبیر&lt;/a&gt; هم از Naughty استفاده می‌شد که الحق تیپ خیلی زیبایی داشت و به میز‌کار می‌آمد‌.
+بعد از مهاجرت به i3 بود که جون روی اسلکور به صورت پیش‌فرض xfce4-notifyd نصب بود مشکلی که ذکر خیرش رفت ظاهر می‌شد‌. متاسفانه از آن‌جایی که i3 دوست داشت دور هر چیزی کادر شناسایی پنجره‌اش را بکشد‌، با همچین منظره‌ای روبرو می‌شدیم‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"&gt;&lt;img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"&gt;&lt;/a&gt;جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با &lt;a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank"&gt;Dunst&lt;/a&gt; آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;p style="text-align: left;"&gt;dunst - dmenu-ish notification daemon&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.knopwob.org/public/dunst_wide_640.png"&gt;&lt;img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"&gt;&lt;/a&gt;برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.&lt;/p&gt;
+&lt;p&gt;بعد از نصب هم با دستور زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;cp /usr/share/dunst/dunstrc ~/.config
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک نمونه از فایل تنظیمات را در پوشهٔ خانگی‌تان کپی کنید‌. از من می‌شنوید چرخی در این فایل بزنید چون تنظیمات خیلی به درد بخوری در آن پیدا می‌کنید‌ (ضمن این که ظاهر اولیه اصلا شباهتی به Dmenu ندارد ;-))&lt;/p&gt;
+&lt;p&gt;اما بیشترین نقاط قوت این اطلاع رسان ساده در میانبر‌های کیبوردش مخفی شده به طوری که:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.&lt;/li&gt;
+    &lt;li&gt;می‌توانید با Ctrl+grave آخرین اخطاری که ظاهر شد و شما ندید را به روی صفحه برگردانید (که به نظرم خیلی به درد بخور است). grave همان دکمه‌ای است که باهاش ~ تایپ می‌کنید‌. کنار ۱ و بالای TAB ;-)&lt;/li&gt;
+    &lt;li&gt;یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;نکته ۱:&lt;/strong&gt; برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;notify-send Test
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که جای Test هر چیزی که خواستید می‌توانید به عنوان پیغام اضافه کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نکته ۲:&lt;/strong&gt; Dunst تنها قبل از اجرای daemon‌ش فایل کانفیگی که در ‎.config ذخیره کردیم را می‌خواند‌. برای دیدن تغییرات باید اول این daemon را kill کنید و دوباره اجرایش کنید ;-)&lt;/p&gt;</description><category>dunst</category><category>dwm</category><category>i3</category><category>xfce4-notifyd</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</guid><pubDate>Sat, 13 Oct 2012 13:26:09 GMT</pubDate></item><item><title>راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)</title><link>http://shahinism.com/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;مساله این‌جاست که وقتی پای کامپیوتر می‌نشینم‌، حتی اگر کاری نداشته باشم‌، یادم نمی‌ماند که مسنجرم را روشن کنم‌. و خوب از طرفی دوست دارم که در صورت امکان‌، با رفقای اینترنتی و غیر اینترنتی‌ام در ارتباط باشم‌. خوب حل این مشکل ساده است‌. کافی است میز‌کارت را تنظیم کنی که با روشن شدنش‌، Pidgin را هم اجرا کند‌. ولی خوب این بالقوه مشکل دیگری را می‌آفریند. کدام مشکل؟ همین که گاها موقع کار کردن‌، یکی از دوستانت می‌پرد وسط و چیزی می‌گوید که کوچکترین پیامدش حواس پرتی است و این اصلا نمی‌تواند کمک خوبی برای بالا بردن بهره‌وری شود.
+راه حل کوتاه در این زمینه استفاده از Status‌های مسنجر است‌. جدای از این که Status‌ها در همهٔ مسنجر‌ها همانطور که باید نشان داده نمی‌شوند‌، چه تضمینی وجود دارد که من حواس‌پرت و البته تنبل (gsh سابق D:)، یادم بماند و حالش را داشته باشم که در هر وضعیتی Status مناسب را انتخاب کنم‌؟&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو‌، با &lt;a title="dbus official webpage" href="http://dbus.freedesktop.org/" target="_blank"&gt;DBus&lt;/a&gt; آشنا شدم و البته یادم آمد که خیلی وقت پیش‌،&lt;a title="jadi dbus" href="http://jadi.net/2011/07/linux-chera-command-line/" target="_blank"&gt; جادی عزیز‌&lt;/a&gt;، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به &lt;a title="dbus-python turorila" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html" target="_blank"&gt;راهنمای&lt;/a&gt; Freedesktop بسنده کرد‌.)&lt;/p&gt;
+&lt;p&gt;مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به مخاطب آن‌ور خط بدهد‌.&lt;/p&gt;
+&lt;p&gt;با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.&lt;/p&gt;
+&lt;p&gt;اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام ارسال می‌شود‌.&lt;/p&gt;
+&lt;p&gt;دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.&lt;/p&gt;
+&lt;p&gt;برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import sys&lt;/p&gt;
+&lt;p&gt;import dbus&lt;/p&gt;
+&lt;p&gt;from PyQt4.QtGui import QApplication&lt;/p&gt;
+&lt;p&gt;from dbus.mainloop.qt import DBusQtMainLoop&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;قرار بر این بود که اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;bus_loop = DBusQtMainLoop(set_as_default=True)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار با حلقهٔ اصلی هنوز تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌.&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def connect_dbus(text):&lt;/p&gt;
+&lt;p&gt;global answer&lt;/p&gt;
+&lt;p&gt;answer = text&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;bus.add_signal_receiver(pidgin_control_func,&lt;/p&gt;
+&lt;p&gt;dbus_interface="im.pidgin.purple.PurpleInterface",&lt;/p&gt;
+&lt;p&gt;signal_name="ReceivedImMsg")&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;اولین سوال در این تابع‌، این است که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به سوالی پاسخ می‌دهند‌:&lt;/p&gt;
+&lt;p&gt;۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ: pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت)&lt;/p&gt;
+&lt;p&gt;۲- روی DBus به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای معرفی استفاده می‌کنیم‌.&lt;/p&gt;
+&lt;p&gt;۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط Pidgin شناسایی کردیم ;-)&lt;/p&gt;
+&lt;p&gt;در این تابع ما از فراخوان می‌خواهیم که آرگومانی را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
+&lt;p&gt;نوبت به نوشتن تابع دوم می‌رسد‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def pidgin_control_func(account, sender, message, conversation, flags):&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")&lt;/p&gt;
+&lt;p&gt;purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")&lt;/p&gt;
+&lt;p&gt;if purple.PurpleAccountGetUsername(account) != sender:&lt;/p&gt;
+&lt;p&gt;purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در ادامه به سه سوال دیگر جواب می‌دهیم:&lt;/p&gt;
+&lt;p&gt;۱- روی DBus به کدام برنامه گوش کنم؟ پاسخ im.pigin.purple.PurpleService&lt;/p&gt;
+&lt;p&gt;۲- آدرسش کجاست؟ پاسخ: ‎/im/pidgin/purple/PurpleObject&lt;/p&gt;
+&lt;p&gt;در واقع با پاسخ به این دو سوال‌، سعی به ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌.&lt;/p&gt;
+&lt;p&gt;۳- کدام رابط از آبجکت ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface&lt;/p&gt;
+&lt;p&gt;و خوب حالا تنها برای ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌ و به دو سوال پاسخ دهیم:&lt;/p&gt;
+&lt;p&gt;۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از شیع‌مان بخواهم که آدرسش را پیدا کند ;-)&lt;/p&gt;
+&lt;p&gt;۲- چه بگویم؟ پاسخ answer‌‌، همان متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌.&lt;/p&gt;
+&lt;p&gt;البته من در تابع یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا عبد ادامه خواهد داشت ;-)&lt;/p&gt;
+&lt;p&gt;دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;app = QApplication([])&lt;/p&gt;
+&lt;p&gt;connect_dbus(message)&lt;/p&gt;
+&lt;p&gt;app.exec_()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل از ساختن شیع app کمک می‌گیریم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import signal&lt;/p&gt;
+&lt;p&gt;signal.signal(signal.SIGINT, signal.SIG_DFL)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار این تابع این است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه کند‌! یعنی بزند بترکاند برنامه‌مان را ;-)&lt;/p&gt;
+&lt;p&gt;می‌توانید نسخهٔ کامل اسکریپت را از&lt;a title="Download answering machine" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py" target="_blank"&gt; این لینک &lt;/a&gt;دانلود کنید و به صورت زیر اجرایش کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python answering_machine.py ANSWER_MESSAGE
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اما خوب درست است که این اسکریپت تقریبا مشکل‌مان را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این اصلا حال نمی‌دهد‌. این است که آن را با &lt;a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank"&gt;PyPomo&lt;/a&gt; قاطی می‌کنم‌ (آخرین نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۱: &lt;/strong&gt;متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش باشم‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۲:&lt;/strong&gt; می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌، زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!&lt;/p&gt;</description><category>dbus</category><category>PyPomo</category><category>Python</category><category>qdbus</category><category>Qt</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</guid><pubDate>Wed, 26 Sep 2012 12:38:12 GMT</pubDate></item><item><title>اسکریپتی برای کاهش هزینهٔ شرکت در کلاس‌های دانشگاه Coursera</title><link>http://shahinism.com/posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;۱۹۵ کلاس‌، ۱۹۵ کلاس درس دانشگاهی که خیلی راحت می‌توان از طریق اینترنت آن‌ها را مطالعه کرد و حتی آزمون داد‌ -البته بدیهی است که این پروسه نیاز به صادق بودن شخص با خود هم دارد‌-. اگر برای به دست آوردن یک کاغذ A4 گلاسه که دانش‌تان را محدود به یک حوزهٔ خاص می‌داند و برایش رتبه هم تعیین می‌کند درس نمی‌خوانید‌، یک همچین منبعی از کلاس‌ها می‌تواند واقعا وسوسه انگیز باشد‌. &lt;a title="Coursera home page" href="https://www.coursera.org/" target="_blank"&gt;Coursera&lt;/a&gt; با همکاری مجموعه‌ای از اساتید دانشگاه‌ها (و شاید هم خود دانشگاه‌ها) سعی در فراهم آوردن &lt;a title="courses page" href="https://www.coursera.org/courses" target="_blank"&gt;همچین امکانی&lt;/a&gt; دارد‌. خصوصا این که جدیدا توانسته ۷۰ کلاس آموزشی جدید نیز ارائه کند (۱۹۵ با احتساب همین مقدار جدید است ;-))
+حقیقتش در مورد خیلی از دروس ارائه شده حتی سوادم نکشید که بدانم چه هستند‌، اما در مورد کامپیوتر و خصوصا مهندسی نرم‌افزار‌، کلاس‌ها عموما گل‌چین شدهٔ بهترین واحد‌هایی است که در دانشگاه‌های خودمان هم سعی بر تدریسش دارند (گفتم سعی‌، منظورم این است که حداقل در جایی که من بودم‌، نزدیک به چنین هدفی هم نشدند!). البته این را هم اضافه کنم که این دانشگاه هنوز هم چیز‌های مهمی را ارائه نمی‌دهد که در دانشگاه‌های وطنی با بهترین کیفیت ارائه می‌شود‌ D: (‌حدس می‌زنید منظورم کدام دروس است؟)&lt;/p&gt;
+&lt;p&gt;زیاده‌گویی بس است‌. خیلی وقت پیش هم در کلاس‌های این سایت شرکت کرده بودم‌، ولی ادامه ندادم‌. چرا؟ حقیقتش مجموعهٔ دانلودی‌اش عالی است‌. فیلم آموزشی‌، زیرنویسش‌، اسلاید و …. اما خودتان که می‌دانید زندگی سایبری (‌حالم از این کلمهٔ آخر به هم می‌خورد‌، جایگزین بهتری نمی‌شناسید؟) در ایران‌، خصوصا با این کیفیت عالی (!) چه هزینهٔ گزافی دارد‌. این شد که دیروز وقتی دوباره لیست این کلاس‌ها‌، وسوسه به مطالعه‌شان را در من تقویت کرد‌، تصمیم به دانلودشان به صورت شبانه گرفتم‌. اما مشکل این‌جاست که باید شب را تا صبح پای کامپیوتر بگذرانم و تک به تک دانلودشان کنم‌، چرا که‌، پروسهٔ دانلود سایت کمی قرتی تشریف دارد و کوکی می‌خواهد‌. قصد داشتم برای چالش هم که شده یک اسکریپت برای این کار بنویسم‌.&lt;/p&gt;
+&lt;p&gt;اما خوشبختانه بعد از اولین جستجو به کامل‌ترین نسخهٔ ممکن برای این کار رسیدم‌.&lt;a title="coursera doenloader on github" href="https://github.com/jplehmann/coursera" target="_blank"&gt; اسکریپتی که&lt;/a&gt; دیروز کار نمی‌کرد‌، و باعث شده بود تصمیم بگیرم تعمیرش کنم‌، ولی باز توسعه دهندهٔ خوش‌فکرش به کارش انداخت و الان مثل چـــی کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;مزیتش نسبت به تمام روش‌های دانلود دیگر این است که فقط کافیست نام کلاس را بهش بگویید و خودش همه چیز‌های مربوطه را برایتان دانلود کرده‌، نام درست را برای‌شان بگذارد و در پوشه‌های جدا دسته بندی می‌کند‌. (هلو …؟)&lt;/p&gt;
+&lt;p&gt;اول با توجه به توزیع زیر دستتان‌، بستهٔ setuptools از خانوادهٔ پایتون را نصب کنید‌، و باقی کار را مثل زیر انجام دهید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;easy_install BeautifulSoup
+
+easy_install argparse
+
+git clone https://github.com/jplehmann/coursera.git
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;coursera
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا با چنین نحوی می‌توانید دانلود را انجام دهید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;./coursera CLASS_NAME -u USER_NAME -p PASSWORD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای به دست آوردن CLASS_NAME صفحهٔ کلاس مربوطه را در سایت باز کنید‌. مثلا برای Algorithms 1 همچین چیزی است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;https://class.coursera.org/algs4partI-2012-001/lecture/index
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;آن بند algs4partI-2012-001 می‌شود نام کلاس‌ الگوریتم‌ها‌. جایش در باقی کلاس‌ها یکسان و معلوم است ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت&lt;/strong&gt;: در آیندهٔ نزدیک یک روش گاز‌انبری و خیلی دم دستی را یادتان می‌دهم که می‌تواند این کوکی‌های کذایی را دور بزند. &lt;/p&gt;</description><category>argparse</category><category>Coursera</category><category>pysetuptools</category><category>Python</category><category>آموزش !</category><category>اینترنت</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دانشگاه</category><category>نرم افزار</category><category>پایتون</category><category>کامپیوتر</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html</guid><pubDate>Thu, 20 Sep 2012 11:11:27 GMT</pubDate></item><item><title>PyPomo پروژهٔ کوچک برای تمرکز به روش پامودورو!</title><link>http://shahinism.com/posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبلاً در مورد پامودورو &lt;a title="آشنایی با تکنیک مدیریت زمان پامودور (‌گوجه‌)!" href="http://shahinism.com/blog/1390/04/24/%d8%a2%d8%b4%d9%86%d8%a7%db%8c%db%8c-%d8%a8%d8%a7-%d8%aa%da%a9%d9%86%db%8c%da%a9-%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d8%b2%d9%85%d8%a7%d9%86-%d9%be%d8%a7%d9%85%d9%88%d8%af%d9%88%d8%b1-%e2%80%8c/"&gt;صحبت کرده‌ام‌&lt;/a&gt;. از آن‌جایی که این چند وقته خیلی پیش می‌آمد که تمرکزم را روی انجام کارم پای کامپیوتر (خصوصا روی &lt;a title="negar official webpage" href="http://shahinism.github.com/Negar/" target="_blank"&gt;پروژهٔ نگار&lt;/a&gt;) از دست بدهم‌، و تمام ابزار‌هایی که قبلا برای این منظور استفاده می‌کردم را کنار گذاشته بودم‌، تصمیم گرفتم که یک ساعت پامودورو با پایتون بسازم‌.
+حقیقتش ساختنش کار لذت بخشی بود‌. خصوصا که در حین پیاده‌سازی نمونهٔ حاضر ایده‌های جالبی هم به سرم زد که به زودی روی‌شان کار می‌کنم‌. زیاده گویی بس است‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h5&gt;نصب PyPomo&lt;/h5&gt;
+&lt;p&gt;اول از همه بسته به توزیع‌تان pysetuptools و PyQt4 (در اسلکور نصب است) را نصب کنید. و سپس به ترتیب دستورات زیر را اجرا کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/shahinism/PyPomo.git
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;PyPomo
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python setup.py install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا می‌توانید pypomo را از خط فرمان صدا بزنید‌. نمای اولیه چیزی شبیه به این تصویر خواهد بود و اگر با تکنیک پامودورو کار کرده باشید مفاهیم آشناست‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://raw.github.com/shahinism/PyPomo/master/Snapshots/window.png"&gt;&lt;img class="aligncenter" title="صفحهٔ اصلی PyPomo" src="https://raw.github.com/shahinism/PyPomo/master/Snapshots/window.png" alt="" width="283" height="214"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;فقط می‌ماند آن آیکون استاتوس بارش که سه رنگ می‌شود‌:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt; رنگ قرمز:&lt;/strong&gt; به این معنی است که شما باید یک پامودورو را شروع کنید و انجام دهید‌.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;رنگ سبز:‌&lt;/strong&gt; به معنی وقت استراحت است‌. شرط می‌بندم خیلی زود عاشق این رنگ می‌شوید D:&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;رنگ زرد:&lt;/strong&gt; به این معنی است که شما یک وقفه ایجاد کرده‌ایست‌. پس باید به سراغ پامودوروی بعدیتان بروید‌.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;پروژه آزاد است و چیز‌های جالبی می‌توان به آن اضافه کرد‌. با آغوش باز پذیرای ایده‌ها و کمک‌هایتان هستم ;-)&lt;/p&gt;
+&lt;p&gt;&lt;a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank"&gt;صفحهٔ پروژه در گیت‌هاب&lt;/a&gt;&lt;/p&gt;</description><category>github</category><category>pomodoro</category><category>PyPomo</category><category>PyQt4</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html</guid><pubDate>Tue, 11 Sep 2012 10:21:51 GMT</pubDate></item></channel></rss>

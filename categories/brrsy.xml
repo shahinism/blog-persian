@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (بررسی)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چینش (لایوت) Workman و داستان مهاجرتم</title><link>http://shahinism.com/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اصلا مهم نیست که از چه کامپیوتری استفاده می‌کنید‌، Mac, Linux‌، Windows, ارزان‌قیمت‌، گران‌قیمت‌، کوچک‌‌ یا بزرگ. همچنین اصلا مهم نیست که برای چه کاری پشت کامپیوتر می‌نشینید‌، برنامه‌نویسی‌، تحقیقاتی‌، نوشتن‌، بازی‌، وب‌گردی و …! در همهٔ این حالات‌، اصلی‌ترین رابط شما و کامپیوتر‌، کیبورد زیر دست‌تان است. کیبوردی که در تمام این حالات‌، هم‌شکل است. شکلی که صد و اندی سال پیش طراحی شده و هدف از طراحی‌اش بسیار بسیار متفاوت با استفاده‌هایی است که امروز‌ها از آن می‌شود.
+طراحی چینش صفحه کلید QWERTY زیر دست‌تان‌، به دوران ماشین‌های تایپ بر می‌گردد. ماشین‌هایی مکانیکی که بعد از فشردن هر دکمه روی‌شان‌، پایهٔ متصل به حرف تایپ شده‌، به روی صفحهٔ کاغذ می‌خورد و حرف مورد نظر چاپ می‌شد. اما مشکل این‌جا بود که حروفی وجود داشتند که نسبت به بقیه‌، استفادهٔ بیشتری در کلمات داشتند و این یعنی کلمات بیشتری بودند که با ترکیب آن‌ها ساخته می‌شدند. با این وصف‌، نزدیکی مکانیکی حروف پر استفاده‌، در آن ابعاد کوچک و در سرعت‌های بالا‌، مشکل آفرین بود! پایه‌ها به هم گیر می‌کردند.&lt;/p&gt;
+&lt;p&gt;این شد که در طراحی QWERTY سعی شد که پایه‌های حروف پر استفاده دور‌تر از هم قرار گیرند و در نتیجه‌، کلید‌های مربوطه‌شان به دلیل محدودیت سخت‌افزاری باید دور‌تر از هم قرار می‌گرفت. در نتیجه چینشی به وجود آمد که بیش از صد سال مورد استفاده قرار گرفت و تقریبا به یک استاندارد تبدیل شد. استانداردی که هیچ توجهی به نیاز‌های جدید کاربرانش نمی‌کند.&lt;/p&gt;
+&lt;p&gt;در قرن ۲۱‌، دیگر این چینش در ابزاری محدود به سخت‌افزار مورد استفاده قرار نمی‌گیرد. در عوض حالا می‌توان چینشی طراحی کرد که بیشتر به نیاز کاربر بیاید. چینشی که در آن کاربر مجبور به جابجایی زیاد انگشتانش نباشد. این جابجایی‌ها شاید به نظر کوچک بیایند‌، ولی در تایپ‌های طولانی مدت شما با همین قدم‌های کوچک‌، کیلو‌متر‌ها مسافت را طی کرده‌اید! باور نمی‌کنید؟ کافیست فاصلهٔ بین هر دو دکمهٔ کنار هم کیبورد را چیزی در حدود ۲ سانتی‌متر فرض کنیم. آن وقت برای تایپ همین پاراگراف حاضر‌، تا الان من حداقل ۹۵۰ سانتی‌متر (۴۷۵ کاراکتر) و آن هم تنها در صورتی که تمام کاراکتر‌هایم در کنار هم باشند (در کنار هشت انگشت تایپم) مصافت طی کرده‌ام! (این حداقل خیلی خیلی ایده‌آل است و فکر نمی‌کنم هرگز اتفاق بیافتد، حداقل در چینش فارسی‌! ولی فکر کنم مثال مناسبی برای نشان دادن عمق موضوع است.)&lt;/p&gt;
+&lt;p&gt;از قرار این موضوع تا 1930 و انتشار چینش Dvorak چندان جدی گرفته نشد. چینشی که تنها سعی می‌کرد‌، قابل قبول‌تر از QWERTY باشد. تغییراتش نسبت به آن زیاد نبودند‌، ولی نتیجهٔ کاربر پسند‌تری داشتند. اما به نظرم‌، پرجرات‌ترین تغییر در این چینش سنتی‌، توسط &lt;a title="Colemak official" href="http://colemak.com" target="_blank"&gt;Colemak&lt;/a&gt; ایجاد شد! 2006! ۷۶ سال طول کشید تا این نیاز عمیقا درک شود! البته بودند چینش‌هایی که سعی در بهبود QWERTY داشته باشند‌، اما Colemak متفاوت بود. چینشی که در آن سعی شد‌، پر استفاده‌ترین کاراکتر‌ها‌، در ردیف وسطی قرار گیرند (ردیفی که در روش تایپ استاندارد‌، انگشتان باید روی آن‌ها قرار گیرند و در اصطلاح به آن‌ها Home row می‌گویند). نتیجهٔ کار فوق‌العاده بهتر شده بود. جادی عزیز‌، خیلی وقت پیش در مورد Colemak و بهبود‌هایش نسبت به &lt;a title="کولمک در وبلاگ جادی" href="http://jadi.net/2009/02/%d8%b5%d9%81%d8%ad%d9%87-%da%a9%d9%84%db%8c%d8%af-%da%a9%d9%88%d9%84%d9%85%d8%a7%da%a9/" target="_blank"&gt;QWERTY نوشت&lt;/a&gt; که پیشنهاد می‌کنم بخوانید.&lt;/p&gt;
+&lt;p&gt;و اما &lt;a title="Workman official" href="http://www.workmanlayout.com/blog/" target="_blank"&gt;Workman&lt;/a&gt;! در حقیقت چینش مورد بحث ما‌، سعی کرده نسخهٔ بهبود یافتهٔ Colemak باشد. خیلی از ایده‌ها را از آن به ارث برده و شباهت خیلی خیلی کمتری نسبت به QWERTY دارد. طراح Workman‌، این‌طور فکر می‌کرد که همیشه استفاده از Home row بهترین جا برای قرار گرفتن حروف نیست. مثلا نکته این‌جا بود که حرکت طبیعی انگشتان‌، کلید I در صفحه‌کلید QWERTY را‌، راحت‌تر از H تایپ می‌کنند (انگشتان به بالا یا پایین‌، راحت‌تر حرکت می‌کنند تا به چپ و راست!). این بود که نقشه‌ای به صورت زیر طراحی کرد که میزان راحتی دسترسی نسبت به کلید‌ها را در آن نمره دهی کرده بود:&lt;/p&gt;
+&lt;p&gt;&lt;img class=" " alt="امتیاز‌دهی به کلید‌های کیبورد بر اساس میزان راحتی در دسترسی" src="http://dl.dropbox.com/u/25017694/Blog-photos/keyboard_graded1.png" width="499" height="166"&gt; امتیاز‌دهی به کلید‌های کیبورد بر اساس میزان راحتی در دسترسی&lt;/p&gt;
+&lt;p&gt;پس ار آن تنها کافی بود که کاراکتر‌ها را نسبت به میزان استفاده‌اش در این خانه‌ها جا دهد. نتیجهٔ کار و امتیاز‌های کسب شده در مقایسه با دیگر چینش‌ها چشم‌گیر بود! مثلا در این‌جا میزان استفاده از دو ستون وسط در چند لایوت مختلف را می‌بینیم (ستون‌هایی که نیاز به حرکت انگشتان به چپ و راست دارند که باعث کشش عضلانی انگشتان می‌شود):&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul style="direction: rtl; text-align: left; list-style: none outside none;"&gt;&lt;li&gt;QWERTY: 22%&lt;/li&gt;
+    &lt;li&gt;Dvorak: 14%&lt;/li&gt;
+    &lt;li&gt;Colemak: 12%&lt;/li&gt;
+    &lt;li&gt;Workman: 6%&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;یا مثالی نزدیک‌تر به نیاز‌مان. میزان جابجایی انگشت‌ها:&lt;/p&gt;
+&lt;p&gt;&lt;img class=" " alt="نتیجهٔ تست تایپ در چهار چینش مختلف" src="http://dl.dropbox.com/u/25017694/Blog-photos/don-quixote.png" width="559" height="404"&gt; نتیجهٔ تست تایپ در چهار چینش مختلف&lt;/p&gt;
+&lt;p&gt;در این مثال تایپ کتاب &lt;a title="Don Quixote on wikipedia" href="http://en.wikipedia.org/wiki/Don_Quixote" target="_blank"&gt;Don Quixote&lt;/a&gt; با لایوت‌های مختلف شبیه سازی شده. همان‌طور که می‌بینید Colemak مصافت کمتری نسبت به QWERTY و Dvorak را طی کرده. اما Workman از آن‌ هم کمتر است. ۶۹۶ متر! شاید فکر کنید که این خیلی کم به نظر می‌آید. ولی بیایید به روش قبلی‌مان حسابش کنیم. ۶۹۶ متر = ۶۹۶۰۰ سانتی‌متر = ۳۴۰۰۰ دکمه (با احتساب فاصلهٔ تقریبا ۲ سانتی‌متری بین هر دو دکمهٔ کنار هم). یعنی با Workman سی و چهار هزار دکمهٔ کمتر فشار داده شده.&lt;/p&gt;
+&lt;p&gt;البته بهبود این چینش به Workman ختم نمی‌شود. چینش‌های دیگری هم هستند که خرده‌هایی به این لایوت گرفته‌اند و سعی می‌کنند به روش خود آن را بهبود ببخشند. خوبی این همه چینش جدید این است که می‌توان با دست باز‌تری انتخاب کرد و نتیجهٔ مطلوب‌تری گرفت. همین‌جا هم بگویم که اصلا تایید نمی‌کنم که Workman بهترین چینش ممکن است‌! این چینش اولین و آخرین چینش انتخابی من برای مهاجرت است!&lt;/p&gt;
+&lt;h5&gt;قضیهٔ مهاجرت من به Workman&lt;/h5&gt;
+
+&lt;p&gt;دو سال و خرده‌ای پیش بود که بعد از هشت نه سال کاربر کامپیوتر بودن‌، تصمیم گرفتم که تایپ استاندارد را یاد بگیرم و هی در هنگام تایپ به دستانم نگاه نکنم (می‌دانم خیلی دیر بود). حقیقتش برایم خیلی سخت بود. حتی چند باری قبلا تلاش کرده بودم و دلزده رهایش کرده بودم. مشکل این‌جا بود که بیش از حد سعی می‌کردم به حافظه تکیه کنم. این بود که بعد از یک استراحت چند هفته‌ای‌، دوباره شروع می‌کردم و نتیجهٔ بهتری می‌گرفتم. تا این که خلاصه به سرعت تایپ معقولی رسیدم.&lt;/p&gt;
+&lt;p&gt;سوئیچ به فارسی فوق‌العاده آسان‌تر بود. تنها کافی بود که یاد بگیرم جای کدام حرف انگلیسی‌، چه تایپ کنم. بعد از معرفی Colemak توسط جادی هم سعی کردم که آن را بچشم‌، ولی به دلم ننشست. شاید به خاطر این که آن موقع با QWERTY هم آشنا نبودم. ولی نه‌، من Workman را هم تنها به خاطر تنوعش انتخاب کردم!&lt;/p&gt;
+&lt;p&gt;این یعنی این که اصلا فکر نکنید که این اطلاعاتی که در بالا نوشتم‌‌، دلیل مهاجرتم به Workman بوده باشد. این چینش هر چقدر هم خوب باشد‌، بسیاری از برنامه‌های وابسته به کیبوردم را مثل &lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank"&gt;i3&lt;/a&gt;, &lt;a title="کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)" href="http://shahinism.com/blog/1391/01/05/%da%a9%d9%86%d8%aa%d8%b1%d9%84-%da%a9%d8%a7%d9%85%d9%84-%d9%81%d8%a7%db%8c%d8%b1%d9%81%d8%a7%da%a9%d8%b3-%d8%a8%d8%a7-%da%a9%db%8c%d8%a8%d9%88%d8%b1%d8%af-pentadactyl-vimperator-firemacs/" target="_blank"&gt;pentadactyl&lt;/a&gt; و از همه مهم‌تر &lt;a title="چگونه ایمکس‌مان را تربیت کنیم (قسمت اول)" href="http://shahinism.com/blog/1391/04/23/%da%86%da%af%d9%88%d9%86%d9%87-%d8%a7%db%8c%d9%85%da%a9%d8%b3%e2%80%8c%d9%85%d8%a7%d9%86-%d8%b1%d8%a7-%d8%aa%d8%b1%d8%a8%db%8c%d8%aa-%da%a9%d9%86%db%8c%d9%85-%d9%82%d8%b3%d9%85%d8%aa-%d8%a7%d9%88/" target="_blank"&gt;Emacs&lt;/a&gt; را تحت تاثیر قرار می‌دهد! تغییر کلید‌های یک مرحله‌ای را می‌شود تحمل کرد‌، ولی با تغییر به Workman یک دستور سادهٔ ایمکس مثل C-x C-f به کابوس تبدیل می‌شود! (به زودی این مشکل را هم در ایمکس حل خواهیم کرد!)&lt;/p&gt;
+&lt;p&gt;ولی حدودا بیست روز پیش و فقط و فقط‌، برای ایجاد تنوع تصمیم به تغییر چینش کیبورد گرفتم. بعد از یک جستجوی چند ساعته هم تصمیم نهایی‌ام شد Workman. قبل از آن هم یک تست از سرعت تایپ QWERTYام گرفتم محض یادگاری که نتیجه‌اش شد ۲۰۴ کاراکتر در دقیقه و با درستی ۹۹.۳ درصد! و انتقال شروع شد!&lt;/p&gt;
+&lt;p&gt;یک کابوس به تمام معنا! مشکل را تازه درک کرده بودم. در هنگام تایپ اصلا به حافظه به آن معنی که می‌شناختم نیازی نبود. نیاز اصلی حافظهٔ عضلانی است. و QWERTY خیلی محکم در این حافظه ثبت شده بود. تا موقعی که شش دانگ حواسم جمع تایپ کردن بود مشکلی نبود. ولی تا بیخیال حافظه‌ام می‌شدم‌، انگشتانم به QWERTY سوئیچ می‌کردند. جدال با این حافظه سخت بود. شاید بخندید‌، ولی دو سه روز اول‌، سردرد شدیدی گرفتم! از آن مهم‌تر این که به صورت ناخودآگاه نکته بین‌تر شده بودم. این است که نتیجه گرفتم تغییر عادات‌، خیلی خیلی به درد بخور است!&lt;/p&gt;
+&lt;p&gt;خلاصهٔ کلام‌، بعد از ۲۰ روز‌، الان دیگر نمی‌توانم به QWERTY تایپ کنم! کاملا پاک شده. ولی چه باک‌، هر وقت به Workman دسترسی نداشتم‌، به دستانم نگاه می‌کنم و تایپ می‌کنم D:. جالبی‌اش این‌جاست که خطای تایپ فارسی‌ام هم زیاد شده بود. یادتان هست که گفته بودم که برای تایپ فارسی کاراکتر‌ها را با همتایان انگلیسی‌شان لینک کرده بودم؟ فکر کنم مشکل از همان‌جا آب می‌خورد.&lt;/p&gt;
+&lt;p&gt;ولی الان نتیجه به نظرم قابل قبول شده! سرعت تایپم به ۲۲۶ کاراکتر در دقیقه رسیده! این در حالی است که درستی کاراکتر‌ها به ۹۴ درصد نزول پیدا کرده. یک حساب سرسری یعنی این که اگر میزان درستی کاراکتر‌ها بهبود ببخشم‌، نتیجهٔ سرعت تایپ از این هم بیشتر خواهد بود که به نظرم خیلی جذاب است.&lt;/p&gt;</description><category>Colemak</category><category>Dvorak</category><category>Layout</category><category>QWERTY</category><category>Workman</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>نرم افزار</category><guid>http://shahinism.com/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html</guid><pubDate>Wed, 03 Apr 2013 11:58:57 GMT</pubDate></item><item><title>دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!</title><link>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همانطور که می‌دانید‌، چند ماهی می‌شود که از i3 استفاده می‌کنیم‌، ولی در i3bar به جای i3status (به دلیل سادگی بیش از اندازه‌اش D:) از Conky بهره می‌گیرم. کانکی اطلاعات خیلی خوبی ارائه می‌دهد و کار‌های جالبی هم می‌توان روی خروجی‌اش انجام داد‌. ولی وقتی قرار است آن را به i3status بخورانم‌، باید از آپشن shell روی Conky استفاده کنم که دیگر خبری از آن جینگولک بازی‌های معروف Conky نیست‌. همه چیز خیلی ساده می‌شود. تصویر زیر وضعیت فعلی i3barام را نشان می‌دهد‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"&gt;&lt;img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ کلیک کنید&lt;/p&gt;
+&lt;p&gt;و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:&lt;/p&gt;
+&lt;p&gt;پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.&lt;/li&gt;
+    &lt;li&gt;صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)&lt;/li&gt;
+    &lt;li&gt;مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.&lt;/li&gt;
+    &lt;li&gt;سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این &lt;a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank"&gt;آموزش&lt;/a&gt; آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).&lt;/li&gt;
+    &lt;li&gt;وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.&lt;/li&gt;
+    &lt;li&gt;وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در &lt;a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank"&gt;این‌جا&lt;/a&gt; دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
+&lt;p&gt;اسکریپت حاضر است و از &lt;a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank"&gt;این‌جا&lt;/a&gt; قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:&lt;/p&gt;
+&lt;h5&gt;تاریخ&lt;/h5&gt;
+
+&lt;p&gt;خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="s2"&gt;"%a %Y.%m.%d %H:%M"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!&lt;/p&gt;
+&lt;h5&gt;اطلاعات شبکه&lt;/h5&gt;
+
+&lt;p&gt;اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getNetBytes
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;Brecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($2)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;Btransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($10)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)&lt;/p&gt;
+&lt;p&gt;حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)&lt;/p&gt;
+&lt;p&gt;نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!&lt;/p&gt;
+&lt;h5&gt;وضعیت RAM&lt;/h5&gt;
+
+&lt;p&gt;گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getRamInfo
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;totalMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"Mem:"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $2/1024)}'&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;usedMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"buffers/cache"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $3/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;memInPercent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$totalMemory $usedMemory"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.0f", $2/($1/100)) }'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!&lt;/p&gt;
+&lt;h5&gt;وضعیت CPU&lt;/h5&gt;
+
+&lt;p&gt;خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getCpuInfo&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+
+&lt;span class="nv"&gt;addr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"^cpu${CORE}"&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat /proc/stat | grep &lt;span class="nv"&gt;$addr&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# Get the total CPU statistics.&lt;/span&gt;
+
+&lt;span class="nb"&gt;unset &lt;/span&gt;CPU&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# Discard the "cpu" prefix.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="p"&gt;[4]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="c"&gt;# Get the idle CPU time.&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the total CPU time.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Catch current cores last state&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the CPU usage since we last checked.&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.&lt;/p&gt;
+&lt;p&gt;با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)&lt;/p&gt;
+&lt;h5&gt;پایان کار&lt;/h5&gt;
+
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+getNetBytes
+
+getRamInfo
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; COUNT &amp;amp;lt; &lt;span class="nv"&gt;$CORES&lt;/span&gt;; COUNT++ &lt;span class="o"&gt;))&lt;/span&gt;;&lt;span class="k"&gt;do&lt;/span&gt;
+
+getCpuInfo &lt;span class="nv"&gt;$COUNT&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\c&lt;/span&gt;pu&lt;span class="nv"&gt;$COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$DIFF_USAGE&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$cpu0"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu1"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu2"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu3"&lt;/span&gt; &lt;span class="s2"&gt;"$usedMemory"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$totalMemory"&lt;/span&gt; &lt;span class="s2"&gt;"$memInPercent"&lt;/span&gt; &lt;span class="s2"&gt;"$dlSpeed"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$upSpeed"&lt;/span&gt; &lt;span class="s2"&gt;"$traffic"&lt;/span&gt; &lt;span class="s2"&gt;"$date"&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBRecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Brecived&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBTransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Btransmited&lt;/span&gt;
+
+sleep 1
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.&lt;/p&gt;
+&lt;p&gt;همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.&lt;/p&gt;
+&lt;p&gt;حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;CPU: 48,3,40,3 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 8,4,76,4 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 24,5,64,6 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"&gt;&lt;img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید&lt;/p&gt;</description><category>awk</category><category>bash</category><category>printf</category><category>shell scripting</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دسته‌بندی نشده</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</guid><pubDate>Sat, 24 Nov 2012 15:07:09 GMT</pubDate></item><item><title>تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</title><link>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین اول کار بگویم که این روش تنها مخصوص موقعی است که PDF به صورت دیجیتالی تولید شده باشد و کاراکتر‌ها تصویر نباشند‌‌، که خوب برای کاراکتر‌های تصویری‌، نیاز به روش‌های اپتیکال است که فعلا در این بحث ما نمی‌گنجد‌. &lt;del&gt;برای نمونه من از کتاب _* که معرفی دوست خوبم &lt;a title="وبلاگ شخصی ایمان" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; است استفاده می‌کنم‌.&lt;/del&gt; نمونهٔ اولیه بنا به دلایلی معلوم با&lt;a title="Ashamloo" href="http://dl.dropbox.com/u/25017694/Blog_files/Ahanha_Va_Ehsas_(www.txt.ir).pdf"&gt; کتابی&lt;/a&gt; از احمد شاملو عوض شد!
+اول از همه PDF را با برنامهٔ PDFخوان پیش‌فرض میزکار KDE یعنی Okular باز می‌کنیم‌. یک نگاه به قد و بالایش می‌اندازیم و سپس از منوی فایل‌، گزینهٔ Export as و سپس Plain text را انتخاب می‌کنیم‌. خروجی این عمل ما یک فایل متنی است که فکر می‌کنیم همه کار را به درستی انجام داده‌. (البته من که اول اصلا فکرش را هم نمی‌کردم که بتوان خروجی فارسی گرفت) در نگاه اول کارمان تمام شده است‌. ولی بگذارید آن را با یک ویرایشگر باز کنیم‌. آن را با ایمکس باز می‌کنم و از آن‌جایی که تنظیم فونت‌هایم را از روی روشی که فرود عزیز در stackoverflow&lt;a title="emacs font for western and other like rtl" href="http://stackoverflow.com/questions/11012627/emacs-font-for-western-and-other-like-rtl" target="_blank"&gt; پیشنهاد کرده‌&lt;/a&gt;، انجام داده‌ام نکته‌ای عجیب به نظر می‌رسد‌!&lt;/p&gt;
+&lt;p&gt;مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و &lt;a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank"&gt;وضع اینترنت‌ام&lt;/a&gt; هم معلوم است‌، از دوست &lt;a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank"&gt;libreoffice کار قهارم&lt;/a&gt; می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))&lt;/p&gt;
+&lt;p&gt;پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp;amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.&lt;/p&gt;
+&lt;p&gt;پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def read_file&lt;span class="o"&gt;(&lt;/span&gt;file_name&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;the_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; codecs.open&lt;span class="o"&gt;(&lt;/span&gt;file_name, &lt;span class="nv"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;return &lt;/span&gt;the_file
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_characters&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print char
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_unicode_code&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def replace_unicode_char&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+print unichr&lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;(&lt;/span&gt;line&lt;span class="o"&gt;))&lt;/span&gt;.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.&lt;/p&gt;
+&lt;p&gt;من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از&lt;a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"&gt; این‌جا &lt;/a&gt;دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt -u &amp;amp;gt; chrcodes.txt
+
+sort -u chrcodes.txt &amp;amp;gt; uniq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i uniq.txt &amp;amp;gt; uniqchr.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به &lt;a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank"&gt;Arabic Presentation Forms-B&lt;/a&gt; داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+&lt;span class="k"&gt;if &lt;/span&gt;ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt; in &lt;span class="o"&gt;(&lt;/span&gt;64343, 64344, 64345&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"پ"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sys.stdout.softspace&lt;span class="o"&gt;=&lt;/span&gt;False
+
+try:
+
+print char.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+
+except UnicodeDecodeError:
+
+print char,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt &amp;amp;gt; validashamloo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب کار تقریبا تمام شد‌. ولی خوب‌، کامپیوتر است دیگر‌. همیشه که درست عمل نمی‌کند‌. فایل خروجی نمونهٔ مرا در&lt;a title="ashamloo text file" href="http://dl.dropbox.com/u/25017694/Blog_files/ashamloo.txt.xz" target="_blank"&gt; این‌جا&lt;/a&gt; می‌بینید‌. خالی از اشکال هم نیست‌، ولی خوب طبیعتا مشکلات زیادی را برایم حل می‌کند (دیگر لازم نیست به آن فونت کذایی Arial زل بزنم). دیگر باقی کار‌ها می‌افتد گردن یک ویراستار به درد بخور‌. (البته شاید بتوان از &lt;a title="نسخهٔ جدید ویرایشگر متن نگار" href="http://shahinism.com/blog/1391/07/10/%d9%86%d8%b3%d8%ae%d9%87%d9%94-%d8%ac%d8%af%db%8c%d8%af-%d9%88%db%8c%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%b1-%d9%85%d8%aa%d9%86-%d9%86%da%af%d8%a7%d8%b1/" target="_blank"&gt;نگار&lt;/a&gt; هم کمک گرفت‌، که فعلا دارم شدیدا رویش کار می‌کنم‌. نسخهٔ فعلی‌اش مشکلاتی دارد‌، ولی امیدوارم بتوانم حل‌شان کنم‌)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; Okular از قرار‌، قادر نیست PDF‌هایی که رمزگذاری شده‌اند را باز کند (خودم امتحان نکردم) در آن صورت یک ابزار پایتونی برای این کار وجود دارد که در آینده در موردش می‌نویسم‌. تا این‌جای کار‌، خروجی‌های این تابع زیاد با روش ذکر شده همخوانی ندارد‌، پس باید به فکر دستکاری‌اش باشم‌. اسم این تابع هم در صورتی که دل‌تان می‌خواهد کشفش کنید pdfminer است.&lt;/p&gt;</description><category>KDE</category><category>LaTeX</category><category>ocr</category><category>okular</category><category>PDF</category><category>Python</category><category>tex</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کتاب</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</guid><pubDate>Thu, 22 Nov 2012 14:31:08 GMT</pubDate></item><item><title>وقتی دزدی می‌کن(م،ن،ید)</title><link>http://shahinism.com/posts/blog13910825wqty-dzdy-mykhnmnyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;strong&gt;پیش‌نوشت: &lt;/strong&gt;تو را سر جدتان‌، اگر آدمش نیستید‌، این متن را بی‌خیال شوید‌‌، ماشالله تا دل‌تان بخواهد در اینترنت‌مان متن خوشمزه پیدا می‌شود. نه حوصله‌اش را دارم‌، نه توانش را‌، پس لطفا بی‌خیال بحث‌های فلسفی صدتا یه غاز شوید ;-)
+آن وقت‌ها که بچه‌تر بودم‌، می‌دیدم که بزرگ‌تر‌ها هر مشکلی که خودشان نمی‌توانستند حل کنند می‌انداختند گردن دسته‌ای خاصی از مردم‌. دایم می‌شنیدم که زمان ما که این‌طور نبود که‌، از وقتی این … اومدن‌، این‌طوری شد‌. اگر دزدی بود‌، باعث بانی‌اش همین‌ها بودند‌. اگر دروغ بود‌، از دهن همین آدم‌ها می‌جست بیرون‌. نمی‌دانم‌، خود‌تان دیگر تا ته ماجرا را می‌دانید‌. وقتی برزرگتر شدم‌، دیدم که همان آدم‌ها هم دایما تقصیر‌ها را بین گردن‌های مبارک یکدیگر مبادله می‌کنند‌.
+&lt;p&gt;حتما شما هم دیده‌اید دیگر‌، آدم‌هایی که تا تقی به توقی می‌خورد دم از حکومت دو هـــــــزار و پانصد سالهٔ آریایی و فرهنگش می‌زنند و کلی هم به آن افتخار می‌کنند‌. بعدش هم پشت‌بندش از عبارات نوازش‌گرانه‌ای نسبت به اعراب و دست ساخت‌هاشان برای رفع مسئولیت استفاده می‌کنند‌.&lt;/p&gt;
+&lt;p&gt;حرف من نیست که کدام یک از این حرف‌ها بی‌خود است و کدام یکی نه‌. می‌خواهم بگویم کرم از درخت است آقا جان‌. خودمان هم در کسری از ثانیه‌، اگر پایش بیافتد‌، آن‌چنان دروغ و دزدی‌ای می‌کنیم‌، که خود خدا هم در چگونگی‌اش می‌ماند! اگر می‌گویند و می‌شنویم که فساد در قبل از انقلاب به دم در خانه‌مان رسیده بود (که هنوز هم نتوانسته‌ام درک کنم اگر طبیعت انسان می‌شود فساد‌، پس چرا این‌ها نمی‌شود) به حول قوهٔ فرهنگ دو هزار و پانصد ساله‌ای که داریم‌، بیشعوری به عمق وجودمان رسوخ کرده‌.&lt;/p&gt;
+&lt;p&gt;ماشالله نیست که بیشعور‌های سطح بالایمان کم اینترنت‌مان را با بهانهٔ این که کشور‌های غربی هم آن را محدود می‌کنند محدود کرده‌اند (کسی هم نیست بگوید آن‌ها اینترنت را با کیفیتی غیر قابل مقایسه با آنی که شما ارائه می‌دهید و با قیمتی خیلی‌، خیلی‌، خیلی پایین‌تر از چیزی که شما به مردم تحمیل می‌کنید ارائه می‌دهند‌، چرا آن‌وقت شما چیز‌های بدش رو بهانه قرار می‌دهید‌) و اصلا بیشعور‌های سطح بالای دنیوی (یکیش همین دار و دستهٔ گوگل) باقی جاهای باقی مانده را از دستمان در نیاورده‌اند، این شرکت‌های به قولی غیر دولتی که از میان همین مردم در آمده‌اند‌، در آن زخم سر باز کرده مثل چی نمک می‌ریزند و کیف می‌کنند‌!&lt;/p&gt;
+&lt;p&gt;نمی‌دانم این تبلیغات اخیر پارس آنلاین را در سایتش دیده‌اید یا نه‌. این‌جاها را ببینید:&lt;/p&gt;
+&lt;p&gt;این سرویس مناسب چه کسانی است؟&lt;/p&gt;
+&lt;blockquote&gt;کاربران پرمصرفی که مصرف گیگ بسیار بالایی دارند. قاعدتاً برای این گروه از کاربران به لحاظ مالی مقرون به صرفه نخواهد بود تا پکیج های حجمی محدود به همراه گیگ اضافه را خریداری نمایند.
+
+کاربرانی که نیاز به اطمینان خاطر از بابت اتصال دائمی به اینترنت و عدم قطعی اینترنت خود دارند و مایلند در تمام شبانه روز آنلاین باشند. برای این دسته از کاربران نیز بهینه نیست که پکیج های حجمی محدود به همراه گیگ اضافه خریداری نمایند.&lt;/blockquote&gt;
+
+&lt;p&gt;یا خصوصا این بخش را:&lt;/p&gt;
+&lt;blockquote&gt;کاربرانی که پکیج های نامحدود را خریداری می نمایند مطمئن باشند &lt;strong&gt;همواره سرعت اسمی پکیج خود را دریافت می نمایند و هیچ نگرانی از این بابت وجود ندارد و می توانند بدون محدودیت حجمی از اینترنت پرسرعت استفاده نمایند.&lt;/strong&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;مای از همه جا بی‌خبر‌، که دیگر داشت دردش خیلی زیاد می‌شد که هر ماه یک پکیج چهار گیگی بخریم و در صورت کم آمدنش که عموما همان ۱۰ روز اول می‌آمد‌، پول یک گیگ حجم را ۵۰۰۰ تومانی واریز کنیم (خداییش درد دارد) به امید این که یک ماه اینترنت با سرعت ۱۲۸ کیلوبایت (دانلود) و بدون استرس تمام شدن حجم داشته باشیم‌، خر شدیم (هر چه گشتم عبارت با مسماتری پیدا نکردم) و به مبلغ ۲۸۵۰۰ تومان‌، یعنی ۲۷۰۰۰ تومان هزینهٔ سرویس + ۱۵۰۰ تومان مالیات (یعنی حتی مالیات هم دادم) یک دانه‌اش را خریدم‌. تا دو هفتهٔ اول خوب بود‌. واقعا خوب بود‌. سرعت گاها تا ۱۳۰ کیلوبایت هم می‌رسید‌. ولی این وضعیت تا زمانی ادامه داشت که حجم دانلودی‌ام زیر هشت گیگابایت بود‌.&lt;/p&gt;
+&lt;p&gt;الان که این متن را می‌نویسم یک هفته‌ای می‌شود که سرعت دانلودم به زور از ۱۳، ۱۴ کیلوبایت فراتر می‌رود‌. تازه آن هم در صورتی که بتوانم کانکت شوم‌. خواستم بگویم که همچین یاد حرف آن بندهٔ خدایی افتادم که گفته بود:&lt;/p&gt;
+&lt;blockquote&gt;
+
+اگر همین فردا کل کابینهٔ دولت را یکجا بردارند و همتایان سوئیسی‌شان را بنشانند سر جایشان‌، یک هفتهٔ بعد باز هم وضع همین است.
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;هر چه هم سعی کردم نفهمیدم این حرف را از کدام بندهٔ خدا خوانده‌ام‌.&lt;/p&gt;</description><category>اینترنت</category><category>اینترنت</category><category>بررسی</category><guid>http://shahinism.com/posts/blog13910825wqty-dzdy-mykhnmnyd.html</guid><pubDate>Thu, 15 Nov 2012 20:10:59 GMT</pubDate></item><item><title>Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</title><link>http://shahinism.com/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حقیقتش مشکل خاصی نبود ولی وقتی به چشم می‌آمد خیلی تو ذوق می‌زد‌! منظورم همین Notification‌هایی است که وقتی مثلا Thunderbird ایمیلی دریافت می‌کند روی صفحه ظاهر می‌شوند (یا هر نرم‌افزار دیگری که بخواهد چیزی به اطلاع آدم برساند). روی KDE یا Gnome ابزار‌های مربوطه‌شان به صورت خودکار لود می‌شد و احتمالا این احساس به آدم دست می‌داد که این‌ها مربوط به خود میزکارند که خوب احساس دروغی بود D: روی &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/"&gt;Awesome کبیر&lt;/a&gt; هم از Naughty استفاده می‌شد که الحق تیپ خیلی زیبایی داشت و به میز‌کار می‌آمد‌.
+بعد از مهاجرت به i3 بود که جون روی اسلکور به صورت پیش‌فرض xfce4-notifyd نصب بود مشکلی که ذکر خیرش رفت ظاهر می‌شد‌. متاسفانه از آن‌جایی که i3 دوست داشت دور هر چیزی کادر شناسایی پنجره‌اش را بکشد‌، با همچین منظره‌ای روبرو می‌شدیم‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"&gt;&lt;img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"&gt;&lt;/a&gt;جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با &lt;a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank"&gt;Dunst&lt;/a&gt; آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;p style="text-align: left;"&gt;dunst - dmenu-ish notification daemon&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p&gt;و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.knopwob.org/public/dunst_wide_640.png"&gt;&lt;img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"&gt;&lt;/a&gt;برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.&lt;/p&gt;
+&lt;p&gt;بعد از نصب هم با دستور زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;cp /usr/share/dunst/dunstrc ~/.config
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک نمونه از فایل تنظیمات را در پوشهٔ خانگی‌تان کپی کنید‌. از من می‌شنوید چرخی در این فایل بزنید چون تنظیمات خیلی به درد بخوری در آن پیدا می‌کنید‌ (ضمن این که ظاهر اولیه اصلا شباهتی به Dmenu ندارد ;-))&lt;/p&gt;
+&lt;p&gt;اما بیشترین نقاط قوت این اطلاع رسان ساده در میانبر‌های کیبوردش مخفی شده به طوری که:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.&lt;/li&gt;
+    &lt;li&gt;می‌توانید با Ctrl+grave آخرین اخطاری که ظاهر شد و شما ندید را به روی صفحه برگردانید (که به نظرم خیلی به درد بخور است). grave همان دکمه‌ای است که باهاش ~ تایپ می‌کنید‌. کنار ۱ و بالای TAB ;-)&lt;/li&gt;
+    &lt;li&gt;یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;نکته ۱:&lt;/strong&gt; برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;notify-send Test
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که جای Test هر چیزی که خواستید می‌توانید به عنوان پیغام اضافه کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نکته ۲:&lt;/strong&gt; Dunst تنها قبل از اجرای daemon‌ش فایل کانفیگی که در ‎.config ذخیره کردیم را می‌خواند‌. برای دیدن تغییرات باید اول این daemon را kill کنید و دوباره اجرایش کنید ;-)&lt;/p&gt;</description><category>dunst</category><category>dwm</category><category>i3</category><category>xfce4-notifyd</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</guid><pubDate>Sat, 13 Oct 2012 13:26:09 GMT</pubDate></item><item><title>Surfraw فرزند خلف ژولین آسانژ جستجو‌گر!</title><link>http://shahinism.com/posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبلا هم خوانده بودم که &lt;a title="ژولیان آسانژ در ویکی پدیای فارسی" href="http://fa.wikipedia.org/wiki/%D8%AC%D9%88%D9%84%DB%8C%D9%86_%D8%A2%D8%B3%D8%A7%D9%86%DA%98" target="_blank"&gt;ژولین آسانژ &lt;/a&gt;یک هکر بوده (‌یا هست‌!) ولی حقیقتش خیلی دوست داشتم یک کار درست و درمان از او ببینم‌ (البته شدیدا قبول دارم که بهترین هک او همان سایت معروفش &lt;a title="wiki leaks official page" href="http://wikileaks.org" target="_blank"&gt;wikileaks&lt;/a&gt; است). امروز به لطف &lt;a title="Surfraw on linuxaria" href="http://linuxaria.com/article/surfraw-surf-the-web-from-the-cli?lang=en" target="_blank"&gt;Linuxaria&lt;/a&gt; با ابزاری آشنا شدم که در آخر man page اش‌، این عبارت نقش بسته:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Originally written by Julian Assange.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و خوب فکر می‌کنم برنامهٔ خوبی برای آشنا شدن با یک هکر و اخلاقیاتش باشد‌. می‌پرسید چطور؟ قبلا هم ابزار‌هایی معرفی کرده‌ام که سرعت کار با سیستم را برای من کاربر افزایش می‌دهند‌. خصوصا در زمینهٔ مرور وب وقتی که پای هیولایی مثل &lt;a title="کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)" href="http://shahinism.com/blog/1391/01/05/%da%a9%d9%86%d8%aa%d8%b1%d9%84-%da%a9%d8%a7%d9%85%d9%84-%d9%81%d8%a7%db%8c%d8%b1%d9%81%d8%a7%da%a9%d8%b3-%d8%a8%d8%a7-%da%a9%db%8c%d8%a8%d9%88%d8%b1%d8%af-pentadactyl-vimperator-firemacs/" target="_blank"&gt;Pentadactyl&lt;/a&gt; وسط می‌آید‌، تقریبا حرفی برای گفتن باقی نمی‌ماند‌. اما خوب ما یک کاربر عادی نیستیم‌. اصولا زندگی دیجیتال ما به موتور‌های جستجو (خصوصا گوگل) پیوند خورده و خوب حتی با ابزار‌های قبلی‌ای که می‌شناختم‌، جستجوی پیشرفته در گوگل کاری تکراری و غیر جذاب بود‌. از طرف دیگر کار جستجوی ما تنها به گوگل ختم نمی‌شود‌. Wikipedia‌، یا IMDB یا حتی از آن‌ها مهم‌تر Youtube را هم عموما من از داخل گوگل جستجو می‌کردم‌، و خوب این بار ترافیک تحمیل شدهٔ اضافی گوگل‌، خصوصا با بعضی خواص کوچک و آزار دهنده‌اش‌، زیادی هم گیکانه نبود‌!&lt;/p&gt;
+&lt;p&gt;اگر از کار کردن در ترمینال نه تنها ترسی ندارید‌، بلکه لذت هم می‌برید‌، &lt;a title="surfraw official webpage" href="http://surfraw.alioth.debian.org/" target="_blank"&gt;Surfraw&lt;/a&gt; می‌تواند نقش یک چاقوی سوئیسی مخصوص جستجو در اینترنت را بازی کند‌. چطور؟ اول بسته به توزیع‌تان یک نسخه از آن را نصب کنید (مدارک Slackbuild‌اش هم موجود است ;-))&lt;/p&gt;
+&lt;p&gt;حالا برای شروع در ترمینال‌تان تایپ کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;surfraw google -l Julian Assange
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ها ها‌، نتیجه جالب بود؟ خوش‌تان آمد؟ نکند با خود فکر می‌کنید که تایپ دوباره و دوبارهٔ surfraw خسته کننده است‌؟ خوب می‌توانید از Alias مخصوصش یعنی sr استفاده کنید‌. باز هم طولانی است؟ بهترش را می‌خواهید؟ پس‌، بگذارید کمی با ساختار دستور بالا آشنا شویم‌.&lt;/p&gt;
+&lt;p&gt;بعد از دستور surfraw در بالا ما google را داریم که طبیعتا نام یکی از موتور‌های جستجوی پشتیبانی شده در surfraw است‌. خوب در surfraw به این موتور‌های جستجو می‌گوییم elvi‌! چه می‌دانم‌، شاید ژولین عاشق الویس پریسلی بوده ;-) برای دیدن لیستی از elvi‌هایتان (موتور‌هایی که surfraw الان پشتیبانی می‌کند‌، دستور زیر را تایپ کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sr -elvi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;هوم؟ شگفت زده شده‌اید؟‌ چند لحظهٔ دیگر خود را کنترل کنید‌. قرار شده بود از دست آن sr کذایی هم خلاص شویم‌. کار سختی نیست‌، کافیست پوشهٔ مربوط به همین elvi‌ها (برنامه‌های منحصر به فرد کوچکی که برای کار با هر موتور جستجو طراحی شده‌) به PATH‌تان اضافه کنید‌. این پوشه را:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/share/surfraw
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب این یک خبر خوش دیگر هم به ما می‌دهد‌. آن هم مربوط به آن ‎-l ای می‌شود که ما در دستور بالا استفاده کردیم و به قولی استفاده از آیتم (I'm feeling lucky) گوگل را برای‌مان به ارمغان آورد‌. چطور؟ این‌جاست که در حقیقت این چاقوی سوئیسی برگ برنده‌اش را رو می‌کند‌. در ترمینال تایپ کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sr google --help
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;واو‌، تمام آن کنترل‌هایی که می‌توانستیم در رابط وب گوگل استفاده کنیم و بخاطر کلیک‌های زیاد تا رسیدن به مزیت‌شان تنبلی‌مان می‌آمد‌، تنها با یک تگ کوچک همین‌جا مهیاست‌ D: از طرفی این امکان برای هر elvi دیگری هم مهیاست‌. کمی با elvi‌هایتان بازی کنید و بیشتر و بیشتر شگفت‌زده شوید!&lt;/p&gt;
+&lt;p&gt;موتور‌های جستجوی پشتیبانی شده واقعاً زیادند‌. امکانات این نرم‌افزار هم فوق‌العاده قابل شخصی‌سازی و بهره‌وری بهتر است که من عمراً در این ذوق زدگی و کار ده دقیقه‌ای نمی‌توانم ذره‌ای از آن‌ها را بیان کنم‌. man page کامل و بدرد بخورش می‌تواند خیلی کمک‌تان کند‌. مثلاً آن قابلیت bookmark به نظر چیز جالبی می‌آید‌. یا پشتیبانی از جستجو در ctan یا خیلی چیز‌های دیگر که اصلا در مخیله‌ام هم نمی‌گنجد که چه هستند و کجا رو می‌گردند‌. به قولی خوراک گیک بازیمان برای مدتی جور شده است انگار‌، اینطور نیست؟ ;-)&lt;/p&gt;</description><category>Julian Assange</category><category>surfraw</category><category>اینترنت</category><category>بررسی</category><category>معرفی ابزار</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html</guid><pubDate>Tue, 04 Sep 2012 11:09:05 GMT</pubDate></item><item><title>از Autojump در ترمینال غافل نشوید‌!</title><link>http://shahinism.com/posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="آدرس‌ها را در خط فرمان Bookmark کنید!" href="http://shahinism.com/blog/1391/01/03/%d8%a2%d8%af%d8%b1%d8%b3%e2%80%8c%d9%87%d8%a7-%d8%b1%d8%a7-%d8%af%d8%b1-%d8%ae%d8%b7-%d9%81%d8%b1%d9%85%d8%a7%d9%86-bookmark-%da%a9%d9%86%db%8c%d8%af/"&gt;قبلا در مورد Bashmark نوشته بودم&lt;/a&gt; و دقیقا همین قبلا بود که &lt;a href="http://cyberrabbits.net/" target="_blank"&gt;فرود&lt;/a&gt; عزیز گفت که از &lt;a title="autojump official git channel" href="https://github.com/joelthelion/autojump" target="_blank"&gt;Autojump&lt;/a&gt; استفاده می‌کند‌. اما آن موقع‌ها بخاطر یک باگ کوچک نادیده گرفته بودمش‌! امروز که دیگر آن باگ یادم نبود بار دیگر تستش کردم و (آخه دیگه چی بگم؟ این لعنتی خیلی با شعوره‌!) اصلا خودتان این ویدئو را ببینید تا زورش را درک کنید:
+&lt;p class="aligncenter"&gt;&lt;iframe src="http://www.youtube.com/embed/tnNyoMGnbKg" frameborder="0" width="420" height="315"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;هــاها‌! کدام ابزار را می‌شناسید که سریع‌تر بین دایرکتوری‌ها جابجایتان کند؟ خوب دیگر پر حرفی بس است‌. برویم سر اصل ماجرا‌. نصب و حل یک مشکل‌!&lt;/p&gt;
+&lt;h5&gt;نصب&lt;/h5&gt;
+
+&lt;p&gt;برای نصب اگر پایتون روی سیستم‌تان بالا‌تر از ۲.۷ است که خیال‌تان راحت و تنها کافییست که آن را از کانال گیتش دریافت کنید و پس از ورود به پوشه‌اش اسکریپت install.sh را اجرا کنید‌. اما اگر مثل من با این ترافیک داغان اینترنت روی اسلکور استیبل گیر کرده‌اید (این یعنی پایتون ۲.۶) پس باید یک چند‌تا کار اضافه انجام دهید‌ (یا شاید هم بخواهید به ورژن ۱۹ که توی اسلک‌بیلد‌ها پیدا می‌شود بسنده کنید):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sbopkg -R -i &lt;span class="s2"&gt;"pysetuptools pip"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;امیدوارم sbopkg را نصب کرده و بی‌خودی زندگی را برای خود سخت نگیرید ;-) حالا هم کافیست که با pip بستهٔ مورد نیاز Autojump را نصب کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;pip install argparse
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سپس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git clone git://github.com/joelthelion/autojump.git
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;autojump
+
+./install.sh --force
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا خط زیر را به ‎.zshrc اضافه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -s /etc/profile.d/autojump.zsh &lt;span class="o"&gt;]]&lt;/span&gt; &amp;amp;amp;&amp;amp;amp; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile.d/autojump.zsh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;مشکل&lt;/h5&gt;
+
+&lt;p&gt;و خوب کار باید تمام شده باشد اما دستور زیر را امتحان کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;vim ~/.zsh&lt;span class="o"&gt;[&lt;/span&gt;TAB&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که احتمالا چیزی شبیه خروجی زیر نصیبتان می‌شود:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+
+_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+
+_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و این یعنی اتوکامپلیشن فوق‌العادهٔ ZSH جلوی دستور vim از کار می‌افتد‌! خوب چه کنیم؟ تنها یک راه حل در اینترنت جواب این مساله بود و آن هم &lt;a title="Problem on Arch forum" href="https://bbs.archlinux.org/viewtopic.php?id=37245" target="_blank"&gt;از انجمن آرچر‌های &lt;/a&gt;اعظم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$fpath&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;see the &lt;span class="k"&gt;function &lt;/span&gt;PATH of zsh&lt;span class="o"&gt;)&lt;/span&gt;
+
+/usr/share/zsh/site-functions /usr/share/zsh/4.3.11/functions
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/share/zsh/4.3.11/functions
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;ls _vi*
+
+_vim
+
+rm _vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا لذت ببرید ;-)&lt;/p&gt;</description><category>autojump</category><category>pip</category><category>Python</category><category>sbopkg</category><category>Zsh</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</guid><pubDate>Sat, 04 Aug 2012 17:52:20 GMT</pubDate></item><item><title>تجربهٔ کار با i3 یک رقیب قدر‌!</title><link>http://shahinism.com/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبلا در مورد این که &lt;a title="یک پوسته برای مدیر پنجره Awesome" href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" target="_blank"&gt;Awesome&lt;/a&gt; به میزکار محبوبم بدل شده بود نوشتم‌. همین‌طور از هفت‌خوانی که باید برای &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/" target="_blank"&gt;نصبش روی اسلکور&lt;/a&gt; می‌گذراندم. اما چند وقت پیش که مجبور به نصب دوبارهٔ اسلکور شدم (یک اشتباه فوق‌العاده ناشیانه سبب شد)‌ دیدم که دوباره هفت خوان قبلی جواب نمی‌دهد‌. نصب بسته‌ها با توجه به قدیمی بودن بعضی بسته‌ها روی نسخهٔ استیبل اسلکور که من استفاده می‌کنم داشت دیگر کار دستم می‌داد. بعد از به روزرسانی این بار بسته‌های xcb دیگر حتی فایرفاکس هم ران نمی‌شد‌. زیاد بودن وابستگی‌های این نرم‌افزار و بعضا دستکاری‌های لازم برای نصبش روی اسلکور دیگر داشت دردناک می‌شد‌. همچنین مصرف بی‌خودی CPU برای یک میزکار که سبکی‌اش (که &lt;a title="فرود" href="http://cyberrabbits.net/" target="_blank"&gt;فرود&lt;/a&gt; عزیز در کامنت‌های&lt;a title="یادداشتی در مورد conky و داشتن خروجی فارسی روی آن" href="http://shahinism.com/blog/1391/01/08/%db%8c%d8%a7%d8%af%d8%af%d8%a7%d8%b4%d8%aa%db%8c-%d8%af%d8%b1-%d9%85%d9%88%d8%b1%d8%af-conky-%d9%88-%d8%af%d8%a7%d8%b4%d8%aa%d9%86-%d8%ae%d8%b1%d9%88%d8%ac%db%8c-%d9%81%d8%a7%d8%b1%d8%b3%db%8c-%d8%b1/" target="_blank"&gt; این پست&lt;/a&gt; اشاره کردند) باید چشم گیر باشد به دلیل استفاده از لوا در پکیج‌های گرافیکی نیز از طرف دیگر مزید بر علت شد که زحمت چشیدن میزکاری دیگر از این دست را به خودم بدهم‌.
+آپشن‌ها برای من دو تا بودند: ۱- &lt;a href="http://dwm.suckless.org/" target="_blank"&gt;dwm&lt;/a&gt; و ۲- &lt;a title="i3 official website" href="http://i3wm.org" target="_blank"&gt;i3&lt;/a&gt;*! حقیقتش را بخواهید طراحی مدرن صفحهٔ اول وبسایت میزکار i3 بود که نظرم را جلب کرد و آن را برای نصب انتخاب کردم‌. خوشبختی‌اش اینجا بود که یک &lt;a title="i3 &amp;amp; i3status slackbuilds" href="http://slackbuilds.org/result/?search=i3&amp;amp;sv=13.37" target="_blank"&gt;Slackbuild&lt;/a&gt; با پدر مادر برای نصبش حاضر بود و بسته‌های پیشنیاز زیادی نمی‌خواست‌. اما پس از نصب‌، ویژگی‌ها و مشکلاتی که سر راهم سبز شد را با هم مرور می‌کنیم‌، همچنین در ارسال بعدی در مورد نصب و کانفیگ این میزکار خواهم نوشت:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;ویژگی‌ها:&lt;/h4&gt;
+&lt;h5&gt;مستند‌سازی عالی:&lt;/h5&gt;
+
+&lt;p&gt;برای ورود به دنیای i3 جدای از این که اگر از Awesome استفاده کرده باشید نیاز به یادگیری چیز زیادی ندارید‌، می‌توانید به یک &lt;a title="i3 userguide" href="http://i3wm.org/docs/userguide.html" target="_blank"&gt;User guide&lt;/a&gt; عالی که توسط توسعه دهندگانش حاضر شده مراجعه کنید‌. چیزی که متاسفانه برای Awesome پیدا نمی‌شد‌!&lt;/p&gt;
+&lt;h5&gt;فایل config:&lt;/h5&gt;
+
+&lt;p&gt;کانفیگ میزکار Awesome با زبان lua نوشته می‌شد‌ که همین امر قابلیت‌های زیادی هم برایش به همراه می‌آورد‌. حال ممکن است که text بودن کانفیگ i3 کمی مایوس کننده به نظر برسد‌. اما سادگی و کارایی‌اش به خوبی کمک حالم شد‌. حقیقتش را بخواهید تا آخرین لحظات هم از زبان lua سر در نیاوردم و همین امر باعث شده بوده که بیشتر از کانفیگ‌های دیگران برای تنظیمات Awesome بهره بگیرم‌. ولی الان روی i3 همه چیز تحت کنترل من است‌. از طرفی اگر در فایل کانفیگ اشتباهی رخ داده باشد‌، سیستم خطایاب میزکار به دقت محل خطا و دلیلش را نشان می‌دهد‌، در حالی که در Awesome دیگر فایل کانفیگ لود نمی‌شد و از کانفیگ پیش‌فرض برای لود سیستم استفاده می‌شد‌.&lt;/p&gt;
+&lt;h5&gt;Tiling دستی&lt;/h5&gt;
+
+&lt;p&gt;حقیقتش را بخواهید دلیل جذب شدنم به Awesome قابلیت کنترل تمام و کمالش به کیبورد بود و نه Tilingاش‌! حتما می‌پرسید چرا؟ Tiling در Awesome به صورت خودکار انجام می‌گرفت و با وجود قابلیت استفاده از layout‌های مختلف هنوز هم یک جای کار می‌لنگید‌!‌ مثلا من نیازی ندارم که دیکشنری mdic هم tile شود‌! آن هم هر دفعه که می‌خواهد یک لغت ترجمه کند‌، این شد که کلا قابلیت نمایش پنجرهٔ mdic را بی‌خیال شده بودم و برای ظاهر نشدنش در هر جا به یک میزکار جدا محدودش کرده بودم‌. نرم‌افزار‌هایی از این دست برایم زیاد بودند‌. مثل gimp یا vlc یا صفحهٔ گفتگوی Pidgin! حالا i3 چطور کمکم می‌کند؟ در i3 به راحتی می‌توان تعیین کرد پنجرهٔ بعدی کجا باز شود و یا حالت پیش‌فرضی برای باز شدن پنجره‌ها تایین کرد‌. مثلا با یک meta+v می‌گویم پنجرهٔ بعدی زیر پنجرهٔ حاضر باز شود‌! البته هنوز یک مشکل هم دارم که احتمالا باگ باشد‌ (با این زبان داغانم&lt;a title="i3 faq" href="http://faq.i3wm.org/question/210/split-an-specific-window-horizontally/" target="_blank"&gt; در اینجا&lt;/a&gt; به مشکل اشاره کردم‌). یا اصلا می‌توان گفت که یک پنجره tile نشود‌! meta+shift+space پنجره را می‌کند و دیگر خیالت راحت است!&lt;/p&gt;
+&lt;h5&gt;میزکار‌های داینامیک‌:&lt;/h5&gt;
+
+&lt;p&gt;در آوسام شما یک تعدادی میزکار به صورت پیش‌فرض تعیین می‌کنید و باقی فعالیت‌هایتان محدود به همین میزکار‌هاست (البته این اواخر یک پلاگین هم پیدا کرده بودم که امکان ایجاد میزکار‌های جدید به صورت داینامیک را می‌داد). همچنین اگر میزکاری خالی بود هنوز هم جزو میزکار‌هایتان حساب می‌شد‌. اما در i3 شما عملا به تعداد میزکار‌های مورد استفاده‌تان میزکار دارید‌! همچنین میزکار‌های خالی بی‌خودی سیستمتان را معطل نمی‌کنند و بلافاصله حذف می‌شوند‌.&lt;/p&gt;
+&lt;h4&gt;مشکلات:&lt;/h4&gt;
+
+&lt;h5&gt;پشتیبانی نکردن از تایتل‌های فارسی:&lt;/h5&gt;
+
+&lt;p&gt;اعلان خط به صورت -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 که فکر می‌کنم مربوط به X باشد و با استفاده xfontsel قابل تعیین است‌، متاسفانه امکان استفاده از فونت‌های یونیکد را نمی‌دهد ( یا یه همچین چیزی! هنوز درست مشکل را درک نکرده‌ام! باید بیشتر تحقیق کنم ) همین می‌شود که در تایتل‌های فارسی برنامه‌ها که در فایرفاکس بیشتر از همه نمود پیدا می‌کند‌، به مشکل بر بخوریم‌. البته این مشکل را حل کرده‌ام و در پست بعد در موردش می‌نویسم‌.&lt;/p&gt;
+&lt;h5&gt;قابلیت‌های گزارش دهی ضعیف i3status:&lt;/h5&gt;
+
+&lt;p&gt;این برنامه در واقع برای گزارش‌گیری این نرم‌افزار و دادن اطلاعات برای منوهای میزکار ساخته شده‌. ولی با وجود این که اطلاعات اولیه خوبی ارائه می‌دهد ولی هنوز هم با وجود ابزاری مثل &lt;a title="یادداشتی در مورد conky و داشتن خروجی فارسی روی آن" href="http://shahinism.com/blog/1391/01/08/%db%8c%d8%a7%d8%af%d8%af%d8%a7%d8%b4%d8%aa%db%8c-%d8%af%d8%b1-%d9%85%d9%88%d8%b1%d8%af-conky-%d9%88-%d8%af%d8%a7%d8%b4%d8%aa%d9%86-%d8%ae%d8%b1%d9%88%d8%ac%db%8c-%d9%81%d8%a7%d8%b1%d8%b3%db%8c-%d8%b1/" target="_blank"&gt;conky&lt;/a&gt; وجودش تقریبا بیهوده است‌.&lt;/p&gt;
+&lt;h5&gt;keybinding برای تغییر صفحه کلید:&lt;/h5&gt;
+
+&lt;p&gt;حقیقتش این یکی نابودم کرد تا حلش کنم‌! دوست نداشتم روی X کلیدی تعریف کنم که صفحه کلید را تغییر دهد‌. از طرفی نمی‌خواستم عادت چندساله‌ام برای Alt+shift را کنار بگذارم‌. یعنی حقیقتش در اولین اقدام آمدم با Capslock این کلیدها را جایگزین کنم که عوض دو حالت‌، سه حالته شد‌! یعنی یک بار که می‌زدی انگلیسی بود‌، بار بعد انگلیسی Capital بود و بار بعد فارسی می‌شد (که باید دنبال دلیلش بگردم و اگر شد این کلید را جایگزین کنم). بگذریم‌! مشکل اینجا بود که برای keybindingها می‌شود از یک کلید یا یک metakey به علاوهٔ یک کلید استفاده کرد‌! حالا مشکل اینجا بود که alt و shift هر دو meta حساب می‌شوند و خوب یعنی نمی‌شد تعیینشان کرد‌! که البته این مشکل هم حل شده و در موردش در پست بعد می‌نویسم‌!&lt;/p&gt;
+&lt;h4&gt;نتیجه:&lt;/h4&gt;
+
+&lt;p&gt;با وجود این که i3 خیلی وقتم را برای کانفیگ و درکش گرفت و Awesome خیلی قابلیت‌های بدرد بخور و خوشگل‌تر از i3 داشت‌، سادگی و سر راست بودن این میزکار جذبم کرده و فعلا می‌خواهم از آن استفاده کنم‌! حتی اگر قابلیت نمایش عکس BackGround هم نداشته باشد D:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;*:&lt;/strong&gt; همانطور که گفتم برای من این دو تا بودند‌! آن بیرون خیلی خیلی بیشتر از دو انتخاب برای میزکار با این قابلیت‌ها وجود دارد!&lt;/p&gt;</description><category>awesome</category><category>conky</category><category>dwm</category><category>i3</category><category>unicode</category><category>xorg</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html</guid><pubDate>Thu, 05 Jul 2012 11:13:40 GMT</pubDate></item><item><title>ترمیناتور، آخر‌الزمان ترمینال‌ها</title><link>http://shahinism.com/posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;strong&gt;این پست ارزش معنوی ندارد‌!&lt;/strong&gt;&lt;/p&gt;
+حقیقتش یادم نمی‌آید دربارهٔ Terminator (Terminal Emulator)‎ قبلا حرفی زده باشم‌. امروز که پس از مدت‌ها استفاده از آن کشف کردم چه کلید میانبر‌های کاربردی‌ای دارد (خنگی و کوری دیگه تا چه حد آخه؟) تصمیم گرفتم یک اشارتی به ویژگی‌هایش داشته باشم‌.
+&lt;p&gt;ترمینال قبلی‌ای که استفاده کرده بودم Konsole بود‌! قبل‌تر‌ها هم (در دوران جاهلیت‌) از Terminal گنوم استفاده کرده بودم‌. ولی همیشه یک چیزی کم بود‌. آدم احساس خفگی می‌کرد‌. ابزار‌هایی مثل Screen بودند که کمک کننده باشند ولی خیلی از کار‌ها مثل قاچ کردن (!) صفحه به دو بخش. و یا این که ترمینال کانفیگ شده‌ام در تمام میز‌کار‌ها به یک شکل نشان داده شود‌ به نظرم خیلی مهم‌تر از ترنسپرنت شدن ترمینال می‌آمدند‌.&lt;/p&gt;
+&lt;p&gt;این شد که از هفت هشت ماه پیش (بخصوص پس از مهاجرت به Awesome) شروع به استفاده از &lt;a title="Terminator official website" href="http://software.jessies.org/terminator/" target="_blank"&gt;Terminator&lt;/a&gt; کردم‌. قابلیت Tabسازی و Split کردن صفحه‌اش با این کلید‌های میانبری که جدیدا کشف کردم‌، واقعا به سرعت کار کمک می‌کنند‌. (برای دیدن میانبر‌ها از Prefrences تب Keybinding را باز کنید)&lt;/p&gt;
+&lt;p&gt;همچنین قابلیت‌های دیگری هم مثل پشتیبانی از یونیکد (که به درد ما نخورد) نیز می‌تواند جالب توجه باشد‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;img class="aligncenter" title="نمونه‌ای از کار با Terminator" src="http://dl.dropbox.com/u/25017694/Blog-photos/Terminator.png" alt="نمونه‌ای از کار با Terminator" width="442" height="332"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>gnome</category><category>konsole</category><category>terminal</category><category>terminator</category><category>بررسی</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html</guid><pubDate>Wed, 20 Jun 2012 12:32:10 GMT</pubDate></item><item><title>نگاهی به ابزار Screen و قابلیت‌های کاربردی‌اش</title><link>http://shahinism.com/posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;شاید با وجود مدیر پنجره‌های امروزی‌، و امکانات چشم‌گیرشان‌، تصور زندگی در خط فرمان لینوکس برای خیلی از کاربران دور از ذهن بیاید‌. اما ابزار‌های زیادی در ترمینال هستند که در صورت آشنایی با آن‌ها می‌توانید کار‌هایتان را بسیار سریع‌تر و لذت‌بخش‌تر از محیط‌های گرافیکی معمول انجام دهید‌. مدت زیادیست که می‌خواهم درباره‌ی Screen‌، این ابزار کاربردی لینوکس بیشتر بدانم‌. ابزاری که قابلیت انعطاف زیادی را به ترمینال لینوکس اضافه می‌کند و باعث راحتی کار با آن می‌شود‌.
+به عنوان یک تنظیم کاربردی برای شروع کار‌، چند خط زیر را به فایل ‎.screenrc موجود در شاخه‌ی خانگی اضافه می‌کنیم (‌منیع از &lt;a title="gnu screen on redhat magazine" href="http://magazine.redhat.com/2007/09/27/a-guide-to-gnu-screen/" target="_blank"&gt;این‌جا&lt;/a&gt; و &lt;a href="http://compsoc.tardis.ed.ac.uk/wiki/Screen_Guide" target="_blank"&gt;این‌جا&lt;/a&gt;):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;hardstatus alwayslastline
+
+hardstatus string &lt;span class="s1"&gt;'%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Default screens&lt;/span&gt;
+
+screen -t shell1 0
+
+screen -t shell2 1
+
+screen -t server 2 ssh me@myserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;دو خط اول‌، یک استاتوس بار درست و درمان به خط فرمان اسکرین اضافه می‌کند که اطلاعاتش می‌تواند بسیار کمک کند‌. و در بخش Default screens نیز چند شل اولیه که می‌خواهیم پس از هر بار فراخوانی لینوکس به صورت Tab باز شوند را اعلان می‌کنیم. نمونه عکس زیر:&lt;/p&gt;
+&lt;p&gt;&lt;img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/screen.png" alt="" width="524" height="243"&gt;&lt;/p&gt;
+&lt;p&gt;ذره‌ای که با آن کار کنید‌، متوجه شباهت زیادش به یک مدیر پنجره‌ی ساده می‌شوید‌. برای تنظیم پنجره‌های پیشفرض می‌توانید از فرمت زیر استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;screen -t &amp;lt;&lt;span class="nb"&gt;command &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt; &lt;span class="nv"&gt;execute&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&amp;gt;&amp;lt;/command&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب حالا نوبت به شروع کار با screen می‌شود‌، که پس از فراخوانی‌اش در ترمینال می‌توانید با دستور‌های پایه‌ای زیر مقداری از قدرتش را تجربه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Ctrl+a 0-9 – سوئیچ بین پنجره‌های ۰ تا ۹
+
+Ctrl+a Ctrl+n – سوئیچ به پنجره فعال بعدی
+
+Ctrl+a Ctrl+p – سوئیچ به پنجره قبلی
+
+Ctrl+a Ctrl+a – پرش به پنجره قبلی که در آن بودید
+
+Ctrl+a A – تغییر نام نشست حاضر
+
+Ctrl+a K – کشتن نشست حاضر پنجره
+
+Ctrl+a c – ساختن پنجره جدید
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/p&gt;&lt;h5&gt;قابلیت یاد‌آوری:&lt;/h5&gt;
+&lt;p&gt;یک امکان جالب Screen این است که می‌توان آن را با Ctrl+a d به قولی دیتچ کرد (‌کلا بست گذاشت کنار) و سپس با دستور Screen -ls و کشف شماره اسکرین دیتچ شده به صورت زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;There is a screen on:
+
+18851.shahin &lt;span class="o"&gt;(&lt;/span&gt;Detached&lt;span class="o"&gt;)&lt;/span&gt;
+
+1 Socket in /home/shahin/.screen.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;با آرگومان‌های زیر به اسکرین دیتچ شده بازگشت:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;screen -r 18851
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;قابلیت اشتراک گذاری:&lt;/h5&gt;
+
+&lt;p&gt;دیگر قابلیت فوق‌العاده screen قابلیت به اشتراک گذاریش است‌. فرض کنید می‌خواهید فعالیت خود را در ترمینال با دوست دیگرتان (‌چه حالا روی یک سیستم و چه از روی یک اتصال SSH) به اشتراک بگذارید‌ (‌مثلا برای آموزش). این‌جاست که screen وارد می‌شود. برای برپا سازی چنین ارتباطی به صورت زیر عمل می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;As root&lt;span class="o"&gt;]&lt;/span&gt;
+
+chmod u+s /usr/bin/screen
+
+chmod 755 /var/run/screen
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حال از کاربر root خارج شوید و به عنوان کاربری که می‌خواهید screenاش به اشتراک گذاشته شود به سیستم متصل شده و دستورات زیر را بزنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;ctrl+a :multiuser
+
+ctrl+a :acladd shahin &lt;span class="o"&gt;(&lt;/span&gt;به جای شاهین نام کاربری که می‌خواهید اسکرین را با او به اشتراک بگذارید را وارد کنید‌&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;تا این‌جا کار کاربر میزبان به پایان رسیده‌. کاربر مهمان نیز تنها پس از اتصال به سیستم می‌تواند با زدن دستور screen -x shahinism/‎ که به جای shahinism نام کاربری میزبان را وارد کرده به سیستم متصل شود (‌به اکسلش پایان دستور توجه کنید‌).&lt;/p&gt;
+&lt;p&gt;اسکرین امکانات فوق‌العاده‌ی دیگری هم دارد که برای پی بردن به آن‌ها صفحه‌ی man این دستور مکان خوبی برای شروع است‌. بزرگترین مزیت استفاده از این ابزار برای من در مدیریت سرور است که با توجه به محدودیت حجمی و سرعت اینترنت نمی‌توانم به یک مدیر پنجره دسترسی داشته باشم. &lt;/p&gt;</description><category>gnu</category><category>screen</category><category>window manager</category><category>اینترنت</category><category>بررسی</category><category>سرور</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html</guid><pubDate>Wed, 28 Mar 2012 09:14:03 GMT</pubDate></item></channel></rss>

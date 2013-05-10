@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (Xdefaults)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>عشق بازی با ترمینال لینوکس‌ (urxvt, رنگ‌آمیزی و کانفیگش)</title><link>http://shahinism.com/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حقیقتش را بخواهید‌، کم نیستند کاربرانی که سال‌هاست با لینوکس کار می‌کنند‌، ولی هنوز از کار با ترمینال ترس دارند‌. حقیقت‌تر از آن هم این نکته است که شما هر چقدر هم در محیط‌های گرافیکی خبره باشید‌، باز هم نمی‌توانید آن‌طور که باید و شاید دنیای کامپیوتری‌تان را کنترل کنید‌. اصلا شاید زیاده روی می‌کنم‌، ولی همچین کاربرانی‌، با ویندوز هم می‌توانند نیاز‌هایشان را تامین کنند ;-). محیط شکیل X‌، کنترل راحت (و اصولا بدون یادگیری جدی) آن‌، و عمدهٔ کار‌هایی که می‌توان با ماوس سر و تهش را هم آورد‌، باعث می‌شود که گاها این طرز تفکر وجود داشته باشد که استفاده از ترمینال یک بازگشت به قرون وسطی حساب می‌آید!
+قبول دارم که برنامه‌هایی هستند که کنترل دستورات خط فرمان را برای کاربر آسان‌تر می‌کنند‌، ولی تقریبا غیر ممکن است که بتوان از آن‌ها به همان کیفیت دستورات ترمینالی استفاده کرد‌.&lt;/p&gt;
+&lt;p&gt;برای من یکی‌، ترمینال حکم چوب جادوگری را دارد‌. یعنی آن‌قدر قدرت دارد که صاحبش را تنها به دانش‌اش محدود می‌کند‌. در دنیای ترمینال‌، تقریبا همه چیز ممکن است‌. این است که لازم می‌شود بهترین چوب جادوگری ممکن را برای رفع نیاز‌های‌مان آماده کنیم‌.&lt;/p&gt;
+&lt;p&gt;قبلا در مورد Terminator پستی داشتم‌ (&lt;a title="ترمیناتور، آخر‌الزمان ترمینال‌ها" href="http://shahinism.com/blog/1391/03/31/%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d8%aa%d9%88%d8%b1%d8%8c-%d8%a2%d8%ae%d8%b1%e2%80%8c%d8%a7%d9%84%d8%b2%d9%85%d8%a7%d9%86-%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;+&lt;/a&gt;). تا همین چند روز پیش هم از آن استفاده می‌کردم‌. واقعا معرکه بود‌. همه چیز را آماده داشت و تا جای ممکن کمکت می‌کرد‌. اما چند روزی است که &lt;a title="urxvt official web page" href="http://software.schmorp.de/pkg/rxvt-unicode.html" target="_blank"&gt;urxvt&lt;/a&gt; و قابلیت‌هایش نظرم را جلب کرده‌. این است که ضمن جایگزین کردنش با Terminator چیز‌هایی از آن یاد گرفتم که می‌خواهم در این پست در موردش صحبت کنم‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h5&gt;رنگ‌آمیزی urxvt و Terminator&lt;/h5&gt;
+&lt;p&gt;اول این که حیفم آمد این روش تغییر رنگ Terminator را که یاد گرفته‌ام باز‌گو نکنم‌. این است که در این پست با یک تیر دو نشان می‌زنم‌.&lt;/p&gt;
+&lt;p&gt;دوم هم این که شاید این کار را بیهوده بدانید‌. ولی قرار است که مدت زیادی در این ترمینال کار کنیم و به نظرم حیاتی‌ترین کاری که باید انجام دهیم‌، قابل تحمل کردن رنگ‌بندی‌اش است ;-)&lt;/p&gt;
+&lt;p&gt;ترمینال‌هایی مثل urxvt و Terminator سر جمع ۱۸ رنگ را برای رنگ کردن خروجی‌شان استفاده می‌کنند‌. رنگ پس‌زمینه‌، رنگ اصلی خروجی‌، هشت رنگ تیره و هشت رنگ روشن‌. سر هم کردن این همه رنگ‌، جوری که بتوان از ترکیب‌شان استفاده کرد‌، جدا کار طاقت‌فرسایی است‌. حقیقتش من یکی که هرگز موفق نشدم به صورت دستی این کار را انجام دهم‌. همین سختی هم باعث شده که &lt;a title="4bit webpage" href="http://ciembor.github.com/4bit/" target="_blank"&gt;4bit&lt;/a&gt; به وجود بیاید‌. طرز کارش خیلی سر راست و ساده است‌. پالت رنگ‌تان را ایجاد کنید‌، و وقتی از خروجی خوشتان آمد روی Get scheme کلیک کنید (‌&lt;a title="my urxvt color scheme" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/color_scheme_example" target="_blank"&gt;رنگ‌های مورد استفاده من&lt;/a&gt;). همان‌طور که می‌بینید‌، برای اکثر ترمینال‌ها یک خروجی حاضر کرده‌‌، جز Terminator. خوب اگر می‌خواهید مثل من urxvt را کانفیگ کنید‌، کد مربوطه‌اش را بگیرید و بسته به تنظیمات توزیع‌تان آن را در ‎.Xdefaults یا ‎.Xresources وارد کنید‌ (برای فهمیدن چند و چون ماجرا man urxvt توضیحات خوبی داده).&lt;/p&gt;
+&lt;p&gt;حالا برگردیم به تنظیم رنگ برای آن یکی ترمینال محبوب‌مان‌. خیلی ساده‌، همان فایل مربوط به urxvt را بگیرید‌. &lt;a title="xterm to terminator python script" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/xterm_to_terminator.py" target="_blank"&gt;این اسکریپت پایتون&lt;/a&gt; را که نوشته‌ام را هم بگیرید و دو تا را کنار هم قرار داده و در ترمینال تایپ کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python xterm_to_terminator.py color_scheme_file
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خروجی را کپی کنید و در مسیر ‎.config/terminator/config جایگزین خطوط مربوطه کنید‌. (همه چیز سر راست است فکر کنم ;-))&lt;/p&gt;
+&lt;p&gt;یک نکته هم اضافه کنم‌. 4bit رنگ‌های خروجی‌اش را به صورت colorN یا background ارائه می‌دهد‌. در حالت کلی خوب است‌. ولی ممکن است شما دوست نداشته باشید تمام نرم‌افزار‌هایی که تنظیم رنگ‌شان را از منابع X می‌خوانند همین رنگی شود‌. این است که می‌توانید با تبدیل متغیر‌ها به صورت URxvt&lt;em&gt;colorN یا URxvt&lt;/em&gt;background آن‌ها را به urxvt محدود کنید ;-)&lt;/p&gt;
+&lt;p&gt;رنگ آمیزی تمام شد‌.&lt;/p&gt;
+&lt;h5&gt;کانفیگ urxvt&lt;/h5&gt;
+
+&lt;p&gt;urxvt عالی است‌. امکانات فوق‌العاده‌ای دارد‌. ولی تنظیمات پیش‌فرضش حال به هم زن است‌! یک ترمینال بی روح سفید نافرم‌! مشکل سفیدی‌اش که حل شد‌. ولی هنوز کار دارد‌.&lt;/p&gt;
+&lt;h6&gt;font:&lt;/h6&gt;
+
+&lt;p&gt;نویسندهٔ اصلی urxvt قبلا از mlterm استفاده می‌کرد‌. اما همیشه مجبور بود برای دیدن کاراکتر‌های ژاپنی (یا شایدم چینی) و لاتین‌، بین فونت‌های مختلف سوئیچ کند‌. چون هیچ فونت مناسبی پیدا نمی‌کرد که تمام کاراکتر‌های مورد نیازش را داشته باشد‌. همین می‌شود که کلافه از این که چرا توسعه دهنده‌ها فکر می‌کنند تمام کاراکتر‌های unicode را می‌توان با یک فونت نشان داد‌، دست به انگولک rxvt می‌زند و علاوه بر قابلیت یونیکد‌، پستیبانی از چند فونت را هم به آن اضافه می‌کند. برای تغییر فونت می‌توانید مثل من خط زیر را به ‎.Xdefaults اضافه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt*font: xft:Terminus:pixelsize&lt;span class="o"&gt;=&lt;/span&gt;12
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و یا اگر فکر می‌کنید فونت انتخابی‌تان به حد کافی کامل نیست‌، از ویژگی چند فونتی به صورت زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.font: 9x15bold,
+
+-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,
+
+-misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1,
+
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;codeset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;JISX0208&lt;span class="o"&gt;]&lt;/span&gt;xft:Kochi Gothic:antialias&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;,
+
+xft:Code2000:antialias&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک قابلیت جالب دیگر urxvt این است که می‌توان تعیین کرد که نوشته‌های Bold, Italic و یا Underline با فونت‌های متفاوتی نشان داده شوند‌. من خودم این‌ها را تنظیم نکردم (حقیقتش وقت نکردم هنوز) ولی می‌توانید در manpage به دنبال کانفیگ‌های boldFont, italicFont, boldItalicFont و … بگردید‌.&lt;/p&gt;
+&lt;h6&gt;تنظیم رابط:&lt;/h6&gt;
+
+&lt;p&gt;اسکرول‌بار به نظرم چیز زیادی‌ای است‌. ضمن این که خود urxvt میانبر‌هایی برای پیمایش متن دارد‌. همچنین urxvt این قابلیت را دارد که بهش بفهمانیم که چند خط از خروجی ترمینال را برای‌مان ذخیره کند تا بتوانیم آن را پیمایش کنیم‌.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt*scrollBar: False
+
+URxvt*scrollTtyOutput: False
+
+URxvt*scrollTtyKeypress: True
+
+URxvt*secondaryScroll: True
+
+URxvt*saveLines: 8000
+
+URxvt*letterSpace: 0
+
+URxvt*cursorBlink: True
+
+URxvt*cursorUnderline: True
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;پنج خط اول این تنظیمات که باید در فایل منبع X‌تان ذخیره کنید مربوط به چیز‌هایی است که ذکر‌شان رفت‌. ممکن است با توجه به شرایط نصب و کانفیگ‌تان احساس کنید که کاراکتر‌های متن در urxvt کمی فشرده است‌. تنظیم leterSpace می‌تواند در این رابطه کمک کند‌. اعدادی در بازهٔ اعداد صحیح می‌تواند برای کنترل این آپشن استفاده شود‌.&lt;/p&gt;
+&lt;p&gt;همینطور به طور پیش‌فرض نشانکر Urxvt ثابت است و من دوست دارد که بی‌حیائی کند و چشمک بزند‌. و البته به جای آن مربع همیشگی کاراکتر _ را ترجیح می‌دهم‌. دو خط آخر این تنظیمات مربوط به همین علایق است ;-)&lt;/p&gt;
+&lt;h6&gt;Modifier:&lt;/h6&gt;
+
+&lt;p&gt;کلید Modifier همان کلیدی است که برای زدن کاراکتر‌های ترکیبی (کنترل) urxvt مورد استفاده قرار می‌گیرد‌. این کلید قرار است به طور پیش‌فرض Alt باشد ولی نمی‌دانم چرا اصلا هیچ‌کدام از Modifier ها برای من کار نمی‌کرد‌. اگر شما هم در چنین وضعیتی هستید‌، با استفاده از خط زیر این ویژگی را تعریف کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt*modifier: alt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h6&gt;افزونه‌ها:&lt;/h6&gt;
+
+&lt;p&gt;یکی از قابلیت‌های خوشگل urxvt افزونه‌های perl‌اش است‌. افزونه‌هایی که قابلیت‌های گاها غیرقابل باوری به آن اضافه می‌کنند‌. فعلا ما تنها به باورپذیر‌هایش کار داریم‌. و اما از آن‌جایی که افزونه‌هایی که به طور پیش‌فرض همراه urxvt هستند کفاف نیازمان را نمی‌دهند‌، یک چند‌تایی هم از &lt;a title="urxvt-perls on git" href="https://github.com/muennich/urxvt-perls" target="_blank"&gt;این‌جا&lt;/a&gt; می‌گیریم‌.&lt;/p&gt;
+&lt;p&gt;فایل‌های این افزونه‌ها را دریافت کنید‌، و در مسیر ‎/usr/lib/urxvt/perl (یا اگر ۶۴ بیتی هستید lib64) قرار دهید‌. حالا خط زیر را برای وارد کردن‌شان به urxvt اضافه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.perl-ext-common : default,matcher,tabbed,keyboard-select,url-select,clipboard
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چند‌تای اول همراه خود i3 هستند که من آن tabbed را خیلی دوست دارم‌. می‌گذارد urxvt برای‌تان تب کند ;-) شوخی کردم‌، همان تب‌بندی خودمان است‌. برای این که به طور به درد بخوری کانفیگش کرده باشیم‌، خطوط زیر را به تنظیمات اضافه کنید (اعداد جلویشان همان شماره رنگ‌ها هستند):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.tabbed.tabbar-fg: 5
+
+URxvt.tabbed.tabbar-bg: 0
+
+URxvt.tabbed.tab-fg: 14
+
+URxvt.tabbed.tab-bg: 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فوق‌العاده است‌. با Shift و فلش پایین می‌توانید تب جدید اضافه کنید‌. با Shift و فلش‌های دو طرف به این‌ور آن‌ور بروید و با Ctrl+D تب را ببندید‌. کلید‌های بیشترش را از &lt;a title="urxvt tabs on arch wiki" href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Tabs" target="_blank"&gt;ویکی آرچ&lt;/a&gt; یاد بگیرید ;-)&lt;/p&gt;
+&lt;p&gt;اما سه افزونهٔ آخر آن‌هایی هستند که urxvt-perls برایمان ساخته‌. حقیقتش این است که این‌ها فقط یه سری تابع ساده به زبان perlاند‌. پس باید غیر از فعال کردن‌شان‌، کلید‌های میانبری برای اجرای‌شان تعریف کنیم‌.&lt;/p&gt;
+&lt;h6&gt;تعریف کلید میانبر:&lt;/h6&gt;
+
+&lt;p&gt;مثل همه جای دیگر‌، کار بسیار آسانی است‌. کلید متا یا Modifier‌مان را که تعریف کردیم‌، حالا کافیست که با سینتکس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;keysym.: Action
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک کلید میانبر تعریف کنیم‌. خوب بگذارید کمی مثال‌های واقعی‌تری بزنیم‌. افزونهٔ اول‌مان keyboard-select است که قابلیت‌های پیمایش ماهی در ترمینال به ما می‌دهد‌. تقریبا از ماوس بی‌نیازمان می‌کند. خطوط زیر را برای کانفیگش اضافه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.keysym.M-s: perl:keyboard-select:search
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا گفتیم با M-Escape یا همان Alt+Esc تابع پرل به نام keyboard-select را فعال کن. این کلید‌ها کمک می‌کند که با کلید‌های میانبر vim درون متن ترمینال پیمایش کنید‌. همینطور M-s قابلیت سرچ درون متن ترمینال را از تابع keyboard-select رو نویس می‌کند‌. (این قابلیت به صورت پیش‌فرض در urxvt وجود دارد ولی این یکی بهتر است ;-))&lt;/p&gt;
+&lt;p&gt;افزونهٔ بعدی url-select است‌. خیلی پیش می‌آید که می‌خواهیم تنها روی یک url از توی ترمینال کلیک کنیم‌. خوبیت ندارد که تابع Search را برای این کار انتخاب کنیم‌. این است که به صورت زیر این افزونه را فعال می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.url-select.autocopy: True
+
+URvxt.url-select.button: 2
+
+URxvt.url-select.launcher: firefox
+
+URxvt.url-select.underline: True
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر کنم تنظیمات به قدر کافی گویا هستند‌. پس دیگر زیاد شلوغش نمی‌کنم!&lt;/p&gt;
+&lt;p&gt;و افزونهٔ آخر clipboard که یک کمی درد‌سرش بیشتر است‌. این تابع به طور پیش‌فرض از xsel برای کپی و پیست متن استفاده می‌کند‌. (البته در ادامه می‌گویم که اگر خواستید چطور تغییرش دهید‌). این برنامه به دستور xsel -ib متن را کپی می‌کند (می‌توانید این دستور را تایپ کنید‌، انتر کنید‌، متن مورد نظر‌تان را تایپ کنید و Ctrl+D بزنید) و با xsel -ob متن را پیست کنید‌. به نظرم فکر خوبی است که این برنامه را نصب کنید (ضمن این که باقی برنامه‌ها هم عکس‌العمل خوبی بعد از نصب این برنامه نشان دادند ;-)) و بعد با خطوط زیر این افزونه را تنظیم کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-c: perl:clipboard:copy
+
+URxvt.keysym.M-v: perl:clipboard:paste
+
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;جای Ctrl+c و یا غیره ما از همان M استفاده کردیم‌ (آن هم از روی کالیبر بالایمان ;-)) ولی اگر دوست دارید که همان کلید‌های همیشگی را داشته باشید‌، به جای M حرف C بزرگ را تایپ کنید!&lt;/p&gt;
+&lt;p&gt;اما اگر حال نصب xsel را ندارید و دستور کپی دیگری مد نظرتان است‌، می‌توانید آن دستور‌ها را به صورت زیر جایگزین xsel کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;URxvt.clipboard.copycmd: Command
+
+URxvt.clipboard.pastecmd: Command
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب تا همین اندازه فکر کنم برای شروع کار کافی باشد‌. فایل کانفیگ کامل من را می‌توانید در&lt;a title="My xdefaults config" href="https://raw.github.com/shahinism/.configs/master/.Xdefaults" target="_blank"&gt; این لینک &lt;/a&gt;ببینید‌. اما هنوز هم نکاتی هست که ذکرشان خالی از لطف نیست:&lt;/p&gt;
+&lt;h5&gt;نکات اضافه:&lt;/h5&gt;
+
+&lt;ul&gt;&lt;li&gt;یکی از قابلیت‌های خیلی به درد بخور urxvt این است که می‌توان به صورت daemon اجرایش کرد‌. یعنی یک بار هستهٔ daemon را اجرا می‌کنید و پس از آن ترمینال‌های مختلف را روی همان هستهٔ اصلی به صورت کلاینت صدا می‌کنید‌. مزیت این کار سرعت خیلی بالای فراخوانی ترمینال‌هاست‌. ولی خوب یک مشکل هم دارد‌. اگر یک ترمینال کرش کند‌، کل ترمینال‌ها به فنا می‌روند‌، ولی خوب مگر تا به حال چند بار ترمینال زیر دست‌تان کرش کرده؟ این است که روی i3 با هر بار لود مدیر پنجره urxvtd را برای ران شدن daemon صدا می‌کنم و هر وقت نیاز به ترمینال داشتم urxvtc را اجرا می‌کنم ;-) توصیه می‌کنم که&lt;a href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Improved_Kuake-like_Behavior_in_Openbox" target="_blank"&gt; این بخش&lt;/a&gt; از ویکی آرچ را در این رابطه بخوانید‌. اسکریپت به درد بخوری است‌!&lt;/li&gt;
+    &lt;li&gt;ممکن است بعد از بعد از هر بار تغییر Xdefaults فایل کانفیگ به درستی لود نشود‌، این است که می‌توانید از دستور زیر برای بارگذاری دوباره‌اش استفاده کنید:&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;xrdb -merge ~/.Xdefaults
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;&lt;li&gt;قبلا گفتم که می‌توان برای حالت‌های Bold, Italic و … فونت‌های مختلفی تعیین کرد‌. حالا اضافه می‌کنم که رنگ‌های این فونت‌ها نیز قابل تغییر است در manpage به دنبال آپشن‌هایی مثل colorBD, colorIT, colorUL و … بگردید‌.&lt;/li&gt;
+    &lt;li&gt;مسیر پلاگین‌های perl برای urxvt به صورت پیش‌فرض ‎/usr/lib/urxvt/perl است‌. اما ممکن است دوست نداشته باشید که این افزونه‌ها به صورت systemwide در دسترس باشد‌. یا شاید شما دسترسی نوشتن در این آدرس را ندارید‌. با آپشن زیر می‌توانید مسیر جدیدی برای این افزونه‌ها اضافه کنید:&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;perl-lib: PATH
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;&lt;li&gt;گاها ممکن است نیاز داشته باشید که ترمینال‌های‌تان را به صورت login shell ران کنید‌. که خوب مزیت‌های خودش را دارد‌. با اپشن loginShell: True می‌توانید به این عمل دست یابید‌.&lt;/li&gt;
+    &lt;li&gt;نکتهٔ آخر و خیلی مهم هم این که شما می‌توانید تمام این امکاناتی که بحثشان رفت را تنها در زمان فراخوانی urxvt اعمال کنید‌. تمام آپشن‌های ذکر شده‌، یک آرگومان خط فرمان هم دارند که کار همین‌ها را انجام می‌دهد‌.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;</description><category>4bit</category><category>terminator</category><category>urxvt</category><category>Xdefaults</category><category>Xresources</category><category>xsel</category><category>برنامه نویسی</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamy.html</guid><pubDate>Thu, 25 Oct 2012 12:50:15 GMT</pubDate></item><item><title>تغییر پوسته Emacs با بسته color-theme</title><link>http://shahinism.com/posts/blog13910112tgyyr-pwsth-emacs-b-bsth-color-theme.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;ممکن است خیلی از شما با این عقیده که اولین اولویت در کار با یک نرم‌افزار باید رابط کاربری‌اش باشد مخالف باشید‌. اما برای من‌، کار کردن به مدت طولانی با ابزاری که محیطش برایم آزار دهنده باشد‌، عذاب آور است‌. از همین رو در تلاش‌های اولیه برای مهاجرت به Emacs تصمیم به تغییر در پوسته‌ی آن گرفتم‌. پوسته‌ی ایمکس در ترمینال‌، قابل تحمل بود‌. رنگ پس زمینه‌ی مشکی و رنگ‌های مناسب برای فونت‌، محیط لذت بخشی ارائه می‌کرد‌. اما در محیط X پس‌زمینه‌ی سفید‌، برای مدت طولانی کار واقعا خسته کننده می‌شد‌. البته این مشکل تنها محدود به ایمکس نمی‌شود‌. عمده‌ی ادیتور‌های فعلی که به صورت گرافیکی عرضه می‌شوند‌، به صورت پیش‌فرض پس‌زمینه‌ی سفید دارند‌، و من هم تا همین چند وقت گذشته‌، نمی‌دانستم عامل اصلی خستگی چشم و سر دردم همین رنگ سفید است‌. (‌بماند که از دیدگاه محیط زیستی از قرار این رنگ (‌نور) در نمایشگر‌، بیشترین مصرف انرژی را دارد ;-))
+&lt;/p&gt;&lt;h5&gt;استفاده از ‏‎.Xdefaults&lt;/h5&gt;
+&lt;p&gt;اولین روشی که برای این کار با آن آشنا شدم‌، فایلی به اسم ‎&lt;a href="http://www.softpanorama.org/Xwindows/Configuration/xdefaults.shtml" title="xdefaults on sofpanaroma" target="_blank"&gt;.Xdefaults&lt;/a&gt; در پوشه‌ی خانگی بود که از قرار آرگومان‌هایی علاوه بر نمونه‌هایی که خواهیم دید برای کنترل نمایش دیگر نرم‌افزار‌ها نظیر xterm نیز در خود دارد‌. برای استفاده از این روش کافیست این فایل را با ویرایشگر باز کرده‌، و خطوطی به صورت زیر به آن اضافه کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Emacs.background: ivory
+
+Emacs.foreground: MidnightBlue
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که رنگ پس زمینه‌، و رنگ نوشته‌ها را تعیین می‌کند‌. اما مشکل این روش جدای از چندان ایمکسی نبودن‌، وابسته بودن به محیط X است که چندان محیط یک‌پارچه‌ای برای ایمکس در ترمینال و X ارائه نمی‌کند‌. (‌البته شاید هم بکند که من نمی‌دادنم‌) به هر حال در صورت علاقه به آشنایی با این روش می‌توانید &lt;a href="http://www.dsj.net/compedge/emacstips.html" target="_blank"&gt;+&lt;/a&gt; و &lt;a href="ftp://ftp.pt.xemacs.org/pub/xemacs/Attic/faq/HTML/XEmacs-faq_6.html" target="_blank"&gt;+&lt;/a&gt; را مطالعه کنید‌.&lt;/p&gt;
+&lt;h5&gt;استفاده از ‎.emacs&lt;/h5&gt;
+
+&lt;p&gt;روش بعدی استفاده از ویژگی‌های خود ایمکس است‌. در این روش کافیست تنظیماتی به شکل زیر را به فایل ‎.emacs موجود در پوشه‌ی خانگیتان وارد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;-face-foreground &lt;span class="s1"&gt;'default "blue")&lt;/span&gt;
+
+&lt;span class="s1"&gt;(set-face-background '&lt;/span&gt;default &lt;span class="s2"&gt;"green"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ویژگی‌های دیگری نیز از این دست نظیر زیر‌خط‌ها و ... موجودند‌. برای این که به تنظیمات نمایش هر بخش از نوشته دست یابید‌، کافیست نشانگر را به آن‌جا برده و M-x describe-face را وارد کنید‌. اطلاعات کاملی در مورد نمایش آن بخش به شما نشان داده خواهد شد که می‌توانید با توجه به سلیقه‌ی خود آن رو تغییر دهید‌.&lt;/p&gt;
+&lt;p&gt;جدای از تعریف مستقیم نام رنگ‌ها به صورت red, blue و ... می‌توان از نام Hex رنگ‌ها نیز استفاده کرد. (‌البته توجه داشته باشید که ترمینال شما باید از میزان رنگ متناسب پشتیبانی کند)&lt;/p&gt;
+&lt;h5&gt;معرفی color-theme&lt;/h5&gt;
+
+&lt;p&gt;خوب تا این‌جای کار با روش‌های تغییر ساختار رنگ پوسته‌ی ایمکس آشنا شدیم‌. اما خوب بالاغیرتا کار طاقت فرساییست که بخواهیم برای تمامی حالات یک پوسته‌ی ایمکس (‌آن هم با این همه قابلیت‌) رنگ‌بندی متناسبی پیدا کنیم‌. این‌جاست که طبق معمول (‌در دنیای آزاد) بسته‌ای به نام &lt;a href="https://gna.org/projects/color-theme" title="color theme official page" target="_blank"&gt;color-theme&lt;/a&gt; با پنجاه پوسته رنگ پیش‌فرض که قابلیت تغییر نیز دارند در دسترس شماست‌. برای &lt;a href="http://www.emacswiki.org/emacs-en/ColorTheme#toc1" title="colortheme on emacs wiki" target="_blank"&gt;نصب آن&lt;/a&gt; کافیست پس از&lt;a href="http://download.gna.org/color-theme/" title="download emacs color theme" target="_blank"&gt; دانلودش‌،&lt;/a&gt; استخراجش کرده‌، و فایل color-theme.el و پوشه‌ی themes را به یکی از شاخه‌های موجود در load-path‌تان وارد کنید‌. اگر نمی‌دانید load-path چیست &lt;a href="http://www.emacswiki.org/emacs-en/LoadPath" title="loadpath on emacs wiki" target="_blank"&gt;این‌جا&lt;/a&gt; را مطالعه کنید‌، برای محکم کاری هم می‌توانید از دستورات زیر بهره ببرید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;wget http://download.gna.org/color-theme/color-theme-6.6.0.tar.gz
+
+mkdir ~/.emacs.d
+
+mkdir ~/.emacs.d/color-theme
+
+tar -xvf color-theme-6.6.0.tar.gz
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;color-theme-6.6.0.tar.gz
+
+mv color-theme.el ~/.emacs.d/color-theme
+
+mv themes ~/.emacs.d/color-theme
+
+vim ~/.emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و در آخر خطوط زیر را به فایل اضافه کرده و آن را ذخیره کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;require &lt;span class="err"&gt;'&lt;/span&gt;color-theme&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;color-theme-initialize&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;color-theme-robin-hood&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که در این‌جا پوسته‌ای به نام robin-hood را انتخاب کردیم‌. (‌برای کسب اطلاعات کامل‌تر در این زمینه می‌توانید به &lt;a href="http://www.emacswiki.org/emacs-en/ColorTheme" target="_blank"&gt;این صفحه&lt;/a&gt; رجوع کنید‌). خوب پوسته‌های این بسته چندان چنگی به دل نمی‌زد‌.&lt;/p&gt;
+&lt;p&gt;جستجوی بعدی مرا به &lt;a href="http://slinky.imukuppi.org/zenburnpage/" title="zenburn page" target="_blank"&gt;این صفحه&lt;/a&gt; رساند‌. معرفی‌نامه‌ی پوسته‌ای به اسم zenburn (‌که قبلا &lt;a href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" title="یک پوسته برای مدیر پنجره Awesome" target="_blank"&gt;افتخار آشنایی&lt;/a&gt; با آن را روی Awesome wm داشتم) که ار قرار اولین بار برای Vi منتشر شده و الان توسط دوست‌دارانش برای بسیاری دیگر از نرم‌افزار‌ها توسعه داده شده‌. (‌در آینده در مورد نحوه‌ی استفاده از آن در باقی نرم‌افزار‌ها هم خواهم نوشت‌).&lt;/p&gt;
+&lt;p&gt;خوب برای بهره برداری از این پوسته روی emacs به این صورت عمل می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git clone https://github.com/dbrock/zenburn-el.git
+
+mkdir ~/.emacs.d/color-theme/themes/zenburn
+
+mv zenburn-el/zenubrn.el ~/.emacs.d/color-theme/themes/zenuburn
+
+vim ~/.emacs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و کلا به جای خطوط اضافه شده‌ی قبلی‌، خطوط زیر را اضافه می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;add-to-list &lt;span class="err"&gt;'&lt;/span&gt;load-path &lt;span class="s2"&gt;"~/.emacs.d/color-theme/"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;load-file &lt;span class="s2"&gt;"~/.emacs.d/color-theme/themes/zenburn-el/zenburn.el"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;zenburn&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا با اجرای ایمکس از رنگ‌بندی جدید لذت می‌بریم‌:&lt;/p&gt;
+&lt;p&gt;&lt;img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/emacs-zenburn.png" alt="" width="490" height="345"&gt;&lt;/p&gt;
+&lt;p&gt;البته طبق معمول اگر جایی چیزی نا خوشایند بود می‌توان دستکاری و بهترش کرد‌.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نکته‌:&lt;/strong&gt; من هنوز در مورد ویرایشگر‌های Vi و Emacs بسیار آماتور هستم‌ و ممکن است در میان آموزش‌های این‌چنینی اشتباهاتی رخ داده باشد‌. (‌کلا نمی‌خواهم ترس از اشتباه جلوی این‌چنین نوشتنم را بگیرد‌) لذا از تمامی دوستانی که دستی بر آتش دارند دعوت می‌کنم در بهتر شدن این نوشتار‌ها یاری‌ام کنند ;-)&lt;/p&gt;</description><category>Emacs</category><category>Emacs color-theme</category><category>emacs load path</category><category>Xdefaults</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910112tgyyr-pwsth-emacs-b-bsth-color-theme.html</guid><pubDate>Sat, 31 Mar 2012 11:39:51 GMT</pubDate></item></channel></rss>

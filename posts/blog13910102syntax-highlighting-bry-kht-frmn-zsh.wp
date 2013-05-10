@@ -1,0 +1,32 @@
+<html><body><p>قبلا که خط فرمان ZSH را <a title="Zsh دوست شماست‌!" href="http://shahinism.com/blog/1390/11/27/zsh-%d8%af%d9%88%d8%b3%d8%aa-%d8%b4%d9%85%d8%a7%d8%b3%d8%aa%e2%80%8c/">معرفی کردم‌</a>، در مورد مزایا و امکاناتش نسبت به بش نیز توضیح دادم. ولی حالا وقتی که کمی درگیر این دستور نوشتن‌ها و ترکیبات مختلفشان شده باشید‌، مطمئنا می‌دانید که رنگ شدن هوشمند دستورات یا همان Syntax-highlighting چقدر می‌تواند در میان انبوه دستورات مفید باشد‌. خوب این‌جا دنیاییست که همه چیز در آن ممکن است و حالا یک آدم خوش ذوق پیدا شده و همچین امکانی را برای ZSH محیا کرده.
+برای دریافت آن می‌توانید به <a title="zsh-syntax-highlighting" href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank">این‌ لینک</a> مراجعه کنید‌. و اگر به نصیحت قبلی‌ام گوش کرده‌اید و از oh-my-zsh استفاده می‌کنید‌، به طریق زیر می‌توانید از این افزونه استفاده کنید‌.
+
+```bash
+
+cd ~/.oh-my-zsh/plugins
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting
+
+```
+
+و حالا برای فعال کردن آن خط زیر را به ‎.zshrc موجود در پوشه خانگی اضافه می‌کنیم‌:
+
+```bash
+
+plugins=(zsh-syntax-highlighting)
+
+```
+
+و برای اعمال تغییرات:
+
+```bash
+
+source ~/.zshrc
+
+```
+
+حال با تایپ دستورات نتیجه‌ای مانند عک<a href="/wp-content/uploads/highlight.png"><img class="alignleft size-full wp-image-710" title="highlight" src="/wp-content/uploads/highlight.png" alt="" width="380" height="56"></a> زیر خواهید داشت:
+
+
+
+ </p></body></html>

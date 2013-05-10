@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (dbus)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)</title><link>http://shahinism.com/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;مساله این‌جاست که وقتی پای کامپیوتر می‌نشینم‌، حتی اگر کاری نداشته باشم‌، یادم نمی‌ماند که مسنجرم را روشن کنم‌. و خوب از طرفی دوست دارم که در صورت امکان‌، با رفقای اینترنتی و غیر اینترنتی‌ام در ارتباط باشم‌. خوب حل این مشکل ساده است‌. کافی است میز‌کارت را تنظیم کنی که با روشن شدنش‌، Pidgin را هم اجرا کند‌. ولی خوب این بالقوه مشکل دیگری را می‌آفریند. کدام مشکل؟ همین که گاها موقع کار کردن‌، یکی از دوستانت می‌پرد وسط و چیزی می‌گوید که کوچکترین پیامدش حواس پرتی است و این اصلا نمی‌تواند کمک خوبی برای بالا بردن بهره‌وری شود.
+راه حل کوتاه در این زمینه استفاده از Status‌های مسنجر است‌. جدای از این که Status‌ها در همهٔ مسنجر‌ها همانطور که باید نشان داده نمی‌شوند‌، چه تضمینی وجود دارد که من حواس‌پرت و البته تنبل (gsh سابق D:)، یادم بماند و حالش را داشته باشم که در هر وضعیتی Status مناسب را انتخاب کنم‌؟&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو‌، با &lt;a title="dbus official webpage" href="http://dbus.freedesktop.org/" target="_blank"&gt;DBus&lt;/a&gt; آشنا شدم و البته یادم آمد که خیلی وقت پیش‌،&lt;a title="jadi dbus" href="http://jadi.net/2011/07/linux-chera-command-line/" target="_blank"&gt; جادی عزیز‌&lt;/a&gt;، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به &lt;a title="dbus-python turorila" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html" target="_blank"&gt;راهنمای&lt;/a&gt; Freedesktop بسنده کرد‌.)&lt;/p&gt;
+&lt;p&gt;مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به مخاطب آن‌ور خط بدهد‌.&lt;/p&gt;
+&lt;p&gt;با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.&lt;/p&gt;
+&lt;p&gt;اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام ارسال می‌شود‌.&lt;/p&gt;
+&lt;p&gt;دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.&lt;/p&gt;
+&lt;p&gt;برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import sys&lt;/p&gt;
+&lt;p&gt;import dbus&lt;/p&gt;
+&lt;p&gt;from PyQt4.QtGui import QApplication&lt;/p&gt;
+&lt;p&gt;from dbus.mainloop.qt import DBusQtMainLoop&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;قرار بر این بود که اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;bus_loop = DBusQtMainLoop(set_as_default=True)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار با حلقهٔ اصلی هنوز تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌.&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def connect_dbus(text):&lt;/p&gt;
+&lt;p&gt;global answer&lt;/p&gt;
+&lt;p&gt;answer = text&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;bus.add_signal_receiver(pidgin_control_func,&lt;/p&gt;
+&lt;p&gt;dbus_interface="im.pidgin.purple.PurpleInterface",&lt;/p&gt;
+&lt;p&gt;signal_name="ReceivedImMsg")&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;اولین سوال در این تابع‌، این است که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به سوالی پاسخ می‌دهند‌:&lt;/p&gt;
+&lt;p&gt;۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ: pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت)&lt;/p&gt;
+&lt;p&gt;۲- روی DBus به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای معرفی استفاده می‌کنیم‌.&lt;/p&gt;
+&lt;p&gt;۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط Pidgin شناسایی کردیم ;-)&lt;/p&gt;
+&lt;p&gt;در این تابع ما از فراخوان می‌خواهیم که آرگومانی را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
+&lt;p&gt;نوبت به نوشتن تابع دوم می‌رسد‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def pidgin_control_func(account, sender, message, conversation, flags):&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")&lt;/p&gt;
+&lt;p&gt;purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")&lt;/p&gt;
+&lt;p&gt;if purple.PurpleAccountGetUsername(account) != sender:&lt;/p&gt;
+&lt;p&gt;purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در ادامه به سه سوال دیگر جواب می‌دهیم:&lt;/p&gt;
+&lt;p&gt;۱- روی DBus به کدام برنامه گوش کنم؟ پاسخ im.pigin.purple.PurpleService&lt;/p&gt;
+&lt;p&gt;۲- آدرسش کجاست؟ پاسخ: ‎/im/pidgin/purple/PurpleObject&lt;/p&gt;
+&lt;p&gt;در واقع با پاسخ به این دو سوال‌، سعی به ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌.&lt;/p&gt;
+&lt;p&gt;۳- کدام رابط از آبجکت ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface&lt;/p&gt;
+&lt;p&gt;و خوب حالا تنها برای ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌ و به دو سوال پاسخ دهیم:&lt;/p&gt;
+&lt;p&gt;۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از شیع‌مان بخواهم که آدرسش را پیدا کند ;-)&lt;/p&gt;
+&lt;p&gt;۲- چه بگویم؟ پاسخ answer‌‌، همان متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌.&lt;/p&gt;
+&lt;p&gt;البته من در تابع یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا عبد ادامه خواهد داشت ;-)&lt;/p&gt;
+&lt;p&gt;دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;app = QApplication([])&lt;/p&gt;
+&lt;p&gt;connect_dbus(message)&lt;/p&gt;
+&lt;p&gt;app.exec_()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل از ساختن شیع app کمک می‌گیریم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import signal&lt;/p&gt;
+&lt;p&gt;signal.signal(signal.SIGINT, signal.SIG_DFL)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار این تابع این است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه کند‌! یعنی بزند بترکاند برنامه‌مان را ;-)&lt;/p&gt;
+&lt;p&gt;می‌توانید نسخهٔ کامل اسکریپت را از&lt;a title="Download answering machine" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py" target="_blank"&gt; این لینک &lt;/a&gt;دانلود کنید و به صورت زیر اجرایش کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python answering_machine.py ANSWER_MESSAGE
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اما خوب درست است که این اسکریپت تقریبا مشکل‌مان را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این اصلا حال نمی‌دهد‌. این است که آن را با &lt;a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank"&gt;PyPomo&lt;/a&gt; قاطی می‌کنم‌ (آخرین نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۱: &lt;/strong&gt;متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش باشم‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۲:&lt;/strong&gt; می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌، زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!&lt;/p&gt;</description><category>dbus</category><category>PyPomo</category><category>Python</category><category>qdbus</category><category>Qt</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</guid><pubDate>Wed, 26 Sep 2012 12:38:12 GMT</pubDate></item></channel></rss>

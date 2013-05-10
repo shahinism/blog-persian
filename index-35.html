@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 35) | شاهینیسم</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="." title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="archive.html">Archives</a>
+
+
+
+  </li><li><a href="categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-02-27 19:31
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13891208mslh-skhyp-dr-slkhwr-64-byty.html">مساله‌: اسکایپ در اسلکور 64 بیتی</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>خوب من اصلا هیچ استفاده‌ای از اسکایپ نداشتم تا الان‌. ولی چند روز پیش قرار شد راجع به یک سری از مسایل کاری با یکی از دوستانم روی همین شیکه تبادل نظر کنیم‌. خوب من روی ویندوز اسکایپ داشتم‌. اما دلم می‌خواد وقتی مهاجرت کردم به لینوکس‌، برای این مساله یک راه حل داشته باشم‌. بستهٔ SlackBuild برای اسکایپ از اینجا در دسترسه‌. بعد از اجرا اسکایپ نصب شد ولی اجرا نشد‌. خوب حالا چه کار کنم‌؟ گفتم شاید مشکل از اینجا باشه که من نسخهٔ بسته‌ای که فایل SlackBuild نصب می‌کنه رو عوض کردم‌، ولی خوب با همون نسخهٔ پیش فرض هم کارم پیش نرفت‌! بعد از یک گوگل کوتاه‌! به این نتیجه رسیدم که از اونجایی که از قرار اسکایپ فعلا قابلیت کار روی لینوکس ۳۲ بیتی رو داره‌، پس کامپایل اون روی لینوکس من که ۶۴ بیتی بوده‌، ناقص انجام شده‌. سرچ بعدی به یک بسته رسید به اسم <a title="Slackware 64 Multilab" href="http://alien.slackbook.org/dokuwiki/doku.php?id=slackware:multilib" target="_blank">Multilib </a>که از کار‌های استاد عزیزمان‌! Alien است. کار این بسته اینه که به کامپایلر‌های اسلکور لایه‌ای اضافه می‌کنه که این قابلیت رو داشته باشن که نرم‌افزار‌ها رو به صورت ۳۲ بیتی کامپایل و اجرا کنند‌. این‌جوری از قرار دیگه بهانه‌ای باقی نمیمونه که از ۶۴ بیتی‌ها استفاده نکنیم‌.
+</p><p style="text-align: center;"><a href="http://shahinism.files.wordpress.com/2011/02/skype_logo.gif"><img class="aligncenter size-full wp-image-178" title="Skype_Logo" src="http://shahinism.files.wordpress.com/2011/02/skype_logo.gif" alt="" width="300" height="208"></a></p>
+<p>خوب حالا باید چه کار کنیم‌؟</p>
+<p>توضیحات کامل راجع به این بسته رو می‌تونین از <a title="Multilab Wiki" href="http://alien.slackbook.org/dokuwiki/doku.php?id=slackware:multilib" target="_blank">اینجا</a> و <a title="Multilab page" href="http://connie.slackware.com/~alien/multilib/" target="_blank">اینجا </a>پیدا کنید‌. برای فعال سازی این بسته در نسخهٔ 13.1 اسلکور اول با این دستور بسته رو دانلود کنید‌:</p>
+<div class="code"><pre> lftp -c «open http: //slackware. com/~alien/multilib/ ; mirror 13.1»
+</pre></div>
+
+
+<p>وقتی دانلود تموم شد وارد پوشهٔ 13.1 دانلود شده بشید و تایپ کنید‌:</p>
+<div class="code"><pre> upgradepkg --reinstall --install-new *. t؟ z 
+</pre></div>
+
+
+<p>قشنگی دستور رو می‌بینید‌؟ با یک «*» خواسته که هر اسمی پشت پسوند txz یا tgz هست که صد البته حتما معنی «؟» را هم فهمیدین‌، تمام بسته‌های موجود رو نصب می‌کنه‌.</p>
+<p>حالا کافیه برید داخل پوشهٔ slackware64-compat32 و با دستور‌:</p>
+<div class="code"><pre> upgradepkg --install-new *-compat32/*. t؟ z
+</pre></div>
+
+
+<p>که دیگه زیبایی رو به حد اعلا رسونده‌! مابقی بسته‌ها رو نصب کنید‌.</p>
+<p><strong>پی‌نوشت‌ ۱‌: </strong>خوب نصب این بسته‌ها و کامپایل دوبارهٔ اسکایپ از قرار جواب داد و اسکایپ اجرا شد‌. جدا اسلکور داره من رو مدیون خودش می‌کنه‌. قشنگیش اینجاست که گیر‌های بی‌خودی نمی‌ده‌. و یا بی‌خودی کرش نمی‌کنه‌. حتی از قرار تعصب بی‌خودی هم نداره‌. البته یه سوتی هم در استفاده ازش دادم که در آینده بیشتر راجع بهش توضیح می‌دم‌.</p>
+<p><strong>پی‌نوشت ۲‌: </strong>خوب نصب کامل شد ولی به خاطر رقتار ددمناش شبکه‌، از قرار قادر به کانکت شدن نیست که خودش مساله دیگریست‌.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13891208mslh-skhyp-dr-slkhwr-64-byty.html#disqus_thread" data-disqus-identifier="cache/posts/blog13891208mslh-skhyp-dr-slkhwr-64-byty.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-02-20 15:35
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html">مساله‌: نصب VLC در گنو/لینوکس اسلکور</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>بعد از چند سال مهاجرت تق و لق به گنو‌/لینوکس و مشکلاتی که با بعضی از دیسترو‌ها داشتم‌، تصمیم گرفتم که اسلکور رو امتحان کنم‌. گنو‌/لینوکسی که شاید به سر راستی بقیهٔ دیسترو‌ها نبوده و نیست ولی خوب حداقلش موفق به رفع نیاز‌های من از سیستم شد‌!</p>
+<p>با وجود اینکه قبل از استفاده از اسلکور چند جایی راجع به سخت بودن نصب نرم‌افزار روی این دیسترو خونده بودم و حتی بعضی جا‌ها خونده بودم که منابع برای یادگیریش خیلی کم است ولی به قول معروف‌: «‌جفت پا رفتم‌ توش‌» و الان تقریبا بعد از حدود یک هفته توانستم بیشتر نرم‌افزار‌های مورد نیازم رو نصب کنم‌.</p>
+<p>خوب حالا می‌رسیم به نصب VLC روی سیستم‌. موضوع از اینجا شروع شد که عملا نیازی برای نصب این نرم‌افزار نداشتم‌. چون توانسته بودم مالتی‌مدیا‌های مورد نیازم رو با نصب SMplayer اجرا کنم ولی از آنجایی که اصلا علاقه‌ای به این ندارم که از نرم‌افزار‌هایی که رابطشون برای پخش فایل تصویری طراحی شده برای فایل‌های صوتی استفاده کنم‌، تصمیم گرفتم که از VLC استفاده کنم‌. این‌طوری حداقل با یک تیر چند نشان زده بودم‌. چون با وجود ادعاهای این نرم‌افزار دیگر کمتر موقعی پیش می‌آمد که مالتی‌مدیایی را نتونم پخش کنم‌. از طرفی با تجربهٔ راحتی که از نصب SMplayer داشتم امیدوار بودم که کار سختی در پیش نداشته باشم‌- خوب چون هیکلن نرم‌افزار کوچکتری به نظر می‌آمد‌! ‌-‌. ولی خوب این کاربلدی VLC عملا کار دستم داد‌!</p>
+<p>برای نصب اول به طور گشادانه خواستم از <a title="«SlackBuilds»" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> Slackbuilds </a> کمک بگیرم که با نیش بر لب خشکیده دیدم که خوب متاسفانه چیزی در اینجا یافت می‌نشود‌، یا حداقلش من نیافتم‌. پس تصمیم گرفتم که به سایت <a title="«Video" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> اصلی </a> برم که شاید چیزی پیدا کنم‌. خوب در آنجا علاوه بر <a title="«VLC" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> دانلود </a> سورس می‌توانستم به بسته‌هایی که برای اسلکور آماده شده بود <a title="«VLC" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> دسترسی </a> داشته باشم‌.</p>
+<p>انتخاب اولم از آنجایی که با وجود کامپایل کردن چند بسته طی چند روز اخیر خیلی احساس کار درستی می‌کردم این بود که سورس را دانلود کنم‌! - خوب حقیقت موضوع این بود که نمی‌دانستم که با بسته‌های آماده‌ برای اسلکور باید چه کار کنم‌، تازشم خیلی صفحهٔ ترسناکتری بود‌، خودتون ببینین‌! -‌.</p>
+<p>بار اول که شروع به کامپایل سورس کردم‌، دیدم که با وجود اینکه چند پیش‌نیاز در سیستمم موجود نبود می‌توانم با چند آپشن اضافه که خود کامپایلر به من یاد‌آوری می‌کرد‌، بی‌خیال بسته‌ها شود و کانفیگ را آماده کند‌! پس این چنین کردم و نصب کامل شد‌. اما نتوانستم VLC را از میزکار اجرا کنم‌. و متوجه این شدم که با فراخوانی VLC از ترمینال پیغامی مبنی بر در دسترس نبودن یک کتابخانهٔ خاص نشان داده می‌شود که اسمش الان یادم نیست‌!</p>
+<p>پس در دومین تلاش دو پیش نیازی که غیرفعال کرده بودم را نصب کردم و سومی خود به خود با نصب این پیش نیاز‌ها که یکی <a title="«ffmpeg" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> ffmpeg </a> بود و وابسته‌هایش و دیگری <a title="«Lame" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> lame </a>، نیازش برطرف شد‌! و نصب کامل شد بدون اینکه دیگر به چیزی جز <a title="«x۲۶۴" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> X۲۶۴ </a> نیاز داشته باشد‌! -این را هم اضافه کنم با وجود اینکه x۲۶۴ را خودم کامپایل کردم ولی ffmpegنمی‌توانست به آن لینک شود در نتیجه با اضافه کردن X۲۶۴=no به اول دستور فراخوانی نصب این قابلیت را خاموش کردم‌. - ولی خوب این‌بار در ترمینال اتفاق خاصی نیافتاد ولی به طور کلی‌‌‌ همان مشکل کامپایل اول پا بر‌جا می‌ماند و خلاصه اینکه در سرچ‌های گوگلی‌ام به <a title="«Install" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> این وبلاگ </a> رسیدم که طریقهٔ نصب را به همراه پیش‌نیاز‌ها آورده بود‌. و اشاره به بستهٔ Slackbuild‌ای داشت که من هرگز در سایت مذکور نیافتم‌!</p>
+<p>و خوب بی‌خیال این روش شدم و به سوی ترسناک‌ترین روش رهسپار شدم‌. یعنی بیرون آوردن ته و توی این پوشه و روش کار با آنکه دیدم طراح محترم در <a title="«Slackware" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> اینجا </a> توضیحات کامل را داده و تنها کاری که باید می‌کردم این بود که بنویسم‌:</p>
+<div class="code"><pre> lftp -c «open http: //slackware. org. uk/people/alien/restricted_slackbuilds/vlc/; mirror build» 
+</pre></div>
+
+
+<p>تا پوشهٔ build را از سایت بگیرد و بعد وارد شوم و دو دستور موجود در فایل راهنما را اجرا کنم‌، که باز در اولین تلاش شکست خوردم ولی خوب از آنجایی که خود بسته راهنمایی کرد کار سختی نبود‌. کافی بود که بستهٔ Yasm را از <a title="«yasm" href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"> اینجا </a> بگیرم و نصب کنم و دوباره به پوشهٔ build دانلود شده برگردم و دستور زیر را بزنم‌:</p>
+<div class="code"><pre> sh vlc. Slackbuild 
+</pre></div>
+
+
+<p>خوب تا این‌جا همه چیز درست پیش رفت و بعد از حدود ۲۰ دقیقه پکیج نصب را در پوشهٔ tmp آماده کرد‌. حالا فقط کافی بود که بنویسم‌:</p>
+<div class="code"><pre> installpkg /tmp/vlc-۱. ۱. ۷-x۸۶_۶۴-۲alien. txz 
+</pre></div>
+
+
+<p>که این دستور هم توانست با موفقیت به پایان برسد‌. و در کمال ناباوری دیدم که VLC اجرا شد در نتیجه بلافاصله قمیشی پخش کردم که بی‌خدافسی نری‌!</p>
+<p><strong>نتیجه گیری اخلاقی‌:</strong> همیشه آسان‌ترین راه پیش رو ترسناکترینشان است‌!</p>
+<p><strong>پی نوشت‌:</strong> بسته‌ای که در دستورات من نصب کردم‌، حاوی تمامی کدک‌های آزاد و غیر آزاد است‌. لذا دوستانی که مشکلی با این بسته‌ها دارند در لینک‌های داده شده به دنبال آزادش بگردند که خدای نکرده ندانسته آلوده به گناه نشوند‌:-).</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-02-03 19:00
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13891114lyst-tsdfy-psth-dr-wrdprs.html">لیست تصادفی پست‌ها در وردپرس</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>حتما دیده‌اید در بسیاری از وبلاگ‌های اصولا وردپرسی چند پست آخر را در سایدبار یا فو‌تر لیست می‌کنند‌. بنده با این کار ذره‌ای مخالفم‌! خوب از آنجایی که اصولا در صفحهٔ اول وبلاگ معمولا - در ۹۵ در صد مواقع - پست‌های جدید نمایش داده می‌شوند‌، دیگر عملا نیازی به یک لیست مجزا نیست‌. اما می‌توان لیستی داشت که به شناساندن وبلاگمان کمک بیشتری کند‌. در زیر کدی را برای وردپرس می‌آورم که از بین <a title="صفحه مستندات وردپرس" href="http://codex.wordpress.org/Main_Page" target="_blank">مستنداتش </a>پیدا کردم‌. این کد از پایگاه دادهٔ وبلاگ تعداد دلخواه از پست‌های وبلاگ را به صورت اتفاقی لیست می‌کند و به نمایش می‌گذارد‌:
+[php]</p>
+<p>&lt;?php</p>
+<p>$args = array( 'numberposts' =&gt; 7, 'posts_per_page' =&gt; 5, 'orderby' =&gt; 'rand' );</p>
+<p>$rand_posts = get_posts( $args );</p>
+<p>foreach( $rand_posts as $post ) : ?&gt;
+    &lt;li&gt;&lt;a href="&lt;?php the_permalink(); ?&gt;"&gt;&lt;?php the_title(); ?&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;?php endforeach; ?&gt;[/php]</p>
+<p>بدیهی است که با تغییر مقدار روبروی عبارت numberposts می‌توانید تعداد عناوین داخل لیست را جابجا کنید‌.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13891114lyst-tsdfy-psth-dr-wrdprs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13891114lyst-tsdfy-psth-dr-wrdprs.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pageNav">
+  
+  <div class="prev">
+    <a href="index-34.html">← ارسال‌های جدید‌تر</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="index-36.html">پست‌های قدیمی‌تر →</a>
+  </div>
+  
+</div>
+
+
+    
+        <script type="text/javascript">var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

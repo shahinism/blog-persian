@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 18) | شاهینیسم</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="." title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="archive.html">Archives</a>
+
+
+
+  </li><li><a href="categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-25 10:29
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910106nsb-awesome-wm-rwy-slkhwr.html">نصب Awesome WM روی اسلکور</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>در چند ماه گذشته یکی از عذاب‌آور‌ترین کار‌هایی که انجام دادم‌، نصب مدیر پنجره‌ی <a title="Awesome wm main page" href="http://awesome.naquadah.org/" target="_blank">Awesome</a> روی اسلکور بود‌! بماند که چند باری هم وسوسه شدم که به یکی از توزیع‌های مخزن دار (اسمو D:) کوچ کنم‌. ولی ارزش اسلکور برایم این‌قدر بالا بود که دست به این کار نزنم.
+بعد از چند بار آزمایش و خطا‌، شکست و ... روشی که در زیر می‌بینید تمیز‌ترین روش نصب مدیر پنجره‌ی Awesome روی اسلکور است‌:</p>
+<p>اولین کاری که باید انجام دهیم‌، کامپایل دوباره‌ی بسته‌ی Cairo با قابلیت پشتیبانی از xcb است‌. برای این کار در شاخه ‎/source/l/cairo در DVD اسلکور فایل cairo.SlackBuild را با یک ویرایشگر باز کرده و به دنبال عبارت ‎‎‏‎--enable-xcb بگردید‌. پس از یافتنش علامت # را از اول آن بردارید‌. یا آن بخش را به صورت زیر ویرایش کنید‌:</p>
+<div class="code"><pre><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"$SLKCFLAGS"</span> <span class="se">\</span>
+
+./configure <span class="se">\</span>
+
+--prefix<span class="o">=</span>/usr <span class="se">\</span>
+
+--libdir<span class="o">=</span>/usr/lib<span class="k">${</span><span class="nv">LIBDIRSUFFIX</span><span class="k">}</span> <span class="se">\</span>
+
+--mandir<span class="o">=</span>/usr/man <span class="se">\</span>
+
+--sysconfdir<span class="o">=</span>/etc <span class="se">\</span>
+
+--disable-gtk-doc <span class="se">\</span>
+
+--disable-glitz <span class="se">\</span>
+
+--disable-quartz <span class="se">\</span>
+
+--disable-static <span class="se">\</span>
+
+--enable-xcb <span class="se">\</span>
+
+--disable-win32
+</pre></div>
+
+
+<p>فایل را ذخیره کرده و مثل یک SlackBuild عادی نصبش کنید‌. حالا به شاخه‌ی ‎/source/l/startup-notification بروید و به ترتیب دستورات زیر را اجرا کنید‌:</p>
+<div class="code"><pre>rm startup-notification*.tar.bz2
+
+wget -c http://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
+
+gunzip startup-notification-0.12.tar.gz
+
+bzip2 startup-notification-0.12.tar
+
+<span class="nv">VERSION</span><span class="o">=</span>0.12 ./startup-notification.SlackBuild
+
+upgradepkg /tmp/startup-notification-*.txz
+</pre></div>
+
+
+<p>حالا به شاخه ‎/source/x/x11/src/xcb در DVD بروید و دستورات زیر را اجرا کنید‌:</p>
+<div class="code"><pre>rm xcb-util-*
+
+wget -c http://xcb.freedesktop.org/dist/xcb-util-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-image-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-wm-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-keysyms-0.3.8.tar.bz2
+
+<span class="nb">cd</span> <span class="nv">$SLACKWARE_TREE</span>/source/x/x11
+
+<span class="k">for </span>i in xcb-util xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-image; <span class="k">do</span> ./x11.SlackBuild xcb <span class="nv">$i</span>; <span class="k">done</span>
+
+upgradepkg --install-new /tmp/x11-build/xcb-util-*.txz
+</pre></div>
+
+
+<p>حال نوبت به نصب چند پیش‌نیاز می‌رسد‌. برای راحتی کار پیشنهاد می‌کنم <a title="sbopkg official page" href="http://sbopkg.org" target="_blank">sbopkg</a> و <a title="src2pkg official page" href="http://src2pkg.net" target="_blank">src2pkg</a> را دریافت و نصب کنید‌. باقی مراحل را با استفاده از این دو ابزار ادامه می‌دهیم‌.</p>
+<p>برای نصب libev, lua, imlib2, giblib, feh به ترتیب دستورات زیر را وارد می‌کنیم‌:</p>
+<div class="code"><pre>sbopkg -i imlib2
+
+sbopkg -i lua
+
+sbopkg -i libev
+
+sbopkg -i giblib
+
+sbopkg -i feh
+</pre></div>
+
+
+<p>و حالا آخرین نسخه libxdg را از<a href="http://n.ethz.ch/~nevillm/download/libxdg-basedir/" target="_blank"> این آدرس</a> دریافت کرده و به صورت زیر کامپایل می‌کنیم‌:</p>
+<div class="code"><pre>src2pkg libxdg-basedir-*.tar.gz
+
+installpkg /tmp/libxdg*.txz
+</pre></div>
+
+
+<p>برای نصب oocairo و oopango نیز از دو اسکریپت به صورت زیر استفاده می‌کنیم‌:</p>
+<div class="code"><pre>mkdir oocairo
+
+<span class="nb">cd </span>oocairo
+
+wget -c https://raw.github.com/cycojesus/slackbuilds/master/l/oocairo/oocairo.SlackBuild
+
+chmod +x oocairo.SlackBuild
+
+./oocairo.SlackBuild
+
+upgradepkg --install-new /tmp/oocairo-*.txz
+
+
+
+<span class="nb">cd</span> ..
+
+mkdir oopango
+
+<span class="nb">cd </span>oopango
+
+wget -c https://raw.github.com/cycojesus/slackbuilds/master/l/oopango/oopango.SlackBuild
+
+chmod +x oopango.SlackBuild
+
+./oopango.SlackBuild
+
+upgradepkg --install-new /tmp/oopango-*.txz
+</pre></div>
+
+
+<p>و سرانجام نوبت به کامپایل خود Awesome می‌رسد‌. آن را از<a title="Awesome wm download page" href="http://awesome.naquadah.org/download/" target="_blank"> این صفحه</a> دانلود و استخراج کنید. سپس فایل awesomeConfig.cmake را با یک ویرایشگر باز کرده و عبارت زیر را:</p>
+<div class="code"><pre><span class="k">if</span><span class="o">(</span>DEFINED SYSCONFDIR<span class="o">)</span>
+
+<span class="nb">set</span><span class="o">(</span>SYSCONFDIR <span class="k">${</span><span class="nv">SYSCONFDIR</span><span class="k">}</span> CACHE PATH <span class="s2">"config directory"</span><span class="o">)</span>
+
+<span class="k">else</span><span class="o">()</span>
+
+<span class="nb">set</span><span class="o">(</span>SYSCONFDIR <span class="k">${</span><span class="nv">PREFIX</span><span class="k">}</span>/etc CACHE PATH <span class="s2">"config directory"</span><span class="o">)</span>
+
+endif<span class="o">()</span>
+</pre></div>
+
+
+<p>به صورت زیر ویرایش کنید‌:</p>
+<div class="code"><pre><span class="k">if</span><span class="o">(</span>DEFINED SYSCONFDIR<span class="o">)</span>
+
+<span class="nb">set</span><span class="o">(</span>SYSCONFDIR /etc CACHE PATH <span class="s2">"config directory"</span><span class="o">)</span>
+
+<span class="k">else</span><span class="o">()</span>
+
+<span class="nb">set</span><span class="o">(</span>SYSCONFDIR /etc CACHE PATH <span class="s2">"config directory"</span><span class="o">)</span>
+
+endif<span class="o">()</span>
+</pre></div>
+
+
+<p>فایل را ذخیره کرده و دستور make را اجرا کنید‌. پس از به پایان رسیدن این دستور به صورت زیر عمل می‌کنیم‌:</p>
+<div class="code"><pre>mkdir /tmp/awesome-version
+
+make install <span class="nv">DESTDIR</span><span class="o">=</span>/tmp/awesome-version
+
+<span class="nb">cd</span> /tmp/awesome-version
+
+makepkg -l y -c n /tmp/awesome-version.tgz
+
+installpkg /tmp/awesome-version.tgz
+</pre></div>
+
+
+<p>و سرانجام پس از نصب Awesome برای این که بتوانیم آن را با xwmconfig انتخاب کنیم‌، دستور زیر را وارد کرده‌:</p>
+<div class="code"><pre>vim /etc/X11/xinit/awesome.xinit
+</pre></div>
+
+
+<p>و متن زیر را در آن وارد کنید:</p>
+<p>```bash#!/bin/sh</p>
+<h2>$Xorg: xinitrc.cpp,v 1.3 2000/08/17 19:54:30 cpqbld Exp $</h2>
+<p>userresources=$HOME/.Xresources</p>
+<p>usermodmap=$HOME/.Xmodmap</p>
+<p>sysresources=/etc/X11/xinit/.Xresources</p>
+<p>sysmodmap=/etc/X11/xinit/.Xmodmap</p>
+<h2>merge in defaults and keymaps</h2>
+<p>if [ -f $sysresources ]; then</p>
+<p>/usr/bin/xrdb -merge $sysresources</p>
+<p>fi</p>
+<p>if [ -f $sysmodmap ]; then</p>
+<p>/usr/bin/xmodmap $sysmodmap</p>
+<p>fi</p>
+<p>if [ -f $userresources ]; then</p>
+<p>/usr/bin/xrdb -merge $userresources</p>
+<p>fi</p>
+<p>if [ -f $usermodmap ]; then</p>
+<p>/usr/bin/xmodmap $usermodmap</p>
+<p>fi</p>
+<p>exec awesome</p>
+<p>```</p>
+<p>و سرانجام با دستور زیر به آن امکان اجرا می‌دهیم‌:</p>
+<p>```bash</p>
+<p>chmod +x /etc/X11/xinit/awesome.xinit</p>
+<p>```.</p>
+<p>در آینده‌ای نزدیک در مورد این مدیر پنجره و نحوه‌ی کار با آن بیشتر صحبت خواهم کرد ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910106nsb-awesome-wm-rwy-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910106nsb-awesome-wm-rwy-slkhwr.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-24 11:00
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910105khntrl-khml-fyrfkhs-b-khybwrd-pentadactyl-vimperator-firemacs.html">کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>حدود یک ماه پیش بود که برای یک شب تا صبح‌، ماوس عزیزم را به همسایه‌مان دادم تا کارش راه بیافتد‌، اما این شب‌، دو سه روز طول کشید تا صبح شود‌. من هم که طبق معمول به کامپیوترم نیاز داشتم‌، مجبور بودم که با کیبورد سر کنم‌.
+از آن‌جایی که از Awesome wm به عنوان میزکار استفاده می‌کردم (‌به زودی در موردش خواهم نوشت‌) و در دوره‌ی یادگیری Emacs نیز به سر می‌بردم‌، برای انجام کار‌های روزمره‌ام نیاز خاصی به ماوس نبود‌. ولی برای وبگردی‌ و استفاده از فایرفاکس‌، جدا به عذاب می‌افتادم‌. با شرح وضعیتم در آیدنتیکا‌، دوست عزیزم <a title="tuxitop on identica" href="http://identi.ca/tuxitop" target="_blank">علی موسوی (Tuxitop) </a>پیشنهاد کرد که از یکی از افزونه‌های فایرفاکس که آن را تبدیل به ویرایشگر‌های مطرح لینوکس می‌کنند استفاده کنم‌. خودش از <a title="Vimperator official page" href="http://vimperator.org/" target="_blank">Vimperator</a> استفاده می‌کرد و گفت که یک نمونه هم برای Emacs موجود است‌. من هم زیر سلطه‌ی تمرین Emacs به جستجو پرداختم و افزونه <a href="http://www.mew.org/~kazu/proj/firemacs/en/" target="_blank">Firemacs</a> اولین تجربه‌ام از همچین کنترلری بود‌.</p>
+<p>مزایای زیادی نداشت‌، تنها کاری که می‌کرد تبدیل کردن کلید‌های میانبر پیش‌فرض فایرفاکس به همتاهای ایمکسی‌شان بود‌. ولی خوب کار راه‌انداز بود‌ (‌چون میانبر‌های فایرفاکس را بلد نبودم D:).</p>
+<p>اما چند روزی می‌شود که در همان آیدنتیکا سخن‌ها از افزونه‌ی <a href="http://dactyl.sourceforge.net/pentadactyl/" target="_blank">Pentadactyl</a> که فرکی از Vimpretor است گفته می‌شد. من هم که کلا از Vi تنها ویرایش و ذخیره‌ی فایل را می‌دانم‌، وسوسه به امتحانش شدم‌. پس از نصب افزونه‌، فایرفاکس به کلی زیر و رو شد‌! عکس زیر:</p>
+<p></p><p style="text-align: center;"><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/pentadactyl.png" alt="" width="491" height="358"></p>
+<p>خط فرمان و صفحه‌ی Help بلافاصله علم شدند و به کمکم آمدند D: در یک کلام فوق‌العاده بود‌. برای منی که صفحه مانیتور کوچکم علاقه‌ام به ساده کردن صفحه‌ی مرورگرم را زیاد کرده بود‌، یک همچین نما و کارایی‌ای واقعا نهایت خواسته‌هاست D:</p>
+<p>مزیت بزرگ دیگر افزونه‌، قابلیت تکمیل خودکار فایرفاکس است که با این افزونه نمود بهتری پیدا می‌کند‌. دیگر امکان جالبش این است که در هر جای اینترنت که خواستید چیزی بنویسید می‌توانید به <a href="http://dactyl.sourceforge.net/pentadactyl/" target="_blank">Pentadactyl</a> حالی کنید که ویرایشگر دسکتاپ محبوبتان را برایتان آماده کند تا متن را در آن بنویسید و خودش آن را در جای مناسب قرار دهد ;-)</p>
+<p>این را هم اضافه کنم که من هنوز در مرحله‌ی یادگیری‌اش قرار دارم و هنوز مشکلات زیادی نیز با آن دارم‌. اما جدا ارزش وقت تلف کردن دارد.</p>
+<p>تعدادی از کلید‌های کاربردی که تا اینجای کار با Pentadactyl پیدا کرده‌ام (‌برای انجام کار‌های رایج جستجو در مرورگر) به قرار زیر است:</p>
+<ul><li>j/k برای بالا پایین کردن صفحه به مقدار یک خط</li>
+    <li>H/L عقب و جلو رفتن در تاریخچه‌ی Tab حاضر</li>
+    <li>gt پرش به Tab بعدی</li>
+    <li>gT پرش به Tab قبلی</li>
+    <li>d بستن Tab حاضر</li>
+    <li>f برای نمایان کردن شماره لینک‌های صفحه (کافیست تایپشان کنید تا لینک باز شود ;-))</li>
+    <li>iv برای رفتن به حالت ویژوال (‌که در این حالت دستورات کپی و پیست عمل می‌کنند)</li>
+    <li>برای پرش به حالت text-edit که با رفتن به این حالت به جای حالت insert می‌توان متن کپی شده را پیست کرد</li>
+    <li>p برای پیست کردن متن</li>
+    <li>y برای کپی کردن متن یا yank</li>
+</ul><p>و دستورات که در حالت نرمال (دستوری) مرورگر مورد استفاده قرار می‌گیرد:</p>
+<ul><li>‎:open [URL]‎ باز کردن یک آدرس در صفحه حاضر</li>
+    <li>‎:tabopen [URL]‎ بازکردن یک آدرس در Tab جدید</li>
+    <li>‎:stop برای نگه داشتن لود صفحه</li>
+</ul><p>خوب اینطور نوشتن دستورات و کلید‌های میانبر کار ساده‌ایست ولی درک کردن و بخاطر سپردنشان واقعا غیر ممکن است! بهترین کاری که می‌توان کرد تمرین است‌. آن هم فصل بندی شده و تعاملی‌. این‌طور نیست؟ <a title="open vim tutotrial" href="http://www.openvim.com/tutorial.html" target="_blank">Open Vim</a> سایتی به همین منظور است که می‌تواند خیلی کمکتان کند.</p>
+<p>شما هم از این افزونه‌ها استفاده می‌کنید؟ وسوسه به استفاده‌شان شدید؟ تجربه‌تان را با من و دیگر خوانندگان به اشتراک بگذارید ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910105khntrl-khml-fyrfkhs-b-khybwrd-pentadactyl-vimperator-firemacs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910105khntrl-khml-fyrfkhs-b-khybwrd-pentadactyl-vimperator-firemacs.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-23 10:54
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910104shmrh-jdwyy-chyst.html">شماره جادویی چیست؟</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>حقیقتش تا قبل از خواندن<a title="اسکریپت نویسی با بش در لینوکس" href="http://community.linuxreview.ir/thread-101.html" target="_blank"> این آموزش </a>در انجمن لینوکس ریویو‌، به این فکر نکرده بودم که لینوکس چطور بدون نیاز به پسوند فایل‌ها نوع آن‌ها را شناسایی کرده و برنامه‌ی مناسب را برای اجرایش انتخاب می‌کند‌. بار‌ها این اتفاق برایم افتاده بود که فایلی بدون پسوند یا با یک پسوند اشتباه را درست باز کرده‌. تا این که یک خط نکته در آموزش مذکور و جستجو در اینترنت موضوع را کاملا برایم باز کرد‌. متن زیر ترجمه‌ی <a title="magic number in linfo" href="http://www.linfo.org/magic_number.html" target="_blank">این مقاله </a>است که به خوبی به تمام جنبه‌های موضوع پرداخته‌:
+</p><blockquote>یک شماره جادویی‌، شماره‌ای درج شده در اوایل فایل است که فرمت فایل را مشخص می‌کند (یا‌‌ همان نوع فایل را‌). همچنین گا‌ها به عنوان امضای فایل نیز از آن یاد می‌شود‌.
+<p>شماره‌های جادویی به طور عادی برای کاربران قابل مشاهده نیستند‌. اما کاربران می‌توانند به راحتی و با استفاده از یک ویرایشگر hex که به طور تخصصی برای نمایش و تغییر هر بایت از یک فایل طراحی شده به مشاهده این عدد بپردازند‌.</p>
+<p>برای فرمت‌های معروف فایل‌ها‌، شماره‌ها به طور قراردادی نام نوع فایل را معرفی می‌کنند‌. از این رو برای مثال‌، شماره جادویی فایل‌های عکس GIF۸۷a که به طور گسترده‌ای مرسوم هستند در نمایش هگزادسیمال (یا‌‌ همان مبنا ۱۶) به صورت ۰x۴۷۴۹۴۶۳۸۳۷۶۱ نمایش داده می‌شوند که با ترجمه‌اش به ASCII مقدار GIF۸۷a بازگردانده می‌شود‌. ASCII یک de facto standard (‌استانداردی که بجای تایید شدن توسط یک سازمان استاندارد‌، به دلیل استفادهٔ زیاد از آن به یک استاندارد تبدیل شده‌) است که توسط کامپیوتر‌ها و تجهیزات ارتباطی برای کدگشایی کاراکتر‌ها (‌از جمله الفبا‌، اعداد و... ‌) مورد استفاده قرار می‌گیرد‌.</p>
+<p>همچنین شماره جادویی تصویری که با GIF۸۹a ارائه می‌شود ۰x۴۷۴۹۴۶۳۸۳۹۶۱ است‌. برای هر دو نوع از فایل‌های GIF (Graphic interchanger Format)‎ شماره جادویی شش بایت اول فایل را پر می‌کند‌. و پس از آن اطلاعات اضافه اصلی در مورد فایل (‌نظیر متادیتا‌ها‌) افزوده می‌شوند‌.</p>
+<p>به همین صورت شماره جادویی مرسوم مورد استفاده توسط فایل‌های تصویری JPEG (Joint Photographic Experts Group) برابر ۰x۴A۴۶۴۹۴۶ است‌، که از نظر ASCII برابر است با JFIF (JPEG File Interchange Format)‎. به هر حال شماره جادویی JPEG بایت‌های اولیه فایل نیستند‌. آن‌ها از بایت هفدهم آغاز می‌شوند‌. نمونه‌های دیگر از این دست شامل ۰x۴D۵۴۶۸۶۴ برای فایل‌های MIDI (Musical Instrument Digital Interface)‎، و۰x۴۲۵a۶۸۳۱۴۱۵۹۲۵ برای فایل‌های فشرده شده با bzip۲ است‌.</p>
+<p>شماره‌های جادویی همیشه برابر با نام خود در فرمت ASCII نیستند‌، یا حتی چیزی شبیه به آن‌. برای مثال‌، در بعضی از انواع فایل‌ها آن‌ها نام توسعه دهندهٔ آن نوع فایل را نشان می‌دهند‌. همچنین برای حداقل یکی از این شماره‌های جادویی تاریخ تولد توسعه دهندهٔ آن فرمت نشان داده می‌شد.</p>
+<p>برنامه‌های مختلفی از شماره‌های جادویی برای تشخیص نوع فایل استفاده می‌کنند‌. یکی از آن‌ها خط فرمان است که نوع برنامه‌ها از روی نامشان مشخص می‌شود‌.</p>
+<p>اگرچه آن‌ها می‌توانند کاربردی هم باشند‌، شماره‌های جادویی همیشه برای تشخیص نوع فایل استفاده نمی‌شوند‌. دلیل اصلی این است که بعضی از انواع فایل‌ها دارای شماره جادویی نیستند‌، برای مثال فایل‌های متنی ساده‌، که مثلا HTML، XHTML و XML را به عنوان سورس کد در خود دارند‌.</p>
+<p>خوشبختانه‌، راه‌های دیگری نیز وجود دارد تا برنامه‌ها با استفاده از آن‌ها به نوع فایل‌ها پی ببرند‌. یکی نگاه کردن به نوع چینش کاراکتر‌های فایل (‌مثلا ASCII) است‌ تا ببینند یک فایل متنی است یا خیر‌. اگر مشخص شد که یک فایل متنی است‌، می‌توان با نگاه به سرآیند فایل دید که از چه نوع نشانگری برای مثال &lt;html&gt; برای HTML و #! (موسوم به شیبنگ) برای اسکریپت‌ها استفاده می‌کند‌.</p>
+<p>نوع دیگر تشخیص نوع فایل‌، استفاده از پسوند‌هاست‌ (‌مثل ‎.exe, ‎.html, .‎jpg و ...) که در سیستم عامل‌های مایکروسافتی لازم است و برای بخش کوچکی از لینوکس‌ها و سیستم‌های شبه یونیکس مورد استفاده قرار می‌گیرد‌. به هر حال مشکل این روش آن است که ممکن است که کاربر به طور اتفاقی پسوند فایل را عوش کند‌، که در این صورت فهمیدن نوع فایل بسیار سخت می‌شود‌.</p>
+<p>و یک راه دیگر که در بسیاری از سیستم فایل‌های رایج ممکن است‌، استفاده از اطلاعات نوع فایل که در متادیتای هر فایل ضمیمه شده است می‌باشد‌. در سیستم‌عامل‌های شبه یونیکس‌، این متادیتا‌ها در inode‌ها (‌ساختار داده‌ای سیستم فایل‌های یونیکس بیس که تمامی اطلاعات مربوط به فایل به جز نام و دادهٔ اصلی را در خود ذخیره می‌کنند‌) جای می‌گیرند‌، (‌یک راه موثر برای ذخیرهٔ اطلاعات‌).</p>
+<p>شماره‌های جادویی به این علت جادویی خوانده می‌شوند که مفهوم و خاصیت مقادیرشان‌، بدون دانستان اطلاعات اضافی نامعلوم است‌. شماره‌های جادویی همچنین در برنامه نویسی برای اشاره به ثابت‌هایی که برای هدفی خاص در نظر گرفته شده‌اند ولی دلیل و یا مقدار وجودیشان بدون اطلاعات اضافه قابل دریافت نیست مورد استفاده قرار می‌گیرد‌.</p></blockquote>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910104shmrh-jdwyy-chyst.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910104shmrh-jdwyy-chyst.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pageNav">
+  
+  <div class="prev">
+    <a href="index-17.html">← ارسال‌های جدید‌تر</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="index-19.html">پست‌های قدیمی‌تر →</a>
+  </div>
+  
+</div>
+
+
+    
+        <script type="text/javascript">var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

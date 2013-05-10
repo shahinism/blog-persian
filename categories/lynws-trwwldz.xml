@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (لینوس ترووالدز)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:19 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چطور از وابستگی به گیت‌هاب فرار کنیم: پشتیبان‌گیری از مخازن گیت</title><link>http://shahinism.com/posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;گیت این روز‌ها تبدیل به عصای کمکی بزرگی برای انجام پروژه‌هایم شده. خوشبختانه تا دلمان هم بخواهد سرور ارائهٔ خدمات گیت روی اینترنت ریخته که هر کدام مزایا و محدودیت‌های خود‌شان را دارند. من‌باب مالیخولیایی زیادم در پشتیبان‌گیری از پروژه‌ها‌، مطلب زیر (&lt;a title="How to avoid relying on github: mirror your repository" href="http://www.deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/" target="_blank"&gt;منبع&lt;/a&gt;) را پیدا کردم که خیلی جالب و کمکی به نظرم آمد. تست کردم‌، فوق‌العاده بود. پس ترجمه‌اش را این‌جا می‌گذارم تا شما هم حالی ببرید از آخرین فرزند خلف آقایمان‌، ترووالدز ;-)&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
+&lt;p&gt;یکی از نکاتی که قطعی‌های اخیر گیت‌هاب گوشزد می‌کنند این است که گیت به عنوان یک سیستم مدیریت نسخهٔ غیر متمرکز طراحی شده. بسیاری از مردم به این صورت آن را مورد استفاده قرار نمی‌دهند. به جای داشتن چند بایگانی راه دور‌، داده‌ها را به یک جا می‌فرستند و در اصل بیش از اندازه به گیت‌هاب تکیه می‌کنند. کسانی را دیده‌ام که کل سازمان‌شان را بر پایهٔ گیت‌هاب بنا کرده‌اند‌، چیز‌هایی نظیر گسترش اسکریپت‌های سایت‌شان و نصب اسکریپ‌ها برای توسعه دهندگان جدید‌شان. علاوه بر این‌، dependency manager‌هایی مثل Composer و Cocoapods نیز به گیت‌هاب وابسته‌اند تا پیش‌نیاز‌هایشان را دریافت کنند. اگر گیت‌هاب Down شود‌، شما نمی‌توانید پیش‌نیاز‌های‌تان را دستکاری کنید و یا نمونه‌های جدید‌تری به آن‌ها اضافه کنید. در یک دنیای ایده‌آل این Dependency manager‌ها باید قابلیت‌ پشتیبانی توکار از mirror‌ها را داشته باشند‌، ولی در حال حاضر من چنین قابلیت‌هایی را نمی‌بینم.&lt;/p&gt;
+&lt;p&gt;چیزی که من می‌خواهم انجام دهم این است که نشان‌تان دهم که چقدر آسان است که با استفاده از سرور‌های راه دور گیت در آن واحد به دو سرور مختلف داده‌های‌تان را ارسال کنید. اگر گیت‌هاب Down شد‌، مهم نیست‌، بر فرض این که همه افراد تیم‌تان از این راهنما پیروی کرده باشند‌، کد از طریق bitbucket نیز در دسترس خواهد بود‌، یا هر جای دیگری که شما انتخاب کرده‌اید. اما این راهنما از گیت‌هاب و بیت‌باکت به عنوان mirror استفاده می‌کند.&lt;/p&gt;
+&lt;p&gt;۱. اول فرض می‌کنم که شما یک سرور راه دور برای گیت‌هاب به عنوان "origin" ایجاد کرده‌اید. آن را به github تغییر نام دهید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git remote rename origin github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۲. یک مخزن جدید روی بیت‌باکت هم‌نام همان چیزی که در گیت‌هاب دارید بسازید.&lt;/p&gt;
+&lt;p&gt;۳. این مخزن جدید را به صورت زیر به سرور‌های راه دور‌تان اضافه کنید. ولی مطمئن باشید که اسمش bitbucket باشد و نه origin. این‌طور:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git remote add bitbucket ssh://git@bitbucket.org/username/somerepo.git
+
+git push -u bitbucket --all
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۴. و حالا با یک ادیتور از شاخهٔ ‎.git در مخزن گیت‌تان فایل config را باز کنید.&lt;/p&gt;
+&lt;p&gt;۵. نوبت این است که url‌های مربوط به هر سرور راه دور را به مجموعهٔ جدیدی به اسم origin اضافه کنیم. می‌شود چیزی شبیه این:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;remote &lt;span class="s2"&gt;"origin"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; git@github.com:username/somerepo.git
+
+&lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; ssh://git@bitbucket.org/username/somerepo.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۶. دفعهٔ بعد که از دستور git push origin استفاده کردید‌، مخزن در هر دو سرور راه دور آپلود خواهد شد.&lt;/p&gt;
+&lt;p&gt;به همین راحتی.&lt;/p&gt;
+&lt;p&gt;نسخه‌های اخیر گیت این اجازه را به شما می‌دهند که چند جا را به عنوان مخزن راه دور یک مجموعه معرفی کنید. ولی من ترجیح می‌دهم که ببینم چه کاری انجام می‌دهم.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته از شاهینیسم:&lt;/strong&gt; بهتر است از یک public-key برای گیت‌هاب و بیت‌باکت استفاده کنید. این‌طوری مرحلهٔ شناسایی هر دو سرور مثل هم خواهد بود ;-)&lt;/p&gt;</description><category>bitbucket</category><category>git</category><category>github</category><category>اینترنت</category><category>برنامه نویسی</category><category>لینوس ترووالدز</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html</guid><pubDate>Tue, 22 Jan 2013 13:27:28 GMT</pubDate></item><item><title>پنگوئن کوچولو 20 ساله شد‌!</title><link>http://shahinism.com/posts/blog13900124pngwyn-khwchwlw-20-slh-shd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بیست سال از تحقق بخشیدن به یک ایده‌، تحقق بخشیدن به یک طرز فکر موفق‌، تحقق بخشیدن به یک آرزوی قدرتمند گذشته‌. بیست سال پیش بود که لینوس ترووالدز اولین نامه‌ی لینوکس یعنی نامه‌ی ( سلام‌، همه‌ی اونایی که اون بیرون هستید‌... ) رو نوشت‌، نامه‌ای از یک برنامه‌نویس تنبل ولی باهوش‌، که ایده‌ی قشنگش تونسته در طول این بیست سال برنامه‌نویسان زیادی رو از سراسر این کره‌ی خاکی مجذوب خودش کنه و روز به روز بر قدرت این پنگوئن دوست داشتنی اضافه کنه‌.&lt;/p&gt;
+&lt;p&gt;تاریخچه‌ی بیست ساله و پر‌بار لینوکس هم به صورت عکسی آماده کردن که در زیر می‌بینین‌‌، و از قرار تنها سه توزیع بوده که تونسته نقطه عطفی در تحولات این هسته‌ی دوست داشتنی باشه‌‌، اسلکور‌، ردهت‌، آندروید‌!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.linuxfoundation.org/20th/images/linux20infographic.png"&gt;&lt;img class="aligncenter" style="border: 0pt none;" src="http://www.linuxfoundation.org/20th/images/linux20infographic.png" border="0" alt="" width="500" height="400"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;از قرار‌، قراره که از &lt;a title="Linux's 20th birthday" href="http://www.linuxfoundation.org/20th/" target="_blank"&gt;17‌ام تا 19‌ام آگوست‌، جشنی&lt;/a&gt; به همین منظور توی ونکوور کانادا برگذار بشه (‌از طرف سایت رسمی‌‌) امیدوارم جشن ایرانی‌اش رو هم ببینیم‌!&lt;/p&gt;</description><category>آندروید</category><category>اسلکور</category><category>ردهت</category><category>لینوس ترووالدز</category><category>لینوکس</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13900124pngwyn-khwchwlw-20-slh-shd.html</guid><pubDate>Wed, 13 Apr 2011 07:28:56 GMT</pubDate></item></channel></rss>

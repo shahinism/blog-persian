@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 17) | شاهینیسم</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="." title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="archive.html">Archives</a>
+
+
+
+  </li><li><a href="categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-28 09:14
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html">نگاهی به ابزار Screen و قابلیت‌های کاربردی‌اش</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>شاید با وجود مدیر پنجره‌های امروزی‌، و امکانات چشم‌گیرشان‌، تصور زندگی در خط فرمان لینوکس برای خیلی از کاربران دور از ذهن بیاید‌. اما ابزار‌های زیادی در ترمینال هستند که در صورت آشنایی با آن‌ها می‌توانید کار‌هایتان را بسیار سریع‌تر و لذت‌بخش‌تر از محیط‌های گرافیکی معمول انجام دهید‌. مدت زیادیست که می‌خواهم درباره‌ی Screen‌، این ابزار کاربردی لینوکس بیشتر بدانم‌. ابزاری که قابلیت انعطاف زیادی را به ترمینال لینوکس اضافه می‌کند و باعث راحتی کار با آن می‌شود‌.
+به عنوان یک تنظیم کاربردی برای شروع کار‌، چند خط زیر را به فایل ‎.screenrc موجود در شاخه‌ی خانگی اضافه می‌کنیم (‌منیع از <a title="gnu screen on redhat magazine" href="http://magazine.redhat.com/2007/09/27/a-guide-to-gnu-screen/" target="_blank">این‌جا</a> و <a href="http://compsoc.tardis.ed.ac.uk/wiki/Screen_Guide" target="_blank">این‌جا</a>):</p>
+<div class="code"><pre>hardstatus alwayslastline
+
+hardstatus string <span class="s1">'%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'</span>
+
+
+
+<span class="c"># Default screens</span>
+
+screen -t shell1 0
+
+screen -t shell2 1
+
+screen -t server 2 ssh me@myserver
+</pre></div>
+
+
+<p>دو خط اول‌، یک استاتوس بار درست و درمان به خط فرمان اسکرین اضافه می‌کند که اطلاعاتش می‌تواند بسیار کمک کند‌. و در بخش Default screens نیز چند شل اولیه که می‌خواهیم پس از هر بار فراخوانی لینوکس به صورت Tab باز شوند را اعلان می‌کنیم. نمونه عکس زیر:</p>
+<p><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/screen.png" alt="" width="524" height="243"></p>
+<p>ذره‌ای که با آن کار کنید‌، متوجه شباهت زیادش به یک مدیر پنجره‌ی ساده می‌شوید‌. برای تنظیم پنجره‌های پیشفرض می‌توانید از فرمت زیر استفاده کنید‌:</p>
+<div class="code"><pre>screen -t &lt;<span class="nb">command </span><span class="nv">to</span><span class="o">=</span><span class="s2">""</span> <span class="nv">execute</span><span class="o">=</span><span class="s2">""</span>&gt;&lt;/command&gt;
+</pre></div>
+
+
+<p>خوب حالا نوبت به شروع کار با screen می‌شود‌، که پس از فراخوانی‌اش در ترمینال می‌توانید با دستور‌های پایه‌ای زیر مقداری از قدرتش را تجربه کنید:</p>
+<div class="code"><pre>Ctrl+a 0-9 – سوئیچ بین پنجره‌های ۰ تا ۹
+
+Ctrl+a Ctrl+n – سوئیچ به پنجره فعال بعدی
+
+Ctrl+a Ctrl+p – سوئیچ به پنجره قبلی
+
+Ctrl+a Ctrl+a – پرش به پنجره قبلی که در آن بودید
+
+Ctrl+a A – تغییر نام نشست حاضر
+
+Ctrl+a K – کشتن نشست حاضر پنجره
+
+Ctrl+a c – ساختن پنجره جدید
+</pre></div>
+
+
+<p></p><h5>قابلیت یاد‌آوری:</h5>
+<p>یک امکان جالب Screen این است که می‌توان آن را با Ctrl+a d به قولی دیتچ کرد (‌کلا بست گذاشت کنار) و سپس با دستور Screen -ls و کشف شماره اسکرین دیتچ شده به صورت زیر:</p>
+<div class="code"><pre>There is a screen on:
+
+18851.shahin <span class="o">(</span>Detached<span class="o">)</span>
+
+1 Socket in /home/shahin/.screen.
+</pre></div>
+
+
+<p>با آرگومان‌های زیر به اسکرین دیتچ شده بازگشت:</p>
+<div class="code"><pre>screen -r 18851
+</pre></div>
+
+
+<h5>قابلیت اشتراک گذاری:</h5>
+
+<p>دیگر قابلیت فوق‌العاده screen قابلیت به اشتراک گذاریش است‌. فرض کنید می‌خواهید فعالیت خود را در ترمینال با دوست دیگرتان (‌چه حالا روی یک سیستم و چه از روی یک اتصال SSH) به اشتراک بگذارید‌ (‌مثلا برای آموزش). این‌جاست که screen وارد می‌شود. برای برپا سازی چنین ارتباطی به صورت زیر عمل می‌کنیم‌:</p>
+<div class="code"><pre><span class="o">[</span>As root<span class="o">]</span>
+
+chmod u+s /usr/bin/screen
+
+chmod 755 /var/run/screen
+</pre></div>
+
+
+<p>حال از کاربر root خارج شوید و به عنوان کاربری که می‌خواهید screenاش به اشتراک گذاشته شود به سیستم متصل شده و دستورات زیر را بزنید‌:</p>
+<div class="code"><pre>ctrl+a :multiuser
+
+ctrl+a :acladd shahin <span class="o">(</span>به جای شاهین نام کاربری که می‌خواهید اسکرین را با او به اشتراک بگذارید را وارد کنید‌<span class="o">)</span>
+</pre></div>
+
+
+<p>تا این‌جا کار کاربر میزبان به پایان رسیده‌. کاربر مهمان نیز تنها پس از اتصال به سیستم می‌تواند با زدن دستور screen -x shahinism/‎ که به جای shahinism نام کاربری میزبان را وارد کرده به سیستم متصل شود (‌به اکسلش پایان دستور توجه کنید‌).</p>
+<p>اسکرین امکانات فوق‌العاده‌ی دیگری هم دارد که برای پی بردن به آن‌ها صفحه‌ی man این دستور مکان خوبی برای شروع است‌. بزرگترین مزیت استفاده از این ابزار برای من در مدیریت سرور است که با توجه به محدودیت حجمی و سرعت اینترنت نمی‌توانم به یک مدیر پنجره دسترسی داشته باشم. </p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-27 10:10
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html">یادداشتی در مورد conky و داشتن خروجی فارسی روی آن</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>از وقتی که به Awesome مهاجرت کردم‌، علاقه‌ی بیشتری به ویجت‌هایی که اطلاعات خود سیستم را نمایش می‌دهند پیدا کرده‌ام‌. <a title="conky home page" href="http://conky.sourceforge.net/index.html" target="_blank">Conky</a> ابزار سبک و بسیار قابل انعطافی برای مانیتور کردن اطلاعات سیستم است‌. راحتی شخصی سازی این برنامه یکی از بهترین مزایاییست که نسبت به ویجت‌های خود Awesome نظرم را جلب کرد‌. نکته‌ی دیگر هم قابلیت انتقال ویجت‌های تنظیم شده روی یک میزکار به دیگر میزکارهاست که در نوع خود جالب است‌.
+از طرف دیگر مدتی هم بود که از روی کنجکاوی و نه از روی نیاز به دنبال روشی برای فارسی نویسی روی ترمینال یا برنامه‌هایی به همان شکل بودم (‌در آینده بیشتر در مورد جنگ و دعوایم با bicon نیز خواهید خواند‌).</p>
+<p>امروز بر سر موضوع ایده‌ای برای افزودن یک ویجت جدید به میزکارم‌، پیگیر فارسی نویسی در conky شدم که با این روش خروجی تقریبا به درد بخوری می‌توان روی ترمینال هم داشت (‌بعضی مواقع متن روی ترمینال فوق‌العاده به هم ریخته می‌شود‌!)</p>
+<p>تنها کار لازم برای این کار پایپ کردن متن مورد نظر (‌یا نتیجه‌ی خروجی یک برنامه‌ی دیگر‌) به نرم‌افزار fribidi است‌. برای مثال‌:</p>
+<div class="code"><pre><span class="nb">echo</span> شاهین |fribidi
+</pre></div>
+
+
+<p>به همین راحتی D: با استفاده از این روش‌، و استفاده از نرم‌افزار jcal یک تقویم فارسی به ویجت‌هایم اضافه کردم که برای من کم حافظه امکان خوبی برای یاد‌آوری تقویم وطنی‌ام است ;-)</p>
+<p><img class="aligncenter" title="conky screenshot" src="https://github.com/shahinism/.conkyrc/raw/master/conky.png" alt="" width="391" height="568"></p>
+<p>برای داشتن این ویجت‌ها روی کانکی می‌توانید به صورت زیر عمل کنید‌ (<a title="shahinism .conkyrc" href="https://github.com/shahinism/.conkyrc" target="_blank">لینک روی github</a>):</p>
+<div class="code"><pre>git clone https://github.com/shahinism/.conkyrc.git
+
+cp .conkyrc/.* ~/
+</pre></div>
+
+
+<p>و آن را اجرا کنید‌. برای اجرای خودکارش روی Awesome هم می‌توان خط زیر را به rc.lua افزود:</p>
+<div class="code"><pre>awful.util.spawn_with_shell<span class="o">(</span><span class="s2">"conky"</span><span class="o">)</span>
+</pre></div>
+
+
+<p><strong>نکته</strong>: برای ویجت وضعیت هوا از<a title="وضعیت آب و هوا" href="http://cyberrabbits.net/984/accuweather/" target="_blank"> این پست </a>فرود عزیز کمک گرفتم و آن را برای وضعیت هوای رشت تنظیم کرده‌ام‌، می‌توانید با خواندن این پست آن را با توجه به نیاز خود تغییر دهید(این اسکریپت در فایل ‎.weather.sh قرار دارد) ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-26 09:42
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html">یادداشتی در مورد hibernate و suspend در لینوکس</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>کلا چون به دلیل سخت‌افزار قدیمی‌ام تا همین یکی دو سال پیش (شاید هم سه چهار سال پیش ;-)) از Windows XP استفاده می‌کردم (‌لینوکس هم کلا نمی‌دانستم چیست D:) تنها مدل‌هایی که از کنترل وضعیت سیستم می‌شناختم‌، Shutdown و reboot بود‌. بعد از مهاجرت به لینوکس هم اگر قرار بود به صورت دستی سیستم را خاموش کنم فقط همان halt و shutdown را می‌شناختم‌. اما این‌ها همیشه کافی نبودند‌. بعضی وقت‌ها ممکن است فقط برای یک ربع یا نیم ساعت از سیستم دور باشیم‌. انتظار بوت برای یک همچین مدتی کوتاهی‌، واقعا طاقت فرساست‌. مخصوصا که تمامی اطلاعات نشست حاضر از بین می‌رود‌.
+متاسفانه وقتی هم که با حالت Suspend (sleep)‎ در KDE سیستم را خاموش می‌کردم‌، (ذخیره اطلاعات در رم‌) امکان بازگشتن سیستم به وضعیت قبلی ۵۰-۵۰ بود‌! گاها تنها با یک صفحه‌ی سیاه روبرو می‌شدم که خوب یعنی سیستم باید reboot شود‌.</p>
+<p>این مقدمه را گفتم که بگویم‌، پس از مهاجرتم به مدیرپنجره‌ی Awesome به دنبال همین روش‌ها برای معرفی در پوسته‌اش بودم تا کارم را راحت کنم‌، و این مقدمه‌ی آشناییم با pm-utils بود‌. فریم‌ورکی که برای مدیریت وضعیت سیستم طراحی شده‌. و خوشبختانه به دلیل بسیار سبک بودن Awesome (‌البته حدس می‌زنم همین دلیل باشد‌) سیستم را به خوبی Suspend کرده و می‌توان به راحتی به نشست قبلی بازگشت‌.</p>
+<p>با کاربر Root می‌توان با یکی از دو دستور زیر به این امکان دست یافت‌:</p>
+<div class="code"><pre>/usr/sbin/pm-hibernate
+
+/usr/sbin/pm-suspend
+</pre></div>
+
+
+<p>اولی که برای خاموش کردن سیستم است‌. و دومی سیستم را در رم خاموش می‌کند و به سیستم این قابلیت را می‌دهد که در هنگام روشن شدن به وضعیت قبلی‌اش بازگردد (‌توجه داشته باشید که خاموش شدن در این وضعیت به دلیل وابستگی به Ram نیازمند ولتاژ اندکی از برق است تا اطلاعات پاک نشود، در صورت قطع برق سیستم‌، سیستم دوباره بوت می‌شود‌).</p>
+<p>از آن‌جایی که این ابزار برای کار کردن نیاز به بعضی از دسترسی‌های ریشه دارد‌، پس با یک کاربر عادی نمی‌توان آن‌ها را اجرا کرد و به sudo نیاز است‌. از آن‌جایی هم که روی خوشی ندارد که هر بار برای خاموش کردن سیستم خودمان یک رمز وارد کنیم‌، می‌توان‌، دو خط زیر را به فایل sudoers (‌با استفاده از visudo) و بعد از خطوطی که دسترسی sudo را به کاربران اعلام کرده‌ایم اضافه کرد تا بدون پسوورد اجازه‌ی استفاده از این دستور را داشته باشیم‌:</p>
+<div class="code"><pre>username <span class="nv">ALL</span><span class="o">=</span> NOPASSWD: /usr/sbin/pm-hibernate
+
+username <span class="nv">ALL</span><span class="o">=</span> NOPASSWD: /usr/sbin/pm-suspend
+</pre></div>
+
+
+<p>همچنین اگر دیگر خیلی مثل من تنبلید می‌توانید یک Alias تعریف کنید تا هر وقت تایپ کردید pm-hibernate خودش دستور sudo /usr/sbin/pm-hibernate را وارد کرده و سیستم را خاموش کند ;-)</p>
+<p></p><p style="text-align: center;"><a title="Pm-utils on arch wiki" href="https://wiki.archlinux.org/index.php/Pm-utils" target="_blank"><strong>ویکی آرچ اطلاعات ارزشمندی در این زمینه دارد که می‌تواند کمک کننده باشد.</strong></a></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pageNav">
+  
+  <div class="prev">
+    <a href="index-16.html">← ارسال‌های جدید‌تر</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="index-18.html">پست‌های قدیمی‌تر →</a>
+  </div>
+  
+</div>
+
+
+    
+        <script type="text/javascript">var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

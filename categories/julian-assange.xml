@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (Julian Assange)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Surfraw فرزند خلف ژولین آسانژ جستجو‌گر!</title><link>http://shahinism.com/posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبلا هم خوانده بودم که &lt;a title="ژولیان آسانژ در ویکی پدیای فارسی" href="http://fa.wikipedia.org/wiki/%D8%AC%D9%88%D9%84%DB%8C%D9%86_%D8%A2%D8%B3%D8%A7%D9%86%DA%98" target="_blank"&gt;ژولین آسانژ &lt;/a&gt;یک هکر بوده (‌یا هست‌!) ولی حقیقتش خیلی دوست داشتم یک کار درست و درمان از او ببینم‌ (البته شدیدا قبول دارم که بهترین هک او همان سایت معروفش &lt;a title="wiki leaks official page" href="http://wikileaks.org" target="_blank"&gt;wikileaks&lt;/a&gt; است). امروز به لطف &lt;a title="Surfraw on linuxaria" href="http://linuxaria.com/article/surfraw-surf-the-web-from-the-cli?lang=en" target="_blank"&gt;Linuxaria&lt;/a&gt; با ابزاری آشنا شدم که در آخر man page اش‌، این عبارت نقش بسته:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Originally written by Julian Assange.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و خوب فکر می‌کنم برنامهٔ خوبی برای آشنا شدن با یک هکر و اخلاقیاتش باشد‌. می‌پرسید چطور؟ قبلا هم ابزار‌هایی معرفی کرده‌ام که سرعت کار با سیستم را برای من کاربر افزایش می‌دهند‌. خصوصا در زمینهٔ مرور وب وقتی که پای هیولایی مثل &lt;a title="کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)" href="http://shahinism.com/blog/1391/01/05/%da%a9%d9%86%d8%aa%d8%b1%d9%84-%da%a9%d8%a7%d9%85%d9%84-%d9%81%d8%a7%db%8c%d8%b1%d9%81%d8%a7%da%a9%d8%b3-%d8%a8%d8%a7-%da%a9%db%8c%d8%a8%d9%88%d8%b1%d8%af-pentadactyl-vimperator-firemacs/" target="_blank"&gt;Pentadactyl&lt;/a&gt; وسط می‌آید‌، تقریبا حرفی برای گفتن باقی نمی‌ماند‌. اما خوب ما یک کاربر عادی نیستیم‌. اصولا زندگی دیجیتال ما به موتور‌های جستجو (خصوصا گوگل) پیوند خورده و خوب حتی با ابزار‌های قبلی‌ای که می‌شناختم‌، جستجوی پیشرفته در گوگل کاری تکراری و غیر جذاب بود‌. از طرف دیگر کار جستجوی ما تنها به گوگل ختم نمی‌شود‌. Wikipedia‌، یا IMDB یا حتی از آن‌ها مهم‌تر Youtube را هم عموما من از داخل گوگل جستجو می‌کردم‌، و خوب این بار ترافیک تحمیل شدهٔ اضافی گوگل‌، خصوصا با بعضی خواص کوچک و آزار دهنده‌اش‌، زیادی هم گیکانه نبود‌!&lt;/p&gt;
+&lt;p&gt;اگر از کار کردن در ترمینال نه تنها ترسی ندارید‌، بلکه لذت هم می‌برید‌، &lt;a title="surfraw official webpage" href="http://surfraw.alioth.debian.org/" target="_blank"&gt;Surfraw&lt;/a&gt; می‌تواند نقش یک چاقوی سوئیسی مخصوص جستجو در اینترنت را بازی کند‌. چطور؟ اول بسته به توزیع‌تان یک نسخه از آن را نصب کنید (مدارک Slackbuild‌اش هم موجود است ;-))&lt;/p&gt;
+&lt;p&gt;حالا برای شروع در ترمینال‌تان تایپ کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;surfraw google -l Julian Assange
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ها ها‌، نتیجه جالب بود؟ خوش‌تان آمد؟ نکند با خود فکر می‌کنید که تایپ دوباره و دوبارهٔ surfraw خسته کننده است‌؟ خوب می‌توانید از Alias مخصوصش یعنی sr استفاده کنید‌. باز هم طولانی است؟ بهترش را می‌خواهید؟ پس‌، بگذارید کمی با ساختار دستور بالا آشنا شویم‌.&lt;/p&gt;
+&lt;p&gt;بعد از دستور surfraw در بالا ما google را داریم که طبیعتا نام یکی از موتور‌های جستجوی پشتیبانی شده در surfraw است‌. خوب در surfraw به این موتور‌های جستجو می‌گوییم elvi‌! چه می‌دانم‌، شاید ژولین عاشق الویس پریسلی بوده ;-) برای دیدن لیستی از elvi‌هایتان (موتور‌هایی که surfraw الان پشتیبانی می‌کند‌، دستور زیر را تایپ کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sr -elvi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;هوم؟ شگفت زده شده‌اید؟‌ چند لحظهٔ دیگر خود را کنترل کنید‌. قرار شده بود از دست آن sr کذایی هم خلاص شویم‌. کار سختی نیست‌، کافیست پوشهٔ مربوط به همین elvi‌ها (برنامه‌های منحصر به فرد کوچکی که برای کار با هر موتور جستجو طراحی شده‌) به PATH‌تان اضافه کنید‌. این پوشه را:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/share/surfraw
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب این یک خبر خوش دیگر هم به ما می‌دهد‌. آن هم مربوط به آن ‎-l ای می‌شود که ما در دستور بالا استفاده کردیم و به قولی استفاده از آیتم (I'm feeling lucky) گوگل را برای‌مان به ارمغان آورد‌. چطور؟ این‌جاست که در حقیقت این چاقوی سوئیسی برگ برنده‌اش را رو می‌کند‌. در ترمینال تایپ کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sr google --help
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;واو‌، تمام آن کنترل‌هایی که می‌توانستیم در رابط وب گوگل استفاده کنیم و بخاطر کلیک‌های زیاد تا رسیدن به مزیت‌شان تنبلی‌مان می‌آمد‌، تنها با یک تگ کوچک همین‌جا مهیاست‌ D: از طرفی این امکان برای هر elvi دیگری هم مهیاست‌. کمی با elvi‌هایتان بازی کنید و بیشتر و بیشتر شگفت‌زده شوید!&lt;/p&gt;
+&lt;p&gt;موتور‌های جستجوی پشتیبانی شده واقعاً زیادند‌. امکانات این نرم‌افزار هم فوق‌العاده قابل شخصی‌سازی و بهره‌وری بهتر است که من عمراً در این ذوق زدگی و کار ده دقیقه‌ای نمی‌توانم ذره‌ای از آن‌ها را بیان کنم‌. man page کامل و بدرد بخورش می‌تواند خیلی کمک‌تان کند‌. مثلاً آن قابلیت bookmark به نظر چیز جالبی می‌آید‌. یا پشتیبانی از جستجو در ctan یا خیلی چیز‌های دیگر که اصلا در مخیله‌ام هم نمی‌گنجد که چه هستند و کجا رو می‌گردند‌. به قولی خوراک گیک بازیمان برای مدتی جور شده است انگار‌، اینطور نیست؟ ;-)&lt;/p&gt;</description><category>Julian Assange</category><category>surfraw</category><category>اینترنت</category><category>بررسی</category><category>معرفی ابزار</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html</guid><pubDate>Tue, 04 Sep 2012 11:09:05 GMT</pubDate></item></channel></rss>

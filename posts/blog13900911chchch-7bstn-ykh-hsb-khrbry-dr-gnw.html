@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="شاهین آزاد"><title>چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس | شاهینیسم</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="../" title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="../stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="../archive.html">Archives</a>
+
+
+
+  </li><li><a href="../categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="../rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+<div id="coreContent">
+  <div class="post single hentry">
+    <div class="postContent">
+      <h3 class="entry-title">
+<h1>چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس</h1>
+
+</h3>
+      <div class="entry-content">
+        <p></p><p>دستور passwd برای تغییر رمز عبور حساب‌ یک کاربر یا گروه مورد استفاده قرار می‌گیرد‌. یک کاربر عادی تنها قادر است که رمز عبور اکانت خودش را عوض کند‌، اما کاربر اصلی (‌ریشه‌) می‌تواند رمز عبور هر حسابی را عوض کند‌. شما با استفاده از این دستور می‌توانید یک حساب را قفل کرده و یا قفلش را باز کنید‌.
+</p><h4>قفل یک حساب گنو‌/‌لینوکس‌:</h4>
+<p>نحو‌:</p>
+<div class="code"><pre>passwd -l <span class="o">(</span>username<span class="o">)</span>
+</pre></div>
+
+
+<p>حساب را قفل می‌کند‌. در واقع آپشن‌* ‏‎-l با تغییر رمز عبور یک حساب به یک مقدار رمز شده‌، حساب را از دسترسی خارج می‌کند‌.</p>
+<h5>مثال‌:</h5>
+
+<p>قفل کردن حسابی به اسم shahin‌. با کاربر ریشه وارد می‌شویم و دستور زیر را وارد می‌کنیم‌:</p>
+<div class="code"><pre><span class="c"># passwd -l shahin</span>
+</pre></div>
+
+
+<h4>قفل‌گشایی یک حساب گنو‌/‌لینوکس:</h4>
+
+<p>نحو‌:</p>
+<div class="code"><pre>passwd -u <span class="o">(</span>username<span class="o">)</span>
+</pre></div>
+
+
+<p>حساب را قفل‌گشایی می‌کند‌. این آپشن ‎-u رمز حساب رو به مقدار قبلی‌اش باز می‌گرداند و آن را دوباره فعال می‌کند‌.</p>
+<h5>مثال‌:</h5>
+
+<p>برای باز‌گشایی یک حساب کاربری به اسم shahin‌، اول با کاربر ریشه وارد می‌شویم‌، و دستور زیر را وارد می‌کنیم‌:</p>
+<div class="code"><pre><span class="c"># passwd -u shahin</span>
+</pre></div>
+
+
+<p>*‌: هر چه سعی کردم کلمه جایگزینی برای آپشن (‌انتخاب‌) به ذهنم نرسید که جمله‌بندی را خراب نکند‌. به بزرگی خودتان ببخشید‌!</p>
+<p style="text-align: center;"><a title="Linux locking an account on cyberciti" href="http://www.cyberciti.biz/faq/linux-locking-an-account/" target="_blank">منبع</a></p>
+
+<p></p>
+      </div>
+      <div class="postMeta">
+        <div class="postDate"><span>ارسال شده:</span> <abbr class="published">2011-12-02 08:05</abbr></div>
+        
+
+
+        <div class="categories">
+
+<span>ارسال‌های بیشتر دربارهٔ</span>
+
+<a class="tag" href="../categories/dsthbndy-nshdh.html"><span class="badge-info">دسته‌بندی نشده</span></a>
+
+<a class="tag" href="../categories/chy-chr-chgwnh.html"><span class="badge-info">چی‌؟ چرا‌؟ چگونه‌؟</span></a>
+
+<a class="tag" href="../categories/gnw-lynwkhs.html"><span class="badge-info">گنو‌، لینوکس</span></a>
+
+
+</div>
+      </div>
+    </div>
+
+    <div class="pageNav">
+      
+<ul class="pager"><div class="prev">
+    <a href="blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">← ارسال پیشین</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">ارسال بعدی →</a>
+  </div>
+  
+  </ul></div>
+    <div class="postMeta">
+      
+      
+    
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="nikolademo";
+        
+            var disqus_url="http://shahinism.com/posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html";
+        
+        var disqus_title="\u0686\u200c\u0686\u200c\u0686 (\u06f7)\u200c: \u0628\u0633\u062a\u0646 \u06cc\u06a9 \u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u062f\u0631 \u06af\u0646\u0648\u200c/\u200c\u0644\u06cc\u0646\u0648\u06a9\u0633";
+        var disqus_identifier="cache/posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html";
+        var disqus_config = function () {
+            this.language = "";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+      
+    </div>
+
+  </div>
+</div>
+  
+      </div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

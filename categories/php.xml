@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (php)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:19 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</title><link>http://shahinism.com/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
+ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;دستور mysqladmin برای تغییر کلمه عبور ریشه&lt;/h4&gt;
+&lt;p&gt;اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqlamin -u root pasword NEWPASSWORD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» oldpassword» password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور MySQL برای دیگر کاربران&lt;/h4&gt;
+
+&lt;p&gt;برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u vivek -p oldpassword password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql&lt;/h4&gt;
+
+&lt;p&gt;این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:&lt;/p&gt;
+&lt;p&gt;۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&amp;gt; ‎ وارد کنید‌):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; use mysql;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; update user &lt;span class="nb"&gt;set &lt;/span&gt;&lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;“NEWPASSWORD”&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;’vivek’;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; flush privileges;
+
+mysql&amp;amp;gt; quit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>perl</category><category>php</category><category>Python</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>گنو‌/‌لینوکس</category><category>یونیکس</category><guid>http://shahinism.com/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</guid><pubDate>Thu, 01 Dec 2011 08:01:44 GMT</pubDate></item><item><title>چ‌چ‌چ (۳)‌: MySQL چیست‌؟</title><link>http://shahinism.com/posts/blog13900909chchch-3-mysql-chyst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;MySQL یک کارگزار (Server) پایگاه دادهٔ متن‌باز قابل اطمینان است‌، که توسط توسعه دهندگان وب زیادی در سراسر جهان مورد استفاده قرار می‌گیرد‌. شما می‌توانید  با اسکریپت‌نویسی در PHP و یا پرل به یک پایگاه دادهٔ MySQL دستیابی داشته باشید‌. به هر حال‌، هزاران ابزار کاربردی برای MySQL در دسترس است‌، که شما در این‌جا دسته‌ای از محبوب‌ترین‌هایشان را می‌بینید‌ که در PHP (پیش‌پردازندهٔ فرامتن PHP یا PHP Hypertext Preprocessor) یکی از پر استفاده‌ترین‌، زبان اسکریپت‌نویسی که بسیار مناسب توسعهٔ وب است و می‌تواند به صورت تو‌کار در HTML مورد استفاده قرار گیرد‌.
+&lt;/p&gt;&lt;h4&gt;نرم‌افزار دفتر مهمان&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a title="Advanced Guestbook" href="http://proxy2.de/scripts.php" target="_blank"&gt;Advanced Guestbook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;نرم‌افزار انجمن&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="phpBB" href="http://phpbb.com/" target="_blank"&gt;phpBB&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Simple Machines Forum (SMF)‎" href="http://www.simplemachines.org/index.php" target="_blank"&gt;Simple Machines Forum (SMF)‎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;سیستم مدیریت محتوا&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Mambo" href="http://www.mamboserver.com/" target="_blank"&gt;Mambo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Xoops" href="http://www.xoops.org/" target="_blank"&gt;Xoops&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="PostNuke" href="http://noc.postnuke.com/" target="_blank"&gt;PostNuke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;نرم‌افزار بلاگ‌دهی&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Wordpress" href="http://wordpress.org/" target="_blank"&gt;WordPress&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Geeklog" href="http://www.geeklog.net/" target="_blank"&gt;Geeklog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Plog" href="http://www.plogworld.net/" target="_blank"&gt;pLog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Serendipity" href="http://www.s9y.org/" target="_blank"&gt;Serendipity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;گالری عکس&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Coppermine photo gallery" href="http://coppermine.sourceforge.net/" target="_blank"&gt;Coppermine Photo Gallery&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="4Images" href="http://www.4homepages.de/" target="_blank"&gt;۴images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a title="MySQL website" href="http://mysql.com/" target="_blank"&gt;وب‌سایت MySQL&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="PHP Website" href="http://php.net/" target="_blank"&gt;وب‌سایت PHP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p style="text-align: center;"&gt;&lt;a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>php</category><category>توسعه وب</category><category>وردپرس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.com/posts/blog13900909chchch-3-mysql-chyst.html</guid><pubDate>Wed, 30 Nov 2011 08:00:02 GMT</pubDate></item><item><title>آموزش HTML بخش آخر‌: معرفی W3Schools</title><link>http://shahinism.com/posts/blog13900327amwzsh-html-bkhsh-akhr-mrfy-w3schools.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;متاسفانه مدتی می‌شه که دیگه نمی‌تونم آموزش‌های مربوط به HTML رو ادامه بدم‌. یکی از دلایلش مشغله‌ی زیاد این روز‌هام توی اینترنت هست‌، که دیگه تقریبا وقت برای همچین روش آموزشی نمی‌گذاره‌. ( البته با توجه به این که خودم هم داشتم همزمان با همین آموزش‌های یاد می‌گرفتم می‌گم ).&lt;/p&gt;
+&lt;p&gt;یه دلیل دیگش هم یه منبع آموزشی خیلی عالی هست که چند وقتیه باهاش آشنا شدم ( البته خیلی وقته می‌شناختمش‌، ولی تا به حال تجربش نکرده بودم). آموزش‌های موجود توی سایت &lt;a title="W3School Home page" href="http://www.w3schools.com/" target="_blank"&gt;W3Schools&lt;/a&gt; در زمینه‌ی طراحی وب و توسعه‌ی وب بی‌نظیر هستند‌. طبقه‌بندی مناسب مطالب و مثال‌های کاربردی‌، در کنار هر موضوع می‌تونه به درک خیلی راحت مخاطب کمک کنه‌. از طرفی ابزار تست آنلاین کد که در بیشتر آموزش‌هاش کنار دستتونه‌، این امکان رو می‌ده که با خیال راحت کد بزنین و نتیجه‌اش رو ببینین‌.&lt;/p&gt;
+&lt;p&gt;زبان سایت انگلیسی هست‌. ولی خیلی ساده نوشته شده‌، به طوری که با انگلیسی در حد متوسط و یه دیکشنری خوب کنار دستتون‌، می‌تونین از درک مفاهیم آموزشیش بر بیاین‌. این رو گفتم این‌جا بزارم که حداقل دوستانی که آموزش‌های من رو دنبال می‌کردن سر درگم نشن‌. اگر هم خواستین ببینین چقدر از آموزش‌های من چیز یاد گرفتین می‌تونین به &lt;a title="HTML Quiz" href="http://www.w3schools.com/html/html_quiz.asp" target="_blank"&gt;صفحه‌ی آزمون HTML&lt;/a&gt; توی W3School برین‌.&lt;/p&gt;</description><category>CSS</category><category>HTML</category><category>HTML</category><category>JavaScript</category><category>php</category><category>دوره</category><guid>http://shahinism.com/posts/blog13900327amwzsh-html-bkhsh-akhr-mrfy-w3schools.html</guid><pubDate>Fri, 17 Jun 2011 21:45:01 GMT</pubDate></item><item><title>آموزش HTML بخش ۱</title><link>http://shahinism.com/posts/blog13900201amwzsh-html-bkhsh-1.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;HTML تشکیل شده از سر حرف کلمات &lt;span style="color: #ff0000;"&gt;&lt;strong&gt;H&lt;/strong&gt;yper &lt;strong&gt;&lt;span style="color: #ff0000;"&gt;T&lt;/span&gt;&lt;/strong&gt;ext &lt;strong&gt;&lt;span style="color: #ff0000;"&gt;M&lt;/span&gt;&lt;/strong&gt;arkup &lt;span style="color: #ff0000;"&gt;&lt;strong&gt;L&lt;/strong&gt;anguage است‌. از این زبان برای طراحی صفحات وب استفاده می‌شود‌. در حقیقت حتی در صورت استفاده از زبان‌های برنامه‌نویسی PHP یا ASP و... صفحهٔ نهایی وب به صورت HTML به نمایش در می‌آید‌. در این دوره از آموزش قصد بر استفاده از این زبان برای طراحی صفحات ایستا داریم‌.
+اکنون به چند نکتهٔ عمومی دربارهٔ زبان HTML می‌پردازم‌:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;صفحات تولید شده با زبان HTML با پسوند&lt;span style="color: #008080;"&gt;&lt;strong&gt; .htm&lt;/strong&gt; یا &lt;strong&gt;&lt;span style="color: #808000;"&gt;.html&lt;/span&gt;&lt;/strong&gt; ذخیره می‌شوند‌.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;در این زبان کوچک یا بزرگ بودن حروف مهم نمی‌باشد‌.&lt;/li&gt;
+    &lt;li&gt;کلید‌هایی که در این زبان مورد استفاده قرار می‌گیرد‌، تگ نامیده شده و با &amp;lt;&amp;gt; مشخص می‌شود‌.&lt;/li&gt;
+    &lt;li&gt;تگ‌ها به سه دستهٔ کلی تقسیم می‌شوند‌:&lt;/li&gt;
+&lt;/ul&gt;&lt;ol&gt;&lt;li&gt;تگ‌هایی مانند که می‌تواند در هر کجای صفحه به &lt;span style="color: #ff6600;"&gt;&lt;strong&gt;صورت انفرادی &lt;/strong&gt;مورد استفاده قرار می‌گیرد‌.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;. تگ‌هایی که &lt;span style="color: #ff9900;"&gt;&lt;strong&gt;ابتدا و انتهای&lt;/strong&gt; مشخصی دارند‌. مانند تگ که برای نمایش نام صفحه مورد استفاده قرار می‌گیرد‌. در این نوع تگ‌ها کلمات یا عناصری که قرار است در صفحه به نمایش در آید‌، بینشان نوشته می‌شود‌.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="color: #ffcc00;"&gt;&lt;strong&gt;دستهٔ سوم&lt;/strong&gt; تگ‌هایی هستند که علاوه بر مشخص کردن ابتدا و انتهایشان‌، باید پارامتر‌هایی برایشان تعیین شود‌. مانند‌:. در رابطه با این تگ در ادامه بیشتر توضیح خواهم داد‌.&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;برای شروع کار‌، سعی می‌کنیم که یک صفحهٔ سادهٔ html ایجاد کنیم‌. پس ویرایشگر خود را باز کنید و با ادامهٔ مطلب همراه باشید‌.&lt;/p&gt;
+&lt;p&gt;همانطور که در ابتدای بخش گفتم‌، یک صفحهٔ HTML متشکل از تگ‌های متفاوتی است‌. برای شروع می‌خواهیم ابتدا و انتهای تگ‌هایمان را تعیین کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+.
+
+.
+
+.
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این تگ‌ها محدودهٔ کد‌های یک صفحهٔ HTML را تعیین می‌کنند‌. به طور کلی یک صفحهٔ HTML از دو بخشه &lt;span style="color: #99cc00;"&gt;&lt;strong&gt;Head&lt;/strong&gt; و &lt;span style="color: #ff99cc;"&gt;&lt;strong&gt;Body&lt;/strong&gt; تشکیل شده است‌. بخش Head مربوط به ابزار‌ها و شناسنامهٔ صفحهٔ وب ما می‌باشد‌. عموما تگ‌های استفاده شده در این بخش در صفحه نمایش داده نمی‌شود‌. از این تگ برای تعیین نام صفحه‌، کلمات کلیدی صفحه و یا بار گذاری ابزار‌های Javascript و یا دیگر ابزار‌ها مورد استفاده در صفحات HTML استفاده می‌شود‌. حال این بخش را به صفحهٔ ساخته شده‌مان اضافه می‌کنیم‌.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+.
+
+.
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+,
+
+,
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همانطور که می‌بینید برای خوانایی بیشتر سعی می‌شود در نوشتن کد‌ها به صورت والد و فرزند‌، تو رفتگی‌هایی ایجاد شود‌. این کار کاملاً سلیقه‌ایست‌. حال به ادامهٔ کار بر می‌گردیم‌. می‌خواهیم برای صفحه‌ای که داریم می‌سازیم‌، نامی تعیین کنیم که در میلهٔ نام مرورگر نمایش داده شود‌. برای این کار از تگبه صورت زیر استفاده می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;First HTML!&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نتیجهٔ کار در مرورگر به صورت زیر نمایش داده می‌شود‌:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="http://shahinism.com/wp-content/uploads/2011/04/html1-1.png" rel="prettyPhoto"&gt;&lt;img class="size-medium wp-image-248 aligncenter" title="html1-1" src="http://shahinism.com/wp-content/uploads/2011/04/html1-1-300x46.png" alt="" width="300" height="46"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;حالا می‌خواهیم‌، بخش دوم صفحه‌، یعنی بدنهٔ آن را تعیین کنیم‌. برای این کار به صورت زیر عمل می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;First HTML!&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;body&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+Hello World
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/body&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همانطور که می‌بینید تگ Body به سند HTMLمان افزوده شد‌. بر اساس گفته‌های گذشتهٔ من می‌دانیم که هر عنصر یا نوشته‌ای که بین این تگ قرار گیرد‌، در صفحهٔ نهایی نمایش داده می‌شود‌. ما در این‌جا پیغام Hello World را چاپ می‌کنیم‌.&lt;/p&gt;
+&lt;p&gt;همچنین باید اضافه کنم که تگ Body از نوع سوم تگ‌هایی است که در ابتدا معرفی کردم‌. یعنی می‌توان به پارامتر‌های آن مقدار دهی کرد‌. البته‌، در این کار اجباری نیست‌، ولی برای شروع کار بد نیست که این کار را انجام دهیم‌.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;First HTML!&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/title&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/head&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;body text="yellow" bgcolor="brown"&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+Hello World
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/body&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+
+&lt;span class="ni"&gt;&amp;amp;lt;&lt;/span&gt;/html&lt;span class="ni"&gt;&amp;amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نتیجهٔ کار به صورت زیر است‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shahinism.com/wp-content/uploads/2011/04/html1-2.png"&gt;&lt;img class="aligncenter size-medium wp-image-249" title="html1-2" src="http://shahinism.com/wp-content/uploads/2011/04/html1-2-300x218.png" alt="" width="300" height="218"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;در اینجا ما به دو پارامتر text و bgcolor مقدار دهی کردیم‌. پارامتر &lt;span style="color: #3366ff;"&gt;&lt;strong&gt;text&lt;/strong&gt; که رنگ زرد را در این کد به آن افزودیم‌، تعیین کنند رنگ متن موجود در تگ body می‌باشد‌. و تگ &lt;span style="color: #ffcc00;"&gt;&lt;strong&gt;bgcolor&lt;/strong&gt; نیز‌، که با رنگ قهوه‌ای تعیین شده‌، پس‌زمینه را برایمان رنگ‌آمیزی می‌کند‌! همچنین می‌توان برای تعیین رنگ در صفحات HTML از کد &lt;strong&gt;&lt;span style="color: #ff9900;"&gt;هگز&lt;/span&gt;&lt;/strong&gt; به صورت &lt;strong&gt;#ff88ff&lt;/strong&gt; نیز استفاده کرد‌. خوبی استفاده از این نوع کد این است که انتخاب بیشتری برای تعیین نوع رنگ‌ها در دستمان است‌.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #99cc00;"&gt;&lt;strong&gt;نکته‌:&lt;/strong&gt; لازم به ذکر است که برای دیدن نتیجهٔ کار‌، متن نوشته شده در ویرایشگر را با یک نام دلخواه برای مثال به صورت‌: &lt;span style="color: #800080;"&gt;&lt;strong&gt;test۱. html&lt;/strong&gt; ذخیره کنید و با یک مرورگر نظیر Firefox فایل ساخته شده را باز کنید‌.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;بخش اول آموزش در این‌جا به پایان رسید‌. منتظر ادامه آن باشید‌.&lt;/p&gt;</description><category>HTML</category><category>HTML</category><category>JavaScript</category><category>php</category><category>دوره</category><guid>http://shahinism.com/posts/blog13900201amwzsh-html-bkhsh-1.html</guid><pubDate>Thu, 21 Apr 2011 06:18:07 GMT</pubDate></item><item><title>چطور از خودمان برنامه نویسی بیاموزیم‌؟‌ دو</title><link>http://shahinism.com/posts/blog13891224chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب بعد از ارسال پست قبلی که نکات پایهٔ این مقاله پرداخته بودم‌، حالا نوبت به آن رسیده که‌، کار را سخت‌تر و پیشرفته‌تر کنیم‌! اولا اگر پست قبل را نخوانده‌اید‌، از &lt;a title="چطور از خودمان برنامه نویسی بیاموزیم‌‌؟ یک" href="http://shahinism.com/1389/11/%da%86%d8%b7%d9%88%d8%b1-%d8%a7%d8%b2-%d8%ae%d9%88%d8%af%d9%85%d8%a7%d9%86-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d9%87-%d9%86%d9%88%db%8c%d8%b3%db%8c-%d8%a8%db%8c%d8%a7%d9%85%d9%88%d8%b2%db%8c%d9%85%e2%80%8c/" target="_blank"&gt;اینجا&lt;/a&gt; شروع کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #808080;"&gt;&lt;em&gt;&lt;strong&gt;اسکریپت نویسی سمت سرور‌: &lt;/strong&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #ff9900;"&gt;&lt;strong&gt;PHP: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;خوب بعد از این‌که توانستید صفحه‌های وبی بسازید که کار‌های ساده را انجام دهد و اطلاعات خاصی رو از کاربر دریافت کند‌، شاید بخواهید برنامه‌هایی بنویسید که روی سرورتان اجرا شود‌، مثلا شاید بخواهید یک برنامه ارسال ایمیل بنویسید که اطلاعات کاربر را دریافت کند و به آدرس ایمیل دلخواه ارسال کند‌، و یا برنامه‌ای که بتواند با یک پایگاه داده ارتباط بر‌قرار کند‌. اینجاست که &lt;span style="color: #ff9900;"&gt;PHP، &lt;span style="color: #ff9900;"&gt;Perl، &lt;span style="color: #ff9900;"&gt;Python، &lt;span style="color: #ff9900;"&gt;Ruby و چند نمونهٔ دیگر وارد عمل می‌شوند‌. در مورد روبی که قبلا مفصلا توضیح داده‌ام‌. برای PHP هم می‌توانید به &lt;a title="PHP totorial for beginners" href="http://www.webmonkey.com/tutorial/PHP_Tutorial_for_Beginners" target="_blank"&gt;«‌آموزش PHP برای تازه‌کاران‌»&lt;/a&gt; از وبلاگ Webmonkey استفاده کنید‌. وقتی هم که به قدر کافی با پایه‌ها آشنا شدید می‌توانید برای یادگیری چطور ارتباط برقرار کردن با پایگاه داده‌تان از &lt;a title="PHP and MySQL" href="http://www.webmonkey.com/tutorial/PHP_and_MySQL_Tutorial_-_Lesson_1" target="_blank"&gt;این قسمت&lt;/a&gt;‌، که دوباره کاری از همین وبلاگ است استفاده کنید‌.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #99cc00;"&gt;&lt;strong&gt;Web Framework: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;اگر برای مدتی برنامه نویسی کرده باشید‌، متوجه می‌شوید که مدتی است که دارید برای پروژه‌های متفاوت کار‌های تکراری زیادی انجام می‌دهید‌. و یا برنامه‌نویسان متفاوتی را ببینید که دارند روی پروژه‌های مختلف کار می‌کنند ولی یک نوع مشکل را دارند در پروژه‌شان حل می‌کنند‌. این‌جاست که Framework‌ها وارد عمل می‌شوند‌. این ابزار‌ها وظیفهٔ انجام بسیاری از اعمال پیچیده و تکراری را در برنامه‌نویسی را برایتان بر عهده می‌گیرند‌. برای شروع می‌توانید به &lt;a title="How to build a web site from scratch with no experience" href="http://lifehacker.com/5336113/how-to-build-a-web-site-from-scratch-with-no-experience" target="_blank"&gt;این مطلب&lt;/a&gt; از لایف هکر مراجعه کنید‌. همچینین زیادند فریم‌ورک‌هایی نظیر &lt;a title="CakePHP" href="http://cakephp.org/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;CakePHP&lt;/span&gt;&lt;/a&gt; و &lt;a title="djangoproject.com" href="http://www.djangoproject.com/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;Django&lt;/span&gt;&lt;/a&gt; و &lt;a title="jquery.com" href="http://jquery.com/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;JQuery&lt;/span&gt;&lt;/a&gt; که می‌توانید برای یاد گرفتنشان به بخش مستندات سایت مربوط به آن فریم‌ورک مراجعه کنید‌. فقط یادتان باشد که زیادی به فریم‌ورک‌ها عادت نکنید‌. چون به قول برنامه‌نویسان واقغی‌، برنامه‌نویسی که برنامه‌نویسی را با فریم‌ورک یاد بگیرد‌، نمی‌تواند برنامه‌نویس خوبی باشد‌.&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #999999;"&gt;&lt;strong&gt;اسکریپت‌نویسی خط فرمان‌: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;img class="aligncenter size-full wp-image-212" title="Python" src="http://shahinism.com/wp-content/uploads/2011/03/Python.png" alt="" width="300" height="152"&gt;&lt;/center&gt;
+&lt;p&gt;&lt;span style="color: #ff6600;"&gt;&lt;strong&gt;&lt;span style="color: #ff6600;"&gt;Python: &lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;پایتون یک زبان خیلی دوست داشتنی می‌شود برایتان‌، وقتی اراده کنید شروع کنید‌. باور کنید‌، این را از روی تجربه شخصی می‌گویم‌. پایتون با وجود &lt;span style="color: #ff6600;"&gt;سطح بالا بودنش‌، واقعا &lt;span style="color: #ff6600;"&gt;نرم و &lt;span style="color: #ff6600;"&gt;انعطاف پذیر است‌. کد‌های تولیدی‌اش‌، فوق‌العاده قابل خواندن‌ و فهم هستند‌. برای پایتون یک منبع فارسی عالی سراغ دارم که در نوع خود و به زبان فارسی بی‌نظیر است‌. سایت &lt;a title="پایتون" href="http://www.pylearn.com" target="_blank"&gt;&lt;span style="color: #ff6600;"&gt;Pylearn&lt;/span&gt;&lt;/a&gt; دو کتاب ترجمه شده را در فضایی کاملا پویا و یک انجمن کاربردی در کنار هم جمع‌آوری کرده است‌. پیشنهاد می‌کنم برای شروع کار با این زبان کتاب &lt;a title="یک بایت از پایتون" href="http://www.pylearn.com/fa/wiki/index.php/%DA%A9%D8%AA%D8%A7%D8%A8_%DB%8C%DA%A9_%D8%A8%D8%A7%DB%8C%D8%AA_%D8%A7%D8%B2_%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86" target="_blank"&gt;«‌یک بایت از پایتون‌»&lt;/a&gt; نوشته‌: &lt;span style="color: #ff6600;"&gt;Swaroop C H که ترجمهٔ این تیم است را دانلود و استفاده کنید‌. کتاب عالیست‌. ولی در بعضی از مواقع ضعف‌های باور نکردنی در ترجمه دارد که امیدوارم در آینده حل شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;مهم‌ترین مزیت این کتاب این است که علاوه بر آشنا کردن شما با پایتون سعی دارد شما را به خوبی در استفاده از این زبان قوطه‌ور کند‌! بخوانید‌، باور می‌کنید‌. نویسنده به خوبی سعی کرده که شما را جدای از برنامه‌نویسی به شیوهٔ انجام و استفاده از ابزار‌های آشنا کند‌.&lt;/p&gt;
+&lt;p&gt;ادامه دارد‌...&lt;/p&gt;</description><category>Django</category><category>JQuery</category><category>php</category><category>Python</category><category>برنامه نویسی</category><category>طراحی وب</category><category>پایتون</category><category>پایتون</category><guid>http://shahinism.com/posts/blog13891224chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2.html</guid><pubDate>Tue, 15 Mar 2011 10:33:24 GMT</pubDate></item><item><title>لیست تصادفی پست‌ها در وردپرس</title><link>http://shahinism.com/posts/blog13891114lyst-tsdfy-psth-dr-wrdprs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حتما دیده‌اید در بسیاری از وبلاگ‌های اصولا وردپرسی چند پست آخر را در سایدبار یا فو‌تر لیست می‌کنند‌. بنده با این کار ذره‌ای مخالفم‌! خوب از آنجایی که اصولا در صفحهٔ اول وبلاگ معمولا - در ۹۵ در صد مواقع - پست‌های جدید نمایش داده می‌شوند‌، دیگر عملا نیازی به یک لیست مجزا نیست‌. اما می‌توان لیستی داشت که به شناساندن وبلاگمان کمک بیشتری کند‌. در زیر کدی را برای وردپرس می‌آورم که از بین &lt;a title="صفحه مستندات وردپرس" href="http://codex.wordpress.org/Main_Page" target="_blank"&gt;مستنداتش &lt;/a&gt;پیدا کردم‌. این کد از پایگاه دادهٔ وبلاگ تعداد دلخواه از پست‌های وبلاگ را به صورت اتفاقی لیست می‌کند و به نمایش می‌گذارد‌:
+[php]&lt;/p&gt;
+&lt;p&gt;&amp;lt;?php&lt;/p&gt;
+&lt;p&gt;$args = array( 'numberposts' =&amp;gt; 7, 'posts_per_page' =&amp;gt; 5, 'orderby' =&amp;gt; 'rand' );&lt;/p&gt;
+&lt;p&gt;$rand_posts = get_posts( $args );&lt;/p&gt;
+&lt;p&gt;foreach( $rand_posts as $post ) : ?&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href="&amp;lt;?php the_permalink(); ?&amp;gt;"&amp;gt;&amp;lt;?php the_title(); ?&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;?php endforeach; ?&amp;gt;[/php]&lt;/p&gt;
+&lt;p&gt;بدیهی است که با تغییر مقدار روبروی عبارت numberposts می‌توانید تعداد عناوین داخل لیست را جابجا کنید‌.&lt;/p&gt;</description><category>php</category><category>برنامه نویسی</category><category>طراحی وب</category><category>وردپرس</category><category>پوسته</category><guid>http://shahinism.com/posts/blog13891114lyst-tsdfy-psth-dr-wrdprs.html</guid><pubDate>Thu, 03 Feb 2011 19:00:05 GMT</pubDate></item></channel></rss>

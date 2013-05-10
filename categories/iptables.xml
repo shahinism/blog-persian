@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (iptables)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>expect دستیار باهوش شما در شل اسکریپت‌ها!</title><link>http://shahinism.com/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اگر تا به حال شل اسکریپت نوشته باشید‌، اگر حد اعتیادتان به آن اندازه باشد که بخواهید هر کاری را آسان‌تر کنید‌، اگر تنبلی‌تان گرفته باشد که بعد از آسان شدن کار‌هایتان با یک شل اسکریپت‌، رمز‌های جاهای مختلف را به یاد آورید تا اسکریپت‌تان درست کار کند‌‌، یا آن‌قدر به مغزتان فشار آورید که جواب صحیح یک سوال اسکریپت را پیدا کنید‌، آن وقت‌ می‌توانید درک کنید که expect چه ابزار خارق‌العاده‌ای است.
+کار expect خیلی ساده است‌، بعد از اجرای اسکریپت‌تان‌، منتظر می‌ماند که اتفاق خاصی رخ دهد‌، مثلا دستوری در اسکریپت از شما رمز بخواهد‌، آن وقت expect وارد میدان می‌شود و رمز را وارد می‌کند. یعنی دیگر نیازی نیست که شما دخالتی داشته باشید. اگر فکر می‌کنید که خوب این که کار سختی نیست و از این حرف‌ها که خوب اول باید بگویم که کور خوانده‌اید و دوم این که بی‌خیال ادامهٔ این متن شوید ;-)&lt;/p&gt;
+&lt;p&gt;حالا شیوهٔ عملکرد expect معلوم شد‌، بهتر است نگاهی بیاندازیم به وضعیت من. بنا به دلایل کاملا غیر عادی و نامعلومی‌، در کشوری کاملا آزاد‌، نیاز دارم که از sshuttle برای انجام برخی امور استفاده کنم. این برنامه برای انجام دادن درست کار‌هایش‌، نیاز به iptables دارد که خوب من دوست ندارم که کاربر عادی‌ام به آن دسترسی داشته باشد. پس همین دوست نداشتن من یک مرحلهٔ اضافه در فرآیند استفاده از sshuttle هزینه دارد. یعنی یک همچین چیزی:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;su
+
+Vared Kardan Ramz
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /home/shahin/bin/sshutle
+
+./sshuttle ...
+
+Vared Kardan Ramz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که خوب بعد از اولین تلاش کانکت نمی‌شود و باید دوباره دستور را بزنم و منتظر بمانم تا پرامپت رمز ssh ظاهر شود و باقی قضایا. خوب کمی سخت است. البته این را هم اضافه کنم که خوب می‌دانم می‌توانم کانکت بدون رمز ssh داشته باشم‌. می‌توانم دستور را درون یک path قرار دهم. می‌توانم‌، می‌توانم‌… ولی این روشی است که من کار می‌کنم ;-)&lt;/p&gt;
+&lt;p&gt;این است که دست به دامن expect می‌شوم و همچین اسکریپتی می‌نویسم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/expect -f&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;{[&lt;/span&gt;llength &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; !&lt;span class="o"&gt;=&lt;/span&gt; 5&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    puts &lt;span class="s2"&gt;"usage: ssh.exp client_root_pass username password server port"&lt;/span&gt;
+&lt;span class="nb"&gt;exit &lt;/span&gt;1
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;set &lt;/span&gt;rootpass &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 0 0&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;username &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 1 1&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;password &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 2 2&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;server &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 3 3&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="nb"&gt;set &lt;/span&gt;port &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 4 4&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;set &lt;/span&gt;timeout -1
+
+
+
+spawn su -c &lt;span class="s2"&gt;"/home/shahin/bin/sshuttle/sshuttle --dns -r $username@$server:$port 0/0 -vv"&lt;/span&gt;
+
+match_max 100000
+
+expect &lt;span class="s2"&gt;"Password:*"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"$rootpass\r"&lt;/span&gt;
+
+
+
+expect &lt;span class="s2"&gt;"*?assword:*"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"$password\r"&lt;/span&gt;
+
+send -- &lt;span class="s2"&gt;"\r"&lt;/span&gt;
+
+expect eof
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا همانطور که معلوم است کافی است همچین دستوری را تایپ کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;./ssh.exp client_root_pass username password server port
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا می‌شود این اسکریپت را بدون هیچ ضرر اضافه‌ای به path اضافه کرد و حالش را برد. برای این که بفهمید این اسکریپت چطور کار می‌کند راهنما‌های زیادی در اینترنت می‌یابید. man page خود برنامه هم می‌تواند کمک خوبی باشد. ضمن این که اگر اسکریپت نویسی بدانید‌، چیز زیادی برای یاد گرفتن پیش‌رویتان نیست ;-)&lt;/p&gt;</description><category>expect</category><category>iptables</category><category>sshuttle</category><category>برنامه نویسی</category><category>حل مشکل</category><category>شل اسکریپت</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</guid><pubDate>Thu, 10 Jan 2013 15:09:09 GMT</pubDate></item></channel></rss>

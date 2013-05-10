@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (MySQL)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>وقایع نگاری یک انتقال از Cpanel به DirectAdmin</title><link>http://shahinism.com/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;مدتی بود که از &lt;a title="صفحه اصلی هاستینگ ویونا" href="http://vioona.net" target="_blank"&gt;هاستینگ ویونا&lt;/a&gt; استفاده می‌کردم و بر خلاف دیگر شرکت‌های ایرانی که قبلاً تجربهٔ کار با آن‌ها را داشتم‌، تیم راضی کننده‌ای بودند‌. کیفیت خدمات خوب و قیمت مناسبش باعث می‌شود که عمدتا پیشنهادم به دوستان همین هاستینگ باشد‌. اما نمی‌دانم متوجه شده بودید یا نه‌، مدتی بود که موقع ورود به وبلاگم با صفحهٔ ثبت وبلاگ وردپرس روبرو می‌شدید‌! انگار که اصلاً هیچ اطلاعاتی در پایگاه دادهٔ وبلاگ وجود ندارد و قرار است که وبلاگ از نو ساخته شود‌! (بماند که اولین بار که این وضعیت را دیدم و متوجه شدم هیچ رکوردی از پایگاه داده‌ام روی Cpanel وجود ندارد‌، کم مانده بود سکته کنم‌!)
+پس از پیگیری معلوم شد مشکل از آپگرید MySQL و ناسازگاری‌اش با Cpanel بوده و اینکه گاهی اوقات خود ویونا پایگاه داده ‌ها را برای بررسی لاگ‌ها از دسترس خارج می‌کرد (با تمام احترامی که برایشان قائلم‌، حقا کار زشتی می‌کردند‌!) یکی دو بار اول که با این وضعیت روبرو بودم زیاد بد به دلم راه ندادم‌، ولی وقتی دیدم که دیگر دارد زیادی روی آمار بازدید‌هایم تأثیر می‌گذارد تصمیم بر انتقال گرفتم (البته گرفتیم من و &lt;a title="وبلاگ ایمان امینی!" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; ;-)). جالب اینکه این تصمیم مصادف شد با &lt;a title="یک پزشک = با پارس‌پک، میزبانی ابری را تجربه کنید" href="http://1pezeshk.com/archives/2012/06/parspack.html" target="_blank"&gt;یک ریپورتاژ &lt;/a&gt;از یک پزشک و آن کپن تخفیفش (شده حکایت اینکه اگه طناب مفت شه همه می‌رن خودشون رو دار می‌زنن ;-)). لازم می‌دانم از علیرضا مجیدی عزیز بابت این ربپورتاژ و تجربه‌های عالی‌ای که بر سر این انتقال به دست آوردم تشکر کنم‌.&lt;/p&gt;
+&lt;p&gt;&lt;a title="پارس‌پک" href="http://parspack.com/" target="_blank"&gt;هاستینگ ابری پارسپک&lt;/a&gt; مقصد بعدی شد‌. حقیقتش هنوز هم درک نمی‌کنم که این واژهٔ ابری پشت‌بند این هاستینگ چه معنی دارد ولی خوب امکانات جالب و متفاوتی را شامل می‌شد‌. مثل اینکه رم یا CPUی مصرفی هاست را می‌توانید خودتان انتخاب کنید‌. یا اینکه امکانات گزارشی عالی‌اش‌. اما چیزی که بیشتر از همه مورد توجه من قرار گرفت‌، تیم پشتیبانی فوق‌العاده مودب‌، حرفه‌ای و با تجربه‌شان بود‌. تیکت‌ها خیلی سریع جواب داده می‌شد و به حق ثابت کردند که به مشتری اهمیت می‌دهند‌.&lt;/p&gt;
+&lt;p&gt;دیگر تعریف کافی است‌. بهتر است برویم سراغ قضیهٔ این انتقال‌:&lt;/p&gt;
+&lt;p&gt;سیستم مدیریت هاستینگ DirectAdmin بود که قبلاً آن موقع‌ها که خیلی خیلی ساده بود یک بار تجربه‌اش کرده بودم و با دیدن این همه تغییر در آن شگفت‌زده شدم‌. ولی خوب یک غم بزرگ به سراغم آمد و آن اینکه چطور اطلاعات هاست قبلی را به این‌جا منتقل کنم‌. اگر این Cpanel‌ای بود با امکانات پشتیبان‌گیری هاستینگ قبلی انتقال خیلی سر راست و آسان بود‌، ولی خوب من بی‌تجربه این‌بار در همچین موقعیتی گیر کرده بودم‌.&lt;/p&gt;
+&lt;p&gt;ولی خوب یک ایدهٔ ساده به ذهنم رسید‌. پشتیبان گیری از پایگاه دادهٔ MySQL و انتقالش روی هاست جدید و سپس انتقال فایل‌ها از روی FTP‌! منطقاً باید جواب دهد دیگر‌! (خوبی مساله اینجا بود که روی هر دو هاست PHPmyadmin نصب بود‌)&lt;/p&gt;
+&lt;p&gt;اولین جستجو در گوگل و رسیدن &lt;a title="backing up your database using phpmyadmin" href="http://codex.wordpress.org/Backing_Up_Your_Database#Using_phpMyAdmin" target="_blank"&gt;به این آموزش &lt;/a&gt;از مستندات وردپرس برای پشتیبان‌گیری از پایگاه داده روی PHPmyadmin! سر راست و سریع‌. (نکتهٔ جالبش این بود که خود پایگاه حدود ۷ مگابایت حجم داشت ولی وقتی با gzip فشرده می‌شد حجمش به ۱۰ درصد کاهش پیدا می‌کرد). پشتیبان گرفته شد و پس از ساختن یک یوزر جدید روی DirectAdmin خیلی راحت Restore شد‌. بخش اعظم کار انجام شده بود‌! فقط می‌ماند فایل‌ها‌. با Filezilla خیلی راحت انتقال داده شدند‌. ولی تفاوت عمده‌ای که کمی گیجم کرد نحوهٔ چینش دامنه‌ها روی این هاستینگ بود‌.&lt;/p&gt;
+&lt;p&gt;در Cpanel شما موقع افزودن یک دامین جدید‌، انتخاب می‌کردید که درخواست این دامین به کدام شاخه از هاستینگ ارجاع داده شود‌. ولی در این‌جا خبری از آن تنظیمات برای دامنه نبود‌. بعد از کمی جستجو متوجه شدم که یه شاخه به اسم Domains نام دو دامنه را در خود دارد‌. احتمال دادم که با انتقال فایل‌های مربوط به هر وبلاگ به داخل پوشهٔ مربوط به دامنه همه چیز باید درست باشد‌. خوب این کار را کردم و DNS‌های مربوطه را نیز به دامنه‌ام اضافه کردم‌. باید جایی می‌رفتم و گفتم موقع برگشتنم معلوم می‌شود که این حدس‌ها و احتمال‌ها درست کار می‌کند یا نه‌.&lt;/p&gt;
+&lt;p&gt;همین شد که دیروز چهار-پنج ساعت این وبلاگ خطای اتصال به پایگاه داده می‌داد‌! خوشبختانه تمام حدس‌ها درست بود و مشکل بر سر این بود که تنظیمات فایل wp-config وردپرس را با دیتابیس جدید هماهنگ نکرده بودم‌. با حل این مشکل انتقال کاملاً درست و بدون مشکل انجام شده بود و خیالمان راحت شد ;-)&lt;/p&gt;</description><category>Cpanel</category><category>DirectAdmin</category><category>MySQL</category><category>phpmyadmin</category><category>wordpress</category><category>اینترنت</category><category>سرور</category><category>هاستینگ</category><category>وبلاگ‌نویسی</category><category>وردپرس</category><guid>http://shahinism.com/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html</guid><pubDate>Sun, 10 Jun 2012 09:50:07 GMT</pubDate></item><item><title>چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</title><link>http://shahinism.com/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
+ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;دستور mysqladmin برای تغییر کلمه عبور ریشه&lt;/h4&gt;
+&lt;p&gt;اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqlamin -u root pasword NEWPASSWORD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» oldpassword» password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور MySQL برای دیگر کاربران&lt;/h4&gt;
+
+&lt;p&gt;برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u vivek -p oldpassword password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql&lt;/h4&gt;
+
+&lt;p&gt;این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:&lt;/p&gt;
+&lt;p&gt;۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&amp;gt; ‎ وارد کنید‌):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; use mysql;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; update user &lt;span class="nb"&gt;set &lt;/span&gt;&lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;“NEWPASSWORD”&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;’vivek’;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; flush privileges;
+
+mysql&amp;amp;gt; quit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>perl</category><category>php</category><category>Python</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>گنو‌/‌لینوکس</category><category>یونیکس</category><guid>http://shahinism.com/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</guid><pubDate>Thu, 01 Dec 2011 08:01:44 GMT</pubDate></item><item><title>چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</title><link>http://shahinism.com/posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;وقتی که برای دسترسی به کارگزار (Server) پایگاه داده &lt;a title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟" href="http://shahinism.com/blog/1390/09/09/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b3%e2%80%8c-mysql-%da%86%db%8c%d8%b3%d8%aa%e2%80%8c%d8%9f/" target="_blank"&gt;MySQL&lt;/a&gt; از طریق مشتری‌ای (Client) نظیر mysql یا حتی زبان‌های برنامه نویسی نظیر php یا perl اقدام می‌کنید‌، به یک حساب کاربری نیاز دارید‌.
+MySQL دارای سیستم مدیریت کاربر خبره‌ای است که قادر به کنترل کردن دسترسی کاربران از مشتری‌های مختلف به کارگزار می‌باشد‌. برای این کار MySQL از جداول مخصوص در پایگاه داده کمک می‌گیرد‌. به همین دلیل برای ساخت یک کاربر جدید در MySQL شما نیاز به کاربر root دارید‌.&lt;/p&gt;
+&lt;p&gt;سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.&lt;/p&gt;
+&lt;p&gt;لطفا توجه داشته باشید حساب کاربری در MySQL با اکانت‌های یونیکس‌/‌لینوکس متفاوت است‌. برای مثال‌، کاربر root در MySQL و کاربر root در یونیکس‌/‌لینوکس جدا از هم بوده و هیچ ارتباطی با هم ندارند‌، حتی اگر نام کاربریشان شبیه به هم باشد‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;روند ساخت یک حساب کاربری در MySQL&lt;/h4&gt;
+&lt;p&gt;با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌، دستور زیر را وارد کنید‌:):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و یا&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -h myserver-server. com -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; CREATE DATABASE demo;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;توجه‌:&lt;/strong&gt; GRANT ALL به این معنی است که کاربر قادر است هر کاری انجام دهد‌. می‌تواند اطلاعات را بخواند‌، دستکاری کند و یا پاکشان کند‌، اما تنها برای جداول موجود در پایگاه دادهٔ demo. او قادر به دسترسی به دیگر پایگاه‌های داده نیست‌.&lt;/p&gt;
+&lt;h4&gt;من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL متصل شوم؟&lt;/h4&gt;
+
+&lt;p&gt;کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه داده demo متصل شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u user۱ -p demo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و یا‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u user۱ -h mysql. server. com -p demo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که پارامتر‌های دستور به شکل زیر معنا می‌شوند‌:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;‎-user1 : کاربر MySQL&lt;/li&gt;
+    &lt;li&gt;‏‎-h : نام کارگزار MySQL (به صورت پیش‌فرض localhost)&lt;/li&gt;
+    &lt;li&gt;‎-p : اعلان برای رمز عبور&lt;/li&gt;
+    &lt;li&gt;demo: demo نام پایگاه داده در mysql می‌باشد (اختیاری)&lt;/li&gt;
+&lt;/ul&gt;&lt;p style="text-align: center;"&gt;&lt;a title="MySQL user creation" href="http://www.cyberciti.biz/faq/mysql-user-creation/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>server</category><category>لینوکس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>یونیکس</category><guid>http://shahinism.com/posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html</guid><pubDate>Wed, 30 Nov 2011 15:00:24 GMT</pubDate></item><item><title>چ‌چ‌چ (۳)‌: MySQL چیست‌؟</title><link>http://shahinism.com/posts/blog13900909chchch-3-mysql-chyst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;MySQL یک کارگزار (Server) پایگاه دادهٔ متن‌باز قابل اطمینان است‌، که توسط توسعه دهندگان وب زیادی در سراسر جهان مورد استفاده قرار می‌گیرد‌. شما می‌توانید  با اسکریپت‌نویسی در PHP و یا پرل به یک پایگاه دادهٔ MySQL دستیابی داشته باشید‌. به هر حال‌، هزاران ابزار کاربردی برای MySQL در دسترس است‌، که شما در این‌جا دسته‌ای از محبوب‌ترین‌هایشان را می‌بینید‌ که در PHP (پیش‌پردازندهٔ فرامتن PHP یا PHP Hypertext Preprocessor) یکی از پر استفاده‌ترین‌، زبان اسکریپت‌نویسی که بسیار مناسب توسعهٔ وب است و می‌تواند به صورت تو‌کار در HTML مورد استفاده قرار گیرد‌.
+&lt;/p&gt;&lt;h4&gt;نرم‌افزار دفتر مهمان&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a title="Advanced Guestbook" href="http://proxy2.de/scripts.php" target="_blank"&gt;Advanced Guestbook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;نرم‌افزار انجمن&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="phpBB" href="http://phpbb.com/" target="_blank"&gt;phpBB&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Simple Machines Forum (SMF)‎" href="http://www.simplemachines.org/index.php" target="_blank"&gt;Simple Machines Forum (SMF)‎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;سیستم مدیریت محتوا&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Mambo" href="http://www.mamboserver.com/" target="_blank"&gt;Mambo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Xoops" href="http://www.xoops.org/" target="_blank"&gt;Xoops&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="PostNuke" href="http://noc.postnuke.com/" target="_blank"&gt;PostNuke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;نرم‌افزار بلاگ‌دهی&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Wordpress" href="http://wordpress.org/" target="_blank"&gt;WordPress&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Geeklog" href="http://www.geeklog.net/" target="_blank"&gt;Geeklog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Plog" href="http://www.plogworld.net/" target="_blank"&gt;pLog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="Serendipity" href="http://www.s9y.org/" target="_blank"&gt;Serendipity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;گالری عکس&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title="Coppermine photo gallery" href="http://coppermine.sourceforge.net/" target="_blank"&gt;Coppermine Photo Gallery&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="4Images" href="http://www.4homepages.de/" target="_blank"&gt;۴images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a title="MySQL website" href="http://mysql.com/" target="_blank"&gt;وب‌سایت MySQL&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a title="PHP Website" href="http://php.net/" target="_blank"&gt;وب‌سایت PHP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p style="text-align: center;"&gt;&lt;a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>php</category><category>توسعه وب</category><category>وردپرس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.com/posts/blog13900909chchch-3-mysql-chyst.html</guid><pubDate>Wed, 30 Nov 2011 08:00:02 GMT</pubDate></item></channel></rss>
