@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (Slackware)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>یادداشتی برای کانفیگ i3</title><link>http://shahinism.com/posts/blog13910417yddshty-bry-khnfyg-i3.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/"&gt;در ارسال قبلی&lt;/a&gt; از میز‌کار &lt;a title="i3 official website" href="http://i3wm.org" target="_blank"&gt;i3&lt;/a&gt; صحبت کردم‌. قرار شد در این پست در مورد کانفیگ و رفع نیاز‌های اولیه‌مان روی این مدیر‌پنجره صحبت کنیم‌. اول از همه طبق معمول باید این میزکار را نصب کنیم‌. همانطور که در پست قبل گفتم این میزکار از نوع اعلان فونت X استفاده می‌کند که متاسفانه در فونت‌هایی که من امتحان کردم نتوانستم تایتل فارسی پنجره‌ها را به درستی نمایش دهم‌ (دوست خوبم فرود در کامنت‌های &lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank"&gt;پست قبل&lt;/a&gt; گفتند که از قرار با فونت Ubuntu مشکل حل شده بود‌). پس از&lt;a title="unicode question on i3faq" href="http://faq.i3wm.org/question/208/unicode-title-for-windows/" target="_blank"&gt; تماس با توسعه دهندگان&lt;/a&gt; i3 و راهنمایی‌شان‌، برای پشتیبانی از xft و طبیعتا دست بازتر در انتخاب فونت‌ها سورس را با&lt;a title="i3 pango patch" href="https://aur.archlinux.org/packages/i3/i3-pango/i3-pango.tar.gz" target="_blank"&gt; این پچ&lt;/a&gt; آماده کردم‌. دوستان آرچر می‌توانند از این &lt;a title="i3 pango aur" href="https://aur.archlinux.org/packages.php?ID=59344" target="_blank"&gt;بسته&lt;/a&gt; برای نصب استفاده کنند‌. اما باقی که می‌خواهند خودشان کامپایل کنند کافیست پچ را در پوشهٔ‌ سورس کپی کنند و با دستور زیر ترتیب کار را بدهند:‌
+&lt;div class="code"&gt;&lt;pre&gt;patch -p1 &amp;amp;lt; i3-wm-pango.patch
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;دوستان اسلکوری هم می‌توانند باقی کار را به این &lt;a title="i3 &amp;amp; i3status slackbuilds" href="http://slackbuilds.org/result/?search=i3&amp;amp;sv=13.37" target="_blank"&gt;Slackbuild&lt;/a&gt; بسپارند‌. پس از نصب میزکار را اجرا کنید‌. چیزی که ما می‌خواهیم در نهایت شبیهش شویم به صورت زیر است:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png"&gt;&lt;img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png" alt="" width="430" height="323"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;قبل از این که بگویید این که چیزی ندارد تا بخواهیم کانفیگش کنیم بگذارید بگویم که دو روز وقتم را گرفت تا بتوانم به اینجا برسانمش ;-)&lt;/p&gt;
+&lt;p&gt;برای شروع کار می‌خواهیم فونت میزکار را تعیین کنیم‌. فایل کانفیگ i3 برای هر کاربر از شاخهٔ ‎~/.i3/config خوانده می‌شود‌ (توجه داشته باشید که در اولین اجرا اگر این فایل وجود نداشته باشد برنامهٔ کانفیگ خودکار i3 شروع می‌شود و از شما می‌پرسد که کدام کلید را به عنوان metaیتان تعریف کند‌ و بعد این فایل ساخته می‌شود-اگر هم نشد در &lt;a title="i3 userguide" href="http://i3wm.org/docs/userguide.html" target="_blank"&gt;userguide&lt;/a&gt; دنبالش بگردید و مسیرش را ببینید!) فایل کانفیگ را پیدا می‌کنیم و دنبال خط زیر می‌گردیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و آن را به صورت زیر ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font xft:Terminus 9
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین از آن‌جا که ترمینال پیش‌فرض i3 را دوست نداریم و می‌خواهیم Terminator جایگزینش شود به دنبال ‎# start a terminal می‌گردیم و خط زیرش را به صورت زیر ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bindsym &lt;span class="nv"&gt;$mod&lt;/span&gt;+Return &lt;span class="nb"&gt;exec&lt;/span&gt; --no-startup-id terminator
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در ادامهٔ کار با کانفیگ‌های پیش‌فرض i3 می‌سازیم‌، جز این که یک مشکل کوچک و قابل حل وجود دارد‌. آن هم این که بعد از تغییر layout کیبورد به فارسی دیگر کلید‌های میانبر میزکارمان کار نمی‌کنند و باید layout را انگلیسی کنیم تا به کار بیافتند‌. برای حل این مشکل باید به جای کلید‌های bindsym (کلید‌های میانبری که با اسم کلید مثلا shift, Return و ... تعریف می‌شوند) از bindcode استفاده کنیم‌. برای نمونه ما کلید‌های میانبر تغییر layout را به این صورت تعریف می‌کنیم.&lt;/p&gt;
+&lt;p&gt;کلید‌های مدنظر ما برای تغییر صفحه کلید Alt+Shift است‌. اول از همه در اول فایل کانفیگ یک متغیر به اسم ‎$mod1 که به Alt اشاره می‌کند به صورت زیر تعریف می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$mod1&lt;/span&gt; Mod1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سپس خطوط زیر را در انتهای فایل کانفیگ اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bindcode &lt;span class="nv"&gt;$mod1&lt;/span&gt;+62 &lt;span class="nb"&gt;exec&lt;/span&gt; ~/.i3/changekb.sh
+
+bindcode &lt;span class="nv"&gt;$mod1&lt;/span&gt;+50 &lt;span class="nb"&gt;exec&lt;/span&gt; ~/.i3/changekb.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب حالا این دو خط چه می‌کنند؟ دستور bindcode به i3 می‌فهماند که باید از کد کلید‌های کیبورد برای شناسایی کلید ترکیبی استفاده کند‌. ‎$mod1 را هم که پیشتر خودمان به عنوان کلید Alt تعریف کردیم‌. حالا می‌ماند اعداد ۶۲ و ۵۰‌. این اعداد کد‌هایی هستند که کلید‌های شیفت چپ و راست کیبورد با آن‌ها شناخته می‌شوند و دقیقا مختص همین کلید‌ها هستند‌. برای کشفشان می‌توانید در ترمینال برنامهٔ xev را اجرا کنید کلید مورد نظرتان را فشار دهید و در خروجی‌ها به دنبال عبارت keycode و عدد روبرویش بگردید‌.&lt;/p&gt;
+&lt;p&gt;exec هم فرمانی است که با استفاده از آن می‌توانیم یک اسکریپت خارجی را اجرا کنیم که در اینجا ما اسکریپتی که layout را بررسی می‌کند و با توجه به وضعیت فعلی‌اش آن را به انگلیسی یا فارسی تغییر می‌دهد را به آن شناساندیم‌. پس لازم است کد زیر را که مربوط به این اسکریپت است در فایل changekb.sh وارد کرده و فایل را به پوشهٔ ‎.i3 در پوشهٔ خانگیتان کپی کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#This is a script for changing keyboard between English and Persian layouts&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap -print | grep xkb_symbols | awk &lt;span class="s1"&gt;'{print $4}'&lt;/span&gt; | awk -F&lt;span class="s2"&gt;"+"&lt;/span&gt; &lt;span class="s1"&gt;'{print $2}'&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; us &lt;span class="o"&gt;]&lt;/span&gt;;
+
+&lt;span class="k"&gt;then &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"EN"&lt;/span&gt;; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"changing to IR..."&lt;/span&gt;; setxkbmap ir;
+
+&lt;span class="k"&gt;else &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"IR"&lt;/span&gt;; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Changing to US..."&lt;/span&gt;; setxkbmap us ;
+
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نکته اینجاست که نمی‌دانم چرا Alt+Shift راست پس از تغییر layout به فارسی قادر به بازگردانیش به انگلیسی نیستند‌، در حالی که کلید‌های سمت چپ به راحتی این کار را انجام می‌دهند‌! البته این کار مزیتی برای خودش دارد و آن هم این که با استفاده از کلید‌های سمت راست دیگر خیالم راحت است که کیبورد فارسی است ;-)&lt;/p&gt;
+&lt;p&gt;در ادامه به حیاتی‌ترین بخش میزکارمان می‌رسیم‌. بخش گزارش‌گیری‌! نوار پایینی میزکار توسط برنامهٔ i3bar کنترل می‌شود‌. این برنامه می‌تواند خروجی برنامه‌های مختلف را در خود نمایش دهد‌. خود i3 برنامه‌ای به اسم i3status برای گزارش‌گیری دارد که من زیاد از آن خوشم نیامد‌. این شد که تصمیم گرفتم از conky برای این بخش استفاده کنم‌. چون هم ابزار‌های بیشتری دارد و هم قابلیت اجرای یک اسکریپت خارجی را بدون درد و خونریزی! این شد که به دنبال خط bar که احتمالا در انتهای فایل کانفیگ قرار دارد می‌گردیم و در میان آکولاد‌های روبرویش دو خط زیر را اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+
+status_command &lt;span class="nb"&gt;exec &lt;/span&gt;conky -c ~/.i3/i3conky
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خط اول این دستور که فونت terminus را برای خروجی i3bar تعریف کرده را می‌توانید نادیده بگیرید و یا به صورت xft مثل دفعهٔ قبل تعیین کنید‌. اما خط دوم دستور conky را با فایل کانفیگ i3conky که در شاخهٔ ‎.i3 قرار دارد اجرا می‌کند‌. پس لازم است این فایل را ایجاد کنید و دستورات زیر را در آن کپی کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;background no
+
+out_to_console yes
+
+double_buffer no
+
+short_units yes
+
+out_to_x no
+
+update_interval 1.0
+
+total_run_times 0
+
+use_spacer right
+
+
+
+TEXT
+
+CPU: &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu1&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu2&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu3&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu4&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; @ FRQ: &lt;span class="nv"&gt;$freq&lt;/span&gt; | RAM:&lt;span class="nv"&gt;$mem&lt;/span&gt;/&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;memmax&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$memperc&lt;/span&gt;%&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;if_up&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;| LAN: D:&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;downspeed&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; U:&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;upspeed&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;endif&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+| &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;exec&lt;/span&gt;&lt;span class="p"&gt; ~/.i3/kbstatus.sh&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; | VOL: &lt;span class="nv"&gt;$mixer&lt;/span&gt; | &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="p"&gt; %a %d.%m.%y&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="p"&gt; %H:%M&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توضیح آرگومان‌های این فایل بماند به عهدهٔ خودتان‌. فقط من برای دیدن وضعیت فعلی صفحه کلید اسکریپت تغییر صفحه کلید را ویرایش کردم و آن را به اسم kbstatus.sh در شاخهٔ ‎.i3 قرار دادم تا از conky آن را فرا بخوانم‌. این اسکریپت فقط layout فعلی را در خروجی نشان می‌دهد و کدش به صورت زیر است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bas&lt;/span&gt;
+
+setxkbmap -print | grep xkb_symbols | awk &lt;span class="s1"&gt;'{print $4}'&lt;/span&gt; | awk -F&lt;span class="s2"&gt;"+"&lt;/span&gt; &lt;span class="s1"&gt;'{print $2}'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;کانفیگ میزکارمان دیگر تقریبا تمام شده‌. فقط می‌ماند یک چند تا ریزه کاری‌. i3 به صورت پیش‌فرض صفحه را از طرفی که بزرگتر است نصف می‌کند‌. پس دز عمدهٔ مانیتور‌ها این مسیر به صورت افقی تعریف می‌شود‌. حال آن که من تقسیم عمودی را بیشتر ترجیح می‌دهم‌. پس با خط زیر به i3 می‌فهمانم که این کار را طبق نظر من انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;default_orientation vertical
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین می‌خواهم تعدادی از برنامه‌هایم مثل mdic یا vlc به صورت float (تایل نشده) باز شوند که برای این کار دستورات زیر را اضافه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Vlc"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Mdic"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"DTA"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Download"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"xfce4-notifyd"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مقدار class و یا instance را می‌توانید پس از ران کردن دستور xprop WM_CLASS و سپس کلیک روی برنامهٔ مورد نظر به دست آورید‌. مثلا در مورد فایرفاکس خروجی به صورت زیر است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;WM_CLASS&lt;span class="o"&gt;(&lt;/span&gt;STRING&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Navigator"&lt;/span&gt;, &lt;span class="s2"&gt;"Firefox"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که Nvigator مقدار instance و Firefox مقدار class است‌. توجه داشته باشید که این مقدار Case sensetive است‌!&lt;/p&gt;
+&lt;p&gt;من فایل کانفیگ i3 و اسکریپت‌های مورد استفاده‌ام را روی &lt;a title="my i3 wm theme on git" href="https://github.com/shahinism/i3-wm-theme" target="_blank"&gt;این کانال git&lt;/a&gt; گذاشته‌ام‌. برای پی‌بردن بیشتر به جزئیات می‌توانید از آن‌ها استفاده کنید!&lt;/p&gt;</description><category>Arch</category><category>bash</category><category>i3</category><category>slackbuild</category><category>Slackware</category><category>اسلکور</category><category>حل مشکل</category><guid>http://shahinism.com/posts/blog13910417yddshty-bry-khnfyg-i3.html</guid><pubDate>Sat, 07 Jul 2012 09:41:16 GMT</pubDate></item><item><title>نصب Awesome WM روی اسلکور</title><link>http://shahinism.com/posts/blog13910106nsb-awesome-wm-rwy-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;در چند ماه گذشته یکی از عذاب‌آور‌ترین کار‌هایی که انجام دادم‌، نصب مدیر پنجره‌ی &lt;a title="Awesome wm main page" href="http://awesome.naquadah.org/" target="_blank"&gt;Awesome&lt;/a&gt; روی اسلکور بود‌! بماند که چند باری هم وسوسه شدم که به یکی از توزیع‌های مخزن دار (اسمو D:) کوچ کنم‌. ولی ارزش اسلکور برایم این‌قدر بالا بود که دست به این کار نزنم.
+بعد از چند بار آزمایش و خطا‌، شکست و ... روشی که در زیر می‌بینید تمیز‌ترین روش نصب مدیر پنجره‌ی Awesome روی اسلکور است‌:&lt;/p&gt;
+&lt;p&gt;اولین کاری که باید انجام دهیم‌، کامپایل دوباره‌ی بسته‌ی Cairo با قابلیت پشتیبانی از xcb است‌. برای این کار در شاخه ‎/source/l/cairo در DVD اسلکور فایل cairo.SlackBuild را با یک ویرایشگر باز کرده و به دنبال عبارت ‎‎‏‎--enable-xcb بگردید‌. پس از یافتنش علامت # را از اول آن بردارید‌. یا آن بخش را به صورت زیر ویرایش کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;CFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$SLKCFLAGS"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+./configure &lt;span class="se"&gt;\&lt;/span&gt;
+
+--prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr &lt;span class="se"&gt;\&lt;/span&gt;
+
+--libdir&lt;span class="o"&gt;=&lt;/span&gt;/usr/lib&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;LIBDIRSUFFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+--mandir&lt;span class="o"&gt;=&lt;/span&gt;/usr/man &lt;span class="se"&gt;\&lt;/span&gt;
+
+--sysconfdir&lt;span class="o"&gt;=&lt;/span&gt;/etc &lt;span class="se"&gt;\&lt;/span&gt;
+
+--disable-gtk-doc &lt;span class="se"&gt;\&lt;/span&gt;
+
+--disable-glitz &lt;span class="se"&gt;\&lt;/span&gt;
+
+--disable-quartz &lt;span class="se"&gt;\&lt;/span&gt;
+
+--disable-static &lt;span class="se"&gt;\&lt;/span&gt;
+
+--enable-xcb &lt;span class="se"&gt;\&lt;/span&gt;
+
+--disable-win32
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فایل را ذخیره کرده و مثل یک SlackBuild عادی نصبش کنید‌. حالا به شاخه‌ی ‎/source/l/startup-notification بروید و به ترتیب دستورات زیر را اجرا کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;rm startup-notification*.tar.bz2
+
+wget -c http://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
+
+gunzip startup-notification-0.12.tar.gz
+
+bzip2 startup-notification-0.12.tar
+
+&lt;span class="nv"&gt;VERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0.12 ./startup-notification.SlackBuild
+
+upgradepkg /tmp/startup-notification-*.txz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا به شاخه ‎/source/x/x11/src/xcb در DVD بروید و دستورات زیر را اجرا کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;rm xcb-util-*
+
+wget -c http://xcb.freedesktop.org/dist/xcb-util-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-image-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-wm-0.3.8.tar.bz2 http://xcb.freedesktop.org/dist/xcb-util-keysyms-0.3.8.tar.bz2
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$SLACKWARE_TREE&lt;/span&gt;/source/x/x11
+
+&lt;span class="k"&gt;for &lt;/span&gt;i in xcb-util xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-image; &lt;span class="k"&gt;do&lt;/span&gt; ./x11.SlackBuild xcb &lt;span class="nv"&gt;$i&lt;/span&gt;; &lt;span class="k"&gt;done&lt;/span&gt;
+
+upgradepkg --install-new /tmp/x11-build/xcb-util-*.txz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حال نوبت به نصب چند پیش‌نیاز می‌رسد‌. برای راحتی کار پیشنهاد می‌کنم &lt;a title="sbopkg official page" href="http://sbopkg.org" target="_blank"&gt;sbopkg&lt;/a&gt; و &lt;a title="src2pkg official page" href="http://src2pkg.net" target="_blank"&gt;src2pkg&lt;/a&gt; را دریافت و نصب کنید‌. باقی مراحل را با استفاده از این دو ابزار ادامه می‌دهیم‌.&lt;/p&gt;
+&lt;p&gt;برای نصب libev, lua, imlib2, giblib, feh به ترتیب دستورات زیر را وارد می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sbopkg -i imlib2
+
+sbopkg -i lua
+
+sbopkg -i libev
+
+sbopkg -i giblib
+
+sbopkg -i feh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا آخرین نسخه libxdg را از&lt;a href="http://n.ethz.ch/~nevillm/download/libxdg-basedir/" target="_blank"&gt; این آدرس&lt;/a&gt; دریافت کرده و به صورت زیر کامپایل می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;src2pkg libxdg-basedir-*.tar.gz
+
+installpkg /tmp/libxdg*.txz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای نصب oocairo و oopango نیز از دو اسکریپت به صورت زیر استفاده می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mkdir oocairo
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;oocairo
+
+wget -c https://raw.github.com/cycojesus/slackbuilds/master/l/oocairo/oocairo.SlackBuild
+
+chmod +x oocairo.SlackBuild
+
+./oocairo.SlackBuild
+
+upgradepkg --install-new /tmp/oocairo-*.txz
+
+
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; ..
+
+mkdir oopango
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;oopango
+
+wget -c https://raw.github.com/cycojesus/slackbuilds/master/l/oopango/oopango.SlackBuild
+
+chmod +x oopango.SlackBuild
+
+./oopango.SlackBuild
+
+upgradepkg --install-new /tmp/oopango-*.txz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سرانجام نوبت به کامپایل خود Awesome می‌رسد‌. آن را از&lt;a title="Awesome wm download page" href="http://awesome.naquadah.org/download/" target="_blank"&gt; این صفحه&lt;/a&gt; دانلود و استخراج کنید. سپس فایل awesomeConfig.cmake را با یک ویرایشگر باز کرده و عبارت زیر را:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;DEFINED SYSCONFDIR&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;SYSCONFDIR &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SYSCONFDIR&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; CACHE PATH &lt;span class="s2"&gt;"config directory"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;SYSCONFDIR &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;/etc CACHE PATH &lt;span class="s2"&gt;"config directory"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+endif&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به صورت زیر ویرایش کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;DEFINED SYSCONFDIR&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;SYSCONFDIR /etc CACHE PATH &lt;span class="s2"&gt;"config directory"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;SYSCONFDIR /etc CACHE PATH &lt;span class="s2"&gt;"config directory"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+endif&lt;span class="o"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فایل را ذخیره کرده و دستور make را اجرا کنید‌. پس از به پایان رسیدن این دستور به صورت زیر عمل می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mkdir /tmp/awesome-version
+
+make install &lt;span class="nv"&gt;DESTDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/tmp/awesome-version
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/awesome-version
+
+makepkg -l y -c n /tmp/awesome-version.tgz
+
+installpkg /tmp/awesome-version.tgz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سرانجام پس از نصب Awesome برای این که بتوانیم آن را با xwmconfig انتخاب کنیم‌، دستور زیر را وارد کرده‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;vim /etc/X11/xinit/awesome.xinit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و متن زیر را در آن وارد کنید:&lt;/p&gt;
+&lt;p&gt;```bash#!/bin/sh&lt;/p&gt;
+&lt;h2&gt;$Xorg: xinitrc.cpp,v 1.3 2000/08/17 19:54:30 cpqbld Exp $&lt;/h2&gt;
+&lt;p&gt;userresources=$HOME/.Xresources&lt;/p&gt;
+&lt;p&gt;usermodmap=$HOME/.Xmodmap&lt;/p&gt;
+&lt;p&gt;sysresources=/etc/X11/xinit/.Xresources&lt;/p&gt;
+&lt;p&gt;sysmodmap=/etc/X11/xinit/.Xmodmap&lt;/p&gt;
+&lt;h2&gt;merge in defaults and keymaps&lt;/h2&gt;
+&lt;p&gt;if [ -f $sysresources ]; then&lt;/p&gt;
+&lt;p&gt;/usr/bin/xrdb -merge $sysresources&lt;/p&gt;
+&lt;p&gt;fi&lt;/p&gt;
+&lt;p&gt;if [ -f $sysmodmap ]; then&lt;/p&gt;
+&lt;p&gt;/usr/bin/xmodmap $sysmodmap&lt;/p&gt;
+&lt;p&gt;fi&lt;/p&gt;
+&lt;p&gt;if [ -f $userresources ]; then&lt;/p&gt;
+&lt;p&gt;/usr/bin/xrdb -merge $userresources&lt;/p&gt;
+&lt;p&gt;fi&lt;/p&gt;
+&lt;p&gt;if [ -f $usermodmap ]; then&lt;/p&gt;
+&lt;p&gt;/usr/bin/xmodmap $usermodmap&lt;/p&gt;
+&lt;p&gt;fi&lt;/p&gt;
+&lt;p&gt;exec awesome&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;و سرانجام با دستور زیر به آن امکان اجرا می‌دهیم‌:&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;p&gt;chmod +x /etc/X11/xinit/awesome.xinit&lt;/p&gt;
+&lt;p&gt;```.&lt;/p&gt;
+&lt;p&gt;در آینده‌ای نزدیک در مورد این مدیر پنجره و نحوه‌ی کار با آن بیشتر صحبت خواهم کرد ;-)&lt;/p&gt;</description><category>awesome wm</category><category>cairo</category><category>feh</category><category>libxdg</category><category>oocairo</category><category>oopango</category><category>sbopkg</category><category>Slackware</category><category>src2pkg</category><category>اسلکور</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910106nsb-awesome-wm-rwy-slkhwr.html</guid><pubDate>Sun, 25 Mar 2012 10:29:51 GMT</pubDate></item><item><title>dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)</title><link>http://shahinism.com/posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حتما دیگه تا حالا خبر‌دار شدین که &lt;strong&gt;OpenDNS&lt;/strong&gt; ابزاری آماده کرده (‌البته قبلا برای مک آماده کرده بود‌) که ارتباط بین سیستم شما و DNS سرور‌های خودش رو به همون روشی که SSL ارتباطاتتون رو کد می‌کنه کد کنه‌. اول یه توضیح در مورد این که اصلا به چه درد می‌خوره می‌دم و بعد به چگونگی نصبش می‌پردازم‌.
+&lt;/p&gt;&lt;h4&gt;DNS و نقش فایل resolv.conf:&lt;/h4&gt;
+&lt;p&gt;خوب عملا کامپیوتر‌های روی یه شبکه (‌سرور‌ها و سرویس گیرنده‌ها‌) با آدرس آی پی شناخته می‌شن‌. خوب حالا برای من کاربر که قصد داره روی اینترنت به یه سایت دسترسی داشته باشه‌، سخته که یه عدد نافهوم مثل 188.35.73.20 رو حفظ کنم‌. تازه این فقط برای دسترسی به یه سایته‌. یا فرض کنین صاحب سایت به هر دلیلی قصد تعویض سرورش رو داره‌، در این صورت باید تمام کسایی که با آی پی قبلی به سایت دسترسی داشتن‌، از آی پی سرور جدید استفاده کنن‌. حالا کار DNS Server‌ها اینه که می‌آن‌، هر آدرس معنادار (‌که طبیعتا استاندارد خودش رو داره‌) رو به یه آدرس آی پی معادلش ربط می‌دن‌. اینطوریه که وقتی شما می‌نوسین &lt;strong&gt;http://shahinism.com&lt;/strong&gt; مرورگرتون آی پی و آدرس مسیری که وبلاگ من توش قرار داره رو پیدا می‌کنه و بهتون نشون می‌ده‌. به همین سادگی ;-)&lt;/p&gt;
+&lt;p&gt;حالا بحث سر اینه که DNS Server‌های متفاوتی توی اینترنت هستن‌. هر کدومشون با توجه به سلایق خاصی شخصی سازی شدن‌. اگه شما تا به حال نمی‌دونستین که اصلا DNS Server چی هست‌، پس احتمالا دارین از مال ISP‌تون استفاده می‌کنین‌. حالا ممکن شما از رفتار ISP‌تون نسبت به DNS‌ها راضی نباشین‌. یا فکر کنین که امنیت لازم براتون از این DNS فراهم نمی‌شه (‌حتما فهمیدین که اگه یه DNS سرور بخواد‌، می‌تونه وقتی شما &lt;strong&gt;http://google.com&lt;/strong&gt; رو توی مرورگرتون می‌زنین‌، شما رو به آدرسی غیر از سرور‌های گوگل وارد کنه و این یعنی خطر‌!)&lt;/p&gt;
+&lt;p&gt;این‌جاست که فایل resolv.conf توی لینوکس سر و کلش پیدا می‌شه‌. شما با استفاده از این فایل می‌تونین به لینوکس‌تون بفهمونید که از چه DNS Server‌ای استفاده کنه تا در خطر نباشین‌ (‌این کار رو اگه روترتون ازش پشتیبانی کنه می‌شه توی خود روتر هم انجام داد ;-))&lt;/p&gt;
+&lt;h4&gt;مزیت استفاده از DNSCrypt&lt;/h4&gt;
+
+&lt;p&gt;بزرگترین و بهترین مزیتش اینه که ما رو به صورت کاملا امن به سرور‌های OpenDNS وصل می‌کنه‌، و دیگه ارتباطمون با DNS Server غیر قابل شنود می‌شه‌. یعنی اگه شخص خرابکاری روی اینترنتمون باشه‌، باید اول با کدگذاری DNSCrypt بجنگه تا دستش به ما برسه‌!&lt;/p&gt;
+&lt;h4&gt;نصب روی اسلکور (‌و اکثر توزیع‌ها‌)&lt;/h4&gt;
+
+&lt;p&gt;خیلی راحت‌، اول با دستور زیر فایل‌ها رو می‌گیریم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git clone git://github.com/opendns/dnscrypt-proxy.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;بعد وارد پوشه می‌شیم و دستورات زیر رو به ترتیب می‌زنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;./autogen
+
+./configure
+
+make -j4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که اون ‏‎-j4 منظورم اینه که از همه زور CPUم استفاده کن (‌اگه شما CPUتون چهار هسته‌ای نیست می‌تونین تعداد هسته خودتون رو جای چهار بزارین یا کلا تگ j رو بیخیال شین) حالا برای این که وقتی دلمون خواست پاکش کنیم این کار رو می‌کنیم‌ (مخصوص اسلکور):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mkdir /tmp/dnscrypt
+
+make install &lt;span class="nv"&gt;DESTDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/tmp/dnscrypt
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/dnscrypt
+
+makepkg -l y -c n /tmp/dnscrypt.tgz
+
+installpkg /tmp/dnscrypt.tgz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توی باقی توزیع‌ها تنها کافیه بزنین make install ولی خوب پاک کردنش پای خودتونه!&lt;/p&gt;
+&lt;h5&gt;کار با DNSCrypt&lt;/h5&gt;
+
+&lt;p&gt;برای کار باهاش اول اون رو با دستور زیر فعال می‌کنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/local/sbin/dnscrypt-proxy -d
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و اگه دلتون نمی‌خواد بعد از هر بار ری‌استارت دوباره این دستور رو بزنین‌، فقط کافیه توی فایل ‏‎/etc/rc.d/rc.local همین دستور بالا رو اضافه کنین‌.&lt;/p&gt;
+&lt;p&gt;و در آخر با اضافه کردن خط زیر توی ‎/etc/resolv.conf به لینوکستون بگین که از 127.0.0.1 به عنوان DNS Server استفاده کنه‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;nameserver 127.0.0.1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حواستون باشه که nameserver قبلی رو با اضافه کردن یه # کامنت کنین‌! حالا با مرورگرتون (‌و بدون استفاده از پروکسی‌) &lt;a title="Are you using OpenDNS?" href="http://www.opendns.com/welcome/" target="_blank"&gt;این صفحه&lt;/a&gt; رو ببینین‌. احتمالا بهتون تبریک می‌گه که از OpenDNS استفاده می‌کنین ;-)&lt;/p&gt;
+&lt;h5&gt;حل یک مشکل:&lt;/h5&gt;
+
+&lt;p&gt;احتمالا بعد از اولین ریبوت می‌فهمین که فایل resolv.conf‌تون دوباره عوض شده و آدرس قبلی توش نیست‌! این به دلیل استفاده از dhcpcd هست که تنظیمات این فایل رو بعد از هر بار شناسایی آی پی روتر دوباره‌نویسی می‌کنه‌. خوب حالا چاره چیه‌؟ هیچی دستور زیر رو می‌زنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;chattr +i /etc/resolv.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که یعنی دست خر کوتاه‌! &lt;del&gt;(‌یعنی هیچ‌کس غیر از صاحب فایل حق دست زدن بهش رو نداشته باشه‌)&lt;/del&gt;  در مورد این که این دستور دقیقا چی کار می‌کنه می‌تونین به&lt;a title="مجوزهای دسترسی فایل سیستم‌های ext در لینوکس" href="http://weblog.aqlinux.ir/?p=204" target="_blank"&gt; این مطلب&lt;/a&gt; از علی عزیز در آکلینوکس رجوع کنین ;-)&lt;del&gt;&lt;/del&gt;&lt;/p&gt;</description><category>dhcpcd</category><category>DNS</category><category>DNS Server</category><category>OpenDNS</category><category>resolv.conf</category><category>Slackware</category><category>اسلکور</category><category>اینترنت</category><category>سرور</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html</guid><pubDate>Sun, 19 Feb 2012 15:47:14 GMT</pubDate></item><item><title>نصب TeXLive بدون درد و خونریزی‌!</title><link>http://shahinism.com/posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;شاید این مساله انجام کار‌های کامپیوتری‌، آن هم بدون درد و خونریزی‌، به یک کلیشه‌ی تکراری تبدیل شده باشد‌. اما اگر شما هم قصد تجربه‌ی LaTeX با زبان فارسی را دارید‌، و احتمالا ویژگی‌های بسته‌ای به اسم &lt;a title="xepersian home page" href="/posts/www.parsilatex.com/joomla/index.php" target="_blank"&gt;xepersian&lt;/a&gt; وسوسه‌تان کرده که آن را در اولویت بسته‌های فارسی قرار دهید‌، باید انتخابتان را بکنید‌! &lt;a title="miktex official page" href="http://miktex.org/" target="_blank"&gt;MikTex&lt;/a&gt; یا &lt;a title="texlive official page" href="http://tug.org/texlive/" target="_blank"&gt;TeXLive‌&lt;/a&gt;. انتخاب احتمالا آسان است‌، چون MikTex تنها برای ویندوز توسعه داده می‌شود‌، ولی‌، TeXLive روی انواع پلتفرم‌ها قابلیت نصب دارد‌. خوب حالا حتما می‌گویید‌ که‌: ای بابا‌، اگه بسته‌ها نصبشان به این آسانی است‌، پس درد و خونریزی‌ای که می‌گویی کجاست؟&lt;/p&gt;
+&lt;p&gt;جوابتان از این قرار است که با وجود این که شما می‌توانید تک لایو را از روی مخازن یا در مورد اسلکور با اسلکبیلد نصب کنید‌، اما آپگرید کردن این بسته‌های نصب شده‌تان‌، وابسته به این می‌شود که این بسته‌ها روی همان مخازن آپگرید شوند‌! یعنی مراحل به روز رسانی برای بسته‌ای مثل  xepersian با این روش می‌شود‌، اول توسعه دهنده بسته‌، نسخه‌ی آخر را منتشر کند‌، سپس توزیعی مثل تک لایو‌، بسته را به آخرین نسخه‌ای که ذکرش رفت آپگرید کند‌ و در آخر توزیعتان‌، از آخرین نسخه تک لایو بسته‌ای بسازد‌‌! حالا فکر می‌کنید از مرحله اول تا سوم‌، توسعه دهنده‌ای مثل وفا خلیقی (‌توسعه دهنده‌ی xepersian ) چند نسخه‌ی به روز رسانی‌ ارائه کرده؟ جواب سنگین است‌، برای من‌، ۲۰ نسخه‌! پس احتمالا حالا‌، باید اهمیت این به روزرسانی را درک کرده باشید‌!&lt;/p&gt;
+&lt;p&gt;خوب حالا چگونه نصبش کنیم‌؟ با وضع اینترنت ما‌، به خصوص در هفته‌های اخیر‌، تنها انتخابمان همان iso است که از &lt;a title="ISO download page" href="http://mirror.ctan.org/systems/texlive/Images/" target="_blank"&gt;این لینک&lt;/a&gt; قابل دریافت است‌. حجمی برابر با ۲.۳ گیگابایت انتظارتان را می‌کشد‌ (‌البته مزیت این DVD این است که شما می‌توانید از آن برای نصب تکلایو روی انواع سیستم‌ها نظیر مک و ویندوز هم استفاده کنید‌). پس از دانلود بسته را از حالت iso خارج کنید‌. سلیقه خودتان است‌، یا می‌توانید روی یک فولدر دیگر Mount‌اش کنید‌، و یا مثل من خز بازی در آورده و با Ark اکسترکتش کنید‌. پس از باز کردن بسته به پوشه‌ی مربوطه بروید‌، و دستور زیر را وارد کنید‌.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sudo ./install-tl
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب همان‌طور که پیداست با این کار اسکریپت نصب را فعال کرده‌اید‌. و با تایپ یکی دو حرف می‌توانید بسته را نصب کنید‌ (‌البته نه کاملا‌!). من ترجیح دادم که از محیط گرافیکی نصب استفاده کنم که یک پیشنیاز را باید نصب می‌کردم تا این محیط که با Perl نوشته شده اجرا شود‌. این پیشنیاز perl-tk نام دارد که اسلکوری‌ها می‌توانند از&lt;a title="perl-tk slackbuild" href="/posts/slackbuilds.org/repository/13.37/perl/perl-tk/" target="_blank"&gt; این اسلکبیلد &lt;/a&gt;استفاده کنند‌.&lt;/p&gt;
+&lt;p&gt;پس از نصب بسته‌ی ذکر شده‌، حالا همان دستور قبلی را با یک آپشن اضافی صدا می‌زنیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sudo ./install-tl -gui
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;می‌توانید تنظیمات مربوطه را ببینید‌، و در صورتی که نیاز بود جایی را تغییر دهید‌. نصب حدود یک ربع ساعت برای من طول کشید‌. پس از پایان نصب‌، در متن‌هایی که روی صفحه نمایش داده می‌شود (‌چه در حالتی که از محیط گرافیکی استفاده می‌کند باشید و چه در ترمینال‌، این متن را خواهید دید‌) به شما از بابت نصب تکلایو تبریک گفته می‌شود‌، و می‌خواهد که آدرس مربوط به فرامین تکلایو را به PATH سیستمتان اضافه کنید‌.&lt;/p&gt;
+&lt;p&gt;این آدرس برای من از این قرار بود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/localc/texlive/2011/bin/x86_64-linux/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این کار را می‌توانید با ویرایش فایل /etc/profile انجام دهید‌. خوب با خوشم خوشم‌های فراوان‌، از پس نصب تک لایو هم بر آمدیم که خوشبختانه تمام کار‌هایی که انتظار داشتم را درست انجام داد‌. حالا شاید بخواهید همین الان آپگرید کنید‌. برای به روز‌رسانی‌، شما از ابزاری به اسم texlive manager استفاده می‌کنید که با استفاده از یکی از دستورات زیر می‌توانید بهشان دسترسی داشته باشید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;tlmgr &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="k"&gt;for &lt;/span&gt;text mode&lt;span class="o"&gt;}&lt;/span&gt;
+
+tlmgr -gui &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="k"&gt;for &lt;/span&gt;graphical mode &lt;span class="o"&gt;(&lt;/span&gt;recomended&lt;span class="o"&gt;)}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;آپگرید به آخرین نسخه‌ی تکلایو‌، حجم زیادی را برای اولین بار طلب می‌کند‌. روش جایگزین دیگری در این زمینه وجود دارد که در پست دیگری به آن می‌پردازم‌.&lt;/p&gt;</description><category>LaTeX</category><category>latex</category><category>Slackware</category><category>texlive</category><category>xepersian</category><category>اسلکور</category><category>حل مشکل</category><category>نرم افزار</category><guid>http://shahinism.com/posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html</guid><pubDate>Mon, 17 Oct 2011 12:30:30 GMT</pubDate></item><item><title>تغییر (تثبیت‌) اعلان خط فرمان اسلکور</title><link>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اعلان خط فرمان لینوکس در عین سادگی‌اش می‌تواند شدیدا کاربردی باشد‌! در توزیع‌های مختلف دیده بودم که این اعلان خط فرمان فقط در علائم کاربری $ و ریشه # متفاوت از هم بود‌، اما در اسلکور‌، یک نکته عجیب در این مورد برایم وجود داشت‌! آن هم این که در حالت عادی اعلان فرمان به صورت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;user@hostname &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نشان داده می‌شد‌، اما وقتی مثلا در کنسول KDE یک Tab جدید باز می‌کردم‌، اعلان به صورت زیر تغییر می‌کرد که متاسفانه‌، هیچ قابلیت به درد بخوری در خود نداشت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bash.4.?: &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این مشکل از وقتی که از برنامه &lt;a title="yakuake official webpage" href="http://yakuake.kde.org/" target="_blank"&gt;Yakuake&lt;/a&gt; برای دسترسی راحت‌تر به ترمینال استفاده می‌کردم‌، بیشتر به چشم می‌آمد‌، و عملا تمامی اعلان فرمان‌هایش به همین شکل بود‌. پس تصمیم گرفتم یک بار برای همیشه‌، بی‌سوادی را کنار بگذارم و حلش کنم‌. مشکل به دو فایل زیر مربوط می‌شد‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/etc/bashrc
+
+~/.bashrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که متاسفانه هیچ‌کدامشان در اسلکور به صورت پیش‌فرض وجود نداشتند‌، و از قرار آن اعلان سالم اول کار هم از فایل HOSTNAME موجود در شاخه etc ‏استفاده می‌کرد‌. خوب پس کافی بود یکی از این فایل‌ها را بسازم‌، و از آن‌جایی که ساختن فایل دوم‌، به نظرم آسان‌تر آمد‌، با دستور vim ~/.bashrc اقدام به ساختنش کردم‌، و خط زیر را به آن اضافه کردم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ترمینال را یک بار بستم و باز کردم‌، و همه‌چیز خوب بود‌. حالا می‌ماند توضیحات این خط دوم‌:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;! : شماره فعلی تاریخچه فرمان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;# : شماره دستور آخرین دستور را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;$ : اعلان فرمان استاندارد را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;W : فقط دایرکتوری کاری جاری را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;\ : فقط یک بک اسلش نشان داده میشود.&lt;/li&gt;
+    &lt;li&gt;d : روز، ماه و شماره روز را نمایش میدهد. مثلا : Sat Jan 23&lt;/li&gt;
+    &lt;li&gt;h : نام کامپیوتر میزبان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;n : یک خط جدید باز میکند.&lt;/li&gt;
+    &lt;li&gt;s : نام پوسته فرمان را نشان میدهد. مثلا bash&lt;/li&gt;
+    &lt;li&gt;t : زمان را بصورت ساعت، دقیقه و ثانیه نمایش میدهد. برای مثال : 10:14:40&lt;/li&gt;
+    &lt;li&gt;u : نام کاربر را نمایش میدهد.&lt;/li&gt;
+    &lt;li&gt;w : مسیر کامل دایرکتوری جاری را نمایش میدهد.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت &lt;a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank"&gt;تکنوتاکس&lt;/a&gt; قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!&lt;/p&gt;
+&lt;p&gt;برای این که نتیجه‌ی اعلانتان را ببینید و یا این که اگر لازم شد در موقعیت خاصی وضعیت اعلانتان را عوض کنید (‌البته نه برای همیشه‌، فقط برای نشست حاظر‌) کافیست از دستور زیر در ترمینال استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر کنم به عنوان یک نکته کوچک‌، دیگر همین‌قدر توضیح دادن کافی باشد. ;-)&lt;/p&gt;</description><category>bash</category><category>bashrc</category><category>linux</category><category>Slackware</category><category>اسلکور</category><category>حل مشکل</category><category>خط فرمان</category><guid>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</guid><pubDate>Tue, 04 Oct 2011 08:37:56 GMT</pubDate></item><item><title>حل دو مشکل احتمالی پس از نصب اسلکور</title><link>http://shahinism.com/posts/blog13900508hl-dw-mshkhl-htmly-ps-z-nsb-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;دیروز پس از مدت‌ها و از روی بی‌کاری تصمیم به نصب دوبارهٔ اسلکور روی سیستمم گرفتم‌، و پس از نصب با دو مشکل برخورد کردم که می‌خوام تو این قسمت روش‌های حلشون رو بیان کنم‌.&lt;/p&gt;
+&lt;p&gt;۱- شماره ویدئو مد‌:&lt;/p&gt;
+&lt;p&gt;ممکنه مثل دیروز من و تعدادی دیگه که نتونستن با کمک گرفتن از انجمن‌ها مشکلشون رو حل کنن‌، شما هم پس از لود شدن Lilo به صورت بلافصل با پیغام زیر روبرو بشید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Bios data check successful
+
+
+
+undefined video mode number: ۳۱۶
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خط اول که برای همه‌تون آشناست‌، ولی خط دوم ممکنه با مقادیر مختلفی به شما نمایش داده بشه‌، که در پی اون شما ۳۰ ثانیه وقت دارین که یا یکی از ویدئو مد‌های توی لیست که با Enter ظاهر می‌شه رو انتخاب کنید‌، و یا با مد پیش‌فرض به ادامه لود اسلکور بپردازین‌. برای حل این مشکل کافیه‌ اول با یه ویرایشگر فایل زیر رو باز کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/etc/lilo. conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;بعد چک کنید که آیا یکی از مقادیر VESA Frame buffer console @... فعال هست یا نه‌! احتمالا هست‌، و نیاز به تغییر چیزی ندارین‌، اگه هم نبود کافیه که # کنار گزینهٔ دلخواهتون رو بردارین‌. حالا این فایل رو ذخیره کنید و دستور زیر رو اجرا کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;lilo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;تموم شد‌. این مشکل حل شد‌. احتمال می‌دم این مشکل به خاطر اینه که این دستور بعد از نصب و کانفیگ لیلو در مراحل نصب اسلکور درست اجرا نمی‌شه‌. البته توجه داشته باشید که من در حین نصب نسخهٔ کارنت اسلکور به این مشکل بر خوردم‌.&lt;/p&gt;
+&lt;p&gt;۲- نصب راه‌انداز گرافیکی Nvidia‌:&lt;/p&gt;
+&lt;p&gt;ممکنه خبر داشته باشین که از نسخهٔ ۱۳.۳۷ اسلکور از یک راه‌انداز به اسم nouveau به عنوان جایگزین راه‌انداز‌های رسمی Nvidia استفاده می‌کنه که خوب برای من یکی که دوست دارم از راه‌انداز رسمی استفاده کنم‌، یه مشکلی پیش می‌آره‌. اون هم اینکه اجازه نمی‌ده راه‌انداز رسمی رو نصب کنم‌. برای حل این مشکل باید سه مرحلهٔ سادهٔ زیر رو انجام بدین‌:&lt;/p&gt;
+&lt;p&gt;اول به آدرس زیر برین و بستهٔ xf86-video-nouveau-blacklist-noarch-1.txz رو با استفاده از installpkg نصب کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;extra/xf86-video-nouveau-blacklist
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و بعد از اون سیستم رو دوباره راه‌اندازی کنید‌. حالا دستور pkgtool رو توی ترمینال اجرا کنید‌، و در بخش Remove (‌گزینهٔ مربوط به پاک کردن بسته‌هایی که در حال حاظر روی سیستم نصب شده‌اند‌) به دنبال بسته‌ای با اسمی مشابه زیر بگردید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;xf86-video-nouveau-8bb835463-x86-64-1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توجه کنید که از خط تیرهٔ سوم به بعد ممکنه‌ تغییراتی رو در نسخه‌هایی که روی سیستم شما نصب هست شاهد باشید‌، و حتما توجه داشته باشید که بسته‌ای که چند دقیقه قبل نصب کردیم رو انتخاب نکنید‌. حالا که بستهٔ مورد نظر رو انتخاب کردین‌، کافیه اون رو به دست pkgtool بسپارین تا پاکش کنه‌. پس از حذف این بسته از pkgtool خارج بشین و به سراغ نصب درایور رسمی Nvidia برین‌.&lt;/p&gt;</description><category>current</category><category>Nvidia</category><category>Slackware</category><category>xf86</category><category>اسلکور</category><category>حل مشکل</category><guid>http://shahinism.com/posts/blog13900508hl-dw-mshkhl-htmly-ps-z-nsb-slkhwr.html</guid><pubDate>Sat, 30 Jul 2011 16:45:03 GMT</pubDate></item><item><title>مساله‌: اسکایپ در اسلکور 64 بیتی</title><link>http://shahinism.com/posts/blog13891208mslh-skhyp-dr-slkhwr-64-byty.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب من اصلا هیچ استفاده‌ای از اسکایپ نداشتم تا الان‌. ولی چند روز پیش قرار شد راجع به یک سری از مسایل کاری با یکی از دوستانم روی همین شیکه تبادل نظر کنیم‌. خوب من روی ویندوز اسکایپ داشتم‌. اما دلم می‌خواد وقتی مهاجرت کردم به لینوکس‌، برای این مساله یک راه حل داشته باشم‌. بستهٔ SlackBuild برای اسکایپ از اینجا در دسترسه‌. بعد از اجرا اسکایپ نصب شد ولی اجرا نشد‌. خوب حالا چه کار کنم‌؟ گفتم شاید مشکل از اینجا باشه که من نسخهٔ بسته‌ای که فایل SlackBuild نصب می‌کنه رو عوض کردم‌، ولی خوب با همون نسخهٔ پیش فرض هم کارم پیش نرفت‌! بعد از یک گوگل کوتاه‌! به این نتیجه رسیدم که از اونجایی که از قرار اسکایپ فعلا قابلیت کار روی لینوکس ۳۲ بیتی رو داره‌، پس کامپایل اون روی لینوکس من که ۶۴ بیتی بوده‌، ناقص انجام شده‌. سرچ بعدی به یک بسته رسید به اسم &lt;a title="Slackware 64 Multilab" href="http://alien.slackbook.org/dokuwiki/doku.php?id=slackware:multilib" target="_blank"&gt;Multilib &lt;/a&gt;که از کار‌های استاد عزیزمان‌! Alien است. کار این بسته اینه که به کامپایلر‌های اسلکور لایه‌ای اضافه می‌کنه که این قابلیت رو داشته باشن که نرم‌افزار‌ها رو به صورت ۳۲ بیتی کامپایل و اجرا کنند‌. این‌جوری از قرار دیگه بهانه‌ای باقی نمیمونه که از ۶۴ بیتی‌ها استفاده نکنیم‌.
+&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;a href="http://shahinism.files.wordpress.com/2011/02/skype_logo.gif"&gt;&lt;img class="aligncenter size-full wp-image-178" title="Skype_Logo" src="http://shahinism.files.wordpress.com/2011/02/skype_logo.gif" alt="" width="300" height="208"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;خوب حالا باید چه کار کنیم‌؟&lt;/p&gt;
+&lt;p&gt;توضیحات کامل راجع به این بسته رو می‌تونین از &lt;a title="Multilab Wiki" href="http://alien.slackbook.org/dokuwiki/doku.php?id=slackware:multilib" target="_blank"&gt;اینجا&lt;/a&gt; و &lt;a title="Multilab page" href="http://connie.slackware.com/~alien/multilib/" target="_blank"&gt;اینجا &lt;/a&gt;پیدا کنید‌. برای فعال سازی این بسته در نسخهٔ 13.1 اسلکور اول با این دستور بسته رو دانلود کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; lftp -c «open http: //slackware. com/~alien/multilib/ ; mirror 13.1»
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;وقتی دانلود تموم شد وارد پوشهٔ 13.1 دانلود شده بشید و تایپ کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; upgradepkg --reinstall --install-new *. t؟ z 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;قشنگی دستور رو می‌بینید‌؟ با یک «*» خواسته که هر اسمی پشت پسوند txz یا tgz هست که صد البته حتما معنی «؟» را هم فهمیدین‌، تمام بسته‌های موجود رو نصب می‌کنه‌.&lt;/p&gt;
+&lt;p&gt;حالا کافیه برید داخل پوشهٔ slackware64-compat32 و با دستور‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; upgradepkg --install-new *-compat32/*. t؟ z
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که دیگه زیبایی رو به حد اعلا رسونده‌! مابقی بسته‌ها رو نصب کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت‌ ۱‌: &lt;/strong&gt;خوب نصب این بسته‌ها و کامپایل دوبارهٔ اسکایپ از قرار جواب داد و اسکایپ اجرا شد‌. جدا اسلکور داره من رو مدیون خودش می‌کنه‌. قشنگیش اینجاست که گیر‌های بی‌خودی نمی‌ده‌. و یا بی‌خودی کرش نمی‌کنه‌. حتی از قرار تعصب بی‌خودی هم نداره‌. البته یه سوتی هم در استفاده ازش دادم که در آینده بیشتر راجع بهش توضیح می‌دم‌.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت ۲‌: &lt;/strong&gt;خوب نصب کامل شد ولی به خاطر رقتار ددمناش شبکه‌، از قرار قادر به کانکت شدن نیست که خودش مساله دیگریست‌.&lt;/p&gt;</description><category>Skype</category><category>Slackbuilds</category><category>Slackware</category><category>اسلکور</category><category>اسکایپ</category><category>حل مشکل</category><guid>http://shahinism.com/posts/blog13891208mslh-skhyp-dr-slkhwr-64-byty.html</guid><pubDate>Sun, 27 Feb 2011 19:31:30 GMT</pubDate></item></channel></rss>

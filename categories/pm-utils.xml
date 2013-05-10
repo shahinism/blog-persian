@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (pm-utils)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>یادداشتی در مورد hibernate و suspend در لینوکس</title><link>http://shahinism.com/posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;کلا چون به دلیل سخت‌افزار قدیمی‌ام تا همین یکی دو سال پیش (شاید هم سه چهار سال پیش ;-)) از Windows XP استفاده می‌کردم (‌لینوکس هم کلا نمی‌دانستم چیست D:) تنها مدل‌هایی که از کنترل وضعیت سیستم می‌شناختم‌، Shutdown و reboot بود‌. بعد از مهاجرت به لینوکس هم اگر قرار بود به صورت دستی سیستم را خاموش کنم فقط همان halt و shutdown را می‌شناختم‌. اما این‌ها همیشه کافی نبودند‌. بعضی وقت‌ها ممکن است فقط برای یک ربع یا نیم ساعت از سیستم دور باشیم‌. انتظار بوت برای یک همچین مدتی کوتاهی‌، واقعا طاقت فرساست‌. مخصوصا که تمامی اطلاعات نشست حاضر از بین می‌رود‌.
+متاسفانه وقتی هم که با حالت Suspend (sleep)‎ در KDE سیستم را خاموش می‌کردم‌، (ذخیره اطلاعات در رم‌) امکان بازگشتن سیستم به وضعیت قبلی ۵۰-۵۰ بود‌! گاها تنها با یک صفحه‌ی سیاه روبرو می‌شدم که خوب یعنی سیستم باید reboot شود‌.&lt;/p&gt;
+&lt;p&gt;این مقدمه را گفتم که بگویم‌، پس از مهاجرتم به مدیرپنجره‌ی Awesome به دنبال همین روش‌ها برای معرفی در پوسته‌اش بودم تا کارم را راحت کنم‌، و این مقدمه‌ی آشناییم با pm-utils بود‌. فریم‌ورکی که برای مدیریت وضعیت سیستم طراحی شده‌. و خوشبختانه به دلیل بسیار سبک بودن Awesome (‌البته حدس می‌زنم همین دلیل باشد‌) سیستم را به خوبی Suspend کرده و می‌توان به راحتی به نشست قبلی بازگشت‌.&lt;/p&gt;
+&lt;p&gt;با کاربر Root می‌توان با یکی از دو دستور زیر به این امکان دست یافت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/sbin/pm-hibernate
+
+/usr/sbin/pm-suspend
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اولی که برای خاموش کردن سیستم است‌. و دومی سیستم را در رم خاموش می‌کند و به سیستم این قابلیت را می‌دهد که در هنگام روشن شدن به وضعیت قبلی‌اش بازگردد (‌توجه داشته باشید که خاموش شدن در این وضعیت به دلیل وابستگی به Ram نیازمند ولتاژ اندکی از برق است تا اطلاعات پاک نشود، در صورت قطع برق سیستم‌، سیستم دوباره بوت می‌شود‌).&lt;/p&gt;
+&lt;p&gt;از آن‌جایی که این ابزار برای کار کردن نیاز به بعضی از دسترسی‌های ریشه دارد‌، پس با یک کاربر عادی نمی‌توان آن‌ها را اجرا کرد و به sudo نیاز است‌. از آن‌جایی هم که روی خوشی ندارد که هر بار برای خاموش کردن سیستم خودمان یک رمز وارد کنیم‌، می‌توان‌، دو خط زیر را به فایل sudoers (‌با استفاده از visudo) و بعد از خطوطی که دسترسی sudo را به کاربران اعلام کرده‌ایم اضافه کرد تا بدون پسوورد اجازه‌ی استفاده از این دستور را داشته باشیم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;username &lt;span class="nv"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; NOPASSWD: /usr/sbin/pm-hibernate
+
+username &lt;span class="nv"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; NOPASSWD: /usr/sbin/pm-suspend
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین اگر دیگر خیلی مثل من تنبلید می‌توانید یک Alias تعریف کنید تا هر وقت تایپ کردید pm-hibernate خودش دستور sudo /usr/sbin/pm-hibernate را وارد کرده و سیستم را خاموش کند ;-)&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;a title="Pm-utils on arch wiki" href="https://wiki.archlinux.org/index.php/Pm-utils" target="_blank"&gt;&lt;strong&gt;ویکی آرچ اطلاعات ارزشمندی در این زمینه دارد که می‌تواند کمک کننده باشد.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description><category>pm-hibernate</category><category>pm-suspend</category><category>pm-utils</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>گنو/لینوکس</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html</guid><pubDate>Mon, 26 Mar 2012 09:42:25 GMT</pubDate></item></channel></rss>

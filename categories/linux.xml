@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (linux)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:19 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Zsh دوست شماست‌!</title><link>http://shahinism.com/posts/blog13901127zsh-dwst-shmst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;نمی‌دونم می‌دونین یا نه‌، اما Zshell دوست شماست‌، شاید ندونین‌، ولی این یه حقیقته‌. می‌دونم به چی فکر می‌کنین‌، «‌مگه چه مشکلی با Bash وجود داره‌؟» ‌، در‌واقع هیچ مشکلی‌، جز اینکه اون Zsh نیست‌.
+موضوع این نیست که Bash بده‌، نمی‌خوام ارزشش رو پایین بیارم‌، اما اگه قرار باشه برای یه تیم یار کشی کنیم‌، Bash آخرین نفریه که سر کلاس ورزش انتخاب می‌شه‌.&lt;/p&gt;
+&lt;p&gt;اون زیاد هم همه کاره نیست‌ و هیچ چیزی رو کاملاً عالی انجام نمی‌ده‌، در‌واقع یه جورایی یه نوع Zsh عذاب آوره (‌یا شاید هم Zsh یه نوع بهتری از Bash باشه‌).&lt;/p&gt;
+&lt;p&gt;شروع کار با Zsh خیلی آسونه‌، بخاطر اینکه در بیشتر مواقع مثل Bash نقش بازی می‌کنه‌. پس اگه با Bash اخت شدین نترسین‌، شما می‌تونین Zsh رو بدون از دست دادن ذره‌ای از امکانات Bash امتحان کنید و هنوز هم با یک پوستهٔ بهتر طرف باشید.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;چرا Zsh از Bash بهتره؟&lt;/h4&gt;
+&lt;p&gt;تو ذهن من یکی از مهم‌ترین دلایلی که برای برتری Zsh وجود داره‌ اینه که Zsh توی تکمیل خود‌کار از bash بهتره‌، منظورم اون تکمیل خودکار چلاغی نیست که با نصب Bash نصیبتون می‌شه‌. منظورم یک تکمیل خودکار واقعیه‌، که شامل تمامی دستورات رایج در خط فرمان می‌شه‌، که واقعاً هم سریعه‌. ویژگی تکمیل خودکار همچنین به شما یک لیست قابل پیمایش با کیبورد از انتخاب‌هاتون هم می‌ده که می‌تونه عالی باشه‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="/wp-content/uploads/snapshot1.png"&gt;&lt;img class=" wp-image-603  aligncenter" title="snapshot1" src="/wp-content/uploads/snapshot1.png" alt="نمونه‌ای از تکمیل خودکار Zsh" width="571" height="186"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;خوب می‌دونم الان چی می‌خواین‌، ارزشش چیه؟ خوب بیاین یه نمونه عالی از تکمیل خودکار رو با هم ببینیم‌. بیاین از kill به عنوان یه مثال استفاده کنیم‌. شما تایپ می‌کنین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توی bash شما چی می‌بینین؟ لیست تمام فایل‌هایی که توی پوشهٔ حاضرتون قرار داره‌. اینکه برای من یه ویژگی عالی به حساب نمی‌آد‌. حالا چی رخ می‌ده اگه توی Zsh بنویسین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این رخ می‌ده‌:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="/wp-content/uploads/snapshot2.png"&gt;&lt;img class="aligncenter  wp-image-604" title="snapshot2" src="/wp-content/uploads/snapshot2.png" alt="" width="580" height="217"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;لیستی از تمام پروسه‌ها با شماره‌هاشون (pids)؟ بله خواهش می‌کنم‌.&lt;/p&gt;
+&lt;p&gt;چیز دیگه‌ای که Zsh رو متفاوت می‌کنه تاریخچهٔ اشتراکیشه‌. اگه شما هم مثل منین و تمام طول روز رو توی ترمینال زندگی می‌کنین‌. چیزی بد‌تر از این نیست (بزارین به حساب اغراق‌های من) که یه ترمینال دیگه توی یه تب باز کنین و برای پیدا کردن دستوری که همین الان توی تب بقلی زدین تاریخچه رو پیمایش کنین و ببینین خبری ازش نیست‌. توی Zsh همچین اتفاقی نمی‌افته.&lt;/p&gt;
+&lt;h4&gt;وقت چیز‌های خارق‌العاده‌تری رسیده&lt;/h4&gt;
+
+&lt;p&gt;خوب ما تکمیل خودکار سریع و فوق‌العاده‌ای داریم با یه تاریخچهٔ اشتراکی‌. چقدر چیز شگفت‌انگیز دیگه‌ای می‌شه اونجا پیدا کرد‌؟ یه عالمه‌!&lt;/p&gt;
+&lt;h5&gt;تصحیح خودکار واقعاً عالیه‌&lt;/h5&gt;
+
+&lt;div class="code"&gt;&lt;pre&gt;&amp;amp;gt; &lt;span class="nv"&gt;$ &lt;/span&gt;awesome git:&lt;span class="o"&gt;(&lt;/span&gt;master&lt;span class="o"&gt;)&lt;/span&gt; ✗ gut status
+
+zsh: correct &lt;span class="s1"&gt;'gut'&lt;/span&gt; to &lt;span class="s1"&gt;'git'&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;nyae&lt;span class="o"&gt;]&lt;/span&gt;? y
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;تصحیح خودکار برای دستورات شناخته شده‌. من بدون تو چی کار می‌کردم (جز اینکه دستور رو دوباره تایپ کنم)؟&lt;/p&gt;
+&lt;p&gt;حتی باحال‌تر از تصحیح خودکار‌، برای ابر نرد‌ها (مثل من) حالت Vi و emacs‌ه‌، آره لعنتی‌، شما می‌تونی ویرایشگر محبوبت رو توی خط فرمانت داشته باشی‌. این قابلیت از فرمان‌های جابجایی و وبرایش رایج پشتیبانی می‌کنه‌، مثل حالت‌های command و insert توی vi.&lt;/p&gt;
+&lt;p&gt;آخری ولی مهم مثل بقیه‌، Zsh بسته‌ای به اسم &lt;a title="oh-my-zsh official page" href="https://github.com/robbyrussell/oh-my-zsh"&gt;oh-my-zsh &lt;/a&gt;رو داره که به گفتهٔ وبسایتش‌:&lt;/p&gt;
+&lt;p&gt;یک فریم ورک برای مدیریت تنظیمات zshه که توسط جامعهٔ کاربریش پشتیبانی می‌شه‌. شامل بیش از چهل پلاگین اختیاری (rails، git، OSX، hub، capistrano، brew، ant، macports و غیره) ‌، بیش از هشتاد تم ترمینال برای خوشمزه کردن صبحتون‌، و یک ابزار به روزرسانی خودکار که این امکان رو بهتون می‌ده که آخرین تغییراتی که جامعهٔ پشتیبان به بسته‌ها می‌دن رو در اختیار داشته باشین‌.&lt;/p&gt;
+&lt;p&gt;می‌دونم Bash هم یکی از اینا داره‌، ولی من فکر می‌کنم oh-my-zsh خیلی بهتره‌، بروزرسانی خودکارش‌، داشتن پلاگین‌های عالی و یک جامعهٔ پشتیبانی فعال پشت سرشه که می‌تونه دلیل خوبی برای این طرز تفکر من باشه‌.&lt;/p&gt;
+&lt;p&gt;در کل Zsh فوق‌العادست‌، پس اگه تا حالا اون رو امتحان نکردین‌، شاید وقتشه که این کار رو بکنین‌. اگه شما هم موافقین oh-my-zsh جای خوبی برای شروعه‌.&lt;/p&gt;
+&lt;p&gt;اگه شما هم از طرفدارای Zsh هستین و چند تا از تکنیک‌های خاص خودتون رو بلدین‌، تو بخش نظرات اون‌ها رو با من و باقی خواننده‌ها به اشتراک بذارین‌.&lt;/p&gt;
+&lt;p&gt;ویرایش: اگه قصد یادگیری بیشتر در مورد Zsh دارین‌، &lt;a title="ZSH FAQ" href="http://zsh.sourceforge.net/FAQ/" target="_blank"&gt;Zsh FAQ &lt;/a&gt;رو امتحان کنین‌. خیلی کامله و خیلی بهتر از یه پست وبلاگی به ویژگی‌های Zsh پرداخته ;-)&lt;/p&gt;
+&lt;p&gt;همچنین‌،&lt;a title="Hacker News ZSH" href="http://news.ycombinator.com/item?id=3533895" target="_blank"&gt; صحبت‌های بیشتر در این مورد توی Hacker News.&lt;/a&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="Source" href="http://mikegrouchy.com/blog/zsh-is-your-friend.html" target="_blank"&gt;&lt;strong&gt;منبع&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>bash</category><category>linux</category><category>Shell</category><category>Zsh</category><category>بررسی</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13901127zsh-dwst-shmst.html</guid><pubDate>Thu, 16 Feb 2012 12:19:25 GMT</pubDate></item><item><title>چ‌چ‌چ (۱۱)‌: چگونه می‌توانم بفهمم کارت اترنتم (NIC) شناخته شده یا نه‌؟</title><link>http://shahinism.com/posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;کارت اترنت شیشهٔ زندگی یک سرور لینوکسی به حساب می‌آید‌. پس اگر نیاز دارید که بفهمید کارت اترنت سرورتان شناخته شده از دستور dmesg، ifconfig یا netstat استفاده کنید‌. دستور ifconfig می‌تواند برای تنظیم یک کارت رابط شبکه (Network interface card) به‌‌ همان خوبی که برای کشف اطلاعات دربارهٔ کارت اترنت عمل می‌کند‌، مورد استفاده قرار گیرد‌. اگر می‌خواهید چیپ کارت شبکه‌تان را بشناسید هم می‌توانید از دستور lspci استفاده کنید (‌پایین‌تر نمونه‌ای از خروجی این دستور را با هم می‌بینیم‌) ‌.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# /sbin/ifconfig&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خروجی‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;eth۰ Link encap: Ethernet HWaddr ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰
+
+inet addr: ۱۹۲. ۱۶۸. ۱. ۲ Bcast: ۱۹۲. ۱۶۸. ۱. ۲۵۵ Mask: ۲۵۵. ۲۵۵. ۲۵۵. ۰
+
+inet۶ addr: fe۸۰:: ۲۲۴: ۱dff: fed۱: ۴d۰/۶۴ Scope: Link
+
+UP BROADCAST RUNNING MULTICAST MTU: ۱۵۰۰ Metric: ۱
+
+RX packets: ۱۸۰۷۸ errors: ۰ dropped: ۰ overruns: ۰ frame: ۰
+
+TX packets: ۲۰۱۰۸ errors: ۰ dropped: ۰ overruns: ۰ carrier: ۰
+
+collisions: ۰ txqueuelen: ۱۰۰۰
+
+RX bytes: ۱۰۱۹۴۷۸۶ &lt;span class="o"&gt;(&lt;/span&gt;۹. ۷ MiB&lt;span class="o"&gt;)&lt;/span&gt; TX bytes: ۳۴۵۳۳۵۳ &lt;span class="o"&gt;(&lt;/span&gt;۳. ۲ MiB&lt;span class="o"&gt;)&lt;/span&gt;
+
+Interrupt: ۴۰ Base address: ۰x۸۰۰۰
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توجه کنید که اگر در خروجی eth۰ را دیدید‌، پس کارت شما شناخته شده‌. نکته دیگر اینکه در سرور‌های مجازی با عبارات دیگری نظیر venet روبرو هستید‌، که پس از تجربه کردنشان‌، می‌توانید بهتر درکشان کنید ;-)&lt;/p&gt;
+&lt;p&gt;برنامه dmesg به کاربران کمک می‌کند پیغام‌های هنگام بوت را مشاهده کنند‌. این پیغام‌ها در فایل ‎/var/log/dmesg (‌لینوکس دبیان‌) ذخیره می‌شوند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;cat /var/log/dmesg | grep -i eth۰
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خروجی‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;۴. ۷۰۹۳۴۷&lt;span class="o"&gt;]&lt;/span&gt; r۸۱۶۹ ۰۰۰۰: ۰۲: ۰۰. ۰: eth۰: RTL۸۱۶۸c/۸۱۱۱c at ۰xffffc۹۰۰۱۰۹c۸۰۰۰، ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰، XID ۱c۴۰۰۰c۰ IRQ ۴۰
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و یا:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# dmesg | grep -i eth۰&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نمایش جدول تمام رابط‌های شبکه‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# netstat -i&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خروجی‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;Kernel Interface table
+
+Iface MTU Met RX-OK RX-ERR RX-DRP RX-OVR TX-OK TX-ERR TX-DRP TX-OVR Flg
+
+eth۰ ۱۵۰۰ ۰ ۱۸۴۰۸ ۰ ۰ ۰ ۲۰۵۲۴ ۰ ۰ ۰ BMRU
+
+lo ۱۶۴۳۶ ۰ ۹۸۲۲ ۰ ۰ ۰ ۹۸۲۲ ۰ ۰ ۰ LRU
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;پیدا کردن چیپ NIC&lt;/p&gt;
+&lt;p&gt;برای رفع نقض کردن کارت ارتنت (NIC) من پیشنهاد می‌کنم که از دستور lspci استفاده کنید‌. Lspci ابزاری برای نمایش اطلاعات تمام درگاه‌های PCI موجود در سیستم که ابزار‌ی به‌شان متصل شده می‌باشد‌.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;lspci | less
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یا&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&amp;lt;code&amp;gt;lspci | grep Ethernet&amp;lt;/code&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خروجی‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;۰۲: ۰۰. ۰ Ethernet controller: Realtek Semiconductor Co.، Ltd. RTL۸۱۱۱/۸۱۶۸B PCI Express Gigabit Ethernet controller &lt;span class="o"&gt;(&lt;/span&gt;rev ۰۲&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در مثال بالا من یک کارت «Realtec Semiconductor» با چیپ RTL-۸۱۱۱/۸۱۶۸B دارم‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;a title="NIC on cyberciti" href="http://www.cyberciti.biz/faq/how-can-i-find-out-if-my-ethernet-card-nic-is-being-recognized-or-not/" target="_blank"&gt;&lt;strong&gt;منبع&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description><category>dmesg</category><category>Ethernet</category><category>linux</category><category>lspci</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.com/posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html</guid><pubDate>Tue, 03 Jan 2012 12:56:58 GMT</pubDate></item><item><title>تغییر (تثبیت‌) اعلان خط فرمان اسلکور</title><link>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اعلان خط فرمان لینوکس در عین سادگی‌اش می‌تواند شدیدا کاربردی باشد‌! در توزیع‌های مختلف دیده بودم که این اعلان خط فرمان فقط در علائم کاربری $ و ریشه # متفاوت از هم بود‌، اما در اسلکور‌، یک نکته عجیب در این مورد برایم وجود داشت‌! آن هم این که در حالت عادی اعلان فرمان به صورت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;user@hostname &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نشان داده می‌شد‌، اما وقتی مثلا در کنسول KDE یک Tab جدید باز می‌کردم‌، اعلان به صورت زیر تغییر می‌کرد که متاسفانه‌، هیچ قابلیت به درد بخوری در خود نداشت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bash.4.?: &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این مشکل از وقتی که از برنامه &lt;a title="yakuake official webpage" href="http://yakuake.kde.org/" target="_blank"&gt;Yakuake&lt;/a&gt; برای دسترسی راحت‌تر به ترمینال استفاده می‌کردم‌، بیشتر به چشم می‌آمد‌، و عملا تمامی اعلان فرمان‌هایش به همین شکل بود‌. پس تصمیم گرفتم یک بار برای همیشه‌، بی‌سوادی را کنار بگذارم و حلش کنم‌. مشکل به دو فایل زیر مربوط می‌شد‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/etc/bashrc
+
+~/.bashrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که متاسفانه هیچ‌کدامشان در اسلکور به صورت پیش‌فرض وجود نداشتند‌، و از قرار آن اعلان سالم اول کار هم از فایل HOSTNAME موجود در شاخه etc ‏استفاده می‌کرد‌. خوب پس کافی بود یکی از این فایل‌ها را بسازم‌، و از آن‌جایی که ساختن فایل دوم‌، به نظرم آسان‌تر آمد‌، با دستور vim ~/.bashrc اقدام به ساختنش کردم‌، و خط زیر را به آن اضافه کردم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ترمینال را یک بار بستم و باز کردم‌، و همه‌چیز خوب بود‌. حالا می‌ماند توضیحات این خط دوم‌:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;! : شماره فعلی تاریخچه فرمان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;# : شماره دستور آخرین دستور را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;$ : اعلان فرمان استاندارد را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;W : فقط دایرکتوری کاری جاری را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;\ : فقط یک بک اسلش نشان داده میشود.&lt;/li&gt;
+    &lt;li&gt;d : روز، ماه و شماره روز را نمایش میدهد. مثلا : Sat Jan 23&lt;/li&gt;
+    &lt;li&gt;h : نام کامپیوتر میزبان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;n : یک خط جدید باز میکند.&lt;/li&gt;
+    &lt;li&gt;s : نام پوسته فرمان را نشان میدهد. مثلا bash&lt;/li&gt;
+    &lt;li&gt;t : زمان را بصورت ساعت، دقیقه و ثانیه نمایش میدهد. برای مثال : 10:14:40&lt;/li&gt;
+    &lt;li&gt;u : نام کاربر را نمایش میدهد.&lt;/li&gt;
+    &lt;li&gt;w : مسیر کامل دایرکتوری جاری را نمایش میدهد.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت &lt;a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank"&gt;تکنوتاکس&lt;/a&gt; قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!&lt;/p&gt;
+&lt;p&gt;برای این که نتیجه‌ی اعلانتان را ببینید و یا این که اگر لازم شد در موقعیت خاصی وضعیت اعلانتان را عوض کنید (‌البته نه برای همیشه‌، فقط برای نشست حاظر‌) کافیست از دستور زیر در ترمینال استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر کنم به عنوان یک نکته کوچک‌، دیگر همین‌قدر توضیح دادن کافی باشد. ;-)&lt;/p&gt;</description><category>bash</category><category>bashrc</category><category>linux</category><category>Slackware</category><category>اسلکور</category><category>حل مشکل</category><category>خط فرمان</category><guid>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</guid><pubDate>Tue, 04 Oct 2011 08:37:56 GMT</pubDate></item></channel></rss>

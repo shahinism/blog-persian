@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (auto-complete)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>وقایع نگاری شخصی سازی emacs قسمت اول</title><link>http://shahinism.com/posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;هاهاها! ایمکس شده بلای جانمان‌! حقیقتش نه این که خیلی آش دهن سوزی باشدها‌، نه‌! لعنتی اعتیادش بالاست‌. یک بار که از میانبر‌هایش استفاده کنید دیگر همه‌جا می‌خواهید همین میانبر‌ها باشند‌. همهٔ برنامه‌ها را مثل آن می‌خواهید‌. دوست دارید همه چیزتان را همین لعنتی انجام دهد‌! آن‌قدر هم ابزار و چیز میز برای بازی کردن دارد که می‌توانید وقتتان را به خوبی پایش تلف کنید‌! زیاده‌گویی بس است و می‌رویم پی اصل ماجرا‌.
+اول از همه این که emacsام را به نسخهٔ ۲۴ (بی‌خیال پیشوندش) ارتقا دادم که دو مزیت عمده داشت‌:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;اول&lt;/strong&gt; این که جهت چینش هر پاراگراف را مثل مرورگر‌های جدید بر اساس نوع نوشتار تعیین می‌کند‌. این یعنی متن فارسی را می‌توان مثل آدمی‌زاد درش نوشت و درد نگرفت‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;دوم&lt;/strong&gt; مدیر بسته‌هاست که کلی چیز جدید می‌تواند به emacsتان اضافه کند‌. بحث ما هم سر همین دومیست‌.&lt;/p&gt;
+&lt;p&gt;ایمکس به صورت پیش‌فرض خیلی خوب است‌، خیلی‌. ولی می‌توان با دستکاری خیلی چیز بهتر و کارا‌تری هم از تویش در آورد‌. این است که می‌خواهم چند تا بسته برای کار‌هایم توش اضافه کنم‌. اما اول از همه باید یک مخزن درست و درمان به مدیر بسته‌هایم اضافه کنم تا برای نصب بسته‌ها درد کمتری متحمل شوم (بماند که خود این مدیر بسته کلی دردناک می‌شود به وقتش‌!). پس اگر فایل ‎.emacs در پوشهٔ خانگی‌ام ندارم یکی می‌سازم و به صورت زیر مخزن‌هایم را اضافه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;(&lt;/span&gt;setq package-archives &lt;span class="err"&gt;'&lt;/span&gt;&lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="s2"&gt;"ELPA"&lt;/span&gt; . &lt;span class="s2"&gt;"http://tromey.com/elpa/"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"gnu"&lt;/span&gt; . &lt;span class="s2"&gt;"http://elpa.gnu.org/packages/"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"marmalade"&lt;/span&gt; . &lt;span class="s2"&gt;"http://marmalade-repo.org/packages/"&lt;/span&gt;&lt;span class="o"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب گل سر سبد این مخازن اسمش &lt;a title="Marmalade repo" href="http://marmalade-repo.org/" target="_blank"&gt;Marmalade&lt;/a&gt; است که از &lt;a title="یادداشت‌های بیت نیمسوز" href="http://cyberrabbits.net/" target="_blank"&gt;فرود&lt;/a&gt; عزیز بابت معرفیش تشکر می‌کنم ;-). خوب بسته‌ها اضافه شد و کافیست بعد از باز کردن ایمکس کلید M + x را فشار دهیم‌. (M مخفف Meta است و منظور در اینجا کلید Alt و یا اگر نداریدش کلید Esc هست) و در اعلان ظاهر شده بنویسیم package-list-packages (اعلان ایمکس قابلیت Auto Completion دارد پس با Tab کارتان را در نوشتن دستوراتش راحت‌تر کنید). پس از مدتی انتظار لیستی از بسته‌های قابل نصب یا نصب شده روی سیستم‌تان نمایش داده می‌شود. نشانگر را روی هر بسته ببرید‌. Enter را فشار دهید تا توضیحاتش را بخوانید‌. اما فعلا بی‌خیال این بخش شوید و همراه من بیایید تا چند بستهٔ حیاتی به درد بخور را نصب کنیم:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://cx4a.org/software/auto-complete/" target="_blank"&gt; &lt;strong&gt;Auto-complete:&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;اولین نیاز من برای یک ادیتور به درد بخور همین قابلیت تکمیل خودکار متن است‌. اول این که سرعتم را بالا‌تر می‌برد‌. دوم هم این که خیالم را در خطاهای املایی در برنامه‌نویسی راحت‌تر می‌کند ;-) این می‌شود که در ایمکس دستور زیر را وارد می‌کنم M + x package-install RET auto-complete و بسته نصب می‌شود‌. آن‌وقت فایل ‎.emacs را باز می‌کنم و خط‌های زیر را به آن اضافه می‌کنم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;;;Start Auto-complete config
+
+&lt;span class="o"&gt;(&lt;/span&gt;add-to-list &lt;span class="s1"&gt;'load-path "~/.emacs.d/elpa/auto-complete-1.4")&lt;/span&gt;
+
+&lt;span class="s1"&gt;(require '&lt;/span&gt;auto-complete-config&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;add-to-list &lt;span class="err"&gt;'&lt;/span&gt;ac-dictionary-directories &lt;span class="s2"&gt;"~/.emacs.d/elpa/auto-complete-1.4/dict"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;(&lt;/span&gt;ac-config-default&lt;span class="o"&gt;)&lt;/span&gt;
+
+;;End Auto-complete config
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا عملا کار باید تمام شده باشد‌. اما یک مشکل وجود دارد که حدود دو سه ساعت وقتم را نابود کرد تا بفهمم از کجاست‌. بستهٔ Auto-complete برای نمایش دادن آن جعبهٔ خوشگلش برای کلمات پیشنهادی از یک بستهٔ دیگر به اسم popup استفاده می‌کند که خوشبختانه مدیر بسته‌ها هم این بسته را به عنوان پیش‌نیاز نصب می‌کند‌. اما در یک پوشهٔ جدا‌. حالا بستهٔ Auto-complete هر چه می‌گردد در پوشهٔ خودش نمی‌تواند popup.el را پیدا کند‌. این می‌شود که می‌نویسیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;cp ~/emacs.d/elpa/popup/popup.el ~/emacs.elpa/auto-complete-1.4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا این بسته نصب شده و در همه‌جا فعال است‌. این بسته در شاخهٔ dict در محل نصبش یک سری فایل با شناسهٔ Modeهای مختلف ایمکس دارد که در واقع لغت‌های پیشنهادی را از آن‌جا می‌یابد‌. لغات در بعضی از دیکشنری‌های مخصوصا برای C+‎+‎ خیلی ناقص است‌. می‌توانید دستی فایل را باز کنید و کاملش کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/bbatsov/zenburn-emacs" target="_blank"&gt;&lt;strong&gt;zenburn-theme:&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;این تم را &lt;a title="تغییر پوسته Emacs با بسته color-theme" href="http://shahinism.com/blog/1391/01/12/%d8%aa%d8%ba%db%8c%db%8c%d8%b1-%d9%be%d9%88%d8%b3%d8%aa%d9%87-emacs-%d8%a8%d8%a7-%d8%a8%d8%b3%d8%aa%d9%87-color-theme/" target="_blank"&gt;قبلا&lt;/a&gt; معرفی کرده‌ام‌. برای نصبش می‌نویسیم M + x package-install RET zenburn-theme RET و کار تمام است. حالا برای لود شدن این تم به صورت پیش‌فرض خطوط زیر را به ‎.emacs اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;;;Start: config theme
+
+&lt;span class="o"&gt;(&lt;/span&gt;add-to-list &lt;span class="s1"&gt;'custom-theme-load-path "~/.emacs.d/elpa/zenburn-theme-1.5")&lt;/span&gt;
+
+&lt;span class="s1"&gt;(load-theme '&lt;/span&gt;zenburn t&lt;span class="o"&gt;)&lt;/span&gt;
+
+;;End: config theme
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این تم در حالت گرافیکی به راحتی لود می‌شود‌. اما در حالت متنی emacs -nw به خاطر کم بودن رنگ‌ها ممکن است مشکل داشته باشید‌. برای حل این مشکل فعلا الالحساب این خط را به فایل ‎.bashrc یا ‏‏‎.zshrc تان اضافه کنید تا بعدا در یک پست مجزا در موردش توضیح دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;TERM&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;xterm-256color
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;بعله‌. الان دیگر تمتان هم خیلی میزان است و همه‌جا قابل استفاده ;-)&lt;/p&gt;
+&lt;p&gt;php-mode, &lt;a href="http://code.google.com/p/js2-mode/" target="_blank"&gt;js2-mode&lt;/a&gt;, css-mode:&lt;/p&gt;
+&lt;p&gt;مهم‌ترین چیز برای برنامه‌نویس‌هایی که می‌خواهند از ایمکس برای توسعهٔ پروژه‌هایشان استفاده کنند همین مد‌های ایمکس هستند‌. در اینجا سه مد مختلف برای زبان‌های php, javascript و CSS معرفی شده‌اند که به نظرم خیلی عالی هستند‌. مخصوصا js2-mode که یک IDE به تمام معنا برایتان مهیا می‌کند‌! برای نصب که دیگر باید بدانید چه کار کنید‌. هیچ خطی هم نیاز نیست به ‎.emacsتان اضافه کنید‌. تنها برای رفتن به هر مد کافیست تایپ کنید M + x mode-name RET همین. فعلا برای قسمت اول کافیست‌. در قسمت بعد با چیز‌های هیجان‌انگیز‌تری بر می‌گردیم D:&lt;/p&gt;</description><category>auto-complete</category><category>css-mode</category><category>Emacs</category><category>js2-mode</category><category>php-mode</category><category>terminal 256 color</category><category>zenburn</category><category>ایمکس</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html</guid><pubDate>Tue, 26 Jun 2012 19:02:52 GMT</pubDate></item></channel></rss>

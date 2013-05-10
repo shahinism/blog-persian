@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (bash)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>دریافت متن ترانه‌های MP3 با لینوکس</title><link>http://shahinism.com/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
+&lt;/p&gt;&lt;h5&gt;مقدمات&lt;/h5&gt;
+&lt;p&gt;اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم &lt;a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank"&gt;آدم سالاری&lt;/a&gt; قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;اصل اسکریپت همچین جایی است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;curl -s &lt;span class="s2"&gt;"http://makeitpersonal.co/lyrics?artist=$artist&amp;amp;amp;title=$title"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خیلی ساده با curl یک درخواست به API سایت می‌فرستیم که در آن ‎$artist اسم خوانندهٔ ترانه و ‎$title اسم خود ترانه است. که البته‌، چون url‌ها نحو (Syntax) خاص خودشان را دارند‌، این اسکریپت‌نویس دوست داشتنی ما‌، با دو خط زیر‌، اسم خواننده و ترانه را معتبر می‌کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;artist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$artist_name"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+
+&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$song_title"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌؟ تمام شد؟‌ خوب این اسکریپت کاری که می‌خواستیم را انجام داد. ولی شاهین را که می‌شناسید‌. دوست دارد کار‌هایش را &lt;a title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" href="http://shahinism.com/blog/1390/09/26/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b9-%da%86%d8%b7%d9%88%d8%b1-%d8%a8%d9%87-%d8%b5%d9%88%d8%b1%d8%aa-%d9%81%d9%84%d9%87%e2%80%8c%d8%a7%db%8c-%d9%84%db%8c%d9%86%da%a9%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;فله‌ای&lt;/a&gt; انجام دهد! یک کمی سخت است که هر بار بیایم اسم ترانه و خواننده را به اسکریپت بگویم‌، بعد شیلنگ خروجی را بگیرم توی یک فایلی که می‌خواهم و از این حرف‌ها. پس می‌رویم سراغ دستکاری بیشتر این اسکریپت.&lt;/p&gt;
+&lt;h5&gt;خجالت بکش شاهین&lt;/h5&gt;
+
+&lt;p&gt;حتما می‌دانید که می‌توان به فایل‌های MP3 تگ زد. همین تگ‌هایی که اسم خواننده و ترانه و ژانر و این‌جور حرف‌ها را می‌توان بهشان خوراند که تا دست آخر با MP3 Player خیلی راحت‌تر بشود سر و سامان‌شان داد. البته اگر راست کار‌تان&lt;a title="موسیقی در وب فارسی‌" href="http://shahinism.com/blog/1389/01/15/%d9%85%d9%88%d8%b3%db%8c%d9%82%db%8c_%d8%af%d8%b1_%d9%88%d8%a8_%d9%81%d8%a7%d8%b1%d8%b3%db%8c%e2%80%8c/" target="_blank"&gt; سایت‌های موسیقی ایرانی&lt;/a&gt; است‌، از این تگ‌ها مطمئنا خیری نسیب‌تان نشده‌، چون از دَم مثل ندید بدید‌ها پرش کرده‌اند با آدرس سایت داغان‌شان ;-)&lt;/p&gt;
+&lt;p&gt;به هر حال‌، از آن‌جایی که آلبوم موسیقی مورد نظر من‌، مثل آدم تگ خورده بود‌، قصد داشتم تا از این تگ‌ها استفاده کنم. همیشه هم در مخیله‌ام این‌طور تصور می‌کردم که این تگ‌ها با یک روش مخوفی درون فایل موسیقی که اصلا نمی‌دانم چیست قایم شده‌اند و خواندن‌شان نیاز به کتاب‌خانه‌ای چیزی دارد که من از طرز کارش سر در نمی‌آورم. این بود که قصد داشتم اصلا کل اسکریپت را به برنامه‌ای به پایتون تغییر دهم. ولی خوب‌، یک سرچ کوچک کردم و کلی &lt;b&gt;خجالت کشیدم&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;همان‌طور که در&lt;a title="Bash Script: Reading ID3v1 Tags" href="http://phoxis.org/2011/08/24/bash-script-reading-id3v1-tags/" target="_blank"&gt; این لینک&lt;/a&gt; توضیح داده شده‌، عموما‌، ۱۲۸ بیت آخر فایل MP3 شامل تگ‌های آن است. و ابزار‌های به ظاهر سادهٔ گنو/لینوکسی‌، مثل چـــی‌، کمک‌مان می‌کنند که این تگ‌ها را بخوانیم‌. ببینید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;tag&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;tail -c128 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;id3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;head -c10 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;سر هم کردن اسکریپت نهایی&lt;/h5&gt;
+
+&lt;p&gt;دیگر حالا‌، هم همهٔ ابزار‌های مورد نیاز‌مان را داریم‌، هم کلی چیز جدید یاد گرفته‌ایم. این است که‌، اسکریپت نهایی را سر هم می‌کنیم. که می‌توانید از &lt;a title="lyric script" href="https://github.com/shahinism/Scripts/blob/master/Shell/lyric" target="_blank"&gt;این لینک&lt;/a&gt; دریافتش کنید. برای استفاده از آن هم کافیست که اسم هر تعداد ترانهٔ MP3 را که دل‌تان می‌خواهد در جلویش تایپ کنید تا خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; خوب گاها پیش می‌آید که اسم ترانه‌، شامل کلماتی نظیر (Live) و یا (Bonus) باشد. و یا شاید اسم سایتی‌، چیزی را شامل شود. در این صورت‌، احتمالا API ما بر می‌گرداند که چیزی پیدا نکردم و از این حرف‌ها‌. ولی اسکریپت بیشعور ما آن را هم درون یک فایل هم اسم ترانه با فرمت txt ذخیره می‌کند. این‌جایش را دیگر خودتان می‌توانید با هنر دستکاری فایل لینوکسی‌تان‌، راست و ریست کنید ;-)&lt;/p&gt;</description><category>bash</category><category>MP3</category><category>Python</category><category>Script</category><category>برنامه نویسی</category><category>موسیقی</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</guid><pubDate>Thu, 07 Feb 2013 19:38:27 GMT</pubDate></item><item><title>دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!</title><link>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همانطور که می‌دانید‌، چند ماهی می‌شود که از i3 استفاده می‌کنیم‌، ولی در i3bar به جای i3status (به دلیل سادگی بیش از اندازه‌اش D:) از Conky بهره می‌گیرم. کانکی اطلاعات خیلی خوبی ارائه می‌دهد و کار‌های جالبی هم می‌توان روی خروجی‌اش انجام داد‌. ولی وقتی قرار است آن را به i3status بخورانم‌، باید از آپشن shell روی Conky استفاده کنم که دیگر خبری از آن جینگولک بازی‌های معروف Conky نیست‌. همه چیز خیلی ساده می‌شود. تصویر زیر وضعیت فعلی i3barام را نشان می‌دهد‌:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"&gt;&lt;img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ کلیک کنید&lt;/p&gt;
+&lt;p&gt;و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:&lt;/p&gt;
+&lt;p&gt;پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.&lt;/li&gt;
+    &lt;li&gt;صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)&lt;/li&gt;
+    &lt;li&gt;مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.&lt;/li&gt;
+    &lt;li&gt;سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این &lt;a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank"&gt;آموزش&lt;/a&gt; آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).&lt;/li&gt;
+    &lt;li&gt;وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.&lt;/li&gt;
+    &lt;li&gt;وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در &lt;a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank"&gt;این‌جا&lt;/a&gt; دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
+&lt;p&gt;اسکریپت حاضر است و از &lt;a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank"&gt;این‌جا&lt;/a&gt; قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:&lt;/p&gt;
+&lt;h5&gt;تاریخ&lt;/h5&gt;
+
+&lt;p&gt;خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="s2"&gt;"%a %Y.%m.%d %H:%M"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!&lt;/p&gt;
+&lt;h5&gt;اطلاعات شبکه&lt;/h5&gt;
+
+&lt;p&gt;اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getNetBytes
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;Brecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($2)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;Btransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($10)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)&lt;/p&gt;
+&lt;p&gt;حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)&lt;/p&gt;
+&lt;p&gt;نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!&lt;/p&gt;
+&lt;h5&gt;وضعیت RAM&lt;/h5&gt;
+
+&lt;p&gt;گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getRamInfo
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;totalMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"Mem:"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $2/1024)}'&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;usedMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"buffers/cache"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $3/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;memInPercent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$totalMemory $usedMemory"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.0f", $2/($1/100)) }'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!&lt;/p&gt;
+&lt;h5&gt;وضعیت CPU&lt;/h5&gt;
+
+&lt;p&gt;خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getCpuInfo&lt;span class="o"&gt;()&lt;/span&gt;
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+
+&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+
+&lt;span class="nv"&gt;addr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"^cpu${CORE}"&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat /proc/stat | grep &lt;span class="nv"&gt;$addr&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# Get the total CPU statistics.&lt;/span&gt;
+
+&lt;span class="nb"&gt;unset &lt;/span&gt;CPU&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# Discard the "cpu" prefix.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="p"&gt;[4]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="c"&gt;# Get the idle CPU time.&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the total CPU time.&lt;/span&gt;
+
+&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Catch current cores last state&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="c"&gt;# Calculate the CPU usage since we last checked.&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.&lt;/p&gt;
+&lt;p&gt;با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+
+&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
+
+&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)&lt;/p&gt;
+&lt;h5&gt;پایان کار&lt;/h5&gt;
+
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+getNetBytes
+
+getRamInfo
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; COUNT &amp;amp;lt; &lt;span class="nv"&gt;$CORES&lt;/span&gt;; COUNT++ &lt;span class="o"&gt;))&lt;/span&gt;;&lt;span class="k"&gt;do&lt;/span&gt;
+
+getCpuInfo &lt;span class="nv"&gt;$COUNT&lt;/span&gt;
+
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\c&lt;/span&gt;pu&lt;span class="nv"&gt;$COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$DIFF_USAGE&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+
+
+
+&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$cpu0"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu1"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu2"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu3"&lt;/span&gt; &lt;span class="s2"&gt;"$usedMemory"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$totalMemory"&lt;/span&gt; &lt;span class="s2"&gt;"$memInPercent"&lt;/span&gt; &lt;span class="s2"&gt;"$dlSpeed"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+&lt;span class="s2"&gt;"$upSpeed"&lt;/span&gt; &lt;span class="s2"&gt;"$traffic"&lt;/span&gt; &lt;span class="s2"&gt;"$date"&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBRecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Brecived&lt;/span&gt;
+
+&lt;span class="nv"&gt;oldBTransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Btransmited&lt;/span&gt;
+
+sleep 1
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.&lt;/p&gt;
+&lt;p&gt;همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.&lt;/p&gt;
+&lt;p&gt;حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;CPU: 48,3,40,3 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 8,4,76,4 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 24,5,64,6 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"&gt;&lt;img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید&lt;/p&gt;</description><category>awk</category><category>bash</category><category>printf</category><category>shell scripting</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دسته‌بندی نشده</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</guid><pubDate>Sat, 24 Nov 2012 15:07:09 GMT</pubDate></item><item><title>یادداشتی برای کانفیگ i3</title><link>http://shahinism.com/posts/blog13910417yddshty-bry-khnfyg-i3.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/"&gt;در ارسال قبلی&lt;/a&gt; از میز‌کار &lt;a title="i3 official website" href="http://i3wm.org" target="_blank"&gt;i3&lt;/a&gt; صحبت کردم‌. قرار شد در این پست در مورد کانفیگ و رفع نیاز‌های اولیه‌مان روی این مدیر‌پنجره صحبت کنیم‌. اول از همه طبق معمول باید این میزکار را نصب کنیم‌. همانطور که در پست قبل گفتم این میزکار از نوع اعلان فونت X استفاده می‌کند که متاسفانه در فونت‌هایی که من امتحان کردم نتوانستم تایتل فارسی پنجره‌ها را به درستی نمایش دهم‌ (دوست خوبم فرود در کامنت‌های &lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank"&gt;پست قبل&lt;/a&gt; گفتند که از قرار با فونت Ubuntu مشکل حل شده بود‌). پس از&lt;a title="unicode question on i3faq" href="http://faq.i3wm.org/question/208/unicode-title-for-windows/" target="_blank"&gt; تماس با توسعه دهندگان&lt;/a&gt; i3 و راهنمایی‌شان‌، برای پشتیبانی از xft و طبیعتا دست بازتر در انتخاب فونت‌ها سورس را با&lt;a title="i3 pango patch" href="https://aur.archlinux.org/packages/i3/i3-pango/i3-pango.tar.gz" target="_blank"&gt; این پچ&lt;/a&gt; آماده کردم‌. دوستان آرچر می‌توانند از این &lt;a title="i3 pango aur" href="https://aur.archlinux.org/packages.php?ID=59344" target="_blank"&gt;بسته&lt;/a&gt; برای نصب استفاده کنند‌. اما باقی که می‌خواهند خودشان کامپایل کنند کافیست پچ را در پوشهٔ‌ سورس کپی کنند و با دستور زیر ترتیب کار را بدهند:‌
+&lt;div class="code"&gt;&lt;pre&gt;patch -p1 &amp;amp;lt; i3-wm-pango.patch
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;دوستان اسلکوری هم می‌توانند باقی کار را به این &lt;a title="i3 &amp;amp; i3status slackbuilds" href="http://slackbuilds.org/result/?search=i3&amp;amp;sv=13.37" target="_blank"&gt;Slackbuild&lt;/a&gt; بسپارند‌. پس از نصب میزکار را اجرا کنید‌. چیزی که ما می‌خواهیم در نهایت شبیهش شویم به صورت زیر است:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png"&gt;&lt;img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png" alt="" width="430" height="323"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;قبل از این که بگویید این که چیزی ندارد تا بخواهیم کانفیگش کنیم بگذارید بگویم که دو روز وقتم را گرفت تا بتوانم به اینجا برسانمش ;-)&lt;/p&gt;
+&lt;p&gt;برای شروع کار می‌خواهیم فونت میزکار را تعیین کنیم‌. فایل کانفیگ i3 برای هر کاربر از شاخهٔ ‎~/.i3/config خوانده می‌شود‌ (توجه داشته باشید که در اولین اجرا اگر این فایل وجود نداشته باشد برنامهٔ کانفیگ خودکار i3 شروع می‌شود و از شما می‌پرسد که کدام کلید را به عنوان metaیتان تعریف کند‌ و بعد این فایل ساخته می‌شود-اگر هم نشد در &lt;a title="i3 userguide" href="http://i3wm.org/docs/userguide.html" target="_blank"&gt;userguide&lt;/a&gt; دنبالش بگردید و مسیرش را ببینید!) فایل کانفیگ را پیدا می‌کنیم و دنبال خط زیر می‌گردیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و آن را به صورت زیر ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font xft:Terminus 9
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین از آن‌جا که ترمینال پیش‌فرض i3 را دوست نداریم و می‌خواهیم Terminator جایگزینش شود به دنبال ‎# start a terminal می‌گردیم و خط زیرش را به صورت زیر ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bindsym &lt;span class="nv"&gt;$mod&lt;/span&gt;+Return &lt;span class="nb"&gt;exec&lt;/span&gt; --no-startup-id terminator
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در ادامهٔ کار با کانفیگ‌های پیش‌فرض i3 می‌سازیم‌، جز این که یک مشکل کوچک و قابل حل وجود دارد‌. آن هم این که بعد از تغییر layout کیبورد به فارسی دیگر کلید‌های میانبر میزکارمان کار نمی‌کنند و باید layout را انگلیسی کنیم تا به کار بیافتند‌. برای حل این مشکل باید به جای کلید‌های bindsym (کلید‌های میانبری که با اسم کلید مثلا shift, Return و ... تعریف می‌شوند) از bindcode استفاده کنیم‌. برای نمونه ما کلید‌های میانبر تغییر layout را به این صورت تعریف می‌کنیم.&lt;/p&gt;
+&lt;p&gt;کلید‌های مدنظر ما برای تغییر صفحه کلید Alt+Shift است‌. اول از همه در اول فایل کانفیگ یک متغیر به اسم ‎$mod1 که به Alt اشاره می‌کند به صورت زیر تعریف می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;$mod1&lt;/span&gt; Mod1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سپس خطوط زیر را در انتهای فایل کانفیگ اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bindcode &lt;span class="nv"&gt;$mod1&lt;/span&gt;+62 &lt;span class="nb"&gt;exec&lt;/span&gt; ~/.i3/changekb.sh
+
+bindcode &lt;span class="nv"&gt;$mod1&lt;/span&gt;+50 &lt;span class="nb"&gt;exec&lt;/span&gt; ~/.i3/changekb.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب حالا این دو خط چه می‌کنند؟ دستور bindcode به i3 می‌فهماند که باید از کد کلید‌های کیبورد برای شناسایی کلید ترکیبی استفاده کند‌. ‎$mod1 را هم که پیشتر خودمان به عنوان کلید Alt تعریف کردیم‌. حالا می‌ماند اعداد ۶۲ و ۵۰‌. این اعداد کد‌هایی هستند که کلید‌های شیفت چپ و راست کیبورد با آن‌ها شناخته می‌شوند و دقیقا مختص همین کلید‌ها هستند‌. برای کشفشان می‌توانید در ترمینال برنامهٔ xev را اجرا کنید کلید مورد نظرتان را فشار دهید و در خروجی‌ها به دنبال عبارت keycode و عدد روبرویش بگردید‌.&lt;/p&gt;
+&lt;p&gt;exec هم فرمانی است که با استفاده از آن می‌توانیم یک اسکریپت خارجی را اجرا کنیم که در اینجا ما اسکریپتی که layout را بررسی می‌کند و با توجه به وضعیت فعلی‌اش آن را به انگلیسی یا فارسی تغییر می‌دهد را به آن شناساندیم‌. پس لازم است کد زیر را که مربوط به این اسکریپت است در فایل changekb.sh وارد کرده و فایل را به پوشهٔ ‎.i3 در پوشهٔ خانگیتان کپی کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#This is a script for changing keyboard between English and Persian layouts&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap -print | grep xkb_symbols | awk &lt;span class="s1"&gt;'{print $4}'&lt;/span&gt; | awk -F&lt;span class="s2"&gt;"+"&lt;/span&gt; &lt;span class="s1"&gt;'{print $2}'&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; us &lt;span class="o"&gt;]&lt;/span&gt;;
+
+&lt;span class="k"&gt;then &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"EN"&lt;/span&gt;; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"changing to IR..."&lt;/span&gt;; setxkbmap ir;
+
+&lt;span class="k"&gt;else &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"IR"&lt;/span&gt;; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Changing to US..."&lt;/span&gt;; setxkbmap us ;
+
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نکته اینجاست که نمی‌دانم چرا Alt+Shift راست پس از تغییر layout به فارسی قادر به بازگردانیش به انگلیسی نیستند‌، در حالی که کلید‌های سمت چپ به راحتی این کار را انجام می‌دهند‌! البته این کار مزیتی برای خودش دارد و آن هم این که با استفاده از کلید‌های سمت راست دیگر خیالم راحت است که کیبورد فارسی است ;-)&lt;/p&gt;
+&lt;p&gt;در ادامه به حیاتی‌ترین بخش میزکارمان می‌رسیم‌. بخش گزارش‌گیری‌! نوار پایینی میزکار توسط برنامهٔ i3bar کنترل می‌شود‌. این برنامه می‌تواند خروجی برنامه‌های مختلف را در خود نمایش دهد‌. خود i3 برنامه‌ای به اسم i3status برای گزارش‌گیری دارد که من زیاد از آن خوشم نیامد‌. این شد که تصمیم گرفتم از conky برای این بخش استفاده کنم‌. چون هم ابزار‌های بیشتری دارد و هم قابلیت اجرای یک اسکریپت خارجی را بدون درد و خونریزی! این شد که به دنبال خط bar که احتمالا در انتهای فایل کانفیگ قرار دارد می‌گردیم و در میان آکولاد‌های روبرویش دو خط زیر را اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;font -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+
+status_command &lt;span class="nb"&gt;exec &lt;/span&gt;conky -c ~/.i3/i3conky
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خط اول این دستور که فونت terminus را برای خروجی i3bar تعریف کرده را می‌توانید نادیده بگیرید و یا به صورت xft مثل دفعهٔ قبل تعیین کنید‌. اما خط دوم دستور conky را با فایل کانفیگ i3conky که در شاخهٔ ‎.i3 قرار دارد اجرا می‌کند‌. پس لازم است این فایل را ایجاد کنید و دستورات زیر را در آن کپی کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;background no
+
+out_to_console yes
+
+double_buffer no
+
+short_units yes
+
+out_to_x no
+
+update_interval 1.0
+
+total_run_times 0
+
+use_spacer right
+
+
+
+TEXT
+
+CPU: &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu1&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu2&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu3&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;,&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;cpu&lt;/span&gt;&lt;span class="p"&gt; cpu4&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; @ FRQ: &lt;span class="nv"&gt;$freq&lt;/span&gt; | RAM:&lt;span class="nv"&gt;$mem&lt;/span&gt;/&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;memmax&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$memperc&lt;/span&gt;%&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;if_up&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;| LAN: D:&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;downspeed&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; U:&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;upspeed&lt;/span&gt;&lt;span class="p"&gt; eth0&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;endif&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+
+| &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;exec&lt;/span&gt;&lt;span class="p"&gt; ~/.i3/kbstatus.sh&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; | VOL: &lt;span class="nv"&gt;$mixer&lt;/span&gt; | &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="p"&gt; %a %d.%m.%y&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="p"&gt; %H:%M&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توضیح آرگومان‌های این فایل بماند به عهدهٔ خودتان‌. فقط من برای دیدن وضعیت فعلی صفحه کلید اسکریپت تغییر صفحه کلید را ویرایش کردم و آن را به اسم kbstatus.sh در شاخهٔ ‎.i3 قرار دادم تا از conky آن را فرا بخوانم‌. این اسکریپت فقط layout فعلی را در خروجی نشان می‌دهد و کدش به صورت زیر است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bas&lt;/span&gt;
+
+setxkbmap -print | grep xkb_symbols | awk &lt;span class="s1"&gt;'{print $4}'&lt;/span&gt; | awk -F&lt;span class="s2"&gt;"+"&lt;/span&gt; &lt;span class="s1"&gt;'{print $2}'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;کانفیگ میزکارمان دیگر تقریبا تمام شده‌. فقط می‌ماند یک چند تا ریزه کاری‌. i3 به صورت پیش‌فرض صفحه را از طرفی که بزرگتر است نصف می‌کند‌. پس دز عمدهٔ مانیتور‌ها این مسیر به صورت افقی تعریف می‌شود‌. حال آن که من تقسیم عمودی را بیشتر ترجیح می‌دهم‌. پس با خط زیر به i3 می‌فهمانم که این کار را طبق نظر من انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;default_orientation vertical
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین می‌خواهم تعدادی از برنامه‌هایم مثل mdic یا vlc به صورت float (تایل نشده) باز شوند که برای این کار دستورات زیر را اضافه می‌کنم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Vlc"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Mdic"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"DTA"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Download"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+
+for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"xfce4-notifyd"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; floating &lt;span class="nb"&gt;enable&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مقدار class و یا instance را می‌توانید پس از ران کردن دستور xprop WM_CLASS و سپس کلیک روی برنامهٔ مورد نظر به دست آورید‌. مثلا در مورد فایرفاکس خروجی به صورت زیر است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;WM_CLASS&lt;span class="o"&gt;(&lt;/span&gt;STRING&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Navigator"&lt;/span&gt;, &lt;span class="s2"&gt;"Firefox"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که Nvigator مقدار instance و Firefox مقدار class است‌. توجه داشته باشید که این مقدار Case sensetive است‌!&lt;/p&gt;
+&lt;p&gt;من فایل کانفیگ i3 و اسکریپت‌های مورد استفاده‌ام را روی &lt;a title="my i3 wm theme on git" href="https://github.com/shahinism/i3-wm-theme" target="_blank"&gt;این کانال git&lt;/a&gt; گذاشته‌ام‌. برای پی‌بردن بیشتر به جزئیات می‌توانید از آن‌ها استفاده کنید!&lt;/p&gt;</description><category>Arch</category><category>bash</category><category>i3</category><category>slackbuild</category><category>Slackware</category><category>اسلکور</category><category>حل مشکل</category><guid>http://shahinism.com/posts/blog13910417yddshty-bry-khnfyg-i3.html</guid><pubDate>Sat, 07 Jul 2012 09:41:16 GMT</pubDate></item><item><title>دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!</title><link>http://shahinism.com/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="سینا احسانی در پلاس" href="https://plus.google.com/u/0/102916660970180940856" target="_blank"&gt;سینا احسانی&lt;/a&gt; عزیز در پلاس گفت که با VB برنامه‌ای نوشته که تمام عکس‌های سایت &lt;a title="SimpleDesktops official website!" href="http://simpledesktops.com/" target="_blank"&gt;SimpleDesktop&lt;/a&gt; را دانلود می‌کند‌. وقتی سایت را دیدم واقعا از تصاویرش خوشم آمد‌. خیلی وقت بود که پس‌زمینهٔ دسکتاپم یک تصویر ساده بود که ثابت مانده بود‌. این شد که تصمیم گرفتم من هم عکس‌ها را دانلود کنم‌. البته کاملا لینوکسی‌!
+بررسی اولیه سایت معلوم کرد که پس از انتخاب عکس و کلیک آخر برای دانلود عکس شما با لینکی به صورت زیر طرف هستید‌:
+&lt;div class="code"&gt;&lt;pre&gt;http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;301
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همهٔ آدرس جز عدد ۳۰۱ در انتهایش ثابتند و آن عدد از ۱ یکی‌‌یکی زیاد می‌شود‌. هر کدام از این عکس‌ها پس از درخواست شدنشان به آدرس یکی از عکس‌های روی سرور اشاره می‌کنند‌. خوب دیگر داستان از این هم ساده‌تر می‌شود؟ کافیست که اراده کنیم و با یک حلقهٔ for اعداد را تولید کنیم و جلوی آدرس ثابتمان بنویسیم‌. پس می‌شود این:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bash&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;for &lt;/span&gt;i in &lt;span class="o"&gt;{&lt;/span&gt;1..5000&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"http://simpledesktops.com/download/?desktop=$i"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به بش گفتیم که هر بار یک عدد از یک تا پنج‌هزار (البته به ترتیب از کم به زیاد) تولید کن و در خروجی چاپ کن‌. یک بار اسکریپت را ران می‌کنیم و ... بعله خروجی دقیقا همان آدرس‌هایی که خواستیم می‌شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;...
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4995
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4996
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4997
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4998
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4999
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;5000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا کافیست در اسکریپت به جای echo که هر چه جلویش باشد را در خروجی استاندارد چاپ می‌کند یک wget بنویسیم تا آدرس‌های جلویش را دانلود کند‌. اما نه‌! در اولین اقدام تیرمان خطا رفت‌! در سرور‌های Apache یک فایلی هست به اسم ‎.htaccess و همان‌طور که از نامش معلوم است کارش این است که کنترل کند چه کسی به کجا دسترسی دارد‌. هر نرم‌افزاری هم که به یکی از این سرور‌ها درخواست بدهد موظف است اول خودش را معرفی کند‌. خوب wget که از نامش فساد می‌بارد عموما از طرف چنین سایت‌هایی مسدود می‌شود‌.&lt;/p&gt;
+&lt;p&gt;این است که باید به wget بگوییم نقابش را به صورت بزند و دوباره اقدام کند‌. اینبار اسکریپتمان این شکلی می‌شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bash&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;for &lt;/span&gt;i in &lt;span class="o"&gt;{&lt;/span&gt;100..5000&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+wget -U &lt;span class="s2"&gt;"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2"&lt;/span&gt; &lt;span class="s2"&gt;"http://simpledesktops.com/download/?desktop=$i"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و بعله‌! ران می‌کنیم و خیلی خوشکل اقدام به دانلود عکس‌ها می‌کنیم ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; در حین جستجو برای نوشتن این اسکریپت کشف کردم که قبلا اسکریپت‌هایی با Python یا PHP هم برای شیره‌کشی از این سایت نوشته شده‌. ولی این اسکریپت از همه‌شان کوتاه‌تر بود و خوب سادگی زیبـــــاست ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت ۲&lt;/strong&gt;: دیگر خودتان حواستان باشد که ‎#!‎/‎usr/bin/bash آدرس bash سیستم من است و می‌توانید با یک whereis bash پیدا کنید که مال شما کجاست‌!&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #ff0000;"&gt;&lt;strong&gt;پی‌نوشت ۳:&lt;/strong&gt; ممکنه بعد از دانلود متوجه بشین که فایل‌های دانلودی با یه همچین اسمایی ذخیره می‌شن index.html?desktop=100 اتفاقی که برای من روی سرور آرچ افتاد‌. عجیب بود که اسم فایل درست رو می‌دید ولی خودش از رو این Querystring ساخته شده اسم رو می‌نوشت‌. پس از جستجو کشف کردم که باید آپشن زیر هم به wget اضافه بشه:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;p&gt;--content-disposition&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;</description><category>bash</category><category>echo</category><category>wget</category><category>اینترنت</category><category>برنامه نویسی</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html</guid><pubDate>Thu, 21 Jun 2012 20:15:36 GMT</pubDate></item><item><title>Zsh دوست شماست‌!</title><link>http://shahinism.com/posts/blog13901127zsh-dwst-shmst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;نمی‌دونم می‌دونین یا نه‌، اما Zshell دوست شماست‌، شاید ندونین‌، ولی این یه حقیقته‌. می‌دونم به چی فکر می‌کنین‌، «‌مگه چه مشکلی با Bash وجود داره‌؟» ‌، در‌واقع هیچ مشکلی‌، جز اینکه اون Zsh نیست‌.
+موضوع این نیست که Bash بده‌، نمی‌خوام ارزشش رو پایین بیارم‌، اما اگه قرار باشه برای یه تیم یار کشی کنیم‌، Bash آخرین نفریه که سر کلاس ورزش انتخاب می‌شه‌.&lt;/p&gt;
+&lt;p&gt;اون زیاد هم همه کاره نیست‌ و هیچ چیزی رو کاملاً عالی انجام نمی‌ده‌، در‌واقع یه جورایی یه نوع Zsh عذاب آوره (‌یا شاید هم Zsh یه نوع بهتری از Bash باشه‌).&lt;/p&gt;
+&lt;p&gt;شروع کار با Zsh خیلی آسونه‌، بخاطر اینکه در بیشتر مواقع مثل Bash نقش بازی می‌کنه‌. پس اگه با Bash اخت شدین نترسین‌، شما می‌تونین Zsh رو بدون از دست دادن ذره‌ای از امکانات Bash امتحان کنید و هنوز هم با یک پوستهٔ بهتر طرف باشید.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;چرا Zsh از Bash بهتره؟&lt;/h4&gt;
+&lt;p&gt;تو ذهن من یکی از مهم‌ترین دلایلی که برای برتری Zsh وجود داره‌ اینه که Zsh توی تکمیل خود‌کار از bash بهتره‌، منظورم اون تکمیل خودکار چلاغی نیست که با نصب Bash نصیبتون می‌شه‌. منظورم یک تکمیل خودکار واقعیه‌، که شامل تمامی دستورات رایج در خط فرمان می‌شه‌، که واقعاً هم سریعه‌. ویژگی تکمیل خودکار همچنین به شما یک لیست قابل پیمایش با کیبورد از انتخاب‌هاتون هم می‌ده که می‌تونه عالی باشه‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="/wp-content/uploads/snapshot1.png"&gt;&lt;img class=" wp-image-603  aligncenter" title="snapshot1" src="/wp-content/uploads/snapshot1.png" alt="نمونه‌ای از تکمیل خودکار Zsh" width="571" height="186"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;خوب می‌دونم الان چی می‌خواین‌، ارزشش چیه؟ خوب بیاین یه نمونه عالی از تکمیل خودکار رو با هم ببینیم‌. بیاین از kill به عنوان یه مثال استفاده کنیم‌. شما تایپ می‌کنین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;توی bash شما چی می‌بینین؟ لیست تمام فایل‌هایی که توی پوشهٔ حاضرتون قرار داره‌. اینکه برای من یه ویژگی عالی به حساب نمی‌آد‌. حالا چی رخ می‌ده اگه توی Zsh بنویسین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این رخ می‌ده‌:&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a href="/wp-content/uploads/snapshot2.png"&gt;&lt;img class="aligncenter  wp-image-604" title="snapshot2" src="/wp-content/uploads/snapshot2.png" alt="" width="580" height="217"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;لیستی از تمام پروسه‌ها با شماره‌هاشون (pids)؟ بله خواهش می‌کنم‌.&lt;/p&gt;
+&lt;p&gt;چیز دیگه‌ای که Zsh رو متفاوت می‌کنه تاریخچهٔ اشتراکیشه‌. اگه شما هم مثل منین و تمام طول روز رو توی ترمینال زندگی می‌کنین‌. چیزی بد‌تر از این نیست (بزارین به حساب اغراق‌های من) که یه ترمینال دیگه توی یه تب باز کنین و برای پیدا کردن دستوری که همین الان توی تب بقلی زدین تاریخچه رو پیمایش کنین و ببینین خبری ازش نیست‌. توی Zsh همچین اتفاقی نمی‌افته.&lt;/p&gt;
+&lt;h4&gt;وقت چیز‌های خارق‌العاده‌تری رسیده&lt;/h4&gt;
+
+&lt;p&gt;خوب ما تکمیل خودکار سریع و فوق‌العاده‌ای داریم با یه تاریخچهٔ اشتراکی‌. چقدر چیز شگفت‌انگیز دیگه‌ای می‌شه اونجا پیدا کرد‌؟ یه عالمه‌!&lt;/p&gt;
+&lt;h5&gt;تصحیح خودکار واقعاً عالیه‌&lt;/h5&gt;
+
+&lt;div class="code"&gt;&lt;pre&gt;&amp;amp;gt; &lt;span class="nv"&gt;$ &lt;/span&gt;awesome git:&lt;span class="o"&gt;(&lt;/span&gt;master&lt;span class="o"&gt;)&lt;/span&gt; ✗ gut status
+
+zsh: correct &lt;span class="s1"&gt;'gut'&lt;/span&gt; to &lt;span class="s1"&gt;'git'&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;nyae&lt;span class="o"&gt;]&lt;/span&gt;? y
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;تصحیح خودکار برای دستورات شناخته شده‌. من بدون تو چی کار می‌کردم (جز اینکه دستور رو دوباره تایپ کنم)؟&lt;/p&gt;
+&lt;p&gt;حتی باحال‌تر از تصحیح خودکار‌، برای ابر نرد‌ها (مثل من) حالت Vi و emacs‌ه‌، آره لعنتی‌، شما می‌تونی ویرایشگر محبوبت رو توی خط فرمانت داشته باشی‌. این قابلیت از فرمان‌های جابجایی و وبرایش رایج پشتیبانی می‌کنه‌، مثل حالت‌های command و insert توی vi.&lt;/p&gt;
+&lt;p&gt;آخری ولی مهم مثل بقیه‌، Zsh بسته‌ای به اسم &lt;a title="oh-my-zsh official page" href="https://github.com/robbyrussell/oh-my-zsh"&gt;oh-my-zsh &lt;/a&gt;رو داره که به گفتهٔ وبسایتش‌:&lt;/p&gt;
+&lt;p&gt;یک فریم ورک برای مدیریت تنظیمات zshه که توسط جامعهٔ کاربریش پشتیبانی می‌شه‌. شامل بیش از چهل پلاگین اختیاری (rails، git، OSX، hub، capistrano، brew، ant، macports و غیره) ‌، بیش از هشتاد تم ترمینال برای خوشمزه کردن صبحتون‌، و یک ابزار به روزرسانی خودکار که این امکان رو بهتون می‌ده که آخرین تغییراتی که جامعهٔ پشتیبان به بسته‌ها می‌دن رو در اختیار داشته باشین‌.&lt;/p&gt;
+&lt;p&gt;می‌دونم Bash هم یکی از اینا داره‌، ولی من فکر می‌کنم oh-my-zsh خیلی بهتره‌، بروزرسانی خودکارش‌، داشتن پلاگین‌های عالی و یک جامعهٔ پشتیبانی فعال پشت سرشه که می‌تونه دلیل خوبی برای این طرز تفکر من باشه‌.&lt;/p&gt;
+&lt;p&gt;در کل Zsh فوق‌العادست‌، پس اگه تا حالا اون رو امتحان نکردین‌، شاید وقتشه که این کار رو بکنین‌. اگه شما هم موافقین oh-my-zsh جای خوبی برای شروعه‌.&lt;/p&gt;
+&lt;p&gt;اگه شما هم از طرفدارای Zsh هستین و چند تا از تکنیک‌های خاص خودتون رو بلدین‌، تو بخش نظرات اون‌ها رو با من و باقی خواننده‌ها به اشتراک بذارین‌.&lt;/p&gt;
+&lt;p&gt;ویرایش: اگه قصد یادگیری بیشتر در مورد Zsh دارین‌، &lt;a title="ZSH FAQ" href="http://zsh.sourceforge.net/FAQ/" target="_blank"&gt;Zsh FAQ &lt;/a&gt;رو امتحان کنین‌. خیلی کامله و خیلی بهتر از یه پست وبلاگی به ویژگی‌های Zsh پرداخته ;-)&lt;/p&gt;
+&lt;p&gt;همچنین‌،&lt;a title="Hacker News ZSH" href="http://news.ycombinator.com/item?id=3533895" target="_blank"&gt; صحبت‌های بیشتر در این مورد توی Hacker News.&lt;/a&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="Source" href="http://mikegrouchy.com/blog/zsh-is-your-friend.html" target="_blank"&gt;&lt;strong&gt;منبع&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>bash</category><category>linux</category><category>Shell</category><category>Zsh</category><category>بررسی</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.com/posts/blog13901127zsh-dwst-shmst.html</guid><pubDate>Thu, 16 Feb 2012 12:19:25 GMT</pubDate></item><item><title>چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</title><link>http://shahinism.com/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خیلی وقت بود که دنبال این بودم که بفهمم چطوری خروجی ls رو توی bash رنگی کنم و از این حالت مرده‌ی سادش در بیارم‌. خوبی این رنگ‌بندی موقعی معلوم می‌شه که توی دایرکتوری‌های تو در تو گم می‌شی‌. خلاصه یه پست از &lt;a title="pyroozan on Googleplus" href="https://plus.google.com/u/0/105766466440674771215/about" target="_blank"&gt;پیروزان&lt;/a&gt; عزیز امروز بانی خیر شد و من رو مجبور کرد که به سمت حل این مشکل برم و چیزایی یاد بگیرم‌. البته ناگفته نمونه که پیروزان هم چیز جالبی معرفی کرد که در ادامه‌ی مطلب توضیح استفاده ازش رو می‌دم‌.&lt;/p&gt;
+&lt;p&gt;برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;ls --color
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;alias &lt;/span&gt;&lt;span class="nv"&gt;ls&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"ls --color=always"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این &lt;a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank"&gt;کانال git&lt;/a&gt; منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;dircolors -b LS_COLORS&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نمونه‌ای از خروجی این فایل به صورت زیره‌:&lt;/p&gt;
+&lt;p&gt;&lt;img class="aligncenter" title="LS_COLOR" src="https://a248.e.akamai.net/assets.github.com/img/e235af63c2be86cf4e4167b7f098e28192b63488/687474703a2f2f646576656c2e6a6170682e73652f4c535f434f4c4f52532f4c535f434f4c4f52532e706e67" alt="نمونه‌ای از خروجی فایل LS_COLOR" width="238" height="136"&gt;&lt;/p&gt;</description><category>bash</category><category>bashrc</category><category>DIR_COLORS</category><category>اسلکور</category><category>حل مشکل</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.com/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html</guid><pubDate>Fri, 02 Dec 2011 13:16:48 GMT</pubDate></item><item><title>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟</title><link>http://shahinism.com/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;پوستهٔ &lt;a title="Korn shell on WIKIPEDIA" href="https://en.wikipedia.org/wiki/Korn_shell" target="_blank"&gt;Korn&lt;/a&gt; در یونیکس‌/لینوکس چیست‌؟
+پوستهٔ Korn توسط دیوید کورن در آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.&lt;/p&gt;
+&lt;p&gt;همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.&lt;/p&gt;
+&lt;p&gt;نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating point) نیز پشتیبانی می‌کند‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;ویژگی‌های پوستهٔ Korn&lt;/h4&gt;
+&lt;ol&gt;&lt;li&gt;تازیخچهٔ دستورات – بله&lt;/li&gt;
+    &lt;li&gt;ویرایش خط – بله&lt;/li&gt;
+    &lt;li&gt;تکمیل نام فایل – بله&lt;/li&gt;
+    &lt;li&gt;دستورات مستعار (‌Alias Commant) – بله&lt;/li&gt;
+    &lt;li&gt;پوستهٔ محدود (Restricted shells) – بله&lt;/li&gt;
+    &lt;li&gt;کنترل فعالیت‌ها – بله&lt;/li&gt;
+&lt;/ol&gt;&lt;h4&gt;‎‎/usr/bin/ksh‏&lt;/h4&gt;
+
+&lt;p&gt;تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#! /usr/bin/ksh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/ksh&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; “Hello World!”
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;which ksh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نمونهٔ خروجی‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/usr/bin/ksh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env ksh&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; “Hello World!”
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p style="text-align: center;"&gt;&lt;a title="What is UNIX / Linux Korn Shell?" href="http://www.cyberciti.biz/faq/ksh-korn-shell/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>bash</category><category>KORN Shell</category><category>KSH</category><category>لینوکس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>یونیکس</category><guid>http://shahinism.com/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html</guid><pubDate>Tue, 29 Nov 2011 17:09:32 GMT</pubDate></item><item><title>تغییر (تثبیت‌) اعلان خط فرمان اسلکور</title><link>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اعلان خط فرمان لینوکس در عین سادگی‌اش می‌تواند شدیدا کاربردی باشد‌! در توزیع‌های مختلف دیده بودم که این اعلان خط فرمان فقط در علائم کاربری $ و ریشه # متفاوت از هم بود‌، اما در اسلکور‌، یک نکته عجیب در این مورد برایم وجود داشت‌! آن هم این که در حالت عادی اعلان فرمان به صورت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;user@hostname &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نشان داده می‌شد‌، اما وقتی مثلا در کنسول KDE یک Tab جدید باز می‌کردم‌، اعلان به صورت زیر تغییر می‌کرد که متاسفانه‌، هیچ قابلیت به درد بخوری در خود نداشت‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;bash.4.?: &lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;این مشکل از وقتی که از برنامه &lt;a title="yakuake official webpage" href="http://yakuake.kde.org/" target="_blank"&gt;Yakuake&lt;/a&gt; برای دسترسی راحت‌تر به ترمینال استفاده می‌کردم‌، بیشتر به چشم می‌آمد‌، و عملا تمامی اعلان فرمان‌هایش به همین شکل بود‌. پس تصمیم گرفتم یک بار برای همیشه‌، بی‌سوادی را کنار بگذارم و حلش کنم‌. مشکل به دو فایل زیر مربوط می‌شد‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;/etc/bashrc
+
+~/.bashrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که متاسفانه هیچ‌کدامشان در اسلکور به صورت پیش‌فرض وجود نداشتند‌، و از قرار آن اعلان سالم اول کار هم از فایل HOSTNAME موجود در شاخه etc ‏استفاده می‌کرد‌. خوب پس کافی بود یکی از این فایل‌ها را بسازم‌، و از آن‌جایی که ساختن فایل دوم‌، به نظرم آسان‌تر آمد‌، با دستور vim ~/.bashrc اقدام به ساختنش کردم‌، و خط زیر را به آن اضافه کردم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ترمینال را یک بار بستم و باز کردم‌، و همه‌چیز خوب بود‌. حالا می‌ماند توضیحات این خط دوم‌:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;! : شماره فعلی تاریخچه فرمان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;# : شماره دستور آخرین دستور را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;$ : اعلان فرمان استاندارد را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;W : فقط دایرکتوری کاری جاری را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;\ : فقط یک بک اسلش نشان داده میشود.&lt;/li&gt;
+    &lt;li&gt;d : روز، ماه و شماره روز را نمایش میدهد. مثلا : Sat Jan 23&lt;/li&gt;
+    &lt;li&gt;h : نام کامپیوتر میزبان را نشان میدهد.&lt;/li&gt;
+    &lt;li&gt;n : یک خط جدید باز میکند.&lt;/li&gt;
+    &lt;li&gt;s : نام پوسته فرمان را نشان میدهد. مثلا bash&lt;/li&gt;
+    &lt;li&gt;t : زمان را بصورت ساعت، دقیقه و ثانیه نمایش میدهد. برای مثال : 10:14:40&lt;/li&gt;
+    &lt;li&gt;u : نام کاربر را نمایش میدهد.&lt;/li&gt;
+    &lt;li&gt;w : مسیر کامل دایرکتوری جاری را نمایش میدهد.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت &lt;a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank"&gt;تکنوتاکس&lt;/a&gt; قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!&lt;/p&gt;
+&lt;p&gt;برای این که نتیجه‌ی اعلانتان را ببینید و یا این که اگر لازم شد در موقعیت خاصی وضعیت اعلانتان را عوض کنید (‌البته نه برای همیشه‌، فقط برای نشست حاظر‌) کافیست از دستور زیر در ترمینال استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;فکر کنم به عنوان یک نکته کوچک‌، دیگر همین‌قدر توضیح دادن کافی باشد. ;-)&lt;/p&gt;</description><category>bash</category><category>bashrc</category><category>linux</category><category>Slackware</category><category>اسلکور</category><category>حل مشکل</category><category>خط فرمان</category><guid>http://shahinism.com/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html</guid><pubDate>Tue, 04 Oct 2011 08:37:56 GMT</pubDate></item></channel></rss>

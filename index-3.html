@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 3) | شاهینیسم</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="." title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="archive.html">Archives</a>
+
+
+
+  </li><li><a href="categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-02-07 19:38
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html">دریافت متن ترانه‌های MP3 با لینوکس</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
+</p><h5>مقدمات</h5>
+<p>اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم <a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank">آدم سالاری</a> قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)</p>
+<p>اصل اسکریپت همچین جایی است:</p>
+<div class="code"><pre>curl -s <span class="s2">"http://makeitpersonal.co/lyrics?artist=$artist&amp;amp;title=$title"</span>
+</pre></div>
+
+
+<p>خیلی ساده با curl یک درخواست به API سایت می‌فرستیم که در آن ‎$artist اسم خوانندهٔ ترانه و ‎$title اسم خود ترانه است. که البته‌، چون url‌ها نحو (Syntax) خاص خودشان را دارند‌، این اسکریپت‌نویس دوست داشتنی ما‌، با دو خط زیر‌، اسم خواننده و ترانه را معتبر می‌کند:</p>
+<div class="code"><pre><span class="nv">artist</span><span class="o">=</span><span class="sb">`</span>perl -MURI::Escape -e <span class="s1">'print uri_escape($ARGV[0]);'</span> <span class="s2">"$artist_name"</span><span class="sb">`</span>
+
+<span class="nv">title</span><span class="o">=</span><span class="sb">`</span>perl -MURI::Escape -e <span class="s1">'print uri_escape($ARGV[0]);'</span> <span class="s2">"$song_title"</span><span class="sb">`</span>
+</pre></div>
+
+
+<p>همین‌؟ تمام شد؟‌ خوب این اسکریپت کاری که می‌خواستیم را انجام داد. ولی شاهین را که می‌شناسید‌. دوست دارد کار‌هایش را <a title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" href="http://shahinism.com/blog/1390/09/26/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b9-%da%86%d8%b7%d9%88%d8%b1-%d8%a8%d9%87-%d8%b5%d9%88%d8%b1%d8%aa-%d9%81%d9%84%d9%87%e2%80%8c%d8%a7%db%8c-%d9%84%db%8c%d9%86%da%a9%e2%80%8c%d9%87%d8%a7/" target="_blank">فله‌ای</a> انجام دهد! یک کمی سخت است که هر بار بیایم اسم ترانه و خواننده را به اسکریپت بگویم‌، بعد شیلنگ خروجی را بگیرم توی یک فایلی که می‌خواهم و از این حرف‌ها. پس می‌رویم سراغ دستکاری بیشتر این اسکریپت.</p>
+<h5>خجالت بکش شاهین</h5>
+
+<p>حتما می‌دانید که می‌توان به فایل‌های MP3 تگ زد. همین تگ‌هایی که اسم خواننده و ترانه و ژانر و این‌جور حرف‌ها را می‌توان بهشان خوراند که تا دست آخر با MP3 Player خیلی راحت‌تر بشود سر و سامان‌شان داد. البته اگر راست کار‌تان<a title="موسیقی در وب فارسی‌" href="http://shahinism.com/blog/1389/01/15/%d9%85%d9%88%d8%b3%db%8c%d9%82%db%8c_%d8%af%d8%b1_%d9%88%d8%a8_%d9%81%d8%a7%d8%b1%d8%b3%db%8c%e2%80%8c/" target="_blank"> سایت‌های موسیقی ایرانی</a> است‌، از این تگ‌ها مطمئنا خیری نسیب‌تان نشده‌، چون از دَم مثل ندید بدید‌ها پرش کرده‌اند با آدرس سایت داغان‌شان ;-)</p>
+<p>به هر حال‌، از آن‌جایی که آلبوم موسیقی مورد نظر من‌، مثل آدم تگ خورده بود‌، قصد داشتم تا از این تگ‌ها استفاده کنم. همیشه هم در مخیله‌ام این‌طور تصور می‌کردم که این تگ‌ها با یک روش مخوفی درون فایل موسیقی که اصلا نمی‌دانم چیست قایم شده‌اند و خواندن‌شان نیاز به کتاب‌خانه‌ای چیزی دارد که من از طرز کارش سر در نمی‌آورم. این بود که قصد داشتم اصلا کل اسکریپت را به برنامه‌ای به پایتون تغییر دهم. ولی خوب‌، یک سرچ کوچک کردم و کلی <b>خجالت کشیدم</b>.</p>
+<p>همان‌طور که در<a title="Bash Script: Reading ID3v1 Tags" href="http://phoxis.org/2011/08/24/bash-script-reading-id3v1-tags/" target="_blank"> این لینک</a> توضیح داده شده‌، عموما‌، ۱۲۸ بیت آخر فایل MP3 شامل تگ‌های آن است. و ابزار‌های به ظاهر سادهٔ گنو/لینوکسی‌، مثل چـــی‌، کمک‌مان می‌کنند که این تگ‌ها را بخوانیم‌. ببینید:</p>
+<div class="code"><pre><span class="nv">tag</span><span class="o">=</span><span class="k">$(</span>tail -c128 <span class="s2">"$file"</span> | tr <span class="s1">'\0'</span> <span class="s1">' '</span><span class="k">)</span>
+
+<span class="nv">id3</span><span class="o">=</span><span class="k">$(</span>head -c10 <span class="s2">"$file"</span> | tr <span class="s1">'\0'</span> <span class="s1">' '</span><span class="k">)</span>
+</pre></div>
+
+
+<h5>سر هم کردن اسکریپت نهایی</h5>
+
+<p>دیگر حالا‌، هم همهٔ ابزار‌های مورد نیاز‌مان را داریم‌، هم کلی چیز جدید یاد گرفته‌ایم. این است که‌، اسکریپت نهایی را سر هم می‌کنیم. که می‌توانید از <a title="lyric script" href="https://github.com/shahinism/Scripts/blob/master/Shell/lyric" target="_blank">این لینک</a> دریافتش کنید. برای استفاده از آن هم کافیست که اسم هر تعداد ترانهٔ MP3 را که دل‌تان می‌خواهد در جلویش تایپ کنید تا خودش باقی کار‌ها را انجام دهد.</p>
+<p><b>نکته:</b> خوب گاها پیش می‌آید که اسم ترانه‌، شامل کلماتی نظیر (Live) و یا (Bonus) باشد. و یا شاید اسم سایتی‌، چیزی را شامل شود. در این صورت‌، احتمالا API ما بر می‌گرداند که چیزی پیدا نکردم و از این حرف‌ها‌. ولی اسکریپت بیشعور ما آن را هم درون یک فایل هم اسم ترانه با فرمت txt ذخیره می‌کند. این‌جایش را دیگر خودتان می‌توانید با هنر دستکاری فایل لینوکسی‌تان‌، راست و ریست کنید ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-01-30 12:29
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13911111chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy.html">چرا گنو/لینوکس را دوست دارم؟ به سبک شاهینیسم!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>در مورد قدرت گنو/لینوکس و عشق‌بازی‌هایم با آن‌، قبلا در<a title="تمامی ارسال‌ها" href="http://shahinism.com/%d8%aa%d9%85%d8%a7%d9%85%db%8c-%d8%a7%d8%b1%d8%b3%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank"> این وبلاگ</a> و جاهای دیگر‌، بسیار گفته‌ام. بدیهی است که <a title="تمامی ارسال‌ها" href="http://shahinism.com/%d8%aa%d9%85%d8%a7%d9%85%db%8c-%d8%a7%d8%b1%d8%b3%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank">این زیبایی‌های</a> هر چند کوچک و خوش‌آیند به سواد کم من‌، از دلایل عشق ورزیدن من به گنو/لینوکس باشد. اما می‌خواهم در این پست‌، از نگاهی دیگر این دوست داشتن را وصف کنم.
+قبل از آن مهاجرت پر ذوق و شوقم به گنو/لینوکس‌‌، بار‌ها آن را مزه مزه کرده بودم و جذبش نشده بودم. حتی بار‌ها تکنیک‌های خرده‌ریزش را خوانده بودم و جذابیتش را درک نکرده بودم. اما چه شد که در یک آن تمام زندگی دیجیتالم را غرق در دنیای گنو/لینوکس دیدم؟</p>
+<p>حقیقتش‌، پدیده‌ای چون گنو/لینوکس‌، در دنیای من‌، آن هم با ترجمه‌هایی مضحک از کلماتی چون آزادی‌، همکاری‌، رقابت‌ و جنگندگی‌، بیشتر به رویایی دست نیافتنی شباهت دارد تا واقعیتی قابل لمس. بار‌ها سعی کردم که راهی برای توصیف معنای آزادی و قدرت گنو/لینوکس پیدا کنم. اما برای مردمانی که نیازی به آزادی نمی‌بینند‌، این کار به کوبیدن میخی در سنگ می‌ماند. مردمی که قدرت را با ثروت اشتباه می‌گیرند و دانش را برای کسب ثروت دنبال می‌کنند. دنیایی که همکاری در آن به معنای پایین کشیدن ارزش همکارانت باشد و تنها به واسطهٔ کسب حقوق مادی‌، همکاری در آن معنا یابد‌، هرگز نمی‌تواند گنو/لینوکس را درک کند. در چنین دنیایی‌، بهترین توصیف گنو/لینوکس‌، یک ویندوز ضعیف و مخوف است که تنها دیوانگان به استفاده از آن روی می‌آورند! D:</p>
+<p>به واسطهٔ آموزش‌هایی که در دوران تحصیل دیده بودم‌، کم کم به جایی هدایت می‌شدم که دیگر نمی‌توانستم آن‌طور که باید به حرفه‌ای که دوست داشتم نگاه کنم. حرفه‌ای که روزی آرزوی فعالیت در آن را داشتم‌، داشت به کابوسی تلخ تبدیل می‌شد. نمی‌توانستم تنها با این دلیل که ابزار یا رفتاری در جامعهٔ اطرافم پسندیده شده‌، آن را قبول کنم. نباید هم این‌طور می‌شد. دوست داشتم قدم به قدم مسیر را خودم تجربه کنم‌. حتی شکست‌هایش را. چون یاد گرفته بودم چطور با آن‌ها کنار بیایم.</p>
+<p>دیگر وقت آن رسیده بود که از قالبی که دورم ساخته شده بود بیرون بیایم. باید یاد می‌گرفتم که خودم را به چالش بکشم. باید از توصیف کار‌هایم برای دیگران دست می‌کشیدم‌. از راهنمایی‌شان. یک کلام‌، باید سنگی را در آغوش می‌کشیدم و به دریای گنو/لینوکس می‌پریدم! همین کار را هم کردم. تمام آموخته‌ها و تجربه‌های چند ساله‌ام را فراموش کردم. حتی ویندوز را نگه نداشتم. یک نصب کامل. یک تیر خلاص. آسان بود؟ نه واقعا نبود. خصوصا با استثناهایی که تنها انسان‌هایی که در کشور‌هایی چون کشور من زندگی می‌کنند درک‌شان می‌کنند. روز‌ها وقت صرف کردم تا راهی برای چشیدن آزادی در اینترنت پیدا کنم. برای آزادانه گشتن در بزرگترین دانشگاه زیر دستم(بماند که هنوز هم هر از چندگاهی‌، باید به دنبال روش‌های جدیدی باشم).</p>
+<p>آزمون‌ها و خطا‌ها شروع شد. هر شکست آموزشی بزرگ‌تر در دل داشت. آموزشی که محال بود در دنیای گذشته‌ام حتی به آن فکر کنم. دیگر داشتم به خودم محدود می‌شدم. دیگر فارسی کارساز نبود. منابع فارسی هر چند شاید گسترده‌، ولی تاریخ انقضا گذشته بودند. روزی فکر می‌کردم برای یادگیری نیازی به انگلیسی ندارم و روی همین تفکر‌، دور کلاس زبان را خط کشیدم. ولی حالا وقتش رسیده بود که اشتباهم را ببینم. داشت به تعداد چیز‌هایی که باید یاد می‌گرفتم اضافه می‌شد. سخت بود ولی تا دلتان بخواهد زمان بود که داشتم.</p>
+<p>بعد از آن همکاری‌هایی هر چند کوتاه مدت با دیگر فعالان این عرصه شروع شد که تجربه‌های زیادی در رابطه با کار گروهی و اخلاقیات ایرانیزه شده‌مان به همراه داشت. ظرف یک‌سال جهش بزرگی در سواد و علاقه‌مندی‌هایم دیدم که در پنج سال دوران تحصیل دانشگاهی‌ام خواب‌شان را نمی‌دیدم. دیگر برای یادگیری ابزار‌ها و روش‌ها نیاز به اساتید و آن کتاب‌های قطورشان نداشتم. تنها کافی بود از دنیای اطرافم برای یادگیری کمک بگیرم. در نزدیک‌ترین مرحله‌، خود نرم‌افزار‌ها بودند که راه را نشانم می‌دادند. بعد از آن جامعهٔ کاربری. از طرف دیگر موضوع وقتی جالب‌تر می‌شد که دیگر محدود به ابزار‌ها نبودم.</p>
+<p>اگر از خروجی نرم‌افزاری راضی نبودم می‌توانستم آن را تغییر دهم. یا اصلا چرا زحمت بی‌جا بکشم؟ آن را به نرم‌افزار دیگری می‌خوراندم تا در نهایت خروجی دلخواهم را به دست آورم. دیگر نیازی نبود که دیگران به کارم نمره بدهند. نمره‌ها نتیجهٔ کارم بودند. دیگر اشتباه‌ها به ضررم تمام نمی‌شد. اشتباه‌ها فرصتم بودند. حالا دیگر در مسیری قرار گرفته بودم که قدرت گنو/لینوکس را درک کنم. جایی که هر چه بیشتر یاد می‌گرفتم‌، می‌دیدم که چه قدر بی‌سوادم. بماند که درک این بی‌سوادی‌، از کور‌کورانه باور داشتن به با سوادی‌، آن هم به واسطهٔ معدل ۲۰ دانشگاه لذت‌بخش‌تر بود ;-)</p>
+<p>هر چند خوب می‌دانم راه درازی تا درک کامل دنیای جدیدم پیش‌رو دارم. دنیایی که شاید هرگز نتوانم تمام گوشه‌هایش را ببینم. اما افتخار می‌کنم که سرانجام (دیر یا زودش اصلا مهم نیست) به سوی سرزمینی از عجایب قدم برداشتم که بدون هیچ چشم داشتی‌، کمر به آموزش دادن و قدرتمند کردنم بسته است.</p>
+<p><a href="http://blog.sito.ir/why-i-love-gnulinux/"><img title="لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»" alt="لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»" src="http://blog.sito.ir/wp-content/uploads/2013/01/blog-competition-468.png" width="468" height="94"></a> لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13911111chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy.html#disqus_thread" data-disqus-identifier="cache/posts/blog13911111chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-01-22 13:27
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html">چطور از وابستگی به گیت‌هاب فرار کنیم: پشتیبان‌گیری از مخازن گیت</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>گیت این روز‌ها تبدیل به عصای کمکی بزرگی برای انجام پروژه‌هایم شده. خوشبختانه تا دلمان هم بخواهد سرور ارائهٔ خدمات گیت روی اینترنت ریخته که هر کدام مزایا و محدودیت‌های خود‌شان را دارند. من‌باب مالیخولیایی زیادم در پشتیبان‌گیری از پروژه‌ها‌، مطلب زیر (<a title="How to avoid relying on github: mirror your repository" href="http://www.deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/" target="_blank">منبع</a>) را پیدا کردم که خیلی جالب و کمکی به نظرم آمد. تست کردم‌، فوق‌العاده بود. پس ترجمه‌اش را این‌جا می‌گذارم تا شما هم حالی ببرید از آخرین فرزند خلف آقایمان‌، ترووالدز ;-)</p>
+<p></p><blockquote>
+<p>یکی از نکاتی که قطعی‌های اخیر گیت‌هاب گوشزد می‌کنند این است که گیت به عنوان یک سیستم مدیریت نسخهٔ غیر متمرکز طراحی شده. بسیاری از مردم به این صورت آن را مورد استفاده قرار نمی‌دهند. به جای داشتن چند بایگانی راه دور‌، داده‌ها را به یک جا می‌فرستند و در اصل بیش از اندازه به گیت‌هاب تکیه می‌کنند. کسانی را دیده‌ام که کل سازمان‌شان را بر پایهٔ گیت‌هاب بنا کرده‌اند‌، چیز‌هایی نظیر گسترش اسکریپت‌های سایت‌شان و نصب اسکریپ‌ها برای توسعه دهندگان جدید‌شان. علاوه بر این‌، dependency manager‌هایی مثل Composer و Cocoapods نیز به گیت‌هاب وابسته‌اند تا پیش‌نیاز‌هایشان را دریافت کنند. اگر گیت‌هاب Down شود‌، شما نمی‌توانید پیش‌نیاز‌های‌تان را دستکاری کنید و یا نمونه‌های جدید‌تری به آن‌ها اضافه کنید. در یک دنیای ایده‌آل این Dependency manager‌ها باید قابلیت‌ پشتیبانی توکار از mirror‌ها را داشته باشند‌، ولی در حال حاضر من چنین قابلیت‌هایی را نمی‌بینم.</p>
+<p>چیزی که من می‌خواهم انجام دهم این است که نشان‌تان دهم که چقدر آسان است که با استفاده از سرور‌های راه دور گیت در آن واحد به دو سرور مختلف داده‌های‌تان را ارسال کنید. اگر گیت‌هاب Down شد‌، مهم نیست‌، بر فرض این که همه افراد تیم‌تان از این راهنما پیروی کرده باشند‌، کد از طریق bitbucket نیز در دسترس خواهد بود‌، یا هر جای دیگری که شما انتخاب کرده‌اید. اما این راهنما از گیت‌هاب و بیت‌باکت به عنوان mirror استفاده می‌کند.</p>
+<p>۱. اول فرض می‌کنم که شما یک سرور راه دور برای گیت‌هاب به عنوان "origin" ایجاد کرده‌اید. آن را به github تغییر نام دهید:</p>
+<div class="code"><pre>git remote rename origin github
+</pre></div>
+
+
+<p>۲. یک مخزن جدید روی بیت‌باکت هم‌نام همان چیزی که در گیت‌هاب دارید بسازید.</p>
+<p>۳. این مخزن جدید را به صورت زیر به سرور‌های راه دور‌تان اضافه کنید. ولی مطمئن باشید که اسمش bitbucket باشد و نه origin. این‌طور:</p>
+<div class="code"><pre>git remote add bitbucket ssh://git@bitbucket.org/username/somerepo.git
+
+git push -u bitbucket --all
+</pre></div>
+
+
+<p>۴. و حالا با یک ادیتور از شاخهٔ ‎.git در مخزن گیت‌تان فایل config را باز کنید.</p>
+<p>۵. نوبت این است که url‌های مربوط به هر سرور راه دور را به مجموعهٔ جدیدی به اسم origin اضافه کنیم. می‌شود چیزی شبیه این:</p>
+<div class="code"><pre><span class="o">[</span>remote <span class="s2">"origin"</span><span class="o">]</span>
+
+<span class="nv">url</span> <span class="o">=</span> git@github.com:username/somerepo.git
+
+<span class="nv">url</span> <span class="o">=</span> ssh://git@bitbucket.org/username/somerepo.git
+</pre></div>
+
+
+<p>۶. دفعهٔ بعد که از دستور git push origin استفاده کردید‌، مخزن در هر دو سرور راه دور آپلود خواهد شد.</p>
+<p>به همین راحتی.</p>
+<p>نسخه‌های اخیر گیت این اجازه را به شما می‌دهند که چند جا را به عنوان مخزن راه دور یک مجموعه معرفی کنید. ولی من ترجیح می‌دهم که ببینم چه کاری انجام می‌دهم.</p>
+</blockquote>
+
+<p><strong>نکته از شاهینیسم:</strong> بهتر است از یک public-key برای گیت‌هاب و بیت‌باکت استفاده کنید. این‌طوری مرحلهٔ شناسایی هر دو سرور مثل هم خواهد بود ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html#disqus_thread" data-disqus-identifier="cache/posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pageNav">
+  
+  <div class="prev">
+    <a href="index-2.html">← ارسال‌های جدید‌تر</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="index-4.html">پست‌های قدیمی‌تر →</a>
+  </div>
+  
+</div>
+
+
+    
+        <script type="text/javascript">var disqus_shortname="nikolademo";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

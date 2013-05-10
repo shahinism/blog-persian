@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="شاهین آزاد"><title>آموزش HTML بخش 3 | شاهینیسم</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="../" title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="../stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="../archive.html">Archives</a>
+
+
+
+  </li><li><a href="../categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="../rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+<div id="coreContent">
+  <div class="post single hentry">
+    <div class="postContent">
+      <h3 class="entry-title">
+<h1>آموزش HTML بخش 3</h1>
+
+</h3>
+      <div class="entry-content">
+        <p></p><p>سلام و با عرض پوزش خدمت شما دوستان‌، بابت تاخیری که در انتشار ادامه‌ی این سری آموزش رخ داد‌، می‌خواهم به ادامه‌ی آموزش بپردازم‌.</p>
+<p>تا این‌جای کار توانستیم ساختار کلی یک فایل HTML را درک کنیم‌، و هم چنین با مقداری از تگ‌ها برای نظم‌دهی و ایجاد یک تایپو‌گرافی مناسب در صفحات HTML مان آشنا شویم‌. امروز می‌خواهیم با شیوه‌ی استفاده از عکس در صفحه‌یمان بیشتر آشنا شویم و همچنین مقداری به نحوه‌ی چینش اجزا در صفحه بپردازیم‌.</p>
+<p>در دو فصل قبل با پارامتر‌هایی از تگ Body نظیر‌، text‌و bgcolor آشنا شدیم‌. پارامتر بعدی که امروز قصد معرفی آن را داریم‌، background است. همانطور که حتما از اسم این پارامتر متوجه شده‌اید‌، از آن به عنوان تعیین کننده‌ی تصویر به عنوان پس زمینه‌ی سند استفاده می‌شود‌. به نمونه‌ای از استفاده از این تگ در کد زیر توجه کنید‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body bgcolor=black background="pic1.jpg"<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p></p><p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-1.png"><img class="aligncenter size-medium wp-image-280" title="html3-1" src="http://shahinism.com/wp-content/uploads/2011/05/html3-1-300x223.png" alt="" width="300" height="223"></a>مقدار این پارامتر را باید در "" قرار دهید‌. و توجه داشته باشید که در صورتی که عکس در پوشه‌ی دیگری غیر از پوشه‌ی سند HTML‌مان قرار داشت‌، باید حتما آدرس کاملی که به عکس اشاره می‌کند را به جای مقدار قرار داد‌.</p>
+<p>تا این‌جای کار توانستیم که عکسی را به عنوان پس زمینه در سند قرار دهیم‌. حال اگر بخواهیم عکس را در کنار نوشته‌ها و دیگر اجزای صفحه قرار دهیم‌، چاره چیست‌؟</p>
+<p>این‌جاست که تگ IMG وارد عمل می‌شود‌. این تگ از نوع اول تگ‌هایی است که در ابتدا معرفی کردیم‌. و دارای پارمتر‌هایی است که در ادامه‌ی مثال بعدی توضیح خواهم داد‌‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body bgcolor=black<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>img src="pic1.jpg" title="My First Pic" alt="Here is a Picture" height=200 width=200 align=right<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-2.png"><img class="aligncenter size-medium wp-image-281" title="html3-2" src="http://shahinism.com/wp-content/uploads/2011/05/html3-2-300x113.png" alt="" width="300" height="113"></a>همانطور که می‌بینید ما به همراه این تگ از چند پارامتر اضافه نیز استفاده کردیم‌، که به غیر از پارمتر src مابقی اختیاری است‌، ولی در صورت موجود بودن می‌تواند به SEO در صفحه‌ی وب شما کمک کند‌. پارامتر اول یعنی src یا همان سورس‌، در این‌جا تعیین کننده‌ی محلی است که قرار است تصویر از آن‌جا بار‌گذاری شود‌ -‌چیزی است شبیه به مقدار پارمتر background که در بالا توضیح دادم‌. -
+
+پارامتر بعدی یعنی title یک تولتیپ به عکس شما اضافه می‌کند و مقدار روبرویش را در آن می‌نویسد‌. و پارمتر سوم بعنی alt نیز در صورتی که به هر دلیلی مرورگر نتواند تصویر را بار‌گذاری کند‌، مقدار روبرویش را به جای عکس می‌نویسد‌. پارامتر‌های چهارم و پنجم یعنی height و width طول و عرض عکس را تعیین می‌کنند‌. در صورتی که هر دوی این پارامتر‌ها و یا یکی از آن‌ها را تعیین نکنیم‌، مرورگر از سایز اصلی تصویر برای آن مقدار استفاده می‌کند‌.
+
+پارامتر آخر یعنی align جهت چینش تصویر را مشخص می‌کند‌. در مثال فوق تصویر راست چین شده است‌. برای درک بهتر این پارمتر به مثال زیر توجه کنید‌:</p>
+
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body text=white bgcolor=black<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>img src="pic1.jpg" title="My First Pic" alt="Here is a Picture" height=200 width=200 align=right<span class="ni">&amp;gt;</span>
+
+Hi This is Text 1
+
+<span class="ni">&amp;lt;</span>br<span class="ni">&amp;gt;</span>
+
+This is Text 2
+
+<span class="ni">&amp;lt;</span>br clear=right<span class="ni">&amp;gt;</span>
+
+This is Text3
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-3.png"><img class="aligncenter size-medium wp-image-282" title="html3-3" src="http://shahinism.com/wp-content/uploads/2011/05/html3-3-300x124.png" alt="" width="300" height="124"></a>چنان‌که می‌بینیند‌، متن‌های اول و دوم حتی با وجود تگ BR قبل از دومی باز‌ هم در کنار تصویر نوشته می‌شوند‌. در صورتی که متن‌های موجود در این دو خط به قدری بزرگ شوند که به تصویر برسند‌، شکسته و به خط بعد می‌روند‌. حال اگر بخواهیم متن بعد از تصویر شروع به نمایش کند‌، می‌توانیم از تگ BR همراه با پارامتر Clear و مقدار align موجود در پارامتر‌های مربوط به عکس چنان‌که در مثال می‌بینیم استفاده کنیم‌.</p>
+
+<p></p>
+      </div>
+      <div class="postMeta">
+        <div class="postDate"><span>ارسال شده:</span> <abbr class="published">2011-05-02 09:08</abbr></div>
+        
+
+
+        <div class="categories">
+
+<span>ارسال‌های بیشتر دربارهٔ</span>
+
+<a class="tag" href="../categories/html.html"><span class="badge-info">HTML</span></a>
+
+<a class="tag" href="../categories/html.html"><span class="badge-info">HTML</span></a>
+
+<a class="tag" href="../categories/seo.html"><span class="badge-info">seo</span></a>
+
+<a class="tag" href="../categories/dwrh.html"><span class="badge-info">دوره</span></a>
+
+
+</div>
+      </div>
+    </div>
+
+    <div class="pageNav">
+      
+<ul class="pager"><div class="prev">
+    <a href="blog13900204amwzsh-html-bkhsh-2.html">← ارسال پیشین</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="blog13900219rh-ndzy-blwtwth-dr-slkhwr.html">ارسال بعدی →</a>
+  </div>
+  
+  </ul></div>
+    <div class="postMeta">
+      
+      
+    
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="nikolademo";
+        
+            var disqus_url="http://shahinism.com/posts/blog13900212amwzsh-html-bkhsh-3.html";
+        
+        var disqus_title="\u0622\u0645\u0648\u0632\u0634 HTML \u0628\u062e\u0634 3";
+        var disqus_identifier="cache/posts/blog13900212amwzsh-html-bkhsh-3.html";
+        var disqus_config = function () {
+            this.language = "";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+      
+    </div>
+
+  </div>
+</div>
+  
+      </div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

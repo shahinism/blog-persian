@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content=""><meta name="author" content="شاهین آزاد"><title>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ | شاهینیسم</title><link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="../assets/css/rst.css" rel="stylesheet" type="text/css"><link href="../assets/css/code.css" rel="stylesheet" type="text/css"><link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="../assets/css/theme.css" rel="stylesheet" type="text/css"><link href="../assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml"></head><body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+      <h1 id="vcard author">
+        <a href="../" title="شاهینیسم">شاهینیسم</a>
+      </h1>
+
+      <div id="mainNav">
+        <ul><li><a href="../stories/drbrh-mn-2.html">About</a>
+
+
+
+  </li><li><a href="../archive.html">Archives</a>
+
+
+
+  </li><li><a href="../categories/index.html">Tags</a>
+
+
+
+  </li><li><a href="../rss.xml">RSS</a>
+
+
+</li>
+        </ul></div>
+      <div id="siteDescription">
+        
+        
+        
+      </div>
+      <div id="coreContent" class="hfeed">
+        
+<div id="coreContent">
+  <div class="post single hentry">
+    <div class="postContent">
+      <h3 class="entry-title">
+<h1>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟</h1>
+
+</h3>
+      <div class="entry-content">
+        <p></p><p>پوستهٔ <a title="Korn shell on WIKIPEDIA" href="https://en.wikipedia.org/wiki/Korn_shell" target="_blank">Korn</a> در یونیکس‌/لینوکس چیست‌؟
+پوستهٔ Korn توسط دیوید کورن در آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.</p>
+<p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
+<p>نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating point) نیز پشتیبانی می‌کند‌.</p>
+<p></p><h4>ویژگی‌های پوستهٔ Korn</h4>
+<ol><li>تازیخچهٔ دستورات – بله</li>
+    <li>ویرایش خط – بله</li>
+    <li>تکمیل نام فایل – بله</li>
+    <li>دستورات مستعار (‌Alias Commant) – بله</li>
+    <li>پوستهٔ محدود (Restricted shells) – بله</li>
+    <li>کنترل فعالیت‌ها – بله</li>
+</ol><h4>‎‎/usr/bin/ksh‏</h4>
+
+<p>تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:</p>
+<div class="code"><pre><span class="c">#! /usr/bin/ksh</span>
+</pre></div>
+
+
+<p>نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:</p>
+<div class="code"><pre><span class="c">#!/usr/bin/ksh</span>
+
+<span class="nb">echo</span> “Hello World!”
+</pre></div>
+
+
+<p>شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>which ksh
+</pre></div>
+
+
+<p>نمونهٔ خروجی‌:</p>
+<div class="code"><pre>/usr/bin/ksh
+</pre></div>
+
+
+<p>Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:</p>
+<div class="code"><pre><span class="c">#!/usr/bin/env ksh</span>
+
+<span class="nb">echo</span> “Hello World!”
+</pre></div>
+
+
+<p style="text-align: center;"><a title="What is UNIX / Linux Korn Shell?" href="http://www.cyberciti.biz/faq/ksh-korn-shell/" target="_blank">منبع</a></p>
+
+<p></p>
+      </div>
+      <div class="postMeta">
+        <div class="postDate"><span>ارسال شده:</span> <abbr class="published">2011-11-29 17:09</abbr></div>
+        
+
+
+        <div class="categories">
+
+<span>ارسال‌های بیشتر دربارهٔ</span>
+
+<a class="tag" href="../categories/bash.html"><span class="badge-info">bash</span></a>
+
+<a class="tag" href="../categories/korn-shell.html"><span class="badge-info">KORN Shell</span></a>
+
+<a class="tag" href="../categories/ksh.html"><span class="badge-info">KSH</span></a>
+
+<a class="tag" href="../categories/lynwkhs.html"><span class="badge-info">لینوکس</span></a>
+
+<a class="tag" href="../categories/chy-chr-chgwnh.html"><span class="badge-info">چی‌؟ چرا‌؟ چگونه‌؟</span></a>
+
+<a class="tag" href="../categories/ywnykhs.html"><span class="badge-info">یونیکس</span></a>
+
+
+</div>
+      </div>
+    </div>
+
+    <div class="pageNav">
+      
+<ul class="pager"><div class="prev">
+    <a href="blog13900908chchch-1-pwsth-posix-chyst.html">← ارسال پیشین</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="blog13900909chchch-3-mysql-chyst.html">ارسال بعدی →</a>
+  </div>
+  
+  </ul></div>
+    <div class="postMeta">
+      
+      
+    
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="nikolademo";
+        
+            var disqus_url="http://shahinism.com/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html";
+        
+        var disqus_title="\u0686\u200c\u0686\u200c\u0686 (\u06f2) \u200c: \u067e\u0648\u0633\u062a\u0647\u0654 Korn \u062f\u0631 \u06cc\u0648\u0646\u06cc\u06a9\u0633\u200c/\u200c\u0644\u06cc\u0646\u0648\u06a9\u0633 \u0686\u06cc\u0633\u062a\u200c\u061f";
+        var disqus_identifier="cache/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html";
+        var disqus_config = function () {
+            this.language = "";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+      
+    </div>
+
+  </div>
+</div>
+  
+      </div>
+    </div>
+    <div id="footer">
+      <h5>Elsewhere</h5>
+      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
+<a href="https://identi.ca/shahinism">Identica</a> |
+<a href="http://twitter.com/shahinism">Twitter</a> |
+<a href="https://github.com/shahinism">Github</a>
+      </ul><div class="footerContent">
+        
+<!-- Custom search -->
+<form method="get" id="searchform" action="http://duckduckgo.com/">
+<div id="search">
+<input type="hidden" name="sites" value="http://shahinism.com"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+</form>
+<!-- End of custom search -->
+
+        <p> Contents © 2013 <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a> </p>
+        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
+      </div>
+    </div>
+    
+  </body></html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (tex)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:19 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</title><link>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین اول کار بگویم که این روش تنها مخصوص موقعی است که PDF به صورت دیجیتالی تولید شده باشد و کاراکتر‌ها تصویر نباشند‌‌، که خوب برای کاراکتر‌های تصویری‌، نیاز به روش‌های اپتیکال است که فعلا در این بحث ما نمی‌گنجد‌. &lt;del&gt;برای نمونه من از کتاب _* که معرفی دوست خوبم &lt;a title="وبلاگ شخصی ایمان" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; است استفاده می‌کنم‌.&lt;/del&gt; نمونهٔ اولیه بنا به دلایلی معلوم با&lt;a title="Ashamloo" href="http://dl.dropbox.com/u/25017694/Blog_files/Ahanha_Va_Ehsas_(www.txt.ir).pdf"&gt; کتابی&lt;/a&gt; از احمد شاملو عوض شد!
+اول از همه PDF را با برنامهٔ PDFخوان پیش‌فرض میزکار KDE یعنی Okular باز می‌کنیم‌. یک نگاه به قد و بالایش می‌اندازیم و سپس از منوی فایل‌، گزینهٔ Export as و سپس Plain text را انتخاب می‌کنیم‌. خروجی این عمل ما یک فایل متنی است که فکر می‌کنیم همه کار را به درستی انجام داده‌. (البته من که اول اصلا فکرش را هم نمی‌کردم که بتوان خروجی فارسی گرفت) در نگاه اول کارمان تمام شده است‌. ولی بگذارید آن را با یک ویرایشگر باز کنیم‌. آن را با ایمکس باز می‌کنم و از آن‌جایی که تنظیم فونت‌هایم را از روی روشی که فرود عزیز در stackoverflow&lt;a title="emacs font for western and other like rtl" href="http://stackoverflow.com/questions/11012627/emacs-font-for-western-and-other-like-rtl" target="_blank"&gt; پیشنهاد کرده‌&lt;/a&gt;، انجام داده‌ام نکته‌ای عجیب به نظر می‌رسد‌!&lt;/p&gt;
+&lt;p&gt;مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و &lt;a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank"&gt;وضع اینترنت‌ام&lt;/a&gt; هم معلوم است‌، از دوست &lt;a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank"&gt;libreoffice کار قهارم&lt;/a&gt; می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))&lt;/p&gt;
+&lt;p&gt;پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp;amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.&lt;/p&gt;
+&lt;p&gt;پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def read_file&lt;span class="o"&gt;(&lt;/span&gt;file_name&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;the_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; codecs.open&lt;span class="o"&gt;(&lt;/span&gt;file_name, &lt;span class="nv"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;return &lt;/span&gt;the_file
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_characters&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print char
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_unicode_code&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def replace_unicode_char&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+print unichr&lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;(&lt;/span&gt;line&lt;span class="o"&gt;))&lt;/span&gt;.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.&lt;/p&gt;
+&lt;p&gt;من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از&lt;a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"&gt; این‌جا &lt;/a&gt;دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt -u &amp;amp;gt; chrcodes.txt
+
+sort -u chrcodes.txt &amp;amp;gt; uniq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i uniq.txt &amp;amp;gt; uniqchr.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به &lt;a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank"&gt;Arabic Presentation Forms-B&lt;/a&gt; داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+&lt;span class="k"&gt;if &lt;/span&gt;ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt; in &lt;span class="o"&gt;(&lt;/span&gt;64343, 64344, 64345&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"پ"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sys.stdout.softspace&lt;span class="o"&gt;=&lt;/span&gt;False
+
+try:
+
+print char.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+
+except UnicodeDecodeError:
+
+print char,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt &amp;amp;gt; validashamloo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب کار تقریبا تمام شد‌. ولی خوب‌، کامپیوتر است دیگر‌. همیشه که درست عمل نمی‌کند‌. فایل خروجی نمونهٔ مرا در&lt;a title="ashamloo text file" href="http://dl.dropbox.com/u/25017694/Blog_files/ashamloo.txt.xz" target="_blank"&gt; این‌جا&lt;/a&gt; می‌بینید‌. خالی از اشکال هم نیست‌، ولی خوب طبیعتا مشکلات زیادی را برایم حل می‌کند (دیگر لازم نیست به آن فونت کذایی Arial زل بزنم). دیگر باقی کار‌ها می‌افتد گردن یک ویراستار به درد بخور‌. (البته شاید بتوان از &lt;a title="نسخهٔ جدید ویرایشگر متن نگار" href="http://shahinism.com/blog/1391/07/10/%d9%86%d8%b3%d8%ae%d9%87%d9%94-%d8%ac%d8%af%db%8c%d8%af-%d9%88%db%8c%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%b1-%d9%85%d8%aa%d9%86-%d9%86%da%af%d8%a7%d8%b1/" target="_blank"&gt;نگار&lt;/a&gt; هم کمک گرفت‌، که فعلا دارم شدیدا رویش کار می‌کنم‌. نسخهٔ فعلی‌اش مشکلاتی دارد‌، ولی امیدوارم بتوانم حل‌شان کنم‌)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; Okular از قرار‌، قادر نیست PDF‌هایی که رمزگذاری شده‌اند را باز کند (خودم امتحان نکردم) در آن صورت یک ابزار پایتونی برای این کار وجود دارد که در آینده در موردش می‌نویسم‌. تا این‌جای کار‌، خروجی‌های این تابع زیاد با روش ذکر شده همخوانی ندارد‌، پس باید به فکر دستکاری‌اش باشم‌. اسم این تابع هم در صورتی که دل‌تان می‌خواهد کشفش کنید pdfminer است.&lt;/p&gt;</description><category>KDE</category><category>LaTeX</category><category>ocr</category><category>okular</category><category>PDF</category><category>Python</category><category>tex</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کتاب</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</guid><pubDate>Thu, 22 Nov 2012 14:31:08 GMT</pubDate></item><item><title>افتخار دوستی با خانوادهٔ StackExchange</title><link>http://shahinism.com/posts/blog13910527ftkhr-dwsty-b-khnwdh-stackexchange.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="پروژهٔ نگار و مصائبش" href="http://shahinism.com/blog/1391/05/21/%d9%be%d8%b1%d9%88%da%98%d9%87%d9%94-%d9%86%da%af%d8%a7%d8%b1-%d9%88-%d9%85%d8%b5%d8%a7%d8%a6%d8%a8%d8%b4/" target="_blank"&gt;قبلا هم گفته‌ام &lt;/a&gt;که &lt;a title="http://stackoverflow.com/" href="http://stackoverflow.com/" target="_blank"&gt;stackoverflow&lt;/a&gt; در پروژهٔ اخیرم چقدر کمک حالم بوده‌. شیوهٔ سوال/جواب استفاده شده در این سایت باعث می‌شود که خلا ایجاد شده در ابزار‌های حاضر نظیر ویکی‌، وبلاگ‌، انجمن و ... به خوبی پر شود‌. عموما سوال‌هایی که سر انجام به جواب می‌رسند‌، می‌توانند منبع خوبی برای حل مشکلات غیر منتظره باشند‌. البته شرط عضویت در چنین سایت‌هایی و نتیجه گرفتن از آن‌ها هم دانستن شیوهٔ درست سوال پرسیدن است (تقریبا مثل هر جای دیگری)!
+اما کشف اعضای جدید خانوادهٔ &lt;a title="Stack Exchange" href="http://stackexchange.com" target="_blank"&gt;StackExchange&lt;/a&gt; برایم آن‌قدر هیجان انگیز بود که تصمیم گرفتم در یک پست مجزا اشاره‌ای کوتاه به چند عضو شاخصشان نیز داشته باشم‌.
+&lt;p&gt;احتمالا اکثرتان با Stackoverflow یا نهایتا با &lt;a title="Super User" href="http://superuser.com/" target="_blank"&gt;SuperUser&lt;/a&gt; آشنا هستید‌. اما این خانواده اعضای جالب‌تری هم دارد‌.&lt;/p&gt;
+&lt;h5&gt;&lt;a title="English on StackExchange" href="http://english.stackexchange.com/" target="_blank"&gt;English&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;اگر مثل من یک کمی دیر به فکر تقویت زبان‌تان افتاده‌اید‌، ممکن است سوال‌هایی داشته باشید که جوابش در کتاب‌هایتان نبوده و جستجو در گوگل هم نتیجه‌ای برایتان به همراه نیاورد‌. آن وقت است که فضایی مثل یاران StackExchange به دادتان می‌رسد‌.&lt;/p&gt;
+&lt;h5&gt;&lt;a title="Tex on StackExchange" href="http://tex.stackexchange.com/" target="_blank"&gt;Tex&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;این یکی مخصوصا برای اولین تجربه از Tex و توله‌هایش خیلی خوب به کارتان می‌آید‌. قبلا در مورد تک &lt;a title="چرا باید LaTeX را دوست داشت‌؟" href="http://shahinism.com/blog/1390/06/14/%da%86%d8%b1%d8%a7-%d8%a8%d8%a7%db%8c%d8%af-latex-%d8%b1%d8%a7-%d8%af%d9%88%d8%b3%d8%aa-%d8%af%d8%a7%d8%b4%d8%aa%e2%80%8c%d8%9f/" target="_blank"&gt;صحبت کرده‌ام‌&lt;/a&gt;. اصولا آن ضرب‌المثل معروف کاربران LaTex (‌اولین بار که داری با لاتک مقاله‌ای آماده می‌کنی می‌گی دیگه سراغش نمی‌رم‌، ولی وقتی مقاله تموم شد‌، دیگه جز با لاتک کاری انجام نمی‌دی) توصیف کنندهٔ وضعیت فعلی من است و مقالات و نوشته‌هایی که با ابزار‌های دیگری نوشته شده‌اند هیچ گونه اشتیاقی برای استفاده در من ایجاد نمی‌کنند‌!‌ دیکتاتوری است دیگر D:&lt;/p&gt;
+&lt;h5&gt;&lt;a title="Ubuntu on StackExchange" href="http://askubuntu.com/" target="_blank"&gt;Ubuntu&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;چه دوست داشته باشم یا نه‌، اوبونتو طیف وسیعی از تازه‌کاران سوال کننده (و البته کهنه کاران پاسخ دهنده) را به سوی خود جذب می‌کند‌. این می‌شود که بخش Ubuntu از StackExchange به یکی از باحال‌ترین مکان‌ها برای پیدا کردن راه حل مشکلات عجیب غریب‌تان تبدیل می‌شود‌!&lt;/p&gt;
+&lt;p&gt;اگر شما هم مثل من Ubuntu را یک سیستم عامل خارق‌العادهٔ‌، متفاوت‌، از همهٔ لینوکس‌ها بهتر نمی‌دانید و تنها مثل هر توزیع دیگری و کاملا دموکراتیک به عنوان یک سیستم‌عامل لینوکسی/یونیکسی آن را در دستهٔ مشخصی قرار می‌دهید‌، &lt;a title="Unix on stackexchange" href="http://unix.stackexchange.com/" target="_blank"&gt;Unix/Linux&lt;/a&gt; در StackExchange می‌تواند جای خوبی برای طرح سوال‌های عجیب غریبتان باشد‌! البته اگر سوالاتتان طیف وسیع‌تری را پوشش می‌دهد‌، می‌توانید SuperUser را امتحان کنید‌!&lt;/p&gt;
+&lt;h5&gt;دیگران&lt;/h5&gt;
+
+&lt;p&gt;خانوادهٔ StackExchange بزرگتر از این حرف‌هاست که بشود در یک مطلب به توضیح تک‌تکشان پرداخت‌! از طرفی من هم سواد بررسی همهٔ آن‌ها را ندارم تا در موردشان نقد و بررسی درست درمانی بنویسم‌! این می‌شود که پیشنهاد می‌کنم‌، برای آشنایی با آن‌ها یکی از سایت‌های هم‌خانواده‌ای را که معرفی کردم باز کنید و اسکرولتان را تا پایین صفحه بچرخانید و چشمتان را به جمال عجایبی همچون Wordpress, Photography, Teoreticalcs و حتی Cooking روشن کنید‌!&lt;/p&gt;
+&lt;h5&gt;احتیاط&lt;/h5&gt;
+
+&lt;p&gt;می‌دانم که عموم خوانندگان این مطلب را کاربرانی تشکیل می‌دهند که بلدند چطور سوال بپرسند و قبل از طرح کردن مساله‌ای به خوبی تمام جوانبش را بررسی می‌کنند و وقتی دیگر از گوگل و تمام منابع دم دستشان نا امید شدند به فکر سوال کردن در فرومی‌، جایی می‌افتند‌! اما اگر خدای نکرده کسی از این جمع یادش رفت و یکی از اصول چندگانهٔ طرح سوال را رعایت نکرد‌، بداند که تنها باعث منزوی شدن نام کاربری‌اش در جامعهٔ StackExchange می‌شود و این کلا چیز خوبی برای ادامهٔ حیات در آن جامعه نیست ;-)&lt;/p&gt;</description><category>English</category><category>LaTeX</category><category>StackExchange</category><category>StackOverflow</category><category>tex</category><category>Ubuntu</category><category>اسلکور</category><category>اوبونتو</category><category>اینترنت</category><category>برنامه نویسی</category><category>حل مشکل</category><category>معرفی ابزار</category><guid>http://shahinism.com/posts/blog13910527ftkhr-dwsty-b-khnwdh-stackexchange.html</guid><pubDate>Fri, 17 Aug 2012 10:48:05 GMT</pubDate></item><item><title>چرا باید LaTeX را دوست داشت‌؟</title><link>http://shahinism.com/posts/blog13900614chr-byd-latex-r-dwst-dsht.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین دیروز بود که به دوستم &lt;a title="Ali Qanvatian on google plus" href="https://plus.google.com/110396584548468512787/about" target="_blank"&gt;علی&lt;/a&gt; می‌گفتم «اگر هر جایی و به هر دلیلی به کلمهٔ LaTeX برخوردی‌، گوشهات رو بگیر و در رو‌!». خوشبختانه‌، لاتک با تمام سختی‌ها و پیچیدگی‌های لعنتی‌اش‌، اینقدر برایم گیرا بود که کار با آن را ادامه دهم تا برایم اثبات کند که نه‌، جز لاتک با هر حروف‌چین دیگری کار کردن‌، حرام است‌!&lt;/p&gt;
+&lt;p&gt;تازه تجربهٔ خروجی گرفتن از یک فایل tex را از سر گذرانده‌ام و خیلی خیلی زود است که بخواهم دلیل و مدرک سنگینی بیاورم که «آره آقا‌، از فردا هر کس با لاتک مطلب ننوشت‌، و یا کار با لاتک را ندانست‌، از ما نیست‌!». اما می‌خواهم برای فعلا و ثبت در خاطراتم‌، اینجا بنویسم که چگونه کفهٔ ترازو به نفع لاتک برایم پایین رفت‌:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;انگلیسی نوشتن‌، و ساده نوشتن در لاتک‌، فوق‌العاده آسان است‌! اما وای به حالتان اگر بخواهید فارسی بنویسید‌، در این صورت باید یک دورهٔ کامل برنامه‌نویسی بسته‌هایش را بگذرانید (‌به این شوری‌ها هم که گفتم نیست‌، در آینده بیشتر در این مورد می‌نویسم‌) ‌.&lt;/li&gt;
+    &lt;li&gt;آسان‌ترین کار ممکن در لاتک‌، پانویس نوشتن است‌، که خوب من هنوز هم بلد نیستم که در هیچ کدام از ورد پرسسور‌های رایج انجامش دهم‌!&lt;/li&gt;
+    &lt;li&gt;فهرست کردن مطالب در لاتک فقط زحمت نوشتن tableofcontent/ را می‌طلبد‌!&lt;/li&gt;
+    &lt;li&gt;تمام سخت‌گیری‌های لاتک در مورد پاراگراف‌ها‌، خطوط‌، علامت‌های مختلف‌ و قابلیت‌هایش برای تعیین کردن سر فصل‌، و بخش‌ها‌ نتیجه‌ای فوق‌العاده زیبا و خوانا را به شما باز می‌گرداند (‌ولی آن‌چنان دهانی از شما... که...) ‌!&lt;/li&gt;
+    &lt;li&gt;افزودن تصویر در لاتک به قدری سخت هست‌، که هنوز جرات نکرده‌ام نزدیکش شوم‌!&lt;/li&gt;
+    &lt;li&gt;همهٔ تجربیات بالا را اضافه کنید‌، به درد و خونریزی شدیدی که باید برای افزودن قابلیت‌های تایپ فارسی بدون درد و خونریزی در لاتک متحمل شوید‌!&lt;/li&gt;
+    &lt;li&gt;نوشتن مقاله در لاتک‌، عملا حکم یک برنامه‌نویسی تمام عیار را دارد‌!&lt;/li&gt;
+&lt;/ul&gt;&lt;p style="text-align: center;"&gt;&lt;a href="http://shahinism.com/wp-content/uploads/latex_logo.png" rel="prettyPhoto"&gt;&lt;img class="aligncenter size-medium wp-image-438" style="margin: 7px auto;" title="latex_logo" src="http://shahinism.com/wp-content/uploads/latex_logo-300x111.png" alt="" width="300" height="111"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;در کل پس از سبک سنگین کردن قضایای بالا من هم به این نتیجه رسیدم که اگر حرف از با سواد بودن در جامعهٔ امروزی می‌زنید‌، و برای مهندس مهندس شنیدن‌، آب دهانتان سر ریز می‌شود‌، حداقلش این است که مقالاتتان را با LaTeX آماده کنید‌، نه مثل &lt;a title="وب سایت استاد گرام" href="http://yamaghani.com/m/page-2aa58b0d-58a0-428c-95a3-e8c25e26103b.aspx" target="_blank"&gt;استاد گرامیمان‌&lt;/a&gt;، ‌ به مسلط بودن به مجموعه نرم‌افزار آفیس افتخار ورزید‌! ‌ (‌گفتم «‌من هم‌» ‌، چون &lt;a title="ایمان بیاورید بر LaTeX" href="http://persian.kamangir.net/?p=2533" target="_blank"&gt;آرش آبادپور&lt;/a&gt; و &lt;a title="آقای مهندس عزیز‌، LaTeX بلدی‌؟" href="http://aminsabeti.net/1387/11/mr-engineer-do-you-know-latex/" target="_blank"&gt;امین ثابتی&lt;/a&gt; عزیز در این مورد قبلا سخن‌ها رانده‌اند‌) ‌.&lt;/p&gt;
+&lt;p&gt;فعلا می‌توانید برای منبع‌، به &lt;a title="منبع فارسی LaTeX" href="http://aminsabeti.net/1387/11/persian-source-for-latex/" target="_blank"&gt;این‌ها&lt;/a&gt; که امین عزیز نشان داده است مراجعه کنید‌، البته‌ تگ لاتک وبلاگ هر دوی این عزیزان (&lt;a title="Kamangir LaTeX Tag" href="http://persian.kamangir.net/?category_name=latex" target="_blank"&gt;‌آرش&lt;/a&gt; و &lt;a title="Amin's LaTeX Tag" href="http://aminsabeti.net/?s=latex" target="_blank"&gt;امین‌&lt;/a&gt;) خواندنش خالی از لطف نیست‌.&lt;/p&gt;
+&lt;p&gt;در ضمن دلتان را هم به این خوش نکنید‌ که لاتک را در وب فارسی جستجو کنید‌، چون نتیجه‌اش انواع کاندوم است که نثارتان می‌شود‌ ;-)&lt;/p&gt;</description><category>latex</category><category>tex</category><category>اسلکور</category><category>تاریخچه</category><category>حل مشکل</category><category>معرفی منبع</category><guid>http://shahinism.com/posts/blog13900614chr-byd-latex-r-dwst-dsht.html</guid><pubDate>Mon, 05 Sep 2011 18:48:40 GMT</pubDate></item></channel></rss>

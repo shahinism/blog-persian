@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>شاهینیسم (echo)</title><link>http://shahinism.com</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 10 May 2013 08:08:17 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!</title><link>http://shahinism.com/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="سینا احسانی در پلاس" href="https://plus.google.com/u/0/102916660970180940856" target="_blank"&gt;سینا احسانی&lt;/a&gt; عزیز در پلاس گفت که با VB برنامه‌ای نوشته که تمام عکس‌های سایت &lt;a title="SimpleDesktops official website!" href="http://simpledesktops.com/" target="_blank"&gt;SimpleDesktop&lt;/a&gt; را دانلود می‌کند‌. وقتی سایت را دیدم واقعا از تصاویرش خوشم آمد‌. خیلی وقت بود که پس‌زمینهٔ دسکتاپم یک تصویر ساده بود که ثابت مانده بود‌. این شد که تصمیم گرفتم من هم عکس‌ها را دانلود کنم‌. البته کاملا لینوکسی‌!
+بررسی اولیه سایت معلوم کرد که پس از انتخاب عکس و کلیک آخر برای دانلود عکس شما با لینکی به صورت زیر طرف هستید‌:
+&lt;div class="code"&gt;&lt;pre&gt;http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;301
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همهٔ آدرس جز عدد ۳۰۱ در انتهایش ثابتند و آن عدد از ۱ یکی‌‌یکی زیاد می‌شود‌. هر کدام از این عکس‌ها پس از درخواست شدنشان به آدرس یکی از عکس‌های روی سرور اشاره می‌کنند‌. خوب دیگر داستان از این هم ساده‌تر می‌شود؟ کافیست که اراده کنیم و با یک حلقهٔ for اعداد را تولید کنیم و جلوی آدرس ثابتمان بنویسیم‌. پس می‌شود این:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bash&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;for &lt;/span&gt;i in &lt;span class="o"&gt;{&lt;/span&gt;1..5000&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"http://simpledesktops.com/download/?desktop=$i"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به بش گفتیم که هر بار یک عدد از یک تا پنج‌هزار (البته به ترتیب از کم به زیاد) تولید کن و در خروجی چاپ کن‌. یک بار اسکریپت را ران می‌کنیم و ... بعله خروجی دقیقا همان آدرس‌هایی که خواستیم می‌شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;...
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4995
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4996
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4997
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4998
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;4999
+
+http://simpledesktops.com/download/?desktop&lt;span class="o"&gt;=&lt;/span&gt;5000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا کافیست در اسکریپت به جای echo که هر چه جلویش باشد را در خروجی استاندارد چاپ می‌کند یک wget بنویسیم تا آدرس‌های جلویش را دانلود کند‌. اما نه‌! در اولین اقدام تیرمان خطا رفت‌! در سرور‌های Apache یک فایلی هست به اسم ‎.htaccess و همان‌طور که از نامش معلوم است کارش این است که کنترل کند چه کسی به کجا دسترسی دارد‌. هر نرم‌افزاری هم که به یکی از این سرور‌ها درخواست بدهد موظف است اول خودش را معرفی کند‌. خوب wget که از نامش فساد می‌بارد عموما از طرف چنین سایت‌هایی مسدود می‌شود‌.&lt;/p&gt;
+&lt;p&gt;این است که باید به wget بگوییم نقابش را به صورت بزند و دوباره اقدام کند‌. اینبار اسکریپتمان این شکلی می‌شود‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/bash&lt;/span&gt;
+
+
+
+&lt;span class="k"&gt;for &lt;/span&gt;i in &lt;span class="o"&gt;{&lt;/span&gt;100..5000&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;do&lt;/span&gt;
+
+wget -U &lt;span class="s2"&gt;"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2"&lt;/span&gt; &lt;span class="s2"&gt;"http://simpledesktops.com/download/?desktop=$i"&lt;/span&gt;
+
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و بعله‌! ران می‌کنیم و خیلی خوشکل اقدام به دانلود عکس‌ها می‌کنیم ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; در حین جستجو برای نوشتن این اسکریپت کشف کردم که قبلا اسکریپت‌هایی با Python یا PHP هم برای شیره‌کشی از این سایت نوشته شده‌. ولی این اسکریپت از همه‌شان کوتاه‌تر بود و خوب سادگی زیبـــــاست ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت ۲&lt;/strong&gt;: دیگر خودتان حواستان باشد که ‎#!‎/‎usr/bin/bash آدرس bash سیستم من است و می‌توانید با یک whereis bash پیدا کنید که مال شما کجاست‌!&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #ff0000;"&gt;&lt;strong&gt;پی‌نوشت ۳:&lt;/strong&gt; ممکنه بعد از دانلود متوجه بشین که فایل‌های دانلودی با یه همچین اسمایی ذخیره می‌شن index.html?desktop=100 اتفاقی که برای من روی سرور آرچ افتاد‌. عجیب بود که اسم فایل درست رو می‌دید ولی خودش از رو این Querystring ساخته شده اسم رو می‌نوشت‌. پس از جستجو کشف کردم که باید آپشن زیر هم به wget اضافه بشه:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;```bash&lt;/p&gt;
+&lt;p&gt;--content-disposition&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;</description><category>bash</category><category>echo</category><category>wget</category><category>اینترنت</category><category>برنامه نویسی</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.com/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html</guid><pubDate>Thu, 21 Jun 2012 20:15:36 GMT</pubDate></item></channel></rss>
