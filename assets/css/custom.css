@@ -96,6 +96,13 @@ input[type="text"], textarea {
 
 #disqus_thread {
     color: #333333 !important;
-    direction: rtl !important;
-    font-family: 'Droid Arabic Naskh', serif !important;
+}
+
+.post-list > .post {
+    padding-right: 60px !important;
+}
+
+.avatar {
+    right: 0 !important;
+    transition: right 0.2s linear 0s !important;
 }
