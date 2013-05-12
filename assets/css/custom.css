@@ -98,11 +98,3 @@ input[type="text"], textarea {
     color: #333333 !important;
 }
 
-.post-list > .post {
-    padding-right: 60px !important;
-}
-
-.avatar {
-    right: 0 !important;
-    transition: right 0.2s linear 0s !important;
-}
