@@ -100,5 +100,5 @@ input[type="text"], textarea {
 
 
 .serif .post-message p, .serif .top-thread-post p, .serif .top-user p{
-    font-family:'Droid Arabic Naskh', serif !important;
+    font-family:'Droid Arabic Naskh' !important;
 }
