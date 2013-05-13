@@ -35,6 +35,44 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-05-13 10:21
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/from-wordpress-to-nikola.html">از وردپرس به نیکولا</a></h3>
+    
+    <div class="entry-content">
+      <div><p>خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)</p>
+<div class="section" id="id1">
+<h2>چرا یک وبلاگ ایستا؟</h2>
+<p>خوب به طور کلی دلایلش از این قرارند:</p>
+<ul class="simple"><li><strong>سرعت‌، سرعت‌، سرعت:</strong> دیگر در این نوع از وبلاگ‌، خبری از پایگاه داده نیست. همین‌طور قرار نیست هیچ پردازشی در سمت سرور وبلاگ قرار گیرد. و خوب طبیعتا خیلی خیلی امکاناتی که این ابزار‌ها فراهم می‌کنند را نمی‌توانم داشته باشم. اما حقیقتش در یک وبلاگ‌، به بسیاری از این ابزار‌ها نیاز ندارم. به هر حال این نبودن‌ها‌، یعنی سرعت بیشتر. در مورد من‌، سرعت لود صفحات‌، حدودا سه برابر بیشتر شد.</li>
+<li><strong>سادگی:</strong> فکر نمی‌کنم چیز زیادی در این زمینه برای گفتن باقی گذاشته باشم.</li>
+<li><strong>امنیت:</strong> وقتی تنها با صفحات سادهٔ HTML روبرو هستید. وقتی یک سیستم انتشار قابل اطمینان دارید‌‌، دیگر نباید نگران آپدیت بودن ابزار وبلاگ‌نویسی‌تان و یا هک شدنش باشید. این‌طور نیست؟</li>
+<li><strong>محدود نبودن پهنای باند:</strong> این یکی از آن کابوس‌هایی است که بی‌خبر به سراغ‌تان می‌آید. ولی خوب خوشبختانه روی گیت‌هاب‌، این نگرانی را نداریم ;-)</li>
+<li><strong>قابلیت بازیابی:</strong> خوب این یکی زیاد مربوط به خود سیستم وبلاگ‌نویسی نیست. ولی چون نتیجهٔ کارش را می‌توان با هر سیستم دلخواهی منتشر کرد و من گیت را انتخاب کرده‌ام‌، خیلی راحت می‌توانم در صورت گند زدن‌، بدون هیچ استرسی آن را به حالت قبل برگردانم. این قابلیت روی هاست‌های اشتراکی پولی و گران است و در سرور‌های اختصاصی‌، خیلی پر دردسر‌تر از چیزی که در این‌جا با آن طرفیم ;-)</li>
+</ul></div>
+<div class="section" id="id2">
+<h2>کدام سیستم؟</h2>
+<p>به هر حال‌، پس از قطعی شدن تصمیم انتقال‌، باید یکی از سیستم‌ها را انتخاب می‌کردم. به طور کلی این سیستم‌ها اعم از <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a>, <a class="reference external" href="http://docs.getpelican.com/">Pelican</a>, <a class="reference external" href="http://octopress.github.ip/">Octopress</a> و خیلی‌های دیگر که با یک سرچ در اینترنت می‌توانید پیدایشان کنید‌، تفاوت عمده‌ای در نتیجهٔ کار ندارند. طرز کارشان فوق‌العاده ساده است. شما متن پست وبلاگ‌تان را در یک فایل حالا به هر فرمتی که سیستم مورد نظر برای‌تان مهیا کرده می‌نویسید‌، یک قالب هم بر اساس قوائد تعیین شدهٔ سیستم به آن می‌خورانید و می‌گویید که وبلاگ آماده شود. در نهایت این سیستم می‌آید یک سایت کاملا ایستا در فایل‌های html آماده می‌کند که شامل پست‌های شماست و بر اساس قالب مورد نظر‌تان قالب‌بندی شده.</p>
+<p>من <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> را انتخاب کردم‌، چون اولا پایتونی است‌ و بعد از آن خیلی راحت‌تر از <a class="reference external" href="http://docs.getpelican.com/">Pelican</a> که آن هم پایتونی است نصب می‌شود. همین!</p>
+<p><a href="posts/from-wordpress-to-nikola.html">بیشتر بخوانید...</a></p></div></div>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/from-wordpress-to-nikola.html#disqus_thread" data-disqus-identifier="cache/posts/from-wordpress-to-nikola.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2013-04-16 12:24
   </abbr></h5>
   <div class="postContent">
@@ -113,44 +151,6 @@
         
     
         <a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-04-11 11:47
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13920122yn-ymkhs-dwst-dshtny-ido-mode.html">این ایمکس دوست داشتنی (ido-mode)</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>یکی از قابلیت‌های جالب تکمیل خودکاری که در ابزار‌های امروزی می‌بینیم‌، تکنیک fuzzy matching است که کار تکمیل خودکار را فوق‌العاده آسان می‌کند. نمونه‌ای از این تکمیل خودکار را در آدرس‌بار Firefox دیده‌ایم. جایی که شما می‌توانید آدرس را از هر کجا یادتان است تکمیل کنید و اجباری به تایپ اول آدرس ندارید. امروز قصد داریم همچین قابلیتی را در ایمکس معرفی کنیم. این قابلیت می‌تواند در تکمیل نام buffer‌، فایل‌ها و دستورات ایمکسی‌، خیلی خیلی کمک کننده باشد. ابزاری که در ایمکس این امکان را فراهم می‌آورد ido نام دارد.
-ترجیح می‌دهم قابلیت‌های این ابزار را به لغت بیان نکنم‌، چون نمی‌توانم. این است که ویدئویی در اینترنت پیدا کردم که می‌تواند لپ کلام را در دو دقیقه به شما نشان دهد‌، بدون این که نیازی به زیاده گویی‌های من باشد. این ویدئو را می‌توانید از<a title="لینک ویدئو در یوتوب" href="http://youtu.be/lsgPNVIMkIE" target="_blank"> این‌جا </a>در یوتوب ببینید (مگر چه عیبی دارد گاهی مرا هم جو آزاد نشینی بگیرد و فکر کنم همه اینترنت آزاد دارند؟). اگر هم سخت‌تان است این ویدئو را از پشت خط شکن ببینید‌، برای‌تان روی <a title="دانلود ویدئو از Mega" href="https://mega.co.nz/#!A0dymZqY!RInwER-nRLUijWh3tIxcOFD3-CBcg-CgHN0ZzO-TkQI" target="_blank">Mega</a> آپلود کرده‌ام. حجم ویدئو ۵ مگ بیشتر نیست!</p>
-<p>حالا که ویدئو را دیدید کافیست با اضافه کردن کد زیر به ‎.emacs  آن را در ایمکس‌تان فعال کنید:</p>
-
-
-<div class="code"><pre><span class="p">(</span><span class="k">setq</span> <span class="nv">ido-enable-flex-matching</span> <span class="no">t</span><span class="p">)</span>
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">ido-everywhere</span> <span class="no">t</span><span class="p">)</span>
-
-<span class="p">(</span><span class="nv">ido-mode</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-
-<p>پس از قرار دادن این کد‌، کلید‌های جستجوی فایل یا تعویض بافر‌، با دستورات همتای‌شان که از ido استفاده می‌کنند‌، جایگزین می‌شوند. این ابزار قابلیت‌های شخصی‌سازی بیشتری هم دارد. مثلا این که کدام پسوند‌ها را در اولیوت قرار دهد. من نیازی به این تنظیمات پیدا نکردم. اما اگر شما وسوسه به همچین تنظیمی شده‌اید می‌توانید به <a title="idomode in mastering emacs" href="http://www.masteringemacs.org/articles/2010/10/10/introduction-to-ido-mode/" target="_blank">این پست</a> mastring emacs رجوع کنید.</p>
-<p>گاها پیش می‌آید که در هنگام جستجوی فایلی (خصوصا در زمان ایجاد) این ابزار کمی دست و پا گیر می‌شود. برای فرار از این حالت کافیست دستور ٰC-f  را وارد کنید‌، تا به حالت معمول جستجوی فایل بازگردید.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13920122yn-ymkhs-dwst-dshtny-ido-mode.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920122yn-ymkhs-dwst-dshtny-ido-mode.html">Comments</a>
     
 
         

@@ -35,6 +35,50 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-10-01 12:01
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html">نسخهٔ جدید ویرایشگر متن نگار</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>خوب مدت زیادی از موقعی که نوشتن<a title="negar official webpage" href="http://shahinism.github.com/Negar/" target="_blank"> این برنامه </a>را شروع کردم می‌گذرد‌. همان‌طور هم که قبلا گفتم‌، هدف اصلی من از توسعهٔ همچین برنامه‌ای بیشتر چالشی برای یادگیری برنامه نویسی است‌. اما خوب الان فکر می‌کنم نتیجهٔ کار به حد قابل قبولی رسیده و می‌شود به آن اعتماد کرد ;-) نمونه از رابط گرافیکی نگار به همراه یک نمونهٔ کار در عکس زیر معلوم است:</p>
+<p><a href="https://raw.github.com/shahinism/Negar/master/Screenshot/window1.png"><img title="نمونهٔ خروجی برنامهٔ نگار (در رابط گرافیکی)" src="https://raw.github.com/shahinism/Negar/master/Screenshot/window1.png" alt="" width="443" height="359"></a> برای بزرگ شدن تصویر روی آن کلیک کنید.</p>
+<p>قابلیت‌هایی که نسبت به نسخهٔ قبلی به آن اضافه شده عبارتند از:</p>
+<p></p><ul><li>قابلیت جدا کردن کلمات نوشته شده به صورت «‌میشود‌».</li>
+    <li>اضافه کردن نیم فاصله بعد از پرانتز (یا علامت‌هایی نظیر آن) که باعث می‌شود کلمه جدا از آن کاراکتر دیده شود که مزیت‌های خودش را دارد‌.</li>
+    <li>رابط گرافیکی نوشته شده بر مبنای PyQt4.</li>
+    <li>پردازش بهتر آرگومان‌های خط فرمان.</li>
+    <li>قابلیت تنظیم آپشن‌ها از طریق خط فرمان.</li>
+</ul><p>فعلا چیز دیگری یادم نمی‌آید‌. برای نصب هم اول مطمئن شوید که PyQt4 و setuptools را با توجه به توزیع‌تان نصب کرده‌اید‌، سپس با استفاده از سه دستور زیر‌، کار را تمام کنید:</p>
+<div class="code"><pre><span class="nv">$ </span>git clone https://github.com/shahinism/Negar.git
+
+<span class="nv">$ </span><span class="nb">cd </span>Negar
+
+<span class="nv">$ </span>sudo python setup.py install
+</pre></div>
+
+
+<p>یک نکته هم در مورد قابلیت جدا کردن کلمات و نحوهٔ کارش اضافه کنم‌. خوب اگر ما همانطور که فاصله‌ها را کنترل می‌کنیم‌، (یعنی با regular expression) می‌خواستیم این کلمات مانند «میشود‌، کمکتان» و… را جدا می‌کردیم‌، در مورد کلماتی مانند «میلاد» به مشکل بر می‌خوردیم‌. برای کنترل چنین وضعیتی از فایلی به اصم untouchable.dat که شامل کلماتی از این دست می‌شود (فایل را از روی یک دیکشنری در پروژهٔ ویراستیار و با کمک چند اسکریپت سریع تولید کرده‌ام و هنوز جای کار بسیاری دارد) استفاده کرده‌ام‌. کاربر می‌تواند کلماتی از این دست که نگار در موردشان درست اقدام نمی‌کند را با استفاده از رابط گرافیکی و یا کنسول به این لیست اضافه کند‌.</p>
+<p><strong>پی‌نوشت ۱:</strong> در<a title="پروژهٔ نگار و مصائبش" href="http://shahinism.com/blog/1391/05/21/%d9%be%d8%b1%d9%88%da%98%d9%87%d9%94-%d9%86%da%af%d8%a7%d8%b1-%d9%88-%d9%85%d8%b5%d8%a7%d8%a6%d8%a8%d8%b4/" target="_blank"> معرفی قبلی‌</a>، اشتباهی در مورد اسکرین‌شات کردم و بررسی نکرده منتشرش کردم که متاسفانه‌، باعث سوء تفاهم‌هایی شد که از همین تریبون عذر خواهی می‌کنم ;-)</p>
+<p><strong>پی‌نوشت ۲:</strong> دوست عزیزی به اسم رامین‌، پروژه را فورک و چند ویرایش خوب روی سورس انجام داد که از آن‌هایی که می‌توانستم (با توجه به این که سورس را دوباره از نو نوشتم) استفاده کردم‌. اما متاسفانه احساس می‌کنم ایشان از رفتارم سوء برداشت کرده‌اند‌. به هر حال از ایشان عذر خواهی می‌کنم و امید‌وارم مرا ببخشند‌.</p>
+<p><strong>پی‌نوشت ۳:</strong> همین دوست عزیز یک نسخهٔ گرافیکی دیگر بر مبنای سورس (که بعضی امکانات این نسخه را ندارد) قبلی نگار توسعه داده که قابلیت غلط گیر املایی هم به آن افزوده شده‌. جالب است‌، <a title="gui negar" href="http://raminnietzsche.github.com/GuiNegar/" target="_blank">تستش کنید</a> ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-09-26 12:38
   </abbr></h5>
   <div class="postContent">
@@ -170,49 +214,6 @@ git clone https://github.com/jplehmann/coursera.git
         
     
         <a href="posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-09-11 10:21
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html">PyPomo پروژهٔ کوچک برای تمرکز به روش پامودورو!</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>قبلاً در مورد پامودورو <a title="آشنایی با تکنیک مدیریت زمان پامودور (‌گوجه‌)!" href="http://shahinism.com/blog/1390/04/24/%d8%a2%d8%b4%d9%86%d8%a7%db%8c%db%8c-%d8%a8%d8%a7-%d8%aa%da%a9%d9%86%db%8c%da%a9-%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d8%b2%d9%85%d8%a7%d9%86-%d9%be%d8%a7%d9%85%d9%88%d8%af%d9%88%d8%b1-%e2%80%8c/">صحبت کرده‌ام‌</a>. از آن‌جایی که این چند وقته خیلی پیش می‌آمد که تمرکزم را روی انجام کارم پای کامپیوتر (خصوصا روی <a title="negar official webpage" href="http://shahinism.github.com/Negar/" target="_blank">پروژهٔ نگار</a>) از دست بدهم‌، و تمام ابزار‌هایی که قبلا برای این منظور استفاده می‌کردم را کنار گذاشته بودم‌، تصمیم گرفتم که یک ساعت پامودورو با پایتون بسازم‌.
-حقیقتش ساختنش کار لذت بخشی بود‌. خصوصا که در حین پیاده‌سازی نمونهٔ حاضر ایده‌های جالبی هم به سرم زد که به زودی روی‌شان کار می‌کنم‌. زیاده گویی بس است‌.</p>
-<p></p><h5>نصب PyPomo</h5>
-<p>اول از همه بسته به توزیع‌تان pysetuptools و PyQt4 (در اسلکور نصب است) را نصب کنید. و سپس به ترتیب دستورات زیر را اجرا کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>git clone https://github.com/shahinism/PyPomo.git
-
-<span class="nv">$ </span><span class="nb">cd </span>PyPomo
-
-<span class="nv">$ </span>sudo python setup.py install
-</pre></div>
-
-
-<p>حالا می‌توانید pypomo را از خط فرمان صدا بزنید‌. نمای اولیه چیزی شبیه به این تصویر خواهد بود و اگر با تکنیک پامودورو کار کرده باشید مفاهیم آشناست‌:</p>
-<p><a href="https://raw.github.com/shahinism/PyPomo/master/Snapshots/window.png"><img class="aligncenter" title="صفحهٔ اصلی PyPomo" src="https://raw.github.com/shahinism/PyPomo/master/Snapshots/window.png" alt="" width="283" height="214"></a></p>
-<p>فقط می‌ماند آن آیکون استاتوس بارش که سه رنگ می‌شود‌:</p>
-<ul><li><strong> رنگ قرمز:</strong> به این معنی است که شما باید یک پامودورو را شروع کنید و انجام دهید‌.</li>
-    <li><strong>رنگ سبز:‌</strong> به معنی وقت استراحت است‌. شرط می‌بندم خیلی زود عاشق این رنگ می‌شوید D:</li>
-    <li><strong>رنگ زرد:</strong> به این معنی است که شما یک وقفه ایجاد کرده‌ایست‌. پس باید به سراغ پامودوروی بعدیتان بروید‌.</li>
-</ul><p>پروژه آزاد است و چیز‌های جالبی می‌توان به آن اضافه کرد‌. با آغوش باز پذیرای ایده‌ها و کمک‌هایتان هستم ;-)</p>
-<p><a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank">صفحهٔ پروژه در گیت‌هاب</a></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html">Comments</a>
     
 
         

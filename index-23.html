@@ -35,6 +35,59 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-12-17 15:33
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>ببخشید که تیتری از این ساده‌تر و گو‌یاتر پیدا نکردم‌. ولی خوب اصل موضوع خیلی قشنگ چالش بر‌انگیز است‌. مساله این است‌:
+</p><blockquote>سایتی به این شکل داریم (‌<a title="the newboston php video" href="http://thenewboston.org/list.php?cat=11" target="_blank">لینک را باز کنید‌</a>) که شامل یک لیست از پیوند به صفحات دیگرش است که در آن‌ها علاوه بر قابلیت نمایش ویدیو‌، لینک یوتیوب همان ویدیو وجود دارد‌. حجم پیوند‌ها برابر ۲۰۰ عدد است</blockquote>
+<p>کار عادی‌اش به این صورت است که بنشینیم و با حوصله تک تک لینک‌ها را کپی پیست کرده و جایی ذخیره کنیم‌. ولی با وجود دویست صفحه و لینک‌، کمی (‌خیلی‌) خسته کننده (‌خریت‌ به معنای واقعی کلمه‌، البته ببخشید ;-)) است. خوب جواب مساله را خودم هم نمی‌دانستم‌، ولی مطمئن بودم‌، با ابزار‌های گنو‌/‌لینوکسی‌، نتیجه‌ی خیلی خوبی خواهم گرفت‌. اولین کاری که به فکرم رسید‌، دانلود صفحه‌ی اصلی و صفحه‌های پیوند شده به هر لینک بود که با wget خیلی خوب بلد بودم! به این صورت‌:</p>
+<div class="code"><pre>wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
+</pre></div>
+
+
+<p>خوب نتیجه‌ مجموعه‌ای از فایل‌ها بود که با اسم‌هایی شبیه به آدرس‌شان در پوشه‌ی جاری ذخیره شده بود. با استفاده از آرگومان‌های rl1 به wget فهماندم که صفحه‌ی حاضر را به عمق یک صفحه رو به جلو دانلود کند‌. حالا مساله‌ی سخت این‌جا بود که چطور به grep بفهمانیم که چه چیزی را (‌در این‌جا لینک ویدیو در یوتیوب‌) برایمان جدا کند‌. دستوری که با دفعات زیادی آزمون و خطا نتیجه داد‌، به این صورت بود‌: <span style="color: #ff6600;">(‌برای دیدن دستور کامل‌تر به آخر مطلب رجوع کنید‌، ویرایش۱)</span></p>
+<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * &amp;gt; list
+</pre></div>
+
+
+<p>کار این دستور این است که یک لیست از الگوی داده شده را ایجاد و در فایل list ذخیره کند‌. آرگومان‌های ohE به طور خلاصه به grep می‌فهمانند‌ که فقط عبارت داخل پرانتز را در فایل‌ها پیدا کند و در خروجی نمایش دهد‌. قسمت جالب قضیه که بیشتر از همه وقتم را گرفت بخش زیر بود‌:</p>
+<div class="code"><pre><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
+</pre></div>
+
+
+<p>که به grep می‌گفت ترکیبی از حروف و ارقام را به تعداد یازده عدد قبول کند‌. در مورد این عبارت‌ها در آینده‌ای نزدیک پستی در شاهینیسم خواهیم داشت.</p>
+<p>برای دانلود لینک‌ها هم می‌توانید همان فایل خروجی را به صورت زیر به youtube-dl بدهید‌:</p>
+<div class="code"><pre>youtube-dl -ta list
+</pre></div>
+
+
+<p>البته سرعت دانلود youtube-dl واقعا پایین است‌. روی سروری با دانلود عادی ده مگ‌، سرعت به زور می‌توانست به چهل کیلوبایت برسد‌. پیشنهاد من به شما‌، نصب یک نسخه از RapidLeech است‌. سرعت و کاربرد بسیار بهتری دارد ;-)</p>
+<p>ویرایش ۱: بعد از مدتی استفاده از این دستور‌، فهمیدم که از اونجایی که توی آدرس‌های Youtube امکان وجود آندرلاین هم هست‌، تعدادی از لینک‌ها رو با دستور بالا از دست می‌دیم‌. به همین دلیل دنبال یه راه دیگه گشتم‌، و سر‌انجام به دستور زیر رسیدم که نتیجه‌ی خیلی قابل قبول‌تری می‌ده‌:</p>
+<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * | uniq &amp;gt; list2
+</pre></div>
+
+
+<p>همچنین توی این دستور با استفاده از uniq از تکرار لینک‌ها در صفحه خروجی جلوگیری می‌شه ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-12-02 13:16
   </abbr></h5>
   <div class="postContent">
@@ -123,56 +176,6 @@
         
     
         <a href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-12-01 15:00
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">چ‌چ‌چ‌ (۶)‌: چگونه در خط فرمان گنو‌/‌لینوکس بزرگنمایی صفحه نمایش‌ام را پیدا کنم‌؟</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>این سوال به میزان وضوع یک تصویر بر روی صفحه نمایش اشاره می‌کند‌. بزرگنمایی صفحه (Screen resolution) به تعداد نقطه‌ها یا پیکسل‌های موجود در سراسر صفحهٔ نمایشتان اشاره می‌کند‌. برای مثال‌، وقتی می‌گویید برزگنمایی ۶۴۰x۴۸۰ پس منظورتان این است که ششصد و چهل نقطه در هر یک از چهارصد و هشتاد خط وجود دارد، یعنی‌، ۳۰۷ کیلو پیکسل‌.
-برای پیدا کردن این مشخصه می‌توانید از یکی از دو روش زیر کمک بگیرید‌:</p>
-<p>۱) استفاده از دستور xdpyinfo:</p>
-<div class="code"><pre>xdpyinfo | grep <span class="s1">'dimensions:'</span>
-</pre></div>
-
-
-<p>که نتیجه‌ای به شکل زیر را باز می‌گرداند‌:</p>
-<div class="code"><pre>dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
-</pre></div>
-
-
-<p>۲) استفاده از دستور xrandr:</p>
-<div class="code"><pre>xrandr | grep ‘*’
-</pre></div>
-
-
-<p>که نتیجه‌ای به صورت زیر را باز می‌گرداند‌:</p>
-<div class="code"><pre>xrandr: Failed to get size of gamma <span class="k">for </span>output default
-
-1024x768 50.0* 51.0
-</pre></div>
-
-
-<p>که البته منظور خط بالایی احتمالا این است که به خاطر قدیمی بودن مانیتور من‌، خروجی گاما (‌!) را اندازه گیری نمی‌کند‌ (یعنی به چه درد می‌خوره‌؟).</p>
-<p>البته بدیهی است که در محیط‌های دسکتاپ مختلف‌، با رجوع به بخش تنظیمات می‌توان به این اطلاعات دست یافت‌، ولی این روش‌ها طبیعتا سرراست‌تر است ;-)</p>
-<p></p><p style="text-align: center;"><a title="How to find resolution on cyberciti" href="http://www.cyberciti.biz/faq/how-do-i-find-out-screen-resolution-of-my-linux-desktop/" target="_blank">منبع</a></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
     
 
         
