@@ -2346,7 +2346,7 @@
  </url>
  <url>
   <loc>http://shahinism.github.io/categories/</loc>
-  <lastmod>2013-05-12</lastmod>
+  <lastmod>2013-05-13</lastmod>
   <priority>0.5000</priority>
  </url>
  <url>
@@ -3351,6 +3351,11 @@
  </url>
  <url>
   <loc>http://shahinism.github.io/categories/ngr.html</loc>
+  <lastmod>2013-05-13</lastmod>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://shahinism.github.io/categories/nikola.html</loc>
   <lastmod>2013-05-13</lastmod>
   <priority>0.5000</priority>
  </url>

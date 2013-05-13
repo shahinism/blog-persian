@@ -100,9 +100,13 @@ Syntax highlighter در پست‌ها
 بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد. 
 
 منابع دیگر:
+
 * `راهنمای نیکولا <http://nikola.ralsina.com.ar/handbook.html>`_
+
 * `راهنمای صفحات گیت‌هاب <http://pages.github.com/>`_
+
 * `راهنمای restructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html#external-hyperlink-targets>`_ که من برای نوشتن این پست از آن استفاده کردم و فوق‌العاده لذت بردم.
+
 * `راهنمای سادهٔ تغییر قالب Orphan با Mako <http://nikola.ralsina.com.ar/creating-a-theme.html>`_
 
 .. _Nikola: http://nikola.ralsina.com.ar/
