@@ -35,6 +35,52 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-05-25 17:37
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910305revelation-dr-myzkhr-awesome.html">Revelation در میزکار Awesome</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>یکی از ویژگی‌هایی که در میزکار KDE خیلی به آن علاقه داشتم این بود که وقتی نشانگر ماوس را به سمت چپ بالای صفحه می‌بردم تمامی پنجره‌های باز در تمام میزکار‌ها به شکلی جالب کنار هم نمایش داده می‌شدند و به راحتی می‌توانستم به پنجره‌ی مورد نظرم کوچ کنم‌! دیگر نیازی نبود که در چهار میزکارم بگردم و پنجره را پیدا کنم‌!
+از وقتی که به Awesome wm کوچ کردم بسیار پیش می‌آمد که از عدد درست استفاده نکرده باشم و اشتباها به میز دیگری رفته باشم و یا ندانم چه پنجره‌هایی را باز کرده‌ام‌. دیگر این میز کار داشت برایم خسته کننده می‌شد و تنها دلیل باقی ماندن رویش بالا رفتن سرعت انجام کار‌هایم بود‌! تا این که باز هم ویکی آرچ یک چشمه‌ی جالب دیگر برایم رو کرد و هیجان این میز کار برایم بیشتر شد‌! این هیجان را نمی‌توان در این پاراگراف‌ها جا داد‌، باید تجربه‌اش کنی تا بفهمی چه می‌گویم‌. پس‌:</p>
+<div class="code"><pre>git clone https://bioe007@github.com/bioe007/awesome-revelation.git ~/.config/awesome/revelation
+</pre></div>
+
+
+<p>و سپس در فایل rc.lua همان اویل می‌نویسیم:</p>
+<div class="code"><pre>require<span class="o">(</span><span class="s2">"revelation"</span><span class="o">)</span>
+</pre></div>
+
+
+<p>و سپس به دنبال این خط می‌گردیم:</p>
+<div class="code"><pre><span class="nv">globalkeys</span> <span class="o">=</span> awful.util.table.join<span class="o">(</span>
+</pre></div>
+
+
+<p>و دقیقا زیرش این را اضافه می‌کنیم:</p>
+<div class="code"><pre>awful.key<span class="o">({</span>modkey<span class="o">}</span>, <span class="s2">"e"</span>, revelation<span class="o">)</span>,
+</pre></div>
+
+
+<p>به همین راحتی‌، حالا پس از یک ریست کردن Awesome کافیست که modkey+e را فشار دهید و دقیقا مدل Awesomeای همان چیزی که از KDE برایتان گفتم را مشاهده کنید‌!</p>
+<p></p><p style="text-align: center;"><img class="aligncenter" title="Revelation screenshot" src="http://awesome.naquadah.org/w/images/thumb/Revelation.png/600px-Revelation.png" alt="نمونه تصویری از افزونه revelation در میزکار Awesome" width="420" height="262"></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910305revelation-dr-myzkhr-awesome.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910305revelation-dr-myzkhr-awesome.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-04-14 18:56
   </abbr></h5>
   <div class="postContent">
@@ -95,106 +141,6 @@ alsactl -f /var/lib/alsa/asount.state restore
         
     
         <a href="posts/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-03-31 11:39
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910112tgyyr-pwsth-emacs-b-bsth-color-theme.html">تغییر پوسته Emacs با بسته color-theme</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>ممکن است خیلی از شما با این عقیده که اولین اولویت در کار با یک نرم‌افزار باید رابط کاربری‌اش باشد مخالف باشید‌. اما برای من‌، کار کردن به مدت طولانی با ابزاری که محیطش برایم آزار دهنده باشد‌، عذاب آور است‌. از همین رو در تلاش‌های اولیه برای مهاجرت به Emacs تصمیم به تغییر در پوسته‌ی آن گرفتم‌. پوسته‌ی ایمکس در ترمینال‌، قابل تحمل بود‌. رنگ پس زمینه‌ی مشکی و رنگ‌های مناسب برای فونت‌، محیط لذت بخشی ارائه می‌کرد‌. اما در محیط X پس‌زمینه‌ی سفید‌، برای مدت طولانی کار واقعا خسته کننده می‌شد‌. البته این مشکل تنها محدود به ایمکس نمی‌شود‌. عمده‌ی ادیتور‌های فعلی که به صورت گرافیکی عرضه می‌شوند‌، به صورت پیش‌فرض پس‌زمینه‌ی سفید دارند‌، و من هم تا همین چند وقت گذشته‌، نمی‌دانستم عامل اصلی خستگی چشم و سر دردم همین رنگ سفید است‌. (‌بماند که از دیدگاه محیط زیستی از قرار این رنگ (‌نور) در نمایشگر‌، بیشترین مصرف انرژی را دارد ;-))
-</p><h5>استفاده از ‏‎.Xdefaults</h5>
-<p>اولین روشی که برای این کار با آن آشنا شدم‌، فایلی به اسم ‎<a href="http://www.softpanorama.org/Xwindows/Configuration/xdefaults.shtml" title="xdefaults on sofpanaroma" target="_blank">.Xdefaults</a> در پوشه‌ی خانگی بود که از قرار آرگومان‌هایی علاوه بر نمونه‌هایی که خواهیم دید برای کنترل نمایش دیگر نرم‌افزار‌ها نظیر xterm نیز در خود دارد‌. برای استفاده از این روش کافیست این فایل را با ویرایشگر باز کرده‌، و خطوطی به صورت زیر به آن اضافه کنیم‌:</p>
-<div class="code"><pre>Emacs.background: ivory
-
-Emacs.foreground: MidnightBlue
-</pre></div>
-
-
-<p>که رنگ پس زمینه‌، و رنگ نوشته‌ها را تعیین می‌کند‌. اما مشکل این روش جدای از چندان ایمکسی نبودن‌، وابسته بودن به محیط X است که چندان محیط یک‌پارچه‌ای برای ایمکس در ترمینال و X ارائه نمی‌کند‌. (‌البته شاید هم بکند که من نمی‌دادنم‌) به هر حال در صورت علاقه به آشنایی با این روش می‌توانید <a href="http://www.dsj.net/compedge/emacstips.html" target="_blank">+</a> و <a href="ftp://ftp.pt.xemacs.org/pub/xemacs/Attic/faq/HTML/XEmacs-faq_6.html" target="_blank">+</a> را مطالعه کنید‌.</p>
-<h5>استفاده از ‎.emacs</h5>
-
-<p>روش بعدی استفاده از ویژگی‌های خود ایمکس است‌. در این روش کافیست تنظیماتی به شکل زیر را به فایل ‎.emacs موجود در پوشه‌ی خانگیتان وارد کنید‌:</p>
-<div class="code"><pre><span class="o">(</span><span class="nb">set</span>-face-foreground <span class="s1">'default "blue")</span>
-
-<span class="s1">(set-face-background '</span>default <span class="s2">"green"</span><span class="o">)</span>
-</pre></div>
-
-
-<p>ویژگی‌های دیگری نیز از این دست نظیر زیر‌خط‌ها و ... موجودند‌. برای این که به تنظیمات نمایش هر بخش از نوشته دست یابید‌، کافیست نشانگر را به آن‌جا برده و M-x describe-face را وارد کنید‌. اطلاعات کاملی در مورد نمایش آن بخش به شما نشان داده خواهد شد که می‌توانید با توجه به سلیقه‌ی خود آن رو تغییر دهید‌.</p>
-<p>جدای از تعریف مستقیم نام رنگ‌ها به صورت red, blue و ... می‌توان از نام Hex رنگ‌ها نیز استفاده کرد. (‌البته توجه داشته باشید که ترمینال شما باید از میزان رنگ متناسب پشتیبانی کند)</p>
-<h5>معرفی color-theme</h5>
-
-<p>خوب تا این‌جای کار با روش‌های تغییر ساختار رنگ پوسته‌ی ایمکس آشنا شدیم‌. اما خوب بالاغیرتا کار طاقت فرساییست که بخواهیم برای تمامی حالات یک پوسته‌ی ایمکس (‌آن هم با این همه قابلیت‌) رنگ‌بندی متناسبی پیدا کنیم‌. این‌جاست که طبق معمول (‌در دنیای آزاد) بسته‌ای به نام <a href="https://gna.org/projects/color-theme" title="color theme official page" target="_blank">color-theme</a> با پنجاه پوسته رنگ پیش‌فرض که قابلیت تغییر نیز دارند در دسترس شماست‌. برای <a href="http://www.emacswiki.org/emacs-en/ColorTheme#toc1" title="colortheme on emacs wiki" target="_blank">نصب آن</a> کافیست پس از<a href="http://download.gna.org/color-theme/" title="download emacs color theme" target="_blank"> دانلودش‌،</a> استخراجش کرده‌، و فایل color-theme.el و پوشه‌ی themes را به یکی از شاخه‌های موجود در load-path‌تان وارد کنید‌. اگر نمی‌دانید load-path چیست <a href="http://www.emacswiki.org/emacs-en/LoadPath" title="loadpath on emacs wiki" target="_blank">این‌جا</a> را مطالعه کنید‌، برای محکم کاری هم می‌توانید از دستورات زیر بهره ببرید‌:</p>
-<div class="code"><pre>wget http://download.gna.org/color-theme/color-theme-6.6.0.tar.gz
-
-mkdir ~/.emacs.d
-
-mkdir ~/.emacs.d/color-theme
-
-tar -xvf color-theme-6.6.0.tar.gz
-
-<span class="nb">cd </span>color-theme-6.6.0.tar.gz
-
-mv color-theme.el ~/.emacs.d/color-theme
-
-mv themes ~/.emacs.d/color-theme
-
-vim ~/.emacs
-</pre></div>
-
-
-<p>و در آخر خطوط زیر را به فایل اضافه کرده و آن را ذخیره کنید‌:</p>
-<div class="code"><pre><span class="o">(</span>require <span class="err">'</span>color-theme<span class="o">)</span>
-
-<span class="o">(</span>color-theme-initialize<span class="o">)</span>
-
-<span class="o">(</span>color-theme-robin-hood<span class="o">)</span>
-</pre></div>
-
-
-<p>که در این‌جا پوسته‌ای به نام robin-hood را انتخاب کردیم‌. (‌برای کسب اطلاعات کامل‌تر در این زمینه می‌توانید به <a href="http://www.emacswiki.org/emacs-en/ColorTheme" target="_blank">این صفحه</a> رجوع کنید‌). خوب پوسته‌های این بسته چندان چنگی به دل نمی‌زد‌.</p>
-<p>جستجوی بعدی مرا به <a href="http://slinky.imukuppi.org/zenburnpage/" title="zenburn page" target="_blank">این صفحه</a> رساند‌. معرفی‌نامه‌ی پوسته‌ای به اسم zenburn (‌که قبلا <a href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" title="یک پوسته برای مدیر پنجره Awesome" target="_blank">افتخار آشنایی</a> با آن را روی Awesome wm داشتم) که ار قرار اولین بار برای Vi منتشر شده و الان توسط دوست‌دارانش برای بسیاری دیگر از نرم‌افزار‌ها توسعه داده شده‌. (‌در آینده در مورد نحوه‌ی استفاده از آن در باقی نرم‌افزار‌ها هم خواهم نوشت‌).</p>
-<p>خوب برای بهره برداری از این پوسته روی emacs به این صورت عمل می‌کنیم‌:</p>
-<div class="code"><pre>git clone https://github.com/dbrock/zenburn-el.git
-
-mkdir ~/.emacs.d/color-theme/themes/zenburn
-
-mv zenburn-el/zenubrn.el ~/.emacs.d/color-theme/themes/zenuburn
-
-vim ~/.emacs
-</pre></div>
-
-
-<p>و کلا به جای خطوط اضافه شده‌ی قبلی‌، خطوط زیر را اضافه می‌کنیم‌:</p>
-<div class="code"><pre><span class="o">(</span>add-to-list <span class="err">'</span>load-path <span class="s2">"~/.emacs.d/color-theme/"</span><span class="o">)</span>
-
-<span class="o">(</span>load-file <span class="s2">"~/.emacs.d/color-theme/themes/zenburn-el/zenburn.el"</span><span class="o">)</span>
-
-<span class="o">(</span>zenburn<span class="o">)</span>
-</pre></div>
-
-
-<p>و حالا با اجرای ایمکس از رنگ‌بندی جدید لذت می‌بریم‌:</p>
-<p><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/emacs-zenburn.png" alt="" width="490" height="345"></p>
-<p>البته طبق معمول اگر جایی چیزی نا خوشایند بود می‌توان دستکاری و بهترش کرد‌.</p>
-<p><strong>نکته‌:</strong> من هنوز در مورد ویرایشگر‌های Vi و Emacs بسیار آماتور هستم‌ و ممکن است در میان آموزش‌های این‌چنینی اشتباهاتی رخ داده باشد‌. (‌کلا نمی‌خواهم ترس از اشتباه جلوی این‌چنین نوشتنم را بگیرد‌) لذا از تمامی دوستانی که دستی بر آتش دارند دعوت می‌کنم در بهتر شدن این نوشتار‌ها یاری‌ام کنند ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910112tgyyr-pwsth-emacs-b-bsth-color-theme.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910112tgyyr-pwsth-emacs-b-bsth-color-theme.html">Comments</a>
     
 
         

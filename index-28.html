@@ -35,6 +35,115 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-09-12 09:11
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html">نصب و اجرای Anki در اسلکور</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>این بار نرم‌افزاری بسیار کوچکتر از قبل‌، دغدغه‌ی نصب و اجرای یک نرم‌افزار در محیط اسلکور را برایم فراهم کرد‌! <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">Anki</a> نرم‌افزار شبیه ساز محیط <a title="جعبه لایتنر در ویکی پدیا" href="http://fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D9%84%D8%A7%DB%8C%D8%AA%D9%86%D8%B1" target="_blank">فلش کارت</a> را به دلیل خاصیتش‌، قبل از این می‌شناختم‌. ولی با شکست در اجرایش و همچنین نبود فلش کارت مناسب زیاد توجهی بهش نکردم‌. اما اینبار با ورود <a title="4K English words by Flashcard" href="http://flashcard.linuxreview.ir/" target="_blank">فلش کارت‌های ایمان‌</a>، وضع فرق کرد‌. می‌دانستم که کاملترین نمونه‌ی این نرم‌افزار‌ها همین Anki است‌. از همه جالبتر هم بخش آمار و نمودار‌هایش بود که بسیار وسوسه‌ام می‌کرد این نرم‌افزار را نصب کنم‌. در ادامه مراحل نصب را مرور می‌کنیم‌!</p>
+<p>قبل از هر کاری pysetuptools را از <a title="pysetuptools" href="http://slackbuilds.org/repository/13.37/python/pysetuptools/" target="_blank">اینجا</a> دریافت و نصب کنید‌. دیگر پیش نیاز‌های اولیه‌تان برای نصب این‌ها هستند‌:</p>
+<div class="code"><pre>sqlalchemy 0.4.3
+
+simplejson 1.7.3
+</pre></div>
+
+
+<p>بسته‌ی دوم ‌(‌simplejason‌) را می‌توانید با استفاده از Slackbuild‌ موجود در <a title="simplejson Slackbuild" href="http://slackbuilds.org/repository/13.37/python/simplejson/" target="_blank">این آدرس‌</a> نصب کنید‌. برای SQLAlchamy هم من آخرین نسخه‌ی موجود را نصب کردم‌! برای این کار کافیست آخرین نسخه را از <a title="sqlalchemy official website" href="http://www.sqlalchemy.org/" target="_blank">این‌جا</a> دریافت کنید‌، و Slackbuild نسخه قدیمی را نیز از <a title="sqlalchamy slackbuild" href="http://slackbuilds.org/repository/13.37/development/SQLAlchemy/" target="_blank">این‌جا</a> بگیرید‌، حالا فایل Slackbuild را با یک ویرایشگر متن باز کنید‌، همان اوایل متن مقدار جلوی VERSION را به مقدار دلخواهتان تغییر دهید‌ ‌(برای من چنین چیزی از آب در آمد VERSION=0.7.2 )‌ حالا اگر می‌خواهید این نرم‌افزار قدرت گراف کشیدن داشته باشد به ترتیب باید از پس بسته‌های زیر هم بر بیایید‌. ‌(‌لینک Slackbuild‌های مربوطه از این شماره‌ها قابل دسترسی است‌: <a title="numpy slackbuild" href="http://slackbuilds.org/repository/13.37/development/numpy/" target="_blank">۱</a>‌، <a title="pytz slackbuild" href="http://slackbuilds.org/repository/13.37/python/pytz/" target="_blank">۲</a>‌، <a title="python-dateutil" href="http://slackbuilds.org/repository/13.37/python/python-dateutil/" target="_blank">۳‌</a>، <a title="matplotlib slackuild" href="http://slackbuilds.org/repository/13.37/libraries/matplotlib/" target="_blank">۴</a>‌‌)</p>
+<div class="code"><pre>- python-numpy <span class="o">(</span>numpy<span class="o">)</span>
+
+- python-matplotlib <span class="o">(</span>matplotlib<span class="o">)</span>
+</pre></div>
+
+
+<p>برای داشتن چند قابلیت دیگر نظیر ضبط صدا و یا وارد کردن فایل XML هم نیاز به چند پیش‌نیاز دارید که با استفاده از فایل README موجود در پوشه‌ی Anki می‌توانید با آن‌ها آشنا شوید‌. ‌(‌من اون‌ها رو تست نکردم‌، و برای نصب هم نیازی به اون‌ها نداریم‌)‌.</p>
+<p>پس از نصب پیش‌نیاز‌ها آخرین نسخه‌ی Anki را از <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">این‌جا</a> دریافت کنید‌. آن را از حالت فشرده خارج کرده و سپس به مسیر زیر بروید‌:</p>
+<div class="code"><pre><span class="nb">cd </span>anki-YOUR-VERSION/libanki
+</pre></div>
+
+
+<p>لطفا توجه داشته باشید که فایلی با نام setup.py در پوشه‌ی اول Anki هم موجود هست‌، ولی ما به آن کار نداریم‌، و عملیات نصب را با setup.py موجود در پوشه libanki انجام می‌دهیم‌. برای شروع عملیات نصب دستور زیر را اجرا کنید‌:</p>
+<div class="code"><pre>python setup.py install
+</pre></div>
+
+
+<p>دستور فوق را یا با کاربر root و یا با استفاده از sudo اجرا کنید‌. پس از پایان عملیات نصب می‌توانید برنامه را با دستور anki اجرا کنید‌. متاسفانه نصاب این برنامه برای anki در منوی KDE هیچ گزینه‌ای اضافه نمی‌کند‌، پس باید زحمت این را شما بکشید‌. ظاهرا الان برنامه درست کار می‌کند‌، اما برای دیدن روی بد سکه‌، سعی کنید فلش کارت جدیدی ایجاد کنید و یا یک فلش کارت به آن اضافه کنید‌. متاسفانه با اخطار زیر روبرو می‌شوید‌:</p>
+<div class="code"><pre>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+
+File <span class="s2">"/usr/lib/python2.6/site-packages/ankiqt/ui/main.py"</span>, line 953, in onNew
+
+self.deck.initUndo<span class="o">()</span>
+
+File <span class="s2">"/usr/lib/python2.6/site-packages/anki/deck.py"</span>, line 3415, in initUndo
+
+<span class="o">(</span>null, <span class="s1">'delete from %(t)s where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="s2">""" % {'t': table})</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 114, in statement</span>
+
+<span class="s2">return self.execute(text(sql), kwargs)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 90, in execute</span>
+
+<span class="s2">x = self._session.execute(*a, **ka)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/orm/session.py<span class="s2">", line 724, in execute</span>
+
+<span class="s2">clause, params or {})</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1191, in execute</span>
+
+<span class="s2">params)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1271, in _execute_clauseelement</span>
+
+<span class="s2">return self.__execute_context(context)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1302, in __execute_context</span>
+
+<span class="s2">context.parameters[0], context=context)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1401, in _cursor_execute</span>
+
+<span class="s2">context)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1394, in _cursor_execute</span>
+
+<span class="s2">context)</span>
+
+<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/default.py<span class="s2">", line 299, in do_execute</span>
+
+<span class="s2">cursor.execute(statement, parameters)</span>
+
+<span class="s2">sqlalchemy.exc.OperationalError: (OperationalError) cannot create trigger on system table u"</span>ncreate temp trigger
+
+
+
+_undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog valuesn<span class="o">(</span>null,
+
+
+
+<span class="s1">'delete from sqlite_stat2 where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="err">"</span> <span class="o">()</span>
+</pre></div>
+
+
+<p>خوب برنامه به دلایلی ‌(‌که هنوز هم نفهمیدم چیه‌!‌) این اخطار رو از قرار فقط برای جماعت اسلکور کار بر می‌گرداند‌! برای حل این مشکل نیز کافیست‌، برنامه را دوباره استارت کنید و با استفاده از کلید Download موجود در صفحه اصلی‌، اقدام به بارگذاری یکی از فلش‌کارت‌های مربوط کنید‌. به طرز عجیبی برنامه پس از آن کاملا درست کار می‌کند و شما هم می‌توانید با استفاده از آن‌، بر دانستنی‌های دائمتان بیافزایید‌ :-P</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900621nsb-w-jry-anki-dr-slkhwr.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-09-07 12:16
   </abbr></h5>
   <div class="postContent">
@@ -90,34 +199,6 @@
         
     
         <a href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900614chr-byd-latex-r-dwst-dsht.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-08-22 16:33
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html">نبض سیستم‌تان در دستان شما</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>زیاد اهل خوشگل کردن دسکتاپم نیستم‌. حقیقتش این است که تصویر پس‌زمینه را هم ممکن است‌‌ همان که پیش‌فرض است بگذارم و تغییر ندهم‌. - نمی‌دانم‌، شاید این عادت از‌‌ همان سیستم قدیمی و ویندوز XP برایم باقی مانده‌، که برای لود بک‌گراند غیر پیش‌فرض جانش بالا می‌آمد‌. -.</p>
-<p>پس از ارتقا KDE به نسخهٔ ۴،۷ و پیدا کردن <a title="Wallpaper Wide" href="http://wallpaperswide.com/" target="_blank">این سایت</a> که پس‌زمینه‌های فوق‌العاده‌ای در خود جای داده‌ (‌تشکر دوباره از <a title="BardiaX on wordpress" href="http://bardiax.wordpress.com/" target="_blank">بردیا</a> که در گوپس معرفی‌اش کرد‌)، خواستم یکی از معدود پلاسموید‌هایی را که استفاده می‌کنم را دوباره نصب کنم‌. نتیجه به حدی برایم دلنشین شد که آن را اینجا به اشتراک می‌گذارم‌.</p>
-<p>Yasp-Scripted را می‌توانید از <a title="Yasp-Scripted (Systemmonitor) v1.0.8a    " href="http://kde-look.org/content/show.php?content=109367" target="_blank">اینجا</a> دانلود و نصب کنید (‌کار زیاد سختی نیست‌، باید از سورس اقدام کنید‌ که در فایل INSTALL طبق معمول همه توضیحات داده شده). ولی بسته به سیستمتان بعد از افزودن پلاسموید به میزکار ممکن است نتیجه‌ای نگیرید (که من هم نگرفتم‌!). موضوع سر فایل. yasp.script که در پوشهٔ خانگیتان می‌توانید پیدایش کنید‌. این فایل کد‌های مربوط به نحوه و امکانات نمایش پلاسموید را در اختیار دارد که ممکن است با سیستم شما همخوان نباشد‌. خوشبختانه تعدادی دیگر از نمونه‌های این فایل را می‌توانید در شاخه yasp_scripts موجود در سورس کد بیابید‌. گزینه‌های مختلف را امتحان کنید‌، احتمالا به نتیجه می‌رسید‌. بعد هم می‌توانید با توجه به سلیقه و امکانات سخت‌افزاریتان‌، فایلی که برایتان اثربخش بوده را شخصی سازی کنید‌.</p>
-<p>من نمونه‌ای از این فایل را که برای خودم آماده کردم دز <a title="نمونه اسکریپت شخصی سازی شده شاهینیسم" href="http://shahinism.com/wp-content/uploads/SH-Script.tar.gz">این‌جا</a> قرار داده‌ام که می‌توانید دریافت کنید‌. این فایل را برای CPU چهار‌هسته‌ای آماده کرده‌ام و بخش‌های مربوط به سنسور حرارتش را حذف کرده‌ام (‌هر چه تلاش کردم نتوانستم به کارش بیاندازم‌) ‌. ترتیب رنگ‌ها هم تنها ترتیب رنگی است که اصولا یادم نمی‌رود (‌رنگین کمان‌) ‌. در کل چیز جالبی در می‌آید اگر روی یک بک‌گراند روشن پیاده شود‌. نمونه می‌ز‌کار من را در زیر مشاهده می‌کنید‌.</p>
-<p><a href="http://shahinism.com/wp-content/uploads/Sh-Kde.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-426" style="margin: 7px auto;" title="Sh-Kde" src="http://shahinism.com/wp-content/uploads/Sh-Kde-300x225.png" alt="" width="330" height="247"></a></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900531nbd-systmtn-dr-dstn-shm.html">Comments</a>
     
 
         

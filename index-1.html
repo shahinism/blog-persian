@@ -35,6 +35,53 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-04-14 09:13
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">این ایمکس دوست داشتنی (Backup‌ها و Autosave‌ها)</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>یکی از ویژگی‌های خوب‌، به درد بخور ولی سرسام آوری که در اکثر ویرایشگرهای لینوکسی با پدر و مادر دیده‌ایم‌، قابلیت پشتیبان گیریست‌! قابلیتی که هر چند می‌دانیم که خیلی به آن نیاز پیدا خواهیم کرد‌، عموما از ریختش خوشمان نمی‌آید. عموما شیوهٔ کار این پشتیبان‌گیر‌ها به این صورت است که در همان جایی که فایل اصلی وجود دارد‌، یک فایل پشتیبان به صورت خودکار ایجاد می‌کنند و هیچ وقت هم آن را پاک نمی‌کنند‌! خوب برای آدم‌های وسواسی‌ای مثل من‌، این کمی اذیت کننده است که آن‌ها را در کنار فایل‌های اصلی‌ام ببینم‌!
+ساده‌ترین راه‌کار‌، خاموش کردنش است‌! ولی خاموش کردن هم خطرناک است. قربانش بروم نیست کلا همه چیز‌مان قابل اطمینان است‌، مطمئن باشید سر حساس‌ترین ادیت‌تان‌، برق سیستم قطع می‌شود (این خط‌| ، این نشان D:).</p>
+<p>این است که برای ایمکس یک جای مخصوص درست می‌کنیم که این پشتیبان‌ها را در آن جا بریزد. این‌طوری نه ساختار سیستم فایل‌مان را شلخته می‌کنیم‌، و نه از نعمت وجود پشتیبان‌ها بی‌بهره می‌شویم.</p>
+
+
+<div class="code"><pre> <span class="p">(</span><span class="nv">custom-set-variables</span>
+ <span class="c1">;; custom-set-variables was added by Custom.</span>
+ <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
+ <span class="c1">;; Your init file should contain only one such instance.</span>
+ <span class="c1">;; If there is more than one, they won't work right.</span>
+ <span class="o">'</span><span class="p">(</span><span class="nv">auto-save-file-name-transforms</span> <span class="p">(</span><span class="k">quote</span> <span class="p">((</span><span class="s">".*"</span> <span class="s">"~/.emacs.d/autosaves/\\1"</span> <span class="no">t</span><span class="p">))))</span>
+ <span class="o">'</span><span class="p">(</span><span class="nv">backup-directory-alist</span> <span class="p">(</span><span class="k">quote</span> <span class="p">((</span><span class="s">".*"</span> <span class="o">.</span> <span class="s">"~/.emacs.d/backups/"</span><span class="p">)))))</span>
+</pre></div>
+
+
+<p>خوب‌، تمام نکتهٔ اصلی ماجرا این‌جاست که ما با تابع custom-set-variables سر و کار داریم. این تابع را در واقع قرار نیست که ما صدا بزنیم (ولی این یک‌بار اشکال ندارد‌). حقیقتش نیاز هم نیست‌، چون این تنظیمات را می‌توان با خود ایمکس انجام داد. کافیست از منوی ایمکس‌، Options و Customize Emacs را انتخاب کنیم‌، بخش مورد نظر را پیدا و انگولکش کنیم و سپس Apply &amp; Save و خود ایمکس همچین چیزی را برای‌مان اضافه می‌کند! ولی خوب من حال سر و کله زدن با این منو‌ها را ندارم. پس باید بروم و همین متغیر‌ها که می‌بینید را مستقیما تغییر دهم. خوب آن وقت یک کمی کثیف‌کاری می‌شود. چرا؟ چون آن وقت این Customize ایمکس تنظیمات ما را نمی‌خواند و ممکن است برای یک همچین تنظیم پایه‌ای‌، مشکل بزاید برای‌مان.</p>
+<p>باauto-save-file-name-transforms ما در واقع شیوهٔ نام‌گذاری Autosave‌ها را با یک Regex تغییر می‌دهیم. خود ایمکس‌، آن بخش آدرس دایرکتوری را‌، به مسیر جدید فایل تبدیل می‌کند و فایل‌ها را در آن‌جا ذخیره می‌کند. Autosave‌ها به صورت #FileName#  و به صورت خودکار ذخیره می‌شوند و شامل آخرین تغییرات یک بافر هستند.</p>
+<p>دقیقا همین کار را هم با متغیرbackup-directory-alist انجام می‌دهیم که وظیفهٔ تغییر نام backup‌ها را بر عهده دارد. این پشتیبان‌ها در واقع آخرین وضعیت Save شدهٔ یک بافر را ارائه می‌دهند و به صورت FileName~ ‎ نام‌گذاری می‌شوند.</p>
+<p>حالا نکته این‌جاست که احتمالا بعد از Restart ایمکس‌، با این اخطار روبرو می‌شوید که دایرکتوری Autosaves که آدرس داده‌اید وجود ندارد. یک کار این است که آن را به صورت دستی ایجادش کنید. فقط یک بار لازم است. و بعد ایمکس‌تان را اجرا کنید. یک کار دیگر هم می‌توان با دستور لیسپ زیر‌، چک کرد که اگر دایرکتوری وجود نداشت‌، خود ایمکس ایجادش کند:</p>
+<div class="code"><pre><span class="p">(</span><span class="nv">make-directory</span> <span class="s">"~/.emacs.d/autosaves/"</span> <span class="no">t</span><span class="p">)</span>
+</pre></div>
+
+
+<p>من این تنظیمات را از <a href="http://snarfed.org/gnu_emacs_backup_files">این پست</a> یاد گرفتم. وبلاگ قدیمی‌ایست‌، و چیز‌های خوبی در مورد ایمکس می‌توان ازش یاد گرفت.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2013-04-11 11:47
   </abbr></h5>
   <div class="postContent">
@@ -127,50 +174,6 @@
         
     
         <a href="posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-04-06 09:06
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html">این ایمکس دوست داشتنی (تعریف کلید میانبر)</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>یکی از حیاتی‌ترین چیز‌هایی که در ایمکس لازم است بدانیم‌، چگونگی تعریف کلید میانبر برای توابع مختلف است. همان‌طور که احتمالا تا این‌جای قضیه متوجه شده‌اید‌، همهٔ کار‌هایی که در ایمکس انجام می‌دهیم‌، توابعی است که چه همراه خود ایمکس وجود دارند و چه با استفاده از بسته‌هایی که نصب می‌کنیم به آن اضافه می‌شوند. این توابع را می‌توان به صورت M-x FUNCTION_NAME RET  صدا کرد. اما در هنگام کار در ایمکس‌، سخت است که برای هر دستوری‌، مثل رفتن به خط بعد/قبل بیاییم و به این روش عمل کنیم. این است که برای هر تابع پر استفاده‌ای که داریم‌، یک کلید میانبر تعریف می‌کنیم.
-لازم به ذکر است که برای اثبات بحث بالا‌، می‌توانید از تابع describe-key  همراه ایمکس استفاده کنید. کار این تابع این است که به شما بگوید که کلید میانبر مد نظر‌تان‌، چه تابعی را صدا می‌کند. برای نمونه‌، این دستور را وارد کنید M-x describe-key RET C-x C-f . همان‌طور که می‌بینید تابع مربوطه در یک پنجرهٔ جدید به نمایش در می‌آید. حالا برویم سر بحث تعریف کلید میانبر:</p>
-<p></p><h5>کلید میانبر سراسری</h5>
-<p>منظور از کلید میانبر سراسری‌، کلید‌هایی است که در همهٔ Major-mode‌ها (مد‌های اصلی) به راحتی عمل می‌کنند. برای نمونه C-n  یک کلید میانبر سراسری است. در تمامی مد‌ها اعم از ویرایش متن معمولی و یا کد برنامهٔ C‌، این کلید میانبر‌، نشانگر را به خط بعد منتقل می‌کند. برای تعریف چنین کلید میانبری می‌توانیم از یکی از دو روش زیر بهره ببریم:</p>
-<div class="code"><pre><span class="p">(</span><span class="nv">global-set-key</span> <span class="s">"KEY"</span> <span class="ss">'FUNCTION_NAME</span><span class="p">)</span>
-
-<span class="p">(</span><span class="nv">define-key</span> <span class="nv">global-map</span> <span class="s">"KEY"</span> <span class="ss">'FUNCTION_NAME</span><span class="p">)</span>
-</pre></div>
-
-
-<p>برای کسب اطلاعات بیشتر در مورد هر کدام از این توابع می‌توانید از تابع describe-function  همراه ایمکس کمک بگیرید. برای مثال M-x describe-function RET global-set-key RET . یا از کلید میانبرش استفاده کنید C-h f . همین‌طور اگر نشان‌گرتان روی یک تابع ایمکس باشد‌، خود تابع می‌تواند آن را حدس بزند.</p>
-<p>تابع اول که تقریبا سر راست است. global-set-key  همان‌طور که از نامش پیداست‌، یک کلید سراسری به اسم KEY که می‌تواند ترکیبی به صورت<span class="lang:default decode:true  crayon-inline">"‎\C-c f" باشد‌، برای تابع FUNCTION_NAME تعریف می‌کند. همان‌طور که احتمالا متوجه شده‌اید‌، من برای نشان‌دادن Ctrl  در کلید میانبرم از ‎‎\C  استفاده کردم. همین‌طور برای Alt  باید از ‎\M  استفاده کنم. تعریف کلید به این صورت شاید کمی خسته کننده و نا خوانا به نظر بیاید. برای راحتی بیشتر می‌توان از تابع kbd  استفاده کرد. برای نمونه طبق مثالمان‌، همچین چیزی خواهیم داشت:</span></p>
-<div class="code"><pre><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-c f"</span><span class="p">)</span> <span class="ss">'FUNCTION_NAME</span><span class="p">)</span>
-</pre></div>
-
-
-<p>خود تابع kbd  می‌داند که چطور این کلید را ترجمه کند. برای کسب اطلاعات بیشتر در این مورد می‌توانید باز هم از C-h f  یا تابع متناظرش استفاده کنید. باور کنید که اطلاعات خیلی بهتری به دست می‌آورید ;-)</p>
-<p>در تابع دوم ما کار مشابهی را انجام دادیم‌، با این تفاوت که تابع define-key  نیاز به این دارد که بداند کلید میانبر را در کدام محیط اجرا کند. به عبارت دیگر‌، کلید میانبر در کدام Mode در دسترس باشد. از آن‌جایی که قصد ما تعریف کلید میانبر سراسری است به محیط global-map  اشاره می‌کنیم که به define-key  می‌فهماند کلید باید در همه جا در دسترس باشد.</p>
-<h5>کلید میابر محدود به مد خاص</h5>
-
-<p>با این توضیح آخر بخش قبل‌، فکر کنم موضوع کاملا روشن شده باشد. کافیست برای تعریف میانبر برای یک مد خاص‌، محیط مربوط به آن مد را به define-key  نشان دهیم. برای مثال اگر می‌خواهیم که کلید میانبر تنها در محیط متنی در دسترس باشد‌، به جای global-map  از text-mode-map  استفاده می‌کنیم. محیط‌های مربوط به هر مد اصلی‌، عموما به صورت mode-name-map  شناسایی می‌شوند و در هنگام تعریف کلید‌، کافیست نام map مد مورد نظر‌تان را کشف کنید ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html">Comments</a>
     
 
         

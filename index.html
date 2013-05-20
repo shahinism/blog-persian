@@ -35,6 +35,76 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-05-20 10:43
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/emacs-flyspell-mode.html">این ایمکس دوست داشتنی (غلط‌گیر املایی)</a></h3>
+    
+    <div class="entry-content">
+      <p>وقتی که بچه‌تر بودم‌، به بالا بودن نمرات املایم افتخار می‌کردم. ولی خوب انگار آن‌ها ربط مستقیمی به دایرهٔ لغات مورد استفاده‌ام در آن زمان‌ها داشت. به هر حال الان خیلی پیش می‌آید که غلط بنویسم‌! با وسط آمدن پای زبان انگلیسی این مشکل بیشتر خود‌نمایی می‌کند. به هر حال‌، خیلی خوب می‌شود که ویرایشگر محبوبم‌، در درست نوشتن‌هایم کمکم کند.</p>
+<div class="section" id="aspell">
+<h2>تنظیم aspell</h2>
+<p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
+<pre class="code cl literal-block">
+<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+</pre>
+<p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
+</div>
+<div class="section" id="id1">
+<h2>چرا aspell؟</h2>
+<p>خوشبختانه این برنامه‌، به زحمت <a class="reference external" href="https://fa.wikipedia.org/wiki/%D8%A2%D9%84%D9%86_%D8%A8%D8%A7%D8%BA%D9%88%D9%85%DB%8C%D8%A7%D9%86">آلن باغومیان</a> عزیز‌، صاحب یک دیکشنری به درد بخور فارسی هم شده. این دیکشنری را که احتمالا همراه <a class="reference external" href="http://aspell.net/">aspell</a> روی سیستم‌تان نصب نمی‌شود را می‌توانید از <a class="reference external" href="ftp://ftp.gnu.org/gnu/aspell/dict/0index.html">این‌جا</a> بگیرید. راهنمای کامپایل و نصبش همراه خود بسته است (عملا یک ‎./configure &amp;&amp; make &amp;&amp; make install ساده باید کارتان را راه بیاندازد.).</p>
+</div>
+<div class="section" id="id4">
+<h2>نحوهٔ کار</h2>
+<p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
+<pre class="code cl literal-block">
+<span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+</pre>
+<p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
+<div class="section" id="flyspell-mode">
+<h3>flyspell-mode</h3>
+<p>با فراخوانی این مد‌، کل بافر را تحت تاثیر قرار می‌دهید. در صورت بر خورد با هر غلط املایی‌، لغت تغییر رنگ داده و می‌توانید با کلیک وسط ماوس آن پیشنهاد‌های سیستم‌را انتخاب کنید.</p>
+</div>
+<div class="section" id="ispell-word-ispell-word">
+<h3><img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"> ispell-word</h3>
+<p>این دستور‌، به درد موقعی می‌خورد که نمی‌خواهید یک flyspell-mode را صدا کنید. به هر حال این مد همیشه هم آن‌قدر که باید خوب عمل نمی‌کند (بیشترین تاثیر را زمانی دارد که کلمه بعد از فراخوانی مد تایپ شود). البته برای رفع مشکلات این مد می‌توانید از <strong>flyspell-region</strong> که محدودهٔ انتخاب شده را بررسی می‌کند استفاده کنید. ولی گاها دوست دارید که تنها یک کلمه که مطمئن نیستید را بررسی کنید. آن وقت است که <strong>ispell-word</strong> دستور مورد نظرتان است. تنها کافیست نشان‌گر را روی لغت ببرید و این دستور را بزنید.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>کلید‌های میانبر</h2>
+<p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
+<pre class="code cl literal-block">
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+</pre>
+<p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
+<pre class="code cl literal-block">
+<span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+</pre>
+<p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
+</div>
+<div class="section" id="id6">
+<h2>مشکلات حاضر</h2>
+<p>مشکل این است که نمی‌توان دیکشنری را به صورت دو زبانه و همزمان داشت. از طرفی در صفحهٔ ویکی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> به غلط‌گیر <a class="reference external" href="http://wiki.openoffice.org/wiki/Main_Page">Hunspell</a> اشاره شده که روش خوبی هم برای بررسی متن و تغییر خودکار زبان غلط‌گیر دارد. با توجه به استفاده از این دیکشنری در OpenOffice‌ها خیلی وسوسه شده‌ام که آن را هم تست کنم. به زودی در مورد آن‌ها هم خواهم نوشت.</p>
+</div>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/emacs-flyspell-mode.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-flyspell-mode.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2013-05-13 10:21
   </abbr></h5>
   <div class="postContent">
@@ -104,53 +174,6 @@
         
     
         <a href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-04-14 09:13
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">این ایمکس دوست داشتنی (Backup‌ها و Autosave‌ها)</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>یکی از ویژگی‌های خوب‌، به درد بخور ولی سرسام آوری که در اکثر ویرایشگرهای لینوکسی با پدر و مادر دیده‌ایم‌، قابلیت پشتیبان گیریست‌! قابلیتی که هر چند می‌دانیم که خیلی به آن نیاز پیدا خواهیم کرد‌، عموما از ریختش خوشمان نمی‌آید. عموما شیوهٔ کار این پشتیبان‌گیر‌ها به این صورت است که در همان جایی که فایل اصلی وجود دارد‌، یک فایل پشتیبان به صورت خودکار ایجاد می‌کنند و هیچ وقت هم آن را پاک نمی‌کنند‌! خوب برای آدم‌های وسواسی‌ای مثل من‌، این کمی اذیت کننده است که آن‌ها را در کنار فایل‌های اصلی‌ام ببینم‌!
-ساده‌ترین راه‌کار‌، خاموش کردنش است‌! ولی خاموش کردن هم خطرناک است. قربانش بروم نیست کلا همه چیز‌مان قابل اطمینان است‌، مطمئن باشید سر حساس‌ترین ادیت‌تان‌، برق سیستم قطع می‌شود (این خط‌| ، این نشان D:).</p>
-<p>این است که برای ایمکس یک جای مخصوص درست می‌کنیم که این پشتیبان‌ها را در آن جا بریزد. این‌طوری نه ساختار سیستم فایل‌مان را شلخته می‌کنیم‌، و نه از نعمت وجود پشتیبان‌ها بی‌بهره می‌شویم.</p>
-
-
-<div class="code"><pre> <span class="p">(</span><span class="nv">custom-set-variables</span>
- <span class="c1">;; custom-set-variables was added by Custom.</span>
- <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
- <span class="c1">;; Your init file should contain only one such instance.</span>
- <span class="c1">;; If there is more than one, they won't work right.</span>
- <span class="o">'</span><span class="p">(</span><span class="nv">auto-save-file-name-transforms</span> <span class="p">(</span><span class="k">quote</span> <span class="p">((</span><span class="s">".*"</span> <span class="s">"~/.emacs.d/autosaves/\\1"</span> <span class="no">t</span><span class="p">))))</span>
- <span class="o">'</span><span class="p">(</span><span class="nv">backup-directory-alist</span> <span class="p">(</span><span class="k">quote</span> <span class="p">((</span><span class="s">".*"</span> <span class="o">.</span> <span class="s">"~/.emacs.d/backups/"</span><span class="p">)))))</span>
-</pre></div>
-
-
-<p>خوب‌، تمام نکتهٔ اصلی ماجرا این‌جاست که ما با تابع custom-set-variables سر و کار داریم. این تابع را در واقع قرار نیست که ما صدا بزنیم (ولی این یک‌بار اشکال ندارد‌). حقیقتش نیاز هم نیست‌، چون این تنظیمات را می‌توان با خود ایمکس انجام داد. کافیست از منوی ایمکس‌، Options و Customize Emacs را انتخاب کنیم‌، بخش مورد نظر را پیدا و انگولکش کنیم و سپس Apply &amp; Save و خود ایمکس همچین چیزی را برای‌مان اضافه می‌کند! ولی خوب من حال سر و کله زدن با این منو‌ها را ندارم. پس باید بروم و همین متغیر‌ها که می‌بینید را مستقیما تغییر دهم. خوب آن وقت یک کمی کثیف‌کاری می‌شود. چرا؟ چون آن وقت این Customize ایمکس تنظیمات ما را نمی‌خواند و ممکن است برای یک همچین تنظیم پایه‌ای‌، مشکل بزاید برای‌مان.</p>
-<p>باauto-save-file-name-transforms ما در واقع شیوهٔ نام‌گذاری Autosave‌ها را با یک Regex تغییر می‌دهیم. خود ایمکس‌، آن بخش آدرس دایرکتوری را‌، به مسیر جدید فایل تبدیل می‌کند و فایل‌ها را در آن‌جا ذخیره می‌کند. Autosave‌ها به صورت #FileName#  و به صورت خودکار ذخیره می‌شوند و شامل آخرین تغییرات یک بافر هستند.</p>
-<p>دقیقا همین کار را هم با متغیرbackup-directory-alist انجام می‌دهیم که وظیفهٔ تغییر نام backup‌ها را بر عهده دارد. این پشتیبان‌ها در واقع آخرین وضعیت Save شدهٔ یک بافر را ارائه می‌دهند و به صورت FileName~ ‎ نام‌گذاری می‌شوند.</p>
-<p>حالا نکته این‌جاست که احتمالا بعد از Restart ایمکس‌، با این اخطار روبرو می‌شوید که دایرکتوری Autosaves که آدرس داده‌اید وجود ندارد. یک کار این است که آن را به صورت دستی ایجادش کنید. فقط یک بار لازم است. و بعد ایمکس‌تان را اجرا کنید. یک کار دیگر هم می‌توان با دستور لیسپ زیر‌، چک کرد که اگر دایرکتوری وجود نداشت‌، خود ایمکس ایجادش کند:</p>
-<div class="code"><pre><span class="p">(</span><span class="nv">make-directory</span> <span class="s">"~/.emacs.d/autosaves/"</span> <span class="no">t</span><span class="p">)</span>
-</pre></div>
-
-
-<p>من این تنظیمات را از <a href="http://snarfed.org/gnu_emacs_backup_files">این پست</a> یاد گرفتم. وبلاگ قدیمی‌ایست‌، و چیز‌های خوبی در مورد ایمکس می‌توان ازش یاد گرفت.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">Comments</a>
     
 
         
