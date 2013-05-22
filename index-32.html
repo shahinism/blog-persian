@@ -35,6 +35,76 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-05-14 12:36
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900224amwzsh-html-bkhsh-4.html">آموزش HTML بخش 4</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>تا این‌جای کار یاد گرفتیم‌، که چطور یک ساختار HTML را پیاده سازی کنیم و چطور به نوشته‌ها ظاهری متناسب با کاربرد و مکانشان در صفحه بدهیم‌. حال در این بخش قصد داریم نحوه‌ی ایجاد پیوند‌ها را بررسی کنیم‌.</p>
+<p>پیوند یا لینک‌، امکان دسترسی و ارجاع آسان کاربر را به صفحات مختلف در سرتاسر وب و یا حتی در یک صفحه فراهم می‌کند. لذا نحوه‌ی استفاده‌ی درست از تگ‌های پیوند و ایجاد میانبر‌های مناسب می‌تواند، به کاربری آسان صفحه‌ی وب کمک زیادی کند!</p>
+<p>عموما یک لینک در صفحه‌ی HTML ساختاری برابر با چیزی که در زیر می‌بینید دارد‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a href="http://shahinism.com"<span class="ni">&amp;gt;</span>Shahin's personal weblog<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>همانطور که می‌بینید تگ A مختص ایجاد پیوند می‌باشد‌. همچنین برای تعیین مقصد لینک‌، از پارامتر href استفاده می‌شود. در اینجا لینکی به صورت <a href="http://shahinism.com" target="_blank">Shahin's personal weblog</a> ایجاد کردیم‌! حال فرض کنید که می‌خواهیم، این لینک بر روی یک عکس اعمال شود‌، به طوری که پس از کلیک بر روی عکس‌، کاربر به سمت این وبلاگ راهنمایی شود‌. برای این کار از تگ a و image به صورت زیر استفاده می‌کنیم‌.</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a href="http://shahinism.com"<span class="ni">&amp;gt;&amp;lt;</span>img src="1.jpg" alt="Shahin's Blog" /<span class="ni">&amp;gt;&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>همانطور که می‌بینید‌، با مخلوط کردن این دو تگ به سادگی توانستیم بر روی یک عکس مقدار لینک مورد نظر را اعمال کنیم‌. شاید تا کنون دیده‌اید که بعد از کلید بر روی یک لینک به بخش خاصی از صفحه مثلا به وسط صفحه‌ی حاضر و یا حتی صفحه‌ی دیگر منتقل می‌شوید‌. این‌جاست که با مفهومی به نام Anchor یا لنگر آشنا می‌شویم‌. برای درک بهتر موضوع می‌توانید به <a title="راهنمای مصور لنگر" href="http://www.midinternet.com/5969" target="_blank">این پست</a> خوب در وبلاگ «‌با اینترنت‌» مراجعه کنید‌، که به صورت عملی در محیط وردپرس این مفهوم را آموزش داده‌. و حالا ما قصد داریم‌، که آن را از نظر کد بررسی کنیم‌:</p>
+<p>برای این‌کار ابتدا باید مقصد را معین کنیم‌. لذا به صورت زیر عمل می‌کنیم‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a name="middle"<span class="ni">&amp;gt;&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>همانطور که می‌بینید برای تعیین کردن مقصد به تنهایی از تگ name استفاده کردیم‌. بدیهیست که می‌توانید با دیگر پارامتر‌هایی که تا کنون یاد گرفتید‌، خواص دیگری را به این بخش از صفحه بیافزایید‌! و حالا برای لینک کردن به این بخش از صفحه نیز‌، کافیست به صورت زیر عمل کنیم‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a href="#middle"<span class="ni">&amp;gt;&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>همانطور که دیدید کافیست که جلوی آدرس مقصد‌، اسم مقصد را بعد از یک # قرار دهیم‌. همچنین‌، در صورتی که بخواهید از صفحه‌ی دیگری به این لنگر در صفحه‌ لینک کنید‌، کافیست بعد از نوشتن آدرس صفحه‌، اسم لنگر را بعد از یک # وارد کنید‌.</p>
+<p>حتما تا کنون متوجه شده‌اید که لینک‌ها در صفحه‌های مختلف رنگ‌های مختلفی دارند‌. و در برابر عمل‌های مختلف با تغییر رنگ واکنش نشان می‌دهند‌. برای تعیین این رنگ‌ها می‌توانید از پارمتر‌های Alink, Vlink در تگ body استفاده کنید‌، که به ترتیب تعیین کننده‌ی رنگ لینک‌های رویت شده‌، رنگ لینک‌های رویت نشده می‌باشند‌. نمونه‌ای از استفاده از این پارامتر‌ها را در نمونه‌ی زیر می‌بینید‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>body alink=yellow vlink=Red<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>رنگ‌لینک‌ها در این صفحه زرد تعیین شده و رنگ لینک‌هایی که قبلا رویت شده‌، قرمز می‌شود‌. حال اگر بخواهیم‌ که کاربر این توانایی را داشته باشد که با کلید Tab بین لینک‌ها پیمایش کند‌، می‌توانیم با اختصاص پارامتر tabindex به تگ A و تعیین یک شماره‌، ترتیب پیمایش را معین کنیم‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a href="http://shahinism.com" tabindex=1<span class="ni">&amp;gt;</span>Shahinism<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>a href="http://google.com" tabindex=2<span class="ni">&amp;gt;</span>Google<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>و اگر بخواهیم این قابلیت را به کاربر بدهیم که بتواند با کلید‌های کیبورد لینک مورد نظر را انتخاب کند‌، یا به عبارتی میانبری برای کیبورد تعیین کنیم به صورت زیر از تگ Accesskey استفاده می‌کنیم‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>a href="http://shahinism.com" tabindex=1 accesskey=s<span class="ni">&amp;gt;</span>Shahinism<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>a href="http://google.com" tabindex=2 accesskey=g<span class="ni">&amp;gt;</span>Google<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p>در این کد کاربر می‌تواند با زدن کلید S به سایت شاهینیسم و کلید G به سابت گوگل برود‌. لازم به ذکر است که در مرورگر IE باید برای استفاده از این کلید‌ها از آن‌ها به صورت ترکیبی با کلید Alt استفاده شود‌.</p>
+<p>نکته‌ی آخر این که اگر می‌خواهید برای لینک خود یک لیبل تعیین کنید می‌توانید از تگ title همانطور که برای عکس‌ها در دروس قبل استفاده می‌شد‌، استفاده کنید‌.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900224amwzsh-html-bkhsh-4.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900224amwzsh-html-bkhsh-4.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-05-09 10:11
   </abbr></h5>
   <div class="postContent">
@@ -173,160 +243,6 @@ This is Text3
         
     
         <a href="posts/blog13900212amwzsh-html-bkhsh-3.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900212amwzsh-html-bkhsh-3.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-04-24 16:22
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900204amwzsh-html-bkhsh-2.html">آموزش HTML بخش ۲</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>خوب‌، در <a title="آموزش HTML بخش ۱" href="http://shahinism.com/1390/02/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-html-%d8%a8%d8%ae%d8%b4-%db%b1/" target="_blank"> بخش اول </a> با ساختار کلی یک سند HTML آشنا شدیم‌، و نحوهٔ ایجاد آن را یاد گرفتیم‌. در این بخش می‌خواهیم با امکاناتی که برای <span style="color: #3366ff;"><strong>تایپوگرافی</strong> در HTML قرار داده شده آشنا شویم‌.</span></p>
-<p><span style="color: #ff0000;"><strong>نکته‌: </strong>بعضی از تگ‌های استفاده شده در این آموزش در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از<span style="color: #800000;"> CSS در کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری سریع‌تر CSS -که در آینده قصد بر آن داریم- کند‌.</span></span></p>
-<p></p><h4><strong> انواع تیتر‌ها‌: </strong></h4>
-<p>در HTML تگ‌هایی برای شناساندن <span style="color: #800080;"><strong>تیتر‌ها</strong> به مرور‌گر و در نتیجه نمایش مناسب آن‌ها در نظر گرفته شده است که ساختاری برابر <span style="color: #99cc00;"><strong>&lt;Hn&gt;</strong> دارند‌. در این نوع تگ حرف <span style="color: #ff0000;"><strong>n</strong> برابر با مقداری است که از یک شروع می‌شود‌، و به نسبت بزرگ‌تر شدن این مقدار‌، اندازهٔ تیتر به کوچک‌تر شدن میل می‌کند‌. برای درک بهتر این موضوع سعی می‌کنیم‌، در صفحه‌ای که قبلا ساختیم یک تیتر ایجاد کنیم‌:</span></span></span></p>
-<div class="code"><pre>&amp;lt;html&amp;gt;
-
-&amp;lt;head&amp;gt;
-
-&amp;lt;title&amp;gt;First HTML!&amp;lt;/title&amp;gt;
-
-&amp;lt;/head&amp;gt;
-
-&amp;lt;body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span>&amp;gt;
-
-&amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
-
-&amp;lt;/body&amp;gt;
-
-&amp;lt;/html&amp;gt;
-</pre></div>
-
-
-<p>نتیجهٔ این کد برابر با تصویر زیر می‌باشد‌. همانطور که می‌بینید عبارت Hello World به صورت بزرگ نوشته شده است‌.</p>
-<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-7.png"><img class="aligncenter size-medium wp-image-272" title="html1-7" src="http://shahinism.com/wp-content/uploads/2011/04/html1-7-300x74.png" alt="" width="300" height="74"></a></p>
-<p>برای درک بهتر مقدار n در &lt;Hn&gt; از دو مقدار دیگر <span style="color: #cc99ff;"><strong>&lt;h2&gt;&lt;h3&gt;</strong> به صورت زیر استفاده می‌کنم‌:</span></p>
-<div class="code"><pre>&amp;lt;html&amp;gt;
-
-&amp;lt;head&amp;gt;
-
-&amp;lt;title&amp;gt;First HTML!&amp;lt;/title&amp;gt;
-
-&amp;lt;/head&amp;gt;
-
-&amp;lt;body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span>&amp;gt;
-
-&amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
-
-&amp;lt;h2&amp;gt;This is an HTML Document&amp;lt;/h2&amp;gt;
-
-&amp;lt;h3&amp;gt;Season 2&amp;lt;h3&amp;gt;
-
-&amp;lt;/body&amp;gt;
-
-&amp;lt;/html&amp;gt;
-</pre></div>
-
-
-<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-6.png"><img class="aligncenter size-medium wp-image-271" title="html1-6" src="http://shahinism.com/wp-content/uploads/2011/04/html1-6-300x96.png" alt="" width="300" height="96"></a>همانطور که می‌بینید عبارات نوشته شده با اندازه‌های متفاوت به نمایش در آمده‌اند‌. یکی از مهم‌ترین مزایای استفاده از این تگ‌ها در <strong><span style="color: #3366ff;">Seo</span></strong> است که به موتور‌های جستجو امکان می‌دهد که به راحتی بخش‌های مختلف سند را <span style="color: #ffcc00;"><strong>درک</strong> کنند‌.</span></p>
-<h4>انواع نوشته‌ها‌:</h4>
-
-<ul><li><span style="color: #666699;"><strong>Bold :</strong> برای نوشتن به صورت تو پر یا همان bold از تگ <span style="color: #666699;"><strong>&lt;b&gt;&lt;/b&gt;</strong> استفاده می‌شود‌.</span></span></li>
-</ul><ul><li><span style="color: #008080;"><em>Italic : </em>برای نوشتن به صورت مورب نیز از تگ<span style="color: #339966;"><strong>&lt;i&gt;&lt;/i&gt;</strong> استفاده می‌شود‌.</span></span></li>
-</ul><ul><li><span style="color: #808080;"><del>Strike :</del> برای نوستن به صورت رو خط دار از تگ <strong><span style="color: #ff0000;">&lt;strike&gt;&lt;/strike&gt;</span></strong> استفاده می‌شود‌.</span></li>
-</ul><ul><li><span style="color: #00ccff;"><span style="text-decoration: underline;">Underline : برای نوشتن به صورت زیر خط دار از تگ <strong><span style="color: #00ccff;">&lt;u&gt;&lt;/u&gt;</span></strong> استفاده می‌شود‌.</span></span></li>
-</ul><p>خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی <span style="color: #ff9900;"><strong>زیبا‌تر</strong> کنیم؛ برای این کار از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌:</span></p>
-<div class="code"><pre>&amp;lt;html&amp;gt;
-
-&amp;lt;head&amp;gt;
-
-&amp;lt;title&amp;gt;First HTML!&amp;lt;/title&amp;gt;
-
-&amp;lt;/head&amp;gt;
-
-&amp;lt;body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span>&amp;gt;
-
-&amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;
-
-&amp;lt;h3&amp;gt;This is an HTML Document &amp;lt;i&amp;gt;season <span class="c">#2&amp;lt;/i&amp;gt;&amp;lt;/h3&amp;gt;</span>
-
-This is an free tutorial <span class="k">for</span> &amp;lt;b&amp;gt;HTML&amp;lt;/b&amp;gt; from &amp;lt;b&amp;gt;&amp;lt;u&amp;gt;shahinism.com&amp;lt;/u&amp;gt;&amp;lt;/b&amp;gt;
-
-&amp;lt;/body&amp;gt;
-
-&amp;lt;/html&amp;gt;
-</pre></div>
-
-
-<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-5.png"><img class="aligncenter size-medium wp-image-270" title="html1-5" src="http://shahinism.com/wp-content/uploads/2011/04/html1-5-300x81.png" alt="" width="300" height="81"></a>همانطور که می‌بینید توانستیم با تگ‌هایی ساده یک تایپوگرافی معقول ایجاد کنیم‌. تنها نکته‌ای که در مثال اخیر باید مورد <span style="color: #ff0000;"><strong>توجه</strong> قرار گیرد‌، این قسمت است‌: &lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;همانطور که می‌بینید از دو تگ زیر خط و نوشتهٔ تو پر به صورت همزمان استفاده شده‌. ولی تگ‌ها از <span style="color: #999999;"><strong>آخر به اول بسته شده‌</strong>.</span></span></p>
-<h4>موقعیت نوشته‌:</h4>
-
-<p>برای تعیین موقعیت نوشته‌ها نیز در HTML امکاناتی در نظر گرفته شده‌. که به تعدادی از آن‌ها اشاره می‌کنیم‌:</p>
-<ul><li>Center: برای <span style="color: #cc99ff;"><strong>وسط‌چین</strong> کردن نوشته استفاده می‌شود‌.</span></li>
-</ul><ul><li>&lt;br&gt; : برای <span style="color: #ff6600;"><strong>شکستن</strong> خط و شروع در خط جدید مورد استفاده قرار می‌گیرد‌.</span></li>
-</ul><ul><li>&lt;sub&gt; و &lt;sub&gt; : که برای نمایش <span style="color: #3366ff;"><strong>اندیس و توان</strong> مورد استفاده قرار می‌گیرد‌.</span></li>
-</ul><p>اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند ایجاد کنیم‌:</p>
-<div class="code"><pre>&amp;lt;html&amp;gt;
-
-&amp;lt;head&amp;gt;
-
-&amp;lt;title&amp;gt;First HTML!&amp;lt;/title&amp;gt;
-
-&amp;lt;/head&amp;gt;
-
-&amp;lt;body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span>&amp;gt;
-
-&amp;lt;center&amp;gt;&amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;&amp;lt;/center&amp;gt;
-
-&amp;lt;h3&amp;gt;This is an HTML Document &amp;lt;i&amp;gt;season &amp;lt;sub&amp;gt;#2&amp;lt;/sub&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/h3&amp;gt;
-
-This is an free tutorial <span class="k">for</span> &amp;lt;b&amp;gt;HTML&amp;lt;/b&amp;gt; from: &amp;lt;br&amp;gt;&amp;lt;b&amp;gt;&amp;lt;u&amp;gt;shahinism.com&amp;lt;/u&amp;gt;&amp;lt;/b&amp;gt;
-
-&amp;lt;/body&amp;gt;
-
-&amp;lt;/html&amp;gt;
-</pre></div>
-
-
-<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-4.png"><img class="aligncenter size-medium wp-image-269" title="html1-4" src="http://shahinism.com/wp-content/uploads/2011/04/html1-4-300x62.png" alt="" width="300" height="62"></a></p>
-<p>همانطور که در تصویر زیر می‌بینیم <span style="color: #0d96f1;"><strong>#</strong><span style="color: #00ccff;"><strong>۲</strong>مقداری به پایین منتقل شده‌، هم‌چنین آدرس سایت نیز با توجه به اینکه در ادامهٔ خط نوشته شده‌، ولی پایین‌تر آمده‌. واضح‌ترین تغییر نیز در این مثال عبارت Hello World است که به وسط صفحه تغییر مکان داده‌.</span></span></p>
-<h4>تغییر قلم‌:</h4>
-
-<p>برای تغییر قلم نوشته <span style="color: #666699;"><strong>(فونت‌)</strong> نیز می‌توانید از تگ فونت استفاده کنید‌. نمونه‌ای از استفاده از این قلم را در کد زیر ببینید‌:</span></p>
-<div class="code"><pre>&amp;lt;html&amp;gt;
-
-&amp;lt;title&amp;gt;Font Change&amp;lt;/title&amp;gt;
-
-&amp;lt;/html&amp;gt;
-
-&amp;lt;body&amp;gt;
-
-Hi my friends &amp;lt;font <span class="nv">face</span><span class="o">=</span><span class="s2">"tahoma"</span> <span class="nv">size</span><span class="o">=</span>24 <span class="nv">color</span><span class="o">=</span>red&amp;gt;in this page we have 2&amp;lt;/font&amp;gt; different font.
-
-&amp;lt;/body&amp;gt;
-
-&amp;lt;/html&amp;gt;
-</pre></div>
-
-
-<p>نتیجه‌ی مثال زیر را در تصویر زیر می‌بینیم‌:</p>
-<p><a href="wp-content/uploads/2011/04/html1-3.png"><img class="aligncenter" title="html1-3" src="wp-content/uploads/2011/04/html1-3-300x39.png" alt="" width="300" height="39"></a></p>
-<p>لازم به <span style="color: #ff0000;"><strong>ذکر</strong> است‌، مرور‌گر‌ها به صورت <span style="color: #3366ff;"><strong>پیش‌فرض</strong> فونتی را برای نمایش نوشته در نظر می‌گیرند که با مراجعه به بخش تنظیمات هر مرورگر قابل <span style="color: #ffcc00;">تغییر است‌. فونت تعیین شده در کد بالا در صورتی که روی سیستم کاربر موجود باشد‌، نمایش داده می‌شود‌، در غیر این صورت از فونت پیش‌فرض استفاده می‌شود‌. در بخش آموزش CSS روشی از CSS3 را می‌آموزیم که این <span style="color: #99cc00;"><strong>نقظه ضعف</strong> را پوشش می‌دهد‌.</span></span></span></span></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900204amwzsh-html-bkhsh-2.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900204amwzsh-html-bkhsh-2.html">Comments</a>
     
 
         

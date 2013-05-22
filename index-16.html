@@ -35,6 +35,38 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-05-26 16:29
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910306skht-ykh-iso-z-dyskh-dr-dw-swt.html">ساخت یک iso از دیسک در دو سوت‌!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>این لینوکس دوست داشتنی‌! تا به الان به خاطر ندارم که محتاج این شده باشم که از دیسکم ایمیج بسازم‌! کلا آدمی بوده‌ام که با حجم کم هارد‌، CDها رفیقم بودند و الان هارد‌ حجیمم‌! اما قرار است برای یکی از دوستانم که جدیدا عاشق لینوکس شده و netBook دارد لینوکس نصب کنم‌! خوب این یعنی CDRom پر‌. دانلود یک iso هم در این بی حجمی اینترنت خیلی دردناک می‌شود‌. می‌ماند ساختن یک iso از روی CD لینوکسی که قبلاها تهیه کرده‌ایم‌.<a title="جستجو در گوگل برای یافتن روش" href="https://www.google.com/search?q=how+to+make+an+iso+from+cd+in+linux&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a" target="_blank"> و گوگل به دادمان می‌رسد‌!</a> آن هم در دو سوت:
+سوت اول‌:</p>
+<p>مطمئن می‌شویم که CD‌مان Mount شده نباشد‌. می‌زنیم mount و اگر خبری از CDمان بود با umount ترتیبش را می‌دهیم‌.</p>
+<p>سوت دوم:</p>
+<div class="code"><pre>dd <span class="k">if</span><span class="o">=</span>/dev/cdrom <span class="nv">of</span><span class="o">=</span>~/myDisk.iso
+</pre></div>
+
+
+<p>که مقدار آرگومان if آدرس mediaی مورد نظر را نشان می‌دهد و of آدرسی که می‌خواهیم isoیمان در آن نوشته شود‌.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910306skht-ykh-iso-z-dyskh-dr-dw-swt.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910306skht-ykh-iso-z-dyskh-dr-dw-swt.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-05-25 17:37
   </abbr></h5>
   <div class="postContent">
@@ -108,39 +140,6 @@ tar -tzf 1.tar.gz
         
     
         <a href="posts/blog13910126mshhdh-lyst-fylhy-mwjwd-dr-ykh-tar-b.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910126mshhdh-lyst-fylhy-mwjwd-dr-ykh-tar-b.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-04-09 15:51
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html">یادداشتی در مورد درمان آلزایمر Alsa‌!</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>قبلا‌ها که در KDE و خیل عظیم ابزار‌هایش در حال غرق شدن بودم‌، اصلا در مخیله‌ام هم نمی‌گنجید که چطور این تنظیمات صدا ذخیره می‌شوند‌، و توسط کار‌بر‌ها قابل بازیابی است‌. بعد‌ها هم که آمدم Awesome و یک قدم نزدیک‌تر شدم به سیستم و احساس نیاز کردم به دانستن همچین چیزی‌، با دستور alsamixer کانال‌های صدایم را تنظیم می‌کردم و با زدن alsactl با کاربر ریشه‌، به قول خودم تنظیمات را قابل بازیابی می‌کردم (‌*هنوز هم نمی‌دانم چرا قبلا می‌شد و یا چرا الان نمی‌شود‌! ;-))
-خوب دیگر‌، خط بالا دردم را گفتم‌، و خوشبختانه ویکی آرچ طبق معمول به دادم رسید و دو دستور پایین شد چاره‌ی کارم !</p>
-<div class="code"><pre>alsactl -f /var/lib/alsa/asount.state store
-
-alsactl -f /var/lib/alsa/asount.state restore
-</pre></div>
-
-
-<p>خوب حالا یعنی چه؟ اولی را که اجرا کنی یک فایل حاوی تنظیمات فعلی Alsa‌تان در شاخه‌ی مذکور می‌سازد که طبعا در ادامه توسط خود alsactl قابل خواندن است‌. در خط بعد هم به alsactl می‌گوییم که آن فایل که ساختی را بخوان‌! خوب ما هم که تنبل‌تر از این حرف‌هاییم خط دوم را به فایل rc.local (‌برای اسلکور موجود در شاخه ‏‎/etc/rc.d و برای آرچ در همان etc) کپی می‌کنیم تا دیگر خودش بداند و خودش.</p>
-<p>*: ممنون می‌شوم اگر می‌دانید چطور شد که اینطور شد‌، به ما هم یاد دهید ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html">Comments</a>
     
 
         

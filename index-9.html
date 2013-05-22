@@ -35,6 +35,100 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-09-26 12:38
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>مساله این‌جاست که وقتی پای کامپیوتر می‌نشینم‌، حتی اگر کاری نداشته باشم‌، یادم نمی‌ماند که مسنجرم را روشن کنم‌. و خوب از طرفی دوست دارم که در صورت امکان‌، با رفقای اینترنتی و غیر اینترنتی‌ام در ارتباط باشم‌. خوب حل این مشکل ساده است‌. کافی است میز‌کارت را تنظیم کنی که با روشن شدنش‌، Pidgin را هم اجرا کند‌. ولی خوب این بالقوه مشکل دیگری را می‌آفریند. کدام مشکل؟ همین که گاها موقع کار کردن‌، یکی از دوستانت می‌پرد وسط و چیزی می‌گوید که کوچکترین پیامدش حواس پرتی است و این اصلا نمی‌تواند کمک خوبی برای بالا بردن بهره‌وری شود.
+راه حل کوتاه در این زمینه استفاده از Status‌های مسنجر است‌. جدای از این که Status‌ها در همهٔ مسنجر‌ها همانطور که باید نشان داده نمی‌شوند‌، چه تضمینی وجود دارد که من حواس‌پرت و البته تنبل (gsh سابق D:)، یادم بماند و حالش را داشته باشم که در هر وضعیتی Status مناسب را انتخاب کنم‌؟</p>
+<p>بعد از کمی جستجو‌، با <a title="dbus official webpage" href="http://dbus.freedesktop.org/" target="_blank">DBus</a> آشنا شدم و البته یادم آمد که خیلی وقت پیش‌،<a title="jadi dbus" href="http://jadi.net/2011/07/linux-chera-command-line/" target="_blank"> جادی عزیز‌</a>، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به <a title="dbus-python turorila" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html" target="_blank">راهنمای</a> Freedesktop بسنده کرد‌.)</p>
+<p>مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به مخاطب آن‌ور خط بدهد‌.</p>
+<p>با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.</p>
+<p>اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام ارسال می‌شود‌.</p>
+<p>دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.</p>
+<p>برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:</p>
+<p>[python]</p>
+<p>import sys</p>
+<p>import dbus</p>
+<p>from PyQt4.QtGui import QApplication</p>
+<p>from dbus.mainloop.qt import DBusQtMainLoop</p>
+<p>[/python]</p>
+<p>قرار بر این بود که اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم:</p>
+<p>[python]</p>
+<p>bus_loop = DBusQtMainLoop(set_as_default=True)</p>
+<p>[/python]</p>
+<p>کار با حلقهٔ اصلی هنوز تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌.</p>
+<p>[python]</p>
+<p>def connect_dbus(text):</p>
+<p>global answer</p>
+<p>answer = text</p>
+<p>bus = dbus.SessionBus()</p>
+<p>bus.add_signal_receiver(pidgin_control_func,</p>
+<p>dbus_interface="im.pidgin.purple.PurpleInterface",</p>
+<p>signal_name="ReceivedImMsg")</p>
+<p>[/python]</p>
+<p>اولین سوال در این تابع‌، این است که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به سوالی پاسخ می‌دهند‌:</p>
+<p>۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ: pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت)</p>
+<p>۲- روی DBus به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای معرفی استفاده می‌کنیم‌.</p>
+<p>۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط Pidgin شناسایی کردیم ;-)</p>
+<p>در این تابع ما از فراخوان می‌خواهیم که آرگومانی را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد.</p>
+<p>نوبت به نوشتن تابع دوم می‌رسد‌:</p>
+<p>[python]</p>
+<p>def pidgin_control_func(account, sender, message, conversation, flags):</p>
+<p>bus = dbus.SessionBus()</p>
+<p>obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")</p>
+<p>purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")</p>
+<p>if purple.PurpleAccountGetUsername(account) != sender:</p>
+<p>purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)</p>
+<p>[/python]</p>
+<p>خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در ادامه به سه سوال دیگر جواب می‌دهیم:</p>
+<p>۱- روی DBus به کدام برنامه گوش کنم؟ پاسخ im.pigin.purple.PurpleService</p>
+<p>۲- آدرسش کجاست؟ پاسخ: ‎/im/pidgin/purple/PurpleObject</p>
+<p>در واقع با پاسخ به این دو سوال‌، سعی به ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌.</p>
+<p>۳- کدام رابط از آبجکت ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface</p>
+<p>و خوب حالا تنها برای ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌ و به دو سوال پاسخ دهیم:</p>
+<p>۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از شیع‌مان بخواهم که آدرسش را پیدا کند ;-)</p>
+<p>۲- چه بگویم؟ پاسخ answer‌‌، همان متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌.</p>
+<p>البته من در تابع یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا عبد ادامه خواهد داشت ;-)</p>
+<p>دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:</p>
+<p>[python]</p>
+<p>app = QApplication([])</p>
+<p>connect_dbus(message)</p>
+<p>app.exec_()</p>
+<p>[/python]</p>
+<p>برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل از ساختن شیع app کمک می‌گیریم:</p>
+<p>[python]</p>
+<p>import signal</p>
+<p>signal.signal(signal.SIGINT, signal.SIG_DFL)</p>
+<p>[/python]</p>
+<p>کار این تابع این است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه کند‌! یعنی بزند بترکاند برنامه‌مان را ;-)</p>
+<p>می‌توانید نسخهٔ کامل اسکریپت را از<a title="Download answering machine" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py" target="_blank"> این لینک </a>دانلود کنید و به صورت زیر اجرایش کنید:</p>
+<div class="code"><pre>python answering_machine.py ANSWER_MESSAGE
+</pre></div>
+
+
+<p>اما خوب درست است که این اسکریپت تقریبا مشکل‌مان را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این اصلا حال نمی‌دهد‌. این است که آن را با <a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank">PyPomo</a> قاطی می‌کنم‌ (آخرین نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-)</p>
+<p><strong>پی‌نوشت۱: </strong>متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش باشم‌!</p>
+<p><strong>پی‌نوشت۲:</strong> می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌، زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-09-20 11:11
   </abbr></h5>
   <div class="postContent">
@@ -119,47 +213,6 @@ git clone https://github.com/jplehmann/coursera.git
         
     
         <a href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-09-10 08:04
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">چطور نمای oxygen را برای GTK و Qt در هر مدیر‌پنجره‌ای داشته باشیم‌؟</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>تا زمانی که روی KDE بودم زیاد به قیافهٔ پنجره‌های GTKایم (مثل فایرفاکس یا Pidgin) اهمیت نمی‌دادم‌. خود میزکار آن‌قدر چشم نواز بود که این‌ها اصلا به چشم نمی‌آمد (البته می‌دانم مشکل با Gtk-qt-engine حل می‌شد‌، ولی باگ‌هایش در نرم‌افزاری مثل Libreoffice درد آور بود!) وقتی هم که کلا میزکارم را به <a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/" target="_blank">Awesome</a> یا این اواخر <a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank">i3</a> تغییر دادم‌، آن‌قدر‌ها در گیر و دار پوستهٔ GTK نبودم‌. چون چشمم به قدر کافی به آن‌ها عادت کرده بود‌.
-چشم پوشی از حل این مساله هم‌چنان ادامه داشت تا این که بعد از آپگرید به نسخهٔ کارنت اسلکور (که اگر امتحانش نکنید‌، چیز‌های خیلی خیلی خوبی را از دست داده‌اید‌) نکته کمی عجیب‌تر شد‌! تمامی پنجره‌ها (اعم از GTK و Qt) در KDE با نمای Qt نمایش داده می‌شدند (آره هنوز KDE نصب می‌کنم‌، چون کس دیگه هم از کامپیوترم استفاده می‌کنه ;-)) ولی در i3 حتی پنجره‌های Qt هم به مزخرفی قبل بودند‌. دیگر وقت آن شد که مساله را حل کنیم‌!</p>
-<p><a title="Uniform_Look_for_Qt_and_GTK_Applications" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B" target="_blank">این مدخل</a> ویکی آرچ‌، منبع خیلی کاملی برای این مساله است‌! اما خلاصه‌اش را به همراه چند نکتهٔ ظریف می‌توانید در ادامه بخوانید‌:</p>
-<p></p><h5>Oxygen برای GTK:</h5>
-<p>از آن‌جایی که<a title="gtk2 styles" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#GTK2_styles" target="_blank"> ابزار‌های زیادی </a>برای این کار وجود دارد‌ (حتی می‌توان این کار را<a title="manual gtk2 style" href="https://wiki.archlinux.org/index.php/GTK%2B#GTK.2B_2.x" target="_blank"> به صورت دستی</a> انجام داد) کافیست یکی از آن‌ها را نصب و اجرا کرده و تم oxygen را انتخاب کنید ;-) مثلا در اسلکور من از <a title="gtk-chtheme official page" href="http://plasmasturm.org/code/gtk-chtheme/" target="_blank">gtk-chtheme</a> استفاده کردم که اسلکبیلدش هم موجوده D:</p>
-<h5>oxygen در Qt:</h5>
-
-<p>حقیقتش خیلی وقت بود که بعضی چیز‌ها در نمای Qt اذیتم می‌کرد‌. مثلا فونت ریز این بالون‌هایی که در Systemtry برای اخطار ظاهر می‌شوند (برای دیدن ترجمهٔ لغاتم در mdic زیاد با آن‌ها روبرو می‌شوم) با این چشم ضعیف و رزولوشن کم مانیتور‌، جدا خسته کننده می‌شد‌! این بود که دیروز خیلی اتفاقی دستور زیر را پیدا کردم:</p>
-<div class="code"><pre>qtconfig
-</pre></div>
-
-
-<p>(و اصلا همین دستور زمینهٔ حل کل مشکلات مطرح شده در این پست را فراهم کرد!) خوب محتویات دستور که تماما مهیاست‌. اما احتمال دارد مثل من‌، Oxygen جزء تم‌های qtconfig‌تان نباشد‌. و دقیقا این همان دلیلی است که جدیدا در اسلکور نمای Qt ناجور شده بود‌. برای حل این مشکل کافیست آدرس پوشهٔ Plugin بستهٔ KDE را به متغیر QT_PLUGIN_PATH (سراسری) نسبت دهیم‌! یعنی در نسخهٔ ۶۴ بیتی اسلکور باید همچین خطی را به فایل ‎/etc/profile اضافه کنیم:</p>
-<div class="code"><pre><span class="nb">export </span><span class="nv">QT_PLUGIN_PATH</span><span class="o">=</span>/usr/lib64/kde4/plugins/
-</pre></div>
-
-
-<p>احتمالا بعد از یک لاگوت/لاگین‌، این مشکل هم حل شده ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">Comments</a>
     
 
         

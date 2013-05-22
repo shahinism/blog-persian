@@ -35,6 +35,249 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-11-24 15:07
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>همانطور که می‌دانید‌، چند ماهی می‌شود که از i3 استفاده می‌کنیم‌، ولی در i3bar به جای i3status (به دلیل سادگی بیش از اندازه‌اش D:) از Conky بهره می‌گیرم. کانکی اطلاعات خیلی خوبی ارائه می‌دهد و کار‌های جالبی هم می‌توان روی خروجی‌اش انجام داد‌. ولی وقتی قرار است آن را به i3status بخورانم‌، باید از آپشن shell روی Conky استفاده کنم که دیگر خبری از آن جینگولک بازی‌های معروف Conky نیست‌. همه چیز خیلی ساده می‌شود. تصویر زیر وضعیت فعلی i3barام را نشان می‌دهد‌:</p>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"><img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"></a> برای دیدن در اندازهٔ بزرگ کلیک کنید</p>
+<p>و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:</p>
+<p>پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.</p>
+<p>بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):</p>
+<p></p><ul><li>زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.</li>
+    <li>صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)</li>
+    <li>مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.</li>
+    <li>سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این <a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank">آموزش</a> آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).</li>
+    <li>وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.</li>
+    <li>وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در <a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank">این‌جا</a> دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)</li>
+</ul><p>خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)</p>
+<p>اسکریپت حاضر است و از <a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank">این‌جا</a> قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:</p>
+<h5>تاریخ</h5>
+
+<p>خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:</p>
+<div class="code"><pre><span class="nv">date</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">"%a %Y.%m.%d %H:%M"</span><span class="k">)</span>
+</pre></div>
+
+
+<p>نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!</p>
+<h5>اطلاعات شبکه</h5>
+
+<p>اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:</p>
+<div class="code"><pre><span class="k">function </span>getNetBytes
+
+<span class="o">{</span>
+
+<span class="nv">Brecived</span><span class="o">=</span><span class="k">$(</span>cat <span class="nv">$netInterface</span> | grep <span class="s2">"eth0"</span> | awk <span class="s1">'{print($2)}'</span><span class="k">)</span>
+
+<span class="nv">Btransmited</span><span class="o">=</span><span class="k">$(</span>cat <span class="nv">$netInterface</span> | grep <span class="s2">"eth0"</span> | awk <span class="s1">'{print($10)}'</span><span class="k">)</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<p>متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)</p>
+<p>حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:</p>
+<div class="code"><pre><span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> | awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">upSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Btransmited</span><span class="o">-</span><span class="nv">$oldBTransmited</span> <span class="k">))</span> | awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">traffic</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"$Brecived $Btransmited"</span> | awk <span class="s1">'{printf( "%.2f", ($1+$2)/1024/1024 )}'</span><span class="k">)</span>
+</pre></div>
+
+
+<p>طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)</p>
+<p>نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!</p>
+<h5>وضعیت RAM</h5>
+
+<p>گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:</p>
+<div class="code"><pre><span class="k">function </span>getRamInfo
+
+<span class="o">{</span>
+
+<span class="nv">totalMemory</span><span class="o">=</span><span class="k">$(</span>free -m | grep <span class="s2">"Mem:"</span> | awk <span class="s1">'{printf( "%.2f", $2/1024)}'</span> <span class="k">)</span>
+
+<span class="nv">usedMemory</span><span class="o">=</span><span class="k">$(</span>free -m | grep <span class="s2">"buffers/cache"</span> | awk <span class="s1">'{printf( "%.2f", $3/1024)}'</span><span class="k">)</span>
+
+<span class="nv">memInPercent</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"$totalMemory $usedMemory"</span> | awk <span class="s1">'{printf( "%.0f", $2/($1/100)) }'</span><span class="k">)</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<p>فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!</p>
+<h5>وضعیت CPU</h5>
+
+<p>خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:</p>
+<div class="code"><pre><span class="k">function </span>getCpuInfo<span class="o">()</span>
+
+<span class="o">{</span>
+
+<span class="nv">CORE</span><span class="o">=</span><span class="nv">$1</span>
+
+<span class="nv">addr</span><span class="o">=</span><span class="s2">"^cpu${CORE}"</span>
+
+<span class="nb">local </span><span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat | grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c"># Get the total CPU statistics.</span>
+
+<span class="nb">unset </span>CPU<span class="o">[</span>0<span class="o">]</span> <span class="c"># Discard the "cpu" prefix.</span>
+
+<span class="nb">local </span><span class="nv">IDLE</span><span class="o">=</span><span class="k">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="k">}</span> <span class="c"># Get the idle CPU time.</span>
+
+
+
+<span class="c"># Calculate the total CPU time.</span>
+
+<span class="nb">local </span><span class="nv">TOTAL</span><span class="o">=</span>0
+
+<span class="k">for </span>VALUE in <span class="s2">"${CPU[@]}"</span>; <span class="k">do</span>
+
+<span class="nb">let</span> <span class="s2">"TOTAL=$TOTAL+$VALUE"</span>
+
+<span class="k">done</span>
+
+
+
+<span class="c"># Catch current cores last state</span>
+
+<span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+
+
+
+<span class="c"># Calculate the CPU usage since we last checked.</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_IDLE=$IDLE-$PREV_IDLE"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"</span>
+
+
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"$TOTAL"</span>
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"$IDLE"</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<p>برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.</p>
+<p>با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:</p>
+<div class="code"><pre><span class="nb">local </span><span class="nv">TOTAL</span><span class="o">=</span>0
+
+<span class="k">for </span>VALUE in <span class="s2">"${CPU[@]}"</span>; <span class="k">do</span>
+
+<span class="nb">let</span> <span class="s2">"TOTAL=$TOTAL+$VALUE"</span>
+
+<span class="k">done</span>
+</pre></div>
+
+
+<p>ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:</p>
+<div class="code"><pre><span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"$TOTAL"</span>
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"$IDLE"</span>
+</pre></div>
+
+
+<p>این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:</p>
+<div class="code"><pre><span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+</pre></div>
+
+
+<p>حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:</p>
+<div class="code"><pre><span class="nb">let</span> <span class="s2">"DIFF_IDLE=$IDLE-$PREV_IDLE"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"</span>
+</pre></div>
+
+
+<p>چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)</p>
+<h5>پایان کار</h5>
+
+<div class="code"><pre><span class="k">while </span><span class="nb">true</span>;
+
+<span class="k">do</span>
+
+getNetBytes
+
+getRamInfo
+
+<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span>0; COUNT &amp;lt; <span class="nv">$CORES</span>; COUNT++ <span class="o">))</span>;<span class="k">do</span>
+
+getCpuInfo <span class="nv">$COUNT</span>
+
+<span class="nb">eval</span> <span class="se">\c</span>pu<span class="nv">$COUNT</span><span class="o">=</span><span class="nv">$DIFF_USAGE</span>
+
+<span class="k">done</span>
+
+
+
+<span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> | awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">upSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Btransmited</span><span class="o">-</span><span class="nv">$oldBTransmited</span> <span class="k">))</span> | awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">traffic</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"$Brecived $Btransmited"</span> | awk <span class="s1">'{printf( "%.2f", ($1+$2)/1024/1024 )}'</span><span class="k">)</span>
+
+
+
+<span class="nb">printf</span> <span class="se">\</span>
+
+<span class="s2">"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"</span> <span class="se">\</span>
+
+<span class="s2">"$cpu0"</span> <span class="s2">"$cpu1"</span> <span class="s2">"$cpu2"</span> <span class="s2">"$cpu3"</span> <span class="s2">"$usedMemory"</span> <span class="se">\</span>
+
+<span class="s2">"$totalMemory"</span> <span class="s2">"$memInPercent"</span> <span class="s2">"$dlSpeed"</span> <span class="se">\</span>
+
+<span class="s2">"$upSpeed"</span> <span class="s2">"$traffic"</span> <span class="s2">"$date"</span>
+
+<span class="nv">oldBRecived</span><span class="o">=</span><span class="nv">$Brecived</span>
+
+<span class="nv">oldBTransmited</span><span class="o">=</span><span class="nv">$Btransmited</span>
+
+sleep 1
+
+<span class="k">done</span>
+</pre></div>
+
+
+<p>حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.</p>
+<p>همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.</p>
+<p>حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:</p>
+<div class="code"><pre>CPU: 48,3,40,3 | RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 8,4,76,4 | RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+
+CPU: 24,5,64,6 | RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
+</pre></div>
+
+
+<p>می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)</p>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"><img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"></a> برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-11-22 14:31
   </abbr></h5>
   <div class="postContent">
@@ -193,39 +436,6 @@ print char,
         
     
         <a href="posts/blog13910825wqty-dzdy-mykhnmnyd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910825wqty-dzdy-mykhnmnyd.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-11-09 00:11
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910819dstn.html">داستان…</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>یکی از قشنگ‌ترین فانتزی‌هایی که از دوران کودکی‌ام دارم‌، اتاق تقریبا کوچک ولی با سقفی مرتفع است که دور تا دورش به جای دیوار آجری‌، کتاب‌خانه‌ای مملو از کتاب است‌. یک جایی هم آن گوشه موشه‌ها جایی برای یک میز و صندلی راحت و اگر شد یک چراغ مطالعه که آدم بتواند مثل بچهٔ آدم ماتحتش را بنشاند رویش و فارغ از بلبشوی فضای بیرون میان داستان‌های کتابش سیر کند‌. البته که اگر یک جام نوشیدنی<strong>*</strong> هم در کنار دست آدم باشد که گاها گلویی تر کند‌، فانتزی کامل‌تر می‌شود‌.
-ولی خوب از آن‌جایی که در خانواده‌ای بزرگ شده‌ام که کتاب غیر مدرسه‌ای کالای لوکس حساب می‌شود و شاید هم چیزی که آن موقع‌ها می‌خواندند و بعد از یک تاریخ خیلی معروفی خواننده‌هایشان را صف به صف می‌فرستادند به دنیای تخیلی کتاب‌هایشان‌، تعداد کتاب‌هایی که مثل بچهٔ آدم نشسته باشم تا تهش را بخوانم و غرق دنیای شخصیت‌هایش شوم‌، به زور به ۲۰ تا می‌رسد‌.</p>
-<p>حقیقتش آتش این عشق به کتاب خواندن هر چند دیگر داشت به دست فراموشی سپرده می‌شد‌، به لطف خدا بیامرز گوگل ریدر و اسطوره‌هایش‌، در چند سال اخیر خاموش نشد و فعلا سر جایش است‌. اما چه کنیم که برای شخصی مثل من که گاها هشتش با نهش قاطی می‌شود تا همین هزینهٔ ماهی یک بار اینترنتش را جور کند‌، تحقق همهٔ فانتزی‌های دوران کودکی‌، حتی اگر مجموعشان یکی دو تا باشد‌، کم کم به آرزو تبدیل می‌شود‌. خصوصا که آدم بد‌های دنیا از بین سه میلیارد و خرده‌ای جمعیت روی زمین‌، چشمشان را به پشت سفید هفتاد و اندی ایرانی دوخته‌اند و قیمت‌هایشان را دم به دم بالا می‌برند ;-)</p>
-<p>این مقدمهٔ بی‌نمک بلند را گفتم تا به این‌جا برسم که خوشبختانه جدای از اینترنت بی‌مزه‌مان که شده میدان ارابه کشی یک سری فرماندهٔ در حسرت جنگ مانده و باقی عرصه‌های قلم و هنر و سخن‌مان هم شده ضمیمهٔ دستمالی رهبران آن فرماندهان ذکر شده‌، گاها آدم چیز‌هایی می‌بیند که جدا امیدوار کننده است‌.</p>
-<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/dastanmag.jpg"><img title="عکس روی جلد نسخهٔ آبان ماه مجلهٔ داستان" src="http://dl.dropbox.com/u/25017694/Blog-photos/dastanmag.jpg" alt="عکس روی جلد نسخهٔ آبان ماه مجلهٔ داستان" width="150" height="223"></a> عکس روی جلد نسخهٔ آبان ماه مجلهٔ داستان</p>
-<p>چند ماه پیش (دقیقا تیر ماه) بود که سر گذرم از یک مطبوعاتی‌، چشمم به مجله‌ای خوشدست و جمع و جور به اسم «‌<strong>داستان‌</strong>»<a title="وبلاگ مجلهٔ داستان روی بلاگفا" href="http://dastanmag.blogfa.com/" target="_blank">+</a> افتاد که به بهانهٔ هدیه برای خواهرم یک نسخه‌اش را خریدم‌. مجله زیر مجموعهٔ مجلات همشهری است.</p>
-<p>خط اصلی حرف‌هایش را داستان‌، کتاب و نویسنده‌ها تشکیل می‌دهند‌. داستان‌هایی هر چند کوچک ولی جدا خواندنی‌. کتاب‌هایی که گاها آرزوی پیدا کردن یک نسخه‌شان به دلت می‌ماند‌. نویسنده‌هایی که بعضا با تمام آماتور بوندنشان‌، آن‌قدر شیرین و دوست داشتنی می‌نویسند که هرگز دوست نداری به ته نوشته‌شان برسی‌.</p>
-<p>از طرفی دیگر طراحی صفحات مجله‌، کیفیت چاپش‌ و حتی عکس‌های خوشگلی که آن‌قدر زیبا بین متن‌ها جا ساز شده‌اند که آدم را یاد موزه می‌اندازند‌، می‌تواند عطش تهیهٔ آخرین نسخهٔ این مجله را برای منی که همچون فانتزی بلند بالایی منباب کتاب و کتاب‌خوانی دارم‌، چندین و چند برابر کند‌.</p>
-<p>مخلص کلام این که حیفم آمد همچین مجله‌ای را بخوانم و تجربهٔ شیرین خواندنش را با شما در میان نگذارم‌.</p>
-<p><strong>*:</strong> قصهٔ آن جام کمی طول و دراز است‌. خلاصه‌اش این که یکی دوست دارد با سیگار کتاب بخواند‌. یکی با ماگ قهوه‌. یکی هم با جام آب انگور گندیده ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910819dstn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910819dstn.html">Comments</a>
     
 
         

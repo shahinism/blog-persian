@@ -35,6 +35,47 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-12-02 13:16
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>خیلی وقت بود که دنبال این بودم که بفهمم چطوری خروجی ls رو توی bash رنگی کنم و از این حالت مرده‌ی سادش در بیارم‌. خوبی این رنگ‌بندی موقعی معلوم می‌شه که توی دایرکتوری‌های تو در تو گم می‌شی‌. خلاصه یه پست از <a title="pyroozan on Googleplus" href="https://plus.google.com/u/0/105766466440674771215/about" target="_blank">پیروزان</a> عزیز امروز بانی خیر شد و من رو مجبور کرد که به سمت حل این مشکل برم و چیزایی یاد بگیرم‌. البته ناگفته نمونه که پیروزان هم چیز جالبی معرفی کرد که در ادامه‌ی مطلب توضیح استفاده ازش رو می‌دم‌.</p>
+<p>برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:</p>
+<div class="code"><pre>ls --color
+</pre></div>
+
+
+<p>که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:</p>
+<div class="code"><pre><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
+</pre></div>
+
+
+<p>این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این <a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank">کانال git</a> منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:</p>
+<div class="code"><pre><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
+</pre></div>
+
+
+<p>نمونه‌ای از خروجی این فایل به صورت زیره‌:</p>
+<p><img class="aligncenter" title="LS_COLOR" src="https://a248.e.akamai.net/assets.github.com/img/e235af63c2be86cf4e4167b7f098e28192b63488/687474703a2f2f646576656c2e6a6170682e73652f4c535f434f4c4f52532f4c535f434f4c4f52532e706e67" alt="نمونه‌ای از خروجی فایل LS_COLOR" width="238" height="136"></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-12-02 08:05
   </abbr></h5>
   <div class="postContent">
@@ -132,83 +173,6 @@
         
     
         <a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-12-01 08:01
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
-ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.</p>
-<p></p><h4>دستور mysqladmin برای تغییر کلمه عبور ریشه</h4>
-<p>اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqlamin -u root pasword NEWPASSWORD
-</pre></div>
-
-
-<p>به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» oldpassword» password newpass
-</pre></div>
-
-
-<p>برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
-</pre></div>
-
-
-<h4>تغییر رمز عبور MySQL برای دیگر کاربران</h4>
-
-<p>برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u vivek -p oldpassword password newpass
-</pre></div>
-
-
-<h4>تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql</h4>
-
-<p>این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:</p>
-<p>۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
-</pre></div>
-
-
-<p>۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&gt; ‎ وارد کنید‌):</p>
-<div class="code"><pre>mysql&amp;gt; use mysql;
-</pre></div>
-
-
-<p>۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:</p>
-<div class="code"><pre>mysql&amp;gt; update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’;
-</pre></div>
-
-
-<p>۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:</p>
-<div class="code"><pre>mysql&amp;gt; flush privileges;
-
-mysql&amp;gt; quit
-</pre></div>
-
-
-<p>از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.</p>
-<p style="text-align: center;"><a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank">منبع</a></p>
-
-<p></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">Comments</a>
     
 
         

@@ -35,6 +35,64 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-03-22 10:58
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910103adrsh-r-dr-kht-frmn-bookmark-khnyd.html">آدرس‌ها را در خط فرمان Bookmark کنید!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>ممکن است برای شما هم پیش آمده باشد که در حین کار در خط فرمان بار‌ها و بار‌ها در بین دایرکتوری‌هایی که آدرس‌های طولانی دارند‌، جابجا شده و از این کار تکراری خسته شده باشید‌. درست است که پوسته‌های فرمان بخصوص ZSH امکانات جالبی برای راحتی کار‌مان در این زمینه فراهم می‌کنند‌، اما باز هم آن‌قدر که باید کافی نیست‌.
+چند روز پیش که از روی بیکاری (!) مشغول گشت و گذار در پروژه‌های github بودم، پروژه‌ای به اسم <a title="bashmarks page" href="https://github.com/huyng/bashmarks" target="_blank">bashmarks</a> نظر مرا به خود جلب کرد‌. با این ابزار دیگر کافیست مثلا برای دسترسی به آدرس ‎/var/www/htdocs/wordpress که محل نصب وردپرس روی هاست لوکالم است تایپ کنم g wordpress!</p>
+<p>نهایت راحتی‌، اینطور نیست؟ برای نصبش کافیست دستورات زیر را به ترتیب وارد کنید‌:</p>
+<div class="code"><pre>git clone https://github.com/huyng/bashmarks
+
+<span class="nb">cd </span>bashmarks
+
+make install
+</pre></div>
+
+
+<p>و خط زیر را به فایل ‎.bashrc یا در صورت استفاده از ZSH به ‎.zshrc اضافه کنید:</p>
+<div class="code"><pre><span class="nb">source</span> ~/.local/bin/bashmarks.sh
+</pre></div>
+
+
+<p>و در آخر تایپ کنید‌:</p>
+<p><strong>ویرایش</strong>: برای ZSH تایپ کنید‌:</p>
+<div class="code"><pre><span class="nb">source</span> ~/.zshrc
+</pre></div>
+
+
+<p>و برای Bash:</p>
+<div class="code"><pre><span class="nb">source</span> ~/.bashrc
+</pre></div>
+
+
+<p>و کار تمام است‌. حالا کافیست به دایرکتوری مورد نظر رفته و بوکمارکش کنید‌. مثلا من برای دایرکتوری وردپرس این‌طور عمل کردم‌:</p>
+<div class="code"><pre><span class="nb">cd</span> /var/www/htdocs/wordpress
+
+s wordpress
+</pre></div>
+
+
+<p>و حالا تنها کافیست که برای رفتن به این دایرکتوری تایپ کنم g wordpress. تمامی بوکمارک‌ها هم در فایل ‎.sdirs موجود در دایرکتوری خانگیتان ذخیره می‌شود ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910103adrsh-r-dr-kht-frmn-bookmark-khnyd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910103adrsh-r-dr-kht-frmn-bookmark-khnyd.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-03-21 10:50
   </abbr></h5>
   <div class="postContent">
@@ -98,37 +156,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting
         
     
         <a href="posts/blog13901229nskhh-shmrh-dw-pwsth-oulipo-bry-wrdprs.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901229nskhh-shmrh-dw-pwsth-oulipo-bry-wrdprs.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-03-12 10:53
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13901222bry-yntrnt-arzw-khnyd.html">برای اینترنت آرزو کنیم‌!</a></h3>
-    
-    <div class="entry-content">
-      <p></p><a href="wp-content/uploads/internet-wish-tree.png"><img class="alignleft  wp-image-632" title="internet-wish-tree" src="http://shahinism.com/wp-content/uploads/internet-wish-tree-300x226.png" alt="" width="206" height="154"></a>برای ما‌، اینترنت همه چیزه‌. تصور این که برای لحظه‌ای نباشه‌، تلخ‌ترین کابوس هممونه‌! (‌بماند که لمسش هم کردیم D:). خیلی از قدیمی‌تر‌ها مراحل پیشرفت این مهد رو به خوبی به یاد دارن‌. چالش‌هاش رو دیدن‌. مثلا من یادمه اون اوایل می‌شد همه‌جا رفت ;-) ولی جدا‌، فکر می‌کنیم‌، یا بهتر بگم‌، دوست داریم اینترنت در آینده برامون چه کاری انجام بده‌؟ دوست داریم اینترنت در آینده کجا باشه؟ گروه <a title="Internet society official page" href="http://internetsociety.org" target="_blank"><strong>Internet society</strong></a> (‌که اصلا نمی‌دونم کارشون چیه‌) یه کار جالبی کردن‌. یه بخشی درست کردن که ملت می‌تونن توش برای اینترنت آرزو کنن‌. اسمش هم گذاشتن درخت آرزوی اینترنت‌. آرزو‌های قشنگی براش نوشتن‌. مثل این یکی‌:
-<blockquote>
-<p style="direction: ltr; text-align: left;">That technology has to be natural to human as breathing.</p>
-
-</blockquote>
-
-<p>شما هم می‌تونین برین تو <a title="Wishing tree" href="https://wishingtree.internetsociety.org/" target="_blank">این سایت</a> و آرزوی خودتون رو ثبت کنین‌. شاید یکی‌، یکی که زورش می‌رسه‌، یکی که شعورش بکشه‌، چشش افتاد به آرزوتون‌. توش دید که اینترنت همچین هم وحشتناک نیست‌. اینترنت مهد دانش بشریت امروزه‌!</p>
-<p><strong>پی نوشت‌:</strong> حین نوشتن این متن احساس کردم دارم نامه‌ی عاشقانه می‌نویسم ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13901222bry-yntrnt-arzw-khnyd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901222bry-yntrnt-arzw-khnyd.html">Comments</a>
     
 
         

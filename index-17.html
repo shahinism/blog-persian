@@ -35,6 +35,39 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-04-09 15:51
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html">یادداشتی در مورد درمان آلزایمر Alsa‌!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>قبلا‌ها که در KDE و خیل عظیم ابزار‌هایش در حال غرق شدن بودم‌، اصلا در مخیله‌ام هم نمی‌گنجید که چطور این تنظیمات صدا ذخیره می‌شوند‌، و توسط کار‌بر‌ها قابل بازیابی است‌. بعد‌ها هم که آمدم Awesome و یک قدم نزدیک‌تر شدم به سیستم و احساس نیاز کردم به دانستن همچین چیزی‌، با دستور alsamixer کانال‌های صدایم را تنظیم می‌کردم و با زدن alsactl با کاربر ریشه‌، به قول خودم تنظیمات را قابل بازیابی می‌کردم (‌*هنوز هم نمی‌دانم چرا قبلا می‌شد و یا چرا الان نمی‌شود‌! ;-))
+خوب دیگر‌، خط بالا دردم را گفتم‌، و خوشبختانه ویکی آرچ طبق معمول به دادم رسید و دو دستور پایین شد چاره‌ی کارم !</p>
+<div class="code"><pre>alsactl -f /var/lib/alsa/asount.state store
+
+alsactl -f /var/lib/alsa/asount.state restore
+</pre></div>
+
+
+<p>خوب حالا یعنی چه؟ اولی را که اجرا کنی یک فایل حاوی تنظیمات فعلی Alsa‌تان در شاخه‌ی مذکور می‌سازد که طبعا در ادامه توسط خود alsactl قابل خواندن است‌. در خط بعد هم به alsactl می‌گوییم که آن فایل که ساختی را بخوان‌! خوب ما هم که تنبل‌تر از این حرف‌هاییم خط دوم را به فایل rc.local (‌برای اسلکور موجود در شاخه ‏‎/etc/rc.d و برای آرچ در همان etc) کپی می‌کنیم تا دیگر خودش بداند و خودش.</p>
+<p>*: ممنون می‌شوم اگر می‌دانید چطور شد که اینطور شد‌، به ما هم یاد دهید ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910121yddshty-dr-mwrd-drmn-alzymr-alsa.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-03-31 11:39
   </abbr></h5>
   <div class="postContent">
@@ -180,106 +213,6 @@ Restart Awesome
         
     
         <a href="posts/blog13910110ykh-pwsth-bry-mdyr-pnjrh-awesome.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910110ykh-pwsth-bry-mdyr-pnjrh-awesome.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-03-28 09:14
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html">نگاهی به ابزار Screen و قابلیت‌های کاربردی‌اش</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>شاید با وجود مدیر پنجره‌های امروزی‌، و امکانات چشم‌گیرشان‌، تصور زندگی در خط فرمان لینوکس برای خیلی از کاربران دور از ذهن بیاید‌. اما ابزار‌های زیادی در ترمینال هستند که در صورت آشنایی با آن‌ها می‌توانید کار‌هایتان را بسیار سریع‌تر و لذت‌بخش‌تر از محیط‌های گرافیکی معمول انجام دهید‌. مدت زیادیست که می‌خواهم درباره‌ی Screen‌، این ابزار کاربردی لینوکس بیشتر بدانم‌. ابزاری که قابلیت انعطاف زیادی را به ترمینال لینوکس اضافه می‌کند و باعث راحتی کار با آن می‌شود‌.
-به عنوان یک تنظیم کاربردی برای شروع کار‌، چند خط زیر را به فایل ‎.screenrc موجود در شاخه‌ی خانگی اضافه می‌کنیم (‌منیع از <a title="gnu screen on redhat magazine" href="http://magazine.redhat.com/2007/09/27/a-guide-to-gnu-screen/" target="_blank">این‌جا</a> و <a href="http://compsoc.tardis.ed.ac.uk/wiki/Screen_Guide" target="_blank">این‌جا</a>):</p>
-<div class="code"><pre>hardstatus alwayslastline
-
-hardstatus string <span class="s1">'%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'</span>
-
-
-
-<span class="c"># Default screens</span>
-
-screen -t shell1 0
-
-screen -t shell2 1
-
-screen -t server 2 ssh me@myserver
-</pre></div>
-
-
-<p>دو خط اول‌، یک استاتوس بار درست و درمان به خط فرمان اسکرین اضافه می‌کند که اطلاعاتش می‌تواند بسیار کمک کند‌. و در بخش Default screens نیز چند شل اولیه که می‌خواهیم پس از هر بار فراخوانی لینوکس به صورت Tab باز شوند را اعلان می‌کنیم. نمونه عکس زیر:</p>
-<p><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/screen.png" alt="" width="524" height="243"></p>
-<p>ذره‌ای که با آن کار کنید‌، متوجه شباهت زیادش به یک مدیر پنجره‌ی ساده می‌شوید‌. برای تنظیم پنجره‌های پیشفرض می‌توانید از فرمت زیر استفاده کنید‌:</p>
-<div class="code"><pre>screen -t &lt;<span class="nb">command </span><span class="nv">to</span><span class="o">=</span><span class="s2">""</span> <span class="nv">execute</span><span class="o">=</span><span class="s2">""</span>&gt;&lt;/command&gt;
-</pre></div>
-
-
-<p>خوب حالا نوبت به شروع کار با screen می‌شود‌، که پس از فراخوانی‌اش در ترمینال می‌توانید با دستور‌های پایه‌ای زیر مقداری از قدرتش را تجربه کنید:</p>
-<div class="code"><pre>Ctrl+a 0-9 – سوئیچ بین پنجره‌های ۰ تا ۹
-
-Ctrl+a Ctrl+n – سوئیچ به پنجره فعال بعدی
-
-Ctrl+a Ctrl+p – سوئیچ به پنجره قبلی
-
-Ctrl+a Ctrl+a – پرش به پنجره قبلی که در آن بودید
-
-Ctrl+a A – تغییر نام نشست حاضر
-
-Ctrl+a K – کشتن نشست حاضر پنجره
-
-Ctrl+a c – ساختن پنجره جدید
-</pre></div>
-
-
-<p></p><h5>قابلیت یاد‌آوری:</h5>
-<p>یک امکان جالب Screen این است که می‌توان آن را با Ctrl+a d به قولی دیتچ کرد (‌کلا بست گذاشت کنار) و سپس با دستور Screen -ls و کشف شماره اسکرین دیتچ شده به صورت زیر:</p>
-<div class="code"><pre>There is a screen on:
-
-18851.shahin <span class="o">(</span>Detached<span class="o">)</span>
-
-1 Socket in /home/shahin/.screen.
-</pre></div>
-
-
-<p>با آرگومان‌های زیر به اسکرین دیتچ شده بازگشت:</p>
-<div class="code"><pre>screen -r 18851
-</pre></div>
-
-
-<h5>قابلیت اشتراک گذاری:</h5>
-
-<p>دیگر قابلیت فوق‌العاده screen قابلیت به اشتراک گذاریش است‌. فرض کنید می‌خواهید فعالیت خود را در ترمینال با دوست دیگرتان (‌چه حالا روی یک سیستم و چه از روی یک اتصال SSH) به اشتراک بگذارید‌ (‌مثلا برای آموزش). این‌جاست که screen وارد می‌شود. برای برپا سازی چنین ارتباطی به صورت زیر عمل می‌کنیم‌:</p>
-<div class="code"><pre><span class="o">[</span>As root<span class="o">]</span>
-
-chmod u+s /usr/bin/screen
-
-chmod 755 /var/run/screen
-</pre></div>
-
-
-<p>حال از کاربر root خارج شوید و به عنوان کاربری که می‌خواهید screenاش به اشتراک گذاشته شود به سیستم متصل شده و دستورات زیر را بزنید‌:</p>
-<div class="code"><pre>ctrl+a :multiuser
-
-ctrl+a :acladd shahin <span class="o">(</span>به جای شاهین نام کاربری که می‌خواهید اسکرین را با او به اشتراک بگذارید را وارد کنید‌<span class="o">)</span>
-</pre></div>
-
-
-<p>تا این‌جا کار کاربر میزبان به پایان رسیده‌. کاربر مهمان نیز تنها پس از اتصال به سیستم می‌تواند با زدن دستور screen -x shahinism/‎ که به جای shahinism نام کاربری میزبان را وارد کرده به سیستم متصل شود (‌به اکسلش پایان دستور توجه کنید‌).</p>
-<p>اسکرین امکانات فوق‌العاده‌ی دیگری هم دارد که برای پی بردن به آن‌ها صفحه‌ی man این دستور مکان خوبی برای شروع است‌. بزرگترین مزیت استفاده از این ابزار برای من در مدیریت سرور است که با توجه به محدودیت حجمی و سرعت اینترنت نمی‌توانم به یک مدیر پنجره دسترسی داشته باشم. </p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html">Comments</a>
     
 
         

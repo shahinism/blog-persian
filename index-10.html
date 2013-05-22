@@ -35,6 +35,47 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-09-10 08:04
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">چطور نمای oxygen را برای GTK و Qt در هر مدیر‌پنجره‌ای داشته باشیم‌؟</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>تا زمانی که روی KDE بودم زیاد به قیافهٔ پنجره‌های GTKایم (مثل فایرفاکس یا Pidgin) اهمیت نمی‌دادم‌. خود میزکار آن‌قدر چشم نواز بود که این‌ها اصلا به چشم نمی‌آمد (البته می‌دانم مشکل با Gtk-qt-engine حل می‌شد‌، ولی باگ‌هایش در نرم‌افزاری مثل Libreoffice درد آور بود!) وقتی هم که کلا میزکارم را به <a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/" target="_blank">Awesome</a> یا این اواخر <a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank">i3</a> تغییر دادم‌، آن‌قدر‌ها در گیر و دار پوستهٔ GTK نبودم‌. چون چشمم به قدر کافی به آن‌ها عادت کرده بود‌.
+چشم پوشی از حل این مساله هم‌چنان ادامه داشت تا این که بعد از آپگرید به نسخهٔ کارنت اسلکور (که اگر امتحانش نکنید‌، چیز‌های خیلی خیلی خوبی را از دست داده‌اید‌) نکته کمی عجیب‌تر شد‌! تمامی پنجره‌ها (اعم از GTK و Qt) در KDE با نمای Qt نمایش داده می‌شدند (آره هنوز KDE نصب می‌کنم‌، چون کس دیگه هم از کامپیوترم استفاده می‌کنه ;-)) ولی در i3 حتی پنجره‌های Qt هم به مزخرفی قبل بودند‌. دیگر وقت آن شد که مساله را حل کنیم‌!</p>
+<p><a title="Uniform_Look_for_Qt_and_GTK_Applications" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#Styles_for_both_Qt_and_GTK.2B" target="_blank">این مدخل</a> ویکی آرچ‌، منبع خیلی کاملی برای این مساله است‌! اما خلاصه‌اش را به همراه چند نکتهٔ ظریف می‌توانید در ادامه بخوانید‌:</p>
+<p></p><h5>Oxygen برای GTK:</h5>
+<p>از آن‌جایی که<a title="gtk2 styles" href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications#GTK2_styles" target="_blank"> ابزار‌های زیادی </a>برای این کار وجود دارد‌ (حتی می‌توان این کار را<a title="manual gtk2 style" href="https://wiki.archlinux.org/index.php/GTK%2B#GTK.2B_2.x" target="_blank"> به صورت دستی</a> انجام داد) کافیست یکی از آن‌ها را نصب و اجرا کرده و تم oxygen را انتخاب کنید ;-) مثلا در اسلکور من از <a title="gtk-chtheme official page" href="http://plasmasturm.org/code/gtk-chtheme/" target="_blank">gtk-chtheme</a> استفاده کردم که اسلکبیلدش هم موجوده D:</p>
+<h5>oxygen در Qt:</h5>
+
+<p>حقیقتش خیلی وقت بود که بعضی چیز‌ها در نمای Qt اذیتم می‌کرد‌. مثلا فونت ریز این بالون‌هایی که در Systemtry برای اخطار ظاهر می‌شوند (برای دیدن ترجمهٔ لغاتم در mdic زیاد با آن‌ها روبرو می‌شوم) با این چشم ضعیف و رزولوشن کم مانیتور‌، جدا خسته کننده می‌شد‌! این بود که دیروز خیلی اتفاقی دستور زیر را پیدا کردم:</p>
+<div class="code"><pre>qtconfig
+</pre></div>
+
+
+<p>(و اصلا همین دستور زمینهٔ حل کل مشکلات مطرح شده در این پست را فراهم کرد!) خوب محتویات دستور که تماما مهیاست‌. اما احتمال دارد مثل من‌، Oxygen جزء تم‌های qtconfig‌تان نباشد‌. و دقیقا این همان دلیلی است که جدیدا در اسلکور نمای Qt ناجور شده بود‌. برای حل این مشکل کافیست آدرس پوشهٔ Plugin بستهٔ KDE را به متغیر QT_PLUGIN_PATH (سراسری) نسبت دهیم‌! یعنی در نسخهٔ ۶۴ بیتی اسلکور باید همچین خطی را به فایل ‎/etc/profile اضافه کنیم:</p>
+<div class="code"><pre><span class="nb">export </span><span class="nv">QT_PLUGIN_PATH</span><span class="o">=</span>/usr/lib64/kde4/plugins/
+</pre></div>
+
+
+<p>احتمالا بعد از یک لاگوت/لاگین‌، این مشکل هم حل شده ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-09-04 11:09
   </abbr></h5>
   <div class="postContent">
@@ -105,43 +146,6 @@
         
     
         <a href="posts/blog13910610css-persian-ykh-ydh-sdh-wly-khyly-mfyd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910610css-persian-ykh-ydh-sdh-wly-khyly-mfyd.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-08-22 20:22
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910601compose-key-rwy-capslock.html">Compose key روی Capslock</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>µ € © ¤ چند بار شده که نیاز به تایپ همچین کاراکتر‌هایی داشته‌اید و سرتاسر وب را برای پیدا کردن یک نمونه و copy/paste اش زیر و رو کرده‌اید؟ اگر هیچ که خوب احتمالا باز هم نیاز پیدا نمی‌کنید و خواندن این مطلب دردی از درد‌های‌تان دوا نمی‌کند‌! بروید و به کار مفید‌تری بپردازید ;-)
-حقیقتش بعد از ده-دوازده سال سر و کله زدن با کامپیوتر‌، هرگز به این فکر نکرده بودم که این کاراکتر‌ها چطور تایپ می‌شوند‌! البته‌، <a title="چرا باید LaTeX را دوست داشت‌؟" href="http://shahinism.com/blog/1390/06/14/%da%86%d8%b1%d8%a7-%d8%a8%d8%a7%db%8c%d8%af-latex-%d8%b1%d8%a7-%d8%af%d9%88%d8%b3%d8%aa-%d8%af%d8%a7%d8%b4%d8%aa%e2%80%8c%d8%9f/">پس از ملاقات با LaTeX فهمیدم </a>که تایپ این کاراکتر‌ها درش خیلی آسان‌تر از این حرف‌هاست ;-) اولین باری که سر نخی از آن‌ها به دست آوردم به لطف <a title="فرود" href="http://cyberrabbits.net/" target="_blank">فرود</a> بود که پیشنهاد داد Capslock ام را به یک Compose key تبدیل کنم (بماند که قیافه‌ام در آن لحظه چطور بود). برای کشف تاریخچهٔ این کلید می‌توانید دست به دامان <a title="Compose_key on wikipedia" href="http://en.wikipedia.org/wiki/Compose_key" target="_blank">ویکی‌پدیا</a> شوید‌.</p>
-<p>امروز که پی جینگولک بازی دیگری بودم‌، دوباره به همچین بحثی بر خوردم و خوب یک چند‌تایی چیز جدید دیدم‌. می‌خواهید شروع کنیم؟ در ترمینال‌تان تایپ کنید:</p>
-<div class="code"><pre>setxkbmap -option compose:caps
-</pre></div>
-
-
-<p>حالا دیگر Capslock‌تان تبدیل به یک Compose key شده‌. وحشت نکنید اگر چراغ Capslock روشن نشد (<a title="وبلاگ ایمان امینی!" href="http://emanlog.com" target="_blank">ایمان</a> کرد D:) حالا برای تست یک ادیتور باز کنید و به ترتیب کلید‌های زیر را وارد کنید:</p>
-<div class="code"><pre>COMPOSEKEY - L
-</pre></div>
-
-
-<p>کلید‌ها ترکیبی نیستند و جدا جدا باید وارد شوند‌. کاراکتر را دیدی؟ جالب بود؟ یک خروار دیگر از این کلید‌ها وجود دارد‌. می‌توانید از <a title="linux compose key list" href="http://www.hermit.org/Linux/ComposeKeys.html" target="_blank">این‌جا</a> لیست‌شان را ببینید‌.</p>
-<p>تغییر ایجاد شده موقتی است‌. اگر دائمی‌ترش رو می‌خواهید می‌توانید همین دستور را در فایل ‎.xinitrc تان که در شاخهٔ خانگی‌تان است وارد کنید‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910601compose-key-rwy-capslock.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910601compose-key-rwy-capslock.html">Comments</a>
     
 
         

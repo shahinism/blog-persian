@@ -35,6 +35,68 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2010-06-19 11:14
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13890329mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb.html">مشکل رزولوشن پایین در اوبونتو پس از نصب درایور NVIDIA</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>مدت‌ها بود که پس از نصب اوبنتو و نصب درایور NVIDIA مشکل مسخره‌ای داشتم‌، آن هم این بود که Nvidia Settings رزولوشن‌های پایینی را برای تنظیم در اختیار داشت‌، مانند 800x600 که واقعا عذاب آور بود‌. آن هم در یک توالت فرنگی 15 اینچی‌.</p>
+<p>جستجو در بین انجمن‌های لینوکسی فارسی هم نتیجه‌ای جز وارد کردن دستی رزولوشن در بر نداشت‌. اما این کار اصلا تغییری در تنظیمات Nvidia Settings ایجاد نمی‌کرد‌. سر انجام کاشف جور دیگری به عمل آمد‌. یعنی اصلا مشکل سر این قسمت زیری نبود‌:</p>
+<div class="code"><pre>Section <span class="s2">"Screen"</span>
+
+DefaultDepth 24
+
+SubSection <span class="s2">"Display"</span>
+
+Depth      15
+
+Modes      <span class="s2">"1152x864"</span> <span class="s2">"1024x768"</span> <span class="s2">"1024x600"</span> <span class="s2">"800x600"</span> <span class="s2">"768x576"</span> <span class="s2">"640x480"</span>
+
+EndSubSection
+</pre></div>
+
+
+<p>که دوستان می‌گفتند باید دستی رزولوشن‌های جدید را وارد کنم‌. مشکل اینجا بود که NVIDIA در هنگام نصب مانیتور مرا شناسایی نکرده بود در نتیجه VertRefresh و HorizSync ای که برای مانیتور Unknown نشان می‌داد اصلا قدرت نمایش رزولوشنی بالاتر از 800x600 را نداشت‌. پس باید به صورت دستی این قسمت را تغییر می‌دادم‌. در زیر نمایی از کد را می‌بینید‌:</p>
+<div class="code"><pre>Section <span class="s2">"Monitor"</span>
+
+Option       <span class="s2">"CalcAlgorithm"</span> <span class="s2">"XServerPool"</span>
+
+DisplaySize  331 207
+
+HorizSync    30-62
+
+VertRefresh  43-60
+
+UseModes     <span class="s2">"Modes[0]"</span>
+
+EndSection
+</pre></div>
+
+
+<p>کد های بالا از  فایل کانفیگ سیستم من نیست‌، ولی چند نکته هست که باید بهش توجه داشته باشید‌: یک اینکه باید HorizSync و VertRefresh رو در بخش Section "Monitor" تغییر بدید‌. نکته مهم بعدی اینه که این مقادیری که برای این دو متغیر در اینجا قرار داده شده رزولوشن مانیتور شما رو در حالت عادی برای 1152x864 آماده می‌کنه ولی تا چند رزولوشن بالاتر هم پشتیبانی می‌کنه‌. و سه این‌که خیلی مراقب تغییر این اعداد باشید‌. اول از فایل کانفیگتون یه بک آپ بگیرید‌، بعد این‌ها رو تغییز بدید‌. اگر دیدید که مانیتور Out Of Range شد کافیه که اون فایل بک آپ رو برگردونید‌.</p>
+<p>در کل کار آسونیه فقط یکم باس قلق سیستم دستتون باشه‌. برای این‌که بیشتر موضوع رو درک کنید‌، به لینک‌های زیر یه نگاه بندازید‌:</p>
+<p></p><p style="text-align:left;"><a href="http://www.cyberciti.biz/faq/howto-use-linux-ddcprobe-command/" target="_blank">Linux find out monitor VertRefresh values and  HorizSync rate with ddcprobe</a></p>
+<p style="text-align:left;"><a href="http://forums.opensuse.org/get-help-here/laptop/432735-resolution-1152x864-not-possible.html" target="_blank">Resolution 1152x864 not possible</a></p>
+
+<p></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13890329mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13890329mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2010-06-15 18:56
   </abbr></h5>
   <div class="postContent">
@@ -84,33 +146,6 @@
         
     
         <a href="posts/blog13890209ay-pd-pl-dr-bzr-yrn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13890209ay-pd-pl-dr-bzr-yrn.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2010-04-28 10:54
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13890208qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d.html">قطعی اینترنت کشور همچنان ادامه خواهد داشت</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>چند روزی است که قطعی‌های پیاپی اینترنت و سرعت بسیار پایین شبکه کاربران را کلافه کرده‌. در رسانه‌ها اعلام شده بود که این قطعی حد‌اکثر تا امروز خواهد بود‌، ولی انگار این قضیه سر دراز دارد‌.</p>
-<p>مشکلاتی که هم‌اکنون شاهد آن هستیم طبق گفته‌ی<a href="http://www.tic.ir/web/content/2?p_p_id=sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;p_p_col_id=column-3&amp;p_p_col_count=1&amp;_sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9_cmd=detail&amp;_sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9_newsId=1765" target="_blank"> سایت ارتباطات </a>زیر ساخت در مسیری 20 هزار کیلومتری از کابل SMW 4 رخ داده و احتمالا قطعی‌ها به نقل قول از DU اپراطور این کابل به جای 5 روز بین یک هفته تا ده روز ادامه خواهد داشت‌. که این مشکلات به صورت‌هایی مانند قطعی اینترنت به صورت کامل در پاکستان و یا افت سرعت اینترنت در ایران روی می‌دهند‌.</p>
-<p>همچنین اطلاعاتی در <a href="http://en.wikipedia.org/wiki/SEA-ME-WE_4">ویکیپدیا</a> در رابطه با این کابل پیدا کردم که در نوع خود جالب است‌. کابل SMW 4 با طول تقریبی 18800 کیلومتر ( که نمی‌دانم چرا در سایت ارتباطات زیر ساخت ذکر شده که قطعی در مسیری 20 هزار کیلوتری یعنی 1200 کیلومتر بیشتر از طول واقعی کابل رخ داده ) از کشور‌های : سنگاپور‌، مالزی‌، تایلند‌، بنگلادش‌، هند‌، سریلانکا‌، پاکستان‌، عمارات متحده عربی‌، عربستان‌، سودان‌، مصر‌، تانزانیا‌ و فرانسه‌ عبور کرده‌، یعنی عملا ایران از یکی از انشعابات این کابل استفاده می‌کنه‌! برای دیدن این مسیر می‌توانید به تصویر زیر رجوع کنید‌:</p>
-<p><a href="http://shahinism.files.wordpress.com/2010/04/4.jpg"><img class="aligncenter size-full wp-image-86" title="4" src="http://shahinism.files.wordpress.com/2010/04/4.jpg" alt="" width="450" height="280"></a>خوب انگار بلایای طبیعی برای اینترنت کشور همچنان دست بردار نیست و حالا حالا‌ها ادامه داره‌. واقعا مسئولین کشور کی می‌خوان به فکر مسیر‌های مطمئن‌تری برای اینترنت کشور باشن‌. در ضمن از قرار ما به غیر از این کابل از دو کابل دیگه هم استفاده می‌کنیم که کاراییشون همین الان هم معلومه‌. به امید بازگشتن وضع عادی به اینترنت کشور‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13890208qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13890208qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d.html">Comments</a>
     
 
         

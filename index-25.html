@@ -35,6 +35,83 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-12-01 08:01
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
+ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.</p>
+<p></p><h4>دستور mysqladmin برای تغییر کلمه عبور ریشه</h4>
+<p>اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysqlamin -u root pasword NEWPASSWORD
+</pre></div>
+
+
+<p>به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» oldpassword» password newpass
+</pre></div>
+
+
+<p>برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+</pre></div>
+
+
+<h4>تغییر رمز عبور MySQL برای دیگر کاربران</h4>
+
+<p>برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysqladmin -u vivek -p oldpassword password newpass
+</pre></div>
+
+
+<h4>تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql</h4>
+
+<p>این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:</p>
+<p>۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
+</pre></div>
+
+
+<p>۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&gt; ‎ وارد کنید‌):</p>
+<div class="code"><pre>mysql&amp;gt; use mysql;
+</pre></div>
+
+
+<p>۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:</p>
+<div class="code"><pre>mysql&amp;gt; update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’;
+</pre></div>
+
+
+<p>۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:</p>
+<div class="code"><pre>mysql&amp;gt; flush privileges;
+
+mysql&amp;gt; quit
+</pre></div>
+
+
+<p>از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.</p>
+<p style="text-align: center;"><a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank">منبع</a></p>
+
+<p></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-11-30 15:00
   </abbr></h5>
   <div class="postContent">
@@ -145,74 +222,6 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
         
     
         <a href="posts/blog13900909chchch-3-mysql-chyst.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-3-mysql-chyst.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-29 17:09
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html">چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>پوستهٔ <a title="Korn shell on WIKIPEDIA" href="https://en.wikipedia.org/wiki/Korn_shell" target="_blank">Korn</a> در یونیکس‌/لینوکس چیست‌؟
-پوستهٔ Korn توسط دیوید کورن در آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.</p>
-<p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
-<p>نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating point) نیز پشتیبانی می‌کند‌.</p>
-<p></p><h4>ویژگی‌های پوستهٔ Korn</h4>
-<ol><li>تازیخچهٔ دستورات – بله</li>
-    <li>ویرایش خط – بله</li>
-    <li>تکمیل نام فایل – بله</li>
-    <li>دستورات مستعار (‌Alias Commant) – بله</li>
-    <li>پوستهٔ محدود (Restricted shells) – بله</li>
-    <li>کنترل فعالیت‌ها – بله</li>
-</ol><h4>‎‎/usr/bin/ksh‏</h4>
-
-<p>تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:</p>
-<div class="code"><pre><span class="c">#! /usr/bin/ksh</span>
-</pre></div>
-
-
-<p>نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/ksh</span>
-
-<span class="nb">echo</span> “Hello World!”
-</pre></div>
-
-
-<p>شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>which ksh
-</pre></div>
-
-
-<p>نمونهٔ خروجی‌:</p>
-<div class="code"><pre>/usr/bin/ksh
-</pre></div>
-
-
-<p>Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/env ksh</span>
-
-<span class="nb">echo</span> “Hello World!”
-</pre></div>
-
-
-<p style="text-align: center;"><a title="What is UNIX / Linux Korn Shell?" href="http://www.cyberciti.biz/faq/ksh-korn-shell/" target="_blank">منبع</a></p>
-
-<p></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html">Comments</a>
     
 
         

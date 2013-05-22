@@ -35,6 +35,147 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-07-07 09:41
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910417yddshty-bry-khnfyg-i3.html">یادداشتی برای کانفیگ i3</a></h3>
+    
+    <div class="entry-content">
+      <p></p><a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/">در ارسال قبلی</a> از میز‌کار <a title="i3 official website" href="http://i3wm.org" target="_blank">i3</a> صحبت کردم‌. قرار شد در این پست در مورد کانفیگ و رفع نیاز‌های اولیه‌مان روی این مدیر‌پنجره صحبت کنیم‌. اول از همه طبق معمول باید این میزکار را نصب کنیم‌. همانطور که در پست قبل گفتم این میزکار از نوع اعلان فونت X استفاده می‌کند که متاسفانه در فونت‌هایی که من امتحان کردم نتوانستم تایتل فارسی پنجره‌ها را به درستی نمایش دهم‌ (دوست خوبم فرود در کامنت‌های <a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank">پست قبل</a> گفتند که از قرار با فونت Ubuntu مشکل حل شده بود‌). پس از<a title="unicode question on i3faq" href="http://faq.i3wm.org/question/208/unicode-title-for-windows/" target="_blank"> تماس با توسعه دهندگان</a> i3 و راهنمایی‌شان‌، برای پشتیبانی از xft و طبیعتا دست بازتر در انتخاب فونت‌ها سورس را با<a title="i3 pango patch" href="https://aur.archlinux.org/packages/i3/i3-pango/i3-pango.tar.gz" target="_blank"> این پچ</a> آماده کردم‌. دوستان آرچر می‌توانند از این <a title="i3 pango aur" href="https://aur.archlinux.org/packages.php?ID=59344" target="_blank">بسته</a> برای نصب استفاده کنند‌. اما باقی که می‌خواهند خودشان کامپایل کنند کافیست پچ را در پوشهٔ‌ سورس کپی کنند و با دستور زیر ترتیب کار را بدهند:‌
+<div class="code"><pre>patch -p1 &amp;lt; i3-wm-pango.patch
+</pre></div>
+
+
+<p>دوستان اسلکوری هم می‌توانند باقی کار را به این <a title="i3 &amp; i3status slackbuilds" href="http://slackbuilds.org/result/?search=i3&amp;sv=13.37" target="_blank">Slackbuild</a> بسپارند‌. پس از نصب میزکار را اجرا کنید‌. چیزی که ما می‌خواهیم در نهایت شبیهش شویم به صورت زیر است:</p>
+<p style="text-align: center;"><a href="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png"><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/snapshot.png" alt="" width="430" height="323"></a></p>
+
+<p>قبل از این که بگویید این که چیزی ندارد تا بخواهیم کانفیگش کنیم بگذارید بگویم که دو روز وقتم را گرفت تا بتوانم به اینجا برسانمش ;-)</p>
+<p>برای شروع کار می‌خواهیم فونت میزکار را تعیین کنیم‌. فایل کانفیگ i3 برای هر کاربر از شاخهٔ ‎~/.i3/config خوانده می‌شود‌ (توجه داشته باشید که در اولین اجرا اگر این فایل وجود نداشته باشد برنامهٔ کانفیگ خودکار i3 شروع می‌شود و از شما می‌پرسد که کدام کلید را به عنوان metaیتان تعریف کند‌ و بعد این فایل ساخته می‌شود-اگر هم نشد در <a title="i3 userguide" href="http://i3wm.org/docs/userguide.html" target="_blank">userguide</a> دنبالش بگردید و مسیرش را ببینید!) فایل کانفیگ را پیدا می‌کنیم و دنبال خط زیر می‌گردیم:</p>
+<div class="code"><pre>font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+</pre></div>
+
+
+<p>و آن را به صورت زیر ویرایش می‌کنیم:</p>
+<div class="code"><pre>font xft:Terminus 9
+</pre></div>
+
+
+<p>همچنین از آن‌جا که ترمینال پیش‌فرض i3 را دوست نداریم و می‌خواهیم Terminator جایگزینش شود به دنبال ‎# start a terminal می‌گردیم و خط زیرش را به صورت زیر ویرایش می‌کنیم:</p>
+<div class="code"><pre>bindsym <span class="nv">$mod</span>+Return <span class="nb">exec</span> --no-startup-id terminator
+</pre></div>
+
+
+<p>در ادامهٔ کار با کانفیگ‌های پیش‌فرض i3 می‌سازیم‌، جز این که یک مشکل کوچک و قابل حل وجود دارد‌. آن هم این که بعد از تغییر layout کیبورد به فارسی دیگر کلید‌های میانبر میزکارمان کار نمی‌کنند و باید layout را انگلیسی کنیم تا به کار بیافتند‌. برای حل این مشکل باید به جای کلید‌های bindsym (کلید‌های میانبری که با اسم کلید مثلا shift, Return و ... تعریف می‌شوند) از bindcode استفاده کنیم‌. برای نمونه ما کلید‌های میانبر تغییر layout را به این صورت تعریف می‌کنیم.</p>
+<p>کلید‌های مدنظر ما برای تغییر صفحه کلید Alt+Shift است‌. اول از همه در اول فایل کانفیگ یک متغیر به اسم ‎$mod1 که به Alt اشاره می‌کند به صورت زیر تعریف می‌کنیم:</p>
+<div class="code"><pre><span class="nb">set</span> <span class="nv">$mod1</span> Mod1
+</pre></div>
+
+
+<p>و سپس خطوط زیر را در انتهای فایل کانفیگ اضافه می‌کنیم:</p>
+<div class="code"><pre>bindcode <span class="nv">$mod1</span>+62 <span class="nb">exec</span> ~/.i3/changekb.sh
+
+bindcode <span class="nv">$mod1</span>+50 <span class="nb">exec</span> ~/.i3/changekb.sh
+</pre></div>
+
+
+<p>خوب حالا این دو خط چه می‌کنند؟ دستور bindcode به i3 می‌فهماند که باید از کد کلید‌های کیبورد برای شناسایی کلید ترکیبی استفاده کند‌. ‎$mod1 را هم که پیشتر خودمان به عنوان کلید Alt تعریف کردیم‌. حالا می‌ماند اعداد ۶۲ و ۵۰‌. این اعداد کد‌هایی هستند که کلید‌های شیفت چپ و راست کیبورد با آن‌ها شناخته می‌شوند و دقیقا مختص همین کلید‌ها هستند‌. برای کشفشان می‌توانید در ترمینال برنامهٔ xev را اجرا کنید کلید مورد نظرتان را فشار دهید و در خروجی‌ها به دنبال عبارت keycode و عدد روبرویش بگردید‌.</p>
+<p>exec هم فرمانی است که با استفاده از آن می‌توانیم یک اسکریپت خارجی را اجرا کنیم که در اینجا ما اسکریپتی که layout را بررسی می‌کند و با توجه به وضعیت فعلی‌اش آن را به انگلیسی یا فارسی تغییر می‌دهد را به آن شناساندیم‌. پس لازم است کد زیر را که مربوط به این اسکریپت است در فایل changekb.sh وارد کرده و فایل را به پوشهٔ ‎.i3 در پوشهٔ خانگیتان کپی کنید:</p>
+<div class="code"><pre><span class="c">#This is a script for changing keyboard between English and Persian layouts</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>setxkbmap -print | grep xkb_symbols | awk <span class="s1">'{print $4}'</span> | awk -F<span class="s2">"+"</span> <span class="s1">'{print $2}'</span><span class="sb">`</span> <span class="o">=</span> us <span class="o">]</span>;
+
+<span class="k">then </span><span class="nb">echo</span> <span class="s2">"EN"</span>; <span class="nb">echo</span> <span class="s2">"changing to IR..."</span>; setxkbmap ir;
+
+<span class="k">else </span><span class="nb">echo</span> <span class="s2">"IR"</span>; <span class="nb">echo</span> <span class="s2">"Changing to US..."</span>; setxkbmap us ;
+
+<span class="k">fi</span>
+</pre></div>
+
+
+<p>نکته اینجاست که نمی‌دانم چرا Alt+Shift راست پس از تغییر layout به فارسی قادر به بازگردانیش به انگلیسی نیستند‌، در حالی که کلید‌های سمت چپ به راحتی این کار را انجام می‌دهند‌! البته این کار مزیتی برای خودش دارد و آن هم این که با استفاده از کلید‌های سمت راست دیگر خیالم راحت است که کیبورد فارسی است ;-)</p>
+<p>در ادامه به حیاتی‌ترین بخش میزکارمان می‌رسیم‌. بخش گزارش‌گیری‌! نوار پایینی میزکار توسط برنامهٔ i3bar کنترل می‌شود‌. این برنامه می‌تواند خروجی برنامه‌های مختلف را در خود نمایش دهد‌. خود i3 برنامه‌ای به اسم i3status برای گزارش‌گیری دارد که من زیاد از آن خوشم نیامد‌. این شد که تصمیم گرفتم از conky برای این بخش استفاده کنم‌. چون هم ابزار‌های بیشتری دارد و هم قابلیت اجرای یک اسکریپت خارجی را بدون درد و خونریزی! این شد که به دنبال خط bar که احتمالا در انتهای فایل کانفیگ قرار دارد می‌گردیم و در میان آکولاد‌های روبرویش دو خط زیر را اضافه می‌کنیم:</p>
+<div class="code"><pre>font -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+
+status_command <span class="nb">exec </span>conky -c ~/.i3/i3conky
+</pre></div>
+
+
+<p>خط اول این دستور که فونت terminus را برای خروجی i3bar تعریف کرده را می‌توانید نادیده بگیرید و یا به صورت xft مثل دفعهٔ قبل تعیین کنید‌. اما خط دوم دستور conky را با فایل کانفیگ i3conky که در شاخهٔ ‎.i3 قرار دارد اجرا می‌کند‌. پس لازم است این فایل را ایجاد کنید و دستورات زیر را در آن کپی کنید:</p>
+<div class="code"><pre>background no
+
+out_to_console yes
+
+double_buffer no
+
+short_units yes
+
+out_to_x no
+
+update_interval 1.0
+
+total_run_times 0
+
+use_spacer right
+
+
+
+TEXT
+
+CPU: <span class="k">${</span><span class="nv">cpu</span><span class="p"> cpu1</span><span class="k">}</span>,<span class="k">${</span><span class="nv">cpu</span><span class="p"> cpu2</span><span class="k">}</span>,<span class="k">${</span><span class="nv">cpu</span><span class="p"> cpu3</span><span class="k">}</span>,<span class="k">${</span><span class="nv">cpu</span><span class="p"> cpu4</span><span class="k">}</span> @ FRQ: <span class="nv">$freq</span> | RAM:<span class="nv">$mem</span>/<span class="k">${</span><span class="nv">memmax</span><span class="k">}</span> <span class="o">(</span><span class="nv">$memperc</span>%<span class="o">)</span> <span class="k">${</span><span class="nv">if_up</span><span class="p"> eth0</span><span class="k">}</span>| LAN: D:<span class="k">${</span><span class="nv">downspeed</span><span class="p"> eth0</span><span class="k">}</span> U:<span class="k">${</span><span class="nv">upspeed</span><span class="p"> eth0</span><span class="k">}</span> <span class="k">${</span><span class="nv">endif</span><span class="k">}</span> <span class="se">\</span>
+
+| <span class="k">${</span><span class="nv">exec</span><span class="p"> ~/.i3/kbstatus.sh</span><span class="k">}</span> | VOL: <span class="nv">$mixer</span> | <span class="k">${</span><span class="nv">time</span><span class="p"> %a %d.%m.%y</span><span class="k">}</span> <span class="k">${</span><span class="nv">time</span><span class="p"> %H:%M</span><span class="k">}</span>
+</pre></div>
+
+
+<p>توضیح آرگومان‌های این فایل بماند به عهدهٔ خودتان‌. فقط من برای دیدن وضعیت فعلی صفحه کلید اسکریپت تغییر صفحه کلید را ویرایش کردم و آن را به اسم kbstatus.sh در شاخهٔ ‎.i3 قرار دادم تا از conky آن را فرا بخوانم‌. این اسکریپت فقط layout فعلی را در خروجی نشان می‌دهد و کدش به صورت زیر است:</p>
+<div class="code"><pre><span class="c">#!/usr/bin/bas</span>
+
+setxkbmap -print | grep xkb_symbols | awk <span class="s1">'{print $4}'</span> | awk -F<span class="s2">"+"</span> <span class="s1">'{print $2}'</span>
+</pre></div>
+
+
+<p>کانفیگ میزکارمان دیگر تقریبا تمام شده‌. فقط می‌ماند یک چند تا ریزه کاری‌. i3 به صورت پیش‌فرض صفحه را از طرفی که بزرگتر است نصف می‌کند‌. پس دز عمدهٔ مانیتور‌ها این مسیر به صورت افقی تعریف می‌شود‌. حال آن که من تقسیم عمودی را بیشتر ترجیح می‌دهم‌. پس با خط زیر به i3 می‌فهمانم که این کار را طبق نظر من انجام دهد:</p>
+<div class="code"><pre>default_orientation vertical
+</pre></div>
+
+
+<p>همچنین می‌خواهم تعدادی از برنامه‌هایم مثل mdic یا vlc به صورت float (تایل نشده) باز شوند که برای این کار دستورات زیر را اضافه می‌کنم:</p>
+<div class="code"><pre>for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">"Vlc"</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">"Mdic"</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"DTA"</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"Download"</span><span class="o">]</span> floating <span class="nb">enable</span>
+
+for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"xfce4-notifyd"</span><span class="o">]</span> floating <span class="nb">enable</span>
+</pre></div>
+
+
+<p>مقدار class و یا instance را می‌توانید پس از ران کردن دستور xprop WM_CLASS و سپس کلیک روی برنامهٔ مورد نظر به دست آورید‌. مثلا در مورد فایرفاکس خروجی به صورت زیر است:</p>
+<div class="code"><pre>WM_CLASS<span class="o">(</span>STRING<span class="o">)</span> <span class="o">=</span> <span class="s2">"Navigator"</span>, <span class="s2">"Firefox"</span>
+</pre></div>
+
+
+<p>که Nvigator مقدار instance و Firefox مقدار class است‌. توجه داشته باشید که این مقدار Case sensetive است‌!</p>
+<p>من فایل کانفیگ i3 و اسکریپت‌های مورد استفاده‌ام را روی <a title="my i3 wm theme on git" href="https://github.com/shahinism/i3-wm-theme" target="_blank">این کانال git</a> گذاشته‌ام‌. برای پی‌بردن بیشتر به جزئیات می‌توانید از آن‌ها استفاده کنید!</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910417yddshty-bry-khnfyg-i3.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910417yddshty-bry-khnfyg-i3.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-07-05 11:13
   </abbr></h5>
   <div class="postContent">
@@ -157,90 +298,6 @@
         
     
         <a href="posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-06-21 20:15
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html">دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!</a></h3>
-    
-    <div class="entry-content">
-      <p></p><a title="سینا احسانی در پلاس" href="https://plus.google.com/u/0/102916660970180940856" target="_blank">سینا احسانی</a> عزیز در پلاس گفت که با VB برنامه‌ای نوشته که تمام عکس‌های سایت <a title="SimpleDesktops official website!" href="http://simpledesktops.com/" target="_blank">SimpleDesktop</a> را دانلود می‌کند‌. وقتی سایت را دیدم واقعا از تصاویرش خوشم آمد‌. خیلی وقت بود که پس‌زمینهٔ دسکتاپم یک تصویر ساده بود که ثابت مانده بود‌. این شد که تصمیم گرفتم من هم عکس‌ها را دانلود کنم‌. البته کاملا لینوکسی‌!
-بررسی اولیه سایت معلوم کرد که پس از انتخاب عکس و کلیک آخر برای دانلود عکس شما با لینکی به صورت زیر طرف هستید‌:
-<div class="code"><pre>http://simpledesktops.com/download/?desktop<span class="o">=</span>301
-</pre></div>
-
-
-<p>همهٔ آدرس جز عدد ۳۰۱ در انتهایش ثابتند و آن عدد از ۱ یکی‌‌یکی زیاد می‌شود‌. هر کدام از این عکس‌ها پس از درخواست شدنشان به آدرس یکی از عکس‌های روی سرور اشاره می‌کنند‌. خوب دیگر داستان از این هم ساده‌تر می‌شود؟ کافیست که اراده کنیم و با یک حلقهٔ for اعداد را تولید کنیم و جلوی آدرس ثابتمان بنویسیم‌. پس می‌شود این:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/bash</span>
-
-
-
-<span class="k">for </span>i in <span class="o">{</span>1..5000<span class="o">}</span>
-
-<span class="k">do</span>
-
-<span class="nb">echo</span> <span class="s2">"http://simpledesktops.com/download/?desktop=$i"</span>
-
-<span class="k">done</span>
-</pre></div>
-
-
-<p>به بش گفتیم که هر بار یک عدد از یک تا پنج‌هزار (البته به ترتیب از کم به زیاد) تولید کن و در خروجی چاپ کن‌. یک بار اسکریپت را ران می‌کنیم و ... بعله خروجی دقیقا همان آدرس‌هایی که خواستیم می‌شود‌:</p>
-<div class="code"><pre>...
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>4995
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>4996
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>4997
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>4998
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>4999
-
-http://simpledesktops.com/download/?desktop<span class="o">=</span>5000
-</pre></div>
-
-
-<p>حالا کافیست در اسکریپت به جای echo که هر چه جلویش باشد را در خروجی استاندارد چاپ می‌کند یک wget بنویسیم تا آدرس‌های جلویش را دانلود کند‌. اما نه‌! در اولین اقدام تیرمان خطا رفت‌! در سرور‌های Apache یک فایلی هست به اسم ‎.htaccess و همان‌طور که از نامش معلوم است کارش این است که کنترل کند چه کسی به کجا دسترسی دارد‌. هر نرم‌افزاری هم که به یکی از این سرور‌ها درخواست بدهد موظف است اول خودش را معرفی کند‌. خوب wget که از نامش فساد می‌بارد عموما از طرف چنین سایت‌هایی مسدود می‌شود‌.</p>
-<p>این است که باید به wget بگوییم نقابش را به صورت بزند و دوباره اقدام کند‌. اینبار اسکریپتمان این شکلی می‌شود‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/bash</span>
-
-
-
-<span class="k">for </span>i in <span class="o">{</span>100..5000<span class="o">}</span>
-
-<span class="k">do</span>
-
-wget -U <span class="s2">"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2"</span> <span class="s2">"http://simpledesktops.com/download/?desktop=$i"</span>
-
-<span class="k">done</span>
-</pre></div>
-
-
-<p>و بعله‌! ران می‌کنیم و خیلی خوشکل اقدام به دانلود عکس‌ها می‌کنیم ;-)</p>
-<p><strong>پی‌نوشت:</strong> در حین جستجو برای نوشتن این اسکریپت کشف کردم که قبلا اسکریپت‌هایی با Python یا PHP هم برای شیره‌کشی از این سایت نوشته شده‌. ولی این اسکریپت از همه‌شان کوتاه‌تر بود و خوب سادگی زیبـــــاست ;-)</p>
-<p><strong>پی‌نوشت ۲</strong>: دیگر خودتان حواستان باشد که ‎#!‎/‎usr/bin/bash آدرس bash سیستم من است و می‌توانید با یک whereis bash پیدا کنید که مال شما کجاست‌!</p>
-<p><span style="color: #ff0000;"><strong>پی‌نوشت ۳:</strong> ممکنه بعد از دانلود متوجه بشین که فایل‌های دانلودی با یه همچین اسمایی ذخیره می‌شن index.html?desktop=100 اتفاقی که برای من روی سرور آرچ افتاد‌. عجیب بود که اسم فایل درست رو می‌دید ولی خودش از رو این Querystring ساخته شده اسم رو می‌نوشت‌. پس از جستجو کشف کردم که باید آپشن زیر هم به wget اضافه بشه:</span></p>
-<p>```bash</p>
-<p>--content-disposition</p>
-<p>```</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html">Comments</a>
     
 
         
