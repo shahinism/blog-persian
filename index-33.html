@@ -36,6 +36,106 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-05-02 09:08
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900212amwzsh-html-bkhsh-3.html">آموزش HTML بخش 3</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>سلام و با عرض پوزش خدمت شما دوستان‌، بابت تاخیری که در انتشار ادامه‌ی این سری آموزش رخ داد‌، می‌خواهم به ادامه‌ی آموزش بپردازم‌.</p>
+<p>تا این‌جای کار توانستیم ساختار کلی یک فایل HTML را درک کنیم‌، و هم چنین با مقداری از تگ‌ها برای نظم‌دهی و ایجاد یک تایپو‌گرافی مناسب در صفحات HTML مان آشنا شویم‌. امروز می‌خواهیم با شیوه‌ی استفاده از عکس در صفحه‌یمان بیشتر آشنا شویم و همچنین مقداری به نحوه‌ی چینش اجزا در صفحه بپردازیم‌.</p>
+<p>در دو فصل قبل با پارامتر‌هایی از تگ Body نظیر‌، text‌و bgcolor آشنا شدیم‌. پارامتر بعدی که امروز قصد معرفی آن را داریم‌، background است. همانطور که حتما از اسم این پارامتر متوجه شده‌اید‌، از آن به عنوان تعیین کننده‌ی تصویر به عنوان پس زمینه‌ی سند استفاده می‌شود‌. به نمونه‌ای از استفاده از این تگ در کد زیر توجه کنید‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body bgcolor=black background="pic1.jpg"<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p></p><p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-1.png"><img class="aligncenter size-medium wp-image-280" title="html3-1" src="http://shahinism.com/wp-content/uploads/2011/05/html3-1-300x223.png" alt="" width="300" height="223"></a>مقدار این پارامتر را باید در "" قرار دهید‌. و توجه داشته باشید که در صورتی که عکس در پوشه‌ی دیگری غیر از پوشه‌ی سند HTML‌مان قرار داشت‌، باید حتما آدرس کاملی که به عکس اشاره می‌کند را به جای مقدار قرار داد‌.</p>
+<p>تا این‌جای کار توانستیم که عکسی را به عنوان پس زمینه در سند قرار دهیم‌. حال اگر بخواهیم عکس را در کنار نوشته‌ها و دیگر اجزای صفحه قرار دهیم‌، چاره چیست‌؟</p>
+<p>این‌جاست که تگ IMG وارد عمل می‌شود‌. این تگ از نوع اول تگ‌هایی است که در ابتدا معرفی کردیم‌. و دارای پارمتر‌هایی است که در ادامه‌ی مثال بعدی توضیح خواهم داد‌‌:</p>
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body bgcolor=black<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>img src="pic1.jpg" title="My First Pic" alt="Here is a Picture" height=200 width=200 align=right<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-2.png"><img class="aligncenter size-medium wp-image-281" title="html3-2" src="http://shahinism.com/wp-content/uploads/2011/05/html3-2-300x113.png" alt="" width="300" height="113"></a>همانطور که می‌بینید ما به همراه این تگ از چند پارامتر اضافه نیز استفاده کردیم‌، که به غیر از پارمتر src مابقی اختیاری است‌، ولی در صورت موجود بودن می‌تواند به SEO در صفحه‌ی وب شما کمک کند‌. پارامتر اول یعنی src یا همان سورس‌، در این‌جا تعیین کننده‌ی محلی است که قرار است تصویر از آن‌جا بار‌گذاری شود‌ -‌چیزی است شبیه به مقدار پارمتر background که در بالا توضیح دادم‌. -
+
+پارامتر بعدی یعنی title یک تولتیپ به عکس شما اضافه می‌کند و مقدار روبرویش را در آن می‌نویسد‌. و پارمتر سوم بعنی alt نیز در صورتی که به هر دلیلی مرورگر نتواند تصویر را بار‌گذاری کند‌، مقدار روبرویش را به جای عکس می‌نویسد‌. پارامتر‌های چهارم و پنجم یعنی height و width طول و عرض عکس را تعیین می‌کنند‌. در صورتی که هر دوی این پارامتر‌ها و یا یکی از آن‌ها را تعیین نکنیم‌، مرورگر از سایز اصلی تصویر برای آن مقدار استفاده می‌کند‌.
+
+پارامتر آخر یعنی align جهت چینش تصویر را مشخص می‌کند‌. در مثال فوق تصویر راست چین شده است‌. برای درک بهتر این پارمتر به مثال زیر توجه کنید‌:</p>
+
+<div class="code"><pre><span class="ni">&amp;lt;</span>html<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>Shahin<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>body text=white bgcolor=black<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>img src="pic1.jpg" title="My First Pic" alt="Here is a Picture" height=200 width=200 align=right<span class="ni">&amp;gt;</span>
+
+Hi This is Text 1
+
+<span class="ni">&amp;lt;</span>br<span class="ni">&amp;gt;</span>
+
+This is Text 2
+
+<span class="ni">&amp;lt;</span>br clear=right<span class="ni">&amp;gt;</span>
+
+This is Text3
+
+<span class="ni">&amp;lt;</span>/body<span class="ni">&amp;gt;</span>
+
+<span class="ni">&amp;lt;</span>/html<span class="ni">&amp;gt;</span>
+</pre></div>
+
+
+<p style="text-align: center;"><a class="lightbox" href="http://shahinism.com/wp-content/uploads/2011/05/html3-3.png"><img class="aligncenter size-medium wp-image-282" title="html3-3" src="http://shahinism.com/wp-content/uploads/2011/05/html3-3-300x124.png" alt="" width="300" height="124"></a>چنان‌که می‌بینیند‌، متن‌های اول و دوم حتی با وجود تگ BR قبل از دومی باز‌ هم در کنار تصویر نوشته می‌شوند‌. در صورتی که متن‌های موجود در این دو خط به قدری بزرگ شوند که به تصویر برسند‌، شکسته و به خط بعد می‌روند‌. حال اگر بخواهیم متن بعد از تصویر شروع به نمایش کند‌، می‌توانیم از تگ BR همراه با پارامتر Clear و مقدار align موجود در پارامتر‌های مربوط به عکس چنان‌که در مثال می‌بینیم استفاده کنیم‌.</p>
+
+<p></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900212amwzsh-html-bkhsh-3.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900212amwzsh-html-bkhsh-3.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-04-24 16:22
   </abbr></h5>
   <div class="postContent">
@@ -305,43 +405,6 @@ Hello World
         
     
         <a href="posts/blog13900201amwzsh-html-bkhsh-1.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900201amwzsh-html-bkhsh-1.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-04-19 16:13
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900130dwrh-brnmhnwysy-shhynysm-shrw-z.html">دورهٔ برنامه‌نویسی شاهینیسم (شروع از صفر)</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>با توجه به این‌که قبلا هم اعلام کرده بودم با وجود این‌که سال سوم رشتهٔ نرم‌افزار هستم‌، متاسفانه هنوز قادر نیستم از زبان‌های برنامه نویسی استفاده کنم‌! حالا دیگر موقع این نیست که بخواهم دنبال مقصر خاصی بگردم و یا این‌که بخواهم دلیلی برای این مشکل پیدا کنم. تصمیم گرفته‌ام که همانطور که قبلا هم در پست‌هایی از این وبلاگ گفته‌ام به صورت خود‌آموز شروع به برنامه نویسی کنم‌! قشنگی ماجرا قرار است این‌جا باشد که تمامی مراحل آموزش را می‌خواهم در همین وبلاگ و احتمالا با سرعت زیاد‌! منتشر کنم‌. نتیجهٔ این کار می‌شود یک دورهٔ برنامه‌نویسی از پایه‌، به زبان یک زبان آموز‌! یعنی دیگر در این دوره خبری از استاد نیست و هر کسی قرار است خودش استاد خودش باشد‌. کمترین نتیجه‌اش هم برای من می‌تواند تکرار یاد گرفته‌ها و احتمالا تلاش برای یافتن جواب سوالات خوانندگان این وبلاگ باشد‌، که خودش نعمت بزرگی است‌!</p>
-<p>بدون زیاده گویی می‌خواهم نحوهٔ انتخاب زبان‌ها و پیش‌نیاز‌های ساده‌ای که نیاز داریم را بیان کنم‌!</p>
-<p></p><h4>زبان‌های این دوره‌:</h4>
-<p>برای شروع کار برای اینکه می‌خواهم به کد نوشتن عادت کنیم‌، از <strong>HTML</strong> شروع می‌کنیم‌. درست‌! HTML یک زبان برنامه‌نویسی نیست‌، ولی خوب یاد می‌دهد که ساختار‌ها را درک کنیم و به کد نوشتن عادت کنیم‌! بتوانیم قوانین Syntax را به خاطر بسپاریم والخ‌. چیزی که آموزش می‌بینیم‌، <span style="color: #99cc00;"><strong>HTML ۴</strong> است‌، و پس از پایان این دوره یک نیم نگاهی هم به <span style="color: #ff9900;"><strong>HTML ۵ </strong>می‌اندازیم تا بتوانیم برای آینده آماده باشیم‌. پس از یاد‌گیری HTML شروع به گذراندن دورهٔ <span style="color: #ffcc00;"><strong>CSS</strong> می‌کنیم تا بتوانیم ساختار پرونده‌های HTMLمان را بیشتر تحت کنترل بگیریم و پس از آن به سرغ <span style="color: #cc99ff;"><strong>جاوا اسکریپت</strong> می‌رویم‌. برای فعلا کافی‌است‌. ولی صد در صد بیشتر می‌شود‌. این‌قدر این دوره را ادامه می‌دهیم که حداقل بتوانیم حرفی برای گفتن در جامعهٔ برنامه‌نویسان ایرانی داشته باشیم‌!</span></span></span></span></p>
-<h4>پیش‌نیاز‌ها‌:</h4>
-
-<p>پیش‌نیاز‌هایی برای شروع دوره تعیین می‌کنم‌، که سلیقهٔ شما می‌تواند متفاوت از آن باشد‌. ولی به دلایلی که برای هر‌کدام می‌آورم دقت کنید شاید توانستم نظر شما را هم جلب کنم‌!</p>
-<p><span style="color: #99cc00;"><strong>تایپ کردن بیاموزید‌!</strong> ممکن است خیلی از شما هنوز نتوانید بدون نگاه کردن به صفحه کلید تایپ کنید‌. سرعت شما هر چقدر هم در این وضعیت زیاد باشد‌، باز هم موقعی که می‌خواهید برنامه‌نویسی بیاموزید برایتان طاقت فرسا می‌شود‌. بعد‌ها که برنامه‌نویس خوبی شدید می‌فهمید سرعت تایپ اصولی می‌تواند چه نعمت بزرگی برایتان باشد‌، و حتی در بعضی مواقع سر‌نوشت پروژه‌ها و حتی خودتان را تعیین کند‌. برای یاد‌گیری می‌توانید از Tipp10 استفاده کنید که خوشبختانه در پلتفرم‌های زیادی قابل دسترسی است‌.</span></p>
-<p><span style="color: #ff9900;"><strong>انگلیسی یاد بگیرید‌!</strong> نمی‌خواهد از همین اول جا بزنید‌. قرار نیست همین الان زبانتان کامل باشد‌! کم کم همزمان با دوره سعی بر تقویت زبان انگلیسیتان کنید‌! شاید الان به دردتان نخورد و شاید هم بگویید که ما همین الان هم انجمن‌های خوبی به زبان فارسی داریم که می‌توان ازشان کمک گرفت. ولی باورم کنید‌، انگلیسی دانستن می‌تواند سرعت حل مشکلاتتان را در هر زمینه‌ای چند برابر کند‌. شما در این صورت منابعی بی‌‌‌نهایت از آموزش‌ها را دارید‌!</span></p>
-<p><span style="color: #3366ff;"><strong>از لینوکس استفاده کنید‌!</strong> این شرظ ممکن است شما را به خنده بیاندازد‌! ولی حقیقتا‌. اگر نمی‌خواهید برای هر موضوع ساده‌ای از برنامه‌نویسی زده شوید‌. و با مشکلاتی روبرو شوید که با هیچ منطقی قابل بیان نیست‌، لینوکس بهترین گزینه برای شماست‌. از طرفی لینوکس به شما کمک می‌کند‌، خلاقیت‌های برنامه‌نویسان بیشتری را ببینید‌. شما با لینوکس می‌توانید بفهمید که با کامپیو‌تر چه‌ها می‌توان کرد‌. باور کنید‌! اگر هم نمی‌کنید هر سیستم‌عاملی که دوست دارید انتخاب کنید‌. ولی جرات قبول اشتباه را داشته باشید و هر وقت مسمم شدید به لینوکس مهاجرت کنید‌!</span></p>
-<p><span style="color: #ffcc00;"><strong>یک ویرایشگر انتخاب کنید‌.</strong> این مرحله ممکن است کمی گیج‌کننده‌تر از دیگر مراحل باشد‌. درست است که شروع دورهٔ ما با HTML است‌، و شما حتی با یک ابزار کذایی مثل notepad هم می‌توانید برایش کد بزنید‌. ولی انتخاب یک ویرایشگر قوی و یاد گیری تمامی سوراخ و سمبه‌هایش می‌تواند در آینده نجات دهنده باشد‌. اگر از لینوکس استفاده می‌کنید و یا قصد مهاجرت به لینوکس را دارید پیشنهاد من تازه‌کار‌، انتخاب <strong>VI</strong> یا <strong>Emacs</strong> است‌. <strong>VI</strong> انتخاب خوبی است و بسیار ساده و کاربردی است‌. آموزش‌های خوبی برای کار با آن در اینترنت می‌یابید مثل <a title="راهنمای استفاده از ویرایشگر متن VI" href="http://www.technotux.org/html/modules.php?op=modload&amp;name=Sections&amp;file=index&amp;req=viewarticle&amp;artid=13&amp;page=1" target="_blank">این‌</a>. اما <strong>Emacs</strong> دنیای دیگری است‌. نمی‌توان اسمش را تنها ویرایشگر گذاشت‌. باور کنید‌، قولی است برای خودش‌. پیشنهاد می‌کنم برای آشنایی با آن <a title="emacs ادیتوری برای تمام فصول" href="http://www.pesarak.ir/?p=262" target="_blank">این پست</a> از پسرک را بخوانید‌. و برای یادگیری اصول اولیه‌اش به <a title="آشنایی با ویرایشگر ایمکس" href="http://www.technotux.org/html/Sections-index-req-viewarticle-artid-92-page-1.html" target="_blank">این مقاله</a> از تکنوتاکس رجوع کنید‌. و در آخر برای داشتن یک صفحه تقلب کامل می‌توانید از <a title="Emacs cheat sheet" href="http://www.cheat-sheets.org/saved-copy/emacs-refcard-a4.pdf" target="_blank">این</a> استفاده کنید‌، دو صفحه‌، خلاصه‌ای از یک دنیا‌!</span></p>
-<p>اگر هنوز هم قصد دارید به ویندوز وابسته باشید‌، باز هم می‌توانید با قبول دردسر‌هایی از Emacs استفاده کنید‌! ولی پیشنهاد من در ویندوز استفاده از <a title="Notepad++ official website" href="https://encrypted.google.com/url?sa=t&amp;source=web&amp;cd=1&amp;ved=0CBsQFjAA&amp;url=http%3A%2F%2Fnotepad-plus-plus.org%2F&amp;ei=2IKtTbbNOIHQhAfov6SkDA&amp;usg=AFQjCNH20Y39KL3umNlz40yN398ALm0wKg&amp;sig2=1sDXbVM-46Tl-1kuiGb_ig" target="_blank"><strong>Notepad++</strong></a>است برای قدم‌های اول‌. شما راه‌تان را خودتان انتخاب کرده‌اید و بعد از این هم امید‌وارم بتوانید بیابیدش‌!</p>
-<p><span style="color: #cc99ff;"><strong>مشترک شاهینیسم شوید‌!</strong> دیگر توضیحی برای این قسمت ندارم‌. هر جور که می‌‌خواهید می‌توانید به شاهینیسم سر بزنید‌ و از به روز‌رسانی‌هایش با خبر شوید‌.</span></p>
-<p>برای شروع کار همین‌ها کافیست‌. آموزش‌ها به زودی شروع می‌شود‌. آماده باشید‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900130dwrh-brnmhnwysy-shhynysm-shrw-z.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900130dwrh-brnmhnwysy-shhynysm-shrw-z.html">Comments</a>
     
 
         

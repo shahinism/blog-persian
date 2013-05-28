@@ -36,6 +36,56 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-12-01 15:00
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">چ‌چ‌چ‌ (۶)‌: چگونه در خط فرمان گنو‌/‌لینوکس بزرگنمایی صفحه نمایش‌ام را پیدا کنم‌؟</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>این سوال به میزان وضوع یک تصویر بر روی صفحه نمایش اشاره می‌کند‌. بزرگنمایی صفحه (Screen resolution) به تعداد نقطه‌ها یا پیکسل‌های موجود در سراسر صفحهٔ نمایشتان اشاره می‌کند‌. برای مثال‌، وقتی می‌گویید برزگنمایی ۶۴۰x۴۸۰ پس منظورتان این است که ششصد و چهل نقطه در هر یک از چهارصد و هشتاد خط وجود دارد، یعنی‌، ۳۰۷ کیلو پیکسل‌.
+برای پیدا کردن این مشخصه می‌توانید از یکی از دو روش زیر کمک بگیرید‌:</p>
+<p>۱) استفاده از دستور xdpyinfo:</p>
+<div class="code"><pre>xdpyinfo | grep <span class="s1">'dimensions:'</span>
+</pre></div>
+
+
+<p>که نتیجه‌ای به شکل زیر را باز می‌گرداند‌:</p>
+<div class="code"><pre>dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
+</pre></div>
+
+
+<p>۲) استفاده از دستور xrandr:</p>
+<div class="code"><pre>xrandr | grep ‘*’
+</pre></div>
+
+
+<p>که نتیجه‌ای به صورت زیر را باز می‌گرداند‌:</p>
+<div class="code"><pre>xrandr: Failed to get size of gamma <span class="k">for </span>output default
+
+1024x768 50.0* 51.0
+</pre></div>
+
+
+<p>که البته منظور خط بالایی احتمالا این است که به خاطر قدیمی بودن مانیتور من‌، خروجی گاما (‌!) را اندازه گیری نمی‌کند‌ (یعنی به چه درد می‌خوره‌؟).</p>
+<p>البته بدیهی است که در محیط‌های دسکتاپ مختلف‌، با رجوع به بخش تنظیمات می‌توان به این اطلاعات دست یافت‌، ولی این روش‌ها طبیعتا سرراست‌تر است ;-)</p>
+<p></p><p style="text-align: center;"><a title="How to find resolution on cyberciti" href="http://www.cyberciti.biz/faq/how-do-i-find-out-screen-resolution-of-my-linux-desktop/" target="_blank">منبع</a></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-12-01 08:01
   </abbr></h5>
   <div class="postContent">
@@ -172,57 +222,6 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
         
     
         <a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-30 08:00
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900909chchch-3-mysql-chyst.html">چ‌چ‌چ (۳)‌: MySQL چیست‌؟</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>MySQL یک کارگزار (Server) پایگاه دادهٔ متن‌باز قابل اطمینان است‌، که توسط توسعه دهندگان وب زیادی در سراسر جهان مورد استفاده قرار می‌گیرد‌. شما می‌توانید  با اسکریپت‌نویسی در PHP و یا پرل به یک پایگاه دادهٔ MySQL دستیابی داشته باشید‌. به هر حال‌، هزاران ابزار کاربردی برای MySQL در دسترس است‌، که شما در این‌جا دسته‌ای از محبوب‌ترین‌هایشان را می‌بینید‌ که در PHP (پیش‌پردازندهٔ فرامتن PHP یا PHP Hypertext Preprocessor) یکی از پر استفاده‌ترین‌، زبان اسکریپت‌نویسی که بسیار مناسب توسعهٔ وب است و می‌تواند به صورت تو‌کار در HTML مورد استفاده قرار گیرد‌.
-</p><h4>نرم‌افزار دفتر مهمان</h4>
-<ul><li><a title="Advanced Guestbook" href="http://proxy2.de/scripts.php" target="_blank">Advanced Guestbook</a></li>
-</ul><h4>نرم‌افزار انجمن</h4>
-
-<ul><li><a title="phpBB" href="http://phpbb.com/" target="_blank">phpBB</a></li>
-    <li><a title="Simple Machines Forum (SMF)‎" href="http://www.simplemachines.org/index.php" target="_blank">Simple Machines Forum (SMF)‎</a></li>
-</ul><h4>سیستم مدیریت محتوا</h4>
-
-<ul><li><a title="Mambo" href="http://www.mamboserver.com/" target="_blank">Mambo</a></li>
-    <li><a title="Xoops" href="http://www.xoops.org/" target="_blank">Xoops</a></li>
-    <li><a title="PostNuke" href="http://noc.postnuke.com/" target="_blank">PostNuke</a></li>
-</ul><h4>نرم‌افزار بلاگ‌دهی</h4>
-
-<ul><li><a title="Wordpress" href="http://wordpress.org/" target="_blank">WordPress</a></li>
-    <li><a title="Geeklog" href="http://www.geeklog.net/" target="_blank">Geeklog</a></li>
-    <li><a title="Plog" href="http://www.plogworld.net/" target="_blank">pLog</a></li>
-    <li><a title="Serendipity" href="http://www.s9y.org/" target="_blank">Serendipity</a></li>
-</ul><h4>گالری عکس</h4>
-
-<ul><li><a title="Coppermine photo gallery" href="http://coppermine.sourceforge.net/" target="_blank">Coppermine Photo Gallery</a></li>
-    <li><a title="4Images" href="http://www.4homepages.de/" target="_blank">۴images</a></li>
-</ul><p>وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:</p>
-<ul><li><a title="MySQL website" href="http://mysql.com/" target="_blank">وب‌سایت MySQL</a></li>
-    <li><a title="PHP Website" href="http://php.net/" target="_blank">وب‌سایت PHP</a></li>
-</ul><p style="text-align: center;"><a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/">منبع</a></p>
-
-<p></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900909chchch-3-mysql-chyst.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-3-mysql-chyst.html">Comments</a>
     
 
         

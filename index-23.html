@@ -36,6 +36,105 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-01-03 12:56
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html">چ‌چ‌چ (۱۱)‌: چگونه می‌توانم بفهمم کارت اترنتم (NIC) شناخته شده یا نه‌؟</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>کارت اترنت شیشهٔ زندگی یک سرور لینوکسی به حساب می‌آید‌. پس اگر نیاز دارید که بفهمید کارت اترنت سرورتان شناخته شده از دستور dmesg، ifconfig یا netstat استفاده کنید‌. دستور ifconfig می‌تواند برای تنظیم یک کارت رابط شبکه (Network interface card) به‌‌ همان خوبی که برای کشف اطلاعات دربارهٔ کارت اترنت عمل می‌کند‌، مورد استفاده قرار گیرد‌. اگر می‌خواهید چیپ کارت شبکه‌تان را بشناسید هم می‌توانید از دستور lspci استفاده کنید (‌پایین‌تر نمونه‌ای از خروجی این دستور را با هم می‌بینیم‌) ‌.</p>
+<div class="code"><pre><span class="c"># /sbin/ifconfig</span>
+</pre></div>
+
+
+<p>خروجی‌:</p>
+<div class="code"><pre>eth۰ Link encap: Ethernet HWaddr ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰
+
+inet addr: ۱۹۲. ۱۶۸. ۱. ۲ Bcast: ۱۹۲. ۱۶۸. ۱. ۲۵۵ Mask: ۲۵۵. ۲۵۵. ۲۵۵. ۰
+
+inet۶ addr: fe۸۰:: ۲۲۴: ۱dff: fed۱: ۴d۰/۶۴ Scope: Link
+
+UP BROADCAST RUNNING MULTICAST MTU: ۱۵۰۰ Metric: ۱
+
+RX packets: ۱۸۰۷۸ errors: ۰ dropped: ۰ overruns: ۰ frame: ۰
+
+TX packets: ۲۰۱۰۸ errors: ۰ dropped: ۰ overruns: ۰ carrier: ۰
+
+collisions: ۰ txqueuelen: ۱۰۰۰
+
+RX bytes: ۱۰۱۹۴۷۸۶ <span class="o">(</span>۹. ۷ MiB<span class="o">)</span> TX bytes: ۳۴۵۳۳۵۳ <span class="o">(</span>۳. ۲ MiB<span class="o">)</span>
+
+Interrupt: ۴۰ Base address: ۰x۸۰۰۰
+</pre></div>
+
+
+<p>توجه کنید که اگر در خروجی eth۰ را دیدید‌، پس کارت شما شناخته شده‌. نکته دیگر اینکه در سرور‌های مجازی با عبارات دیگری نظیر venet روبرو هستید‌، که پس از تجربه کردنشان‌، می‌توانید بهتر درکشان کنید ;-)</p>
+<p>برنامه dmesg به کاربران کمک می‌کند پیغام‌های هنگام بوت را مشاهده کنند‌. این پیغام‌ها در فایل ‎/var/log/dmesg (‌لینوکس دبیان‌) ذخیره می‌شوند‌:</p>
+<div class="code"><pre>cat /var/log/dmesg | grep -i eth۰
+</pre></div>
+
+
+<p>خروجی‌:</p>
+<div class="code"><pre><span class="o">[</span>۴. ۷۰۹۳۴۷<span class="o">]</span> r۸۱۶۹ ۰۰۰۰: ۰۲: ۰۰. ۰: eth۰: RTL۸۱۶۸c/۸۱۱۱c at ۰xffffc۹۰۰۱۰۹c۸۰۰۰، ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰، XID ۱c۴۰۰۰c۰ IRQ ۴۰
+</pre></div>
+
+
+<p>و یا:</p>
+<div class="code"><pre><span class="c"># dmesg | grep -i eth۰</span>
+</pre></div>
+
+
+<p>نمایش جدول تمام رابط‌های شبکه‌:</p>
+<div class="code"><pre><span class="c"># netstat -i</span>
+</pre></div>
+
+
+<p>خروجی‌:</p>
+<div class="code"><pre>Kernel Interface table
+
+Iface MTU Met RX-OK RX-ERR RX-DRP RX-OVR TX-OK TX-ERR TX-DRP TX-OVR Flg
+
+eth۰ ۱۵۰۰ ۰ ۱۸۴۰۸ ۰ ۰ ۰ ۲۰۵۲۴ ۰ ۰ ۰ BMRU
+
+lo ۱۶۴۳۶ ۰ ۹۸۲۲ ۰ ۰ ۰ ۹۸۲۲ ۰ ۰ ۰ LRU
+</pre></div>
+
+
+<p>پیدا کردن چیپ NIC</p>
+<p>برای رفع نقض کردن کارت ارتنت (NIC) من پیشنهاد می‌کنم که از دستور lspci استفاده کنید‌. Lspci ابزاری برای نمایش اطلاعات تمام درگاه‌های PCI موجود در سیستم که ابزار‌ی به‌شان متصل شده می‌باشد‌.</p>
+<div class="code"><pre>lspci | less
+</pre></div>
+
+
+<p>یا</p>
+<div class="code"><pre>&lt;code&gt;lspci | grep Ethernet&lt;/code&gt;
+</pre></div>
+
+
+<p>خروجی‌:</p>
+<div class="code"><pre>۰۲: ۰۰. ۰ Ethernet controller: Realtek Semiconductor Co.، Ltd. RTL۸۱۱۱/۸۱۶۸B PCI Express Gigabit Ethernet controller <span class="o">(</span>rev ۰۲<span class="o">)</span>
+</pre></div>
+
+
+<p>در مثال بالا من یک کارت «Realtec Semiconductor» با چیپ RTL-۸۱۱۱/۸۱۶۸B دارم‌.</p>
+<p></p><p style="text-align: center;"><a title="NIC on cyberciti" href="http://www.cyberciti.biz/faq/how-can-i-find-out-if-my-ethernet-card-nic-is-being-recognized-or-not/" target="_blank"><strong>منبع</strong></a></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-01-02 12:39
   </abbr></h5>
   <div class="postContent">
@@ -126,59 +225,6 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
         
     
         <a href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-12-17 15:33
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>ببخشید که تیتری از این ساده‌تر و گو‌یاتر پیدا نکردم‌. ولی خوب اصل موضوع خیلی قشنگ چالش بر‌انگیز است‌. مساله این است‌:
-</p><blockquote>سایتی به این شکل داریم (‌<a title="the newboston php video" href="http://thenewboston.org/list.php?cat=11" target="_blank">لینک را باز کنید‌</a>) که شامل یک لیست از پیوند به صفحات دیگرش است که در آن‌ها علاوه بر قابلیت نمایش ویدیو‌، لینک یوتیوب همان ویدیو وجود دارد‌. حجم پیوند‌ها برابر ۲۰۰ عدد است</blockquote>
-<p>کار عادی‌اش به این صورت است که بنشینیم و با حوصله تک تک لینک‌ها را کپی پیست کرده و جایی ذخیره کنیم‌. ولی با وجود دویست صفحه و لینک‌، کمی (‌خیلی‌) خسته کننده (‌خریت‌ به معنای واقعی کلمه‌، البته ببخشید ;-)) است. خوب جواب مساله را خودم هم نمی‌دانستم‌، ولی مطمئن بودم‌، با ابزار‌های گنو‌/‌لینوکسی‌، نتیجه‌ی خیلی خوبی خواهم گرفت‌. اولین کاری که به فکرم رسید‌، دانلود صفحه‌ی اصلی و صفحه‌های پیوند شده به هر لینک بود که با wget خیلی خوب بلد بودم! به این صورت‌:</p>
-<div class="code"><pre>wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
-</pre></div>
-
-
-<p>خوب نتیجه‌ مجموعه‌ای از فایل‌ها بود که با اسم‌هایی شبیه به آدرس‌شان در پوشه‌ی جاری ذخیره شده بود. با استفاده از آرگومان‌های rl1 به wget فهماندم که صفحه‌ی حاضر را به عمق یک صفحه رو به جلو دانلود کند‌. حالا مساله‌ی سخت این‌جا بود که چطور به grep بفهمانیم که چه چیزی را (‌در این‌جا لینک ویدیو در یوتیوب‌) برایمان جدا کند‌. دستوری که با دفعات زیادی آزمون و خطا نتیجه داد‌، به این صورت بود‌: <span style="color: #ff6600;">(‌برای دیدن دستور کامل‌تر به آخر مطلب رجوع کنید‌، ویرایش۱)</span></p>
-<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * &amp;gt; list
-</pre></div>
-
-
-<p>کار این دستور این است که یک لیست از الگوی داده شده را ایجاد و در فایل list ذخیره کند‌. آرگومان‌های ohE به طور خلاصه به grep می‌فهمانند‌ که فقط عبارت داخل پرانتز را در فایل‌ها پیدا کند و در خروجی نمایش دهد‌. قسمت جالب قضیه که بیشتر از همه وقتم را گرفت بخش زیر بود‌:</p>
-<div class="code"><pre><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
-</pre></div>
-
-
-<p>که به grep می‌گفت ترکیبی از حروف و ارقام را به تعداد یازده عدد قبول کند‌. در مورد این عبارت‌ها در آینده‌ای نزدیک پستی در شاهینیسم خواهیم داشت.</p>
-<p>برای دانلود لینک‌ها هم می‌توانید همان فایل خروجی را به صورت زیر به youtube-dl بدهید‌:</p>
-<div class="code"><pre>youtube-dl -ta list
-</pre></div>
-
-
-<p>البته سرعت دانلود youtube-dl واقعا پایین است‌. روی سروری با دانلود عادی ده مگ‌، سرعت به زور می‌توانست به چهل کیلوبایت برسد‌. پیشنهاد من به شما‌، نصب یک نسخه از RapidLeech است‌. سرعت و کاربرد بسیار بهتری دارد ;-)</p>
-<p>ویرایش ۱: بعد از مدتی استفاده از این دستور‌، فهمیدم که از اونجایی که توی آدرس‌های Youtube امکان وجود آندرلاین هم هست‌، تعدادی از لینک‌ها رو با دستور بالا از دست می‌دیم‌. به همین دلیل دنبال یه راه دیگه گشتم‌، و سر‌انجام به دستور زیر رسیدم که نتیجه‌ی خیلی قابل قبول‌تری می‌ده‌:</p>
-<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * | uniq &amp;gt; list2
-</pre></div>
-
-
-<p>همچنین توی این دستور با استفاده از uniq از تکرار لینک‌ها در صفحه خروجی جلوگیری می‌شه ;-)</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">Comments</a>
     
 
         
