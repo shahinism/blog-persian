@@ -36,6 +36,56 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-10-17 12:30
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html">نصب TeXLive بدون درد و خونریزی‌!</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>شاید این مساله انجام کار‌های کامپیوتری‌، آن هم بدون درد و خونریزی‌، به یک کلیشه‌ی تکراری تبدیل شده باشد‌. اما اگر شما هم قصد تجربه‌ی LaTeX با زبان فارسی را دارید‌، و احتمالا ویژگی‌های بسته‌ای به اسم <a title="xepersian home page" href="posts/www.parsilatex.com/joomla/index.php" target="_blank">xepersian</a> وسوسه‌تان کرده که آن را در اولویت بسته‌های فارسی قرار دهید‌، باید انتخابتان را بکنید‌! <a title="miktex official page" href="http://miktex.org/" target="_blank">MikTex</a> یا <a title="texlive official page" href="http://tug.org/texlive/" target="_blank">TeXLive‌</a>. انتخاب احتمالا آسان است‌، چون MikTex تنها برای ویندوز توسعه داده می‌شود‌، ولی‌، TeXLive روی انواع پلتفرم‌ها قابلیت نصب دارد‌. خوب حالا حتما می‌گویید‌ که‌: ای بابا‌، اگه بسته‌ها نصبشان به این آسانی است‌، پس درد و خونریزی‌ای که می‌گویی کجاست؟</p>
+<p>جوابتان از این قرار است که با وجود این که شما می‌توانید تک لایو را از روی مخازن یا در مورد اسلکور با اسلکبیلد نصب کنید‌، اما آپگرید کردن این بسته‌های نصب شده‌تان‌، وابسته به این می‌شود که این بسته‌ها روی همان مخازن آپگرید شوند‌! یعنی مراحل به روز رسانی برای بسته‌ای مثل  xepersian با این روش می‌شود‌، اول توسعه دهنده بسته‌، نسخه‌ی آخر را منتشر کند‌، سپس توزیعی مثل تک لایو‌، بسته را به آخرین نسخه‌ای که ذکرش رفت آپگرید کند‌ و در آخر توزیعتان‌، از آخرین نسخه تک لایو بسته‌ای بسازد‌‌! حالا فکر می‌کنید از مرحله اول تا سوم‌، توسعه دهنده‌ای مثل وفا خلیقی (‌توسعه دهنده‌ی xepersian ) چند نسخه‌ی به روز رسانی‌ ارائه کرده؟ جواب سنگین است‌، برای من‌، ۲۰ نسخه‌! پس احتمالا حالا‌، باید اهمیت این به روزرسانی را درک کرده باشید‌!</p>
+<p>خوب حالا چگونه نصبش کنیم‌؟ با وضع اینترنت ما‌، به خصوص در هفته‌های اخیر‌، تنها انتخابمان همان iso است که از <a title="ISO download page" href="http://mirror.ctan.org/systems/texlive/Images/" target="_blank">این لینک</a> قابل دریافت است‌. حجمی برابر با ۲.۳ گیگابایت انتظارتان را می‌کشد‌ (‌البته مزیت این DVD این است که شما می‌توانید از آن برای نصب تکلایو روی انواع سیستم‌ها نظیر مک و ویندوز هم استفاده کنید‌). پس از دانلود بسته را از حالت iso خارج کنید‌. سلیقه خودتان است‌، یا می‌توانید روی یک فولدر دیگر Mount‌اش کنید‌، و یا مثل من خز بازی در آورده و با Ark اکسترکتش کنید‌. پس از باز کردن بسته به پوشه‌ی مربوطه بروید‌، و دستور زیر را وارد کنید‌.</p>
+<div class="code"><pre>sudo ./install-tl
+</pre></div>
+
+
+<p>خوب همان‌طور که پیداست با این کار اسکریپت نصب را فعال کرده‌اید‌. و با تایپ یکی دو حرف می‌توانید بسته را نصب کنید‌ (‌البته نه کاملا‌!). من ترجیح دادم که از محیط گرافیکی نصب استفاده کنم که یک پیشنیاز را باید نصب می‌کردم تا این محیط که با Perl نوشته شده اجرا شود‌. این پیشنیاز perl-tk نام دارد که اسلکوری‌ها می‌توانند از<a title="perl-tk slackbuild" href="posts/slackbuilds.org/repository/13.37/perl/perl-tk/" target="_blank"> این اسلکبیلد </a>استفاده کنند‌.</p>
+<p>پس از نصب بسته‌ی ذکر شده‌، حالا همان دستور قبلی را با یک آپشن اضافی صدا می‌زنیم‌:</p>
+<div class="code"><pre>sudo ./install-tl -gui
+</pre></div>
+
+
+<p>می‌توانید تنظیمات مربوطه را ببینید‌، و در صورتی که نیاز بود جایی را تغییر دهید‌. نصب حدود یک ربع ساعت برای من طول کشید‌. پس از پایان نصب‌، در متن‌هایی که روی صفحه نمایش داده می‌شود (‌چه در حالتی که از محیط گرافیکی استفاده می‌کند باشید و چه در ترمینال‌، این متن را خواهید دید‌) به شما از بابت نصب تکلایو تبریک گفته می‌شود‌، و می‌خواهد که آدرس مربوط به فرامین تکلایو را به PATH سیستمتان اضافه کنید‌.</p>
+<p>این آدرس برای من از این قرار بود‌:</p>
+<div class="code"><pre>/usr/localc/texlive/2011/bin/x86_64-linux/
+</pre></div>
+
+
+<p>این کار را می‌توانید با ویرایش فایل /etc/profile انجام دهید‌. خوب با خوشم خوشم‌های فراوان‌، از پس نصب تک لایو هم بر آمدیم که خوشبختانه تمام کار‌هایی که انتظار داشتم را درست انجام داد‌. حالا شاید بخواهید همین الان آپگرید کنید‌. برای به روز‌رسانی‌، شما از ابزاری به اسم texlive manager استفاده می‌کنید که با استفاده از یکی از دستورات زیر می‌توانید بهشان دسترسی داشته باشید‌:</p>
+<div class="code"><pre>tlmgr <span class="o">{</span><span class="k">for </span>text mode<span class="o">}</span>
+
+tlmgr -gui <span class="o">{</span><span class="k">for </span>graphical mode <span class="o">(</span>recomended<span class="o">)}</span>
+</pre></div>
+
+
+<p>آپگرید به آخرین نسخه‌ی تکلایو‌، حجم زیادی را برای اولین بار طلب می‌کند‌. روش جایگزین دیگری در این زمینه وجود دارد که در پست دیگری به آن می‌پردازم‌.</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-10-04 08:37
   </abbr></h5>
   <div class="postContent">
@@ -125,115 +175,6 @@
         
     
         <a href="posts/blog13900624wlyn-tjrbh-b-latex-khtb-amwzsh-c.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900624wlyn-tjrbh-b-latex-khtb-amwzsh-c.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-09-12 09:11
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html">نصب و اجرای Anki در اسلکور</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>این بار نرم‌افزاری بسیار کوچکتر از قبل‌، دغدغه‌ی نصب و اجرای یک نرم‌افزار در محیط اسلکور را برایم فراهم کرد‌! <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">Anki</a> نرم‌افزار شبیه ساز محیط <a title="جعبه لایتنر در ویکی پدیا" href="http://fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D9%84%D8%A7%DB%8C%D8%AA%D9%86%D8%B1" target="_blank">فلش کارت</a> را به دلیل خاصیتش‌، قبل از این می‌شناختم‌. ولی با شکست در اجرایش و همچنین نبود فلش کارت مناسب زیاد توجهی بهش نکردم‌. اما اینبار با ورود <a title="4K English words by Flashcard" href="http://flashcard.linuxreview.ir/" target="_blank">فلش کارت‌های ایمان‌</a>، وضع فرق کرد‌. می‌دانستم که کاملترین نمونه‌ی این نرم‌افزار‌ها همین Anki است‌. از همه جالبتر هم بخش آمار و نمودار‌هایش بود که بسیار وسوسه‌ام می‌کرد این نرم‌افزار را نصب کنم‌. در ادامه مراحل نصب را مرور می‌کنیم‌!</p>
-<p>قبل از هر کاری pysetuptools را از <a title="pysetuptools" href="http://slackbuilds.org/repository/13.37/python/pysetuptools/" target="_blank">اینجا</a> دریافت و نصب کنید‌. دیگر پیش نیاز‌های اولیه‌تان برای نصب این‌ها هستند‌:</p>
-<div class="code"><pre>sqlalchemy 0.4.3
-
-simplejson 1.7.3
-</pre></div>
-
-
-<p>بسته‌ی دوم ‌(‌simplejason‌) را می‌توانید با استفاده از Slackbuild‌ موجود در <a title="simplejson Slackbuild" href="http://slackbuilds.org/repository/13.37/python/simplejson/" target="_blank">این آدرس‌</a> نصب کنید‌. برای SQLAlchamy هم من آخرین نسخه‌ی موجود را نصب کردم‌! برای این کار کافیست آخرین نسخه را از <a title="sqlalchemy official website" href="http://www.sqlalchemy.org/" target="_blank">این‌جا</a> دریافت کنید‌، و Slackbuild نسخه قدیمی را نیز از <a title="sqlalchamy slackbuild" href="http://slackbuilds.org/repository/13.37/development/SQLAlchemy/" target="_blank">این‌جا</a> بگیرید‌، حالا فایل Slackbuild را با یک ویرایشگر متن باز کنید‌، همان اوایل متن مقدار جلوی VERSION را به مقدار دلخواهتان تغییر دهید‌ ‌(برای من چنین چیزی از آب در آمد VERSION=0.7.2 )‌ حالا اگر می‌خواهید این نرم‌افزار قدرت گراف کشیدن داشته باشد به ترتیب باید از پس بسته‌های زیر هم بر بیایید‌. ‌(‌لینک Slackbuild‌های مربوطه از این شماره‌ها قابل دسترسی است‌: <a title="numpy slackbuild" href="http://slackbuilds.org/repository/13.37/development/numpy/" target="_blank">۱</a>‌، <a title="pytz slackbuild" href="http://slackbuilds.org/repository/13.37/python/pytz/" target="_blank">۲</a>‌، <a title="python-dateutil" href="http://slackbuilds.org/repository/13.37/python/python-dateutil/" target="_blank">۳‌</a>، <a title="matplotlib slackuild" href="http://slackbuilds.org/repository/13.37/libraries/matplotlib/" target="_blank">۴</a>‌‌)</p>
-<div class="code"><pre>- python-numpy <span class="o">(</span>numpy<span class="o">)</span>
-
-- python-matplotlib <span class="o">(</span>matplotlib<span class="o">)</span>
-</pre></div>
-
-
-<p>برای داشتن چند قابلیت دیگر نظیر ضبط صدا و یا وارد کردن فایل XML هم نیاز به چند پیش‌نیاز دارید که با استفاده از فایل README موجود در پوشه‌ی Anki می‌توانید با آن‌ها آشنا شوید‌. ‌(‌من اون‌ها رو تست نکردم‌، و برای نصب هم نیازی به اون‌ها نداریم‌)‌.</p>
-<p>پس از نصب پیش‌نیاز‌ها آخرین نسخه‌ی Anki را از <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">این‌جا</a> دریافت کنید‌. آن را از حالت فشرده خارج کرده و سپس به مسیر زیر بروید‌:</p>
-<div class="code"><pre><span class="nb">cd </span>anki-YOUR-VERSION/libanki
-</pre></div>
-
-
-<p>لطفا توجه داشته باشید که فایلی با نام setup.py در پوشه‌ی اول Anki هم موجود هست‌، ولی ما به آن کار نداریم‌، و عملیات نصب را با setup.py موجود در پوشه libanki انجام می‌دهیم‌. برای شروع عملیات نصب دستور زیر را اجرا کنید‌:</p>
-<div class="code"><pre>python setup.py install
-</pre></div>
-
-
-<p>دستور فوق را یا با کاربر root و یا با استفاده از sudo اجرا کنید‌. پس از پایان عملیات نصب می‌توانید برنامه را با دستور anki اجرا کنید‌. متاسفانه نصاب این برنامه برای anki در منوی KDE هیچ گزینه‌ای اضافه نمی‌کند‌، پس باید زحمت این را شما بکشید‌. ظاهرا الان برنامه درست کار می‌کند‌، اما برای دیدن روی بد سکه‌، سعی کنید فلش کارت جدیدی ایجاد کنید و یا یک فلش کارت به آن اضافه کنید‌. متاسفانه با اخطار زیر روبرو می‌شوید‌:</p>
-<div class="code"><pre>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-
-File <span class="s2">"/usr/lib/python2.6/site-packages/ankiqt/ui/main.py"</span>, line 953, in onNew
-
-self.deck.initUndo<span class="o">()</span>
-
-File <span class="s2">"/usr/lib/python2.6/site-packages/anki/deck.py"</span>, line 3415, in initUndo
-
-<span class="o">(</span>null, <span class="s1">'delete from %(t)s where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="s2">""" % {'t': table})</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 114, in statement</span>
-
-<span class="s2">return self.execute(text(sql), kwargs)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 90, in execute</span>
-
-<span class="s2">x = self._session.execute(*a, **ka)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/orm/session.py<span class="s2">", line 724, in execute</span>
-
-<span class="s2">clause, params or {})</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1191, in execute</span>
-
-<span class="s2">params)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1271, in _execute_clauseelement</span>
-
-<span class="s2">return self.__execute_context(context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1302, in __execute_context</span>
-
-<span class="s2">context.parameters[0], context=context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1401, in _cursor_execute</span>
-
-<span class="s2">context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1394, in _cursor_execute</span>
-
-<span class="s2">context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/default.py<span class="s2">", line 299, in do_execute</span>
-
-<span class="s2">cursor.execute(statement, parameters)</span>
-
-<span class="s2">sqlalchemy.exc.OperationalError: (OperationalError) cannot create trigger on system table u"</span>ncreate temp trigger
-
-
-
-_undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog valuesn<span class="o">(</span>null,
-
-
-
-<span class="s1">'delete from sqlite_stat2 where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="err">"</span> <span class="o">()</span>
-</pre></div>
-
-
-<p>خوب برنامه به دلایلی ‌(‌که هنوز هم نفهمیدم چیه‌!‌) این اخطار رو از قرار فقط برای جماعت اسلکور کار بر می‌گرداند‌! برای حل این مشکل نیز کافیست‌، برنامه را دوباره استارت کنید و با استفاده از کلید Download موجود در صفحه اصلی‌، اقدام به بارگذاری یکی از فلش‌کارت‌های مربوط کنید‌. به طرز عجیبی برنامه پس از آن کاملا درست کار می‌کند و شما هم می‌توانید با استفاده از آن‌، بر دانستنی‌های دائمتان بیافزایید‌ :-P</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900621nsb-w-jry-anki-dr-slkhwr.html">Comments</a>
     
 
         

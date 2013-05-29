@@ -36,6 +36,46 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-02-08 14:37
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html">افزودن قابلیت تکمیل خودکار به Emacs</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>یکی از مهم‌ترین قابلیت‌های مورد علاقه‌ی افراد تنبلی هم‌چون من‌، داشتن قابلیت تکمیل خودکار در هر فرآیند تایپی است‌. مدتی است که تصمیم به دوستی با ایمکس گرفته‌ام‌، و در همین راستا‌، قصد افزودن این قابلیت را به ایمکس نیز داشتم‌. حالا هم محض به خاطر سپردن‌، مراحل ساده‌ی کار را در این‌جا درج می‌کنم‌:</p>
+<p>آخرین نسخه بسته Auto-complete را از این صفحه <a title="emacs auto-complete Downlad page" href="http://cx4a.org/software/auto-complete/index.html#Downloads" target="_blank">دانلود</a> کنید‌. و داخل یک پوشه تخلیه‌اش کنید‌. ایمکس را باز کنید‌، و دستور زیر را وارد کنید‌:</p>
+<p><code>bashM-x load-file RET</code></p>
+<p>آدرس فایل ‎/etc/install.el موجود در پوشه‌ی دانلود شده را به ایمکس بدهید‌. برای نمونه من چیزی شبیه به این را وارد کردم‌:</p>
+<p><code>bash~/home/shahin/auto-complete/etc/install.el</code></p>
+<p>باقی مراحل را تایید کنید و تمام‌. پیغام زیر را مشاهده می‌کنید‌:</p>
+<p>```bashSuccessfully installed!</p>
+<p>Add the following code to your .emacs:</p>
+<p>(add-to-list 'load-path "~/.emacs.d")    ; This may not be appeared if you have already added.</p>
+<p>(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")</p>
+<p>(require 'auto-complete-config)</p>
+<p>(ac-config-default)</p>
+<p>```</p>
+<p>همانطور که در توضیحات داده شده زیر تبریک آمده‌، خط‌های مربوطه را به فایل ‎.emacs موجود در پوشه‌ی خانگی‌تان (‌اگه نیست بسازید‌) وارد کنید‌. به همین سادگی‌. حالا یک فایل باز کنید و شروع به تایپ کنید و از قابلیت تکمیل خودکارش لذت ببرید‌.</p>
+<p><strong>پی‌نوشت: </strong>جالبیتش این است که حتی در محیط متنی هم به خوبی عمل می‌کند و نیازتان را بر طرف می‌سازد ;-)</p>
+<p>=-=-=-=-=</p>
+<p><em>Powered by <strong><a href="http://blogilo.gnufolks.org/">Blogilo</a></strong></em></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-01-03 12:56
   </abbr></h5>
   <div class="postContent">
@@ -190,41 +230,6 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
         
     
         <a href="posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-12-31 18:10
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">حل مشکل USB Stick‌هایی که به صورت Unsafe از سیستم جدا شده‌اند</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>شاید برای شما هم پیش آمده باشد که USB Stick (فلش درایو‌) ای از دوستی گرفته‌اید ولی پس از نصب روی سیستمتان متوجه شده‌اید که قابل نوشتن نیست‌. نمونه‌ای از اخطار مربوطه به صورت زیر است‌:</p>
-<div class="code"><pre>Error opening file <span class="s1">'/media/Shahin_LG/1.jpg'</span>: Permission denied
-</pre></div>
-
-
-<p>معمولا این اشکال در ازای جدا کردنش از سیستم در حین کار اتفاق می‌افتد‌. حال ممکن است که روی یک سیستم واقعی بوده باشد‌، یا یک فکش پلیر‌! به شخصه در اولین بر خورد با چنین مشکلی‌، آسیب دیدن فایل سیستم را دلیل دانستم‌، ولی پس از چک کردن فایل سیستم متوجه شدم که چنین نیست‌. راه حل این بار سوار کردن (Mount) دستی فلش درایو به صورت زیر است‌:</p>
-<div class="code"><pre>sudo mount -t ntfs-3g /dev/sdb1 /media/LG -o force
-</pre></div>
-
-
-<p>توجه داشته باشید که برای جواب گرفتن از این دستور باید بسته‌های ntfs-config و ntfs-3g را نصب داشته باشید و همچنین پوشه‌ای برای سوار کردن فلش درایو (در این‌جا ‎/media/LG) ایجاد کرده باشید‌.</p>
-<p><a title="Topic on ubuntu forum" href="http://ubuntuforums.org/showthread.php?t=1338514" target="_blank">منبع حل مشکل</a></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">Comments</a>
     
 
         

@@ -36,6 +36,75 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2011-11-30 15:00
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>وقتی که برای دسترسی به کارگزار (Server) پایگاه داده <a title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟" href="http://shahinism.com/blog/1390/09/09/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b3%e2%80%8c-mysql-%da%86%db%8c%d8%b3%d8%aa%e2%80%8c%d8%9f/" target="_blank">MySQL</a> از طریق مشتری‌ای (Client) نظیر mysql یا حتی زبان‌های برنامه نویسی نظیر php یا perl اقدام می‌کنید‌، به یک حساب کاربری نیاز دارید‌.
+MySQL دارای سیستم مدیریت کاربر خبره‌ای است که قادر به کنترل کردن دسترسی کاربران از مشتری‌های مختلف به کارگزار می‌باشد‌. برای این کار MySQL از جداول مخصوص در پایگاه داده کمک می‌گیرد‌. به همین دلیل برای ساخت یک کاربر جدید در MySQL شما نیاز به کاربر root دارید‌.</p>
+<p>سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.</p>
+<p>لطفا توجه داشته باشید حساب کاربری در MySQL با اکانت‌های یونیکس‌/‌لینوکس متفاوت است‌. برای مثال‌، کاربر root در MySQL و کاربر root در یونیکس‌/‌لینوکس جدا از هم بوده و هیچ ارتباطی با هم ندارند‌، حتی اگر نام کاربریشان شبیه به هم باشد‌.</p>
+<p></p><h4>روند ساخت یک حساب کاربری در MySQL</h4>
+<p>با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌، دستور زیر را وارد کنید‌:):</p>
+<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
+</pre></div>
+
+
+<p>و یا</p>
+<div class="code"><pre><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
+</pre></div>
+
+
+<p>یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:</p>
+<div class="code"><pre>mysql&amp;gt; CREATE DATABASE demo;
+</pre></div>
+
+
+<p>یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:</p>
+<div class="code"><pre>mysql&amp;gt; GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’;
+</pre></div>
+
+
+<p><strong>توجه‌:</strong> GRANT ALL به این معنی است که کاربر قادر است هر کاری انجام دهد‌. می‌تواند اطلاعات را بخواند‌، دستکاری کند و یا پاکشان کند‌، اما تنها برای جداول موجود در پایگاه دادهٔ demo. او قادر به دسترسی به دیگر پایگاه‌های داده نیست‌.</p>
+<h4>من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL متصل شوم؟</h4>
+
+<p>کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه داده demo متصل شود‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -p demo
+</pre></div>
+
+
+<p>و یا‌:</p>
+<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
+</pre></div>
+
+
+<p>که پارامتر‌های دستور به شکل زیر معنا می‌شوند‌:</p>
+<ul><li>‎-user1 : کاربر MySQL</li>
+    <li>‏‎-h : نام کارگزار MySQL (به صورت پیش‌فرض localhost)</li>
+    <li>‎-p : اعلان برای رمز عبور</li>
+    <li>demo: demo نام پایگاه داده در mysql می‌باشد (اختیاری)</li>
+</ul><p style="text-align: center;"><a title="MySQL user creation" href="http://www.cyberciti.biz/faq/mysql-user-creation/" target="_blank">منبع</a></p>
+
+<p></p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2011-11-30 08:00
   </abbr></h5>
   <div class="postContent">
@@ -145,38 +214,6 @@
         
     
         <a href="posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-29 08:41
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900908chchch-1-pwsth-posix-chyst.html">چ‌چ‌چ (۱) ‌: پوستهٔ POSIX چیست؟</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>منظور از پوستهٔ POSIX که در سیستم‌عامل‌های یونیکس‌/‌لینوکسی وجود دارد چیست؟</p>
-<p>POSIX که مخفف عبارت «‌رابط قابل حمل سیستم عامل‌» (Portable Operating System Interface) است نشانگر استانداردی به همین منظور است که به شماره P۱۰۰۳. ۲ در IEEE به ثبت رسیده است‌. (‌طبق اطلاعات <a title="پازیکس در ویکی‌پدیا فارسی" href="https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B2%DB%8C%DA%A9%D8%B3" target="_blank">ویکی‌پدیا</a> این نام توسط ریچارد استالمن انتخاب شده است‌.)</p>
-<p>با استفاده از این استاندارد می‌توان امکان هماهنگ‌سازی‌، ارتباط و پرت کردن (‌انتقال‌) آسان‌تر نرم‌افزار را در محیط‌های تابع این استاندارد به وجود آورد‌. و می‌توان گفت که این استاندارد به منظور استفادهٔ برنامه‌نویسان ابزار‌های کاربردی و مدیران سیستم تهیه شده است‌.</p>
-<p>پوستهٔ POSIX برای بسیاری از سیستم‌عامل‌های شبه یونیکس پیاده سازی شده است‌. در این رابطه می‌توانید به نقل قول زیر از <a title="پازیکس در ویکی‌پدیا فارسی" href="https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B2%DB%8C%DA%A9%D8%B3" target="_blank">ویکی‌پدیا</a> توجه فرمایید‌:</p>
-<p></p><blockquote>برخی از سیستم‌عامل‌های کاملا سازگار با پازیکس عبارت هستند از BSD/OS، HP-UX، مک اواس ده، می‌نیکس و سولاریس و OpenSolaris. لازم به ذکر است که سیستم‌عامل‌های فری بی‌اس‌دی، گنو/لینوکس، NetBSD، OpenBSD از جمله سیستم‌عامل‌هایی هستند که تا حد زیادی سازگاری با پازیکس را حفظ کرده‌اند.</blockquote>
-<p>بسیاری از ویژگی‌های پوستهٔ POSIX به پوستهٔ <a title="چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟" href="http://shahinism.com/blog/1390/09/08/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b2%e2%80%8c-%d9%be%d9%88%d8%b3%d8%aa%d9%87%e2%80%8c%db%8c-korn-%d8%af%d8%b1-%db%8c%d9%88%d9%86%db%8c%da%a9%d8%b3%e2%80%8c%e2%80%8c%d9%84%db%8c%d9%86%d9%88/">Korn</a> شباهت دارد‌.</p>
-<p style="text-align: center;"><a title=" What is POSIX shell on Cyberciti.biz" href="http://www.cyberciti.biz/faq/what-is-posix-shell/" target="_blank">منبع</a></p>
-
-<p></p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900908chchch-1-pwsth-posix-chyst.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900908chchch-1-pwsth-posix-chyst.html">Comments</a>
     
 
         

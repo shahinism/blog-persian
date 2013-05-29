@@ -36,6 +36,56 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2012-10-13 13:26
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html">Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</a></h3>
+    
+    <div class="entry-content">
+      <p></p><p>حقیقتش مشکل خاصی نبود ولی وقتی به چشم می‌آمد خیلی تو ذوق می‌زد‌! منظورم همین Notification‌هایی است که وقتی مثلا Thunderbird ایمیلی دریافت می‌کند روی صفحه ظاهر می‌شوند (یا هر نرم‌افزار دیگری که بخواهد چیزی به اطلاع آدم برساند). روی KDE یا Gnome ابزار‌های مربوطه‌شان به صورت خودکار لود می‌شد و احتمالا این احساس به آدم دست می‌داد که این‌ها مربوط به خود میزکارند که خوب احساس دروغی بود D: روی <a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/">Awesome کبیر</a> هم از Naughty استفاده می‌شد که الحق تیپ خیلی زیبایی داشت و به میز‌کار می‌آمد‌.
+بعد از مهاجرت به i3 بود که جون روی اسلکور به صورت پیش‌فرض xfce4-notifyd نصب بود مشکلی که ذکر خیرش رفت ظاهر می‌شد‌. متاسفانه از آن‌جایی که i3 دوست داشت دور هر چیزی کادر شناسایی پنجره‌اش را بکشد‌، با همچین منظره‌ای روبرو می‌شدیم‌:</p>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"><img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"></a>جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با <a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank">Dunst</a> آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:</p>
+<p></p><blockquote>
+<p style="text-align: left;">dunst - dmenu-ish notification daemon</p>
+
+</blockquote>
+
+<p>و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:</p>
+<p><a href="http://www.knopwob.org/public/dunst_wide_640.png"><img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"></a>برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.</p>
+<p>بعد از نصب هم با دستور زیر:</p>
+<div class="code"><pre>cp /usr/share/dunst/dunstrc ~/.config
+</pre></div>
+
+
+<p>یک نمونه از فایل تنظیمات را در پوشهٔ خانگی‌تان کپی کنید‌. از من می‌شنوید چرخی در این فایل بزنید چون تنظیمات خیلی به درد بخوری در آن پیدا می‌کنید‌ (ضمن این که ظاهر اولیه اصلا شباهتی به Dmenu ندارد ;-))</p>
+<p>اما بیشترین نقاط قوت این اطلاع رسان ساده در میانبر‌های کیبوردش مخفی شده به طوری که:</p>
+<ul><li>می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.</li>
+    <li>می‌توانید با Ctrl+grave آخرین اخطاری که ظاهر شد و شما ندید را به روی صفحه برگردانید (که به نظرم خیلی به درد بخور است). grave همان دکمه‌ای است که باهاش ~ تایپ می‌کنید‌. کنار ۱ و بالای TAB ;-)</li>
+    <li>یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)</li>
+</ul><p><strong>نکته ۱:</strong> برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:</p>
+<div class="code"><pre>notify-send Test
+</pre></div>
+
+
+<p>که جای Test هر چیزی که خواستید می‌توانید به عنوان پیغام اضافه کنید‌.</p>
+<p><strong>نکته ۲:</strong> Dunst تنها قبل از اجرای daemon‌ش فایل کانفیگی که در ‎.config ذخیره کردیم را می‌خواند‌. برای دیدن تغییرات باید اول این daemon را kill کنید و دوباره اجرایش کنید ;-)</p>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2012-10-01 12:01
   </abbr></h5>
   <div class="postContent">
@@ -164,57 +214,6 @@
         
     
         <a href="posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2012-09-20 11:11
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">اسکریپتی برای کاهش هزینهٔ شرکت در کلاس‌های دانشگاه Coursera</a></h3>
-    
-    <div class="entry-content">
-      <p></p><p>۱۹۵ کلاس‌، ۱۹۵ کلاس درس دانشگاهی که خیلی راحت می‌توان از طریق اینترنت آن‌ها را مطالعه کرد و حتی آزمون داد‌ -البته بدیهی است که این پروسه نیاز به صادق بودن شخص با خود هم دارد‌-. اگر برای به دست آوردن یک کاغذ A4 گلاسه که دانش‌تان را محدود به یک حوزهٔ خاص می‌داند و برایش رتبه هم تعیین می‌کند درس نمی‌خوانید‌، یک همچین منبعی از کلاس‌ها می‌تواند واقعا وسوسه انگیز باشد‌. <a title="Coursera home page" href="https://www.coursera.org/" target="_blank">Coursera</a> با همکاری مجموعه‌ای از اساتید دانشگاه‌ها (و شاید هم خود دانشگاه‌ها) سعی در فراهم آوردن <a title="courses page" href="https://www.coursera.org/courses" target="_blank">همچین امکانی</a> دارد‌. خصوصا این که جدیدا توانسته ۷۰ کلاس آموزشی جدید نیز ارائه کند (۱۹۵ با احتساب همین مقدار جدید است ;-))
-حقیقتش در مورد خیلی از دروس ارائه شده حتی سوادم نکشید که بدانم چه هستند‌، اما در مورد کامپیوتر و خصوصا مهندسی نرم‌افزار‌، کلاس‌ها عموما گل‌چین شدهٔ بهترین واحد‌هایی است که در دانشگاه‌های خودمان هم سعی بر تدریسش دارند (گفتم سعی‌، منظورم این است که حداقل در جایی که من بودم‌، نزدیک به چنین هدفی هم نشدند!). البته این را هم اضافه کنم که این دانشگاه هنوز هم چیز‌های مهمی را ارائه نمی‌دهد که در دانشگاه‌های وطنی با بهترین کیفیت ارائه می‌شود‌ D: (‌حدس می‌زنید منظورم کدام دروس است؟)</p>
-<p>زیاده‌گویی بس است‌. خیلی وقت پیش هم در کلاس‌های این سایت شرکت کرده بودم‌، ولی ادامه ندادم‌. چرا؟ حقیقتش مجموعهٔ دانلودی‌اش عالی است‌. فیلم آموزشی‌، زیرنویسش‌، اسلاید و …. اما خودتان که می‌دانید زندگی سایبری (‌حالم از این کلمهٔ آخر به هم می‌خورد‌، جایگزین بهتری نمی‌شناسید؟) در ایران‌، خصوصا با این کیفیت عالی (!) چه هزینهٔ گزافی دارد‌. این شد که دیروز وقتی دوباره لیست این کلاس‌ها‌، وسوسه به مطالعه‌شان را در من تقویت کرد‌، تصمیم به دانلودشان به صورت شبانه گرفتم‌. اما مشکل این‌جاست که باید شب را تا صبح پای کامپیوتر بگذرانم و تک به تک دانلودشان کنم‌، چرا که‌، پروسهٔ دانلود سایت کمی قرتی تشریف دارد و کوکی می‌خواهد‌. قصد داشتم برای چالش هم که شده یک اسکریپت برای این کار بنویسم‌.</p>
-<p>اما خوشبختانه بعد از اولین جستجو به کامل‌ترین نسخهٔ ممکن برای این کار رسیدم‌.<a title="coursera doenloader on github" href="https://github.com/jplehmann/coursera" target="_blank"> اسکریپتی که</a> دیروز کار نمی‌کرد‌، و باعث شده بود تصمیم بگیرم تعمیرش کنم‌، ولی باز توسعه دهندهٔ خوش‌فکرش به کارش انداخت و الان مثل چـــی کار می‌کند ;-)</p>
-<p>مزیتش نسبت به تمام روش‌های دانلود دیگر این است که فقط کافیست نام کلاس را بهش بگویید و خودش همه چیز‌های مربوطه را برایتان دانلود کرده‌، نام درست را برای‌شان بگذارد و در پوشه‌های جدا دسته بندی می‌کند‌. (هلو …؟)</p>
-<p>اول با توجه به توزیع زیر دستتان‌، بستهٔ setuptools از خانوادهٔ پایتون را نصب کنید‌، و باقی کار را مثل زیر انجام دهید:</p>
-<div class="code"><pre>easy_install BeautifulSoup
-
-easy_install argparse
-
-git clone https://github.com/jplehmann/coursera.git
-
-<span class="nb">cd </span>coursera
-</pre></div>
-
-
-<p>و حالا با چنین نحوی می‌توانید دانلود را انجام دهید:</p>
-<div class="code"><pre>./coursera CLASS_NAME -u USER_NAME -p PASSWORD
-</pre></div>
-
-
-<p>برای به دست آوردن CLASS_NAME صفحهٔ کلاس مربوطه را در سایت باز کنید‌. مثلا برای Algorithms 1 همچین چیزی است:</p>
-<div class="code"><pre>https://class.coursera.org/algs4partI-2012-001/lecture/index
-</pre></div>
-
-
-<p>آن بند algs4partI-2012-001 می‌شود نام کلاس‌ الگوریتم‌ها‌. جایش در باقی کلاس‌ها یکسان و معلوم است ;-)</p>
-<p><strong>پی‌نوشت</strong>: در آیندهٔ نزدیک یک روش گاز‌انبری و خیلی دم دستی را یادتان می‌دهم که می‌تواند این کوکی‌های کذایی را دور بزند. </p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">Comments</a>
     
 
         
