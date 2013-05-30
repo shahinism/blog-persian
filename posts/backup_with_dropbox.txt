@@ -41,9 +41,11 @@ Dropbox را نصب کنید
 
 .. code::
 
-   @hourly /home/shahin/Workspace/bin/dropbackup.sh > /home/shahin/.cronstatus
+   @hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh > /home/shahin/.cronstatus
 
 یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)
+
+**ویرایش اول**: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.
 
 .. _dropbox: http://dropbox.com
 .. _slackbuild: http://slackbuilds.org/repository/14.0/network/dropbox/
