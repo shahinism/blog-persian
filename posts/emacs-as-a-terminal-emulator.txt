@@ -22,6 +22,8 @@
 .. code::
 
    M-X multi-term
+   
+.. TEASER_END: بیشتر بخوانید
 
 یک کمی بالا و پایینش می‌کنم. همه چیز خوب کار می‌کند‌، جز این که قابلیت تکمیل خود‌کار حیاتی ZSH_ را از دست داده‌ام. چرا؟ نمی‌دانم ولی بیایید ببینیم این کلید چه فرمانی را اجرا می‌کند:
 
@@ -87,7 +89,80 @@
 **نکته ۱**: این یک پست تجربی است. هر وقت چیز جدیدی در این زمینه یاد گرفتم‌، این پست را ویرایش می‌کنم.
 **نکته ۲**: برای زدن C-c در ایمکس‌، باید دوبار آن را بزنید. امکانش هست که آن را تغییر دهیم‌، ولی فعلا من به آن دستی نزده‌ام. 
 
-   
+ویرایش اول
+============================
+خوب بعد از تقریبا دو روز سر و کله زدن با این ترمینال‌، به نکاتی بر خوردم که به نظرم خوب است در این‌جا مستند شود:
+
+ایجاد ترمینال جدید
+-----------------------
+اول این که ممکن است شما هم مثل **علیرضا** عزیز که در بخش کامنت‌ها ذکر کرد‌، با ایجاد یک ترمینال جدید مشکل داشته باشید. خوب این کار تنها با صدا زدن دوبارهٔ multi-term قابل انجام است. همان‌طور که قبلا_ هم در این مورد صحبت کردیم‌، می‌توانید برای این کار یک کلید میانبر تعریف کنید. اما اگر مثل من از ergoemacs-mode_ استفاده می‌کنید‌، کافیست برای ایجاد یک ترمینال جدید از C-n بهره بگیرید ;-) (این کلید‌ها به طور پیش‌فرض یک بافر در حالت lisp-mode ایجاد می‌کنند که با تغییر متغیر initial-major-mode ما آن را به یک شل جدید نسبت می‌دهیم).
+
+تغییر خودکار مسیر ایمکس همزمان با ترمینال
+------------------------------------------
+وقتی با ترمینال وارد یک مسیر جدید می‌شویم‌، و تصمیم داریم یک فایل را با ایمکس در آن‌جا ویرایش کنیم‌، بدیهی است که کلید C-o (یا C-x C-f پیش‌فرض) باید از آن مسیر اجازهٔ جستجوی فایل را بدهند. ولی به صورت پیش‌فرض به مسیر خانگی‌مان بر می‌گردند. برای حل این مشکل از کد‌هایی که در `این‌جا <https://github.com/daimrod/Emacs-config/blob/master/config-multi-term.el>`_ پیدا کردم استفاده می‌کنیم:
+
+.. code:: cl
+
+   (defadvice term-send-input (after update-current-directory)
+	  "Update the current directory."
+	  (let* ((pid (process-id (get-buffer-process (current-buffer))))
+	     (cwd (file-truename (format "/proc/%d/cwd" pid))))
+	  (cd cwd)))
+   (ad-activate 'term-send-input)
+
+   (defadvice term-send-raw (after update-current-directory)
+	  "Update the current directory."
+	  (let* ((pid (process-id (get-buffer-process (current-buffer))))
+              (cwd (file-truename (format "/proc/%d/cwd" pid))))
+	  (cd cwd)))
+   (ad-activate 'term-send-raw)
+
+خوب سواد من نسبت به این توابع خیلی کم است. اما اول این که با **defadvice** دو تابع term-send-input/raw را به قولی نصیحت می‌کنیم که هر بار با تغییر مسیر ترمینال‌، از مسیر ‎proc آخرین مسیر حاضر را را دریافت کند و به آن وارد شود. دستور cd استفاده شده‌، مربوط به ایمکس است و ربطی به لینوکس ندارد. ولی بدیهی است که این تابع فقط روی سیستم‌های یونیکس بیس کار خواهد کرد.
+
+جانشینی کلید‌های میانبر
+------------------------------
+بعد از مدتی کار متوجه می‌شوید میانبر‌های ترمینال‌تان به درستی عمل نمی‌کنند. مثلا C-r که در تاریخچهٔ ترمینال جستجو می‌کند‌،‌ درون ایمکس‌، خود بافر را جستجو می‌کند. این است که کلید‌های میانبر را به این صورت تعریف می‌کنیم (این کد‌ها را از `این وبلاگ <http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator>`_ گرفتم):
+
+.. code:: cl
+
+   (when (require 'multi-term nil t)
+	  (global-set-key (kbd "<C-up>") 'multi-term-next)
+	  (global-set-key (kbd "<C-down>") 'multi-term-prev)
+	  (setq multi-term-buffer-name "term"
+	    multi-term-program "/bin/zsh"))
+
+   ; Define keybindings
+   (when (require 'term nil t) ; only if term can be loaded..
+	  (setq term-bind-key-alist
+	      (list (cons "C-c C-c" 'term-interrupt-subjob)
+	          (cons "M-u" 'previous-line)
+                  (cons "M-e" 'next-line)
+                  (cons "M-o" 'term-send-forward-word)
+                  (cons "M-n" 'term-send-backward-word)
+                  (cons "C-c C-j" 'term-line-mode)
+                  (cons "C-c C-k" 'term-char-mode)
+                  (cons "M-r" 'term-send-backward-kill-word)
+                  (cons "M-w" 'term-send-forward-kill-word)
+                  (cons "<C-left>" 'term-send-backward-word)
+                  (cons "<C-right>" 'term-send-forward-word)
+                  (cons "C-r" 'term-send-reverse-search-history)
+                  (cons "M-x" 'term-send-raw-meta)
+                  (cons "M-m" 'term-send-raw-meta)
+                  (cons "M-c" 'term-send-raw))))
+
+با آن تابع اول دو کلید سراسری را زمانی که یک multi-term ایجاد شد تعیین می‌کنیم. این کلید‌ها امکان دسترسی سریع به ترمینال را وقتی در بافر دیگری هستیم فراهم می‌کنند. همین‌طور اسم بافر ترمینال و نوع پوستهٔ مورد استفاده را تعیین می‌کنیم که زیاد لازم نیست‌، ولی بودنش ضرری هم ندارد (خود multi-term با خواندن متغیر محیطی SHELL پوستهٔ مورد استفاده را کشف می‌کند).
+
+باقی کلید‌های تعریف شده را هم کمی تغییر دادم تا با ergoemacs-mode_ روی چینش workman_ سازگار باشد. شما هم می‌توانید با توجه به نیاز‌تان تغییرشان دهید.
+
+line-mode, char-mode
+---------------------------
+
+این دو مد multi-term هر کدام امکانات متفاوتی دارند. مثلا در line-mode با بافر ترمینال مثل یک بافر معمولی ایمکس برخورد می‌شود که به راحتی قابلیت ویرایش دارد. char-mode همان مد پیش‌فرض ترمینال است. در مرحلهٔ قبل برای این دو مد هم کلید میانبر تعریف کردیم.
+
+هماهنگ‌سازی ایمکس و ترمینالش در OpenBox
+----------------------------------------------------
+ممکن است شما هم مثل علیرضای عزیز‌، از i3 استفاده نکنید. این است که لازم می‌شود به روش متفاوتی نسبت به میز‌کار‌تان این امکانات بحث شده در این پست را فراهم کنید. علیرضا زحمت کشیده و روشی برای راه‌اندازی همچین چیزی در OpenBox ساخته. این روش را در `وبلاگش <http://alinuxgeek.wordpress.com/2013/05/29/%d8%b4%d8%b1%d8%aa%da%a9%d8%a7%d8%aa-%d8%a8%d8%a7%d9%84%d8%a7-%d9%81%d9%88%da%a9%d9%88%d8%b3-%d8%b1%d9%88%db%8c-%d9%be%d9%86%d8%ac%d8%b1%d9%87-%d8%a7%db%8c%d9%85%da%a9%d8%b3>`_ بخوانید.
+
 .. _quake: http://shahinism.github.io/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html
 .. _org-mode: http://orgmode.org/
 .. _ایمکس: http://shahinism.github.io/categories/emacs.html
@@ -97,3 +172,6 @@
 .. _htop: http://htop.sourceforge.net/
 .. _i3wm: http://i3wm.org
 .. _fullscreen-mode: https://github.com/ryantm/fullscreen-mode
+.. _ergoemacs-mode: http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html
+.. _workman: http://shahinism.github.io/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html
+.. _قبلا: http://shahinism.github.io/posts/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html

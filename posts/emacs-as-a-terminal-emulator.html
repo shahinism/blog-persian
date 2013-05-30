@@ -52,6 +52,7 @@ package-install multi-term
 <pre class="code literal-block">
 M-X multi-term
 </pre>
+<!-- TEASER_END: بیشتر بخوانید -->
 <p>یک کمی بالا و پایینش می‌کنم. همه چیز خوب کار می‌کند‌، جز این که قابلیت تکمیل خود‌کار حیاتی <a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">ZSH</a> را از دست داده‌ام. چرا؟ نمی‌دانم ولی بیایید ببینیم این کلید چه فرمانی را اجرا می‌کند:</p>
 <pre class="code literal-block">
 C-h k TAB
@@ -97,6 +98,74 @@ package-install fullscreen-mode
 <p>حالا خیلی راحت تمامی امکانات پیش‌فرض <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> را همراه ترمینال‌مان داریم. خیلی راحت می‌توانیم خروجی‌ها را در فایل‌ها سیو کنیم و یا از فعالیت‌مان یک History کامل بسازیم.</p>
 <p><strong>نکته ۱</strong>: این یک پست تجربی است. هر وقت چیز جدیدی در این زمینه یاد گرفتم‌، این پست را ویرایش می‌کنم.
 <strong>نکته ۲</strong>: برای زدن C-c در ایمکس‌، باید دوبار آن را بزنید. امکانش هست که آن را تغییر دهیم‌، ولی فعلا من به آن دستی نزده‌ام.</p>
+</div>
+<div class="section" id="id3">
+<h2>ویرایش اول</h2>
+<p>خوب بعد از تقریبا دو روز سر و کله زدن با این ترمینال‌، به نکاتی بر خوردم که به نظرم خوب است در این‌جا مستند شود:</p>
+<div class="section" id="id4">
+<h3>ایجاد ترمینال جدید</h3>
+<p>اول این که ممکن است شما هم مثل <strong>علیرضا</strong> عزیز که در بخش کامنت‌ها ذکر کرد‌، با ایجاد یک ترمینال جدید مشکل داشته باشید. خوب این کار تنها با صدا زدن دوبارهٔ multi-term قابل انجام است. همان‌طور که <a class="reference external" href="http://shahinism.github.io/posts/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html">قبلا</a> هم در این مورد صحبت کردیم‌، می‌توانید برای این کار یک کلید میانبر تعریف کنید. اما اگر مثل من از <a class="reference external" href="http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">ergoemacs-mode</a> استفاده می‌کنید‌، کافیست برای ایجاد یک ترمینال جدید از C-n بهره بگیرید ;-) (این کلید‌ها به طور پیش‌فرض یک بافر در حالت lisp-mode ایجاد می‌کنند که با تغییر متغیر initial-major-mode ما آن را به یک شل جدید نسبت می‌دهیم).</p>
+</div>
+<div class="section" id="id5">
+<h3>تغییر خودکار مسیر ایمکس همزمان با ترمینال</h3>
+<p>وقتی با ترمینال وارد یک مسیر جدید می‌شویم‌، و تصمیم داریم یک فایل را با ایمکس در آن‌جا ویرایش کنیم‌، بدیهی است که کلید C-o (یا C-x C-f پیش‌فرض) باید از آن مسیر اجازهٔ جستجوی فایل را بدهند. ولی به صورت پیش‌فرض به مسیر خانگی‌مان بر می‌گردند. برای حل این مشکل از کد‌هایی که در <a class="reference external" href="https://github.com/daimrod/Emacs-config/blob/master/config-multi-term.el">این‌جا</a> پیدا کردم استفاده می‌کنیم:</p>
+<pre class="code cl literal-block">
+<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+       <span class="s">"Update the current directory."</span>
+       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+       <span class="s">"Update the current directory."</span>
+       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
+</pre>
+<p>خوب سواد من نسبت به این توابع خیلی کم است. اما اول این که با <strong>defadvice</strong> دو تابع term-send-input/raw را به قولی نصیحت می‌کنیم که هر بار با تغییر مسیر ترمینال‌، از مسیر ‎proc آخرین مسیر حاضر را را دریافت کند و به آن وارد شود. دستور cd استفاده شده‌، مربوط به ایمکس است و ربطی به لینوکس ندارد. ولی بدیهی است که این تابع فقط روی سیستم‌های یونیکس بیس کار خواهد کرد.</p>
+</div>
+<div class="section" id="id7">
+<h3>جانشینی کلید‌های میانبر</h3>
+<p>بعد از مدتی کار متوجه می‌شوید میانبر‌های ترمینال‌تان به درستی عمل نمی‌کنند. مثلا C-r که در تاریخچهٔ ترمینال جستجو می‌کند‌،‌ درون ایمکس‌، خود بافر را جستجو می‌کند. این است که کلید‌های میانبر را به این صورت تعریف می‌کنیم (این کد‌ها را از <a class="reference external" href="http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator">این وبلاگ</a> گرفتم):</p>
+<pre class="code cl literal-block">
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
+       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
+         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
+
+<span class="c1">; Define keybindings</span>
+<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
+       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
+           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
+</pre>
+<p>با آن تابع اول دو کلید سراسری را زمانی که یک multi-term ایجاد شد تعیین می‌کنیم. این کلید‌ها امکان دسترسی سریع به ترمینال را وقتی در بافر دیگری هستیم فراهم می‌کنند. همین‌طور اسم بافر ترمینال و نوع پوستهٔ مورد استفاده را تعیین می‌کنیم که زیاد لازم نیست‌، ولی بودنش ضرری هم ندارد (خود multi-term با خواندن متغیر محیطی SHELL پوستهٔ مورد استفاده را کشف می‌کند).</p>
+<p>باقی کلید‌های تعریف شده را هم کمی تغییر دادم تا با <a class="reference external" href="http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">ergoemacs-mode</a> روی چینش <a class="reference external" href="http://shahinism.github.io/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html">workman</a> سازگار باشد. شما هم می‌توانید با توجه به نیاز‌تان تغییرشان دهید.</p>
+</div>
+<div class="section" id="line-mode-char-mode">
+<h3>line-mode, char-mode</h3>
+<p>این دو مد multi-term هر کدام امکانات متفاوتی دارند. مثلا در line-mode با بافر ترمینال مثل یک بافر معمولی ایمکس برخورد می‌شود که به راحتی قابلیت ویرایش دارد. char-mode همان مد پیش‌فرض ترمینال است. در مرحلهٔ قبل برای این دو مد هم کلید میانبر تعریف کردیم.</p>
+</div>
+<div class="section" id="openbox">
+<h3>هماهنگ‌سازی ایمکس و ترمینالش در OpenBox</h3>
+<p>ممکن است شما هم مثل علیرضای عزیز‌، از i3 استفاده نکنید. این است که لازم می‌شود به روش متفاوتی نسبت به میز‌کار‌تان این امکانات بحث شده در این پست را فراهم کنید. علیرضا زحمت کشیده و روشی برای راه‌اندازی همچین چیزی در OpenBox ساخته. این روش را در <a class="reference external" href="http://alinuxgeek.wordpress.com/2013/05/29/%d8%b4%d8%b1%d8%aa%da%a9%d8%a7%d8%aa-%d8%a8%d8%a7%d9%84%d8%a7-%d9%81%d9%88%da%a9%d9%88%d8%b3-%d8%b1%d9%88%db%8c-%d9%be%d9%86%d8%ac%d8%b1%d9%87-%d8%a7%db%8c%d9%85%da%a9%d8%b3">وبلاگش</a> بخوانید.</p>
+</div>
 </div>
       </div>
       <div class="postMeta">
