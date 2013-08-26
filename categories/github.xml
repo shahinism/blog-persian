@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>شاهینیسم (github)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Tue, 28 May 2013 11:10:21 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چطور از وابستگی به گیت‌هاب فرار کنیم: پشتیبان‌گیری از مخازن گیت</title><link>http://shahinism.github.io/posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;گیت این روز‌ها تبدیل به عصای کمکی بزرگی برای انجام پروژه‌هایم شده. خوشبختانه تا دلمان هم بخواهد سرور ارائهٔ خدمات گیت روی اینترنت ریخته که هر کدام مزایا و محدودیت‌های خود‌شان را دارند. من‌باب مالیخولیایی زیادم در پشتیبان‌گیری از پروژه‌ها‌، مطلب زیر (&lt;a title="How to avoid relying on github: mirror your repository" href="http://www.deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/" target="_blank"&gt;منبع&lt;/a&gt;) را پیدا کردم که خیلی جالب و کمکی به نظرم آمد. تست کردم‌، فوق‌العاده بود. پس ترجمه‌اش را این‌جا می‌گذارم تا شما هم حالی ببرید از آخرین فرزند خلف آقایمان‌، ترووالدز ;-)&lt;/p&gt;
+<rss version="2.0"><channel><title>شاهینیسم (github)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Mon, 26 Aug 2013 20:35:14 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چطور از وابستگی به گیت‌هاب فرار کنیم: پشتیبان‌گیری از مخازن گیت</title><link>http://shahinism.github.io/posts/blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;گیت این روز‌ها تبدیل به عصای کمکی بزرگی برای انجام پروژه‌هایم شده. خوشبختانه تا دلمان هم بخواهد سرور ارائهٔ خدمات گیت روی اینترنت ریخته که هر کدام مزایا و محدودیت‌های خود‌شان را دارند. من‌باب مالیخولیایی زیادم در پشتیبان‌گیری از پروژه‌ها‌، مطلب زیر (&lt;a title="How to avoid relying on github: mirror your repository" href="http://www.deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/" target="_blank"&gt;منبع&lt;/a&gt;) را پیدا کردم که خیلی جالب و کمکی به نظرم آمد. تست کردم‌، فوق‌العاده بود. پس ترجمه‌اش را این‌جا می‌گذارم تا شما هم حالی ببرید از آخرین فرزند خلف آقایمان‌، ترووالدز ;-)&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
 &lt;p&gt;یکی از نکاتی که قطعی‌های اخیر گیت‌هاب گوشزد می‌کنند این است که گیت به عنوان یک سیستم مدیریت نسخهٔ غیر متمرکز طراحی شده. بسیاری از مردم به این صورت آن را مورد استفاده قرار نمی‌دهند. به جای داشتن چند بایگانی راه دور‌، داده‌ها را به یک جا می‌فرستند و در اصل بیش از اندازه به گیت‌هاب تکیه می‌کنند. کسانی را دیده‌ام که کل سازمان‌شان را بر پایهٔ گیت‌هاب بنا کرده‌اند‌، چیز‌هایی نظیر گسترش اسکریپت‌های سایت‌شان و نصب اسکریپ‌ها برای توسعه دهندگان جدید‌شان. علاوه بر این‌، dependency manager‌هایی مثل Composer و Cocoapods نیز به گیت‌هاب وابسته‌اند تا پیش‌نیاز‌هایشان را دریافت کنند. اگر گیت‌هاب Down شود‌، شما نمی‌توانید پیش‌نیاز‌های‌تان را دستکاری کنید و یا نمونه‌های جدید‌تری به آن‌ها اضافه کنید. در یک دنیای ایده‌آل این Dependency manager‌ها باید قابلیت‌ پشتیبانی توکار از mirror‌ها را داشته باشند‌، ولی در حال حاضر من چنین قابلیت‌هایی را نمی‌بینم.&lt;/p&gt;
 &lt;p&gt;چیزی که من می‌خواهم انجام دهم این است که نشان‌تان دهم که چقدر آسان است که با استفاده از سرور‌های راه دور گیت در آن واحد به دو سرور مختلف داده‌های‌تان را ارسال کنید. اگر گیت‌هاب Down شد‌، مهم نیست‌، بر فرض این که همه افراد تیم‌تان از این راهنما پیروی کرده باشند‌، کد از طریق bitbucket نیز در دسترس خواهد بود‌، یا هر جای دیگری که شما انتخاب کرده‌اید. اما این راهنما از گیت‌هاب و بیت‌باکت به عنوان mirror استفاده می‌کند.&lt;/p&gt;
-&lt;p&gt;۱. اول فرض می‌کنم که شما یک سرور راه دور برای گیت‌هاب به عنوان "origin" ایجاد کرده‌اید. آن را به github تغییر نام دهید:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;اول فرض می‌کنم که شما یک سرور راه دور برای گیت‌هاب به عنوان "origin" ایجاد کرده‌اید. آن را به github تغییر نام دهید:&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class="code"&gt;&lt;pre&gt;git remote rename origin github
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;۲. یک مخزن جدید روی بیت‌باکت هم‌نام همان چیزی که در گیت‌هاب دارید بسازید.&lt;/p&gt;
-&lt;p&gt;۳. این مخزن جدید را به صورت زیر به سرور‌های راه دور‌تان اضافه کنید. ولی مطمئن باشید که اسمش bitbucket باشد و نه origin. این‌طور:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;یک مخزن جدید روی بیت‌باکت هم‌نام همان چیزی که در گیت‌هاب دارید بسازید.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;این مخزن جدید را به صورت زیر به سرور‌های راه دور‌تان اضافه کنید. ولی مطمئن باشید که اسمش bitbucket باشد و نه origin. این‌طور:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class="code"&gt;&lt;pre&gt;git remote add bitbucket ssh://git@bitbucket.org/username/somerepo.git
 
 git push -u bitbucket --all
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;۴. و حالا با یک ادیتور از شاخهٔ ‎.git در مخزن گیت‌تان فایل config را باز کنید.&lt;/p&gt;
-&lt;p&gt;۵. نوبت این است که url‌های مربوط به هر سرور راه دور را به مجموعهٔ جدیدی به اسم origin اضافه کنیم. می‌شود چیزی شبیه این:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;و حالا با یک ادیتور از شاخهٔ ‎.git در مخزن گیت‌تان فایل config را باز کنید.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;نوبت این است که url‌های مربوط به هر سرور راه دور را به مجموعهٔ جدیدی به اسم origin اضافه کنیم. می‌شود چیزی شبیه این:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[&lt;/span&gt;remote &lt;span class="s2"&gt;"origin"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
 
 &lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; git@github.com:username/somerepo.git
@@ -26,7 +40,9 @@ git push -u bitbucket --all
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;۶. دفعهٔ بعد که از دستور git push origin استفاده کردید‌، مخزن در هر دو سرور راه دور آپلود خواهد شد.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;دفعهٔ بعد که از دستور git push origin استفاده کردید‌، مخزن در هر دو سرور راه دور آپلود خواهد شد.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;به همین راحتی.&lt;/p&gt;
 &lt;p&gt;نسخه‌های اخیر گیت این اجازه را به شما می‌دهند که چند جا را به عنوان مخزن راه دور یک مجموعه معرفی کنید. ولی من ترجیح می‌دهم که ببینم چه کاری انجام می‌دهم.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -49,7 +65,9 @@ git push -u bitbucket --all
 &lt;ul&gt;&lt;li&gt;&lt;strong&gt; رنگ قرمز:&lt;/strong&gt; به این معنی است که شما باید یک پامودورو را شروع کنید و انجام دهید‌.&lt;/li&gt;
     &lt;li&gt;&lt;strong&gt;رنگ سبز:‌&lt;/strong&gt; به معنی وقت استراحت است‌. شرط می‌بندم خیلی زود عاشق این رنگ می‌شوید D:&lt;/li&gt;
     &lt;li&gt;&lt;strong&gt;رنگ زرد:&lt;/strong&gt; به این معنی است که شما یک وقفه ایجاد کرده‌ایست‌. پس باید به سراغ پامودوروی بعدیتان بروید‌.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;پروژه آزاد است و چیز‌های جالبی می‌توان به آن اضافه کرد‌. با آغوش باز پذیرای ایده‌ها و کمک‌هایتان هستم ;-)&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;پروژه آزاد است و چیز‌های جالبی می‌توان به آن اضافه کرد‌. با آغوش باز پذیرای ایده‌ها و کمک‌هایتان هستم ;-)&lt;/p&gt;
 &lt;p&gt;&lt;a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank"&gt;صفحهٔ پروژه در گیت‌هاب&lt;/a&gt;&lt;/p&gt;</description><category>github</category><category>pomodoro</category><category>PyPomo</category><category>PyQt4</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html</guid><pubDate>Tue, 11 Sep 2012 10:21:51 GMT</pubDate></item><item><title>پروژهٔ نگار و مصائبش</title><link>http://shahinism.github.io/posts/blog13910521prwjh-ngr-w-msybsh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h5&gt;معرفی&lt;/h5&gt;
 &lt;a title="negar on github" href="http://shahinism.github.com/Negar/" target="_blank"&gt;نگار&lt;/a&gt; قرار است یک ابزار ویرایش و تصحیح متن باشد‌. یعنی یک فایل متنی دریافت کند‌، اشتباهات نگارشی رایج را تصحیح کند‌، غلط‌های املایی‌اش را بگیرد و در خروجی یک متن فارسی تمیز را ارائه دهد‌. نمونه‌ای از کارکرد و امکانات فعلی نگار را می‌توانید در تصویر زیر ببینیند (البته متن تست را از صفحهٔ وب &lt;a href="http://virastar.heroku.com/" target="_blank"&gt;ویراستار&lt;/a&gt; به عاریت گرفته‌ام D:) :
 &lt;p style="text-align: center;"&gt;&lt;a href="https://raw.github.com/shahinism/Negar/master/Negar-State.png"&gt;&lt;img class="aligncenter" src="https://raw.github.com/shahinism/Negar/master/Negar-State.png" alt="" width="560" height="249"&gt;&lt;/a&gt;&lt;/p&gt;

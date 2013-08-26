@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>شاهینیسم (bash)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Tue, 28 May 2013 11:10:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>دریافت متن ترانه‌های MP3 با لینوکس</title><link>http://shahinism.github.io/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
+<rss version="2.0"><channel><title>شاهینیسم (bash)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Mon, 26 Aug 2013 20:35:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>دریافت متن ترانه‌های MP3 با لینوکس</title><link>http://shahinism.github.io/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
 &lt;/p&gt;&lt;h5&gt;مقدمات&lt;/h5&gt;
 &lt;p&gt;اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم &lt;a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank"&gt;آدم سالاری&lt;/a&gt; قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)&lt;/p&gt;
 &lt;p&gt;اصل اسکریپت همچین جایی است:&lt;/p&gt;
@@ -40,7 +40,8 @@
     &lt;li&gt;سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این &lt;a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank"&gt;آموزش&lt;/a&gt; آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).&lt;/li&gt;
     &lt;li&gt;وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.&lt;/li&gt;
     &lt;li&gt;وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در &lt;a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank"&gt;این‌جا&lt;/a&gt; دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
 &lt;p&gt;اسکریپت حاضر است و از &lt;a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank"&gt;این‌جا&lt;/a&gt; قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:&lt;/p&gt;
 &lt;h5&gt;تاریخ&lt;/h5&gt;
 
@@ -498,7 +499,9 @@ zsh: correct &lt;span class="s1"&gt;'gut'&lt;/span&gt; to &lt;span class="s1"&gt
     &lt;li&gt;دستورات مستعار (‌Alias Commant) – بله&lt;/li&gt;
     &lt;li&gt;پوستهٔ محدود (Restricted shells) – بله&lt;/li&gt;
     &lt;li&gt;کنترل فعالیت‌ها – بله&lt;/li&gt;
-&lt;/ol&gt;&lt;h4&gt;‎‎/usr/bin/ksh‏&lt;/h4&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;‎‎/usr/bin/ksh‏&lt;/h4&gt;
 
 &lt;p&gt;تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#! /usr/bin/ksh&lt;/span&gt;
@@ -566,7 +569,8 @@ zsh: correct &lt;span class="s1"&gt;'gut'&lt;/span&gt; to &lt;span class="s1"&gt
     &lt;li&gt;t : زمان را بصورت ساعت، دقیقه و ثانیه نمایش میدهد. برای مثال : 10:14:40&lt;/li&gt;
     &lt;li&gt;u : نام کاربر را نمایش میدهد.&lt;/li&gt;
     &lt;li&gt;w : مسیر کامل دایرکتوری جاری را نمایش میدهد.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت &lt;a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank"&gt;تکنوتاکس&lt;/a&gt; قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت &lt;a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank"&gt;تکنوتاکس&lt;/a&gt; قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!&lt;/p&gt;
 &lt;p&gt;برای این که نتیجه‌ی اعلانتان را ببینید و یا این که اگر لازم شد در موقعیت خاصی وضعیت اعلانتان را عوض کنید (‌البته نه برای همیشه‌، فقط برای نشست حاظر‌) کافیست از دستور زیر در ترمینال استفاده کنید‌:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"[u@hw]$ "&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;

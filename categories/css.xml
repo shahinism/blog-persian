@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>شاهینیسم (CSS)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Tue, 28 May 2013 11:10:20 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>آموزش HTML بخش آخر‌: معرفی W3Schools</title><link>http://shahinism.github.io/posts/blog13900327amwzsh-html-bkhsh-akhr-mrfy-w3schools.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;متاسفانه مدتی می‌شه که دیگه نمی‌تونم آموزش‌های مربوط به HTML رو ادامه بدم‌. یکی از دلایلش مشغله‌ی زیاد این روز‌هام توی اینترنت هست‌، که دیگه تقریبا وقت برای همچین روش آموزشی نمی‌گذاره‌. ( البته با توجه به این که خودم هم داشتم همزمان با همین آموزش‌های یاد می‌گرفتم می‌گم ).&lt;/p&gt;
+<rss version="2.0"><channel><title>شاهینیسم (CSS)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Mon, 26 Aug 2013 20:35:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>آموزش HTML بخش آخر‌: معرفی W3Schools</title><link>http://shahinism.github.io/posts/blog13900327amwzsh-html-bkhsh-akhr-mrfy-w3schools.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;متاسفانه مدتی می‌شه که دیگه نمی‌تونم آموزش‌های مربوط به HTML رو ادامه بدم‌. یکی از دلایلش مشغله‌ی زیاد این روز‌هام توی اینترنت هست‌، که دیگه تقریبا وقت برای همچین روش آموزشی نمی‌گذاره‌. ( البته با توجه به این که خودم هم داشتم همزمان با همین آموزش‌های یاد می‌گرفتم می‌گم ).&lt;/p&gt;
 &lt;p&gt;یه دلیل دیگش هم یه منبع آموزشی خیلی عالی هست که چند وقتیه باهاش آشنا شدم ( البته خیلی وقته می‌شناختمش‌، ولی تا به حال تجربش نکرده بودم). آموزش‌های موجود توی سایت &lt;a title="W3School Home page" href="http://www.w3schools.com/" target="_blank"&gt;W3Schools&lt;/a&gt; در زمینه‌ی طراحی وب و توسعه‌ی وب بی‌نظیر هستند‌. طبقه‌بندی مناسب مطالب و مثال‌های کاربردی‌، در کنار هر موضوع می‌تونه به درک خیلی راحت مخاطب کمک کنه‌. از طرفی ابزار تست آنلاین کد که در بیشتر آموزش‌هاش کنار دستتونه‌، این امکان رو می‌ده که با خیال راحت کد بزنین و نتیجه‌اش رو ببینین‌.&lt;/p&gt;
 &lt;p&gt;زبان سایت انگلیسی هست‌. ولی خیلی ساده نوشته شده‌، به طوری که با انگلیسی در حد متوسط و یه دیکشنری خوب کنار دستتون‌، می‌تونین از درک مفاهیم آموزشیش بر بیاین‌. این رو گفتم این‌جا بزارم که حداقل دوستانی که آموزش‌های من رو دنبال می‌کردن سر درگم نشن‌. اگر هم خواستین ببینین چقدر از آموزش‌های من چیز یاد گرفتین می‌تونین به &lt;a title="HTML Quiz" href="http://www.w3schools.com/html/html_quiz.asp" target="_blank"&gt;صفحه‌ی آزمون HTML&lt;/a&gt; توی W3School برین‌.&lt;/p&gt;</description><category>CSS</category><category>HTML</category><category>HTML</category><category>JavaScript</category><category>php</category><category>دوره</category><guid>http://shahinism.github.io/posts/blog13900327amwzsh-html-bkhsh-akhr-mrfy-w3schools.html</guid><pubDate>Fri, 17 Jun 2011 21:45:01 GMT</pubDate></item><item><title>آموزش HTML بخش ۲</title><link>http://shahinism.github.io/posts/blog13900204amwzsh-html-bkhsh-2.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب‌، در &lt;a title="آموزش HTML بخش ۱" href="http://shahinism.com/1390/02/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-html-%d8%a8%d8%ae%d8%b4-%db%b1/" target="_blank"&gt; بخش اول &lt;/a&gt; با ساختار کلی یک سند HTML آشنا شدیم‌، و نحوهٔ ایجاد آن را یاد گرفتیم‌. در این بخش می‌خواهیم با امکاناتی که برای &lt;span style="color: #3366ff;"&gt;&lt;strong&gt;تایپوگرافی&lt;/strong&gt; در HTML قرار داده شده آشنا شویم‌.&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style="color: #ff0000;"&gt;&lt;strong&gt;نکته‌: &lt;/strong&gt;بعضی از تگ‌های استفاده شده در این آموزش در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از&lt;span style="color: #800000;"&gt; CSS در کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری سریع‌تر CSS -که در آینده قصد بر آن داریم- کند‌.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
@@ -52,10 +52,18 @@
 &lt;h4&gt;انواع نوشته‌ها‌:&lt;/h4&gt;
 
 &lt;ul&gt;&lt;li&gt;&lt;span style="color: #666699;"&gt;&lt;strong&gt;Bold :&lt;/strong&gt; برای نوشتن به صورت تو پر یا همان bold از تگ &lt;span style="color: #666699;"&gt;&lt;strong&gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;&lt;span style="color: #008080;"&gt;&lt;em&gt;Italic : &lt;/em&gt;برای نوشتن به صورت مورب نیز از تگ&lt;span style="color: #339966;"&gt;&lt;strong&gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;&lt;span style="color: #808080;"&gt;&lt;del&gt;Strike :&lt;/del&gt; برای نوستن به صورت رو خط دار از تگ &lt;strong&gt;&lt;span style="color: #ff0000;"&gt;&amp;lt;strike&amp;gt;&amp;lt;/strike&amp;gt;&lt;/span&gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;&lt;span style="color: #00ccff;"&gt;&lt;span style="text-decoration: underline;"&gt;Underline : برای نوشتن به صورت زیر خط دار از تگ &lt;strong&gt;&lt;span style="color: #00ccff;"&gt;&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;&lt;/span&gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی &lt;span style="color: #ff9900;"&gt;&lt;strong&gt;زیبا‌تر&lt;/strong&gt; کنیم؛ برای این کار از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌:&lt;/span&gt;&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;span style="color: #008080;"&gt;&lt;em&gt;Italic : &lt;/em&gt;برای نوشتن به صورت مورب نیز از تگ&lt;span style="color: #339966;"&gt;&lt;strong&gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;span style="color: #808080;"&gt;&lt;del&gt;Strike :&lt;/del&gt; برای نوستن به صورت رو خط دار از تگ &lt;strong&gt;&lt;span style="color: #ff0000;"&gt;&amp;lt;strike&amp;gt;&amp;lt;/strike&amp;gt;&lt;/span&gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;span style="color: #00ccff;"&gt;&lt;span style="text-decoration: underline;"&gt;Underline : برای نوشتن به صورت زیر خط دار از تگ &lt;strong&gt;&lt;span style="color: #00ccff;"&gt;&amp;lt;u&amp;gt;&amp;lt;/u&amp;gt;&lt;/span&gt;&lt;/strong&gt; استفاده می‌شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی &lt;span style="color: #ff9900;"&gt;&lt;strong&gt;زیبا‌تر&lt;/strong&gt; کنیم؛ برای این کار از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌:&lt;/span&gt;&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre&gt;&amp;amp;lt;html&amp;amp;gt;
 
 &amp;amp;lt;head&amp;amp;gt;
@@ -83,9 +91,15 @@ This is an free tutorial &lt;span class="k"&gt;for&lt;/span&gt; &amp;amp;lt;b&am
 
 &lt;p&gt;برای تعیین موقعیت نوشته‌ها نیز در HTML امکاناتی در نظر گرفته شده‌. که به تعدادی از آن‌ها اشاره می‌کنیم‌:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;Center: برای &lt;span style="color: #cc99ff;"&gt;&lt;strong&gt;وسط‌چین&lt;/strong&gt; کردن نوشته استفاده می‌شود‌.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;&amp;lt;br&amp;gt; : برای &lt;span style="color: #ff6600;"&gt;&lt;strong&gt;شکستن&lt;/strong&gt; خط و شروع در خط جدید مورد استفاده قرار می‌گیرد‌.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;&amp;lt;sub&amp;gt; و &amp;lt;sub&amp;gt; : که برای نمایش &lt;span style="color: #3366ff;"&gt;&lt;strong&gt;اندیس و توان&lt;/strong&gt; مورد استفاده قرار می‌گیرد‌.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند ایجاد کنیم‌:&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;&lt;li&gt;&amp;lt;br&amp;gt; : برای &lt;span style="color: #ff6600;"&gt;&lt;strong&gt;شکستن&lt;/strong&gt; خط و شروع در خط جدید مورد استفاده قرار می‌گیرد‌.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;&lt;li&gt;&amp;lt;sub&amp;gt; و &amp;lt;sub&amp;gt; : که برای نمایش &lt;span style="color: #3366ff;"&gt;&lt;strong&gt;اندیس و توان&lt;/strong&gt; مورد استفاده قرار می‌گیرد‌.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند ایجاد کنیم‌:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre&gt;&amp;amp;lt;html&amp;amp;gt;
 
 &amp;amp;lt;head&amp;amp;gt;

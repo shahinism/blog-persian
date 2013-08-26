@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>شاهینیسم (وردپرس)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Tue, 28 May 2013 11:10:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CSS Persian‌، یک ایدهٔ ساده ولی خیلی مفید</title><link>http://shahinism.github.io/posts/blog13910610css-persian-ykh-ydh-sdh-wly-khyly-mfyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;سر یک پروژهٔ وبلاگ که می‌خواستم با Octopress راه‌اندازیش کنم‌، پی بردم که بر خلاف اجنبی‌ها در این یک نمونه جدای از تنبلی در طراحی و ساخت فونت خوشگل و به درد بخور حتی تلاشی هم برای جمع‌آوری یک مجموعه فونت کارا (و صد البته قابل استفاده در وب) نکرده‌ایم‌. فونت‌های فارسی تا به حال چندین بار ویرایش شده‌اند و عموما در کنار هر قالبی که از آن استفاده می‌کند لود می‌شود‌، ولی اُفت سرعت و گاها نا همگونی ظاهر صفحه‌، باعث فراری شدن از دست فونت‌هایی غیر Tahoma (لع) می‌شد‌ (که اگر خوانندهٔ قدیمی این وبلاگ باشید باید یادتان بیاید که چه مشکلی با فونت‌هایم داشتم).
+<rss version="2.0"><channel><title>شاهینیسم (وردپرس)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Mon, 26 Aug 2013 20:35:16 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CSS Persian‌، یک ایدهٔ ساده ولی خیلی مفید</title><link>http://shahinism.github.io/posts/blog13910610css-persian-ykh-ydh-sdh-wly-khyly-mfyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;سر یک پروژهٔ وبلاگ که می‌خواستم با Octopress راه‌اندازیش کنم‌، پی بردم که بر خلاف اجنبی‌ها در این یک نمونه جدای از تنبلی در طراحی و ساخت فونت خوشگل و به درد بخور حتی تلاشی هم برای جمع‌آوری یک مجموعه فونت کارا (و صد البته قابل استفاده در وب) نکرده‌ایم‌. فونت‌های فارسی تا به حال چندین بار ویرایش شده‌اند و عموما در کنار هر قالبی که از آن استفاده می‌کند لود می‌شود‌، ولی اُفت سرعت و گاها نا همگونی ظاهر صفحه‌، باعث فراری شدن از دست فونت‌هایی غیر Tahoma (لع) می‌شد‌ (که اگر خوانندهٔ قدیمی این وبلاگ باشید باید یادتان بیاید که چه مشکلی با فونت‌هایم داشتم).
 مزایای CDN و این‌ها را می‌توانید از &lt;a title="استفاده از github به عنوان cdn" href="http://cyberrabbits.net/1129/github-as-cdn/" target="_blank"&gt;این پست&lt;/a&gt; فرود بخوانید‌. این همه ناله را کردم تا بگویم که دوست خوبم &lt;a href="http://www.intuxicated.ir/" target="_blank"&gt;دانیال‌&lt;/a&gt;، &lt;a title="css persian on github" href="https://github.com/intuxicated/css-persian" target="_blank"&gt;یک پروژهٔ&lt;/a&gt; خیلی ساده ولی در عین حال بسیار بسیار مفید رو روی گیت‌هاب شروع کرده تا دیگر از این در به دری به دنبال فونت‌های خوب فارسی نجات پیدا کنیم‌.&lt;/p&gt;
 &lt;p&gt;البته خیلی خوب‌تر می‌شد که طراحان گران‌قدرمان هم کمی آستین بالا می‌زدند و فونت‌های زیبا و آزاد بیشتری آماده می‌کردند‌. فونت‌های فعلی عموما چیز‌هایی هستند که ۱۰-۱۵ سال پیش وقتی تازه داشتم Word 97 کار می‌کردم با آن‌ها آشنا شدم‌. رسم‌الخط زیبای فارسی جداً حیف است که پشت چهرهٔ کهنهٔ یک سری فونت که عموما ایدهٔ اولیه‌شان به دوران اولین استفاده‌های چاپ در ایران بر می‌گردد مخفی شود‌.&lt;/p&gt;
 &lt;p&gt;در ضمن خبر‌های خوبی هم از پوست انداختن &lt;a title="font forge on github" href="https://github.com/fontforge/fontforge" target="_blank"&gt;Font Forge &lt;/a&gt;شنیده می‌شود‌. کلی کار باحال و جالب دیگر دارد برایتان از راه می‌رسد‌ که می‌توانید در دنیای آزادتان انجام دهید. منتظر چه هستید؟ ;-)&lt;/p&gt;</description><category>CDN</category><category>HTML</category><category>اینترنت</category><category>طراحی وب</category><category>فارسی</category><category>فونت</category><category>معرفی ابزار</category><category>وب فارسی</category><category>وبلاگ‌نویسی</category><category>وردپرس</category><guid>http://shahinism.github.io/posts/blog13910610css-persian-ykh-ydh-sdh-wly-khyly-mfyd.html</guid><pubDate>Fri, 31 Aug 2012 23:17:59 GMT</pubDate></item><item><title>وقایع نگاری یک انتقال از Cpanel به DirectAdmin</title><link>http://shahinism.github.io/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;مدتی بود که از &lt;a title="صفحه اصلی هاستینگ ویونا" href="http://vioona.net" target="_blank"&gt;هاستینگ ویونا&lt;/a&gt; استفاده می‌کردم و بر خلاف دیگر شرکت‌های ایرانی که قبلاً تجربهٔ کار با آن‌ها را داشتم‌، تیم راضی کننده‌ای بودند‌. کیفیت خدمات خوب و قیمت مناسبش باعث می‌شود که عمدتا پیشنهادم به دوستان همین هاستینگ باشد‌. اما نمی‌دانم متوجه شده بودید یا نه‌، مدتی بود که موقع ورود به وبلاگم با صفحهٔ ثبت وبلاگ وردپرس روبرو می‌شدید‌! انگار که اصلاً هیچ اطلاعاتی در پایگاه دادهٔ وبلاگ وجود ندارد و قرار است که وبلاگ از نو ساخته شود‌! (بماند که اولین بار که این وضعیت را دیدم و متوجه شدم هیچ رکوردی از پایگاه داده‌ام روی Cpanel وجود ندارد‌، کم مانده بود سکته کنم‌!)
@@ -15,33 +15,46 @@
 &lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;نمایش آخرین ارسال در صفحه‌ی اصلی و لیستی شش عددی که به صورت اتفاقی از مطالب منتشر شده در وبلاگ جمع آوری شده‌اند‌. (مزیت این ویژگی این است که پس از گذشت زمان‌، پست‌های قبلی به دست فراموشی سپرده نمی‌شوند ;-))&lt;/li&gt;
     &lt;li&gt;استفاده از «فهرست دلخواه»‌ برای منوی سمت چپ و بالایی که مدیریت منو‌ها رو راحت‌تر می‌کنه‌.&lt;/li&gt;
     &lt;li&gt;پشتیبانی از «‌تصویر شاخص‌» برای پست‌های تصادفی‌، به منظور برجسته‌تر نشان دادن این بخش ;-)&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;برای دانلود و استفاده می‌تونین از&lt;a title="Download oulipo version2" href="http://dl.dropbox.com/u/25017694/oulipo-Shahinism-2.tar.gz" target="_blank"&gt; این لینک&lt;/a&gt; دانلودش کنین.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;برای دانلود و استفاده می‌تونین از&lt;a title="Download oulipo version2" href="http://dl.dropbox.com/u/25017694/oulipo-Shahinism-2.tar.gz" target="_blank"&gt; این لینک&lt;/a&gt; دانلودش کنین.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; راستی یادم رفت بگم یکی دیگه از مزیتاش اینه که فونت سر خوده!‌ این بار به جای فونت XB Zar برای تیتر‌ها از فونت «کودک» استفاده کردم که با خود پوسته لود می‌شه.&lt;/p&gt;</description><category>اینترنت</category><category>وبلاگ‌نویسی</category><category>وردپرس</category><guid>http://shahinism.github.io/posts/blog13901229nskhh-shmrh-dw-pwsth-oulipo-bry-wrdprs.html</guid><pubDate>Mon, 19 Mar 2012 12:31:19 GMT</pubDate></item><item><title>چ‌چ‌چ (۳)‌: MySQL چیست‌؟</title><link>http://shahinism.github.io/posts/blog13900909chchch-3-mysql-chyst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;MySQL یک کارگزار (Server) پایگاه دادهٔ متن‌باز قابل اطمینان است‌، که توسط توسعه دهندگان وب زیادی در سراسر جهان مورد استفاده قرار می‌گیرد‌. شما می‌توانید  با اسکریپت‌نویسی در PHP و یا پرل به یک پایگاه دادهٔ MySQL دستیابی داشته باشید‌. به هر حال‌، هزاران ابزار کاربردی برای MySQL در دسترس است‌، که شما در این‌جا دسته‌ای از محبوب‌ترین‌هایشان را می‌بینید‌ که در PHP (پیش‌پردازندهٔ فرامتن PHP یا PHP Hypertext Preprocessor) یکی از پر استفاده‌ترین‌، زبان اسکریپت‌نویسی که بسیار مناسب توسعهٔ وب است و می‌تواند به صورت تو‌کار در HTML مورد استفاده قرار گیرد‌.
 &lt;/p&gt;&lt;h4&gt;نرم‌افزار دفتر مهمان&lt;/h4&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a title="Advanced Guestbook" href="http://proxy2.de/scripts.php" target="_blank"&gt;Advanced Guestbook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;نرم‌افزار انجمن&lt;/h4&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;نرم‌افزار انجمن&lt;/h4&gt;
 
 &lt;ul&gt;&lt;li&gt;&lt;a title="phpBB" href="http://phpbb.com/" target="_blank"&gt;phpBB&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="Simple Machines Forum (SMF)‎" href="http://www.simplemachines.org/index.php" target="_blank"&gt;Simple Machines Forum (SMF)‎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;سیستم مدیریت محتوا&lt;/h4&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;سیستم مدیریت محتوا&lt;/h4&gt;
 
 &lt;ul&gt;&lt;li&gt;&lt;a title="Mambo" href="http://www.mamboserver.com/" target="_blank"&gt;Mambo&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="Xoops" href="http://www.xoops.org/" target="_blank"&gt;Xoops&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="PostNuke" href="http://noc.postnuke.com/" target="_blank"&gt;PostNuke&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;نرم‌افزار بلاگ‌دهی&lt;/h4&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;نرم‌افزار بلاگ‌دهی&lt;/h4&gt;
 
 &lt;ul&gt;&lt;li&gt;&lt;a title="Wordpress" href="http://wordpress.org/" target="_blank"&gt;WordPress&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="Geeklog" href="http://www.geeklog.net/" target="_blank"&gt;Geeklog&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="Plog" href="http://www.plogworld.net/" target="_blank"&gt;pLog&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="Serendipity" href="http://www.s9y.org/" target="_blank"&gt;Serendipity&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;h4&gt;گالری عکس&lt;/h4&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;گالری عکس&lt;/h4&gt;
 
 &lt;ul&gt;&lt;li&gt;&lt;a title="Coppermine photo gallery" href="http://coppermine.sourceforge.net/" target="_blank"&gt;Coppermine Photo Gallery&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="4Images" href="http://www.4homepages.de/" target="_blank"&gt;۴images&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;&lt;a title="MySQL website" href="http://mysql.com/" target="_blank"&gt;وب‌سایت MySQL&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a title="PHP Website" href="http://php.net/" target="_blank"&gt;وب‌سایت PHP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p style="text-align: center;"&gt;&lt;a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;
+
+&lt;p style="text-align: center;"&gt;&lt;a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/"&gt;منبع&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>php</category><category>توسعه وب</category><category>وردپرس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><guid>http://shahinism.github.io/posts/blog13900909chchch-3-mysql-chyst.html</guid><pubDate>Wed, 30 Nov 2011 08:00:02 GMT</pubDate></item><item><title>پوسته Oulipo برای وردپرس پارسی</title><link>http://shahinism.github.io/posts/blog13900813pwsth-oulipo-bry-wrdprs-prsy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;پوسته‌ی Oulipo با مشخصاتی مانند سادگی و سادگی و سادگی‌اش نظرم را به خودش جلب کرد‌. من هم پس از ترجمه و استفاده از آن در وبلاگ شخصی‌ام‌، تصمیم گرفتم که آن را طبق قوانین لیسانس این پوسته‌ (GPL) ، آزادانه منتشرش کنم ;-) برای دیدن پیش‌نمایشی از نتیجه‌ی استفاده‌ی این تم‌، می‌توانید همین وبلاگ رو ببینید‌، و برای دانلود‌اش از لینک زیر اقدام کنید!&lt;/p&gt;
 &lt;p&gt;&lt;a title="oulipo-shahinism on dropbox" href="http://dl.dropbox.com/u/25017694/oulipo.tar"&gt;لینک دانلود (‌Dropbox)&lt;/a&gt;&lt;/p&gt;

@@ -1,15 +1,48 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 1) | شاهینیسم</title><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+<!DOCTYPE html><html lang="fa">
+  <head>
     
-    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+<meta charset="utf-8">
+<meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!">
+<meta name="author" content="شاهین آزاد">
+<title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 1) | شاهینیسم</title>
+
+<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml">
+
+
+
+
+    
+    
+  </head>
+  <body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script>
+    
+
+    <div id="siteWrapper">
       <h1 id="vcard author">
         <a href="." title="شاهینیسم">شاهینیسم</a>
         <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" style="float: left; position: absolute; margin: 0px 90px;"></a>
       </h1>
 
       <div id="mainNav">
-        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+        <ul>
+          
+
+
+  <li><a href="stories/drbrh-mn-2.html">About</a>
 
 
 
@@ -25,7 +58,8 @@
 
 
 </li>
-        </ul></div>
+        </ul>
+      </div>
       <div id="siteDescription">
         
         
@@ -36,66 +70,22 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-05-20 10:43
+    ارسال شده: 2007-01-11 00:08
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/emacs-flyspell-mode.html">این ایمکس دوست داشتنی (غلط‌گیر املایی)</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13851021chnd-nfr-dr-hl-dydn-syt-shm-hstnd.html">چند نفر در حال دیدن سایت شما هستند</a></h3>
     
     <div class="entry-content">
-      <p>وقتی که بچه‌تر بودم‌، به بالا بودن نمرات املایم افتخار می‌کردم. ولی خوب انگار آن‌ها ربط مستقیمی به دایرهٔ لغات مورد استفاده‌ام در آن زمان‌ها داشت. به هر حال الان خیلی پیش می‌آید که غلط بنویسم‌! با وسط آمدن پای زبان انگلیسی این مشکل بیشتر خود‌نمایی می‌کند. به هر حال‌، خیلی خوب می‌شود که ویرایشگر محبوبم‌، در درست نوشتن‌هایم کمکم کند.</p>
-<div class="section" id="aspell">
-<h2>تنظیم aspell</h2>
-<p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
-</pre>
-<p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
-</div>
-<div class="section" id="id1">
-<h2>چرا aspell؟</h2>
-<p>خوشبختانه این برنامه‌، به زحمت <a class="reference external" href="https://fa.wikipedia.org/wiki/%D8%A2%D9%84%D9%86_%D8%A8%D8%A7%D8%BA%D9%88%D9%85%DB%8C%D8%A7%D9%86">آلن باغومیان</a> عزیز‌، صاحب یک دیکشنری به درد بخور فارسی هم شده. این دیکشنری را که احتمالا همراه <a class="reference external" href="http://aspell.net/">aspell</a> روی سیستم‌تان نصب نمی‌شود را می‌توانید از <a class="reference external" href="ftp://ftp.gnu.org/gnu/aspell/dict/0index.html">این‌جا</a> بگیرید. راهنمای کامپایل و نصبش همراه خود بسته است (عملا یک <strong>‎./configure &amp;&amp; make &amp;&amp; make install</strong> ساده باید کارتان را راه بیاندازد.).</p>
-</div>
-<div class="section" id="id4">
-<h2>نحوهٔ کار</h2>
-<p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl literal-block">
-<span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
-</pre>
-<p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
-<div class="section" id="flyspell-mode">
-<h3>flyspell-mode</h3>
-<p>با فراخوانی این مد‌، کل بافر را تحت تاثیر قرار می‌دهید. در صورت بر خورد با هر غلط املایی‌، لغت تغییر رنگ داده و می‌توانید با کلیک وسط ماوس آن پیشنهاد‌های سیستم‌را انتخاب کنید.</p>
-</div>
-<div class="section" id="ispell-word-ispell-word">
-<h3><img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"> ispell-word</h3>
-<p>این دستور‌، به درد موقعی می‌خورد که نمی‌خواهید یک flyspell-mode را صدا کنید. به هر حال این مد همیشه هم آن‌قدر که باید خوب عمل نمی‌کند (بیشترین تاثیر را زمانی دارد که کلمه بعد از فراخوانی مد تایپ شود). البته برای رفع مشکلات این مد می‌توانید از <strong>flyspell-region</strong> که محدودهٔ انتخاب شده را بررسی می‌کند استفاده کنید. ولی گاها دوست دارید که تنها یک کلمه که مطمئن نیستید را بررسی کنید. آن وقت است که <strong>ispell-word</strong> دستور مورد نظرتان است. تنها کافیست نشان‌گر را روی لغت ببرید و این دستور را بزنید.</p>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>کلید‌های میانبر</h2>
-<p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
-</pre>
-<p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl literal-block">
-<span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
-</pre>
-<p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
-</div>
-<div class="section" id="id6">
-<h2>مشکلات حاضر</h2>
-<p>مشکل این است که نمی‌توان دیکشنری را به صورت دو زبانه و همزمان داشت. از طرفی در صفحهٔ ویکی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> به غلط‌گیر <a class="reference external" href="http://wiki.openoffice.org/wiki/Main_Page">Hunspell</a> اشاره شده که روش خوبی هم برای بررسی متن و تغییر خودکار زبان غلط‌گیر دارد. با توجه به استفاده از این دیکشنری در OpenOffice‌ها خیلی وسوسه شده‌ام که آن را هم تست کنم. به زودی در مورد آن‌ها هم خواهم نوشت.</p>
-</div>
+      <p></p><p>یکی از مهمترین ابزارهایی که کاربران برای وبلاگ های خود استفاده می کنند نمایشگر تعداد افراد آنلاین در سایت می باشد البته باید اینم بگم برای کاربرانی که از وردپرس استفاده می کنند امکانات زیادی در این زمینه وجود داره اما برای بلاگرهای سیستم های رایگان بلاگنویسی هم سایتهایی هستند که این خدمات را ارائه می دهند . قبلا سایت <a href="http://www.majidonline.com/">مجید آنلاین</a> یکی از این سیستم ها را راه اندازی کرده بود اما معلوم نیست چرا خدماتش رو قطع کرد . یک سری کدهای جاوا هم در این زمینه وجود دارند اما کارایی لازم رو ندارند و فقط آنلاین ها را در همان صفحه و نه صفحات دیگر وبلاگ یا وب سایت به نمایش می زارند .  سایت <a href="http://webgozar.com/">وبگذز</a> هم از زمانی که کنتورش رو جوری تنظیم کرد که در وبلاگها هم خلاصه ای از کنتورش به نمایش در بیاد این امکان رو به کنتورش افزود . اما سایتی که امروز می خوام معرفی کنم سایتی است که پا را در این زمینه برای کاربران (چه دارای وبلاگ و چه بدون وبلاگ) فراتر گذاشته این سایت کنتور های خود را در ۳ نوع نمایان در وبلاگ - مخفی در وبلاگ و به صورت افزونه برای فایر فاکس ارائه میدهد شما می توانید برای ورود از این<a href="http://whos.amung.us/"> آدرس </a>استفاده کنید . از مزایای این سرویس می توان به این اشاره نمود که وقتی کاربر بر روی لوگوی مربوط که در سایت قرار دارد کلیک می کند اطلاعاتی همچون رمان ورود و این که کاربر در حال مطالعه ی چه صفحه ای است را نمایان میکند.</p>
+<p>کدهای مربوط به وبلاگها را می توانید با مراجعه به <a href="http://whos.amung.us/">اینجا</a> و <a href="http://whos.amung.us/customize">اینجا</a> برداشته و در وبلاگ خود قرار دهید (توجه داشته باشد که نمونه ی مخفی در گزینه ی دوم قرار دارد) .</p>
+<p>افزونه ی فایرفاکس ارائه شده در این سایت به تمامی کاربران این اجازه را می دهد که به راحتی تعداد افراد آنلاین در صفحه های مختلف را ببینند برای دانلود افزونه نیز<a href="http://whos.amung.us/addons/whosamungusv150.xpi"> اینجا</a> کلیک کنید .</p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/emacs-flyspell-mode.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-flyspell-mode.html">Comments</a>
+        <a href="posts/blog13851021chnd-nfr-dr-hl-dydn-syt-shm-hstnd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13851021chnd-nfr-dr-hl-dydn-syt-shm-hstnd.html">Comments</a>
     
 
         
@@ -106,34 +96,20 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-05-13 10:21
+    ارسال شده: 2007-01-07 12:20
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/from-wordpress-to-nikola.html">از وردپرس به نیکولا</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13851017wrdprs-r-zndh-tjrbh-khnyd.html">وردپرس را زنده تجربه کنید</a></h3>
     
     <div class="entry-content">
-      <div><p>خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)</p>
-<div class="section" id="id1">
-<h2>چرا یک وبلاگ ایستا؟</h2>
-<p>خوب به طور کلی دلایلش از این قرارند:</p>
-<ul class="simple"><li><strong>سرعت‌، سرعت‌، سرعت:</strong> دیگر در این نوع از وبلاگ‌، خبری از پایگاه داده نیست. همین‌طور قرار نیست هیچ پردازشی در سمت سرور وبلاگ قرار گیرد. و خوب طبیعتا خیلی خیلی امکاناتی که این ابزار‌ها فراهم می‌کنند را نمی‌توانم داشته باشم. اما حقیقتش در یک وبلاگ‌، به بسیاری از این ابزار‌ها نیاز ندارم. به هر حال این نبودن‌ها‌، یعنی سرعت بیشتر. در مورد من‌، سرعت لود صفحات‌، حدودا سه برابر بیشتر شد.</li>
-<li><strong>سادگی:</strong> فکر نمی‌کنم چیز زیادی در این زمینه برای گفتن باقی گذاشته باشم.</li>
-<li><strong>امنیت:</strong> وقتی تنها با صفحات سادهٔ HTML روبرو هستید. وقتی یک سیستم انتشار قابل اطمینان دارید‌‌، دیگر نباید نگران آپدیت بودن ابزار وبلاگ‌نویسی‌تان و یا هک شدنش باشید. این‌طور نیست؟</li>
-<li><strong>محدود نبودن پهنای باند:</strong> این یکی از آن کابوس‌هایی است که بی‌خبر به سراغ‌تان می‌آید. ولی خوب خوشبختانه روی گیت‌هاب‌، این نگرانی را نداریم ;-)</li>
-<li><strong>قابلیت بازیابی:</strong> خوب این یکی زیاد مربوط به خود سیستم وبلاگ‌نویسی نیست. ولی چون نتیجهٔ کارش را می‌توان با هر سیستم دلخواهی منتشر کرد و من گیت را انتخاب کرده‌ام‌، خیلی راحت می‌توانم در صورت گند زدن‌، بدون هیچ استرسی آن را به حالت قبل برگردانم. این قابلیت روی هاست‌های اشتراکی پولی و گران است و در سرور‌های اختصاصی‌، خیلی پر دردسر‌تر از چیزی که در این‌جا با آن طرفیم ;-)</li>
-</ul></div>
-<div class="section" id="id2">
-<h2>کدام سیستم؟</h2>
-<p>به هر حال‌، پس از قطعی شدن تصمیم انتقال‌، باید یکی از سیستم‌ها را انتخاب می‌کردم. به طور کلی این سیستم‌ها اعم از <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a>, <a class="reference external" href="http://docs.getpelican.com/">Pelican</a>, <a class="reference external" href="http://octopress.github.ip/">Octopress</a> و خیلی‌های دیگر که با یک سرچ در اینترنت می‌توانید پیدایشان کنید‌، تفاوت عمده‌ای در نتیجهٔ کار ندارند. طرز کارشان فوق‌العاده ساده است. شما متن پست وبلاگ‌تان را در یک فایل حالا به هر فرمتی که سیستم مورد نظر برای‌تان مهیا کرده می‌نویسید‌، یک قالب هم بر اساس قوائد تعیین شدهٔ سیستم به آن می‌خورانید و می‌گویید که وبلاگ آماده شود. در نهایت این سیستم می‌آید یک سایت کاملا ایستا در فایل‌های html آماده می‌کند که شامل پست‌های شماست و بر اساس قالب مورد نظر‌تان قالب‌بندی شده.</p>
-<p>من <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> را انتخاب کردم‌، چون اولا پایتونی است‌ و بعد از آن خیلی راحت‌تر از <a class="reference external" href="http://docs.getpelican.com/">Pelican</a> که آن هم پایتونی است نصب می‌شود. همین!</p>
-<p><a href="posts/from-wordpress-to-nikola.html">بیشتر بخوانید...</a></p></div></div>
+      <p></p><p>امروز می خوام یه پلاگین بسیار بسیار جالب رو براتون معرفی کنم که کف خودم وقتی ازش استفاده کردم برید و واقعا دیگه از وردپرس خوشم اومد چه برسه به شما . برای اینکه خوب تو عمق قضیه قرار بگیرین باید اول ازتون بپرسم که تا حالا چیزی درباره ی <a href="https://balatarin.info/links/live">پخش زنده ی بالاترین</a> چیزی شنیدین . این بخش که براساس زبان آژاکس نوشته شده آخرین اطلاعات ثبت شده در بالاترین رو بدون نیاز به رفرش صفحه بهتون نمایش میده . از طرف دیگه شما هم احتمالا مثل قبلا من برای اینکه ببینین که چه اتفاقاتی تو سایتتون رخ داده باید بخش داشبورد وردپرس رو هی رفرش می کردین تا بفهمین که چه اتفاقی رخ داده . حالا از اونجا که بخش مدیریت وردپرس بر پایه ی آزاکس نوشته شده پس میشه یه بخش لایو (زنده) برای مدیریت وردپرس ایجاد کرد . این پلاگین هم دقیقا همین کار رو انجام میده یعنی آخرین ورودی ها به وب سایتتون رو از طریق فیدهای خروجی - نظرات و روت (آدرس مستقیم) رو در یک منوی کاملا شکیل براتون نمایش میده . برای نصب این پلاگین هم کار زیادی لازم نیست و فقط کافیه که اون رو تو پوشه ی پلاگین آپ کنید و از بخش پلاگینها فعالش کنید . برای دانلود پلاگین<a href="http://blackshadow.persiangig.com/WP-Plugin/live0.4.1.zip"> اینجا</a> کلیک کنید . جالب ترین بخش کار ورودی ها از طریق فیدها هست چون جز کنتورهای داخلی چیزی این رو بهتون نمایش نمیده . چون کنتورهایی مثل <a href="http://www.persianstat.com/">پرشین استت</a> هر بار که قالب لود میشه رو شمارش می کنند ولی ورودی فیدها رو نمایش نمی کنند . ولی این پلاگین بهتون نمایش میده همه چیز رو . از من میشنوین حتما امتحانش کنین .</p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/from-wordpress-to-nikola.html#disqus_thread" data-disqus-identifier="cache/posts/from-wordpress-to-nikola.html">Comments</a>
+        <a href="posts/blog13851017wrdprs-r-zndh-tjrbh-khnyd.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13851017wrdprs-r-zndh-tjrbh-khnyd.html">Comments</a>
     
 
         
@@ -144,37 +120,22 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-04-16 12:24
+    ارسال شده: 2007-01-03 12:17
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13851013nqshh-jm-rhhy-yrn.html">نقشه جامع راههای ایران</a></h3>
     
     <div class="entry-content">
-      <p></p><p>یکی از دلایل اصلی Syntax error‌ها بالانس نبودن پرانتز‌هاست (منظورم پرانتز‌، کروشه‌، آکولاد‌، &lt;&gt;‌، گیومه و … است). خوب از آن‌جایی که بنیاد ایمکس براساس Lisp است و Lisp به خاطر پرانتز‌هایش معروف شده (خیلی‌ها به شوخی می‌گن که Lisp مخفف Lost in stupid parentheses هست)‌، مطمئنا باید راهی برای حل این مشکل داشته باشد.
-برای این کار خطوط زیر را داخل ‎.emacs وارد می‌کنیم:</p>
-
-
-<div class="code"><pre><span class="p">(</span><span class="nv">electric-pair-mode</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">show-paren-mode</span><span class="p">)</span>
-</pre></div>
-
-
-<p>خوب با خط اول‌، به ایمکس می‌گوییم‌، هر وقت ما پرانتزی (که شامل تمام علاماتی است که در بالا اشاره کردیم) باز کردیم‌، خودت به صورت خودکار‌، کاراکتر بستن آن را وارد کن. همین‌طور در خط دوم مجبورش می‌کنیم وقتی روی پرانتزی هستیم‌، اگر جفتی برایش وجود دارد‌، آن را برایمان نمایش دهد (هر دو طرف پرانتز سبز می‌شود معمولا‌. با توجه به تنظیمات پوستهٔ ایمکس)‌. اگر نه‌، سمتی که رویش ایستاده‌ایم را قرمز کن تا بفهمیم تنهاست ;-)</p>
-<p><a href="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacsparenmatch.png"><img alt="نمونه‌ای از نمایش جفت پرانتز در ایمکس" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacsparenmatch.png" width="328" height="42"></a> نمونه‌ای از نمایش جفت پرانتز در ایمکس</p>
-<p>بخش اول کار که معلوم است. ولی این بخش دوم قابلیت‌های جالب دیگری هم دارد. مثلا می‌توان با(setq show-paren-delay 0) میزان زمانی که طول می‌کشد تا جفت کاراکتر پرانتزمان را نمایش دهد را تعیین کنیم. از قرار به طور پیش‌فرض مقداری Delay تعیین شده که ما با این دستور می‌توانیم صفرش کنیم. من این کار را نکردم چون به نظرم سر موقع نمایش داده می‌شوند.</p>
-<p>همین‌طور می‌توان با(setq show-paren-style 'MODE) تعیین کرد که نمایش هر جفت پرانتز چطور باشد. که برای این کار باید عبارت MODE را با یکی از سه گزینهٔ زیر جایگزین کنیم:</p>
-<ul><li><strong>parenthesis</strong> که مد پیش‌فرض است و فقط پرانتز‌های دو طرف را نمایش می‌دهد.</li>
-    <li><strong>expression</strong> که علاوه بر پرانتز‌ها‌، متن درونشان هم برجسته می‌شود.</li>
-    <li><strong>mixed</strong> که اگر پرانتز‌ها بالانس باشند مثل مد parenthesis عمل می‌کند و گرنه مثل expression.</li>
-</ul><p>به همین سادگی می‌توانید آن‌طور که می‌خواهید این رفتار ایمکس را هم کنترل کنید.</p>
-<p>من این آموزش را نمی‌دانم از کجای اینترنت یاد گرفتم. ولی این <a title="Emacsfu" href="http://emacs-fu.blogspot.de/2009/01/balancing-your-parentheses.html" target="_blank">وبلاگ</a> هم به آن اشاره کرده که وبلاگ عالی‌ای هم هست. پیشنهاد می‌کنم از دستش ندهید. خیلی خیلی تکنیک‌های جالبی با آن یاد خواهید گرفت.</p>
+      <p></p><p>امروز داشتم همینطور سرگردون تو وب چرخ می زدم که به یه سایت جالب بر خوردم این سایت ایران ویو اسم داره و از طرق این آدرس قابل دسترس است . در واق کار اصلی این سایت نمایش نقشه ی آنلاین ایران روی وب و یا به عبارت بهترنقشه ی جامع راههای ایران در وب هست زیر بنای اصلی این سایت بر مبنای فلش هست در نتیجه کیفیت کاری بالایی داره از امکانات جالب این سایت نشان دادن نقشه ی ماهواره ای ایران و همچنین محاسبه ی طول مسافت دونقطه ی مختلف از هم دیگر است که برای مسافران کاربردی به نظر میاد چون نحوه ی محاسبه اش طول خط راست نیست بلکه بر اساس مسافت جاده ها اندازه گیری میشه . همچنین این نقشه قابلیت ثبت نقاط را توسط کاربر دارا می باشد . این سایت توسط شرکت آمیتیس رایانه و به حمایت موسسه ی گیتاشناسی طراحی و ثبت شده است . در ضمن این جور که معلومه یه مسابقه هم طراحی شده که درباره ی سایت نظر میدین جایزه میگیرین که از این آدرس در دسترس هستش .</p>
+<p><a href="http://www.iranview.ir/"> ورود به سایت</a></p>
+<p><a href="http://www.iranview.ir/feedback.aspx"> توضیحات بیشتر</a></p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">Comments</a>
+        <a href="posts/blog13851013nqshh-jm-rhhy-yrn.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13851013nqshh-jm-rhhy-yrn.html">Comments</a>
     
 
         
@@ -187,33 +148,42 @@
 <div class="pageNav">
   
   <div class="prev">
-    <a href="index.html">← ارسال‌های جدید‌تر</a>
+    <a href="index-2.html">← ارسال‌های جدید‌تر</a>
   </div>
   
-  
-  <div class="next">
-    <a href="index-2.html">پست‌های قدیمی‌تر →</a>
-  </div>
   
 </div>
 
 
     
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+    
+
+
+      </div>
     </div>
     <div id="footer">
       <h5>Elsewhere</h5>
-      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+      <ul class="elsewhere">
+        <a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
 <a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
 <a href="https://identi.ca/shahinism">Identica</a> |
 <a href="http://twitter.com/shahinism">Twitter</a> |
 <a href="https://github.com/shahinism">Github</a>
-      </ul><div class="footerContent">
+      </ul>
+
+      <div class="footerContent">
         
 <!-- Custom search -->
 <form method="get" id="searchform" action="http://duckduckgo.com/">
 <div id="search">
-<input type="hidden" name="sites" value="http://shahinism.github.io"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+<input type="hidden" name="sites" value="http://shahinism.github.io">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<input type="text" name="q" maxlength="255" placeholder="جستجو…">
+<input type="submit" id="searchsubmit" value="DDG Search">
+</div>
 </form>
 <!-- End of custom search -->
 
@@ -234,4 +204,7 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script></body></html>
+</script>
+
+  </body>
+</html>

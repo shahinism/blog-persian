@@ -1,15 +1,48 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 26) | شاهینیسم</title><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+<!DOCTYPE html><html lang="fa">
+  <head>
     
-    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+<meta charset="utf-8">
+<meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!">
+<meta name="author" content="شاهین آزاد">
+<title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 26) | شاهینیسم</title>
+
+<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml">
+
+
+
+
+    
+    
+  </head>
+  <body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script>
+    
+
+    <div id="siteWrapper">
       <h1 id="vcard author">
         <a href="." title="شاهینیسم">شاهینیسم</a>
         <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" style="float: left; position: absolute; margin: 0px 90px;"></a>
       </h1>
 
       <div id="mainNav">
-        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+        <ul>
+          
+
+
+  <li><a href="stories/drbrh-mn-2.html">About</a>
 
 
 
@@ -25,7 +58,8 @@
 
 
 </li>
-        </ul></div>
+        </ul>
+      </div>
       <div id="siteDescription">
         
         
@@ -36,65 +70,22 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-30 15:00
+    ارسال شده: 2008-01-13 18:56
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13861023sagacious-internet.html">خدمات اینترنت هوشمند</a></h3>
     
     <div class="entry-content">
-      <p></p><p>وقتی که برای دسترسی به کارگزار (Server) پایگاه داده <a title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟" href="http://shahinism.com/blog/1390/09/09/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b3%e2%80%8c-mysql-%da%86%db%8c%d8%b3%d8%aa%e2%80%8c%d8%9f/" target="_blank">MySQL</a> از طریق مشتری‌ای (Client) نظیر mysql یا حتی زبان‌های برنامه نویسی نظیر php یا perl اقدام می‌کنید‌، به یک حساب کاربری نیاز دارید‌.
-MySQL دارای سیستم مدیریت کاربر خبره‌ای است که قادر به کنترل کردن دسترسی کاربران از مشتری‌های مختلف به کارگزار می‌باشد‌. برای این کار MySQL از جداول مخصوص در پایگاه داده کمک می‌گیرد‌. به همین دلیل برای ساخت یک کاربر جدید در MySQL شما نیاز به کاربر root دارید‌.</p>
-<p>سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.</p>
-<p>لطفا توجه داشته باشید حساب کاربری در MySQL با اکانت‌های یونیکس‌/‌لینوکس متفاوت است‌. برای مثال‌، کاربر root در MySQL و کاربر root در یونیکس‌/‌لینوکس جدا از هم بوده و هیچ ارتباطی با هم ندارند‌، حتی اگر نام کاربریشان شبیه به هم باشد‌.</p>
-<p></p><h4>روند ساخت یک حساب کاربری در MySQL</h4>
-<p>با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌، دستور زیر را وارد کنید‌:):</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
-</pre></div>
-
-
-<p>و یا</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
-</pre></div>
-
-
-<p>یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:</p>
-<div class="code"><pre>mysql&amp;gt; CREATE DATABASE demo;
-</pre></div>
-
-
-<p>یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:</p>
-<div class="code"><pre>mysql&amp;gt; GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’;
-</pre></div>
-
-
-<p><strong>توجه‌:</strong> GRANT ALL به این معنی است که کاربر قادر است هر کاری انجام دهد‌. می‌تواند اطلاعات را بخواند‌، دستکاری کند و یا پاکشان کند‌، اما تنها برای جداول موجود در پایگاه دادهٔ demo. او قادر به دسترسی به دیگر پایگاه‌های داده نیست‌.</p>
-<h4>من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL متصل شوم؟</h4>
-
-<p>کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه داده demo متصل شود‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -p demo
-</pre></div>
-
-
-<p>و یا‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
-</pre></div>
-
-
-<p>که پارامتر‌های دستور به شکل زیر معنا می‌شوند‌:</p>
-<ul><li>‎-user1 : کاربر MySQL</li>
-    <li>‏‎-h : نام کارگزار MySQL (به صورت پیش‌فرض localhost)</li>
-    <li>‎-p : اعلان برای رمز عبور</li>
-    <li>demo: demo نام پایگاه داده در mysql می‌باشد (اختیاری)</li>
-</ul><p style="text-align: center;"><a title="MySQL user creation" href="http://www.cyberciti.biz/faq/mysql-user-creation/" target="_blank">منبع</a></p>
-
-<p></p>
+      <p></p><p>از اون اول اولا که حالا نه بحث سر وبلاگ بود نه پورتال و نه سایتهای اجتماعی (منظور زمان پیکان جوانان) وقتی می خواستیم کلی به کامپیوتر حال بدیم می رفتیم و یک کارت اینترنت می خریدیم و به خورد دیال آپ می دادیم تا با Internet explorer و شاید Netscape حالی بکنیم . بعدها دنیا پیشرفت کرد و تعرفه های اینترنت کشور به نصف کاهش یافت و باعث شد تا کیفیت ارائه شده توسط شرکت ها به نصف کاهش پیدا کند . ولی حالا زمانی بود که وبلاگ پراکنی داشت در بین فارسی زبانان رونق زیادی پیدا می کرد که بحث اینترنت ADSL و چندی بعد Wireless به میان آمد که شرکت های ایرانی هم اقدام به ارائه ی این نوع اینترنت کردند با قیمت های بس گزاف و سرعت هایی در حد دیال آپ طبیعی و حالا چند وقتی است که شرکت های اینترنتی با کلاس تر شده و بحث را روی واژه ی اینترنت هوشمند گسترش می دهند .</p>
+<p>اینترنتی که معمولا از طرف شرکت ها توسط یک یا دو خط تلفن ارائه می شود و از آن جایی که نیاز به خرید کارت ندارد باب دل جوانان ایرانیست و همین یکی دو خط باید پاسخگوی سیل عظیمی از طالبان اینترنت باشد . که خوشبختانه صاحبان این شرکت ها به چیزی جز در آمد ساعتی 300 تومان خود و مخابرات فکر نکرده اند و به عبارتی دیگر مزخرف ترین سرعت اینترنت را ارائه می کنند که آن هم با دنگ و فنگ های مشغول بودن خط تلفن و یا با به هنگ آوردن  سیستم کاربران همراه است .</p>
+<p>متاسفانه انگار صاحبان شرکت های اینترنتی به چیزی جز پر کردن جیب خود فکر نمی کنند و از قرار معلوم باید مسئله ی سرعت اینترنت بلا نسبت هوشمند را هم به بحث دلنشین ... تر اضافه کنیم .</p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
+        <a href="posts/blog13861023sagacious-internet.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13861023sagacious-internet.html">Comments</a>
     
 
         
@@ -105,47 +96,25 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-30 08:00
+    ارسال شده: 2008-01-08 19:27
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900909chchch-3-mysql-chyst.html">چ‌چ‌چ (۳)‌: MySQL چیست‌؟</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13861018wikimapia.html">ویکی مپیا عمق گوگل مپ</a></h3>
     
     <div class="entry-content">
-      <p></p><p>MySQL یک کارگزار (Server) پایگاه دادهٔ متن‌باز قابل اطمینان است‌، که توسط توسعه دهندگان وب زیادی در سراسر جهان مورد استفاده قرار می‌گیرد‌. شما می‌توانید  با اسکریپت‌نویسی در PHP و یا پرل به یک پایگاه دادهٔ MySQL دستیابی داشته باشید‌. به هر حال‌، هزاران ابزار کاربردی برای MySQL در دسترس است‌، که شما در این‌جا دسته‌ای از محبوب‌ترین‌هایشان را می‌بینید‌ که در PHP (پیش‌پردازندهٔ فرامتن PHP یا PHP Hypertext Preprocessor) یکی از پر استفاده‌ترین‌، زبان اسکریپت‌نویسی که بسیار مناسب توسعهٔ وب است و می‌تواند به صورت تو‌کار در HTML مورد استفاده قرار گیرد‌.
-</p><h4>نرم‌افزار دفتر مهمان</h4>
-<ul><li><a title="Advanced Guestbook" href="http://proxy2.de/scripts.php" target="_blank">Advanced Guestbook</a></li>
-</ul><h4>نرم‌افزار انجمن</h4>
-
-<ul><li><a title="phpBB" href="http://phpbb.com/" target="_blank">phpBB</a></li>
-    <li><a title="Simple Machines Forum (SMF)‎" href="http://www.simplemachines.org/index.php" target="_blank">Simple Machines Forum (SMF)‎</a></li>
-</ul><h4>سیستم مدیریت محتوا</h4>
-
-<ul><li><a title="Mambo" href="http://www.mamboserver.com/" target="_blank">Mambo</a></li>
-    <li><a title="Xoops" href="http://www.xoops.org/" target="_blank">Xoops</a></li>
-    <li><a title="PostNuke" href="http://noc.postnuke.com/" target="_blank">PostNuke</a></li>
-</ul><h4>نرم‌افزار بلاگ‌دهی</h4>
-
-<ul><li><a title="Wordpress" href="http://wordpress.org/" target="_blank">WordPress</a></li>
-    <li><a title="Geeklog" href="http://www.geeklog.net/" target="_blank">Geeklog</a></li>
-    <li><a title="Plog" href="http://www.plogworld.net/" target="_blank">pLog</a></li>
-    <li><a title="Serendipity" href="http://www.s9y.org/" target="_blank">Serendipity</a></li>
-</ul><h4>گالری عکس</h4>
-
-<ul><li><a title="Coppermine photo gallery" href="http://coppermine.sourceforge.net/" target="_blank">Coppermine Photo Gallery</a></li>
-    <li><a title="4Images" href="http://www.4homepages.de/" target="_blank">۴images</a></li>
-</ul><p>وقتی که شما به یک کاربر با تجربه تبدیل شدید‌، ممکن است تصمیم بگیرید یک صفحه وب پویا یا یک نرم‌افزار با استفاده از MySQL برای خود بسازید‌. برای اطلاعات بیشتر در این رابطه می‌توانید از لینک‌های زیر استفاده کنید‌:</p>
-<ul><li><a title="MySQL website" href="http://mysql.com/" target="_blank">وب‌سایت MySQL</a></li>
-    <li><a title="PHP Website" href="http://php.net/" target="_blank">وب‌سایت PHP</a></li>
-</ul><p style="text-align: center;"><a title="What is mySQL on cyberciti" href="http://www.cyberciti.biz/faq/what-is-mysql/">منبع</a></p>
-
-<p></p>
+      <p></p><p>در اینترنت به دنبال آدرس سایت یکی از شرکت های اینترنتی شهر رشت بودم که گوگل  عزیز علاوه بر آدرس وب سایت با راهنمایی من به ویکی مپیا آدرس دقیق شرکت در رشت را  هم به من نشان داد . آن هم با نقشه ی گوگل مپ و بزرگنمایی عالی. بله <a href="http://wikimapia.org/">ویکی مپیا</a> این سایت جالب مخلوطی از سیستم <a href="http://map.google.com/">گوگل مپ</a> و استخوان بندی <a href="http://fa.wikipedia.com/">ویکی <span lang="fa">پدیا</span></a> اقدام به  ارائه خدماتی برای ثبت مکان ها بر روی نقشه ی گوگل مپ کرده که از قرار معلوم برای  بسیاری از هم وطنان هم شناخته شده است (از روی مکانهای زیادی که با دقت در رشت  نشانه گذاری شده بود فهمیدم بماند که می تونه  کار یک نفر هم باشه) .</p>
+<p>مزایای این نوع سرویس هم بر هیچ کدام از دوستداران تکنولوژی پوشیده نیست که با  استفاده از طول و عرض جغرافیایی ارائه شده توسط این سرویس و انتقال آن به یک GPS می  توانید بدون این که حتی تاکنون برای یک بار به شهری که مکان مورد نظرتان در آن قرار  دارد سفر کرده باشید مکان مورد نظر را پیدا کنید .</p>
+<p>روش کار با این سایت بسیار راحت است و شما به راحتی می توانید مکان های متفاوت  را بیابید و یا در آن ثبت کنید اما اگر با زبان انگلیسی سایت هم مشکل داشتید می  توانید زبان آن را به فارسی تغییر دهید . در هنگام ثبت مکان ها هم می توانید اگر  لینک توضیحی یا سایتی در مورد آن مکان وجود داشت به نقشه پیوند بزنید همچنین می  توانید با استفاده از تگ های متفاوت مکان ها را برای جستجوی بهتر بهینه کنید .</p>
+<p>در صفحه ی اصلی این وب سایت هم فقط یک نقشه ی ساده ی جهان با کنترل های گوگل مپ  به علاوه ی سه کلید و یک جستجوگر را مشاهده می کنید . که به سادگی این وب سایت کمک  زیادی کرده . و اما از مزیتهای دیگر این سرویس هم سیستم رای گیری در مورد مکانهاست  که پس از افزودن مکانی توسط شما آن را از دید دیگر بازدیدکنندگان برای مدتی مورد  نظر سنجی قرار می دهد که این کار هم توسط مثبت , منفی های کاربران صورت می گیرد .</p>
+<p>اما بزرگترین مشکل این سایت در قسمت انتخاب (Mark) مکان هاست که برای اضافه کردن  هر مکانی فقط یک جعبه ی چهار گوش با قابلیت بزرگ و کوچک شدن در اختیارتان قرار می  دهد که حتی قابلیت کج کردن را هم ندارد و ای از دقت و کیفیت نقشه می کاهد همچنین  بهتر بود برای نشان دادن رودخانه ها هم ابزاری قرار داده میشد تا رود خانه ها در  نقشه بی نام و نشان نباشند .</p>
+<p><strong>پی نوشت : </strong>بلا نسبت شما آدم بی جنبه انگار همه جا هست طرف رفته آدرس دوست  دخترش رو توی ویکی مپیا ثبت کرده فایزه جون !!!</p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900909chchch-3-mysql-chyst.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900909chchch-3-mysql-chyst.html">Comments</a>
+        <a href="posts/blog13861018wikimapia.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13861018wikimapia.html">Comments</a>
     
 
         
@@ -156,64 +125,37 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-11-29 17:09
+    ارسال شده: 2008-01-05 15:04
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html">چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13861015seo-for-blogs.html">بهینه سازی وبلاگ برای موتورهای جستجو (SEO)</a></h3>
     
     <div class="entry-content">
-      <p></p><p>پوستهٔ <a title="Korn shell on WIKIPEDIA" href="https://en.wikipedia.org/wiki/Korn_shell" target="_blank">Korn</a> در یونیکس‌/لینوکس چیست‌؟
-پوستهٔ Korn توسط دیوید کورن در آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.</p>
-<p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
-<p>نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating point) نیز پشتیبانی می‌کند‌.</p>
-<p></p><h4>ویژگی‌های پوستهٔ Korn</h4>
-<ol><li>تازیخچهٔ دستورات – بله</li>
-    <li>ویرایش خط – بله</li>
-    <li>تکمیل نام فایل – بله</li>
-    <li>دستورات مستعار (‌Alias Commant) – بله</li>
-    <li>پوستهٔ محدود (Restricted shells) – بله</li>
-    <li>کنترل فعالیت‌ها – بله</li>
-</ol><h4>‎‎/usr/bin/ksh‏</h4>
-
-<p>تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:</p>
-<div class="code"><pre><span class="c">#! /usr/bin/ksh</span>
-</pre></div>
-
-
-<p>نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/ksh</span>
-
-<span class="nb">echo</span> “Hello World!”
-</pre></div>
-
-
-<p>شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>which ksh
-</pre></div>
-
-
-<p>نمونهٔ خروجی‌:</p>
-<div class="code"><pre>/usr/bin/ksh
-</pre></div>
-
-
-<p>Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/env ksh</span>
-
-<span class="nb">echo</span> “Hello World!”
-</pre></div>
-
-
-<p style="text-align: center;"><a title="What is UNIX / Linux Korn Shell?" href="http://www.cyberciti.biz/faq/ksh-korn-shell/" target="_blank">منبع</a></p>
-
-<p></p>
+      <p></p><p>بزرگ بودن دنیای پر هیاهوی وب را کسی منکر نیست . پس ایجاد وبلاگی که سریعا در  این دنیای بزرگ به موفقیت دست یابد هم کاری بس مشکل است و همچنین برای کاربران محقق  هم جستجو مطلبی خاص تقریبا غیر ممکن است . اینجاست که معنای حقیقی موتورهای جستجو  در کلمه شکوفا می شود . پس لازم است اگر در اینترنت چیزی را خلق می کنیم به بهترین  نحو ممکن آن را برای این موتورها قابل شناسایی کنیم . این کار از 3 نظر بسیار مفید  است . اول اینکه کاربرانی که از طریق موتورهای جستجو وارد صفحه ی مطلب مورد نظر می  شوند احتمال اینکه از آن استفاده ببرند بسیار زیاد است . دوم اینکه مطالب جستجو شده  در موتور جستجو بسیار نزدیک به عبارت مورد جستو خواهد بود و در واقع از ارائه ی  صفحات بی ربط تا حد ممکن جلوگیری میشود . و سوم این که کاربری که مطلبی را مورد  جستجو قرار می دهد خیلی راحت تر به نتیجه قابل قبول خود می رسد.  برای درک بهتر  فواید بهینه سازی وبلاگ برای موتورهای جستجو پیشنهاد می کنم این دو لینک را مورد  مطالعه قرار دهید :</p>
+<p><span style="font-size:9pt;font-family:Tahoma;"><span lang="en-us"> <a href="http://www.majidonline.com/page.php?page=content&amp;op=cntshow&amp;code=274"> 1- بهينه سازي سايت براي موتورهاي جستجو (مجید آنلاین)</a></span></span></p>
+<p><a href="http://mhmazidi2.wordpress.com/2007/12/24/google-wordpress/">2-  وردپرس شیاد (دکتر مزیدی) </a></p>
+<p>با خواندن مطالب فوق حتما به این نکته پی برده اید که وردپرس . کامی ها این نعمت  را به طور پیش فرض در وبلاگ خود دارند (از نعمات وردپرس) . حالا کاربرانی که در  سیستم های دیگر وبلاگ دارند هم می توانند برای بهبود محبوبیت خود نزد موتورهای  جستجو کارهایی انجام دهند از جمله اینکه برای پوسته ی وبلاگ متا تگ بنویسند که  بهترین گزینه برای این کار ابزار ارائه شده توسط <a href="http://www.dahio.com/services/">داهیو</a> است که از<a href="http://www.dahio.com/tools/metagen/"> اینجا</a> قابل دسترس است .</p>
+<p>اما کاربرانی که از <strong>وردپرس شخصی (.ORG) </strong>استفاده می کنند از بعضی امکانات  مانند Alt نویسی برای عکس ها برخوردارند ولی برای تنظیمات پیشرفته تر باید از  افزونه ای به نام <a href="http://wp.uberdose.com/2007/03/24/all-in-one-seo-pack/">All in SEO pack</a> استفاده کنند که در نوع خود از بهترینهاست . از جمله کارهایی که این پلاگین انجام  میدهد عبارتند از :</p>
+<ul>
+<li>
+<p>متاتگ های مورد نیاز از جمله تگ توضیحات و تگ زیر موضوعات</p>
+</li>
+<li>
+<p>تغییر نام صفحات به صورت نام + نام صفحه ,موضوع, مطلب</p>
+</li>
+<li>
+<p>ارائه جعبه ابزاری برای ارسال توضیحات و نام مطلب برای جستجوگرها تا در زمان  جستجو نمایش داده شود</p>
+</li>
+</ul>
+<p>برای بارگذاری این افزونه می توانید به <a href="http://downloads.wordpress.org/plugin/all-in-one-seo-pack.zip">این آدرس</a> مراجعه کنید .</p>
+<p><a title="search-motors.png" rel="attachment wp-att-112" href="http://localhost/wordpress/?attachment_id=112"></a></p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html">Comments</a>
+        <a href="posts/blog13861015seo-for-blogs.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13861015seo-for-blogs.html">Comments</a>
     
 
         
@@ -226,33 +168,46 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
 <div class="pageNav">
   
   <div class="prev">
-    <a href="index-25.html">← ارسال‌های جدید‌تر</a>
+    <a href="index-27.html">← ارسال‌های جدید‌تر</a>
   </div>
   
   
   <div class="next">
-    <a href="index-27.html">پست‌های قدیمی‌تر →</a>
+    <a href="index-25.html">پست‌های قدیمی‌تر →</a>
   </div>
   
 </div>
 
 
     
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+    
+
+
+      </div>
     </div>
     <div id="footer">
       <h5>Elsewhere</h5>
-      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+      <ul class="elsewhere">
+        <a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
 <a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
 <a href="https://identi.ca/shahinism">Identica</a> |
 <a href="http://twitter.com/shahinism">Twitter</a> |
 <a href="https://github.com/shahinism">Github</a>
-      </ul><div class="footerContent">
+      </ul>
+
+      <div class="footerContent">
         
 <!-- Custom search -->
 <form method="get" id="searchform" action="http://duckduckgo.com/">
 <div id="search">
-<input type="hidden" name="sites" value="http://shahinism.github.io"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+<input type="hidden" name="sites" value="http://shahinism.github.io">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<input type="text" name="q" maxlength="255" placeholder="جستجو…">
+<input type="submit" id="searchsubmit" value="DDG Search">
+</div>
 </form>
 <!-- End of custom search -->
 
@@ -273,4 +228,7 @@ MySQL دارای سیستم مدیریت کاربر خبره‌ای است که 
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script></body></html>
+</script>
+
+  </body>
+</html>

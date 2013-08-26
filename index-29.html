@@ -1,15 +1,48 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="utf-8"><meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!"><meta name="author" content="شاهین آزاد"><title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 29) | شاهینیسم</title><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><link href="assets/css/custom.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml"></head><body class="home blog">
+<!DOCTYPE html><html lang="fa">
+  <head>
     
-    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script><div id="siteWrapper">
+<meta charset="utf-8">
+<meta name="description" content="بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!">
+<meta name="author" content="شاهین آزاد">
+<title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 29) | شاهینیسم</title>
+
+<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml">
+
+
+
+
+    
+    
+  </head>
+  <body class="home blog">
+    
+    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script>
+    
+
+    <div id="siteWrapper">
       <h1 id="vcard author">
         <a href="." title="شاهینیسم">شاهینیسم</a>
         <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" style="float: left; position: absolute; margin: 0px 90px;"></a>
       </h1>
 
       <div id="mainNav">
-        <ul><li><a href="stories/drbrh-mn-2.html">About</a>
+        <ul>
+          
+
+
+  <li><a href="stories/drbrh-mn-2.html">About</a>
 
 
 
@@ -25,7 +58,8 @@
 
 
 </li>
-        </ul></div>
+        </ul>
+      </div>
       <div id="siteDescription">
         
         
@@ -36,105 +70,24 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-09-12 09:11
+    ارسال شده: 2008-04-02 14:57
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html">نصب و اجرای Anki در اسلکور</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13870114mobile-tools.html">موبایلی ها</a></h3>
     
     <div class="entry-content">
-      <p></p><p>این بار نرم‌افزاری بسیار کوچکتر از قبل‌، دغدغه‌ی نصب و اجرای یک نرم‌افزار در محیط اسلکور را برایم فراهم کرد‌! <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">Anki</a> نرم‌افزار شبیه ساز محیط <a title="جعبه لایتنر در ویکی پدیا" href="http://fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D9%84%D8%A7%DB%8C%D8%AA%D9%86%D8%B1" target="_blank">فلش کارت</a> را به دلیل خاصیتش‌، قبل از این می‌شناختم‌. ولی با شکست در اجرایش و همچنین نبود فلش کارت مناسب زیاد توجهی بهش نکردم‌. اما اینبار با ورود <a title="4K English words by Flashcard" href="http://flashcard.linuxreview.ir/" target="_blank">فلش کارت‌های ایمان‌</a>، وضع فرق کرد‌. می‌دانستم که کاملترین نمونه‌ی این نرم‌افزار‌ها همین Anki است‌. از همه جالبتر هم بخش آمار و نمودار‌هایش بود که بسیار وسوسه‌ام می‌کرد این نرم‌افزار را نصب کنم‌. در ادامه مراحل نصب را مرور می‌کنیم‌!</p>
-<p>قبل از هر کاری pysetuptools را از <a title="pysetuptools" href="http://slackbuilds.org/repository/13.37/python/pysetuptools/" target="_blank">اینجا</a> دریافت و نصب کنید‌. دیگر پیش نیاز‌های اولیه‌تان برای نصب این‌ها هستند‌:</p>
-<div class="code"><pre>sqlalchemy 0.4.3
-
-simplejson 1.7.3
-</pre></div>
-
-
-<p>بسته‌ی دوم ‌(‌simplejason‌) را می‌توانید با استفاده از Slackbuild‌ موجود در <a title="simplejson Slackbuild" href="http://slackbuilds.org/repository/13.37/python/simplejson/" target="_blank">این آدرس‌</a> نصب کنید‌. برای SQLAlchamy هم من آخرین نسخه‌ی موجود را نصب کردم‌! برای این کار کافیست آخرین نسخه را از <a title="sqlalchemy official website" href="http://www.sqlalchemy.org/" target="_blank">این‌جا</a> دریافت کنید‌، و Slackbuild نسخه قدیمی را نیز از <a title="sqlalchamy slackbuild" href="http://slackbuilds.org/repository/13.37/development/SQLAlchemy/" target="_blank">این‌جا</a> بگیرید‌، حالا فایل Slackbuild را با یک ویرایشگر متن باز کنید‌، همان اوایل متن مقدار جلوی VERSION را به مقدار دلخواهتان تغییر دهید‌ ‌(برای من چنین چیزی از آب در آمد VERSION=0.7.2 )‌ حالا اگر می‌خواهید این نرم‌افزار قدرت گراف کشیدن داشته باشد به ترتیب باید از پس بسته‌های زیر هم بر بیایید‌. ‌(‌لینک Slackbuild‌های مربوطه از این شماره‌ها قابل دسترسی است‌: <a title="numpy slackbuild" href="http://slackbuilds.org/repository/13.37/development/numpy/" target="_blank">۱</a>‌، <a title="pytz slackbuild" href="http://slackbuilds.org/repository/13.37/python/pytz/" target="_blank">۲</a>‌، <a title="python-dateutil" href="http://slackbuilds.org/repository/13.37/python/python-dateutil/" target="_blank">۳‌</a>، <a title="matplotlib slackuild" href="http://slackbuilds.org/repository/13.37/libraries/matplotlib/" target="_blank">۴</a>‌‌)</p>
-<div class="code"><pre>- python-numpy <span class="o">(</span>numpy<span class="o">)</span>
-
-- python-matplotlib <span class="o">(</span>matplotlib<span class="o">)</span>
-</pre></div>
-
-
-<p>برای داشتن چند قابلیت دیگر نظیر ضبط صدا و یا وارد کردن فایل XML هم نیاز به چند پیش‌نیاز دارید که با استفاده از فایل README موجود در پوشه‌ی Anki می‌توانید با آن‌ها آشنا شوید‌. ‌(‌من اون‌ها رو تست نکردم‌، و برای نصب هم نیازی به اون‌ها نداریم‌)‌.</p>
-<p>پس از نصب پیش‌نیاز‌ها آخرین نسخه‌ی Anki را از <a title="Anki Official website" href="http://ankisrs.net/" target="_blank">این‌جا</a> دریافت کنید‌. آن را از حالت فشرده خارج کرده و سپس به مسیر زیر بروید‌:</p>
-<div class="code"><pre><span class="nb">cd </span>anki-YOUR-VERSION/libanki
-</pre></div>
-
-
-<p>لطفا توجه داشته باشید که فایلی با نام setup.py در پوشه‌ی اول Anki هم موجود هست‌، ولی ما به آن کار نداریم‌، و عملیات نصب را با setup.py موجود در پوشه libanki انجام می‌دهیم‌. برای شروع عملیات نصب دستور زیر را اجرا کنید‌:</p>
-<div class="code"><pre>python setup.py install
-</pre></div>
-
-
-<p>دستور فوق را یا با کاربر root و یا با استفاده از sudo اجرا کنید‌. پس از پایان عملیات نصب می‌توانید برنامه را با دستور anki اجرا کنید‌. متاسفانه نصاب این برنامه برای anki در منوی KDE هیچ گزینه‌ای اضافه نمی‌کند‌، پس باید زحمت این را شما بکشید‌. ظاهرا الان برنامه درست کار می‌کند‌، اما برای دیدن روی بد سکه‌، سعی کنید فلش کارت جدیدی ایجاد کنید و یا یک فلش کارت به آن اضافه کنید‌. متاسفانه با اخطار زیر روبرو می‌شوید‌:</p>
-<div class="code"><pre>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-
-File <span class="s2">"/usr/lib/python2.6/site-packages/ankiqt/ui/main.py"</span>, line 953, in onNew
-
-self.deck.initUndo<span class="o">()</span>
-
-File <span class="s2">"/usr/lib/python2.6/site-packages/anki/deck.py"</span>, line 3415, in initUndo
-
-<span class="o">(</span>null, <span class="s1">'delete from %(t)s where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="s2">""" % {'t': table})</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 114, in statement</span>
-
-<span class="s2">return self.execute(text(sql), kwargs)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/anki/db.py<span class="s2">", line 90, in execute</span>
-
-<span class="s2">x = self._session.execute(*a, **ka)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/orm/session.py<span class="s2">", line 724, in execute</span>
-
-<span class="s2">clause, params or {})</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1191, in execute</span>
-
-<span class="s2">params)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1271, in _execute_clauseelement</span>
-
-<span class="s2">return self.__execute_context(context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1302, in __execute_context</span>
-
-<span class="s2">context.parameters[0], context=context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1401, in _cursor_execute</span>
-
-<span class="s2">context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/base.py<span class="s2">", line 1394, in _cursor_execute</span>
-
-<span class="s2">context)</span>
-
-<span class="s2">File "</span>/usr/lib/python2.6/site-packages/SQLAlchemy-0.6.7-py2.6.egg/sqlalchemy/engine/default.py<span class="s2">", line 299, in do_execute</span>
-
-<span class="s2">cursor.execute(statement, parameters)</span>
-
-<span class="s2">sqlalchemy.exc.OperationalError: (OperationalError) cannot create trigger on system table u"</span>ncreate temp trigger
-
-
-
-_undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog valuesn<span class="o">(</span>null,
-
-
-
-<span class="s1">'delete from sqlite_stat2 where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span>; end<span class="err">"</span> <span class="o">()</span>
-</pre></div>
-
-
-<p>خوب برنامه به دلایلی ‌(‌که هنوز هم نفهمیدم چیه‌!‌) این اخطار رو از قرار فقط برای جماعت اسلکور کار بر می‌گرداند‌! برای حل این مشکل نیز کافیست‌، برنامه را دوباره استارت کنید و با استفاده از کلید Download موجود در صفحه اصلی‌، اقدام به بارگذاری یکی از فلش‌کارت‌های مربوط کنید‌. به طرز عجیبی برنامه پس از آن کاملا درست کار می‌کند و شما هم می‌توانید با استفاده از آن‌، بر دانستنی‌های دائمتان بیافزایید‌ :-P</p>
+      <p></p><p>با توجه به پیشرفته تر شدن تلفن های همراه و افزوده شدن امکانات شخصی سازی و نصب نرم افزار بر روی آن ها سایت های بسیاری برای ارائه ی نرم افزار های مخصوص تلفن های همراه ساخته شده اند و کاربران زیادی را هم به سوی خود جلب کرده اند . در این پست قصد دارم با چند سایت , وبلاگ و ابزار مفیدی که در این هفته ( پس از قرنها ) با آنها آشنا شده ام را معرفی کنم .</p>
+<p><strong>کتاب ساز پرنیان  :</strong> چند وقت پیش<a href="http://imilad.com/"> <strong>میلاد</strong> </a>عزیز یک کتاب الکترونیکی مخصوص موبایل را<a href="http://imilad.com/?p=173"> <strong>معرفی</strong> </a>کرد که در نوع خودشبسیار جالب بود . از جمله قابلیت های این کتاب می توان به قابل نصب بودن بر روی اکثر گوشی های همراه , سازگاری با زبان فارسی , مستقل بودن فونت نرم افزار از فونت گوشی ( مناسب برای گوشی هایی که فارسی را پشتیبانی نمی کنند ) و کاربردی بسیار آسان بود . این کتاب با استفاده از نرم افزاری موسوم به پرنیان ساخته شده بود . شما نیز می توانید با رجوع به <a href="http://www.parnian-ebook.blogfa.com/"><strong>وبلاگ رسمی پرنیان</strong></a> آن را به صورت کاملا رایگان بارگذاری کرده و کتاب های مخصوص به موبایل خود را منتشر کنید . همچنین می توانید با رجوع به <a href="http://www.parnian-ebook-2.blogfa.com/"><strong>این</strong></a> آدرس از کتاب هایی که با این نرم افزار ساخته شده استفاده کنید . مزایای این نرم افزار را هم می توانید با نصب یکی از این کتابها در یابید ( به این میگن آموزش مختصر , مفید , کاربردی ). تنها ایراد این نرم افزار این است که فقط قادر به تبدیل فایلهایی با پسوند نوشتاری txt به کتاب می باشد اما نوینده ی نرم افزار وعده داده که در نسخه های بعدی این مشکل نیز حل خواهد شد . از طرفی به غول دوستان به اندازه ی آدمهای روی زمین راه هست برای تبدیل فایلهای PDF به TXT ( چون بقیه ی پسوندها تنها با کپی پیست در نت پد قابل تغییرند ).</p>
+<p><strong>برنامه نویسی برای موبایل : </strong>عده ای از کاربران هم ممکن است بخواهند دامنه ی فعالیتهای خود را بر روی گوشی های موبایل افزایش داده اقدام به برنامه نویسی برای موبایل ها کنند . برای این منظور راههای مختلفی وجود دارد که یکی از آنها استفاده از زبان جاوا است . برای فراگیری این زبان می توانید به<strong><a href="http://j2me.blogfa.com/"> این </a></strong>وبلاگ بروید و از مطالب مفید آن و انجمن مرتبط با آن استفاده کنید . همچنین دوستانی هم که می خواهند برنامه نویسی برای سیمبیان سری 60 را فرا بگرند می توانند به<a href="http://series60.blogfa.com/"> این جا</a> رجوع کنند . پیشنهاد می کنم قبل از شروع این آموزش ها حداقل یکی از زبانهای برنامه نویسی را بخوبی بلد باشید . تا درک درستی از برنامه نویسی داشته باشید .</p>
+<p><strong>دانلود نرم افزار  : </strong>بسیار زیادند سایت ها و وبلاگهایی که اقدام به ارائه ی نرم افزار های موبایل می کنند . اما سایت <a href="http://www.gsmaria.com/"><strong>GSMAria</strong></a> در این جمع یکی از بهترین هاست . موضوعبندی بسیار مناسب و طراحی آژاکس برگ برنده ی این وب سایت است . موضوع بندیهای حرفه ای این وب سایت به کاربران اجازه ی انتخاب راحت تر نرم افزار ها , بازی ها و تم ها مناسب با گوشی را می دهند . همچنین سایتهای <a href="http://www.mobileha.com/"><strong>موبایلها</strong> </a>و<strong> <a href="http://www.ir-tci.org/">IRTCI</a></strong> هم نرم افزار های خوبی را منتشر می کنند . در ضمن انجمنهای سایتهای اول و سوم هم مرجع خوبی برای دانلود نرم افزار موبایل به حساب می آیند .</p>
+<p><strong>بی ربط نوشت :</strong> از تمامی دوستانی که با اینترنت اکسپلورر وبلاگ من را مشاهده می کنند و این چنین آشفته حال آن را رویت می کنند پوزش می خواهم . اما تقصیر خودتونه چرا از فایرفاکس استفاده نمی کنید خوب ؟ اما در تلاشم که این مشکلات رو حل کنم در ضمن به نکته ی جالب پی بردم که این پوسته روی وردپرس 2.5 مشکل کنتری برا IE6 داره  . منتظر هستم تا فارسی ساز این نسخه کامل شه من هم این وبلاگ را درستش کنم .همچن از دوستانی که با فید وبلاگ مشکل پیدا کردند عذر خواهی می کنم . خواستم آرشیو آی تی نگار را منتقل کنم که سر وردپرس رو گرفت و نصفه وارد کرد . دارم درستش می کنم ... به به , به به</p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900621nsb-w-jry-anki-dr-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900621nsb-w-jry-anki-dr-slkhwr.html">Comments</a>
+        <a href="posts/blog13870114mobile-tools.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13870114mobile-tools.html">Comments</a>
     
 
         
@@ -145,25 +98,22 @@ _undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog val
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-09-07 12:16
+    ارسال شده: 2008-03-18 20:41
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html">بازیگوشی سیستم صدای لینوکس‌!</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13861228cpanel-11.html">Cpanel ۱۱ کنترل کامل وب ۲</a></h3>
     
     <div class="entry-content">
-      <p></p><p>این‌بار مشکل موقعی رونمایی شد که دوست خوبم <a title="Eman Amini on google plus" href="https://plus.google.com/104023127179861373872/about" target="_blank">ایمان امینی‌</a>، به وعده‌ی چند ماهه‌اش عمل کرد و تعدادی <a title="Longman Flashcard" href="https://plus.google.com/104023127179861373872/posts/KEYJTb2FfJn" target="_blank">فلش‌کارت</a> از دیکشنری تصویری لانگمن برای برنامه‌ی KWordQuiz آماده کرد‌. مشکل این بود که برنامه قادر به اجرای فایل‌های صوتی‌ای که به هر فایل پیوند شده بود نبود و هیچ اخطاری هم بازگردانده نمی‌شد‌! ‌(‌البته نا‌گفته نمونه که تا قبل از این که ایمان این فلش‌کارت‌ها رو بهم بده‌،‌ فکر می‌کردم که بخش اجرای صدای KWordQuiz باید نتیجه‌ای مثل اتصالش با برنامه espeek داشته باشه که خود به خود متن‌های انگلیسی رو بخونه‌، ولی خوب این‌طور نبود و ما از جاهلیت در آمدیم‌!‌)</p>
-<p>پس از در میان گذاشتن مشکل با ایمان‌،‌ اولین حدسش همان مشکل همیشگی Alsa (‌مشکل در پخش هم زمان چند منبع صوتی‌) بود‌. برای رفع این مشکل خواست که از <a title="Pulse Audio official website" href="http://www.pulseaudio.org/" target="_blank">PulseAudio</a> استفاده کنم‌. نصب این برنامه روی اسلکور تنها نیاز به یک وابستگی ‌(‌برنامه <a title="speex Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/speex/" target="_blank">speex</a>) و ساخت دو گروه برای PulseAudio که جزئیاتش در صفحه‌ی مربوط به <a title="pulseaudio Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/pulseaudio/" target="_blank">Slackbuild</a> شرح داده شده دارد‌.</p>
-<p>بعد از نصب و راه‌اندازی دوباره سیستم‌، شواهد از این قرار بود که PulseAudio وظیفه‌ی اجرای صدا‌ها را بر عهده گرفته‌، ولی جدای از مشکل قبلی‌ای که داشتم‌، مشکل دیگه‌ای نمایان شده بود‌. Notification‌ها کار نمی‌کرد‌! به پیشنهاد دوباره ایمان با رفتن به مسیر Applications and system notifications در System settings و سربرگ Player Setting و تغییر پلیر از حالت پیشفرض به Mplayer (‌کافیست که در فیلد Player عبارت mplayer وارد شود‌) این مشکل حل شد‌، ولی مشکل قبلی همچنان پابرجا بود‌. ‌(‌البته ایمان یک پیشنهاد دیگر هم داد که منجر به از دست رفتن کامل صدای سیستم شد‌، ولی خوب توانستیم دوباره رو به راهش کنیم‌).</p>
-<p>با این توصیفات‌، دیگر بی‌خیال این شدم که مشکل به Alsa مربوط شود‌ (‌چون در واقع من همان موقع هم تنها یک منبع صوتی در حالت اجرا داشتم‌). در جستجو‌های گوگلی‌ام این را کشف کرده بودم که KWordQuiz از Phonon برای پخش صدا کمک می‌گیرد‌. از طرفی در راهنمایی که ایمان (‌باز هم ایمان‌‌! نبود چی کار می‌کردم‌؟) برای PulseAudio در آرچ نوشته بود (‌که هنوز هم منتشر نشده‌) فهمیدم که باید GStreamer را به زور مجبور به استفاده از PulseAudio کنیم‌.</p>
-<p>با توجه به این تجربیات‌،‌ به جستجوی تنظیماتی که به این گزینه‌ها مربوط شود پرداختم‌! در شاخه Multimedia و منوی Phonon به بخشی رسیدم که عملا تنظیماتش در گذشته کاری از پیش نبرده بود‌. ولی در سربرگ Backend متوجه شدم که Gstreamer به Mplayer اولویت دارد‌. Mplayer‌ای که قبلا هم نتایج خوبی در کار با صدا برایم در بر داشت‌. اولویت اول را به Mplayer دادم‌،‌ و دا دا‌! مشکل حل شد‌!</p>
-<p>نتیجه‌ی کار ایمان فوق‌العاده از آب در آمده بود‌. و آن‌طور هم که قول داده قرار است همه‌ی ۴۰۰۰ لغت این مجموعه را به صورت فلش کارت آماده کند و به طور روزانه منتشر کند‌. به نظرم اگر می‌خواهید تکانی یه زبان انگلیسی زنگ زده‌یتان بدهید‌، این بسته‌های ایمان را از دست ندهید ;-)</p>
+      <p></p><p>پس از ورود اینترنت به پدیده ای موسوم به وب 2 هنوز هم وب مستر ها نتوانسته بودند که آن را در تمام سطوح وب احساس  کنند. به طوری که کاربرانی که از هاستینگ های مجهز به  , Cpanel 10با مشکلات زیاد این عقب ماندگی روبرو بودند. صفحه ی مدیریتی کاملا خسته کننده و با رابط کاربری ضعیف , سرعت لود بسیار پایین و در بعضی مواقع آزار دهنده و مجهز بودن به فایل منیجری بسیار ساده . اما اگر در چند هفته ی اخیر به هاست خود مراجعه کرده باشید ( اگر از هاستینگ های ایرانی "الا لخصوص فراهاست" استفاده کنید ) با نرم افزاری بسیار خوش دست تری روبرو می شوید , محیطی که انصافا به طور پیش فرض همه چیز در جای خود واقع شده " و حتی امکان جابجایی , کم , یا اضافه نمودن آیتم ها هم وجود دارد" . از طرفی دیگر این برنامه مدیریتی به File manager نسخه ی دو نیز مجهز شده که در نوع خود بسیار بهتر شده و چند امکان ساده و همچنین کد ادیتور به آن اضافه شده .</p>
+<p>علاوه بر همه ی این ها نیز تریلرهای و متون آموزشی هم دقیقا در مواقع لزوم به داد کاربر می رسند . آموزش هایی که کم بودشان در نسخه های قدیمی به وضوح احساس می شد .در صفحه ی اول نیز آیکون ها در ویدجت های طبقه بندی شده با قابلیت مینی مایز و جابجایی واقع شده اند که به دسترسی راحت تر به سرویس ها بسیار کمک می کنند. همچنین امکان جستجو در بین ابزار ها هم با استفاده از یک فید جستجو در این نسخه فراهم شده است . یکی از جالب ترین بخش های اضافه شده هم بخش تعویظ پوسته ی سی پانل است که پوسته های جالب و خوش رنگی در این لیست قرار دارد.</p>
+<p></p><address><span style="text-decoration:line-through;">برای دیدن پیش نمایشی از این نسخه روی این لینک کلیک کنید</span></address>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900616bzygwshy-systm-sdy-lynwkhs.html">Comments</a>
+        <a href="posts/blog13861228cpanel-11.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13861228cpanel-11.html">Comments</a>
     
 
         
@@ -174,32 +124,39 @@ _undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog val
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-09-05 18:48
+    ارسال شده: 2008-03-15 23:20
   </abbr></h5>
   <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html">چرا باید LaTeX را دوست داشت‌؟</a></h3>
+    <h3 class="entry-title"><a href="posts/blog13861225freshy-2-persian.html">پوسته Freshy ۲.۰ فارسی</a></h3>
     
     <div class="entry-content">
-      <p></p><p>همین دیروز بود که به دوستم <a title="Ali Qanvatian on google plus" href="https://plus.google.com/110396584548468512787/about" target="_blank">علی</a> می‌گفتم «اگر هر جایی و به هر دلیلی به کلمهٔ LaTeX برخوردی‌، گوشهات رو بگیر و در رو‌!». خوشبختانه‌، لاتک با تمام سختی‌ها و پیچیدگی‌های لعنتی‌اش‌، اینقدر برایم گیرا بود که کار با آن را ادامه دهم تا برایم اثبات کند که نه‌، جز لاتک با هر حروف‌چین دیگری کار کردن‌، حرام است‌!</p>
-<p>تازه تجربهٔ خروجی گرفتن از یک فایل tex را از سر گذرانده‌ام و خیلی خیلی زود است که بخواهم دلیل و مدرک سنگینی بیاورم که «آره آقا‌، از فردا هر کس با لاتک مطلب ننوشت‌، و یا کار با لاتک را ندانست‌، از ما نیست‌!». اما می‌خواهم برای فعلا و ثبت در خاطراتم‌، اینجا بنویسم که چگونه کفهٔ ترازو به نفع لاتک برایم پایین رفت‌:</p>
-<p></p><ul><li>انگلیسی نوشتن‌، و ساده نوشتن در لاتک‌، فوق‌العاده آسان است‌! اما وای به حالتان اگر بخواهید فارسی بنویسید‌، در این صورت باید یک دورهٔ کامل برنامه‌نویسی بسته‌هایش را بگذرانید (‌به این شوری‌ها هم که گفتم نیست‌، در آینده بیشتر در این مورد می‌نویسم‌) ‌.</li>
-    <li>آسان‌ترین کار ممکن در لاتک‌، پانویس نوشتن است‌، که خوب من هنوز هم بلد نیستم که در هیچ کدام از ورد پرسسور‌های رایج انجامش دهم‌!</li>
-    <li>فهرست کردن مطالب در لاتک فقط زحمت نوشتن tableofcontent/ را می‌طلبد‌!</li>
-    <li>تمام سخت‌گیری‌های لاتک در مورد پاراگراف‌ها‌، خطوط‌، علامت‌های مختلف‌ و قابلیت‌هایش برای تعیین کردن سر فصل‌، و بخش‌ها‌ نتیجه‌ای فوق‌العاده زیبا و خوانا را به شما باز می‌گرداند (‌ولی آن‌چنان دهانی از شما... که...) ‌!</li>
-    <li>افزودن تصویر در لاتک به قدری سخت هست‌، که هنوز جرات نکرده‌ام نزدیکش شوم‌!</li>
-    <li>همهٔ تجربیات بالا را اضافه کنید‌، به درد و خونریزی شدیدی که باید برای افزودن قابلیت‌های تایپ فارسی بدون درد و خونریزی در لاتک متحمل شوید‌!</li>
-    <li>نوشتن مقاله در لاتک‌، عملا حکم یک برنامه‌نویسی تمام عیار را دارد‌!</li>
-</ul><p style="text-align: center;"><a href="http://shahinism.com/wp-content/uploads/latex_logo.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-438" style="margin: 7px auto;" title="latex_logo" src="http://shahinism.com/wp-content/uploads/latex_logo-300x111.png" alt="" width="300" height="111"></a></p>
-<p>در کل پس از سبک سنگین کردن قضایای بالا من هم به این نتیجه رسیدم که اگر حرف از با سواد بودن در جامعهٔ امروزی می‌زنید‌، و برای مهندس مهندس شنیدن‌، آب دهانتان سر ریز می‌شود‌، حداقلش این است که مقالاتتان را با LaTeX آماده کنید‌، نه مثل <a title="وب سایت استاد گرام" href="http://yamaghani.com/m/page-2aa58b0d-58a0-428c-95a3-e8c25e26103b.aspx" target="_blank">استاد گرامیمان‌</a>، ‌ به مسلط بودن به مجموعه نرم‌افزار آفیس افتخار ورزید‌! ‌ (‌گفتم «‌من هم‌» ‌، چون <a title="ایمان بیاورید بر LaTeX" href="http://persian.kamangir.net/?p=2533" target="_blank">آرش آبادپور</a> و <a title="آقای مهندس عزیز‌، LaTeX بلدی‌؟" href="http://aminsabeti.net/1387/11/mr-engineer-do-you-know-latex/" target="_blank">امین ثابتی</a> عزیز در این مورد قبلا سخن‌ها رانده‌اند‌) ‌.</p>
-<p>فعلا می‌توانید برای منبع‌، به <a title="منبع فارسی LaTeX" href="http://aminsabeti.net/1387/11/persian-source-for-latex/" target="_blank">این‌ها</a> که امین عزیز نشان داده است مراجعه کنید‌، البته‌ تگ لاتک وبلاگ هر دوی این عزیزان (<a title="Kamangir LaTeX Tag" href="http://persian.kamangir.net/?category_name=latex" target="_blank">‌آرش</a> و <a title="Amin's LaTeX Tag" href="http://aminsabeti.net/?s=latex" target="_blank">امین‌</a>) خواندنش خالی از لطف نیست‌.</p>
-<p>در ضمن دلتان را هم به این خوش نکنید‌ که لاتک را در وب فارسی جستجو کنید‌، چون نتیجه‌اش انواع کاندوم است که نثارتان می‌شود‌ ;-)</p>
+      <p></p><p>مجموعه پوسته فارسی شده Freshy 2.0 را همانطور که قول داده بودم برای وردپرس فارسی استاندارد و آماده کردم :
+</p><p class="download" align="left"><a href="http://themes.wp-persian.com/freshy2/" target="_blank">Freshy V 2.0.0.6 Persian</a></p>
+<p>طراح فرانسوی پوسته ی Freshy پس از ارائه ی موفق این پوسته ( که بخصوص در بین ایرانیان بسیار رایج شد ) اقدام به تکمیل آن کرد و امکانات بی نظیری را به آن افزود که در زیر به آن ها اشاره می کنم .</p>
+<p><strong>امکانات جدید پوسته پوسته :</strong></p>
+<ol><li>استفاده از افزونه ی Customize (که در پایان لینک بارگذاری اش قرار داده شده است .)</li>
+    <li>ارائه خوراک نظرات در زیر هر پست</li>
+    <li>پشتیبانی از برچسب ها ( برچسب وردپرس - و یا برچسب بانی تگز )</li>
+    <li>نمایه ( Gravator )</li>
+</ol>
+
+<p><strong>کارایی های جدید :</strong></p>
+<p>ارائه دادن شیوه نامه های مورد نیاز در ادیتور وردپرس <em>WYSIWYG</em></p>
+<p>امکان دو سایدباره شدن و یا انتخاب سایدبار تک راست یا چپ و همچنین امکان حذف سایدبار در کنار پستها یا صفحات خاص :</p>
+<p>امکان شخصی سازی بسیار آسان با استفاده از افزونه  Customize به همراه چندین طرح آماده برای بیزینس , آشپزی و ...</p>
+<p>برای کسب اطلاعات بیشتر راجع به این پوسته نیز می توانید به<a href="http://www.jide.fr/francais/telechargements/theme-freshy-2/"> اینجا</a> مراجعه کنید .</p>
+<p class="important">در ضمن از<a href="http://asroone.net"> نوید کاشانی </a>عزیز به خاطر <a href="http://forum.wp-persian.com/topic/1042?replies=9">راهنمایی</a> مهمشان تشکر می کنم و اگر دوستان دیگر هم مشکلی در پوسته دیدند ممنون میشوم آن را اطلاع دهند و یا مرا راهنمایی کنند.</p>
+
+<p class="download" align="left"><a href="http://www.jide.fr/francais/telechargements/plugin-customize-wordpress">Download Customize Plugin for Freshy</a></p>
+
+<p></p>
     </div>
     <div class="postMeta">
       <div class="comments">
         
         
     
-        <a href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13900614chr-byd-latex-r-dwst-dsht.html">Comments</a>
+        <a href="posts/blog13861225freshy-2-persian.html#disqus_thread" data-disqus-identifier="cache/posts/old/blog13861225freshy-2-persian.html">Comments</a>
     
 
         
@@ -212,33 +169,46 @@ _undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog val
 <div class="pageNav">
   
   <div class="prev">
-    <a href="index-28.html">← ارسال‌های جدید‌تر</a>
+    <a href="index-30.html">← ارسال‌های جدید‌تر</a>
   </div>
   
   
   <div class="next">
-    <a href="index-30.html">پست‌های قدیمی‌تر →</a>
+    <a href="index-28.html">پست‌های قدیمی‌تر →</a>
   </div>
   
 </div>
 
 
     
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script></div>
+        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+    
+
+
+      </div>
     </div>
     <div id="footer">
       <h5>Elsewhere</h5>
-      <ul class="elsewhere"><a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
+      <ul class="elsewhere">
+        <a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
 <a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
 <a href="https://identi.ca/shahinism">Identica</a> |
 <a href="http://twitter.com/shahinism">Twitter</a> |
 <a href="https://github.com/shahinism">Github</a>
-      </ul><div class="footerContent">
+      </ul>
+
+      <div class="footerContent">
         
 <!-- Custom search -->
 <form method="get" id="searchform" action="http://duckduckgo.com/">
 <div id="search">
-<input type="hidden" name="sites" value="http://shahinism.github.io"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو…"><input type="submit" id="searchsubmit" value="DDG Search"></div>
+<input type="hidden" name="sites" value="http://shahinism.github.io">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<input type="text" name="q" maxlength="255" placeholder="جستجو…">
+<input type="submit" id="searchsubmit" value="DDG Search">
+</div>
 </form>
 <!-- End of custom search -->
 
@@ -259,4 +229,7 @@ _undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog val
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script></body></html>
+</script>
+
+  </body>
+</html>
