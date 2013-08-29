@@ -70,6 +70,49 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-08-29 15:55
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/antigen,.html">Antigen جعبه ابزار ZSH که فعلا استفاده‌اش نمی‌کنم</a></h3>
+    
+    <div class="entry-content">
+      <p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
+<pre class="code bash literal-block">
+curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
+<span class="nb">source </span>antigen.zsh
+</pre>
+<p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
+<pre class="code bash literal-block">
+antigen bundle zsh-users/zsh-syntax-highlighting
+</pre>
+<p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
+<p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسن که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
+<pre class="code bash literal-block">
+antigen theme XsErG/zsh-themes themes/lazyuser
+</pre>
+<p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
+<p>و اما سوال مهم:</p>
+<div class="section" id="antigen">
+<h2>چرا از <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> استفاده نمی‌کنم؟</h2>
+<p>حقیقتش <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> با تمام خوبی‌هایش‌، سرعت لود prompt را در اولین بازگشایی ترمینال‌، خیلی‌، خیلی پایین می‌آورد (منظورم نهایتا یک ثانیه است D:). این برای منی که دائما در حال تغییر ترمینال هستم‌، خیلی زود خسته کننده می‌شود و به خاطر همین‌، فعلا بی‌خیال آن شده‌ام. به همین راحتی. اما همانطور که توسعه دهنده گفته‌، این اسکریپت هنوز در وضعیت beta قرار دارد و مطمئنا در آینده بهتر از این خواهد بود. این است که دلم خواست معرفی‌اش کنم ;-)</p>
+</div>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/antigen,.html#disqus_thread" data-disqus-identifier="cache/posts/antigen.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2013-08-26 20:07
   </abbr></h5>
   <div class="postContent">
@@ -137,58 +180,6 @@ M-X multi-term
         
     
         <a href="posts/emacs-as-a-terminal-emulator.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-as-a-terminal-emulator.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-05-28 10:25
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/backup_with_dropbox.html">پشتیبان‌گیری با rsync, cron, dropbox</a></h3>
-    
-    <div class="entry-content">
-      <p>خوب قربانش بروم‌، با <a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html">اعجوبه‌ای</a> که به نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.</p>
-<p>ولی نکته این‌جاست که با این کار مهم‌ترین مزیت سیستم‌های تحت وب را از دست داده‌ام. چطور؟ اول این که قابلیت انتقال این فایل‌های مهم را از دست داده‌ام و ثانیا این که نمی‌توانم ازشان یک backup درست درمان داشته باشم! نمی‌توانم؟ خوب دروغ گفتم‌، قرار است در نگاه اول این‌طور به نظر برسد! با چند ابزار ساده و به درد بخور لینوکسی، کمی هم چاشنی <a class="reference external" href="http://dropbox.com">Dropbox</a> ‌، هم می‌شود قابلیت انتقال را داشت و هم backup!</p>
-<div class="section" id="dropbox">
-<h2>Dropbox را نصب کنید</h2>
-<p>خوشبختانه <a class="reference external" href="http://dropbox.com">dropbox</a> یک نرم‌افزار متن‌باز GPL‌ایه خوب برای لینوکس دارد که قابلیت Sync کردن فایل‌ها با اکانت dropbox‌مان را بهمان می‌دهد. آن را متناسب با توزیع‌تان پیدا و نصب کنید. مثلا من از این <a class="reference external" href="http://slackbuilds.org/repository/14.0/network/dropbox/">SlackBuild</a> استفاده کردم.</p>
-<p>بعد از نصب احتمالا اگر خودتان دستکاری‌اش نکرده باشید <strong>‎~/Dropbox</strong> پوشه‌ای است که قرار است با اکانت‌تان Sync شود. من آن را در مسیر دیگری قرار دادم. شما هم می‌توانید بسته به نیاز‌تان مسیر بهتری را انتخاب کنید. هر چه باشد فایل‌های مهمی تویش است‌، خوبیت ندارد همین‌طوری توی چشم باشد که ;-)</p>
-<p>برای اجرای خودکار این برنامه در هنگام ورود به سیستم کافیست دستور <strong>dropboxd</strong> را در هنگام ورود به محیط‌کار‌تان اجرا کنید. یعنی یا آن را به فایل <strong>‎~/.xinitrc</strong> تان اضافه کنید. یا مثل من بگذارید توی تنظیمات i3 که اجرا شود. روش‌های دیگری هم هست‌، ولی همین یکی فکر کنم کفایت کند‌!</p>
-</div>
-<div class="section" id="backup">
-<h2>اسکریپت backup</h2>
-<p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash literal-block">
-rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
-</pre>
-<p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
-</div>
-<div class="section" id="id2">
-<h2>اجرای خود‌کار اسکریپت</h2>
-<p>الان هم اسکریپت‌مان خوب کار می‌کند و هم پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> فایل‌ها را خیلی راحت روی Cloud می‌فرستد. ولی هنوز یک ضعف وجود دارد. این که هر بار باید خودم یادم باشد که اسکریپت را اجرا کنم. خوب با این حافظهٔ من‌، می‌دانم که کل این پروسهٔ backup‌گیری با شکست مواجه می‌شود. اولین انتخابم این است که مثلا کاری کنم که موقع خاموش‌کردن سیستم این اسکریپت اجرا شود که چندان عقلانی به نظر نمی‌رسد! به هر حال اینترنت ماست دیگر‌! همیشه که سر حال نیست.</p>
-<p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
-<p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
-<p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code literal-block">
-@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
-</pre>
-<p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
-<p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/backup_with_dropbox.html#disqus_thread" data-disqus-identifier="cache/posts/backup_with_dropbox.html">Comments</a>
     
 
         
