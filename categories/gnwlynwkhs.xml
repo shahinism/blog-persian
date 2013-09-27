@@ -1,726 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>شاهینیسم (گنو/لینوکس)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Thu, 19 Sep 2013 20:21:40 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>دریافت متن ترانه‌های MP3 با لینوکس</title><link>http://shahinism.github.io/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
-&lt;/p&gt;&lt;h5&gt;مقدمات&lt;/h5&gt;
-&lt;p&gt;اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم &lt;a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank"&gt;آدم سالاری&lt;/a&gt; قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)&lt;/p&gt;
-&lt;p&gt;اصل اسکریپت همچین جایی است:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;curl -s &lt;span class="s2"&gt;"http://makeitpersonal.co/lyrics?artist=$artist&amp;amp;amp;title=$title"&lt;/span&gt;
+<rss version="2.0"><channel><title>شاهینیسم (گنو‌/‌لینوکس)</title><link>http://shahinism.github.io</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><lastBuildDate>Fri, 27 Sep 2013 19:23:01 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</title><link>http://shahinism.github.io/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
+ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;دستور mysqladmin برای تغییر کلمه عبور ریشه&lt;/h4&gt;
+&lt;p&gt;اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqlamin -u root pasword NEWPASSWORD
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;خیلی ساده با curl یک درخواست به API سایت می‌فرستیم که در آن ‎$artist اسم خوانندهٔ ترانه و ‎$title اسم خود ترانه است. که البته‌، چون url‌ها نحو (Syntax) خاص خودشان را دارند‌، این اسکریپت‌نویس دوست داشتنی ما‌، با دو خط زیر‌، اسم خواننده و ترانه را معتبر می‌کند:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;artist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$artist_name"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
-
-&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$song_title"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;p&gt;به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» oldpassword» password newpass
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;همین‌؟ تمام شد؟‌ خوب این اسکریپت کاری که می‌خواستیم را انجام داد. ولی شاهین را که می‌شناسید‌. دوست دارد کار‌هایش را &lt;a title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" href="http://shahinism.com/blog/1390/09/26/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b9-%da%86%d8%b7%d9%88%d8%b1-%d8%a8%d9%87-%d8%b5%d9%88%d8%b1%d8%aa-%d9%81%d9%84%d9%87%e2%80%8c%d8%a7%db%8c-%d9%84%db%8c%d9%86%da%a9%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;فله‌ای&lt;/a&gt; انجام دهد! یک کمی سخت است که هر بار بیایم اسم ترانه و خواننده را به اسکریپت بگویم‌، بعد شیلنگ خروجی را بگیرم توی یک فایلی که می‌خواهم و از این حرف‌ها. پس می‌رویم سراغ دستکاری بیشتر این اسکریپت.&lt;/p&gt;
-&lt;h5&gt;خجالت بکش شاهین&lt;/h5&gt;
-
-&lt;p&gt;حتما می‌دانید که می‌توان به فایل‌های MP3 تگ زد. همین تگ‌هایی که اسم خواننده و ترانه و ژانر و این‌جور حرف‌ها را می‌توان بهشان خوراند که تا دست آخر با MP3 Player خیلی راحت‌تر بشود سر و سامان‌شان داد. البته اگر راست کار‌تان&lt;a title="موسیقی در وب فارسی‌" href="http://shahinism.com/blog/1389/01/15/%d9%85%d9%88%d8%b3%db%8c%d9%82%db%8c_%d8%af%d8%b1_%d9%88%d8%a8_%d9%81%d8%a7%d8%b1%d8%b3%db%8c%e2%80%8c/" target="_blank"&gt; سایت‌های موسیقی ایرانی&lt;/a&gt; است‌، از این تگ‌ها مطمئنا خیری نسیب‌تان نشده‌، چون از دَم مثل ندید بدید‌ها پرش کرده‌اند با آدرس سایت داغان‌شان ;-)&lt;/p&gt;
-&lt;p&gt;به هر حال‌، از آن‌جایی که آلبوم موسیقی مورد نظر من‌، مثل آدم تگ خورده بود‌، قصد داشتم تا از این تگ‌ها استفاده کنم. همیشه هم در مخیله‌ام این‌طور تصور می‌کردم که این تگ‌ها با یک روش مخوفی درون فایل موسیقی که اصلا نمی‌دانم چیست قایم شده‌اند و خواندن‌شان نیاز به کتاب‌خانه‌ای چیزی دارد که من از طرز کارش سر در نمی‌آورم. این بود که قصد داشتم اصلا کل اسکریپت را به برنامه‌ای به پایتون تغییر دهم. ولی خوب‌، یک سرچ کوچک کردم و کلی &lt;b&gt;خجالت کشیدم&lt;/b&gt;.&lt;/p&gt;
-&lt;p&gt;همان‌طور که در&lt;a title="Bash Script: Reading ID3v1 Tags" href="http://phoxis.org/2011/08/24/bash-script-reading-id3v1-tags/" target="_blank"&gt; این لینک&lt;/a&gt; توضیح داده شده‌، عموما‌، ۱۲۸ بیت آخر فایل MP3 شامل تگ‌های آن است. و ابزار‌های به ظاهر سادهٔ گنو/لینوکسی‌، مثل چـــی‌، کمک‌مان می‌کنند که این تگ‌ها را بخوانیم‌. ببینید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;tag&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;tail -c128 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;id3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;head -c10 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;p&gt;برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h5&gt;سر هم کردن اسکریپت نهایی&lt;/h5&gt;
+&lt;h4&gt;تغییر رمز عبور MySQL برای دیگر کاربران&lt;/h4&gt;
 
-&lt;p&gt;دیگر حالا‌، هم همهٔ ابزار‌های مورد نیاز‌مان را داریم‌، هم کلی چیز جدید یاد گرفته‌ایم. این است که‌، اسکریپت نهایی را سر هم می‌کنیم. که می‌توانید از &lt;a title="lyric script" href="https://github.com/shahinism/Scripts/blob/master/Shell/lyric" target="_blank"&gt;این لینک&lt;/a&gt; دریافتش کنید. برای استفاده از آن هم کافیست که اسم هر تعداد ترانهٔ MP3 را که دل‌تان می‌خواهد در جلویش تایپ کنید تا خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; خوب گاها پیش می‌آید که اسم ترانه‌، شامل کلماتی نظیر (Live) و یا (Bonus) باشد. و یا شاید اسم سایتی‌، چیزی را شامل شود. در این صورت‌، احتمالا API ما بر می‌گرداند که چیزی پیدا نکردم و از این حرف‌ها‌. ولی اسکریپت بیشعور ما آن را هم درون یک فایل هم اسم ترانه با فرمت txt ذخیره می‌کند. این‌جایش را دیگر خودتان می‌توانید با هنر دستکاری فایل لینوکسی‌تان‌، راست و ریست کنید ;-)&lt;/p&gt;</description><category>bash</category><category>MP3</category><category>Python</category><category>Script</category><category>برنامه نویسی</category><category>موسیقی</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</guid><pubDate>Thu, 07 Feb 2013 19:38:27 GMT</pubDate></item><item><title>چرا گنو/لینوکس را دوست دارم؟ به سبک شاهینیسم!</title><link>http://shahinism.github.io/posts/blog13911111chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;در مورد قدرت گنو/لینوکس و عشق‌بازی‌هایم با آن‌، قبلا در&lt;a title="تمامی ارسال‌ها" href="http://shahinism.com/%d8%aa%d9%85%d8%a7%d9%85%db%8c-%d8%a7%d8%b1%d8%b3%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt; این وبلاگ&lt;/a&gt; و جاهای دیگر‌، بسیار گفته‌ام. بدیهی است که &lt;a title="تمامی ارسال‌ها" href="http://shahinism.com/%d8%aa%d9%85%d8%a7%d9%85%db%8c-%d8%a7%d8%b1%d8%b3%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;این زیبایی‌های&lt;/a&gt; هر چند کوچک و خوش‌آیند به سواد کم من‌، از دلایل عشق ورزیدن من به گنو/لینوکس باشد. اما می‌خواهم در این پست‌، از نگاهی دیگر این دوست داشتن را وصف کنم.
-قبل از آن مهاجرت پر ذوق و شوقم به گنو/لینوکس‌‌، بار‌ها آن را مزه مزه کرده بودم و جذبش نشده بودم. حتی بار‌ها تکنیک‌های خرده‌ریزش را خوانده بودم و جذابیتش را درک نکرده بودم. اما چه شد که در یک آن تمام زندگی دیجیتالم را غرق در دنیای گنو/لینوکس دیدم؟&lt;/p&gt;
-&lt;p&gt;حقیقتش‌، پدیده‌ای چون گنو/لینوکس‌، در دنیای من‌، آن هم با ترجمه‌هایی مضحک از کلماتی چون آزادی‌، همکاری‌، رقابت‌ و جنگندگی‌، بیشتر به رویایی دست نیافتنی شباهت دارد تا واقعیتی قابل لمس. بار‌ها سعی کردم که راهی برای توصیف معنای آزادی و قدرت گنو/لینوکس پیدا کنم. اما برای مردمانی که نیازی به آزادی نمی‌بینند‌، این کار به کوبیدن میخی در سنگ می‌ماند. مردمی که قدرت را با ثروت اشتباه می‌گیرند و دانش را برای کسب ثروت دنبال می‌کنند. دنیایی که همکاری در آن به معنای پایین کشیدن ارزش همکارانت باشد و تنها به واسطهٔ کسب حقوق مادی‌، همکاری در آن معنا یابد‌، هرگز نمی‌تواند گنو/لینوکس را درک کند. در چنین دنیایی‌، بهترین توصیف گنو/لینوکس‌، یک ویندوز ضعیف و مخوف است که تنها دیوانگان به استفاده از آن روی می‌آورند! D:&lt;/p&gt;
-&lt;p&gt;به واسطهٔ آموزش‌هایی که در دوران تحصیل دیده بودم‌، کم کم به جایی هدایت می‌شدم که دیگر نمی‌توانستم آن‌طور که باید به حرفه‌ای که دوست داشتم نگاه کنم. حرفه‌ای که روزی آرزوی فعالیت در آن را داشتم‌، داشت به کابوسی تلخ تبدیل می‌شد. نمی‌توانستم تنها با این دلیل که ابزار یا رفتاری در جامعهٔ اطرافم پسندیده شده‌، آن را قبول کنم. نباید هم این‌طور می‌شد. دوست داشتم قدم به قدم مسیر را خودم تجربه کنم‌. حتی شکست‌هایش را. چون یاد گرفته بودم چطور با آن‌ها کنار بیایم.&lt;/p&gt;
-&lt;p&gt;دیگر وقت آن رسیده بود که از قالبی که دورم ساخته شده بود بیرون بیایم. باید یاد می‌گرفتم که خودم را به چالش بکشم. باید از توصیف کار‌هایم برای دیگران دست می‌کشیدم‌. از راهنمایی‌شان. یک کلام‌، باید سنگی را در آغوش می‌کشیدم و به دریای گنو/لینوکس می‌پریدم! همین کار را هم کردم. تمام آموخته‌ها و تجربه‌های چند ساله‌ام را فراموش کردم. حتی ویندوز را نگه نداشتم. یک نصب کامل. یک تیر خلاص. آسان بود؟ نه واقعا نبود. خصوصا با استثناهایی که تنها انسان‌هایی که در کشور‌هایی چون کشور من زندگی می‌کنند درک‌شان می‌کنند. روز‌ها وقت صرف کردم تا راهی برای چشیدن آزادی در اینترنت پیدا کنم. برای آزادانه گشتن در بزرگترین دانشگاه زیر دستم(بماند که هنوز هم هر از چندگاهی‌، باید به دنبال روش‌های جدیدی باشم).&lt;/p&gt;
-&lt;p&gt;آزمون‌ها و خطا‌ها شروع شد. هر شکست آموزشی بزرگ‌تر در دل داشت. آموزشی که محال بود در دنیای گذشته‌ام حتی به آن فکر کنم. دیگر داشتم به خودم محدود می‌شدم. دیگر فارسی کارساز نبود. منابع فارسی هر چند شاید گسترده‌، ولی تاریخ انقضا گذشته بودند. روزی فکر می‌کردم برای یادگیری نیازی به انگلیسی ندارم و روی همین تفکر‌، دور کلاس زبان را خط کشیدم. ولی حالا وقتش رسیده بود که اشتباهم را ببینم. داشت به تعداد چیز‌هایی که باید یاد می‌گرفتم اضافه می‌شد. سخت بود ولی تا دلتان بخواهد زمان بود که داشتم.&lt;/p&gt;
-&lt;p&gt;بعد از آن همکاری‌هایی هر چند کوتاه مدت با دیگر فعالان این عرصه شروع شد که تجربه‌های زیادی در رابطه با کار گروهی و اخلاقیات ایرانیزه شده‌مان به همراه داشت. ظرف یک‌سال جهش بزرگی در سواد و علاقه‌مندی‌هایم دیدم که در پنج سال دوران تحصیل دانشگاهی‌ام خواب‌شان را نمی‌دیدم. دیگر برای یادگیری ابزار‌ها و روش‌ها نیاز به اساتید و آن کتاب‌های قطورشان نداشتم. تنها کافی بود از دنیای اطرافم برای یادگیری کمک بگیرم. در نزدیک‌ترین مرحله‌، خود نرم‌افزار‌ها بودند که راه را نشانم می‌دادند. بعد از آن جامعهٔ کاربری. از طرف دیگر موضوع وقتی جالب‌تر می‌شد که دیگر محدود به ابزار‌ها نبودم.&lt;/p&gt;
-&lt;p&gt;اگر از خروجی نرم‌افزاری راضی نبودم می‌توانستم آن را تغییر دهم. یا اصلا چرا زحمت بی‌جا بکشم؟ آن را به نرم‌افزار دیگری می‌خوراندم تا در نهایت خروجی دلخواهم را به دست آورم. دیگر نیازی نبود که دیگران به کارم نمره بدهند. نمره‌ها نتیجهٔ کارم بودند. دیگر اشتباه‌ها به ضررم تمام نمی‌شد. اشتباه‌ها فرصتم بودند. حالا دیگر در مسیری قرار گرفته بودم که قدرت گنو/لینوکس را درک کنم. جایی که هر چه بیشتر یاد می‌گرفتم‌، می‌دیدم که چه قدر بی‌سوادم. بماند که درک این بی‌سوادی‌، از کور‌کورانه باور داشتن به با سوادی‌، آن هم به واسطهٔ معدل ۲۰ دانشگاه لذت‌بخش‌تر بود ;-)&lt;/p&gt;
-&lt;p&gt;هر چند خوب می‌دانم راه درازی تا درک کامل دنیای جدیدم پیش‌رو دارم. دنیایی که شاید هرگز نتوانم تمام گوشه‌هایش را ببینم. اما افتخار می‌کنم که سرانجام (دیر یا زودش اصلا مهم نیست) به سوی سرزمینی از عجایب قدم برداشتم که بدون هیچ چشم داشتی‌، کمر به آموزش دادن و قدرتمند کردنم بسته است.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://blog.sito.ir/why-i-love-gnulinux/"&gt;&lt;img title="لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»" alt="لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»" src="http://blog.sito.ir/wp-content/uploads/2013/01/blog-competition-468.png" width="468" height="94"&gt;&lt;/a&gt; لوگوی مسابقه «چرا گنو/لینوکس را دوست دارم؟»&lt;/p&gt;</description><category>آموزش !</category><category>اینترنت</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13911111chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy.html</guid><pubDate>Wed, 30 Jan 2013 12:29:11 GMT</pubDate></item><item><title>expect دستیار باهوش شما در شل اسکریپت‌ها!</title><link>http://shahinism.github.io/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اگر تا به حال شل اسکریپت نوشته باشید‌، اگر حد اعتیادتان به آن اندازه باشد که بخواهید هر کاری را آسان‌تر کنید‌، اگر تنبلی‌تان گرفته باشد که بعد از آسان شدن کار‌هایتان با یک شل اسکریپت‌، رمز‌های جاهای مختلف را به یاد آورید تا اسکریپت‌تان درست کار کند‌‌، یا آن‌قدر به مغزتان فشار آورید که جواب صحیح یک سوال اسکریپت را پیدا کنید‌، آن وقت‌ می‌توانید درک کنید که expect چه ابزار خارق‌العاده‌ای است.
-کار expect خیلی ساده است‌، بعد از اجرای اسکریپت‌تان‌، منتظر می‌ماند که اتفاق خاصی رخ دهد‌، مثلا دستوری در اسکریپت از شما رمز بخواهد‌، آن وقت expect وارد میدان می‌شود و رمز را وارد می‌کند. یعنی دیگر نیازی نیست که شما دخالتی داشته باشید. اگر فکر می‌کنید که خوب این که کار سختی نیست و از این حرف‌ها که خوب اول باید بگویم که کور خوانده‌اید و دوم این که بی‌خیال ادامهٔ این متن شوید ;-)&lt;/p&gt;
-&lt;p&gt;حالا شیوهٔ عملکرد expect معلوم شد‌، بهتر است نگاهی بیاندازیم به وضعیت من. بنا به دلایل کاملا غیر عادی و نامعلومی‌، در کشوری کاملا آزاد‌، نیاز دارم که از sshuttle برای انجام برخی امور استفاده کنم. این برنامه برای انجام دادن درست کار‌هایش‌، نیاز به iptables دارد که خوب من دوست ندارم که کاربر عادی‌ام به آن دسترسی داشته باشد. پس همین دوست نداشتن من یک مرحلهٔ اضافه در فرآیند استفاده از sshuttle هزینه دارد. یعنی یک همچین چیزی:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;su
-
-Vared Kardan Ramz
-
-&lt;span class="nb"&gt;cd&lt;/span&gt; /home/shahin/bin/sshutle
-
-./sshuttle ...
-
-Vared Kardan Ramz
+&lt;p&gt;برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u vivek -p oldpassword password newpass
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;که خوب بعد از اولین تلاش کانکت نمی‌شود و باید دوباره دستور را بزنم و منتظر بمانم تا پرامپت رمز ssh ظاهر شود و باقی قضایا. خوب کمی سخت است. البته این را هم اضافه کنم که خوب می‌دانم می‌توانم کانکت بدون رمز ssh داشته باشم‌. می‌توانم دستور را درون یک path قرار دهم. می‌توانم‌، می‌توانم‌… ولی این روشی است که من کار می‌کنم ;-)&lt;/p&gt;
-&lt;p&gt;این است که دست به دامن expect می‌شوم و همچین اسکریپتی می‌نویسم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/expect -f&lt;/span&gt;
+&lt;h4&gt;تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql&lt;/h4&gt;
 
-
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;{[&lt;/span&gt;llength &lt;span class="nv"&gt;$argv&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; !&lt;span class="o"&gt;=&lt;/span&gt; 5&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    puts &lt;span class="s2"&gt;"usage: ssh.exp client_root_pass username password server port"&lt;/span&gt;
-&lt;span class="nb"&gt;exit &lt;/span&gt;1
-
-&lt;span class="o"&gt;}&lt;/span&gt;
-
-
-
-&lt;span class="nb"&gt;set &lt;/span&gt;rootpass &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 0 0&lt;span class="o"&gt;]&lt;/span&gt;
-
-&lt;span class="nb"&gt;set &lt;/span&gt;username &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 1 1&lt;span class="o"&gt;]&lt;/span&gt;
-
-&lt;span class="nb"&gt;set &lt;/span&gt;password &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 2 2&lt;span class="o"&gt;]&lt;/span&gt;
-
-&lt;span class="nb"&gt;set &lt;/span&gt;server &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 3 3&lt;span class="o"&gt;]&lt;/span&gt;
-
-&lt;span class="nb"&gt;set &lt;/span&gt;port &lt;span class="o"&gt;[&lt;/span&gt;lrange &lt;span class="nv"&gt;$argv&lt;/span&gt; 4 4&lt;span class="o"&gt;]&lt;/span&gt;
-
-
-
-&lt;span class="nb"&gt;set &lt;/span&gt;timeout -1
-
-
-
-spawn su -c &lt;span class="s2"&gt;"/home/shahin/bin/sshuttle/sshuttle --dns -r $username@$server:$port 0/0 -vv"&lt;/span&gt;
-
-match_max 100000
-
-expect &lt;span class="s2"&gt;"Password:*"&lt;/span&gt;
-
-send -- &lt;span class="s2"&gt;"$rootpass\r"&lt;/span&gt;
-
-
-
-expect &lt;span class="s2"&gt;"*?assword:*"&lt;/span&gt;
-
-send -- &lt;span class="s2"&gt;"$password\r"&lt;/span&gt;
-
-send -- &lt;span class="s2"&gt;"\r"&lt;/span&gt;
-
-expect eof
+&lt;p&gt;این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:&lt;/p&gt;
+&lt;p&gt;۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -p
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;حالا همانطور که معلوم است کافی است همچین دستوری را تایپ کنم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;./ssh.exp client_root_pass username password server port
+&lt;p&gt;۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&amp;gt; ‎ وارد کنید‌):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; use mysql;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;حالا می‌شود این اسکریپت را بدون هیچ ضرر اضافه‌ای به path اضافه کرد و حالش را برد. برای این که بفهمید این اسکریپت چطور کار می‌کند راهنما‌های زیادی در اینترنت می‌یابید. man page خود برنامه هم می‌تواند کمک خوبی باشد. ضمن این که اگر اسکریپت نویسی بدانید‌، چیز زیادی برای یاد گرفتن پیش‌رویتان نیست ;-)&lt;/p&gt;</description><category>expect</category><category>iptables</category><category>sshuttle</category><category>برنامه نویسی</category><category>حل مشکل</category><category>شل اسکریپت</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html</guid><pubDate>Thu, 10 Jan 2013 15:09:09 GMT</pubDate></item><item><title>دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!</title><link>http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همانطور که می‌دانید‌، چند ماهی می‌شود که از i3 استفاده می‌کنیم‌، ولی در i3bar به جای i3status (به دلیل سادگی بیش از اندازه‌اش D:) از Conky بهره می‌گیرم. کانکی اطلاعات خیلی خوبی ارائه می‌دهد و کار‌های جالبی هم می‌توان روی خروجی‌اش انجام داد‌. ولی وقتی قرار است آن را به i3status بخورانم‌، باید از آپشن shell روی Conky استفاده کنم که دیگر خبری از آن جینگولک بازی‌های معروف Conky نیست‌. همه چیز خیلی ساده می‌شود. تصویر زیر وضعیت فعلی i3barام را نشان می‌دهد‌:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"&gt;&lt;img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ کلیک کنید&lt;/p&gt;
-&lt;p&gt;و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:&lt;/p&gt;
-&lt;p&gt;پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.&lt;/p&gt;
-&lt;p&gt;بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.&lt;/li&gt;
-    &lt;li&gt;صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)&lt;/li&gt;
-    &lt;li&gt;مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.&lt;/li&gt;
-    &lt;li&gt;سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این &lt;a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank"&gt;آموزش&lt;/a&gt; آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).&lt;/li&gt;
-    &lt;li&gt;وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.&lt;/li&gt;
-    &lt;li&gt;وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در &lt;a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank"&gt;این‌جا&lt;/a&gt; دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)&lt;/p&gt;
-&lt;p&gt;اسکریپت حاضر است و از &lt;a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank"&gt;این‌جا&lt;/a&gt; قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:&lt;/p&gt;
-&lt;h5&gt;تاریخ&lt;/h5&gt;
-
-&lt;p&gt;خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;date&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date +&lt;span class="s2"&gt;"%a %Y.%m.%d %H:%M"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;p&gt;۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; update user &lt;span class="nb"&gt;set &lt;/span&gt;&lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;“NEWPASSWORD”&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;’vivek’;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!&lt;/p&gt;
-&lt;h5&gt;اطلاعات شبکه&lt;/h5&gt;
+&lt;p&gt;۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; flush privileges;
 
-&lt;p&gt;اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getNetBytes
-
-&lt;span class="o"&gt;{&lt;/span&gt;
-
-&lt;span class="nv"&gt;Brecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($2)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;Btransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="nv"&gt;$netInterface&lt;/span&gt; | grep &lt;span class="s2"&gt;"eth0"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{print($10)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;}&lt;/span&gt;
+mysql&amp;amp;gt; quit
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)&lt;/p&gt;
-&lt;p&gt;حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;p&gt;از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
 
-&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>perl</category><category>php</category><category>Python</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>گنو‌/‌لینوکس</category><category>یونیکس</category><guid>http://shahinism.github.io/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</guid><pubDate>Thu, 01 Dec 2011 08:01:44 GMT</pubDate></item><item><title>چ‌چ‌چ (۱) ‌: پوستهٔ POSIX چیست؟</title><link>http://shahinism.github.io/posts/blog13900908chchch-1-pwsth-posix-chyst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;منظور از پوستهٔ POSIX که در سیستم‌عامل‌های یونیکس‌/‌لینوکسی وجود دارد چیست؟&lt;/p&gt;
+&lt;p&gt;POSIX که مخفف عبارت «‌رابط قابل حمل سیستم عامل‌» (Portable Operating System Interface) است نشانگر استانداردی به همین منظور است که به شماره P۱۰۰۳. ۲ در IEEE به ثبت رسیده است‌. (‌طبق اطلاعات &lt;a title="پازیکس در ویکی‌پدیا فارسی" href="https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B2%DB%8C%DA%A9%D8%B3" target="_blank"&gt;ویکی‌پدیا&lt;/a&gt; این نام توسط ریچارد استالمن انتخاب شده است‌.)&lt;/p&gt;
+&lt;p&gt;با استفاده از این استاندارد می‌توان امکان هماهنگ‌سازی‌، ارتباط و پرت کردن (‌انتقال‌) آسان‌تر نرم‌افزار را در محیط‌های تابع این استاندارد به وجود آورد‌. و می‌توان گفت که این استاندارد به منظور استفادهٔ برنامه‌نویسان ابزار‌های کاربردی و مدیران سیستم تهیه شده است‌.&lt;/p&gt;
+&lt;p&gt;پوستهٔ POSIX برای بسیاری از سیستم‌عامل‌های شبه یونیکس پیاده سازی شده است‌. در این رابطه می‌توانید به نقل قول زیر از &lt;a title="پازیکس در ویکی‌پدیا فارسی" href="https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D8%B2%DB%8C%DA%A9%D8%B3" target="_blank"&gt;ویکی‌پدیا&lt;/a&gt; توجه فرمایید‌:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;برخی از سیستم‌عامل‌های کاملا سازگار با پازیکس عبارت هستند از BSD/OS، HP-UX، مک اواس ده، می‌نیکس و سولاریس و OpenSolaris. لازم به ذکر است که سیستم‌عامل‌های فری بی‌اس‌دی، گنو/لینوکس، NetBSD، OpenBSD از جمله سیستم‌عامل‌هایی هستند که تا حد زیادی سازگاری با پازیکس را حفظ کرده‌اند.&lt;/blockquote&gt;
+&lt;p&gt;بسیاری از ویژگی‌های پوستهٔ POSIX به پوستهٔ &lt;a title="چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟" href="http://shahinism.com/blog/1390/09/08/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b2%e2%80%8c-%d9%be%d9%88%d8%b3%d8%aa%d9%87%e2%80%8c%db%8c-korn-%d8%af%d8%b1-%db%8c%d9%88%d9%86%db%8c%da%a9%d8%b3%e2%80%8c%e2%80%8c%d9%84%db%8c%d9%86%d9%88/"&gt;Korn&lt;/a&gt; شباهت دارد‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title=" What is POSIX shell on Cyberciti.biz" href="http://www.cyberciti.biz/faq/what-is-posix-shell/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
 
-&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>BSD</category><category>KORN Shell</category><category>POSIX Shell</category><category>سولاریس</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>گنو‌/‌لینوکس</category><category>یونیکس</category><guid>http://shahinism.github.io/posts/blog13900908chchch-1-pwsth-posix-chyst.html</guid><pubDate>Tue, 29 Nov 2011 08:41:55 GMT</pubDate></item><item><title>مساله‌: نصب VLC در گنو/لینوکس اسلکور</title><link>http://shahinism.github.io/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بعد از چند سال مهاجرت تق و لق به گنو‌/لینوکس و مشکلاتی که با بعضی از دیسترو‌ها داشتم‌، تصمیم گرفتم که اسلکور رو امتحان کنم‌. گنو‌/لینوکسی که شاید به سر راستی بقیهٔ دیسترو‌ها نبوده و نیست ولی خوب حداقلش موفق به رفع نیاز‌های من از سیستم شد‌!&lt;/p&gt;
+&lt;p&gt;با وجود اینکه قبل از استفاده از اسلکور چند جایی راجع به سخت بودن نصب نرم‌افزار روی این دیسترو خونده بودم و حتی بعضی جا‌ها خونده بودم که منابع برای یادگیریش خیلی کم است ولی به قول معروف‌: «‌جفت پا رفتم‌ توش‌» و الان تقریبا بعد از حدود یک هفته توانستم بیشتر نرم‌افزار‌های مورد نیازم رو نصب کنم‌.&lt;/p&gt;
+&lt;p&gt;خوب حالا می‌رسیم به نصب VLC روی سیستم‌. موضوع از اینجا شروع شد که عملا نیازی برای نصب این نرم‌افزار نداشتم‌. چون توانسته بودم مالتی‌مدیا‌های مورد نیازم رو با نصب SMplayer اجرا کنم ولی از آنجایی که اصلا علاقه‌ای به این ندارم که از نرم‌افزار‌هایی که رابطشون برای پخش فایل تصویری طراحی شده برای فایل‌های صوتی استفاده کنم‌، تصمیم گرفتم که از VLC استفاده کنم‌. این‌طوری حداقل با یک تیر چند نشان زده بودم‌. چون با وجود ادعاهای این نرم‌افزار دیگر کمتر موقعی پیش می‌آمد که مالتی‌مدیایی را نتونم پخش کنم‌. از طرفی با تجربهٔ راحتی که از نصب SMplayer داشتم امیدوار بودم که کار سختی در پیش نداشته باشم‌- خوب چون هیکلن نرم‌افزار کوچکتری به نظر می‌آمد‌! ‌-‌. ولی خوب این کاربلدی VLC عملا کار دستم داد‌!&lt;/p&gt;
+&lt;p&gt;برای نصب اول به طور گشادانه خواستم از &lt;a title="«SlackBuilds»" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; Slackbuilds &lt;/a&gt; کمک بگیرم که با نیش بر لب خشکیده دیدم که خوب متاسفانه چیزی در اینجا یافت می‌نشود‌، یا حداقلش من نیافتم‌. پس تصمیم گرفتم که به سایت &lt;a title="«Video" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; اصلی &lt;/a&gt; برم که شاید چیزی پیدا کنم‌. خوب در آنجا علاوه بر &lt;a title="«VLC" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; دانلود &lt;/a&gt; سورس می‌توانستم به بسته‌هایی که برای اسلکور آماده شده بود &lt;a title="«VLC" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; دسترسی &lt;/a&gt; داشته باشم‌.&lt;/p&gt;
+&lt;p&gt;انتخاب اولم از آنجایی که با وجود کامپایل کردن چند بسته طی چند روز اخیر خیلی احساس کار درستی می‌کردم این بود که سورس را دانلود کنم‌! - خوب حقیقت موضوع این بود که نمی‌دانستم که با بسته‌های آماده‌ برای اسلکور باید چه کار کنم‌، تازشم خیلی صفحهٔ ترسناکتری بود‌، خودتون ببینین‌! -‌.&lt;/p&gt;
+&lt;p&gt;بار اول که شروع به کامپایل سورس کردم‌، دیدم که با وجود اینکه چند پیش‌نیاز در سیستمم موجود نبود می‌توانم با چند آپشن اضافه که خود کامپایلر به من یاد‌آوری می‌کرد‌، بی‌خیال بسته‌ها شود و کانفیگ را آماده کند‌! پس این چنین کردم و نصب کامل شد‌. اما نتوانستم VLC را از میزکار اجرا کنم‌. و متوجه این شدم که با فراخوانی VLC از ترمینال پیغامی مبنی بر در دسترس نبودن یک کتابخانهٔ خاص نشان داده می‌شود که اسمش الان یادم نیست‌!&lt;/p&gt;
+&lt;p&gt;پس در دومین تلاش دو پیش نیازی که غیرفعال کرده بودم را نصب کردم و سومی خود به خود با نصب این پیش نیاز‌ها که یکی &lt;a title="«ffmpeg" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; ffmpeg &lt;/a&gt; بود و وابسته‌هایش و دیگری &lt;a title="«Lame" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; lame &lt;/a&gt;، نیازش برطرف شد‌! و نصب کامل شد بدون اینکه دیگر به چیزی جز &lt;a title="«x۲۶۴" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; X۲۶۴ &lt;/a&gt; نیاز داشته باشد‌! -این را هم اضافه کنم با وجود اینکه x۲۶۴ را خودم کامپایل کردم ولی ffmpegنمی‌توانست به آن لینک شود در نتیجه با اضافه کردن X۲۶۴=no به اول دستور فراخوانی نصب این قابلیت را خاموش کردم‌. - ولی خوب این‌بار در ترمینال اتفاق خاصی نیافتاد ولی به طور کلی‌‌‌ همان مشکل کامپایل اول پا بر‌جا می‌ماند و خلاصه اینکه در سرچ‌های گوگلی‌ام به &lt;a title="«Install" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; این وبلاگ &lt;/a&gt; رسیدم که طریقهٔ نصب را به همراه پیش‌نیاز‌ها آورده بود‌. و اشاره به بستهٔ Slackbuild‌ای داشت که من هرگز در سایت مذکور نیافتم‌!&lt;/p&gt;
+&lt;p&gt;و خوب بی‌خیال این روش شدم و به سوی ترسناک‌ترین روش رهسپار شدم‌. یعنی بیرون آوردن ته و توی این پوشه و روش کار با آنکه دیدم طراح محترم در &lt;a title="«Slackware" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; اینجا &lt;/a&gt; توضیحات کامل را داده و تنها کاری که باید می‌کردم این بود که بنویسم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; lftp -c «open http: //slackware. org. uk/people/alien/restricted_slackbuilds/vlc/; mirror build» 
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)&lt;/p&gt;
-&lt;p&gt;نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!&lt;/p&gt;
-&lt;h5&gt;وضعیت RAM&lt;/h5&gt;
-
-&lt;p&gt;گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getRamInfo
-
-&lt;span class="o"&gt;{&lt;/span&gt;
-
-&lt;span class="nv"&gt;totalMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"Mem:"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $2/1024)}'&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;usedMemory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;free -m | grep &lt;span class="s2"&gt;"buffers/cache"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $3/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;memInPercent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$totalMemory $usedMemory"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.0f", $2/($1/100)) }'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;p&gt;تا پوشهٔ build را از سایت بگیرد و بعد وارد شوم و دو دستور موجود در فایل راهنما را اجرا کنم‌، که باز در اولین تلاش شکست خوردم ولی خوب از آنجایی که خود بسته راهنمایی کرد کار سختی نبود‌. کافی بود که بستهٔ Yasm را از &lt;a title="«yasm" href="/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html" target="«_blank»"&gt; اینجا &lt;/a&gt; بگیرم و نصب کنم و دوباره به پوشهٔ build دانلود شده برگردم و دستور زیر را بزنم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; sh vlc. Slackbuild 
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!&lt;/p&gt;
-&lt;h5&gt;وضعیت CPU&lt;/h5&gt;
-
-&lt;p&gt;خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;function &lt;/span&gt;getCpuInfo&lt;span class="o"&gt;()&lt;/span&gt;
-
-&lt;span class="o"&gt;{&lt;/span&gt;
-
-&lt;span class="nv"&gt;CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
-
-&lt;span class="nv"&gt;addr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"^cpu${CORE}"&lt;/span&gt;
-
-&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;cat /proc/stat | grep &lt;span class="nv"&gt;$addr&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# Get the total CPU statistics.&lt;/span&gt;
-
-&lt;span class="nb"&gt;unset &lt;/span&gt;CPU&lt;span class="o"&gt;[&lt;/span&gt;0&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="c"&gt;# Discard the "cpu" prefix.&lt;/span&gt;
-
-&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;CPU&lt;/span&gt;&lt;span class="p"&gt;[4]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="c"&gt;# Get the idle CPU time.&lt;/span&gt;
-
-
-
-&lt;span class="c"&gt;# Calculate the total CPU time.&lt;/span&gt;
-
-&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
-
-&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
-
-&lt;span class="k"&gt;done&lt;/span&gt;
-
-
-
-&lt;span class="c"&gt;# Catch current cores last state&lt;/span&gt;
-
-&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-
-
-&lt;span class="c"&gt;# Calculate the CPU usage since we last checked.&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
-
-
-
-&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
-
-&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
-
-&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;p&gt;خوب تا این‌جا همه چیز درست پیش رفت و بعد از حدود ۲۰ دقیقه پکیج نصب را در پوشهٔ tmp آماده کرد‌. حالا فقط کافی بود که بنویسم‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt; installpkg /tmp/vlc-۱. ۱. ۷-x۸۶_۶۴-۲alien. txz 
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.&lt;/p&gt;
-&lt;p&gt;با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
-
-&lt;span class="k"&gt;for &lt;/span&gt;VALUE in &lt;span class="s2"&gt;"${CPU[@]}"&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"TOTAL=$TOTAL+$VALUE"&lt;/span&gt;
-
-&lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$TOTAL"&lt;/span&gt;
-
-&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"$IDLE"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;PREV_IDLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_IDLE&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;PREV_TOTAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;eval echo&lt;/span&gt; &lt;span class="se"&gt;\P&lt;/span&gt;REV_TOTAL&lt;span class="nv"&gt;$CORE&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_IDLE=$IDLE-$PREV_IDLE"&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_TOTAL=$TOTAL-$PREV_TOTAL"&lt;/span&gt;
-
-&lt;span class="nb"&gt;let&lt;/span&gt; &lt;span class="s2"&gt;"DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)&lt;/p&gt;
-&lt;h5&gt;پایان کار&lt;/h5&gt;
-
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;;
-
-&lt;span class="k"&gt;do&lt;/span&gt;
-
-getNetBytes
-
-getRamInfo
-
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; COUNT &amp;amp;lt; &lt;span class="nv"&gt;$CORES&lt;/span&gt;; COUNT++ &lt;span class="o"&gt;))&lt;/span&gt;;&lt;span class="k"&gt;do&lt;/span&gt;
-
-getCpuInfo &lt;span class="nv"&gt;$COUNT&lt;/span&gt;
-
-&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="se"&gt;\c&lt;/span&gt;pu&lt;span class="nv"&gt;$COUNT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$DIFF_USAGE&lt;/span&gt;
-
-&lt;span class="k"&gt;done&lt;/span&gt;
-
-
-
-&lt;span class="nv"&gt;dlSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Brecived&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBRecived&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;upSpeed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt; &lt;span class="nv"&gt;$Btransmited&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$oldBTransmited&lt;/span&gt; &lt;span class="k"&gt;))&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", $1/1024)}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-&lt;span class="nv"&gt;traffic&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"$Brecived $Btransmited"&lt;/span&gt; | awk &lt;span class="s1"&gt;'{printf( "%.2f", ($1+$2)/1024/1024 )}'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-
-
-
-&lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-
-&lt;span class="s2"&gt;"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-
-&lt;span class="s2"&gt;"$cpu0"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu1"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu2"&lt;/span&gt; &lt;span class="s2"&gt;"$cpu3"&lt;/span&gt; &lt;span class="s2"&gt;"$usedMemory"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-
-&lt;span class="s2"&gt;"$totalMemory"&lt;/span&gt; &lt;span class="s2"&gt;"$memInPercent"&lt;/span&gt; &lt;span class="s2"&gt;"$dlSpeed"&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-
-&lt;span class="s2"&gt;"$upSpeed"&lt;/span&gt; &lt;span class="s2"&gt;"$traffic"&lt;/span&gt; &lt;span class="s2"&gt;"$date"&lt;/span&gt;
-
-&lt;span class="nv"&gt;oldBRecived&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Brecived&lt;/span&gt;
-
-&lt;span class="nv"&gt;oldBTransmited&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$Btransmited&lt;/span&gt;
-
-sleep 1
-
-&lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.&lt;/p&gt;
-&lt;p&gt;همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.&lt;/p&gt;
-&lt;p&gt;حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;CPU: 48,3,40,3 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
-
-CPU: 8,4,76,4 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
-
-CPU: 24,5,64,6 | RAM: 1.11G/1.95G &lt;span class="o"&gt;(&lt;/span&gt;57%&lt;span class="o"&gt;)&lt;/span&gt; | LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 | Sat 2012.11.24 14:41
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"&gt;&lt;img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"&gt;&lt;/a&gt; برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید&lt;/p&gt;</description><category>awk</category><category>bash</category><category>printf</category><category>shell scripting</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دسته‌بندی نشده</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html</guid><pubDate>Sat, 24 Nov 2012 15:07:09 GMT</pubDate></item><item><title>تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</title><link>http://shahinism.github.io/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین اول کار بگویم که این روش تنها مخصوص موقعی است که PDF به صورت دیجیتالی تولید شده باشد و کاراکتر‌ها تصویر نباشند‌‌، که خوب برای کاراکتر‌های تصویری‌، نیاز به روش‌های اپتیکال است که فعلا در این بحث ما نمی‌گنجد‌. &lt;del&gt;برای نمونه من از کتاب _* که معرفی دوست خوبم &lt;a title="وبلاگ شخصی ایمان" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; است استفاده می‌کنم‌.&lt;/del&gt; نمونهٔ اولیه بنا به دلایلی معلوم با&lt;a title="Ashamloo" href="http://dl.dropbox.com/u/25017694/Blog_files/Ahanha_Va_Ehsas_(www.txt.ir).pdf"&gt; کتابی&lt;/a&gt; از احمد شاملو عوض شد!
-اول از همه PDF را با برنامهٔ PDFخوان پیش‌فرض میزکار KDE یعنی Okular باز می‌کنیم‌. یک نگاه به قد و بالایش می‌اندازیم و سپس از منوی فایل‌، گزینهٔ Export as و سپس Plain text را انتخاب می‌کنیم‌. خروجی این عمل ما یک فایل متنی است که فکر می‌کنیم همه کار را به درستی انجام داده‌. (البته من که اول اصلا فکرش را هم نمی‌کردم که بتوان خروجی فارسی گرفت) در نگاه اول کارمان تمام شده است‌. ولی بگذارید آن را با یک ویرایشگر باز کنیم‌. آن را با ایمکس باز می‌کنم و از آن‌جایی که تنظیم فونت‌هایم را از روی روشی که فرود عزیز در stackoverflow&lt;a title="emacs font for western and other like rtl" href="http://stackoverflow.com/questions/11012627/emacs-font-for-western-and-other-like-rtl" target="_blank"&gt; پیشنهاد کرده‌&lt;/a&gt;، انجام داده‌ام نکته‌ای عجیب به نظر می‌رسد‌!&lt;/p&gt;
-&lt;p&gt;مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و &lt;a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank"&gt;وضع اینترنت‌ام&lt;/a&gt; هم معلوم است‌، از دوست &lt;a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank"&gt;libreoffice کار قهارم&lt;/a&gt; می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))&lt;/p&gt;
-&lt;p&gt;پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp;amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.&lt;/p&gt;
-&lt;p&gt;پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;def read_file&lt;span class="o"&gt;(&lt;/span&gt;file_name&lt;span class="o"&gt;)&lt;/span&gt;:
-
-&lt;span class="nv"&gt;the_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; codecs.open&lt;span class="o"&gt;(&lt;/span&gt;file_name, &lt;span class="nv"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-
-&lt;span class="k"&gt;return &lt;/span&gt;the_file
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;def show_characters&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;char in line:
-
-print char
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;def show_unicode_code&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;char in line:
-
-print ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;def replace_unicode_char&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
-
-print unichr&lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;(&lt;/span&gt;line&lt;span class="o"&gt;))&lt;/span&gt;.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.&lt;/p&gt;
-&lt;p&gt;من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از&lt;a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"&gt; این‌جا &lt;/a&gt;دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -c
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -u
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt -u &amp;amp;gt; chrcodes.txt
-
-sort -u chrcodes.txt &amp;amp;gt; uniq.txt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i uniq.txt &amp;amp;gt; uniqchr.txt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به &lt;a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank"&gt;Arabic Presentation Forms-B&lt;/a&gt; داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
-
-&lt;span class="k"&gt;for &lt;/span&gt;char in line:
-
-&lt;span class="k"&gt;if &lt;/span&gt;ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt; in &lt;span class="o"&gt;(&lt;/span&gt;64343, 64344, 64345&lt;span class="o"&gt;)&lt;/span&gt;:
-
-&lt;span class="nv"&gt;char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"پ"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;sys.stdout.softspace&lt;span class="o"&gt;=&lt;/span&gt;False
-
-try:
-
-print char.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
-
-except UnicodeDecodeError:
-
-print char,
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)&lt;/p&gt;
-&lt;p&gt;برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt &amp;amp;gt; validashamloo.txt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خوب کار تقریبا تمام شد‌. ولی خوب‌، کامپیوتر است دیگر‌. همیشه که درست عمل نمی‌کند‌. فایل خروجی نمونهٔ مرا در&lt;a title="ashamloo text file" href="http://dl.dropbox.com/u/25017694/Blog_files/ashamloo.txt.xz" target="_blank"&gt; این‌جا&lt;/a&gt; می‌بینید‌. خالی از اشکال هم نیست‌، ولی خوب طبیعتا مشکلات زیادی را برایم حل می‌کند (دیگر لازم نیست به آن فونت کذایی Arial زل بزنم). دیگر باقی کار‌ها می‌افتد گردن یک ویراستار به درد بخور‌. (البته شاید بتوان از &lt;a title="نسخهٔ جدید ویرایشگر متن نگار" href="http://shahinism.com/blog/1391/07/10/%d9%86%d8%b3%d8%ae%d9%87%d9%94-%d8%ac%d8%af%db%8c%d8%af-%d9%88%db%8c%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%b1-%d9%85%d8%aa%d9%86-%d9%86%da%af%d8%a7%d8%b1/" target="_blank"&gt;نگار&lt;/a&gt; هم کمک گرفت‌، که فعلا دارم شدیدا رویش کار می‌کنم‌. نسخهٔ فعلی‌اش مشکلاتی دارد‌، ولی امیدوارم بتوانم حل‌شان کنم‌)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; Okular از قرار‌، قادر نیست PDF‌هایی که رمزگذاری شده‌اند را باز کند (خودم امتحان نکردم) در آن صورت یک ابزار پایتونی برای این کار وجود دارد که در آینده در موردش می‌نویسم‌. تا این‌جای کار‌، خروجی‌های این تابع زیاد با روش ذکر شده همخوانی ندارد‌، پس باید به فکر دستکاری‌اش باشم‌. اسم این تابع هم در صورتی که دل‌تان می‌خواهد کشفش کنید pdfminer است.&lt;/p&gt;</description><category>KDE</category><category>LaTeX</category><category>ocr</category><category>okular</category><category>PDF</category><category>Python</category><category>tex</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کتاب</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</guid><pubDate>Thu, 22 Nov 2012 14:31:08 GMT</pubDate></item><item><title>عشق بازی با ترمینال لینوکس‌ (urxvt, رنگ‌آمیزی و کانفیگش)</title><link>http://shahinism.github.io/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حقیقتش را بخواهید‌، کم نیستند کاربرانی که سال‌هاست با لینوکس کار می‌کنند‌، ولی هنوز از کار با ترمینال ترس دارند‌. حقیقت‌تر از آن هم این نکته است که شما هر چقدر هم در محیط‌های گرافیکی خبره باشید‌، باز هم نمی‌توانید آن‌طور که باید و شاید دنیای کامپیوتری‌تان را کنترل کنید‌. اصلا شاید زیاده روی می‌کنم‌، ولی همچین کاربرانی‌، با ویندوز هم می‌توانند نیاز‌هایشان را تامین کنند ;-). محیط شکیل X‌، کنترل راحت (و اصولا بدون یادگیری جدی) آن‌، و عمدهٔ کار‌هایی که می‌توان با ماوس سر و تهش را هم آورد‌، باعث می‌شود که گاها این طرز تفکر وجود داشته باشد که استفاده از ترمینال یک بازگشت به قرون وسطی حساب می‌آید!
-قبول دارم که برنامه‌هایی هستند که کنترل دستورات خط فرمان را برای کاربر آسان‌تر می‌کنند‌، ولی تقریبا غیر ممکن است که بتوان از آن‌ها به همان کیفیت دستورات ترمینالی استفاده کرد‌.&lt;/p&gt;
-&lt;p&gt;برای من یکی‌، ترمینال حکم چوب جادوگری را دارد‌. یعنی آن‌قدر قدرت دارد که صاحبش را تنها به دانش‌اش محدود می‌کند‌. در دنیای ترمینال‌، تقریبا همه چیز ممکن است‌. این است که لازم می‌شود بهترین چوب جادوگری ممکن را برای رفع نیاز‌های‌مان آماده کنیم‌.&lt;/p&gt;
-&lt;p&gt;قبلا در مورد Terminator پستی داشتم‌ (&lt;a title="ترمیناتور، آخر‌الزمان ترمینال‌ها" href="http://shahinism.com/blog/1391/03/31/%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d8%aa%d9%88%d8%b1%d8%8c-%d8%a2%d8%ae%d8%b1%e2%80%8c%d8%a7%d9%84%d8%b2%d9%85%d8%a7%d9%86-%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;+&lt;/a&gt;). تا همین چند روز پیش هم از آن استفاده می‌کردم‌. واقعا معرکه بود‌. همه چیز را آماده داشت و تا جای ممکن کمکت می‌کرد‌. اما چند روزی است که &lt;a title="urxvt official web page" href="http://software.schmorp.de/pkg/rxvt-unicode.html" target="_blank"&gt;urxvt&lt;/a&gt; و قابلیت‌هایش نظرم را جلب کرده‌. این است که ضمن جایگزین کردنش با Terminator چیز‌هایی از آن یاد گرفتم که می‌خواهم در این پست در موردش صحبت کنم‌.&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h5&gt;رنگ‌آمیزی urxvt و Terminator&lt;/h5&gt;
-&lt;p&gt;اول این که حیفم آمد این روش تغییر رنگ Terminator را که یاد گرفته‌ام باز‌گو نکنم‌. این است که در این پست با یک تیر دو نشان می‌زنم‌.&lt;/p&gt;
-&lt;p&gt;دوم هم این که شاید این کار را بیهوده بدانید‌. ولی قرار است که مدت زیادی در این ترمینال کار کنیم و به نظرم حیاتی‌ترین کاری که باید انجام دهیم‌، قابل تحمل کردن رنگ‌بندی‌اش است ;-)&lt;/p&gt;
-&lt;p&gt;ترمینال‌هایی مثل urxvt و Terminator سر جمع ۱۸ رنگ را برای رنگ کردن خروجی‌شان استفاده می‌کنند‌. رنگ پس‌زمینه‌، رنگ اصلی خروجی‌، هشت رنگ تیره و هشت رنگ روشن‌. سر هم کردن این همه رنگ‌، جوری که بتوان از ترکیب‌شان استفاده کرد‌، جدا کار طاقت‌فرسایی است‌. حقیقتش من یکی که هرگز موفق نشدم به صورت دستی این کار را انجام دهم‌. همین سختی هم باعث شده که &lt;a title="4bit webpage" href="http://ciembor.github.com/4bit/" target="_blank"&gt;4bit&lt;/a&gt; به وجود بیاید‌. طرز کارش خیلی سر راست و ساده است‌. پالت رنگ‌تان را ایجاد کنید‌، و وقتی از خروجی خوشتان آمد روی Get scheme کلیک کنید (‌&lt;a title="my urxvt color scheme" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/color_scheme_example" target="_blank"&gt;رنگ‌های مورد استفاده من&lt;/a&gt;). همان‌طور که می‌بینید‌، برای اکثر ترمینال‌ها یک خروجی حاضر کرده‌‌، جز Terminator. خوب اگر می‌خواهید مثل من urxvt را کانفیگ کنید‌، کد مربوطه‌اش را بگیرید و بسته به تنظیمات توزیع‌تان آن را در ‎.Xdefaults یا ‎.Xresources وارد کنید‌ (برای فهمیدن چند و چون ماجرا man urxvt توضیحات خوبی داده).&lt;/p&gt;
-&lt;p&gt;حالا برگردیم به تنظیم رنگ برای آن یکی ترمینال محبوب‌مان‌. خیلی ساده‌، همان فایل مربوط به urxvt را بگیرید‌. &lt;a title="xterm to terminator python script" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/xterm_to_terminator.py" target="_blank"&gt;این اسکریپت پایتون&lt;/a&gt; را که نوشته‌ام را هم بگیرید و دو تا را کنار هم قرار داده و در ترمینال تایپ کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;python xterm_to_terminator.py color_scheme_file
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خروجی را کپی کنید و در مسیر ‎.config/terminator/config جایگزین خطوط مربوطه کنید‌. (همه چیز سر راست است فکر کنم ;-))&lt;/p&gt;
-&lt;p&gt;یک نکته هم اضافه کنم‌. 4bit رنگ‌های خروجی‌اش را به صورت colorN یا background ارائه می‌دهد‌. در حالت کلی خوب است‌. ولی ممکن است شما دوست نداشته باشید تمام نرم‌افزار‌هایی که تنظیم رنگ‌شان را از منابع X می‌خوانند همین رنگی شود‌. این است که می‌توانید با تبدیل متغیر‌ها به صورت URxvt&lt;em&gt;colorN یا URxvt&lt;/em&gt;background آن‌ها را به urxvt محدود کنید ;-)&lt;/p&gt;
-&lt;p&gt;رنگ آمیزی تمام شد‌.&lt;/p&gt;
-&lt;h5&gt;کانفیگ urxvt&lt;/h5&gt;
-
-&lt;p&gt;urxvt عالی است‌. امکانات فوق‌العاده‌ای دارد‌. ولی تنظیمات پیش‌فرضش حال به هم زن است‌! یک ترمینال بی روح سفید نافرم‌! مشکل سفیدی‌اش که حل شد‌. ولی هنوز کار دارد‌.&lt;/p&gt;
-&lt;h6&gt;font:&lt;/h6&gt;
-
-&lt;p&gt;نویسندهٔ اصلی urxvt قبلا از mlterm استفاده می‌کرد‌. اما همیشه مجبور بود برای دیدن کاراکتر‌های ژاپنی (یا شایدم چینی) و لاتین‌، بین فونت‌های مختلف سوئیچ کند‌. چون هیچ فونت مناسبی پیدا نمی‌کرد که تمام کاراکتر‌های مورد نیازش را داشته باشد‌. همین می‌شود که کلافه از این که چرا توسعه دهنده‌ها فکر می‌کنند تمام کاراکتر‌های unicode را می‌توان با یک فونت نشان داد‌، دست به انگولک rxvt می‌زند و علاوه بر قابلیت یونیکد‌، پستیبانی از چند فونت را هم به آن اضافه می‌کند. برای تغییر فونت می‌توانید مثل من خط زیر را به ‎.Xdefaults اضافه کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt*font: xft:Terminus:pixelsize&lt;span class="o"&gt;=&lt;/span&gt;12
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و یا اگر فکر می‌کنید فونت انتخابی‌تان به حد کافی کامل نیست‌، از ویژگی چند فونتی به صورت زیر استفاده کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.font: 9x15bold,
-
--misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,
-
--misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1,
-
-&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;codeset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;JISX0208&lt;span class="o"&gt;]&lt;/span&gt;xft:Kochi Gothic:antialias&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;,
-
-xft:Code2000:antialias&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;یک قابلیت جالب دیگر urxvt این است که می‌توان تعیین کرد که نوشته‌های Bold, Italic و یا Underline با فونت‌های متفاوتی نشان داده شوند‌. من خودم این‌ها را تنظیم نکردم (حقیقتش وقت نکردم هنوز) ولی می‌توانید در manpage به دنبال کانفیگ‌های boldFont, italicFont, boldItalicFont و … بگردید‌.&lt;/p&gt;
-&lt;h6&gt;تنظیم رابط:&lt;/h6&gt;
-
-&lt;p&gt;اسکرول‌بار به نظرم چیز زیادی‌ای است‌. ضمن این که خود urxvt میانبر‌هایی برای پیمایش متن دارد‌. همچنین urxvt این قابلیت را دارد که بهش بفهمانیم که چند خط از خروجی ترمینال را برای‌مان ذخیره کند تا بتوانیم آن را پیمایش کنیم‌.&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt*scrollBar: False
-
-URxvt*scrollTtyOutput: False
-
-URxvt*scrollTtyKeypress: True
-
-URxvt*secondaryScroll: True
-
-URxvt*saveLines: 8000
-
-URxvt*letterSpace: 0
-
-URxvt*cursorBlink: True
-
-URxvt*cursorUnderline: True
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;پنج خط اول این تنظیمات که باید در فایل منبع X‌تان ذخیره کنید مربوط به چیز‌هایی است که ذکر‌شان رفت‌. ممکن است با توجه به شرایط نصب و کانفیگ‌تان احساس کنید که کاراکتر‌های متن در urxvt کمی فشرده است‌. تنظیم leterSpace می‌تواند در این رابطه کمک کند‌. اعدادی در بازهٔ اعداد صحیح می‌تواند برای کنترل این آپشن استفاده شود‌.&lt;/p&gt;
-&lt;p&gt;همینطور به طور پیش‌فرض نشانکر Urxvt ثابت است و من دوست دارد که بی‌حیائی کند و چشمک بزند‌. و البته به جای آن مربع همیشگی کاراکتر _ را ترجیح می‌دهم‌. دو خط آخر این تنظیمات مربوط به همین علایق است ;-)&lt;/p&gt;
-&lt;h6&gt;Modifier:&lt;/h6&gt;
-
-&lt;p&gt;کلید Modifier همان کلیدی است که برای زدن کاراکتر‌های ترکیبی (کنترل) urxvt مورد استفاده قرار می‌گیرد‌. این کلید قرار است به طور پیش‌فرض Alt باشد ولی نمی‌دانم چرا اصلا هیچ‌کدام از Modifier ها برای من کار نمی‌کرد‌. اگر شما هم در چنین وضعیتی هستید‌، با استفاده از خط زیر این ویژگی را تعریف کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt*modifier: alt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h6&gt;افزونه‌ها:&lt;/h6&gt;
-
-&lt;p&gt;یکی از قابلیت‌های خوشگل urxvt افزونه‌های perl‌اش است‌. افزونه‌هایی که قابلیت‌های گاها غیرقابل باوری به آن اضافه می‌کنند‌. فعلا ما تنها به باورپذیر‌هایش کار داریم‌. و اما از آن‌جایی که افزونه‌هایی که به طور پیش‌فرض همراه urxvt هستند کفاف نیازمان را نمی‌دهند‌، یک چند‌تایی هم از &lt;a title="urxvt-perls on git" href="https://github.com/muennich/urxvt-perls" target="_blank"&gt;این‌جا&lt;/a&gt; می‌گیریم‌.&lt;/p&gt;
-&lt;p&gt;فایل‌های این افزونه‌ها را دریافت کنید‌، و در مسیر ‎/usr/lib/urxvt/perl (یا اگر ۶۴ بیتی هستید lib64) قرار دهید‌. حالا خط زیر را برای وارد کردن‌شان به urxvt اضافه کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.perl-ext-common : default,matcher,tabbed,keyboard-select,url-select,clipboard
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;چند‌تای اول همراه خود i3 هستند که من آن tabbed را خیلی دوست دارم‌. می‌گذارد urxvt برای‌تان تب کند ;-) شوخی کردم‌، همان تب‌بندی خودمان است‌. برای این که به طور به درد بخوری کانفیگش کرده باشیم‌، خطوط زیر را به تنظیمات اضافه کنید (اعداد جلویشان همان شماره رنگ‌ها هستند):&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.tabbed.tabbar-fg: 5
-
-URxvt.tabbed.tabbar-bg: 0
-
-URxvt.tabbed.tab-fg: 14
-
-URxvt.tabbed.tab-bg: 0
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;فوق‌العاده است‌. با Shift و فلش پایین می‌توانید تب جدید اضافه کنید‌. با Shift و فلش‌های دو طرف به این‌ور آن‌ور بروید و با Ctrl+D تب را ببندید‌. کلید‌های بیشترش را از &lt;a title="urxvt tabs on arch wiki" href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Tabs" target="_blank"&gt;ویکی آرچ&lt;/a&gt; یاد بگیرید ;-)&lt;/p&gt;
-&lt;p&gt;اما سه افزونهٔ آخر آن‌هایی هستند که urxvt-perls برایمان ساخته‌. حقیقتش این است که این‌ها فقط یه سری تابع ساده به زبان perlاند‌. پس باید غیر از فعال کردن‌شان‌، کلید‌های میانبری برای اجرای‌شان تعریف کنیم‌.&lt;/p&gt;
-&lt;h6&gt;تعریف کلید میانبر:&lt;/h6&gt;
-
-&lt;p&gt;مثل همه جای دیگر‌، کار بسیار آسانی است‌. کلید متا یا Modifier‌مان را که تعریف کردیم‌، حالا کافیست که با سینتکس:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;keysym.: Action
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;یک کلید میانبر تعریف کنیم‌. خوب بگذارید کمی مثال‌های واقعی‌تری بزنیم‌. افزونهٔ اول‌مان keyboard-select است که قابلیت‌های پیمایش ماهی در ترمینال به ما می‌دهد‌. تقریبا از ماوس بی‌نیازمان می‌کند. خطوط زیر را برای کانفیگش اضافه کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-Escape: perl:keyboard-select:activate
-
-URxvt.keysym.M-s: perl:keyboard-select:search
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حالا گفتیم با M-Escape یا همان Alt+Esc تابع پرل به نام keyboard-select را فعال کن. این کلید‌ها کمک می‌کند که با کلید‌های میانبر vim درون متن ترمینال پیمایش کنید‌. همینطور M-s قابلیت سرچ درون متن ترمینال را از تابع keyboard-select رو نویس می‌کند‌. (این قابلیت به صورت پیش‌فرض در urxvt وجود دارد ولی این یکی بهتر است ;-))&lt;/p&gt;
-&lt;p&gt;افزونهٔ بعدی url-select است‌. خیلی پیش می‌آید که می‌خواهیم تنها روی یک url از توی ترمینال کلیک کنیم‌. خوبیت ندارد که تابع Search را برای این کار انتخاب کنیم‌. این است که به صورت زیر این افزونه را فعال می‌کنیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-u: perl:url-select:select_next
-
-URxvt.url-select.autocopy: True
-
-URvxt.url-select.button: 2
-
-URxvt.url-select.launcher: firefox
-
-URxvt.url-select.underline: True
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;فکر کنم تنظیمات به قدر کافی گویا هستند‌. پس دیگر زیاد شلوغش نمی‌کنم!&lt;/p&gt;
-&lt;p&gt;و افزونهٔ آخر clipboard که یک کمی درد‌سرش بیشتر است‌. این تابع به طور پیش‌فرض از xsel برای کپی و پیست متن استفاده می‌کند‌. (البته در ادامه می‌گویم که اگر خواستید چطور تغییرش دهید‌). این برنامه به دستور xsel -ib متن را کپی می‌کند (می‌توانید این دستور را تایپ کنید‌، انتر کنید‌، متن مورد نظر‌تان را تایپ کنید و Ctrl+D بزنید) و با xsel -ob متن را پیست کنید‌. به نظرم فکر خوبی است که این برنامه را نصب کنید (ضمن این که باقی برنامه‌ها هم عکس‌العمل خوبی بعد از نصب این برنامه نشان دادند ;-)) و بعد با خطوط زیر این افزونه را تنظیم کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.keysym.M-c: perl:clipboard:copy
-
-URxvt.keysym.M-v: perl:clipboard:paste
-
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;جای Ctrl+c و یا غیره ما از همان M استفاده کردیم‌ (آن هم از روی کالیبر بالایمان ;-)) ولی اگر دوست دارید که همان کلید‌های همیشگی را داشته باشید‌، به جای M حرف C بزرگ را تایپ کنید!&lt;/p&gt;
-&lt;p&gt;اما اگر حال نصب xsel را ندارید و دستور کپی دیگری مد نظرتان است‌، می‌توانید آن دستور‌ها را به صورت زیر جایگزین xsel کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;URxvt.clipboard.copycmd: Command
-
-URxvt.clipboard.pastecmd: Command
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خوب تا همین اندازه فکر کنم برای شروع کار کافی باشد‌. فایل کانفیگ کامل من را می‌توانید در&lt;a title="My xdefaults config" href="https://raw.github.com/shahinism/.configs/master/.Xdefaults" target="_blank"&gt; این لینک &lt;/a&gt;ببینید‌. اما هنوز هم نکاتی هست که ذکرشان خالی از لطف نیست:&lt;/p&gt;
-&lt;h5&gt;نکات اضافه:&lt;/h5&gt;
-
-&lt;ul&gt;&lt;li&gt;یکی از قابلیت‌های خیلی به درد بخور urxvt این است که می‌توان به صورت daemon اجرایش کرد‌. یعنی یک بار هستهٔ daemon را اجرا می‌کنید و پس از آن ترمینال‌های مختلف را روی همان هستهٔ اصلی به صورت کلاینت صدا می‌کنید‌. مزیت این کار سرعت خیلی بالای فراخوانی ترمینال‌هاست‌. ولی خوب یک مشکل هم دارد‌. اگر یک ترمینال کرش کند‌، کل ترمینال‌ها به فنا می‌روند‌، ولی خوب مگر تا به حال چند بار ترمینال زیر دست‌تان کرش کرده؟ این است که روی i3 با هر بار لود مدیر پنجره urxvtd را برای ران شدن daemon صدا می‌کنم و هر وقت نیاز به ترمینال داشتم urxvtc را اجرا می‌کنم ;-) توصیه می‌کنم که&lt;a href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Improved_Kuake-like_Behavior_in_Openbox" target="_blank"&gt; این بخش&lt;/a&gt; از ویکی آرچ را در این رابطه بخوانید‌. اسکریپت به درد بخوری است‌!&lt;/li&gt;
-    &lt;li&gt;ممکن است بعد از بعد از هر بار تغییر Xdefaults فایل کانفیگ به درستی لود نشود‌، این است که می‌توانید از دستور زیر برای بارگذاری دوباره‌اش استفاده کنید:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="code"&gt;&lt;pre&gt;xrdb -merge ~/.Xdefaults
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;&lt;li&gt;قبلا گفتم که می‌توان برای حالت‌های Bold, Italic و … فونت‌های مختلفی تعیین کرد‌. حالا اضافه می‌کنم که رنگ‌های این فونت‌ها نیز قابل تغییر است در manpage به دنبال آپشن‌هایی مثل colorBD, colorIT, colorUL و … بگردید‌.&lt;/li&gt;
-    &lt;li&gt;مسیر پلاگین‌های perl برای urxvt به صورت پیش‌فرض ‎/usr/lib/urxvt/perl است‌. اما ممکن است دوست نداشته باشید که این افزونه‌ها به صورت systemwide در دسترس باشد‌. یا شاید شما دسترسی نوشتن در این آدرس را ندارید‌. با آپشن زیر می‌توانید مسیر جدیدی برای این افزونه‌ها اضافه کنید:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="code"&gt;&lt;pre&gt;perl-lib: PATH
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;&lt;li&gt;گاها ممکن است نیاز داشته باشید که ترمینال‌های‌تان را به صورت login shell ران کنید‌. که خوب مزیت‌های خودش را دارد‌. با اپشن loginShell: True می‌توانید به این عمل دست یابید‌.&lt;/li&gt;
-    &lt;li&gt;نکتهٔ آخر و خیلی مهم هم این که شما می‌توانید تمام این امکاناتی که بحثشان رفت را تنها در زمان فراخوانی urxvt اعمال کنید‌. تمام آپشن‌های ذکر شده‌، یک آرگومان خط فرمان هم دارند که کار همین‌ها را انجام می‌دهد‌.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description><category>4bit</category><category>terminator</category><category>urxvt</category><category>Xdefaults</category><category>Xresources</category><category>xsel</category><category>برنامه نویسی</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamy.html</guid><pubDate>Thu, 25 Oct 2012 12:50:15 GMT</pubDate></item><item><title>ترمینال dropdown (مثل quake) در مدیر پنجرهٔ i3</title><link>http://shahinism.github.io/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;اولین بار که در KDE با Yakuake کار کردم‌، آن‌قدر برایم لذت‌بخش بود که بد جوری معتادش شدم‌. همین شد که بعد از &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/" target="_blank"&gt;مهاجرتم به Awesome&lt;/a&gt; هم خوشبختانه توانستم با کلی کپی/پیست اسکریپت‌های Lua &lt;a title="یک پوسته برای مدیر پنجره Awesome" href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" target="_blank"&gt;یک نمونه&lt;/a&gt; برای خودم دست و پا کنم‌.
-اما &lt;a title="تجربهٔ کار با i3 یک رقیب قدر‌!" href="http://shahinism.com/blog/1391/04/15/%d8%aa%d8%ac%d8%b1%d8%a8%d9%87%d9%94-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-i3-%db%8c%da%a9-%d8%b1%d8%ba%db%8c%d8%a8-%d9%82%d8%af%d8%b1%e2%80%8c/" target="_blank"&gt;وقتی به i3&lt;/a&gt; آمدم‌، چون دیگر خبری از آن زبان‌های اسکریپت‌نویسی قوی نبود‌، فکر می‌کردم غیر ممکن است همچین چیزی داشتن‌! البته یک بار هم سعی کردم &lt;a title="tilda home page" href="http://downloads.sourceforge.net/tilda" target="_blank"&gt;tilda&lt;/a&gt; را استفاده کنم (که طبق معمول از بیت‌های نیم‌سوز فرود کشفش کرده بودم). اما حقیقتش چند مشکل کتاب‌خانه‌ای اجازه نداد درست کامپایلش کنم و زیاد هم پیگیرش نشدم‌.&lt;/p&gt;
-&lt;p&gt;گذشت تا امروز که دیدم Arch باز‌ها یک&lt;a title="HOWTO: get a quake-like urxvt terminal in openbox" href="http://downloads.sourceforge.net/tilda" target="_blank"&gt; کلکی سوار&lt;/a&gt; کرده‌اند و توانسته‌اند urxvt را به صورت quake در OpenBox (یک راهنمای عالی برای کار با این مدیرپنجره را دوست خوبم &lt;a title="وبلاگ ایمان امینی!" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; در &lt;a title="Openbox on linuxreview wiki" href="http://wiki.linuxreview.ir/OpenBox" target="_blank"&gt;ویکی لینوکس ریویو&lt;/a&gt; فراهم کرده) اجرا کنند‌. بماند که کلی ژانگولر بازی در آوردم که پیاده‌اش کنم و اخرش نتوانستم در i3 اجرایش کنم‌.&lt;/p&gt;
-&lt;p&gt;این شد که طبق معمول دست به&lt;a title="problem on i3 faq site" href="http://faq.i3wm.org/question/671/kuake-like-behavior-with-urxvt/" target="_blank"&gt; دامن i3 &lt;/a&gt;باز‌ها شدم و با کمال تعجب دیدم که نوشابه در کوزه و ما دنبال آب می‌گردیم‌! قضیه از این قرار است که i3 با تمام کوچکی‌اش یک قابلیت خیلی ماه دارد به اسم scratchpad. که یعنی می‌توانید با آن هر موقع خواستید هر پنجره‌ای را غیب کنید و هر وقت دیگر خواستید ظاهر کنید‌. این است که برای مثال ما که مصادف شده با مهاجرتم به ترمینال urxvt‌، این چنین i3 را کانفیگ می‌کنیم تا به نتیجهٔ دلخواه‌مان برسیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; move to scratchpad, border 1pixel
-
-for_window &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; focus; resize grow width 300px
-
-bindsym F12 &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;instance&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"dropdown_urxvt"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; scratchpad show, move position 110px 0px
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;آن بخش instance را داشته باشید تا در آخر کار بهش برگردیم‌. در خط اول می‌گوییم که اگر پنجرهٔ مورد نظرمان صدا شد‌، بفرستش به scratchpad و کلا آن بردارش را (که دور تمام پنجره‌ها در i3 وجود دارد) را حذف کن. در خط دوم هم همان پنجرهٔ مورد نظر را کمی عریض‌تر می‌کنیم‌. و در آخر کار هم در خط سوم می‌گوییم که هر وقت کلید F12 را زدیم‌، پنجرهٔ موردنظرمان را که برده‌ای آن پشت مشت‌ها‌، در فلان مختصات صفحه ظاهر کن‌.&lt;/p&gt;
-&lt;p&gt;در مورد این توضیحات بالا می‌توانید به راحتی در &lt;a title="i3 user guide" href="http://i3wm.org/docs/userguide.html" target="_blank"&gt;راهنمای کاربران i3 &lt;/a&gt;اطلاعات به درد بخوری پیدا کنید‌. و اما می‌ماند نکات کنکوری:&lt;/p&gt;
-&lt;p&gt;تا این‌جای کار‌، ما گفتیم که اگه پنجرهٔ مورد نظرمان را دیدی‌، چه کار کن‌. اما حالا مسئله این‌جاست که این پنجره را چطور ایجاد کنیم‌. طوری که منحصر به فرد باشد‌. هر چه باشد نمی‌خواهم هر بار که urxvt را صدا زدم همان بالا باز شود‌. گاهی به یک ترمینال گنده نیاز دارم‌!&lt;/p&gt;
-&lt;p&gt;urxvt یک قابلیت خیلی به درد بخور دارد و آن هم این که می‌توان آن را به صورت daemon اجرا کرد‌. بعد هم هر وقت خواستیم ترمینالی باز کنیم‌، یک کلاینت از همان daemon باز می‌شود که مزیتش سرعت بالای در دسترس قرار گرفتن پنجره است‌.&lt;/p&gt;
-&lt;p&gt;این است که اول از همه ترتیبی می‌دهیم که با باز شده i3 به صورت خودکار این daemon هم اجرا شود:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;exec &lt;/span&gt;urxvtd
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حالا هم نوبت به ساخت پنجره‌مان می‌رسد‌. ظاهر خوشی ندارد که هر بار به صورت دستی بازش کنم‌، چون بلافاصله غیب می‌شود و باید با F12 صدایش کرد‌. این است که این را هم می‌گذارم خود i3 موقع بالا آمدن اجرا کند‌. به هر حال ما که یک نمونه از این کلاینت بیشتر نمی‌خواهیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;exec &lt;/span&gt;urxvtc -name dropdown_urxvt
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;ها‌، همین‌جاست که به i3 می‌فهمانیم که کدام پنجره منظورمان است‌. حالا کافیست که یک بار i3 را ریست کنیم و F12 را بزنیم‌. نتیجهٔ کار عالیست:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png"&gt;&lt;img class="aligncenter" title="dropdown urxvt in i3" src="http://dl.dropbox.com/u/25017694/Blog-photos/i3_urxvt_dropdown.png" alt="dropdown urxvt in i3" width="491" height="369"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; درست است که طی حل این ماجرا راه‌های عجیب و غریبی را غیر از آسان‌ترین راهی که جلوی رویم بود انتخاب کردم‌، ولی چیز‌های جالبی یاد گرفتم که در پست‌های آینده در موردشان خواهم گفت ;-)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت۲:&lt;/strong&gt; ممکن است روی نسخهٔ استیبل i3 (در این تاریخ) با دستور focus که در این آموزش استفاده شده مشکل دارین‌. آخرین نسخهٔ git این مشکل را بر طرف کرده‌!&lt;/p&gt;</description><category>awesome</category><category>i3wm</category><category>KDE</category><category>quake</category><category>terminator</category><category>urxvt</category><category>yakuake</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html</guid><pubDate>Mon, 22 Oct 2012 00:33:53 GMT</pubDate></item><item><title>سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم!</title><link>http://shahinism.github.io/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;از آب گل آلود ماهی گرفتن به این می‌گویند D:. به حول قوهٔ الهی و بعد از اول شدنمان در دنیا‌، سروری که از فرت آزادی بیان و عقیده از آن به عنوان چاقوی سوئیسی استفاده می‌کردیم‌، قیمتش ظرف یک دورهٔ یک ماهه‌، دو برابر شد‌ (تازه بماند که چقدر فروشنده پوست خربزه زیر بقلمان گذاشت که ضرر می‌کند). این شد که تصمیم گرفتیم سروری با منابع کمتر ابتیاع کنیم و خوب به خاطر این که نمی‌خواستیم به سرور بخت برگشته‌مان آن‌قدر فشار بیاوریم که زرتش در برود‌، تصمیم گرفتیم که بی‌خیال وب سرور شویم‌ (و البته کلی جینگولک دیگر)!
-خوب این بی‌خیال شدن یعنی دیگر نمی‌توانستیم در نهایت گشادی فایل‌هایی که خیر‌خواهانه از سمت کشور‌هایی کاملا دموکراتیک و آزاد از دسترسمان خارج شده بود -تا مبادا خدای نکرده‌، بزنیم کسی را با آن اوخ کنیم- را دانلود کنیم روی سرور و بعد با وب سرور بخورانیم به دانلود منیجر همه فن حریفمان‌، همچین هم نمی‌شد اسم سرورمان را گذاشت چاقوس سوییسی D:&lt;/p&gt;
-&lt;p&gt;این شد که تصمیم گرفتم که راهی غیر از وب سرور برای انتقال فایل از سرور (که می‌توان دقیقا یک کامپیوتر با یک اتصال اینترنت به درد بخور فرضش کرد) به کامپیوتر خودمان پیدا کنم‌. در این مسیر همراهم باشید و عمرا قصه نخورید که چرا در سیستم عامل استکباریتان‌، خواب چنین وسایلی را به راحتی نمی‌بینیند:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h5&gt;Konqueror:&lt;/h5&gt;
-&lt;p&gt;خوب اولین ابزار دم دستمان مرورگر پیش‌فرض KDE است‌. برای دیدن فایل‌های روی وب‌سرور تنها کافیست در آدرس‌بار چنین چیزی بنویسیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;fish://USER@IPSERVER
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خودش پس از شروع به جستجو پسوورد می‌پرسد که همان پسوورد ssh (پسوورد یوزر) خواهد بود‌. و دیگر می‌توانید با فایل‌ها جوری رفتار کنید که انگار روی کامپیوتر خودتان قرار دارند‌. ولی خوب بدیهی است که با سرعت اینترنت بالای ما‌، خیلی دردناک است‌. برای فایل‌های کوچک حداکثر تا دو سه مگابایتی می‌توان با یک کپی پیست ساده سر و ته قضیه را هم آورد‌. ولی اگر فایل دو گیگ باشد‌، باید دنبال چارهٔ بهتر گشت‌.&lt;/p&gt;
-&lt;h5&gt;scp&lt;/h5&gt;
-
-&lt;p&gt;یا همان Safe CoPy‌، که به این صورت مورد استعمال قرار می‌گیرد:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;scp USER@IPSERVER:PATH_TO_FILE _Path_to_download_
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;بعد از اجرا یک پرامپتی می‌آید و پسوورد می‌پرسد (عین ssh خودمان) و عملیات کپی انجام می‌شود‌. بدبختی‌اش این‌جاست که چون ما خیلی به سرعت انتقالمان اطمینان داریم‌، یک بار زبانم لال، فایلمان ناقص دانلود شود‌ (لنگر است دیگر‌، می‌افتد‌)، دیگر نمی‌توان Resume‌اش کرد و باید دوباره از اول شروع کنید‌.&lt;/p&gt;
-&lt;p&gt;scp خوب است‌، ولی باز هم زیاد به درد موقعیت ما نمی‌خورد‌. می‌رویم گزینهٔ بعدی.&lt;/p&gt;
-&lt;h5&gt;Filezilla&lt;/h5&gt;
-
-&lt;p&gt;این فایلزیلای پدر سوخته را احتمالا از روی استفاده‌هایش برای FTP می‌شناسید‌. خوب خوشبختانه این‌ها از پروتکلی به اسم SFTP هم پشتیبانی می‌کنند که منظورش این است که SSH می‌تواند برای وصل شدن به سرور مقصد قرار گیرد‌. پس کافیست از منوی فایل روی Site manager کلیک کنید و صفحهٔ باز شده را مثل عکس زیر کانفیگ کنید:&lt;/p&gt;
-&lt;p style="text-align: center;"&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png"&gt;&lt;img class="aligncenter" title="Filezilla site manager" src="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png" alt="Filezilla site manager" width="419" height="331"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;و بعد هم روی connect بزنید و تمام‌. خیلی راحت وصل می‌شوید و می‌توانید با Drog &amp;amp; Drop فایل را انتقال دهید به سیستم‌تان‌. آسان بود‌. ولی خوب ما فقیر فقرا که ساعت ۲ تا ۷ صبح سرعت اینترنت‌مان سر به فلک می‌کشد‌، با تک نخی بودن مدل دانلود‌مان احتمالا طی پنج ساعت نمی‌توانیم ۲ درصد یک فایل دو گیگی را دانلود کنیم‌. می‌توانیم؟&lt;/p&gt;
-&lt;p&gt;پس فایلزیلا هم با تمام خوبی‌هایش بهتر است برود جلو بوق بزند‌. ما باید برای مساله‌مان دنبال یک راه حل بهتر باشیم‌.&lt;/p&gt;
-&lt;h5&gt;rsync&lt;/h5&gt;
-
-&lt;p&gt;یاد‌تان می‌آید گفتیم که scp سرعت خوبی داشت ولی Resume نمی‌کرد‌. یک ابزار دیگر هم داریم که جینگولک بازی‌هایش در زمان Resume فوق‌العاده است و زبان زد خاص و عام‌. مثل این نقل قول:&lt;/p&gt;
-&lt;blockquote&gt;ای کسانی که ویندوز آورده‌اید‌، اگر راست می‌گویید rsync بیاورید «&lt;del&gt;منبع نامعلوم&lt;/del&gt;&lt;a href="http://shahinism.com/blog/1391/07/26/%d8%b3%db%8c%d8%b1-%d8%b5%d8%b9%d9%88%d8%af%db%8c-%d9%88-%d8%b1%d9%88%d8%b4%e2%80%8c%d9%87%d8%a7%db%8c-%d9%85%d8%ae%d8%aa%d9%84%d9%81%db%8c-%da%a9%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%af%d8%a7%d9%86/#comment-537"&gt; منبع خودش اومد اعتراف کرد ;-)&lt;/a&gt;»&lt;/blockquote&gt;
-
-&lt;p&gt;این می‌شود که از آن به صورت زیر استفاده می‌کنیم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;rsync -az --progress --rsh&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'ssh'&lt;/span&gt; --partial USER@IPSERVER:PATH_TO_FILE _Path_to_download
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;خیلی هم خوب‌. یکی از ویژگی‌هایش این است که می‌توانید آدرس یک پوشه را برای دانلود بهش بخورانید و دیگر دست به دستور نزنید و فقط هر وقت خواستید رانش کنید‌. خودش آخرین فایل‌های آن پوشه را می‌گیرد‌. اما امان از سرعت‌. این جینگولک بازی‌های rsync روی قابلیت‌های فوق‌العاده resume‌اش هزینه دارد و آن هم سرعت است‌! که ما به آن هم خیلی نیاز داریم‌. برای این کار بسته به موقعیت می‌توانیم آن آرگومان z را حذف کنیم‌. ولی حقیقتش برای ما فرق چندانی نداشت‌.&lt;/p&gt;
-&lt;p&gt;این است که rsync هم می‌گذاریم برای وقتی که لازمش داریم و می‌رویم دنبال یک راه حل بهتر که هم Resume کند‌، هم چند نخه دانلود کند‌، و از آن مهم‌تر این که هی مجبورمان نکند پسوورد بزنیم! آخر چه کسی حالش را دارد ساعت ۲ صبح پسوورد یادش بیاورد؟&lt;/p&gt;
-&lt;h5&gt;lftp&lt;/h5&gt;
-
-&lt;p&gt;فوق‌العاده‌ است‌. فوق‌العاده‌. و این‌طوری استفاده می‌شود:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;lftp -c &lt;span class="s2"&gt;"mirror -c --use-pget-n=10 --verbose sftp://USER:PASSWORD@IPSERVER/PATH_TO_FILE"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;هوم‌، یک کمی طولانی شد‌. ولی بگذارید کمی در موردش صحبت کنیم‌. چون واقعا لازم به توضیح است:&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;‎-c اول یعنی این که دستور روبرو را اجرا کن‌.&lt;/li&gt;
-    &lt;li&gt;mirror یک برنامه توکار برای lftp است‌. یکی دیگر مثلا pget است‌. هر کدام به درد جایی می‌خورد و این mirror الان به درد ما‌. (از pget هم می‌توان استفاده کرد ولی این یکی بیشتر به مزاقم نشست).&lt;/li&gt;
-    &lt;li&gt;‎-c این آرگومان مال mirror است و یعنی Resume کن اگر می‌توانی D:&lt;/li&gt;
-    &lt;li&gt;‎--user-pget-n=10 یعنی فایل را ده قسمت کن و همه را با هم بگیر‌. این همان قابلیت چند نخی است که باعث افزایش سرعت می‌شود و دانلود منیجر‌های مدرن با آن پز می‌دهند ;-)&lt;/li&gt;
-    &lt;li&gt;USER:PASSWORD یعنی این‌ور یوزر را می‌نویسیم و آن‌ورش رمز عبورش را!&lt;/li&gt;
-    &lt;li&gt;PATH_TO_FILE این‌بار کمی با باقی مواقع فرق دارد‌. قبلا آدرس را از پوشهٔ خانگی یوزری که وارد شده بود وارد می‌کردیم و موضوع حل بود‌. ولی اینجا آدرس را از ریشه (/) می‌نویسیم‌. یعنی اگر در پوشهٔ خانگی‌تان است می‌شود این:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class="code"&gt;&lt;pre&gt;/home/USER/File
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;lftp هم مانند rsync (شاید هم scp) زورش را دارد که پوشه‌ای که به آن خورانده‌ایم را دانلود کند‌.&lt;/p&gt;
-&lt;p&gt;همین دیگر‌. دیدید؟ باز هم بگویید بد است‌. لامصب را می‌بینید که چقدر به فکر جیب آدم است؟ با هر پولی و با هر سازی که دلتان خواست برایش بنوازید‌، برای‌تان آن‌قدر خوب رقص می‌کند که انگشت به دهن می‌بانید ;-)&lt;/p&gt;</description><category>filezilla</category><category>KDE</category><category>konqueror</category><category>lftp</category><category>rsync</category><category>scp</category><category>ssh</category><category>اینترنت</category><category>حل مشکل</category><category>سرور</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html</guid><pubDate>Wed, 17 Oct 2012 17:27:43 GMT</pubDate></item><item><title>Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</title><link>http://shahinism.github.io/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;حقیقتش مشکل خاصی نبود ولی وقتی به چشم می‌آمد خیلی تو ذوق می‌زد‌! منظورم همین Notification‌هایی است که وقتی مثلا Thunderbird ایمیلی دریافت می‌کند روی صفحه ظاهر می‌شوند (یا هر نرم‌افزار دیگری که بخواهد چیزی به اطلاع آدم برساند). روی KDE یا Gnome ابزار‌های مربوطه‌شان به صورت خودکار لود می‌شد و احتمالا این احساس به آدم دست می‌داد که این‌ها مربوط به خود میزکارند که خوب احساس دروغی بود D: روی &lt;a title="نصب Awesome WM روی اسلکور" href="http://shahinism.com/blog/1391/01/06/%d9%86%d8%b5%d8%a8-awesome-wm-%d8%b1%d9%88%db%8c-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1/"&gt;Awesome کبیر&lt;/a&gt; هم از Naughty استفاده می‌شد که الحق تیپ خیلی زیبایی داشت و به میز‌کار می‌آمد‌.
-بعد از مهاجرت به i3 بود که جون روی اسلکور به صورت پیش‌فرض xfce4-notifyd نصب بود مشکلی که ذکر خیرش رفت ظاهر می‌شد‌. متاسفانه از آن‌جایی که i3 دوست داشت دور هر چیزی کادر شناسایی پنجره‌اش را بکشد‌، با همچین منظره‌ای روبرو می‌شدیم‌:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"&gt;&lt;img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"&gt;&lt;/a&gt;جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با &lt;a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank"&gt;Dunst&lt;/a&gt; آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;
-&lt;p style="text-align: left;"&gt;dunst - dmenu-ish notification daemon&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.knopwob.org/public/dunst_wide_640.png"&gt;&lt;img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"&gt;&lt;/a&gt;برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.&lt;/p&gt;
-&lt;p&gt;بعد از نصب هم با دستور زیر:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;cp /usr/share/dunst/dunstrc ~/.config
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;یک نمونه از فایل تنظیمات را در پوشهٔ خانگی‌تان کپی کنید‌. از من می‌شنوید چرخی در این فایل بزنید چون تنظیمات خیلی به درد بخوری در آن پیدا می‌کنید‌ (ضمن این که ظاهر اولیه اصلا شباهتی به Dmenu ندارد ;-))&lt;/p&gt;
-&lt;p&gt;اما بیشترین نقاط قوت این اطلاع رسان ساده در میانبر‌های کیبوردش مخفی شده به طوری که:&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.&lt;/li&gt;
-    &lt;li&gt;می‌توانید با Ctrl+grave آخرین اخطاری که ظاهر شد و شما ندید را به روی صفحه برگردانید (که به نظرم خیلی به درد بخور است). grave همان دکمه‌ای است که باهاش ~ تایپ می‌کنید‌. کنار ۱ و بالای TAB ;-)&lt;/li&gt;
-    &lt;li&gt;یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته ۱:&lt;/strong&gt; برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;notify-send Test
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;که جای Test هر چیزی که خواستید می‌توانید به عنوان پیغام اضافه کنید‌.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;نکته ۲:&lt;/strong&gt; Dunst تنها قبل از اجرای daemon‌ش فایل کانفیگی که در ‎.config ذخیره کردیم را می‌خواند‌. برای دیدن تغییرات باید اول این daemon را kill کنید و دوباره اجرایش کنید ;-)&lt;/p&gt;</description><category>dunst</category><category>dwm</category><category>i3</category><category>xfce4-notifyd</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html</guid><pubDate>Sat, 13 Oct 2012 13:26:09 GMT</pubDate></item><item><title>نسخهٔ جدید ویرایشگر متن نگار</title><link>http://shahinism.github.io/posts/blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب مدت زیادی از موقعی که نوشتن&lt;a title="negar official webpage" href="http://shahinism.github.com/Negar/" target="_blank"&gt; این برنامه &lt;/a&gt;را شروع کردم می‌گذرد‌. همان‌طور هم که قبلا گفتم‌، هدف اصلی من از توسعهٔ همچین برنامه‌ای بیشتر چالشی برای یادگیری برنامه نویسی است‌. اما خوب الان فکر می‌کنم نتیجهٔ کار به حد قابل قبولی رسیده و می‌شود به آن اعتماد کرد ;-) نمونه از رابط گرافیکی نگار به همراه یک نمونهٔ کار در عکس زیر معلوم است:&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://raw.github.com/shahinism/Negar/master/Screenshot/window1.png"&gt;&lt;img title="نمونهٔ خروجی برنامهٔ نگار (در رابط گرافیکی)" src="https://raw.github.com/shahinism/Negar/master/Screenshot/window1.png" alt="" width="443" height="359"&gt;&lt;/a&gt; برای بزرگ شدن تصویر روی آن کلیک کنید.&lt;/p&gt;
-&lt;p&gt;قابلیت‌هایی که نسبت به نسخهٔ قبلی به آن اضافه شده عبارتند از:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;قابلیت جدا کردن کلمات نوشته شده به صورت «‌میشود‌».&lt;/li&gt;
-    &lt;li&gt;اضافه کردن نیم فاصله بعد از پرانتز (یا علامت‌هایی نظیر آن) که باعث می‌شود کلمه جدا از آن کاراکتر دیده شود که مزیت‌های خودش را دارد‌.&lt;/li&gt;
-    &lt;li&gt;رابط گرافیکی نوشته شده بر مبنای PyQt4.&lt;/li&gt;
-    &lt;li&gt;پردازش بهتر آرگومان‌های خط فرمان.&lt;/li&gt;
-    &lt;li&gt;قابلیت تنظیم آپشن‌ها از طریق خط فرمان.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;فعلا چیز دیگری یادم نمی‌آید‌. برای نصب هم اول مطمئن شوید که PyQt4 و setuptools را با توجه به توزیع‌تان نصب کرده‌اید‌، سپس با استفاده از سه دستور زیر‌، کار را تمام کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/shahinism/Negar.git
-
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;Negar
-
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo python setup.py install
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;یک نکته هم در مورد قابلیت جدا کردن کلمات و نحوهٔ کارش اضافه کنم‌. خوب اگر ما همانطور که فاصله‌ها را کنترل می‌کنیم‌، (یعنی با regular expression) می‌خواستیم این کلمات مانند «میشود‌، کمکتان» و… را جدا می‌کردیم‌، در مورد کلماتی مانند «میلاد» به مشکل بر می‌خوردیم‌. برای کنترل چنین وضعیتی از فایلی به اصم untouchable.dat که شامل کلماتی از این دست می‌شود (فایل را از روی یک دیکشنری در پروژهٔ ویراستیار و با کمک چند اسکریپت سریع تولید کرده‌ام و هنوز جای کار بسیاری دارد) استفاده کرده‌ام‌. کاربر می‌تواند کلماتی از این دست که نگار در موردشان درست اقدام نمی‌کند را با استفاده از رابط گرافیکی و یا کنسول به این لیست اضافه کند‌.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت ۱:&lt;/strong&gt; در&lt;a title="پروژهٔ نگار و مصائبش" href="http://shahinism.com/blog/1391/05/21/%d9%be%d8%b1%d9%88%da%98%d9%87%d9%94-%d9%86%da%af%d8%a7%d8%b1-%d9%88-%d9%85%d8%b5%d8%a7%d8%a6%d8%a8%d8%b4/" target="_blank"&gt; معرفی قبلی‌&lt;/a&gt;، اشتباهی در مورد اسکرین‌شات کردم و بررسی نکرده منتشرش کردم که متاسفانه‌، باعث سوء تفاهم‌هایی شد که از همین تریبون عذر خواهی می‌کنم ;-)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت ۲:&lt;/strong&gt; دوست عزیزی به اسم رامین‌، پروژه را فورک و چند ویرایش خوب روی سورس انجام داد که از آن‌هایی که می‌توانستم (با توجه به این که سورس را دوباره از نو نوشتم) استفاده کردم‌. اما متاسفانه احساس می‌کنم ایشان از رفتارم سوء برداشت کرده‌اند‌. به هر حال از ایشان عذر خواهی می‌کنم و امید‌وارم مرا ببخشند‌.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;پی‌نوشت ۳:&lt;/strong&gt; همین دوست عزیز یک نسخهٔ گرافیکی دیگر بر مبنای سورس (که بعضی امکانات این نسخه را ندارد) قبلی نگار توسعه داده که قابلیت غلط گیر املایی هم به آن افزوده شده‌. جالب است‌، &lt;a title="gui negar" href="http://raminnietzsche.github.com/GuiNegar/" target="_blank"&gt;تستش کنید&lt;/a&gt; ;-)&lt;/p&gt;</description><category>PyQt4</category><category>virastar</category><category>برنامه نویسی</category><category>نرم افزار</category><category>نگار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io/posts/blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html</guid><pubDate>Mon, 01 Oct 2012 12:01:36 GMT</pubDate></item></channel></rss>
+&lt;p&gt;که این دستور هم توانست با موفقیت به پایان برسد‌. و در کمال ناباوری دیدم که VLC اجرا شد در نتیجه بلافاصله قمیشی پخش کردم که بی‌خدافسی نری‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نتیجه گیری اخلاقی‌:&lt;/strong&gt; همیشه آسان‌ترین راه پیش رو ترسناکترینشان است‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی نوشت‌:&lt;/strong&gt; بسته‌ای که در دستورات من نصب کردم‌، حاوی تمامی کدک‌های آزاد و غیر آزاد است‌. لذا دوستانی که مشکلی با این بسته‌ها دارند در لینک‌های داده شده به دنبال آزادش بگردند که خدای نکرده ندانسته آلوده به گناه نشوند‌:-).&lt;/p&gt;</description><category>Slackbuilds</category><category>اسلکور</category><category>اسلکور</category><category>حل مشکل</category><category>گنو‌/‌لینوکس</category><guid>http://shahinism.github.io/posts/blog13891201mslh-nsb-vlc-dr-gnwlynwkhs-slkhwr.html</guid><pubDate>Sun, 20 Feb 2011 15:35:55 GMT</pubDate></item></channel></rss>
