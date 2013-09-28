@@ -9,5 +9,12 @@
 
 .. image:: https://dl.dropboxusercontent.com/u/25017694/Blog-photos/ag-at-fa.png
 
-* راستی Atheist را آتعیست نوشتم و بی‌خیال آن ئ کذایی شدم. نه خوشگل است و نه داخل زبان ما کلا جایی دارد.
+.. raw:: html
+	 
+	 <strike>
+	 *راستی Atheist را آتعیست نوشتم و بی‌خیال آن ئ کذایی شدم. نه خوشگل است و نه داخل زبان ما کلا جایی دارد.*
+	 </strike>
+  
 * این هم `لینک منبع اصلی <http://boingboing.net/2013/09/25/atheism-vs-theism-vs-agnostics.html>`_ تصویر.
+
+

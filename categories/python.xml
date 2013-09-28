@@ -1,45 +1,394 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>شاهینیسم (python)</title><link>http://shahinism.github.io/</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><atom:link rel="self" href="http://shahinism.github.io/categories/python.xml" type="application/rss+xml"></atom:link><lastBuildDate>Fri, 27 Sep 2013 20:48:34 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3</title><link>http://shahinism.github.io//posts/py3status.html</link><description>&lt;p&gt;قبلا در مورد &lt;a class="reference external" href="http://i3wm.org/"&gt;i3&lt;/a&gt; &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html"&gt;حرف زده‌ام&lt;/a&gt; و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش بود) اطلاعات وضعیت سیستمم را در i3bar &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html"&gt;نمایش می‌دهم&lt;/a&gt;. خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; این است که اطلاعات را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک می‌کند. ولی بدبختی این &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; هم این است که به قدر کافی قابل گسترش نیست و ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!&lt;/p&gt;
-&lt;p&gt;این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را &lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;شروع کرده&lt;/a&gt; که در واقع حکم یک پوشش برای &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته و آن را با کمک &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; استفاده کنید و در آخر هم از فایل تنظیمات &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; برای تنظیم هر دو ابزار بهره بگیرید.&lt;/p&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;نصب و ساخت اسکریپت&lt;/h2&gt;
-&lt;p&gt;برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید (مسیر ‎ ~/‌.‌i3/config):&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-bar &lt;span class="o"&gt;{&lt;/span&gt;
-  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
-&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;با این دستور ما به &lt;a class="reference external" href="http://i3wm.org/"&gt;i3&lt;/a&gt; می‌فهمانیم که باید از &lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;py3status&lt;/a&gt; برای نمایش داده‌های i3bar استفاده کند. همینطور به &lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;py3status&lt;/a&gt; می‌گوییم که فایل تنظیمات &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; در کدام مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد (‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).&lt;/p&gt;
-&lt;p&gt;لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم &lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;Py3status&lt;/a&gt; داشته باشد که اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس توجه کنید:&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Py3status&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-  &lt;span class="sd"&gt;"""
-  System status in i3bar
-  """&lt;/span&gt;
-  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;ramInfo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i3status_config&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-      &lt;span class="sd"&gt;"""calculate the memory (RAM) status and return it.
-
-      """&lt;/span&gt;
-      &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GetData&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-      &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;'full_text'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'name'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'ram_info'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-      &lt;span class="n"&gt;total_mem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;used_mem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;used_mem_percent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;memory&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;used_mem_percent&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-          &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i3status_config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color_good'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-      &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;used_mem_percent&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;75&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-          &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i3status_config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color_degraded'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-      &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-          &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i3status_config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'color_bad'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-
-      &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'full_text'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"RAM: &lt;/span&gt;&lt;span class="si"&gt;%.2f&lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="si"&gt;%.2f&lt;/span&gt;&lt;span class="s"&gt; GB (&lt;/span&gt;&lt;span class="si"&gt;%d%%&lt;/span&gt;&lt;span class="s"&gt;)"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; \
-                              &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;used_mem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;total_mem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;used_mem_percent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-      &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'cached_until'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>شاهینیسم (Python)</title><link>http://shahinism.github.io/</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><atom:link rel="self" href="http://shahinism.github.io/categories/python.xml" type="application/rss+xml"></atom:link><lastBuildDate>Sat, 28 Sep 2013 11:27:51 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>از وردپرس به نیکولا</title><link>http://shahinism.github.io//posts/from-wordpress-to-nikola.html</link><description>&lt;div&gt;&lt;p&gt;خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;چرا یک وبلاگ ایستا؟&lt;/h2&gt;
+&lt;p&gt;خوب به طور کلی دلایلش از این قرارند:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;سرعت‌، سرعت‌، سرعت:&lt;/strong&gt; دیگر در این نوع از وبلاگ‌، خبری از پایگاه داده نیست. همین‌طور قرار نیست هیچ پردازشی در سمت سرور وبلاگ قرار گیرد. و خوب طبیعتا خیلی خیلی امکاناتی که این ابزار‌ها فراهم می‌کنند را نمی‌توانم داشته باشم. اما حقیقتش در یک وبلاگ‌، به بسیاری از این ابزار‌ها نیاز ندارم. به هر حال این نبودن‌ها‌، یعنی سرعت بیشتر. در مورد من‌، سرعت لود صفحات‌، حدودا سه برابر بیشتر شد.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;سادگی:&lt;/strong&gt; فکر نمی‌کنم چیز زیادی در این زمینه برای گفتن باقی گذاشته باشم.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;امنیت:&lt;/strong&gt; وقتی تنها با صفحات سادهٔ HTML روبرو هستید. وقتی یک سیستم انتشار قابل اطمینان دارید‌‌، دیگر نباید نگران آپدیت بودن ابزار وبلاگ‌نویسی‌تان و یا هک شدنش باشید. این‌طور نیست؟&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;محدود نبودن پهنای باند:&lt;/strong&gt; این یکی از آن کابوس‌هایی است که بی‌خبر به سراغ‌تان می‌آید. ولی خوب خوشبختانه روی گیت‌هاب‌، این نگرانی را نداریم ;-)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;قابلیت بازیابی:&lt;/strong&gt; خوب این یکی زیاد مربوط به خود سیستم وبلاگ‌نویسی نیست. ولی چون نتیجهٔ کارش را می‌توان با هر سیستم دلخواهی منتشر کرد و من گیت را انتخاب کرده‌ام‌، خیلی راحت می‌توانم در صورت گند زدن‌، بدون هیچ استرسی آن را به حالت قبل برگردانم. این قابلیت روی هاست‌های اشتراکی پولی و گران است و در سرور‌های اختصاصی‌، خیلی پر دردسر‌تر از چیزی که در این‌جا با آن طرفیم ;-)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;پوشهٔ نمونه‌ها&lt;/h2&gt;
-&lt;img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png"&gt;
-&lt;p&gt;کاربران &lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;py3status&lt;/a&gt; ابزارهای مختلفی در این زمینه نوشته‌اند که در پوشهٔ Examples پروژه می‌توانید نمونه‌هایی از آن‌ها را ببینید. برای مثال دو اسکریپت netdata (که وظیفهٔ بررسی سرعت اینترنت و حجم دریافتی یا ارسالی داده را بر عهده دارد) و sysdata (که میزان مصرفی رم را محاسبه می‌کند) را من نوشته‌ام و در پروژه اصلی به اشتراک گذاشته‌ام. همینطور یک اسکریپت قابل کنترل با کیبورد برای &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html"&gt;pomodoro&lt;/a&gt; هم ساخته شده که می‌توانید مدیریت زمان فعالیتتان را با آن انجام دهید.&lt;/p&gt;
-&lt;/div&gt;</description><category>i3</category><category>i3status</category><category>python</category><category>py3status</category><category>i3bar</category><guid>http://shahinism.github.io//posts/py3status.html</guid><pubDate>Thu, 12 Sep 2013 11:31:45 GMT</pubDate></item></channel></rss>
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;کدام سیستم؟&lt;/h2&gt;
+&lt;p&gt;به هر حال‌، پس از قطعی شدن تصمیم انتقال‌، باید یکی از سیستم‌ها را انتخاب می‌کردم. به طور کلی این سیستم‌ها اعم از &lt;a class="reference external" href="http://nikola.ralsina.com.ar/"&gt;Nikola&lt;/a&gt;, &lt;a class="reference external" href="http://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;, &lt;a class="reference external" href="http://octopress.github.ip/"&gt;Octopress&lt;/a&gt; و خیلی‌های دیگر که با یک سرچ در اینترنت می‌توانید پیدایشان کنید‌، تفاوت عمده‌ای در نتیجهٔ کار ندارند. طرز کارشان فوق‌العاده ساده است. شما متن پست وبلاگ‌تان را در یک فایل حالا به هر فرمتی که سیستم مورد نظر برای‌تان مهیا کرده می‌نویسید‌، یک قالب هم بر اساس قوائد تعیین شدهٔ سیستم به آن می‌خورانید و می‌گویید که وبلاگ آماده شود. در نهایت این سیستم می‌آید یک سایت کاملا ایستا در فایل‌های html آماده می‌کند که شامل پست‌های شماست و بر اساس قالب مورد نظر‌تان قالب‌بندی شده.&lt;/p&gt;
+&lt;p&gt;من &lt;a class="reference external" href="http://nikola.ralsina.com.ar/"&gt;Nikola&lt;/a&gt; را انتخاب کردم‌، چون اولا پایتونی است‌ و بعد از آن خیلی راحت‌تر از &lt;a class="reference external" href="http://docs.getpelican.com/"&gt;Pelican&lt;/a&gt; که آن هم پایتونی است نصب می‌شود. همین!&lt;/p&gt;
+&lt;p class="more"&gt;&lt;a href="http://shahinism.github.io//posts/from-wordpress-to-nikola.html"&gt; بیشتر بخوانید &lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Wordpress</category><category>Nikola</category><category>Python</category><guid>http://shahinism.github.io//posts/from-wordpress-to-nikola.html</guid><pubDate>Mon, 13 May 2013 10:21:43 GMT</pubDate></item><item><title>دریافت متن ترانه‌های MP3 با لینوکس</title><link>http://shahinism.github.io//posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بله‌، بله‌، خودم خوب می‌دانم که هزار و یک برنامهٔ پخش MP3 آن بیرون است که این کار را خودشان مثل آدم انجام می‌دهند. ولی Nokia N70 بنده‌، شعورش به این چیز‌ها قد نمی‌دهد. همین‌قدر هم که می‌تواند فایل صوتی پخش کند‌، جای شکرش باقی است. خوب حقیقتش می‌شود که با خرج کمی GPRS و البته با یک کمی انگولک این متن‌ها را پیدا کرد‌. ولی خوب کالیبر‌، بالا‌تر از این حرف‌هاست. این است که تصمیم گرفتم‌، برای این کار برنامه‌ای سر هم کنم.
+&lt;/p&gt;&lt;h5&gt;مقدمات&lt;/h5&gt;
+&lt;p&gt;اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم &lt;a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank"&gt;آدم سالاری&lt;/a&gt; قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;اصل اسکریپت همچین جایی است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;curl -s &lt;span class="s2"&gt;"http://makeitpersonal.co/lyrics?artist=$artist&amp;amp;amp;title=$title"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خیلی ساده با curl یک درخواست به API سایت می‌فرستیم که در آن ‎$artist اسم خوانندهٔ ترانه و ‎$title اسم خود ترانه است. که البته‌، چون url‌ها نحو (Syntax) خاص خودشان را دارند‌، این اسکریپت‌نویس دوست داشتنی ما‌، با دو خط زیر‌، اسم خواننده و ترانه را معتبر می‌کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;artist&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$artist_name"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+
+&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;perl -MURI::Escape -e &lt;span class="s1"&gt;'print uri_escape($ARGV[0]);'&lt;/span&gt; &lt;span class="s2"&gt;"$song_title"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌؟ تمام شد؟‌ خوب این اسکریپت کاری که می‌خواستیم را انجام داد. ولی شاهین را که می‌شناسید‌. دوست دارد کار‌هایش را &lt;a title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" href="http://shahinism.com/blog/1390/09/26/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b9-%da%86%d8%b7%d9%88%d8%b1-%d8%a8%d9%87-%d8%b5%d9%88%d8%b1%d8%aa-%d9%81%d9%84%d9%87%e2%80%8c%d8%a7%db%8c-%d9%84%db%8c%d9%86%da%a9%e2%80%8c%d9%87%d8%a7/" target="_blank"&gt;فله‌ای&lt;/a&gt; انجام دهد! یک کمی سخت است که هر بار بیایم اسم ترانه و خواننده را به اسکریپت بگویم‌، بعد شیلنگ خروجی را بگیرم توی یک فایلی که می‌خواهم و از این حرف‌ها. پس می‌رویم سراغ دستکاری بیشتر این اسکریپت.&lt;/p&gt;
+&lt;h5&gt;خجالت بکش شاهین&lt;/h5&gt;
+
+&lt;p&gt;حتما می‌دانید که می‌توان به فایل‌های MP3 تگ زد. همین تگ‌هایی که اسم خواننده و ترانه و ژانر و این‌جور حرف‌ها را می‌توان بهشان خوراند که تا دست آخر با MP3 Player خیلی راحت‌تر بشود سر و سامان‌شان داد. البته اگر راست کار‌تان&lt;a title="موسیقی در وب فارسی‌" href="http://shahinism.com/blog/1389/01/15/%d9%85%d9%88%d8%b3%db%8c%d9%82%db%8c_%d8%af%d8%b1_%d9%88%d8%a8_%d9%81%d8%a7%d8%b1%d8%b3%db%8c%e2%80%8c/" target="_blank"&gt; سایت‌های موسیقی ایرانی&lt;/a&gt; است‌، از این تگ‌ها مطمئنا خیری نسیب‌تان نشده‌، چون از دَم مثل ندید بدید‌ها پرش کرده‌اند با آدرس سایت داغان‌شان ;-)&lt;/p&gt;
+&lt;p&gt;به هر حال‌، از آن‌جایی که آلبوم موسیقی مورد نظر من‌، مثل آدم تگ خورده بود‌، قصد داشتم تا از این تگ‌ها استفاده کنم. همیشه هم در مخیله‌ام این‌طور تصور می‌کردم که این تگ‌ها با یک روش مخوفی درون فایل موسیقی که اصلا نمی‌دانم چیست قایم شده‌اند و خواندن‌شان نیاز به کتاب‌خانه‌ای چیزی دارد که من از طرز کارش سر در نمی‌آورم. این بود که قصد داشتم اصلا کل اسکریپت را به برنامه‌ای به پایتون تغییر دهم. ولی خوب‌، یک سرچ کوچک کردم و کلی &lt;b&gt;خجالت کشیدم&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;همان‌طور که در&lt;a title="Bash Script: Reading ID3v1 Tags" href="http://phoxis.org/2011/08/24/bash-script-reading-id3v1-tags/" target="_blank"&gt; این لینک&lt;/a&gt; توضیح داده شده‌، عموما‌، ۱۲۸ بیت آخر فایل MP3 شامل تگ‌های آن است. و ابزار‌های به ظاهر سادهٔ گنو/لینوکسی‌، مثل چـــی‌، کمک‌مان می‌کنند که این تگ‌ها را بخوانیم‌. ببینید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;tag&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;tail -c128 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nv"&gt;id3&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;head -c10 &lt;span class="s2"&gt;"$file"&lt;/span&gt; | tr &lt;span class="s1"&gt;'\0'&lt;/span&gt; &lt;span class="s1"&gt;' '&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;سر هم کردن اسکریپت نهایی&lt;/h5&gt;
+
+&lt;p&gt;دیگر حالا‌، هم همهٔ ابزار‌های مورد نیاز‌مان را داریم‌، هم کلی چیز جدید یاد گرفته‌ایم. این است که‌، اسکریپت نهایی را سر هم می‌کنیم. که می‌توانید از &lt;a title="lyric script" href="https://github.com/shahinism/Scripts/blob/master/Shell/lyric" target="_blank"&gt;این لینک&lt;/a&gt; دریافتش کنید. برای استفاده از آن هم کافیست که اسم هر تعداد ترانهٔ MP3 را که دل‌تان می‌خواهد در جلویش تایپ کنید تا خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; خوب گاها پیش می‌آید که اسم ترانه‌، شامل کلماتی نظیر (Live) و یا (Bonus) باشد. و یا شاید اسم سایتی‌، چیزی را شامل شود. در این صورت‌، احتمالا API ما بر می‌گرداند که چیزی پیدا نکردم و از این حرف‌ها‌. ولی اسکریپت بیشعور ما آن را هم درون یک فایل هم اسم ترانه با فرمت txt ذخیره می‌کند. این‌جایش را دیگر خودتان می‌توانید با هنر دستکاری فایل لینوکسی‌تان‌، راست و ریست کنید ;-)&lt;/p&gt;</description><category>bash</category><category>MP3</category><category>Python</category><category>Script</category><category>برنامه نویسی</category><category>موسیقی</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html</guid><pubDate>Thu, 07 Feb 2013 19:38:27 GMT</pubDate></item><item><title>تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</title><link>http://shahinism.github.io//posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;همین اول کار بگویم که این روش تنها مخصوص موقعی است که PDF به صورت دیجیتالی تولید شده باشد و کاراکتر‌ها تصویر نباشند‌‌، که خوب برای کاراکتر‌های تصویری‌، نیاز به روش‌های اپتیکال است که فعلا در این بحث ما نمی‌گنجد‌. &lt;del&gt;برای نمونه من از کتاب _* که معرفی دوست خوبم &lt;a title="وبلاگ شخصی ایمان" href="http://emanlog.com" target="_blank"&gt;ایمان&lt;/a&gt; است استفاده می‌کنم‌.&lt;/del&gt; نمونهٔ اولیه بنا به دلایلی معلوم با&lt;a title="Ashamloo" href="http://dl.dropbox.com/u/25017694/Blog_files/Ahanha_Va_Ehsas_(www.txt.ir).pdf"&gt; کتابی&lt;/a&gt; از احمد شاملو عوض شد!
+اول از همه PDF را با برنامهٔ PDFخوان پیش‌فرض میزکار KDE یعنی Okular باز می‌کنیم‌. یک نگاه به قد و بالایش می‌اندازیم و سپس از منوی فایل‌، گزینهٔ Export as و سپس Plain text را انتخاب می‌کنیم‌. خروجی این عمل ما یک فایل متنی است که فکر می‌کنیم همه کار را به درستی انجام داده‌. (البته من که اول اصلا فکرش را هم نمی‌کردم که بتوان خروجی فارسی گرفت) در نگاه اول کارمان تمام شده است‌. ولی بگذارید آن را با یک ویرایشگر باز کنیم‌. آن را با ایمکس باز می‌کنم و از آن‌جایی که تنظیم فونت‌هایم را از روی روشی که فرود عزیز در stackoverflow&lt;a title="emacs font for western and other like rtl" href="http://stackoverflow.com/questions/11012627/emacs-font-for-western-and-other-like-rtl" target="_blank"&gt; پیشنهاد کرده‌&lt;/a&gt;، انجام داده‌ام نکته‌ای عجیب به نظر می‌رسد‌!&lt;/p&gt;
+&lt;p&gt;مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و &lt;a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank"&gt;وضع اینترنت‌ام&lt;/a&gt; هم معلوم است‌، از دوست &lt;a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank"&gt;libreoffice کار قهارم&lt;/a&gt; می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))&lt;/p&gt;
+&lt;p&gt;پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp;amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.&lt;/p&gt;
+&lt;p&gt;پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def read_file&lt;span class="o"&gt;(&lt;/span&gt;file_name&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;the_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; codecs.open&lt;span class="o"&gt;(&lt;/span&gt;file_name, &lt;span class="nv"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;return &lt;/span&gt;the_file
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_characters&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print char
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def show_unicode_code&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+print ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;def replace_unicode_char&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+print unichr&lt;span class="o"&gt;(&lt;/span&gt;int&lt;span class="o"&gt;(&lt;/span&gt;line&lt;span class="o"&gt;))&lt;/span&gt;.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'utf-8'&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.&lt;/p&gt;
+&lt;p&gt;من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از&lt;a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"&gt; این‌جا &lt;/a&gt;دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i INPUT_FILE -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt -u &amp;amp;gt; chrcodes.txt
+
+sort -u chrcodes.txt &amp;amp;gt; uniq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i uniq.txt &amp;amp;gt; uniqchr.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به &lt;a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank"&gt;Arabic Presentation Forms-B&lt;/a&gt; داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;line in read_file&lt;span class="o"&gt;(&lt;/span&gt;input_file&lt;span class="o"&gt;)&lt;/span&gt;.readlines&lt;span class="o"&gt;()&lt;/span&gt;:
+
+&lt;span class="k"&gt;for &lt;/span&gt;char in line:
+
+&lt;span class="k"&gt;if &lt;/span&gt;ord&lt;span class="o"&gt;(&lt;/span&gt;char&lt;span class="o"&gt;)&lt;/span&gt; in &lt;span class="o"&gt;(&lt;/span&gt;64343, 64344, 64345&lt;span class="o"&gt;)&lt;/span&gt;:
+
+&lt;span class="nv"&gt;char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"پ"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sys.stdout.softspace&lt;span class="o"&gt;=&lt;/span&gt;False
+
+try:
+
+print char.encode&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,
+
+except UnicodeDecodeError:
+
+print char,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python chrvalidator.py -i ashamloo.txt &amp;amp;gt; validashamloo.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;خوب کار تقریبا تمام شد‌. ولی خوب‌، کامپیوتر است دیگر‌. همیشه که درست عمل نمی‌کند‌. فایل خروجی نمونهٔ مرا در&lt;a title="ashamloo text file" href="http://dl.dropbox.com/u/25017694/Blog_files/ashamloo.txt.xz" target="_blank"&gt; این‌جا&lt;/a&gt; می‌بینید‌. خالی از اشکال هم نیست‌، ولی خوب طبیعتا مشکلات زیادی را برایم حل می‌کند (دیگر لازم نیست به آن فونت کذایی Arial زل بزنم). دیگر باقی کار‌ها می‌افتد گردن یک ویراستار به درد بخور‌. (البته شاید بتوان از &lt;a title="نسخهٔ جدید ویرایشگر متن نگار" href="http://shahinism.com/blog/1391/07/10/%d9%86%d8%b3%d8%ae%d9%87%d9%94-%d8%ac%d8%af%db%8c%d8%af-%d9%88%db%8c%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%b1-%d9%85%d8%aa%d9%86-%d9%86%da%af%d8%a7%d8%b1/" target="_blank"&gt;نگار&lt;/a&gt; هم کمک گرفت‌، که فعلا دارم شدیدا رویش کار می‌کنم‌. نسخهٔ فعلی‌اش مشکلاتی دارد‌، ولی امیدوارم بتوانم حل‌شان کنم‌)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت:&lt;/strong&gt; Okular از قرار‌، قادر نیست PDF‌هایی که رمزگذاری شده‌اند را باز کند (خودم امتحان نکردم) در آن صورت یک ابزار پایتونی برای این کار وجود دارد که در آینده در موردش می‌نویسم‌. تا این‌جای کار‌، خروجی‌های این تابع زیاد با روش ذکر شده همخوانی ندارد‌، پس باید به فکر دستکاری‌اش باشم‌. اسم این تابع هم در صورتی که دل‌تان می‌خواهد کشفش کنید pdfminer است.&lt;/p&gt;</description><category>KDE</category><category>LaTeX</category><category>ocr</category><category>okular</category><category>PDF</category><category>Python</category><category>tex</category><category>ایمکس</category><category>بررسی</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کتاب</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html</guid><pubDate>Thu, 22 Nov 2012 14:31:08 GMT</pubDate></item><item><title>راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)</title><link>http://shahinism.github.io//posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;مساله این‌جاست که وقتی پای کامپیوتر می‌نشینم‌، حتی اگر کاری نداشته باشم‌، یادم نمی‌ماند که مسنجرم را روشن کنم‌. و خوب از طرفی دوست دارم که در صورت امکان‌، با رفقای اینترنتی و غیر اینترنتی‌ام در ارتباط باشم‌. خوب حل این مشکل ساده است‌. کافی است میز‌کارت را تنظیم کنی که با روشن شدنش‌، Pidgin را هم اجرا کند‌. ولی خوب این بالقوه مشکل دیگری را می‌آفریند. کدام مشکل؟ همین که گاها موقع کار کردن‌، یکی از دوستانت می‌پرد وسط و چیزی می‌گوید که کوچکترین پیامدش حواس پرتی است و این اصلا نمی‌تواند کمک خوبی برای بالا بردن بهره‌وری شود.
+راه حل کوتاه در این زمینه استفاده از Status‌های مسنجر است‌. جدای از این که Status‌ها در همهٔ مسنجر‌ها همانطور که باید نشان داده نمی‌شوند‌، چه تضمینی وجود دارد که من حواس‌پرت و البته تنبل (gsh سابق D:)، یادم بماند و حالش را داشته باشم که در هر وضعیتی Status مناسب را انتخاب کنم‌؟&lt;/p&gt;
+&lt;p&gt;بعد از کمی جستجو‌، با &lt;a title="dbus official webpage" href="http://dbus.freedesktop.org/" target="_blank"&gt;DBus&lt;/a&gt; آشنا شدم و البته یادم آمد که خیلی وقت پیش‌،&lt;a title="jadi dbus" href="http://jadi.net/2011/07/linux-chera-command-line/" target="_blank"&gt; جادی عزیز‌&lt;/a&gt;، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به &lt;a title="dbus-python turorila" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html" target="_blank"&gt;راهنمای&lt;/a&gt; Freedesktop بسنده کرد‌.)&lt;/p&gt;
+&lt;p&gt;مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به مخاطب آن‌ور خط بدهد‌.&lt;/p&gt;
+&lt;p&gt;با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.&lt;/p&gt;
+&lt;p&gt;اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام ارسال می‌شود‌.&lt;/p&gt;
+&lt;p&gt;دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.&lt;/p&gt;
+&lt;p&gt;برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import sys&lt;/p&gt;
+&lt;p&gt;import dbus&lt;/p&gt;
+&lt;p&gt;from PyQt4.QtGui import QApplication&lt;/p&gt;
+&lt;p&gt;from dbus.mainloop.qt import DBusQtMainLoop&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;قرار بر این بود که اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;bus_loop = DBusQtMainLoop(set_as_default=True)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار با حلقهٔ اصلی هنوز تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌.&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def connect_dbus(text):&lt;/p&gt;
+&lt;p&gt;global answer&lt;/p&gt;
+&lt;p&gt;answer = text&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;bus.add_signal_receiver(pidgin_control_func,&lt;/p&gt;
+&lt;p&gt;dbus_interface="im.pidgin.purple.PurpleInterface",&lt;/p&gt;
+&lt;p&gt;signal_name="ReceivedImMsg")&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;اولین سوال در این تابع‌، این است که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به سوالی پاسخ می‌دهند‌:&lt;/p&gt;
+&lt;p&gt;۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ: pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت)&lt;/p&gt;
+&lt;p&gt;۲- روی DBus به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای معرفی استفاده می‌کنیم‌.&lt;/p&gt;
+&lt;p&gt;۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط Pidgin شناسایی کردیم ;-)&lt;/p&gt;
+&lt;p&gt;در این تابع ما از فراخوان می‌خواهیم که آرگومانی را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد.&lt;/p&gt;
+&lt;p&gt;نوبت به نوشتن تابع دوم می‌رسد‌:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;def pidgin_control_func(account, sender, message, conversation, flags):&lt;/p&gt;
+&lt;p&gt;bus = dbus.SessionBus()&lt;/p&gt;
+&lt;p&gt;obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")&lt;/p&gt;
+&lt;p&gt;purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")&lt;/p&gt;
+&lt;p&gt;if purple.PurpleAccountGetUsername(account) != sender:&lt;/p&gt;
+&lt;p&gt;purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در ادامه به سه سوال دیگر جواب می‌دهیم:&lt;/p&gt;
+&lt;p&gt;۱- روی DBus به کدام برنامه گوش کنم؟ پاسخ im.pigin.purple.PurpleService&lt;/p&gt;
+&lt;p&gt;۲- آدرسش کجاست؟ پاسخ: ‎/im/pidgin/purple/PurpleObject&lt;/p&gt;
+&lt;p&gt;در واقع با پاسخ به این دو سوال‌، سعی به ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌.&lt;/p&gt;
+&lt;p&gt;۳- کدام رابط از آبجکت ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface&lt;/p&gt;
+&lt;p&gt;و خوب حالا تنها برای ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌ و به دو سوال پاسخ دهیم:&lt;/p&gt;
+&lt;p&gt;۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از شیع‌مان بخواهم که آدرسش را پیدا کند ;-)&lt;/p&gt;
+&lt;p&gt;۲- چه بگویم؟ پاسخ answer‌‌، همان متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌.&lt;/p&gt;
+&lt;p&gt;البته من در تابع یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا عبد ادامه خواهد داشت ;-)&lt;/p&gt;
+&lt;p&gt;دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;app = QApplication([])&lt;/p&gt;
+&lt;p&gt;connect_dbus(message)&lt;/p&gt;
+&lt;p&gt;app.exec_()&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل از ساختن شیع app کمک می‌گیریم:&lt;/p&gt;
+&lt;p&gt;[python]&lt;/p&gt;
+&lt;p&gt;import signal&lt;/p&gt;
+&lt;p&gt;signal.signal(signal.SIGINT, signal.SIG_DFL)&lt;/p&gt;
+&lt;p&gt;[/python]&lt;/p&gt;
+&lt;p&gt;کار این تابع این است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه کند‌! یعنی بزند بترکاند برنامه‌مان را ;-)&lt;/p&gt;
+&lt;p&gt;می‌توانید نسخهٔ کامل اسکریپت را از&lt;a title="Download answering machine" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py" target="_blank"&gt; این لینک &lt;/a&gt;دانلود کنید و به صورت زیر اجرایش کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;python answering_machine.py ANSWER_MESSAGE
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اما خوب درست است که این اسکریپت تقریبا مشکل‌مان را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این اصلا حال نمی‌دهد‌. این است که آن را با &lt;a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank"&gt;PyPomo&lt;/a&gt; قاطی می‌کنم‌ (آخرین نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۱: &lt;/strong&gt;متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش باشم‌!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت۲:&lt;/strong&gt; می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌، زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!&lt;/p&gt;</description><category>dbus</category><category>PyPomo</category><category>Python</category><category>qdbus</category><category>Qt</category><category>برنامه نویسی</category><category>حل مشکل</category><category>نرم افزار</category><category>پایتون</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html</guid><pubDate>Wed, 26 Sep 2012 12:38:12 GMT</pubDate></item><item><title>اسکریپتی برای کاهش هزینهٔ شرکت در کلاس‌های دانشگاه Coursera</title><link>http://shahinism.github.io//posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;۱۹۵ کلاس‌، ۱۹۵ کلاس درس دانشگاهی که خیلی راحت می‌توان از طریق اینترنت آن‌ها را مطالعه کرد و حتی آزمون داد‌ -البته بدیهی است که این پروسه نیاز به صادق بودن شخص با خود هم دارد‌-. اگر برای به دست آوردن یک کاغذ A4 گلاسه که دانش‌تان را محدود به یک حوزهٔ خاص می‌داند و برایش رتبه هم تعیین می‌کند درس نمی‌خوانید‌، یک همچین منبعی از کلاس‌ها می‌تواند واقعا وسوسه انگیز باشد‌. &lt;a title="Coursera home page" href="https://www.coursera.org/" target="_blank"&gt;Coursera&lt;/a&gt; با همکاری مجموعه‌ای از اساتید دانشگاه‌ها (و شاید هم خود دانشگاه‌ها) سعی در فراهم آوردن &lt;a title="courses page" href="https://www.coursera.org/courses" target="_blank"&gt;همچین امکانی&lt;/a&gt; دارد‌. خصوصا این که جدیدا توانسته ۷۰ کلاس آموزشی جدید نیز ارائه کند (۱۹۵ با احتساب همین مقدار جدید است ;-))
+حقیقتش در مورد خیلی از دروس ارائه شده حتی سوادم نکشید که بدانم چه هستند‌، اما در مورد کامپیوتر و خصوصا مهندسی نرم‌افزار‌، کلاس‌ها عموما گل‌چین شدهٔ بهترین واحد‌هایی است که در دانشگاه‌های خودمان هم سعی بر تدریسش دارند (گفتم سعی‌، منظورم این است که حداقل در جایی که من بودم‌، نزدیک به چنین هدفی هم نشدند!). البته این را هم اضافه کنم که این دانشگاه هنوز هم چیز‌های مهمی را ارائه نمی‌دهد که در دانشگاه‌های وطنی با بهترین کیفیت ارائه می‌شود‌ D: (‌حدس می‌زنید منظورم کدام دروس است؟)&lt;/p&gt;
+&lt;p&gt;زیاده‌گویی بس است‌. خیلی وقت پیش هم در کلاس‌های این سایت شرکت کرده بودم‌، ولی ادامه ندادم‌. چرا؟ حقیقتش مجموعهٔ دانلودی‌اش عالی است‌. فیلم آموزشی‌، زیرنویسش‌، اسلاید و …. اما خودتان که می‌دانید زندگی سایبری (‌حالم از این کلمهٔ آخر به هم می‌خورد‌، جایگزین بهتری نمی‌شناسید؟) در ایران‌، خصوصا با این کیفیت عالی (!) چه هزینهٔ گزافی دارد‌. این شد که دیروز وقتی دوباره لیست این کلاس‌ها‌، وسوسه به مطالعه‌شان را در من تقویت کرد‌، تصمیم به دانلودشان به صورت شبانه گرفتم‌. اما مشکل این‌جاست که باید شب را تا صبح پای کامپیوتر بگذرانم و تک به تک دانلودشان کنم‌، چرا که‌، پروسهٔ دانلود سایت کمی قرتی تشریف دارد و کوکی می‌خواهد‌. قصد داشتم برای چالش هم که شده یک اسکریپت برای این کار بنویسم‌.&lt;/p&gt;
+&lt;p&gt;اما خوشبختانه بعد از اولین جستجو به کامل‌ترین نسخهٔ ممکن برای این کار رسیدم‌.&lt;a title="coursera doenloader on github" href="https://github.com/jplehmann/coursera" target="_blank"&gt; اسکریپتی که&lt;/a&gt; دیروز کار نمی‌کرد‌، و باعث شده بود تصمیم بگیرم تعمیرش کنم‌، ولی باز توسعه دهندهٔ خوش‌فکرش به کارش انداخت و الان مثل چـــی کار می‌کند ;-)&lt;/p&gt;
+&lt;p&gt;مزیتش نسبت به تمام روش‌های دانلود دیگر این است که فقط کافیست نام کلاس را بهش بگویید و خودش همه چیز‌های مربوطه را برایتان دانلود کرده‌، نام درست را برای‌شان بگذارد و در پوشه‌های جدا دسته بندی می‌کند‌. (هلو …؟)&lt;/p&gt;
+&lt;p&gt;اول با توجه به توزیع زیر دستتان‌، بستهٔ setuptools از خانوادهٔ پایتون را نصب کنید‌، و باقی کار را مثل زیر انجام دهید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;easy_install BeautifulSoup
+
+easy_install argparse
+
+git clone https://github.com/jplehmann/coursera.git
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;coursera
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا با چنین نحوی می‌توانید دانلود را انجام دهید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;./coursera CLASS_NAME -u USER_NAME -p PASSWORD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای به دست آوردن CLASS_NAME صفحهٔ کلاس مربوطه را در سایت باز کنید‌. مثلا برای Algorithms 1 همچین چیزی است:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;https://class.coursera.org/algs4partI-2012-001/lecture/index
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;آن بند algs4partI-2012-001 می‌شود نام کلاس‌ الگوریتم‌ها‌. جایش در باقی کلاس‌ها یکسان و معلوم است ;-)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;پی‌نوشت&lt;/strong&gt;: در آیندهٔ نزدیک یک روش گاز‌انبری و خیلی دم دستی را یادتان می‌دهم که می‌تواند این کوکی‌های کذایی را دور بزند. &lt;/p&gt;</description><category>argparse</category><category>Coursera</category><category>pysetuptools</category><category>Python</category><category>آموزش !</category><category>اینترنت</category><category>برنامه نویسی</category><category>حل مشکل</category><category>دانشگاه</category><category>نرم افزار</category><category>پایتون</category><category>کامپیوتر</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html</guid><pubDate>Thu, 20 Sep 2012 11:11:27 GMT</pubDate></item><item><title>پروژهٔ نگار و مصائبش</title><link>http://shahinism.github.io//posts/blog13910521prwjh-ngr-w-msybsh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;h5&gt;معرفی&lt;/h5&gt;
+&lt;a title="negar on github" href="http://shahinism.github.com/Negar/" target="_blank"&gt;نگار&lt;/a&gt; قرار است یک ابزار ویرایش و تصحیح متن باشد‌. یعنی یک فایل متنی دریافت کند‌، اشتباهات نگارشی رایج را تصحیح کند‌، غلط‌های املایی‌اش را بگیرد و در خروجی یک متن فارسی تمیز را ارائه دهد‌. نمونه‌ای از کارکرد و امکانات فعلی نگار را می‌توانید در تصویر زیر ببینیند (البته متن تست را از صفحهٔ وب &lt;a href="http://virastar.heroku.com/" target="_blank"&gt;ویراستار&lt;/a&gt; به عاریت گرفته‌ام D:) :
+&lt;p style="text-align: center;"&gt;&lt;a href="https://raw.github.com/shahinism/Negar/master/Negar-State.png"&gt;&lt;img class="aligncenter" src="https://raw.github.com/shahinism/Negar/master/Negar-State.png" alt="" width="560" height="249"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;نگار با پایتون نوشته شده‌، اما به احتمال زیاد کتابخانهٔ ویرایشش به چند زبان دیگر (نظیر PHP و javascript برگردانده خواهد شد). از این رو نگار روی &lt;a title="negar on github" href="https://github.com/shahinism/Negar" target="_blank"&gt;گیت‌هاب&lt;/a&gt; منتشر می‌شود و شدیدا پذیرای ایده‌های نو و صد البته همکاری شما در توسعه‌اش است‌.&lt;/p&gt;
+&lt;p&gt;و از همه مهمتر این که نگار توسط یک تازه‌کار در حال توسعه است و می‌تواند کمک خوبی برای تازه‌کاران یا مشتاقان یادگیری برنامه نویسی باشد‌.&lt;/p&gt;
+&lt;h5&gt;مصائب توسعه نگار&lt;/h5&gt;
+
+&lt;p&gt;آن‌هایی که مرا از نزدیک می‌شناسند احتمالا می‌دانند که مدت‌هاست مشتاقم که برنامه‌نویس شوم ولی درصدی تنبلی و درصدی دیگر پیچیدگی امر برنامه‌نویسی مانع از رسیدن به این علاقه‌ام شده‌. بار‌ها به سمت زبان‌های C‎+‎+‎‌، C، PHP، Javascript و ... کشیده شده‌ام‌، سینتکس‌شان را یادگرفته‌ام‌، تعدادی مسائل و الگوریتم پایه‌ای را حل کرده‌ام ولی آخر سر نتوانسته‌ام که به خودم اجازهٔ برنامه‌نویس بودن بدهم D:&lt;/p&gt;
+&lt;p&gt;خوبی این تلاش‌های به بن‌بست رسیده برایم این بوده که بفهمم برنامه‌نویسی را توی کتاب‌ها یاد نمی‌دهند D: (البته منظورم سینتکس و این‌ها نیست‌ها!). یاد گرفتن واقعی از وقتی شروع می‌شود که شروع به نوشتن پروژه‌ای می‌کنید‌. ایدهٔ توسعهٔ نگار را مدت زیادی بود که در سر می‌پروراندم‌. خصوصا از وقتی که ایمان &lt;a title="ویراستیار" href="http://virastyar.ir" target="_blank"&gt;ویراستیار&lt;/a&gt; را به عنوان جایگزینی برای &lt;a title="ویراسباز" href="http://virasbaz.persianlanguage.ir/" target="_blank"&gt;ویراستباز&lt;/a&gt; که من استفاده می‌کردم معرفی کرد و گفت که ای کاش یک نسخهٔ کلاینت هم برای این کار روی لینوکس بود‌. (درست که ویراستیار یک نسخهٔ کلاینت دارد‌، ولی آن با زبان جهنمی C#‎ نوشته شده که نصبش برای من هفت خوان می‌طلبد!)&lt;/p&gt;
+&lt;p&gt;این اشتیاق به قوت خودش باقی ماند تا این که &lt;a href="http://www.swaroopch.org/notes/Python" target="_blank"&gt;کتاب یک بایت از پایتون&lt;/a&gt; را تمام کردم‌. کتاب خیلی خوبی بود‌‌ و خیلی از مسائل را به سادگی و روشنی توضیح می‌داد‌. این بود که ما هم جو این که هر کاری را می‌توانیم به راحتی با پایتون انجام دهیم گرفتمان و زدیم به کار نوشتن نگار‌!&lt;/p&gt;
+&lt;p&gt;اولین الگوریتم پیاده‌سازی شده افتضاح بود‌! بعضی ایده‌هایش هنوز هم به نظرم جالب می‌آید ولی حجم کار بی‌خودی زیادی را به هر تابع واگذار کرده بودم که در نهایت هم نتیجهٔ دلچسبی در خروجی ظاهر نمی‌شد‌. این بود که کمی ذلسرد شدم و ناامیدانه به دنبال ابزاری گشتم که برای همین هدف نوشته شده باشد و بتوانم با بررسی سورسش مفهوم طراحی و پیاده‌سازی یک برنامه را بهتر درک کنم‌. سورس ویراستیار جدای از گندگی بیش از اندازه‌اش برای من‌، به زبانی بود که اصلا نمی‌فهمیدمش‌! جستجو‌ها نتجه نداد تا وقتی که روی صفحهٔ گیت &lt;a href="https://github.com/behnam" target="_blank"&gt;بهنام اسفهبد&lt;/a&gt; با پروژهٔ ویراستار آشنا شدم‌. نویسندهٔ پروژه&lt;a href="https://github.com/aziz/virastar-app" target="_blank"&gt; عزیز &lt;/a&gt;(که فکر کنم توسعه دهندهٔ بالاترین هم باشد) کد &lt;a href="https://github.com/aziz/virastar%5C" target="_blank"&gt;کتابخانه&lt;/a&gt; را به روبی نوشته بود و یک نمونهٔ تحت وب که خروجی فوق‌العاده‌ای هم از ویرایش متن داشت با آن ساخته بود‌.&lt;/p&gt;
+&lt;p&gt;سادگی و کامنت شدن بیشتر توابع این کتابخانه را به شروع خوبی برای من تبدیل کرد‌. تصمیم گرفتم که آن را با پایتون دوباره نویسی کنم تا هم سواد خودم را (که بعد‌تر فهمیدم اصلا ندارم D:) محک بزنم و هم یه شروع برای پروژهٔ نگار ایجاد کنم‌.&lt;/p&gt;
+&lt;p&gt;کار از آن چیزی که به نظر می‌رسید سخت‌تر بود‌. تفاوت‌های زبان روبی و پایتون گاها در سینتکس خیلی کوچک بودند ولی در عملکرد زمین تا آسمان متفاوت بودند‌.&lt;/p&gt;
+&lt;p&gt;نکته‌ای که بیش از همه به نظرم جالب آمد طرز تفکر من نسبت به عبارات باقائده بود‌. قبلا در وبلاگ دوست خوبم علی با آن‌ها آشنا شده بودم‌. ولی زیاد دل به یاد گرفتن‌شان ندادم و فکر هم نمی‌کردم آن‌چنان دانستن‌شان به کارم بیاید‌. حقیقتش را بخواهید بیش از ۹۰ درصد ویراستار نگار بر پایهٔ همین regex‌ها بنا شده ;-)&lt;/p&gt;
+&lt;p&gt;یا از طرف دیگر unicode ها که در عمل آن‌قدر بهشان عادت کرده بودم که نمی‌دیدمشان‌، خودشان را در این‌جا بیش از پیش به رخ می‌کشیدند‌.&lt;/p&gt;
+&lt;h5&gt;کمک‌های Stackoverflow و Github&lt;/h5&gt;
+
+&lt;p&gt;این که می‌گویند همیشه ابزار درست نتیجه را بهتر می‌کند (نقل از خودم) حقیقت محض است‌. در حین نوشتن نگار به مشکلاتی بر می‌خوردم که هیچ‌جوره با منطقم جور در نمی‌آمد‌. سرچ در گوگل هم خصوصا این که با فارسی در ارتباط بود و طبیعتا نمی‌شود دلی به نتایجش خوش کرد چندان فایده‌ای نداشت‌ (البته چند باری به جای فارسی دنبال Arabic‌ها گشتم که راهنمایی‌های خوبی برای یونیکد نوشتن در پایتون به دست آوردم). در چنین شرایطی بود که &lt;a href="http://stackoverflow.com/" target="_blank"&gt;stackoverflow&lt;/a&gt; و کاربرانش به دادم رسیدند‌. دو سوالی که پرسیدم را آن‌چنان کامل و متناسب با شرایط مختلف جواب دادند که عمرا نمی‌شود در هیچ کتابی به این صراحت جوابی پیدا کرد D:&lt;/p&gt;
+&lt;p&gt;اما حل مشکلات به این راحتی‌ها هم نبود‌. بار‌ها پیش می‌آمد که شروع به ویرایش یک تابع می‌کردم و آن‌قدر تغییر می‌دادم که در نهایت نه ایده‌هایم برای حل مشکل کارساز بود و هم کل کد را خراب کرده بودم‌. این‌جا بود که Git کمک می‌کرد‌. فوق‌العاده است‌. فوق‌العاده‌. کدام ابزار دیگری را می‌شناسید که هم یک ورژن کنترل عالی باشد‌، هم به راحتی قابلیت مستندسازی پروژه را دو دستی تقدیمتان کند؟ (منظورم wiki و page است). در آینده بیشتر در مورد شگفتی‌های گیت و مخصوصا &lt;a href="http://github.com" target="_blank"&gt;گیت‌هاب&lt;/a&gt; می‌نویسم‌!&lt;/p&gt;
+&lt;h5&gt;نتیجه:&lt;/h5&gt;
+
+&lt;p&gt;نتیجهٔ کار که دیگر معلوم است‌. اما در آخر باز هم اعلام می‌کنم که اگر علاقه به همکاری در یک پروژهٔ آزاد فارسی دارید تنها زحمتی که باید به خودتان بدهید‌، این است که پروژه را از گیت‌هاب فورک کنید ;-)&lt;/p&gt;</description><category>github</category><category>Python</category><category>virastar</category><category>برنامه نویسی</category><category>دسته‌بندی نشده</category><category>نرم افزار</category><category>نگار</category><category>پایتون</category><category>کدباز</category><guid>http://shahinism.github.io//posts/blog13910521prwjh-ngr-w-msybsh.html</guid><pubDate>Sat, 11 Aug 2012 11:18:53 GMT</pubDate></item><item><title>از Autojump در ترمینال غافل نشوید‌!</title><link>http://shahinism.github.io//posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="آدرس‌ها را در خط فرمان Bookmark کنید!" href="http://shahinism.com/blog/1391/01/03/%d8%a2%d8%af%d8%b1%d8%b3%e2%80%8c%d9%87%d8%a7-%d8%b1%d8%a7-%d8%af%d8%b1-%d8%ae%d8%b7-%d9%81%d8%b1%d9%85%d8%a7%d9%86-bookmark-%da%a9%d9%86%db%8c%d8%af/"&gt;قبلا در مورد Bashmark نوشته بودم&lt;/a&gt; و دقیقا همین قبلا بود که &lt;a href="http://cyberrabbits.net/" target="_blank"&gt;فرود&lt;/a&gt; عزیز گفت که از &lt;a title="autojump official git channel" href="https://github.com/joelthelion/autojump" target="_blank"&gt;Autojump&lt;/a&gt; استفاده می‌کند‌. اما آن موقع‌ها بخاطر یک باگ کوچک نادیده گرفته بودمش‌! امروز که دیگر آن باگ یادم نبود بار دیگر تستش کردم و (آخه دیگه چی بگم؟ این لعنتی خیلی با شعوره‌!) اصلا خودتان این ویدئو را ببینید تا زورش را درک کنید:
+&lt;p class="aligncenter"&gt;&lt;iframe src="http://www.youtube.com/embed/tnNyoMGnbKg" frameborder="0" width="420" height="315"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;هــاها‌! کدام ابزار را می‌شناسید که سریع‌تر بین دایرکتوری‌ها جابجایتان کند؟ خوب دیگر پر حرفی بس است‌. برویم سر اصل ماجرا‌. نصب و حل یک مشکل‌!&lt;/p&gt;
+&lt;h5&gt;نصب&lt;/h5&gt;
+
+&lt;p&gt;برای نصب اگر پایتون روی سیستم‌تان بالا‌تر از ۲.۷ است که خیال‌تان راحت و تنها کافییست که آن را از کانال گیتش دریافت کنید و پس از ورود به پوشه‌اش اسکریپت install.sh را اجرا کنید‌. اما اگر مثل من با این ترافیک داغان اینترنت روی اسلکور استیبل گیر کرده‌اید (این یعنی پایتون ۲.۶) پس باید یک چند‌تا کار اضافه انجام دهید‌ (یا شاید هم بخواهید به ورژن ۱۹ که توی اسلک‌بیلد‌ها پیدا می‌شود بسنده کنید):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;sbopkg -R -i &lt;span class="s2"&gt;"pysetuptools pip"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;امیدوارم sbopkg را نصب کرده و بی‌خودی زندگی را برای خود سخت نگیرید ;-) حالا هم کافیست که با pip بستهٔ مورد نیاز Autojump را نصب کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;pip install argparse
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سپس:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;git clone git://github.com/joelthelion/autojump.git
+
+&lt;span class="nb"&gt;cd &lt;/span&gt;autojump
+
+./install.sh --force
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا خط زیر را به ‎.zshrc اضافه کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -s /etc/profile.d/autojump.zsh &lt;span class="o"&gt;]]&lt;/span&gt; &amp;amp;amp;&amp;amp;amp; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile.d/autojump.zsh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و سر‌انجام:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;مشکل&lt;/h5&gt;
+
+&lt;p&gt;و خوب کار باید تمام شده باشد اما دستور زیر را امتحان کنید:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;vim ~/.zsh&lt;span class="o"&gt;[&lt;/span&gt;TAB&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;که احتمالا چیزی شبیه خروجی زیر نصیبتان می‌شود:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+
+_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+
+_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و این یعنی اتوکامپلیشن فوق‌العادهٔ ZSH جلوی دستور vim از کار می‌افتد‌! خوب چه کنیم؟ تنها یک راه حل در اینترنت جواب این مساله بود و آن هم &lt;a title="Problem on Arch forum" href="https://bbs.archlinux.org/viewtopic.php?id=37245" target="_blank"&gt;از انجمن آرچر‌های &lt;/a&gt;اعظم:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$fpath&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;see the &lt;span class="k"&gt;function &lt;/span&gt;PATH of zsh&lt;span class="o"&gt;)&lt;/span&gt;
+
+/usr/share/zsh/site-functions /usr/share/zsh/4.3.11/functions
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/share/zsh/4.3.11/functions
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;ls _vi*
+
+_vim
+
+rm _vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;و حالا لذت ببرید ;-)&lt;/p&gt;</description><category>autojump</category><category>pip</category><category>Python</category><category>sbopkg</category><category>Zsh</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</guid><pubDate>Sat, 04 Aug 2012 17:52:20 GMT</pubDate></item><item><title>چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</title><link>http://shahinism.github.io//posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;من چگونه باید رمز عبور کاربر ریشه MySQL را در گنو‌/‌لینوکس‌، FreeBSD‌، OpenBSD و سیستم‌عامل‌های شبه یونیکس روی ارتباط ssh / telnet عوض کنم‌؟
+ایجاد رمز عبور MySQL یک کار ضروری است‌. به صورت پیش‌فرض کاربر ریشه‌، کاربر مدیر MySQL است‌. لطفا توجه داشته باشید که کاربر ریشه در لینوکس‌/‌یونیکس در سیستم‌عامل شما با کاربر ریشهٔ MySQL متفاوت است‌ و هیچ ربطی به هم ندارند‌. بعضی مواقع ممکن است شما برای حفظ مسائل امنیتی‌، کاربر root را حذف کنید و به جای آن کاربر admin به عنوان کاربر اصلی در mysql معرفی کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h4&gt;دستور mysqladmin برای تغییر کلمه عبور ریشه&lt;/h4&gt;
+&lt;p&gt;اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqlamin -u root pasword NEWPASSWORD
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» oldpassword» password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور MySQL برای دیگر کاربران&lt;/h4&gt;
+
+&lt;p&gt;برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysqladmin -u vivek -p oldpassword password newpass
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql&lt;/h4&gt;
+
+&lt;p&gt;این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:&lt;/p&gt;
+&lt;p&gt;۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;mysql -u root -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&amp;gt; ‎ وارد کنید‌):&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; use mysql;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; update user &lt;span class="nb"&gt;set &lt;/span&gt;&lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PASSWORD&lt;span class="o"&gt;(&lt;/span&gt;“NEWPASSWORD”&lt;span class="o"&gt;)&lt;/span&gt; where &lt;span class="nv"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;’vivek’;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;mysql&amp;amp;gt; flush privileges;
+
+mysql&amp;amp;gt; quit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank"&gt;منبع&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>MySQL</category><category>perl</category><category>php</category><category>Python</category><category>چی‌؟ چرا‌؟ چگونه‌؟</category><category>گنو‌/‌لینوکس</category><category>یونیکس</category><guid>http://shahinism.github.io//posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html</guid><pubDate>Thu, 01 Dec 2011 08:01:44 GMT</pubDate></item><item><title>چطور از خودمان برنامه نویسی بیاموزیم‌؟‌ دو</title><link>http://shahinism.github.io//posts/blog13891224chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب بعد از ارسال پست قبلی که نکات پایهٔ این مقاله پرداخته بودم‌، حالا نوبت به آن رسیده که‌، کار را سخت‌تر و پیشرفته‌تر کنیم‌! اولا اگر پست قبل را نخوانده‌اید‌، از &lt;a title="چطور از خودمان برنامه نویسی بیاموزیم‌‌؟ یک" href="http://shahinism.com/1389/11/%da%86%d8%b7%d9%88%d8%b1-%d8%a7%d8%b2-%d8%ae%d9%88%d8%af%d9%85%d8%a7%d9%86-%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d9%87-%d9%86%d9%88%db%8c%d8%b3%db%8c-%d8%a8%db%8c%d8%a7%d9%85%d9%88%d8%b2%db%8c%d9%85%e2%80%8c/" target="_blank"&gt;اینجا&lt;/a&gt; شروع کنید‌.&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #808080;"&gt;&lt;em&gt;&lt;strong&gt;اسکریپت نویسی سمت سرور‌: &lt;/strong&gt;&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #ff9900;"&gt;&lt;strong&gt;PHP: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;خوب بعد از این‌که توانستید صفحه‌های وبی بسازید که کار‌های ساده را انجام دهد و اطلاعات خاصی رو از کاربر دریافت کند‌، شاید بخواهید برنامه‌هایی بنویسید که روی سرورتان اجرا شود‌، مثلا شاید بخواهید یک برنامه ارسال ایمیل بنویسید که اطلاعات کاربر را دریافت کند و به آدرس ایمیل دلخواه ارسال کند‌، و یا برنامه‌ای که بتواند با یک پایگاه داده ارتباط بر‌قرار کند‌. اینجاست که &lt;span style="color: #ff9900;"&gt;PHP، &lt;span style="color: #ff9900;"&gt;Perl، &lt;span style="color: #ff9900;"&gt;Python، &lt;span style="color: #ff9900;"&gt;Ruby و چند نمونهٔ دیگر وارد عمل می‌شوند‌. در مورد روبی که قبلا مفصلا توضیح داده‌ام‌. برای PHP هم می‌توانید به &lt;a title="PHP totorial for beginners" href="http://www.webmonkey.com/tutorial/PHP_Tutorial_for_Beginners" target="_blank"&gt;«‌آموزش PHP برای تازه‌کاران‌»&lt;/a&gt; از وبلاگ Webmonkey استفاده کنید‌. وقتی هم که به قدر کافی با پایه‌ها آشنا شدید می‌توانید برای یادگیری چطور ارتباط برقرار کردن با پایگاه داده‌تان از &lt;a title="PHP and MySQL" href="http://www.webmonkey.com/tutorial/PHP_and_MySQL_Tutorial_-_Lesson_1" target="_blank"&gt;این قسمت&lt;/a&gt;‌، که دوباره کاری از همین وبلاگ است استفاده کنید‌.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #99cc00;"&gt;&lt;strong&gt;Web Framework: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;اگر برای مدتی برنامه نویسی کرده باشید‌، متوجه می‌شوید که مدتی است که دارید برای پروژه‌های متفاوت کار‌های تکراری زیادی انجام می‌دهید‌. و یا برنامه‌نویسان متفاوتی را ببینید که دارند روی پروژه‌های مختلف کار می‌کنند ولی یک نوع مشکل را دارند در پروژه‌شان حل می‌کنند‌. این‌جاست که Framework‌ها وارد عمل می‌شوند‌. این ابزار‌ها وظیفهٔ انجام بسیاری از اعمال پیچیده و تکراری را در برنامه‌نویسی را برایتان بر عهده می‌گیرند‌. برای شروع می‌توانید به &lt;a title="How to build a web site from scratch with no experience" href="http://lifehacker.com/5336113/how-to-build-a-web-site-from-scratch-with-no-experience" target="_blank"&gt;این مطلب&lt;/a&gt; از لایف هکر مراجعه کنید‌. همچینین زیادند فریم‌ورک‌هایی نظیر &lt;a title="CakePHP" href="http://cakephp.org/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;CakePHP&lt;/span&gt;&lt;/a&gt; و &lt;a title="djangoproject.com" href="http://www.djangoproject.com/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;Django&lt;/span&gt;&lt;/a&gt; و &lt;a title="jquery.com" href="http://jquery.com/" target="_blank"&gt;&lt;span style="color: #99cc00;"&gt;JQuery&lt;/span&gt;&lt;/a&gt; که می‌توانید برای یاد گرفتنشان به بخش مستندات سایت مربوط به آن فریم‌ورک مراجعه کنید‌. فقط یادتان باشد که زیادی به فریم‌ورک‌ها عادت نکنید‌. چون به قول برنامه‌نویسان واقغی‌، برنامه‌نویسی که برنامه‌نویسی را با فریم‌ورک یاد بگیرد‌، نمی‌تواند برنامه‌نویس خوبی باشد‌.&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #999999;"&gt;&lt;strong&gt;اسکریپت‌نویسی خط فرمان‌: &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;img class="aligncenter size-full wp-image-212" title="Python" src="http://shahinism.com/wp-content/uploads/2011/03/Python.png" alt="" width="300" height="152"&gt;&lt;/center&gt;
+&lt;p&gt;&lt;span style="color: #ff6600;"&gt;&lt;strong&gt;&lt;span style="color: #ff6600;"&gt;Python: &lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;پایتون یک زبان خیلی دوست داشتنی می‌شود برایتان‌، وقتی اراده کنید شروع کنید‌. باور کنید‌، این را از روی تجربه شخصی می‌گویم‌. پایتون با وجود &lt;span style="color: #ff6600;"&gt;سطح بالا بودنش‌، واقعا &lt;span style="color: #ff6600;"&gt;نرم و &lt;span style="color: #ff6600;"&gt;انعطاف پذیر است‌. کد‌های تولیدی‌اش‌، فوق‌العاده قابل خواندن‌ و فهم هستند‌. برای پایتون یک منبع فارسی عالی سراغ دارم که در نوع خود و به زبان فارسی بی‌نظیر است‌. سایت &lt;a title="پایتون" href="http://www.pylearn.com" target="_blank"&gt;&lt;span style="color: #ff6600;"&gt;Pylearn&lt;/span&gt;&lt;/a&gt; دو کتاب ترجمه شده را در فضایی کاملا پویا و یک انجمن کاربردی در کنار هم جمع‌آوری کرده است‌. پیشنهاد می‌کنم برای شروع کار با این زبان کتاب &lt;a title="یک بایت از پایتون" href="http://www.pylearn.com/fa/wiki/index.php/%DA%A9%D8%AA%D8%A7%D8%A8_%DB%8C%DA%A9_%D8%A8%D8%A7%DB%8C%D8%AA_%D8%A7%D8%B2_%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86" target="_blank"&gt;«‌یک بایت از پایتون‌»&lt;/a&gt; نوشته‌: &lt;span style="color: #ff6600;"&gt;Swaroop C H که ترجمهٔ این تیم است را دانلود و استفاده کنید‌. کتاب عالیست‌. ولی در بعضی از مواقع ضعف‌های باور نکردنی در ترجمه دارد که امیدوارم در آینده حل شود‌.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;مهم‌ترین مزیت این کتاب این است که علاوه بر آشنا کردن شما با پایتون سعی دارد شما را به خوبی در استفاده از این زبان قوطه‌ور کند‌! بخوانید‌، باور می‌کنید‌. نویسنده به خوبی سعی کرده که شما را جدای از برنامه‌نویسی به شیوهٔ انجام و استفاده از ابزار‌های آشنا کند‌.&lt;/p&gt;
+&lt;p&gt;ادامه دارد‌...&lt;/p&gt;</description><category>Django</category><category>JQuery</category><category>php</category><category>Python</category><category>برنامه نویسی</category><category>طراحی وب</category><category>پایتون</category><category>پایتون</category><guid>http://shahinism.github.io//posts/blog13891224chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2.html</guid><pubDate>Tue, 15 Mar 2011 10:33:24 GMT</pubDate></item></channel></rss>
