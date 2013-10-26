@@ -70,6 +70,46 @@
 
 <div class="post hentry">
   <h5 class="postDate"><abbr class="publishd">
+    ارسال شده: 2013-10-26 10:52
+  </abbr></h5>
+  <div class="postContent">
+    <h3 class="entry-title"><a href="posts/udiskie.html">سوار کردن (Mount) خودکار دستگاه‌های خارجی در لینوکس</a></h3>
+    
+    <div class="entry-content">
+      <p>اوایل که با لینوکس آشنا شده بودم‌، این بازی <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a> کردن دستگاه‌های خارجی مثل فلش درایو یا DVD به نظرم مسخره می‌آمد. اما بعد‌ها به دلم نشست… خصوصا این که در <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_environment">DEها</a> عملا نیاز نبود که من کار خاصی برای سوار کردن‌شان انجام دهم. بعد‌تر‌ها هم که به <a class="reference external" href="http://i3wm.org">i3</a> کوچ کردم و دیگر خبری از آن خدمات شکیل <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_environment">DEها</a> نبود‌، عموما به صورت دستی کار <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a> را انجام می‌دادم و یا اگر تنبلی‌ام می‌آمد از <a class="reference external" href="https://en.wikipedia.org/wiki/Dolphin_(file_manager)">Dolphin</a> استفاده می‌کردم D:</p>
+<p>اما دیروز به حوس کردم یک فکری به حال این موضوع بکنم. کامپیوتری که من از آن استفاده می‌کنم عموما شخصی است (می‌گویم عموما چون ممکن است خواهرم هم گاها از آن استفاده کند). پس دلیل خاصی نمی‌بینم که زیاد روی <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a> خودکار دستگاه‌ها حساس باشم. (اشتباه می‌کنم؟ مشتاق گرفتن نظرات جدیدم ;-))</p>
+<p>این بود که با جستجوی در اینترنت و سبک سنگین کردن انتخاب‌ها‌، <a class="reference external" href="https://bitbucket.org/byronclark/udiskie">Udiskie</a> به نظرم انتخاب جالبی آمد و نتیجهٔ رضایت‌بخشی داشت. روی آرچ <a class="footnote-reference" href="posts/udiskie.html#id2" id="id1">[1]</a> کافیست به صورت زیر نصبش کنیم:</p>
+<pre class="code bash literal-block">
+sudo pacman -S udiskie
+</pre>
+<p>و در فایل ‎~/.xinitrc قبل از این که مدیر پنجرهٔ مربوطه‌تان را صدا کنید (دقیقش می‌شود قبل از exec که ادامهٔ اجرای برنامه‌تان را می‌دزدد D:) این دستور را اضافه کنید:</p>
+<pre class="code bash literal-block">
+udiskie &amp;
+</pre>
+<p>حالا دیگر کار تمام است. کافیست برای امتحان دستگاه جدیدی را به سیستم وصل کنید و نتیج را ببینید. ساده است این‌طور نیست؟‌ حتی می‌توانید محتاط‌تر باشید و به جای این کار هر وقتی که لازم شد با همین دستور <a class="reference external" href="https://bitbucket.org/byronclark/udiskie">udiskie</a> را فراخوانی کنید. چه می‌دانم این یکی دیگر دست خودتان است.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label"><col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="posts/udiskie.html#id1">[1]</a></td><td>گقته بودم که مدتی است به آرچ کوچ کرده‌ام؟ نه‌، نه‌، یک وقت راجع به اسلکور کبیر فکر بد نکنید‌، دلایلم را بعدا در پستی مجزا توضیح خواهم داد ;-)</td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="postMeta">
+      <div class="comments">
+        
+        
+    
+        <a href="posts/udiskie.html#disqus_thread" data-disqus-identifier="cache/posts/udiskie.html">Comments</a>
+    
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="post hentry">
+  <h5 class="postDate"><abbr class="publishd">
     ارسال شده: 2013-10-14 20:03
   </abbr></h5>
   <div class="postContent">
@@ -119,40 +159,6 @@
         
     
         <a href="posts/atheism-vs-theism-vs-agnosticsism-vs-gnosticism.html#disqus_thread" data-disqus-identifier="cache/posts/atheism-vs-theism-vs-agnosticsism-vs-gnosticism.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-09-19 19:31
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/fitness_blender.html">کلاس ورزش‌، برای گیک‌ها‌، چاق‌ها‌، لاغر‌ها‌، شل‌ها‌، کج‌ها و …</a></h3>
-    
-    <div class="entry-content">
-      <p>بنده خودم ۱۶-۱۷ ساله بودم که برای اولین بار به یک باشگاه ورزشی رفتم و بعد از آن تا امروز‌، هر چند با شل کن‌، سفت کن‌های زیاد‌، نشده که هفته‌ای را بدون تمرین تمام کنم! قبل از آن کلا ورزش تعطیل بود. نه اهل فوتبال و گل کوچیک بودم (الان هم نیستم‌، از توپ فراری‌ام کلا) و نه اصلا رنگ باشگاه دیده بودم. تنها فعالیت کمی که داشتم مربوط به دوچرخه سواری کودکی‌ام بود!</p>
-<p>نه این که فکر کنید تپل مپل بودم‌ها‌، نه‌! از دور که نگاهم می‌کردی فقط یک خط صاف می‌دیدی (البته از نزدیک هم وضع به همین منوال بود D:). اما بعد از باشگاه رفتنم که به لطف یکی از دوستان عزیزم صورت گرفت‌، وضع فرق کرد. دیگر به رژیمم توجه می‌کردم و وزنه‌هایم را کنترل می‌کردم. هر چند هرگز یک بدن‌ساز حرفه‌ای نشدم‌، ولی هیکل معقولی برایم به یادگار ماند. مدت کوتاهی هم کیوکوشین کار کردم که با وجود بسیار فان بودن و موفق بودن در این رشته‌، به دلیل نداشتن دوست و رفیق پایه‌، دیگر به صورت حرفه‌ای دنبالش نکردم.</p>
-<img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/life-begins-at-the-end-of-your-comfort-zone.jpg" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/life-begins-at-the-end-of-your-comfort-zone.jpg">
-<p>الان هم که ۳-۴ سالی می‌شود که کلا دیگر باشگاه نمی‌روم و سعی می‌کنم خودم تمرین کنم. عمدهٔ تمریناتم هم در رستهٔ تمرینات هوازی قرار می‌گیرد و کمی هم چاشنی رزمی و استقامتی دارد. از آن‌جایی که در این مدت تمرین‌، سعی کرده‌ام بدن خودم را خوب بشناسم‌، ضعف‌ها و قوت‌های بدنم را شناسایی کرده‌ام و عمدتا به کمک اینترنت‌، به دنبال تمرینات مناسب برای خودم می‌گردم.</p>
-<p>مزیت‌ این شیوهٔ تمرین نسبت به باشگاه‌، تنوع بسیار زیاد آن است. دیگر مجبور نیستید در یک حلقهٔ تکراری دور بزنید. شوخی که نداریم‌، من گیک ورزش نیستم. ورزش را دوست دارم‌، ولی مثلا کشته مردهٔ کیوکوشین نیستم که همهٔ زندگی‌ام را صرف آن کنم. من می‌خواهم ورزش کنم و لذت ببرم و چون گیکش نیستم‌، دنبال تنوع زیادی می‌گردم. این است که تمرین‌های مختلفی مثل یوگا‌، کیک‌بوکسینگ‌ و انواع سبک‌های هوازی که اسمشان را هم نمی‌دانم‌، به صورت دوره‌ای نظرم را جلب می‌کند.</p>
-<p>البته این را هم بگویم که این سبک ورزش یک مشکل خیلی‌، خیلی‌، خیلی بزرگ هم دارد. و آن نداشتن یک حریف تمرینی به درد بخور است! در باشگاه‌، حریف تمرینی‌، همه چیزتان است. کل‌کل‌ها‌، چشم و هم چشمی‌ها‌، رفاقت‌هایش یکی از مزه‌های بزرگ تمریناتند که متاسفانه در این خلوت گزینی تمرین‌ها از دستش خواهید داد ;-) ضمن این که بدیهی است که نمی‌توان با تمرین در خانه به یک ورزشکار حرفه‌ای تبدیل شد! البته استثناهایی هم مثل <a class="reference external" href="https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D8%B3%D9%88%D8%AA%D8%A7%D8%AA%D8%B3%D9%88_%D8%A7%D9%88%DB%8C%D8%A7%D9%85%D8%A7">اویاما</a> هستند که با یک سال و خرده‌ای خلوت کردن در کوه و کمر‌، به یک اسطوره تبدیل می‌شوند.</p>
-<img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/there%20are%20only%20two%20choices%20make%20progress%20or%20make%20excuses%20Ellen%20Mikesell.jpg" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/there%20are%20only%20two%20choices%20make%20progress%20or%20make%20excuses%20Ellen%20Mikesell.jpg">
-<p>به هر حال این روده درازی‌ها را کردم که بگویم‌، طی جستجو‌های اخیرم برای یافتن یک برنامهٔ تمرینی مناسب‌، به <a class="reference external" href="http://www.fitnessblender.com">fitnessblender</a> رسیدم که دلم نیامد با شما به اشتراکش نگذارم. به جرأت می‌توانم بگویم که در <a class="reference external" href="http://www.fitnessblender.com">fitnessblender</a> با مجموعه‌ای فوق‌العاده متنوع و حرفه‌ای از تمرینات روبرو می‌شوید که می‌تواند خوراک تمرین چند سال‌تان را فراهم کند. تمرینات‌، بر اساس نوع‌، سبک‌، شدت و حتی مقدار کالری مصرفی قابل جستجو هستند که همین امکان جستجوی فوق‌العاده مذاق گیک پسندانه‌تان را به خوبی تحریک می‌کند ;-)</p>
-<p>من با وجود شکم تقریبا کوچکم علاقهٔ زیادی به Six pack دارم و تمرینات چربی سوز فراوانی را تجربه کرده‌ام. و متاسفانه پوست کلفت (این ربطی به کرگدن ندارد‌، مربوط به ژن بنده است D:) و چربی ذخیره شدهٔ زیر آن‌، امکان نشان دادن آن بند‌ها را برایم به آرزو تبدیل کرده است. از دو سه ماه پیش تمرین <a class="reference external" href="http://www.fitnessblender.com/v/workout-detail/Cardio-Kickboxing-and-Core-Workout/bd/">Kardio kickboxing and core workout</a> این وب‌سایت را در برنامهٔ تمرینی‌ام گنجاندم و نتیجه برایم فوق‌العاده بود. شدت تعرق بالا در زمان کم‌، بالا رفتن استقامت عضلات میانی بدن و سو سو زدن (هر چند کم) بند‌های عضلانی در پهلو‌ها‌، نوید نتیجه بخش بودن تمرین‌ها را می‌داد. این است که تصمیم گرفته‌ام مقدار تمرین‌ها را اضافه‌تر کنم و آن‌ها را با ورزش‌های هوازی همین وب‌سایت ترکیب کنم تا ببینم نتیجه‌اش چه می‌شود.</p>
-<p>این را هم در آخر بگویم بر خلاف ظاهر بسیار مفید این وب‌سایت‌، خبر از هیچ تیم حرفه‌ای توسعه‌ای در پشت صحنه نیست. تنها یک زن و شوهر جوان و ورزشکار تمام کار‌های آن را انجام می‌دهند و از تمرینات‌شان ویدئو تهیه می‌کنند. این کار را هم به صورت کاملا تمام وقت انجام می‌دهند که در نوع خودش بی‌نظیر است.</p>
-<img alt="http://www.fitnessblender.com/media/content-images/about.jpg" src="http://www.fitnessblender.com/media/content-images/about.jpg">
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/fitness_blender.html#disqus_thread" data-disqus-identifier="cache/posts/fitness_blender.html">Comments</a>
     
 
         
