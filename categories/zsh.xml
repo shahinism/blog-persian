@@ -1,165 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>شاهینیسم (Zsh)</title><link>http://shahinism.github.io/</link><description>بعضی وقت‌ها باید قبل از این که بتوانید راه بروید‌، بدوید‌!</description><atom:link rel="self" type="application/rss+xml" href="http://shahinism.github.io/categories/zsh.xml"></atom:link><lastBuildDate>Sat, 26 Oct 2013 11:27:28 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>از Autojump در ترمینال غافل نشوید‌!</title><link>http://shahinism.github.io//posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;a title="آدرس‌ها را در خط فرمان Bookmark کنید!" href="http://shahinism.com/blog/1391/01/03/%d8%a2%d8%af%d8%b1%d8%b3%e2%80%8c%d9%87%d8%a7-%d8%b1%d8%a7-%d8%af%d8%b1-%d8%ae%d8%b7-%d9%81%d8%b1%d9%85%d8%a7%d9%86-bookmark-%da%a9%d9%86%db%8c%d8%af/"&gt;قبلا در مورد Bashmark نوشته بودم&lt;/a&gt; و دقیقا همین قبلا بود که &lt;a href="http://cyberrabbits.net/" target="_blank"&gt;فرود&lt;/a&gt; عزیز گفت که از &lt;a title="autojump official git channel" href="https://github.com/joelthelion/autojump" target="_blank"&gt;Autojump&lt;/a&gt; استفاده می‌کند‌. اما آن موقع‌ها بخاطر یک باگ کوچک نادیده گرفته بودمش‌! امروز که دیگر آن باگ یادم نبود بار دیگر تستش کردم و (آخه دیگه چی بگم؟ این لعنتی خیلی با شعوره‌!) اصلا خودتان این ویدئو را ببینید تا زورش را درک کنید:
-&lt;p class="aligncenter"&gt;&lt;iframe src="http://www.youtube.com/embed/tnNyoMGnbKg" frameborder="0" width="420" height="315"&gt;&lt;/iframe&gt;&lt;/p&gt;
-&lt;p&gt;هــاها‌! کدام ابزار را می‌شناسید که سریع‌تر بین دایرکتوری‌ها جابجایتان کند؟ خوب دیگر پر حرفی بس است‌. برویم سر اصل ماجرا‌. نصب و حل یک مشکل‌!&lt;/p&gt;
-&lt;h5&gt;نصب&lt;/h5&gt;
-
-&lt;p&gt;برای نصب اگر پایتون روی سیستم‌تان بالا‌تر از ۲.۷ است که خیال‌تان راحت و تنها کافییست که آن را از کانال گیتش دریافت کنید و پس از ورود به پوشه‌اش اسکریپت install.sh را اجرا کنید‌. اما اگر مثل من با این ترافیک داغان اینترنت روی اسلکور استیبل گیر کرده‌اید (این یعنی پایتون ۲.۶) پس باید یک چند‌تا کار اضافه انجام دهید‌ (یا شاید هم بخواهید به ورژن ۱۹ که توی اسلک‌بیلد‌ها پیدا می‌شود بسنده کنید):&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;sbopkg -R -i &lt;span class="s2"&gt;"pysetuptools pip"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;امیدوارم sbopkg را نصب کرده و بی‌خودی زندگی را برای خود سخت نگیرید ;-) حالا هم کافیست که با pip بستهٔ مورد نیاز Autojump را نصب کنید‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;pip install argparse
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و سپس:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;git clone git://github.com/joelthelion/autojump.git
-
-&lt;span class="nb"&gt;cd &lt;/span&gt;autojump
-
-./install.sh --force
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و حالا خط زیر را به ‎.zshrc اضافه کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="o"&gt;[[&lt;/span&gt; -s /etc/profile.d/autojump.zsh &lt;span class="o"&gt;]]&lt;/span&gt; &amp;amp;amp;&amp;amp;amp; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile.d/autojump.zsh
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و سر‌انجام:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h5&gt;مشکل&lt;/h5&gt;
-
-&lt;p&gt;و خوب کار باید تمام شده باشد اما دستور زیر را امتحان کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;vim ~/.zsh&lt;span class="o"&gt;[&lt;/span&gt;TAB&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;که احتمالا چیزی شبیه خروجی زیر نصیبتان می‌شود:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
-
-_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
-
-_arguments:439: _vim_files: &lt;span class="k"&gt;function &lt;/span&gt;definition file not found
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و این یعنی اتوکامپلیشن فوق‌العادهٔ ZSH جلوی دستور vim از کار می‌افتد‌! خوب چه کنیم؟ تنها یک راه حل در اینترنت جواب این مساله بود و آن هم &lt;a title="Problem on Arch forum" href="https://bbs.archlinux.org/viewtopic.php?id=37245" target="_blank"&gt;از انجمن آرچر‌های &lt;/a&gt;اعظم:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$fpath&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;see the &lt;span class="k"&gt;function &lt;/span&gt;PATH of zsh&lt;span class="o"&gt;)&lt;/span&gt;
-
-/usr/share/zsh/site-functions /usr/share/zsh/4.3.11/functions
-
-&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/share/zsh/4.3.11/functions
-
-&lt;span class="nv"&gt;$ &lt;/span&gt;ls _vi*
-
-_vim
-
-rm _vim
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و حالا لذت ببرید ;-)&lt;/p&gt;</description><category>autojump</category><category>pip</category><category>Python</category><category>sbopkg</category><category>Zsh</category><category>اسلکور</category><category>بررسی</category><category>حل مشکل</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html</guid><pubDate>Sat, 04 Aug 2012 17:52:20 GMT</pubDate></item><item><title>آدرس‌ها را در خط فرمان Bookmark کنید!</title><link>http://shahinism.github.io//posts/blog13910103adrsh-r-dr-kht-frmn-bookmark-khnyd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;ممکن است برای شما هم پیش آمده باشد که در حین کار در خط فرمان بار‌ها و بار‌ها در بین دایرکتوری‌هایی که آدرس‌های طولانی دارند‌، جابجا شده و از این کار تکراری خسته شده باشید‌. درست است که پوسته‌های فرمان بخصوص ZSH امکانات جالبی برای راحتی کار‌مان در این زمینه فراهم می‌کنند‌، اما باز هم آن‌قدر که باید کافی نیست‌.
-چند روز پیش که از روی بیکاری (!) مشغول گشت و گذار در پروژه‌های github بودم، پروژه‌ای به اسم &lt;a title="bashmarks page" href="https://github.com/huyng/bashmarks" target="_blank"&gt;bashmarks&lt;/a&gt; نظر مرا به خود جلب کرد‌. با این ابزار دیگر کافیست مثلا برای دسترسی به آدرس ‎/var/www/htdocs/wordpress که محل نصب وردپرس روی هاست لوکالم است تایپ کنم g wordpress!&lt;/p&gt;
-&lt;p&gt;نهایت راحتی‌، اینطور نیست؟ برای نصبش کافیست دستورات زیر را به ترتیب وارد کنید‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;git clone https://github.com/huyng/bashmarks
-
-&lt;span class="nb"&gt;cd &lt;/span&gt;bashmarks
-
-make install
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و خط زیر را به فایل ‎.bashrc یا در صورت استفاده از ZSH به ‎.zshrc اضافه کنید:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.local/bin/bashmarks.sh
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و در آخر تایپ کنید‌:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ویرایش&lt;/strong&gt;: برای ZSH تایپ کنید‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و برای Bash:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و کار تمام است‌. حالا کافیست به دایرکتوری مورد نظر رفته و بوکمارکش کنید‌. مثلا من برای دایرکتوری وردپرس این‌طور عمل کردم‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /var/www/htdocs/wordpress
-
-s wordpress
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و حالا تنها کافیست که برای رفتن به این دایرکتوری تایپ کنم g wordpress. تمامی بوکمارک‌ها هم در فایل ‎.sdirs موجود در دایرکتوری خانگیتان ذخیره می‌شود ;-)&lt;/p&gt;</description><category>Zsh</category><category>zsh bookmark</category><category>نرم افزار</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910103adrsh-r-dr-kht-frmn-bookmark-khnyd.html</guid><pubDate>Thu, 22 Mar 2012 10:58:25 GMT</pubDate></item><item><title>Syntax-highlighting برای خط فرمان ZSH</title><link>http://shahinism.github.io//posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبلا که خط فرمان ZSH را &lt;a title="Zsh دوست شماست‌!" href="http://shahinism.com/blog/1390/11/27/zsh-%d8%af%d9%88%d8%b3%d8%aa-%d8%b4%d9%85%d8%a7%d8%b3%d8%aa%e2%80%8c/"&gt;معرفی کردم‌&lt;/a&gt;، در مورد مزایا و امکاناتش نسبت به بش نیز توضیح دادم. ولی حالا وقتی که کمی درگیر این دستور نوشتن‌ها و ترکیبات مختلفشان شده باشید‌، مطمئنا می‌دانید که رنگ شدن هوشمند دستورات یا همان Syntax-highlighting چقدر می‌تواند در میان انبوه دستورات مفید باشد‌. خوب این‌جا دنیاییست که همه چیز در آن ممکن است و حالا یک آدم خوش ذوق پیدا شده و همچین امکانی را برای ZSH محیا کرده.
-برای دریافت آن می‌توانید به &lt;a title="zsh-syntax-highlighting" href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank"&gt;این‌ لینک&lt;/a&gt; مراجعه کنید‌. و اگر به نصیحت قبلی‌ام گوش کرده‌اید و از oh-my-zsh استفاده می‌کنید‌، به طریق زیر می‌توانید از این افزونه استفاده کنید‌.&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.oh-my-zsh/plugins
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و حالا برای فعال کردن آن خط زیر را به ‎.zshrc موجود در پوشه خانگی اضافه می‌کنیم‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;zsh-syntax-highlighting&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;و برای اعمال تغییرات:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.zshrc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;حال با تایپ دستورات نتیجه‌ای مانند عک&lt;a href="http://shahinism.github.io/wp-content/uploads/highlight.png"&gt;&lt;img class="alignleft size-full wp-image-710" title="highlight" src="http://shahinism.github.io/wp-content/uploads/highlight.png" alt="" width="380" height="56"&gt;&lt;/a&gt; زیر خواهید داشت:&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;</description><category>syntax highlighing</category><category>Zsh</category><category>نرم افزار</category><category>کدباز</category><category>گنو/لینوکس</category><guid>http://shahinism.github.io//posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html</guid><pubDate>Wed, 21 Mar 2012 10:50:32 GMT</pubDate></item><item><title>Zsh دوست شماست‌!</title><link>http://shahinism.github.io//posts/blog13901127zsh-dwst-shmst.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;نمی‌دونم می‌دونین یا نه‌، اما Zshell دوست شماست‌، شاید ندونین‌، ولی این یه حقیقته‌. می‌دونم به چی فکر می‌کنین‌، «‌مگه چه مشکلی با Bash وجود داره‌؟» ‌، در‌واقع هیچ مشکلی‌، جز اینکه اون Zsh نیست‌.
-موضوع این نیست که Bash بده‌، نمی‌خوام ارزشش رو پایین بیارم‌، اما اگه قرار باشه برای یه تیم یار کشی کنیم‌، Bash آخرین نفریه که سر کلاس ورزش انتخاب می‌شه‌.&lt;/p&gt;
-&lt;p&gt;اون زیاد هم همه کاره نیست‌ و هیچ چیزی رو کاملاً عالی انجام نمی‌ده‌، در‌واقع یه جورایی یه نوع Zsh عذاب آوره (‌یا شاید هم Zsh یه نوع بهتری از Bash باشه‌).&lt;/p&gt;
-&lt;p&gt;شروع کار با Zsh خیلی آسونه‌، بخاطر اینکه در بیشتر مواقع مثل Bash نقش بازی می‌کنه‌. پس اگه با Bash اخت شدین نترسین‌، شما می‌تونین Zsh رو بدون از دست دادن ذره‌ای از امکانات Bash امتحان کنید و هنوز هم با یک پوستهٔ بهتر طرف باشید.&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h4&gt;چرا Zsh از Bash بهتره؟&lt;/h4&gt;
-&lt;p&gt;تو ذهن من یکی از مهم‌ترین دلایلی که برای برتری Zsh وجود داره‌ اینه که Zsh توی تکمیل خود‌کار از bash بهتره‌، منظورم اون تکمیل خودکار چلاغی نیست که با نصب Bash نصیبتون می‌شه‌. منظورم یک تکمیل خودکار واقعیه‌، که شامل تمامی دستورات رایج در خط فرمان می‌شه‌، که واقعاً هم سریعه‌. ویژگی تکمیل خودکار همچنین به شما یک لیست قابل پیمایش با کیبورد از انتخاب‌هاتون هم می‌ده که می‌تونه عالی باشه‌.&lt;/p&gt;
-&lt;p style="text-align: center;"&gt;&lt;a href="http://shahinism.github.io/wp-content/uploads/snapshot1.png"&gt;&lt;img class=" wp-image-603  aligncenter" title="snapshot1" src="http://shahinism.github.io/wp-content/uploads/snapshot1.png" alt="نمونه‌ای از تکمیل خودکار Zsh" width="571" height="186"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;خوب می‌دونم الان چی می‌خواین‌، ارزشش چیه؟ خوب بیاین یه نمونه عالی از تکمیل خودکار رو با هم ببینیم‌. بیاین از kill به عنوان یه مثال استفاده کنیم‌. شما تایپ می‌کنین‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;توی bash شما چی می‌بینین؟ لیست تمام فایل‌هایی که توی پوشهٔ حاضرتون قرار داره‌. اینکه برای من یه ویژگی عالی به حساب نمی‌آد‌. حالا چی رخ می‌ده اگه توی Zsh بنویسین‌:&lt;/p&gt;
-&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="nb"&gt;kill &lt;/span&gt;TAB
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;این رخ می‌ده‌:&lt;/p&gt;
-&lt;p style="text-align: center;"&gt;&lt;a href="http://shahinism.github.io/wp-content/uploads/snapshot2.png"&gt;&lt;img class="aligncenter  wp-image-604" title="snapshot2" src="http://shahinism.github.io/wp-content/uploads/snapshot2.png" alt="" width="580" height="217"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;لیستی از تمام پروسه‌ها با شماره‌هاشون (pids)؟ بله خواهش می‌کنم‌.&lt;/p&gt;
-&lt;p&gt;چیز دیگه‌ای که Zsh رو متفاوت می‌کنه تاریخچهٔ اشتراکیشه‌. اگه شما هم مثل منین و تمام طول روز رو توی ترمینال زندگی می‌کنین‌. چیزی بد‌تر از این نیست (بزارین به حساب اغراق‌های من) که یه ترمینال دیگه توی یه تب باز کنین و برای پیدا کردن دستوری که همین الان توی تب بقلی زدین تاریخچه رو پیمایش کنین و ببینین خبری ازش نیست‌. توی Zsh همچین اتفاقی نمی‌افته.&lt;/p&gt;
-&lt;h4&gt;وقت چیز‌های خارق‌العاده‌تری رسیده&lt;/h4&gt;
-
-&lt;p&gt;خوب ما تکمیل خودکار سریع و فوق‌العاده‌ای داریم با یه تاریخچهٔ اشتراکی‌. چقدر چیز شگفت‌انگیز دیگه‌ای می‌شه اونجا پیدا کرد‌؟ یه عالمه‌!&lt;/p&gt;
-&lt;h5&gt;تصحیح خودکار واقعاً عالیه‌&lt;/h5&gt;
-
-&lt;div class="code"&gt;&lt;pre&gt;&amp;amp;gt; &lt;span class="nv"&gt;$ &lt;/span&gt;awesome git:&lt;span class="o"&gt;(&lt;/span&gt;master&lt;span class="o"&gt;)&lt;/span&gt; ✗ gut status
-
-zsh: correct &lt;span class="s1"&gt;'gut'&lt;/span&gt; to &lt;span class="s1"&gt;'git'&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;nyae&lt;span class="o"&gt;]&lt;/span&gt;? y
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;تصحیح خودکار برای دستورات شناخته شده‌. من بدون تو چی کار می‌کردم (جز اینکه دستور رو دوباره تایپ کنم)؟&lt;/p&gt;
-&lt;p&gt;حتی باحال‌تر از تصحیح خودکار‌، برای ابر نرد‌ها (مثل من) حالت Vi و emacs‌ه‌، آره لعنتی‌، شما می‌تونی ویرایشگر محبوبت رو توی خط فرمانت داشته باشی‌. این قابلیت از فرمان‌های جابجایی و وبرایش رایج پشتیبانی می‌کنه‌، مثل حالت‌های command و insert توی vi.&lt;/p&gt;
-&lt;p&gt;آخری ولی مهم مثل بقیه‌، Zsh بسته‌ای به اسم &lt;a title="oh-my-zsh official page" href="https://github.com/robbyrussell/oh-my-zsh"&gt;oh-my-zsh &lt;/a&gt;رو داره که به گفتهٔ وبسایتش‌:&lt;/p&gt;
-&lt;p&gt;یک فریم ورک برای مدیریت تنظیمات zshه که توسط جامعهٔ کاربریش پشتیبانی می‌شه‌. شامل بیش از چهل پلاگین اختیاری (rails، git، OSX، hub، capistrano، brew، ant، macports و غیره) ‌، بیش از هشتاد تم ترمینال برای خوشمزه کردن صبحتون‌، و یک ابزار به روزرسانی خودکار که این امکان رو بهتون می‌ده که آخرین تغییراتی که جامعهٔ پشتیبان به بسته‌ها می‌دن رو در اختیار داشته باشین‌.&lt;/p&gt;
-&lt;p&gt;می‌دونم Bash هم یکی از اینا داره‌، ولی من فکر می‌کنم oh-my-zsh خیلی بهتره‌، بروزرسانی خودکارش‌، داشتن پلاگین‌های عالی و یک جامعهٔ پشتیبانی فعال پشت سرشه که می‌تونه دلیل خوبی برای این طرز تفکر من باشه‌.&lt;/p&gt;
-&lt;p&gt;در کل Zsh فوق‌العادست‌، پس اگه تا حالا اون رو امتحان نکردین‌، شاید وقتشه که این کار رو بکنین‌. اگه شما هم موافقین oh-my-zsh جای خوبی برای شروعه‌.&lt;/p&gt;
-&lt;p&gt;اگه شما هم از طرفدارای Zsh هستین و چند تا از تکنیک‌های خاص خودتون رو بلدین‌، تو بخش نظرات اون‌ها رو با من و باقی خواننده‌ها به اشتراک بذارین‌.&lt;/p&gt;
-&lt;p&gt;ویرایش: اگه قصد یادگیری بیشتر در مورد Zsh دارین‌، &lt;a title="ZSH FAQ" href="http://zsh.sourceforge.net/FAQ/" target="_blank"&gt;Zsh FAQ &lt;/a&gt;رو امتحان کنین‌. خیلی کامله و خیلی بهتر از یه پست وبلاگی به ویژگی‌های Zsh پرداخته ;-)&lt;/p&gt;
-&lt;p&gt;همچنین‌،&lt;a title="Hacker News ZSH" href="http://news.ycombinator.com/item?id=3533895" target="_blank"&gt; صحبت‌های بیشتر در این مورد توی Hacker News.&lt;/a&gt;&lt;/p&gt;
-&lt;p style="text-align: center;"&gt;&lt;a title="Source" href="http://mikegrouchy.com/blog/zsh-is-your-friend.html" target="_blank"&gt;&lt;strong&gt;منبع&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description><category>bash</category><category>linux</category><category>Shell</category><category>Zsh</category><category>بررسی</category><category>نرم افزار</category><category>کدباز</category><guid>http://shahinism.github.io//posts/blog13901127zsh-dwst-shmst.html</guid><pubDate>Thu, 16 Feb 2012 12:19:25 GMT</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهینیسم (zsh)</title><link>http://shahinism.github.io/</link><description></description><atom:link href="http://shahinism.github.io/categories/zsh.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Fri, 14 Feb 2014 14:59:18 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Antigen جعبه ابزار ZSH که فعلا استفاده‌اش نمی‌کنم</title><link>http://shahinism.github.io/posts/antigen.html</link><description>&lt;p&gt;قبلا در مورد &lt;a class="reference external" href="http://zsh.org"&gt;ZSH&lt;/a&gt; و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (&lt;a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html"&gt;اینجا&lt;/a&gt; و &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html"&gt;این جا&lt;/a&gt;). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من &lt;a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh"&gt;Oh-My-ZSH&lt;/a&gt; همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &amp;gt; antigen.zsh
+&lt;span class="nb"&gt;source &lt;/span&gt;antigen.zsh
+&lt;/pre&gt;
+&lt;p&gt;و پس از آن از دستور &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;antigen&lt;/a&gt; برای لود یک تم‌، یا یک مجموعه پلاگین خاص در &lt;a class="reference external" href="http://zsh.org"&gt;ZSH&lt;/a&gt; تان بهره بگیرید‌، مثلا:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+antigen bundle zsh-users/zsh-syntax-highlighting
+&lt;/pre&gt;
+&lt;p&gt;خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;antigen&lt;/a&gt; انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.&lt;/p&gt;
+&lt;p&gt;به قول توسعه دهندهٔ &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; کاربران زیادی برای &lt;a class="reference external" href="http://zsh.org"&gt;ZSH&lt;/a&gt; پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+antigen theme XsErG/zsh-themes themes/lazyuser
+&lt;/pre&gt;
+&lt;p&gt;خوب حالا اگر احساس نیاز به &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.&lt;/p&gt;
+&lt;p&gt;و اما سوال مهم:&lt;/p&gt;
+&lt;div class="section" id="antigen"&gt;
+&lt;h2&gt;چرا از &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; استفاده نمی‌کنم؟&lt;/h2&gt;
+&lt;p&gt;حقیقتش &lt;a class="reference external" href="http://antigen.sharats.me/"&gt;Antigen&lt;/a&gt; با تمام خوبی‌هایش‌، سرعت لود prompt را در اولین بازگشایی ترمینال‌، خیلی‌، خیلی پایین می‌آورد (منظورم نهایتا یک ثانیه است D:). این برای منی که دائما در حال تغییر ترمینال هستم‌، خیلی زود خسته کننده می‌شود و به خاطر همین‌، فعلا بی‌خیال آن شده‌ام. به همین راحتی. اما همانطور که توسعه دهنده گفته‌، این اسکریپت هنوز در وضعیت beta قرار دارد و مطمئنا در آینده بهتر از این خواهد بود. این است که دلم خواست معرفی‌اش کنم ;-)&lt;/p&gt;
+&lt;/div&gt;</description><category>zsh</category><category>oh-my-zsh</category><category>antigen</category><guid>http://shahinism.github.io/posts/antigen.html</guid><pubDate>Thu, 29 Aug 2013 11:25:33 GMT</pubDate></item></channel></rss>

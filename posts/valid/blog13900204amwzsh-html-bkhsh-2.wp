@@ -1,0 +1,191 @@
+.. title: آموزش HTML بخش ۲
+.. date: 2011/4/24 00:32:15 
+<html><body><p>خوب‌، در <a title="آموزش HTML بخش ۱" href="http://shahinism.com/1390/02/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-html-%d8%a8%d8%ae%d8%b4-%db%b1/" target="_blank"> بخش اول </a> با ساختار کلی یک سند HTML آشنا شدیم‌، و نحوهٔ ایجاد آن را یاد گرفتیم‌. در این بخش می‌خواهیم با امکاناتی که برای <span style="color: #3366ff;"><strong>تایپوگرافی</strong> در HTML قرار داده شده آشنا شویم‌.
+
+
+<span style="color: #ff0000;"><strong>نکته‌: </strong>بعضی از تگ‌های استفاده شده در این آموزش در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از<span style="color: #800000;"> CSS در کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری سریع‌تر CSS -که در آینده قصد بر آن داریم- کند‌.
+
+</p><h3><strong> انواع تیتر‌ها‌: </strong></h3>
+
+در HTML تگ‌هایی برای شناساندن <span style="color: #800080;"><strong>تیتر‌ها</strong> به مرور‌گر و در نتیجه نمایش مناسب آن‌ها در نظر گرفته شده است که ساختاری برابر <span style="color: #99cc00;"><strong>&lt;Hn&gt;</strong> دارند‌. در این نوع تگ حرف <span style="color: #ff0000;"><strong>n</strong> برابر با مقداری است که از یک شروع می‌شود‌، و به نسبت بزرگ‌تر شدن این مقدار‌، اندازهٔ تیتر به کوچک‌تر شدن میل می‌کند‌. برای درک بهتر این موضوع سعی می‌کنیم‌، در صفحه‌ای که قبلا ساختیم یک تیتر ایجاد کنیم‌:
+
+
+
+```bash
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;First HTML!&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body text="yellow" bgcolor="brown"&gt;
+
+&lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+```
+
+
+
+نتیجهٔ این کد برابر با تصویر زیر می‌باشد‌. همانطور که می‌بینید عبارت Hello World به صورت بزرگ نوشته شده است‌.
+
+
+
+<a href="http://shahinism.com/wp-content/uploads/2011/04/html1-7.png"><img class="aligncenter size-medium wp-image-272" title="html1-7" src="http://shahinism.com/wp-content/uploads/2011/04/html1-7-300x74.png" alt="" width="300" height="74"></a>
+
+برای درک بهتر مقدار n در &lt;Hn&gt; از دو مقدار دیگر <span style="color: #cc99ff;"><strong>&lt;h2&gt;&lt;h3&gt;</strong> به صورت زیر استفاده می‌کنم‌:
+
+
+
+```bash
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;First HTML!&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body text="yellow" bgcolor="brown"&gt;
+
+&lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;h2&gt;This is an HTML Document&lt;/h2&gt;
+
+&lt;h3&gt;Season 2&lt;h3&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+```
+
+
+
+<a href="http://shahinism.com/wp-content/uploads/2011/04/html1-6.png"><img class="aligncenter size-medium wp-image-271" title="html1-6" src="http://shahinism.com/wp-content/uploads/2011/04/html1-6-300x96.png" alt="" width="300" height="96"></a>همانطور که می‌بینید عبارات نوشته شده با اندازه‌های متفاوت به نمایش در آمده‌اند‌. یکی از مهم‌ترین مزایای استفاده از این تگ‌ها در <strong><span style="color: #3366ff;">Seo</strong> است که به موتور‌های جستجو امکان می‌دهد که به راحتی بخش‌های مختلف سند را <span style="color: #ffcc00;"><strong>درک</strong> کنند‌.
+
+<h3>انواع نوشته‌ها‌:</h3>
+
+<ul><li><span style="color: #666699;"><strong>Bold :</strong> برای نوشتن به صورت تو پر یا همان bold از تگ <span style="color: #666699;"><strong>&lt;b&gt;&lt;/b&gt;</strong> استفاده می‌شود‌.</li>
+</ul><ul><li><span style="color: #008080;"><em>Italic : </em>برای نوشتن به صورت مورب نیز از تگ<span style="color: #339966;"><strong>&lt;i&gt;&lt;/i&gt;</strong> استفاده می‌شود‌.</li>
+</ul><ul><li><span style="color: #808080;"><del>Strike :</del> برای نوستن به صورت رو خط دار از تگ <strong><span style="color: #ff0000;">&lt;strike&gt;&lt;/strike&gt;</strong> استفاده می‌شود‌.</li>
+</ul><ul><li><span style="color: #00ccff;"><span style="text-decoration: underline;">Underline : برای نوشتن به صورت زیر خط دار از تگ <strong><span style="color: #00ccff;">&lt;u&gt;&lt;/u&gt;</strong> استفاده می‌شود‌.</li>
+</ul>
+
+خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی <span style="color: #ff9900;"><strong>زیبا‌تر</strong> کنیم؛ برای این کار از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌:
+
+
+
+```bash
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;First HTML!&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body text="yellow" bgcolor="brown"&gt;
+
+&lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;h3&gt;This is an HTML Document &lt;i&gt;season #2&lt;/i&gt;&lt;/h3&gt;
+
+This is an free tutorial for &lt;b&gt;HTML&lt;/b&gt; from &lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+```
+
+
+
+<a href="http://shahinism.com/wp-content/uploads/2011/04/html1-5.png"><img class="aligncenter size-medium wp-image-270" title="html1-5" src="http://shahinism.com/wp-content/uploads/2011/04/html1-5-300x81.png" alt="" width="300" height="81"></a>همانطور که می‌بینید توانستیم با تگ‌هایی ساده یک تایپوگرافی معقول ایجاد کنیم‌. تنها نکته‌ای که در مثال اخیر باید مورد <span style="color: #ff0000;"><strong>توجه</strong> قرار گیرد‌، این قسمت است‌: &lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;همانطور که می‌بینید از دو تگ زیر خط و نوشتهٔ تو پر به صورت همزمان استفاده شده‌. ولی تگ‌ها از <span style="color: #999999;"><strong>آخر به اول بسته شده‌</strong>.
+
+<h3>موقعیت نوشته‌:</h3>
+
+برای تعیین موقعیت نوشته‌ها نیز در HTML امکاناتی در نظر گرفته شده‌. که به تعدادی از آن‌ها اشاره می‌کنیم‌:
+
+<ul><li>Center: برای <span style="color: #cc99ff;"><strong>وسط‌چین</strong> کردن نوشته استفاده می‌شود‌.</li>
+</ul><ul><li>&lt;br&gt; : برای <span style="color: #ff6600;"><strong>شکستن</strong> خط و شروع در خط جدید مورد استفاده قرار می‌گیرد‌.</li>
+</ul><ul><li>&lt;sub&gt; و &lt;sub&gt; : که برای نمایش <span style="color: #3366ff;"><strong>اندیس و توان</strong> مورد استفاده قرار می‌گیرد‌.</li>
+</ul>
+
+اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند ایجاد کنیم‌:
+
+
+
+```bash
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;First HTML!&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body text="yellow" bgcolor="brown"&gt;
+
+&lt;center&gt;&lt;h1&gt;Hello World&lt;/h1&gt;&lt;/center&gt;
+
+&lt;h3&gt;This is an HTML Document &lt;i&gt;season &lt;sub&gt;#2&lt;/sub&gt;&lt;/i&gt;&lt;/h3&gt;
+
+This is an free tutorial for &lt;b&gt;HTML&lt;/b&gt; from: &lt;br&gt;&lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+```
+
+
+
+<a href="http://shahinism.com/wp-content/uploads/2011/04/html1-4.png"><img class="aligncenter size-medium wp-image-269" title="html1-4" src="http://shahinism.com/wp-content/uploads/2011/04/html1-4-300x62.png" alt="" width="300" height="62"></a>
+
+همانطور که در تصویر زیر می‌بینیم <span style="color: #0d96f1;"><strong>#</strong><span style="color: #00ccff;"><strong>۲</strong>مقداری به پایین منتقل شده‌، هم‌چنین آدرس سایت نیز با توجه به اینکه در ادامهٔ خط نوشته شده‌، ولی پایین‌تر آمده‌. واضح‌ترین تغییر نیز در این مثال عبارت Hello World است که به وسط صفحه تغییر مکان داده‌.
+
+<h3>تغییر قلم‌:</h3>
+
+برای تغییر قلم نوشته <span style="color: #666699;"><strong>(فونت‌)</strong> نیز می‌توانید از تگ فونت استفاده کنید‌. نمونه‌ای از استفاده از این قلم را در کد زیر ببینید‌:
+
+
+
+```bash
+
+&lt;html&gt;
+
+&lt;title&gt;Font Change&lt;/title&gt;
+
+&lt;/html&gt;
+
+&lt;body&gt;
+
+Hi my friends &lt;font face="tahoma" size=24 color=red&gt;in this page we have 2&lt;/font&gt; different font.
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+```
+
+
+
+نتیجه‌ی مثال زیر را در تصویر زیر می‌بینیم‌:
+
+
+
+<a href="../wp-content/uploads/2011/04/html1-3.png"><img class="aligncenter" title="html1-3" src="../wp-content/uploads/2011/04/html1-3-300x39.png" alt="" width="300" height="39"></a>
+
+
+
+لازم به <span style="color: #ff0000;"><strong>ذکر</strong> است‌، مرور‌گر‌ها به صورت <span style="color: #3366ff;"><strong>پیش‌فرض</strong> فونتی را برای نمایش نوشته در نظر می‌گیرند که با مراجعه به بخش تنظیمات هر مرورگر قابل <span style="color: #ffcc00;">تغییر است‌. فونت تعیین شده در کد بالا در صورتی که روی سیستم کاربر موجود باشد‌، نمایش داده می‌شود‌، در غیر این صورت از فونت پیش‌فرض استفاده می‌شود‌. در بخش آموزش CSS روشی از CSS3 را می‌آموزیم که این <span style="color: #99cc00;"><strong>نقظه ضعف</strong> را پوشش می‌دهد‌.</body></html>

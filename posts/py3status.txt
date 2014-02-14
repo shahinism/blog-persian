@@ -3,7 +3,7 @@
 .. description: 
 .. link: 
 .. slug: py3status
-.. tags: i3, i3status, python, py3status, i3bar
+.. tags: i3, i3status, Python, py3status, i3bar
 
 قبلا در مورد i3_ `حرف زده‌ام <http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html>`_ و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش بود) اطلاعات وضعیت سیستمم را در i3bar `نمایش می‌دهم <http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html>`_. خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های i3status_ این است که اطلاعات را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک می‌کند. ولی بدبختی این i3status_ هم این است که به قدر کافی قابل گسترش نیست و ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!
 
