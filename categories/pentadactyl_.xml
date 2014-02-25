@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهینیسم (Emacs)</title><link>http://shahinism.github.io/</link><description></description><atom:link href="http://shahinism.github.io/categories/emacs.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Tue, 25 Feb 2014 18:59:01 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>این ایمکس دوست داشتنی (بوکمارک لینک‌ها از فایرفاکس به org-mode)</title><link>http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html</link><description>&lt;p&gt;نمی‌دانم برای شما هم مثل من پیش آمده که دلتان بخواهد کل لینک‌های جالبی که فکر می‌کنید ممکن است در آینده به دردتان بخورد را همراه با نکاتی که در وب پیدا می‌کنید در یک فایل متنی ساده و به دور از هر پیچیدگی خاصی روی سیستم خود داشته باشید و هر وقت دلتان خواست با ابزار‌های جستجوی عجیب و غریبتان پی موارد مورد نظر‌، شخمش بزنید یا نه؟&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهینیسم (pentadactyl_)</title><link>http://shahinism.github.io/</link><description></description><atom:link href="http://shahinism.github.io/categories/pentadactyl_.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Tue, 25 Feb 2014 18:59:01 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>این ایمکس دوست داشتنی (بوکمارک لینک‌ها از فایرفاکس به org-mode)</title><link>http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html</link><description>&lt;p&gt;نمی‌دانم برای شما هم مثل من پیش آمده که دلتان بخواهد کل لینک‌های جالبی که فکر می‌کنید ممکن است در آینده به دردتان بخورد را همراه با نکاتی که در وب پیدا می‌کنید در یک فایل متنی ساده و به دور از هر پیچیدگی خاصی روی سیستم خود داشته باشید و هر وقت دلتان خواست با ابزار‌های جستجوی عجیب و غریبتان پی موارد مورد نظر‌، شخمش بزنید یا نه؟&lt;/p&gt;
 &lt;p&gt;حقیقتش از همان اوایلش که وبگردی یاد گرفتم‌، تمام فهم و درکم از بوکمارک به همین یک پاراگراف بالا خلاصه می‌شد. این بود که ابزار‌هایی مثل &lt;a class="reference external" href="http://del.icio.us"&gt;Delicious&lt;/a&gt; یا &lt;a class="reference external" href="http://diigo.com"&gt;Diigo&lt;/a&gt; برایم زیادی پیچیده و دور از دسترس (اینترنت ایرانی است دیگر‌، سر بزنگاه خوابش می‌برد D:) به نظر می‌رسیدند.&lt;/p&gt;
 &lt;p&gt;این بود که با کمی جستجو و انگول کردن ایمکس و چند تا ابزار دیگر مورد استفاده‌ام‌،‌ فعلا به نتیجهٔ قابل قبولی رسیده‌ام که در این پست قصد بازگو کردنش را دارم.&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
@@ -140,50 +140,4 @@ xdg-mime query default x-scheme-handler/org-protocol
 &lt;p&gt;همانطور که می‌بینید این دستور را به میانبر a متصل کردم که در واقع بوکمارک توکار خود &lt;a class="reference external" href="http://5digits.org/pentadactyl/"&gt;pentadactyl&lt;/a&gt; را که از بوکمارک فایرفاکس استفاده می‌کرد رونویسی کرده و از کار می‌اندازد. خوب حالا دیگر تقریبا همه چیز تمام است. می‌توان از وب‌گردی با خیال راحت‌تری لذت برد.&lt;/p&gt;
 &lt;p&gt;پی‌نوشت ۱: این مطلب چیزی نیست که ایدهٔ ناب خودم باشد. قبلا هم خیلی‌های همچین چیزی را پیاده سازی کرده‌اند و استفاده می‌کنند. این است که تمامی مطالب ذکر شده در این‌جا را می‌توانید از توی لینک‌های داخل مطلب هم پیدا کیند. کمک هم خواستید همان دور و بر‌ها چیز‌های خوبی پیدا می‌شود.&lt;/p&gt;
 &lt;p&gt;پی‌نوشت ۲: توی این تنظیمات سلیقهٔ شخصی و تنبلی بنده خیلی دخیل بوده. خوشحال می‌شود روش‌های شما را هم بدانم ;-)&lt;/p&gt;
-&lt;/div&gt;</description><category>Emacs</category><category>org-mode</category><category>pentadactyl_</category><guid>http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html</guid><pubDate>Tue, 18 Feb 2014 15:08:09 GMT</pubDate></item><item><title>این ایمکس دوست داشتنی (غلط‌گیر املایی)</title><link>http://shahinism.github.io/posts/emacs-flyspell-mode.html</link><description>&lt;p&gt;وقتی که بچه‌تر بودم‌، به بالا بودن نمرات املایم افتخار می‌کردم. ولی خوب انگار آن‌ها ربط مستقیمی به دایرهٔ لغات مورد استفاده‌ام در آن زمان‌ها داشت. به هر حال الان خیلی پیش می‌آید که غلط بنویسم‌! با وسط آمدن پای زبان انگلیسی این مشکل بیشتر خود‌نمایی می‌کند. به هر حال‌، خیلی خوب می‌شود که ویرایشگر محبوبم‌، در درست نوشتن‌هایم کمکم کند.&lt;/p&gt;
-&lt;div class="section" id="aspell"&gt;
-&lt;h2&gt;تنظیم aspell&lt;/h2&gt;
-&lt;p&gt;خوشبختانه &lt;a class="reference external" href="http://shahinism.github.io/categories/emacs.html"&gt;Emacs&lt;/a&gt; به صورت پیش‌فرض بستهٔ &lt;a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5"&gt;ispell&lt;/a&gt; را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض &lt;a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5"&gt;ispell&lt;/a&gt; می‌کنم.&lt;/p&gt;
-&lt;pre class="code cl literal-block"&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;ispell-program-name&lt;/span&gt; &lt;span class="s"&gt;"aspell"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;ispell-list-command&lt;/span&gt; &lt;span class="s"&gt;"list"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;دستور اول متغیر برنامهٔ غلط‌گیر املایی را به &lt;a class="reference external" href="http://aspell.net/"&gt;aspell&lt;/a&gt; تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ &lt;a class="reference external" href="http://aspell.net/"&gt;aspell&lt;/a&gt; مقدار list است.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id1"&gt;
-&lt;h2&gt;چرا aspell؟&lt;/h2&gt;
-&lt;p&gt;خوشبختانه این برنامه‌، به زحمت &lt;a class="reference external" href="https://fa.wikipedia.org/wiki/%D8%A2%D9%84%D9%86_%D8%A8%D8%A7%D8%BA%D9%88%D9%85%DB%8C%D8%A7%D9%86"&gt;آلن باغومیان&lt;/a&gt; عزیز‌، صاحب یک دیکشنری به درد بخور فارسی هم شده. این دیکشنری را که احتمالا همراه &lt;a class="reference external" href="http://aspell.net/"&gt;aspell&lt;/a&gt; روی سیستم‌تان نصب نمی‌شود را می‌توانید از &lt;a class="reference external" href="ftp://ftp.gnu.org/gnu/aspell/dict/0index.html"&gt;این‌جا&lt;/a&gt; بگیرید. راهنمای کامپایل و نصبش همراه خود بسته است (عملا یک &lt;strong&gt;‎./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install&lt;/strong&gt; ساده باید کارتان را راه بیاندازد.).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;نحوهٔ کار&lt;/h2&gt;
-&lt;p&gt;در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع &lt;strong&gt;ispell-change-dictionary&lt;/strong&gt; (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:&lt;/p&gt;
-&lt;pre class="code cl literal-block"&gt;
-&lt;span class="nv"&gt;M-x&lt;/span&gt; &lt;span class="nv"&gt;ispell-change-dictionary&lt;/span&gt; &lt;span class="nv"&gt;fa&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.&lt;/p&gt;
-&lt;div class="section" id="flyspell-mode"&gt;
-&lt;h3&gt;flyspell-mode&lt;/h3&gt;
-&lt;p&gt;با فراخوانی این مد‌، کل بافر را تحت تاثیر قرار می‌دهید. در صورت بر خورد با هر غلط املایی‌، لغت تغییر رنگ داده و می‌توانید با کلیک وسط ماوس آن پیشنهاد‌های سیستم‌را انتخاب کنید.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="ispell-word-ispell-word"&gt;
-&lt;h3&gt;&lt;img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"&gt; ispell-word&lt;/h3&gt;
-&lt;p&gt;این دستور‌، به درد موقعی می‌خورد که نمی‌خواهید یک flyspell-mode را صدا کنید. به هر حال این مد همیشه هم آن‌قدر که باید خوب عمل نمی‌کند (بیشترین تاثیر را زمانی دارد که کلمه بعد از فراخوانی مد تایپ شود). البته برای رفع مشکلات این مد می‌توانید از &lt;strong&gt;flyspell-region&lt;/strong&gt; که محدودهٔ انتخاب شده را بررسی می‌کند استفاده کنید. ولی گاها دوست دارید که تنها یک کلمه که مطمئن نیستید را بررسی کنید. آن وقت است که &lt;strong&gt;ispell-word&lt;/strong&gt; دستور مورد نظرتان است. تنها کافیست نشان‌گر را روی لغت ببرید و این دستور را بزنید.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;کلید‌های میانبر&lt;/h2&gt;
-&lt;p&gt;بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:&lt;/p&gt;
-&lt;pre class="code cl literal-block"&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"&amp;lt;f8&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'ispell-word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;global-set-key&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kbd&lt;/span&gt; &lt;span class="s"&gt;"C-S-&amp;lt;f8&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;'flyspell-mode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;همین‌کار را می‌توانید برای &lt;strong&gt;ispell-change-dictionary&lt;/strong&gt; هم انجام دهید. ولی &lt;a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5"&gt;ispell&lt;/a&gt; این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:&lt;/p&gt;
-&lt;pre class="code cl literal-block"&gt;
-&lt;span class="nv"&gt;-*-&lt;/span&gt; &lt;span class="nv"&gt;ispell-dictionary:&lt;/span&gt; &lt;span class="s"&gt;"fa"&lt;/span&gt; &lt;span class="nv"&gt;-*-&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h2&gt;مشکلات حاضر&lt;/h2&gt;
-&lt;p&gt;مشکل این است که نمی‌توان دیکشنری را به صورت دو زبانه و همزمان داشت. از طرفی در صفحهٔ ویکی &lt;a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5"&gt;ispell&lt;/a&gt; به غلط‌گیر &lt;a class="reference external" href="http://wiki.openoffice.org/wiki/Main_Page"&gt;Hunspell&lt;/a&gt; اشاره شده که روش خوبی هم برای بررسی متن و تغییر خودکار زبان غلط‌گیر دارد. با توجه به استفاده از این دیکشنری در OpenOffice‌ها خیلی وسوسه شده‌ام که آن را هم تست کنم. به زودی در مورد آن‌ها هم خواهم نوشت.&lt;/p&gt;
-&lt;/div&gt;</description><category>Emacs</category><category>flyspell</category><category>aspell</category><guid>http://shahinism.github.io/posts/emacs-flyspell-mode.html</guid><pubDate>Mon, 20 May 2013 06:13:10 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>Emacs</category><category>org-mode</category><category>pentadactyl_</category><guid>http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html</guid><pubDate>Tue, 18 Feb 2014 15:08:09 GMT</pubDate></item></channel></rss>
