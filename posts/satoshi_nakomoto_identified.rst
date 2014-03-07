@@ -17,11 +17,11 @@
 
 مقالات تکمیلی در این رابطه را می‌توانید از لینک‌های زیر پیگیری کنید. ولی بحث جالبی در شبکهٔ reddit_ در گرفته که خواندن کامنت‌هایش خالی از لطف نیست. مثلا یک بخش جالبش همین است که نویسندهٔ مقالهٔ اصلی در NewsWeek_ می‌گوید که ایمیلش را از یک شرکت فروش قطار مدل (؟) به دست آورده‌، و نمی‌دانیم چرا این شرکت یک همچین کاری کرده و ایمیل یکی از مشتریانش را در اختیار شخص ثالث قرار داده‌!
 
-`خبر در ردیت <http://www.reddit.com/r/Bitcoin/comments/1zpmo8/the_face_behind_bitcoin_satoshi_nakamoto_is/>`_
+* `خبر در ردیت <http://www.reddit.com/r/Bitcoin/comments/1zpmo8/the_face_behind_bitcoin_satoshi_nakamoto_is/>`_
+* `خبر در تک کرانچ <http://techcrunch.com/2014/03/06/is-this-the-real-satoshi-nakamoto/?ncid=rss>`_
+* `خبر در وایرد <http://www.wired.com/wiredenterprise/2014/03/satoshi-nakamoto-identified/>`_
 
-`خبر در تک کرانچ <http://techcrunch.com/2014/03/06/is-this-the-real-satoshi-nakamoto/?ncid=rss>`_
-
-`خبر در وایرد <http://www.wired.com/wiredenterprise/2014/03/satoshi-nakamoto-identified/>`_
+**به روز رسانی:** در `این پست <http://gigaom.com/2014/03/06/dorian-satoshi-nakamoto-denies-founding-bitcoin-in-ap-interview/>`_ می‌توانید نتیجهٔ مصاحبه با خود ساتوشی را بخوانید که همه چیز را انکار کرده.
 
 .. _Bitcoin: https://en.wikipedia.org/wiki/Bitcoin
 .. _reddit: http://reddit.com
