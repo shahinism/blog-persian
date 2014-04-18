@@ -1,6 +1,6 @@
 /*
 Theme Name: Manifest
-Theme URI: 
+Theme URI:
 Description: A clean and streamlined theme that focuses on the content and not the distractions.
 Version: 1.01
 Author: Jim Barraud
@@ -21,46 +21,46 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
 }
 body {
-	line-height: 1;
+        line-height: 1;
 }
 ol, ul {
-	list-style: none;
+        list-style: none;
 }
 blockquote, q {
-	quotes: none;
+        quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+        content: '';
+        content: none;
 }
 
 /* remember to define focus styles! */
 :focus {
-	outline: 0;
+        outline: 0;
 }
 
 /* remember to highlight inserts somehow! */
 ins {
-	text-decoration: none;
+        text-decoration: none;
 }
 del {
-	text-decoration: line-through;
+        text-decoration: line-through;
 }
 
 /* tables still need 'cellspacing="0"' in the markup */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
 }
 
 /* Global Styles
@@ -79,12 +79,12 @@ strong{
 
 a:link,
 a:visited{
-  color: #9C8A6A;
+  color: #9C8A6A !important;
   text-decoration: none;
 }
 a:hover,
 a:active{
-  color: #3E372B;
+  color: #3E372B !important;
   text-decoration: underline;
 }
 
@@ -200,7 +200,7 @@ input[type=submit]:focus{
   width: 500px;
   text-align: center;
   position: relative;
-  
+
 }
 #siteDescription{
   font-size: 1.2em;
@@ -580,7 +580,7 @@ input[type=submit]:focus{
   background: #F2F2F2 url(images/commentReply.gif) no-repeat;
 }
 #coreContent #comments .comment .children li .leaveComment{
-  
+
   background: url(images/commentBottom.png) repeat-x left bottom;
 }
 #coreContent #comments .comment .children li.depth-3 .comment-body{
@@ -607,7 +607,7 @@ input[type=submit]:focus{
   left: 10px;
   width: 32px;
   height: 32px;
-  
+
 }
 #cancel-comment-reply{
   margin-top: 15px;
@@ -633,7 +633,7 @@ input[type=submit]:focus{
   font-size: 1.2em;
   font-style: italic;
   top: 0px;
-  
+
 }
 #coreContent #comments .comment .children .comment-meta{
   top: 20px;
@@ -701,7 +701,7 @@ legend span{
 
 .leaveComment{
   padding: 8px 0 19px;
-  
+
 }
 #coreContent #comments .comment.depth-1 fieldset{
   padding-right: 10px;
@@ -720,7 +720,7 @@ legend span{
   float: none;
   width: auto;
   margin-right: 0;
-  
+
 }
 .commentForm{
   font-size: 1.1em;
@@ -959,7 +959,7 @@ ul#recentPosts li{
   -moz-border-radius: 16px;
   background-position: left 5px;
   font-size: 1.4em;
-  
+
 }
 
 /* Footer
@@ -1062,9 +1062,9 @@ a.comment-edit-link:visited{
 #recentPosts li:after,
 #galleryNav:after,
 #galleryNav_controls:after{
-  content: "."; 
-  display: block; 
-  height: 0; 
-  clear: both; 
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
   visibility: hidden;
 }
