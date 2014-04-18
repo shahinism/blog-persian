@@ -102,3 +102,14 @@ input[type="text"], textarea {
 #disqus_thread .serif .post-message p, .serif .top-thread-post p, .serif .top-user p{
     font-family:'Droid Arabic Naskh' !important;
 }
+
+#lfm {
+    direction:ltr !important;
+    padding: 0 0 !important;
+    font-size: 13px !important;
+}
+
+#siteDescription {
+    width: 496px;
+    margin: 10px auto 25px;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهینیسم (MP3)</title><link>http://shahinism.github.io/</link><description></description><atom:link href="http://shahinism.github.io/categories/mp3.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Fri, 18 Apr 2014 17:50:28 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>معرفی beet، دست راست شما برای مدیریت آرشیو موزیک!</title><link>http://shahinism.github.io/posts/beet-introduction.html</link><description>&lt;p&gt;بچه که بودم‌، زیاد علاقه به گوش کردن موسیقی نداشتم. بیشتر سینما بود که جذبم می‌کرد. اما بعد‌ها بیشتر تنها شدم و موسیقی شد دوای فکر نکردن به چیز‌های بی‌خودم. الان اما دیگر موسیقی برایم دُز روزانه‌ای دارد که اگر فراموش شود‌، خمارِ خمار خواهم بود!&lt;/p&gt;
+&lt;p&gt;حالا دیگر با وجود اینترنت یک دنیا موسیقی نو می‌توان کشف کرد. اما این گستردگی منابع کشف همیشه برایم یک دردسر داشت‌، آن هم که نمی‌توانستم تِرک‌هایم را آن‌طور که باید و شاید دسته‌بندی کنم و موقع شنیدن‌، به سرعت به همان چیزی که می‌خواهم برسم. البته در مورد موسیقی فرنگی که وضع خیلی خیلی بهتر بود. موسیقی ایرانی را به لطف این &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13890115mwsyqy_dr_wb_frsy.html"&gt;سایت‌های دانلود موسیقی ندید بدید‌مان&lt;/a&gt; فقط و فقط باید دانه دانه گوش کرد تا بفهمی که کدام به کدام است!&lt;/p&gt;
+&lt;p&gt;کسانی که MP3 و فرمت‌های مشابهش را ساختند‌، آن‌قدر شعور داشتند که بدانند باید به دنبال راهی برای دسته‌بندی بهتر آرشیو‌های بزرگ &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13911119dryft-mtn-trnhhy-mp3-b-lynwkhs.html"&gt;تنگش&lt;/a&gt; بچسبانند که همان تَگ‌ها هستند. اما متاسفانه اکثر موسیقی‌های روی اینترنت (خصوصا وطنی‌هایش) هیچ قانون خاصی در استفاده از تگ‌ها ندارند و گاها (باز هم در نمونه ایرانی‌اش‌، اکثراً) تگ‌ها اشتباهات زیادی دارند.&lt;/p&gt;
+&lt;p&gt;دسته‌بندی دستی این همه آهنگ آرشیو شدهٔ شلخته هم که گاو نر می‌خواهد و مرد کهن. قبلا چند باری ابزار‌های مشابه دیده بودم‌، ولی شیوهٔ کار &lt;a class="reference external" href="http://beets.radbox.org/"&gt;beet&lt;/a&gt; خیلی خیلی به دلم نشسته است. بعد از نصبش کافیست یک همچین فایلی بسازد:&lt;/p&gt;
+&lt;pre class="code sh literal-block"&gt;
+~/.config/beet/config.yaml:
+-----------------------------------------------------
+directory:  /media/Entertainment/Music
+library: /media/Entertainment/Music/musiclibrary.lbl
+plugins:
+       fromfilename
+       fetchart
+       embedart
+&lt;/pre&gt;
+&lt;p&gt;و هر وقت که آلبوم جدیدی دانلود کردید بزنید:&lt;/p&gt;
+&lt;pre class="code sh literal-block"&gt;
+:~ beet import /PATH/TO/YOUR/NEW/ALBUM
+&lt;/pre&gt;
+&lt;p&gt;خودش برای‌تان آهنگ‌ها را برچسب می‌کند‌، نامشان را بر اساس قوائد از پیش تعیین شده مشخص می‌کند و می‌اندازت‌شان توی دایرکتوری موسیقی‌ای که بهش نشان داده‌اید. برای من جدای از این همه مزیتش‌، این خوبی را داشت که از شَر ترک‌های تکراری خلاصم کرد! موقع تگ گذاری‌، زمان آهنگ‌ و حتی مدل انتشارش را هم چک می‌کند و اگر نمونهٔ مشابهی در پایگاه داده موسیقی‌تان (همان فایل lbl) که در تنظیمات مشخص کردیم باشد‌، ازتان می‌پرسد که کدام یکی را ذخیره کند. و این به این معنی است که طراح نرم‌افزار فکر هر موقعیتی را کرده. حالا مثلا بخشی از دایرکتوری موسیقی‌ام به این شکل است:&lt;/p&gt;
+&lt;pre class="code sh literal-block"&gt;
+|-- Tiësto
+|   &lt;span class="sb"&gt;`&lt;/span&gt;-- Club Life, Volume Two_ Miami
+|       |-- 01 Chasing Summers &lt;span class="o"&gt;(&lt;/span&gt;Miami&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 02 We Own The Night.mp3
+|       |-- 03 What Can We Do &lt;span class="o"&gt;(&lt;/span&gt;A Deeper Love&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;Third Party remix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 04 If A Lie Was Love &lt;span class="o"&gt;(&lt;/span&gt;Baggi Begovic KNAL mix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 05 Somebody I Used To Know &lt;span class="o"&gt;(&lt;/span&gt;Tiësto remix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 06 Paradise &lt;span class="o"&gt;(&lt;/span&gt;Tiësto remix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 07 Walls.mp3
+|       |-- 08 Young Blood &lt;span class="o"&gt;(&lt;/span&gt;Tiësto &amp;amp; Hardwell remix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 09 Life.mp3
+|       |-- 10 Long Time.mp3
+|       |-- 11 In My Mind &lt;span class="o"&gt;(&lt;/span&gt;Axwell mix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 12 Arena.mp3
+|       |-- 13 Can&lt;span class="err"&gt;'&lt;/span&gt;t Stop Me &lt;span class="o"&gt;(&lt;/span&gt;Tiësto remix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       |-- 14 Make Some Noise.mp3
+|       |-- 15 Maximal Crazy.mp3
+|       |-- 16 Club Life_ Miami &lt;span class="o"&gt;(&lt;/span&gt;continuous DJ mix&lt;span class="o"&gt;)&lt;/span&gt;.mp3
+|       &lt;span class="sb"&gt;`&lt;/span&gt;-- cover.jpg
+|-- Vicente Amigo
+|   &lt;span class="sb"&gt;`&lt;/span&gt;-- Tierra
+|       |-- 01 Prologo y epílogo.m4a
+|       |-- 02 Estación primavera.m4a
+|       |-- 03 Tierra.m4a
+|       |-- 04 Boléro a los padres.m4a
+|       |-- 05 Campos de San Gregorío.m4a
+|       |-- 06 Río de la seda.m4a
+|       |-- 07 Canción de Laura.m4a
+|       |-- 08 Idílico.m4a
+|       &lt;span class="sb"&gt;`&lt;/span&gt;-- 09 Roma.m4a
+&lt;/pre&gt;
+&lt;p&gt;خوب البته باز هم مشکل موسیقی ایرانی به جای خودش باقی است. چون این فایل‌ها تگ که ندارند هیچ‌، اسم درست درمان هم ندارند. تگ گذاری اتوماتشان مطمئناُ خواهد … درون آرشیوتان‌، به حال آن‌ها باید فکر دیگری کنم!&lt;/p&gt;</description><category>Music</category><category>Linux</category><category>MP3</category><guid>http://shahinism.github.io/posts/beet-introduction.html</guid><pubDate>Fri, 18 Apr 2014 12:23:41 GMT</pubDate></item></channel></rss>

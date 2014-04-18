@@ -16,6 +16,14 @@
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 <![endif]-->
+<script type="text/javascript" src="https://raw.github.com/Sfate/lastfm-status/master/last_fm.js"></script>
+<script>
+ window.onload = function() {
+   LastFMStatus.init({
+     username: "shahinism"
+   });
+ };
+</script>
 
 
 <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml">
@@ -62,6 +70,7 @@
         </ul>
       </div>
       <div id="siteDescription">
+        <div id="lfm">Loading...</div>
         
         
         
@@ -151,6 +160,10 @@ Answer
     <a href="satoshi_nakomoto_identified.html">← ارسال پیشین</a>
   </div>
   
+  
+  <div class="next">
+    <a href="beet-introduction.html">ارسال بعدی →</a>
+  </div>
   
   </ul>
 
