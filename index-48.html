@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="fa">
+  <head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sometimes you gotta run before you can walk ">
+  <meta name="author" content="شاهین آزاد">
+  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 48) | شاهینیسم</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
+  
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]-->
+
+  
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
+    
+  
+  
+
+    
+    
+  </head>
+  <body>
+    <div class="container">
+      <header>
+	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="index-48.html#navigation"></a>
+      </header><!--/header-->
+      <div class="columns four">
+	
+  
+    <article>
+      <h2 class="title"><a href="posts/blog13900906shq-lynwkhsy-1-chsbndn-chnd-fyl-pdf.html">عشق لینوکسی (۱): چسباندن چند فایل PDF</a></h2>
+      <div class="metadata">
+	<span class="date">2011-11-27 06:49</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>قبلا برنامه‌هایی را برای ویندوز دیده بودم که چنین کاری می‌کردند‌، پس شروع به جستجو کردم‌، ولی با رسیدن به سایت محبوب <a title="Putting together PDF files " href="https://www.linux.com/news/software/applications/8229-putting-together-pdf-files" target="_blank">Linux.com</a> با یک ابزار ساده که اتفاقا روی اسلکورم نصب بود و از وجودش خبر نداشتم آشنا شدم‌. طبق گفته‌ی این مقاله تنها کافی بود از دستوری به شکل زیر استفاده کنم‌:</p>
+<div class="code"><pre>gs -dBATCH -dNOPAUSE -q -sDEVICE<span class="o">=</span>pdfwrite -sOutputFile<span class="o">=</span>finished.pdffile1.pdf file2.pdf
+</pre></div>
+
+
+<p>و بله کار برایم به درستی جواب داد‌، اما در بعضی شرایط نتایج عجیبی در بر داشت‌! یکی از فایل‌هایی که می‌خواستم به بقیه بچسبانم‌، نوشته‌هایی با حاشیه رنگی داشت‌، در حین پروسه‌ی چسباندن‌، اخطار‌هایی با همین موضوع دریافت کردم و در okular برنامه‌ی نمایش PDF در KDE هم کادر رنگی نمایش داده می‌شد ولی خبری از نوشته‌ها نبود‌. من هم زیاد به خودم سختی ندادم و بی‌خیال این نوشته‌ها شدم‌، اما بعد از پرینت‌، دیدم که همه چیز سر جایش است‌!</p>
+<p>بگذریم‌، بیایید نگاهی به آپشن‌های این دستور بیاندازیم‌:</p>
+<div class="code"><pre>gs
+</pre></div>
+
+
+<p>خوب کار این بخش که کاملا معلوم است‌، برنامه‌ی ghostscript را اجرا می‌کند‌.</p>
+<div class="code"><pre>-dBATCH
+</pre></div>
+
+
+<p>وقتی که برنامه یک بار فایل‌ها را پردازش کرد‌، باید بسته شود‌، اگر این آپشن را وارد نکرده باشید‌، برنامه همچنان به کارش ادامه می‌دهد‌.</p>
+<div class="code"><pre>-dNOPAUSE
+</pre></div>
+
+
+<p>ghostscript را مجبور می‌کند‌، بدون این که برای تعامل با کاربر pause شود به کارش ادامه دهد‌.</p>
+<div class="code"><pre>q
+</pre></div>
+
+
+<p>از نمایش پیغام‌ها در حین کار برنامه جلوگیری می‌کند‌.</p>
+<div class="code"><pre>-sDEVICE<span class="o">=</span>pdfwrite
+</pre></div>
+
+
+<p>به ghostscript می‌فهماند از نویسنده‌ی PDF توکار ghostscript برای تولید فایل استفاده کند‌.</p>
+<div class="code"><pre>-sOutputFile<span class="o">=</span>finished.pdf
+</pre></div>
+
+
+<p>این قابلیت را به دستورمان اضافه می‌کند که نام فایل خروجی را معین کنیم‌، در این‌جا نام فایل خروجی finished.pdf است‌.</p>
+<p>در ادامه‌ی دستور هم که نام فایل‌های pdf مورد نظرتان را وارد می‌کنید‌. به نظرم بهتر است برای صرفه‌جویی در مصرف کیبورد فایل‌ها را در یک پوشه‌ی خالی کپی کرده و در این قسمت به جای نام فایل‌ها یک «*» قرار دهیم ;-)</p>
+<p><strong>پی نوشت‌: </strong>ناگفته نماند که در <a title="Putting together PDF files " href="https://www.linux.com/news/software/applications/8229-putting-together-pdf-files" target="_blank">لینکی</a> که در بالا گفتم‌، ابزارهای دیگری نیز معرفی شده است که دیدنشان خالی از لطف نیست‌!</p>
+      
+      
+        
+    
+        <a class="commentLink" href="posts/blog13900906shq-lynwkhsy-1-chsbndn-chnd-fyl-pdf.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900906shq-lynwkhsy-1-chsbndn-chnd-fyl-pdf.html">Comments</a>
+    
+
+    </article>
+  
+
+    <article>
+      <h2 class="title"><a href="posts/blog13900813pwsth-oulipo-bry-wrdprs-prsy.html">پوسته Oulipo برای وردپرس پارسی</a></h2>
+      <div class="metadata">
+	<span class="date">2011-11-04 07:04</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p><a title="oulipo-shahinism on dropbox" href="http://dl.dropbox.com/u/25017694/oulipo.tar">لینک دانلود (‌Dropbox)</a></p>
+<p></p>
+      
+      
+        
+    
+        <a class="commentLink" href="posts/blog13900813pwsth-oulipo-bry-wrdprs-prsy.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900813pwsth-oulipo-bry-wrdprs-prsy.html">Comments</a>
+    
+
+    </article>
+  
+
+    <article>
+      <h2 class="title"><a href="posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html">نصب TeXLive بدون درد و خونریزی‌!</a></h2>
+      <div class="metadata">
+	<span class="date">2011-10-17 01:27</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>جوابتان از این قرار است که با وجود این که شما می‌توانید تک لایو را از روی مخازن یا در مورد اسلکور با اسلکبیلد نصب کنید‌، اما آپگرید کردن این بسته‌های نصب شده‌تان‌، وابسته به این می‌شود که این بسته‌ها روی همان مخازن آپگرید شوند‌! یعنی مراحل به روز رسانی برای بسته‌ای مثل  xepersian با این روش می‌شود‌، اول توسعه دهنده بسته‌، نسخه‌ی آخر را منتشر کند‌، سپس توزیعی مثل تک لایو‌، بسته را به آخرین نسخه‌ای که ذکرش رفت آپگرید کند‌ و در آخر توزیعتان‌، از آخرین نسخه تک لایو بسته‌ای بسازد‌‌! حالا فکر می‌کنید از مرحله اول تا سوم‌، توسعه دهنده‌ای مثل وفا خلیقی (‌توسعه دهنده‌ی xepersian ) چند نسخه‌ی به روز رسانی‌ ارائه کرده؟ جواب سنگین است‌، برای من‌، ۲۰ نسخه‌! پس احتمالا حالا‌، باید اهمیت این به روزرسانی را درک کرده باشید‌!</p>
+<p>خوب حالا چگونه نصبش کنیم‌؟ با وضع اینترنت ما‌، به خصوص در هفته‌های اخیر‌، تنها انتخابمان همان iso است که از <a title="ISO download page" href="http://mirror.ctan.org/systems/texlive/Images/" target="_blank">این لینک</a> قابل دریافت است‌. حجمی برابر با ۲.۳ گیگابایت انتظارتان را می‌کشد‌ (‌البته مزیت این DVD این است که شما می‌توانید از آن برای نصب تکلایو روی انواع سیستم‌ها نظیر مک و ویندوز هم استفاده کنید‌). پس از دانلود بسته را از حالت iso خارج کنید‌. سلیقه خودتان است‌، یا می‌توانید روی یک فولدر دیگر Mount‌اش کنید‌، و یا مثل من خز بازی در آورده و با Ark اکسترکتش کنید‌. پس از باز کردن بسته به پوشه‌ی مربوطه بروید‌، و دستور زیر را وارد کنید‌.</p>
+<div class="code"><pre>sudo ./install-tl
+</pre></div>
+
+
+<p>خوب همان‌طور که پیداست با این کار اسکریپت نصب را فعال کرده‌اید‌. و با تایپ یکی دو حرف می‌توانید بسته را نصب کنید‌ (‌البته نه کاملا‌!). من ترجیح دادم که از محیط گرافیکی نصب استفاده کنم که یک پیشنیاز را باید نصب می‌کردم تا این محیط که با Perl نوشته شده اجرا شود‌. این پیشنیاز perl-tk نام دارد که اسلکوری‌ها می‌توانند از<a title="perl-tk slackbuild" href="posts/slackbuilds.org/repository/13.37/perl/perl-tk/" target="_blank"> این اسلکبیلد </a>استفاده کنند‌.</p>
+<p>پس از نصب بسته‌ی ذکر شده‌، حالا همان دستور قبلی را با یک آپشن اضافی صدا می‌زنیم‌:</p>
+<div class="code"><pre>sudo ./install-tl -gui
+</pre></div>
+
+
+<p>می‌توانید تنظیمات مربوطه را ببینید‌، و در صورتی که نیاز بود جایی را تغییر دهید‌. نصب حدود یک ربع ساعت برای من طول کشید‌. پس از پایان نصب‌، در متن‌هایی که روی صفحه نمایش داده می‌شود (‌چه در حالتی که از محیط گرافیکی استفاده می‌کند باشید و چه در ترمینال‌، این متن را خواهید دید‌) به شما از بابت نصب تکلایو تبریک گفته می‌شود‌، و می‌خواهد که آدرس مربوط به فرامین تکلایو را به PATH سیستمتان اضافه کنید‌.</p>
+<p>این آدرس برای من از این قرار بود‌:</p>
+<div class="code"><pre>/usr/localc/texlive/2011/bin/x86_64-linux/
+</pre></div>
+
+
+<p>این کار را می‌توانید با ویرایش فایل /etc/profile انجام دهید‌. خوب با خوشم خوشم‌های فراوان‌، از پس نصب تک لایو هم بر آمدیم که خوشبختانه تمام کار‌هایی که انتظار داشتم را درست انجام داد‌. حالا شاید بخواهید همین الان آپگرید کنید‌. برای به روز‌رسانی‌، شما از ابزاری به اسم texlive manager استفاده می‌کنید که با استفاده از یکی از دستورات زیر می‌توانید بهشان دسترسی داشته باشید‌:</p>
+<div class="code"><pre>tlmgr <span class="o">{</span><span class="k">for </span>text mode<span class="o">}</span>
+
+tlmgr -gui <span class="o">{</span><span class="k">for </span>graphical mode <span class="o">(</span>recomended<span class="o">)}</span>
+</pre></div>
+
+
+<p>آپگرید به آخرین نسخه‌ی تکلایو‌، حجم زیادی را برای اولین بار طلب می‌کند‌. روش جایگزین دیگری در این زمینه وجود دارد که در پست دیگری به آن می‌پردازم‌.</p>
+      
+      
+        
+    
+        <a class="commentLink" href="posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html">Comments</a>
+    
+
+    </article>
+  
+
+
+<div class="pageNav">
+  
+  <div class="prev">
+    <a href="index-49.html">← ارسال‌های جدید‌تر</a>
+  </div>
+  
+  
+  <div class="next">
+    <a href="index-47.html">پست‌های قدیمی‌تر →</a>
+  </div>
+  
+</div>
+
+
+    
+        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
+    
+
+
+      </div><!--columns four-->
+    </div><!--container-->
+
+    <nav id="navigation">
+      <div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<input type="text" placeholder="جستجو…" maxlength="255" name="q">
+<input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+	
+  
+    
+      <li><a class="nav-icon home" href=".">Home</a></li>
+    
+  
+    
+      <li><a class="nav-icon about" href=".">About</a></li>
+    
+  
+    
+      <li><a class="nav-icon resume" href=".">Resume</a></li>
+    
+  
+    
+      <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
+    
+  
+    
+      <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
+    
+  
+    
+      <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
+    
+  
+
+      </ul><!--/ul-->
+    </nav><!--/navigation-->
+
+<!--/container-->
+<footer class="container">
+  <div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p><!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div><!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+
+</body>
+</html>

@@ -1,291 +1,107 @@
 <!DOCTYPE html><html lang="fa">
   <head>
     
-<meta charset="utf-8">
-<meta name="description" content="Sometimes you gotta run before you can walk">
-<meta name="author" content="شاهین آزاد">
-<title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 27) | شاهینیسم</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sometimes you gotta run before you can walk ">
+  <meta name="author" content="شاهین آزاد">
+  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 27) | شاهینیسم</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
+  
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]-->
 
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
-<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
-
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]-->
-<script>
- window.onload = function() {
-   LastFMStatus.init({
-     username: "shahinism"
-   });
- };
-</script>
-
-
-<link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml">
-
-
-
+  
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
+    
+  
+  
 
     
     
   </head>
-  <body class="home blog">
-    
-    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script>
-    
-
-    <div id="siteWrapper">
-      <h1 id="vcard author">
-        <a href="." title="شاهینیسم">شاهینیسم</a>
-        <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" style="float: left; position: absolute; margin: 0px 90px;"></a>
-      </h1>
-
-      <div id="mainNav">
-        <ul>
-          
-
-
-  <li><a href="archive.html">Archives</a>
-
-
-
-  </li><li><a href="categories/index.html">Tags</a>
-
-
-
-  </li><li><a href="rss.xml">RSS</a>
-
-
-</li>
-        </ul>
-      </div>
-      <div id="siteDescription">
-        
-        
-        
-      </div>
-      <div id="coreContent" class="hfeed">
-        
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-07-30 18:36
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900508hl-dw-mshkhl-htmly-ps-z-nsb-slkhwr.html">حل دو مشکل احتمالی پس از نصب اسلکور</a></h3>
-    
-    <div class="entry-content">
-      <p>۱- شماره ویدئو مد‌:</p>
-<p>ممکنه مثل دیروز من و تعدادی دیگه که نتونستن با کمک گرفتن از انجمن‌ها مشکلشون رو حل کنن‌، شما هم پس از لود شدن Lilo به صورت بلافصل با پیغام زیر روبرو بشید‌:</p>
-<div class="code"><pre>Bios data check successful
-
-
-
-undefined video mode number: ۳۱۶
-</pre></div>
-
-
-<p>خط اول که برای همه‌تون آشناست‌، ولی خط دوم ممکنه با مقادیر مختلفی به شما نمایش داده بشه‌، که در پی اون شما ۳۰ ثانیه وقت دارین که یا یکی از ویدئو مد‌های توی لیست که با Enter ظاهر می‌شه رو انتخاب کنید‌، و یا با مد پیش‌فرض به ادامه لود اسلکور بپردازین‌. برای حل این مشکل کافیه‌ اول با یه ویرایشگر فایل زیر رو باز کنید‌:</p>
-<div class="code"><pre>/etc/lilo. conf
-</pre></div>
-
-
-<p>بعد چک کنید که آیا یکی از مقادیر VESA Frame buffer console @... فعال هست یا نه‌! احتمالا هست‌، و نیاز به تغییر چیزی ندارین‌، اگه هم نبود کافیه که # کنار گزینهٔ دلخواهتون رو بردارین‌. حالا این فایل رو ذخیره کنید و دستور زیر رو اجرا کنید‌:</p>
-<div class="code"><pre>lilo
-</pre></div>
-
-
-<p>تموم شد‌. این مشکل حل شد‌. احتمال می‌دم این مشکل به خاطر اینه که این دستور بعد از نصب و کانفیگ لیلو در مراحل نصب اسلکور درست اجرا نمی‌شه‌. البته توجه داشته باشید که من در حین نصب نسخهٔ کارنت اسلکور به این مشکل بر خوردم‌.</p>
-<p>۲- نصب راه‌انداز گرافیکی Nvidia‌:</p>
-<p>ممکنه خبر داشته باشین که از نسخهٔ ۱۳.۳۷ اسلکور از یک راه‌انداز به اسم nouveau به عنوان جایگزین راه‌انداز‌های رسمی Nvidia استفاده می‌کنه که خوب برای من یکی که دوست دارم از راه‌انداز رسمی استفاده کنم‌، یه مشکلی پیش می‌آره‌. اون هم اینکه اجازه نمی‌ده راه‌انداز رسمی رو نصب کنم‌. برای حل این مشکل باید سه مرحلهٔ سادهٔ زیر رو انجام بدین‌:</p>
-<p>اول به آدرس زیر برین و بستهٔ xf86-video-nouveau-blacklist-noarch-1.txz رو با استفاده از installpkg نصب کنید‌:</p>
-<div class="code"><pre>extra/xf86-video-nouveau-blacklist
-</pre></div>
-
-
-<p>و بعد از اون سیستم رو دوباره راه‌اندازی کنید‌. حالا دستور pkgtool رو توی ترمینال اجرا کنید‌، و در بخش Remove (‌گزینهٔ مربوط به پاک کردن بسته‌هایی که در حال حاظر روی سیستم نصب شده‌اند‌) به دنبال بسته‌ای با اسمی مشابه زیر بگردید‌:</p>
-<div class="code"><pre>xf86-video-nouveau-8bb835463-x86-64-1
-</pre></div>
-
-
-<p>توجه کنید که از خط تیرهٔ سوم به بعد ممکنه‌ تغییراتی رو در نسخه‌هایی که روی سیستم شما نصب هست شاهد باشید‌، و حتما توجه داشته باشید که بسته‌ای که چند دقیقه قبل نصب کردیم رو انتخاب نکنید‌. حالا که بستهٔ مورد نظر رو انتخاب کردین‌، کافیه اون رو به دست pkgtool بسپارین تا پاکش کنه‌. پس از حذف این بسته از pkgtool خارج بشین و به سراغ نصب درایور رسمی Nvidia برین‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+  <body>
+    <div class="container">
+      <header>
+	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="index-27.html#navigation"></a>
+      </header><!--/header-->
+      <div class="columns four">
+	
+  
+    <article>
+      <h2 class="title"><a href="posts/blog13861030ireye-ketab.html">یار مهربان در اینترنت</a></h2>
+      <div class="metadata">
+	<span class="date">2008-01-20 00:19</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>اما سایت جیره کتاب (که بنده از چندوقت پیش با ایشان آشنا شدم) ایده ای بس جالب توجه را عملی کرده است . در یک تعریف کلی کار اصلی جیره ی کتاب این است که پس از واریز حق عضویت و گذراندن مراحل عضویت به صورت ماهانه جیره تان را برایتان ارسال می کند . اما نکته جالب اینجاست که شما حتی تا زمان تحویل جیره از پست هم از محتوی آن خبر ندارید پس شما یک بار در ماه غافل گیر هم میشوید . اما موضوع اصلی بر سر نحوه ی انتخاب کتابهاست : شما در زمان عضویت و با توجه به سلیقه ی خود فرم عضویت را پر می کنید و ارسال کننده هم با توجه به همان فرم کتاب جیره ی شما را انتخاب می کند پس تقریبا بعید است که جیره ی شما باب طبعتان نباشد و این خود می تواند در بالا رفتن حس کتاب خوانیتان کمک خوبی به شما بکند.</p>
+<p>همچنین جیره ای خاص برای خوشحال کردن دوستان شما در نظر گرفته شده تحت عنوان "جیره هدیه" که شما با استفاده از آن می توانید جیره ی کتاب دوستان خود را نیز تامین کنید .</p>
+<p>در حال حاضر هیچ محدودیتی از نظر جغرافیایی برای عضویت در جیره ی کتاب وجود ندارد و ایرانیان مقیم غربتستان هم می توانند از خدمات این سایت استفاده کنند :</p>
+<p><a href="http://www.jireyeketab.com/MainF.asp">+ جیره کتاب </a></p>
+<p><a href="http://www.jireyeketab.com/What/WhatF">+ جیره کتاب چیست ؟</a></p>
+<p><a href="http://www.jireyeketab.com/How/HowF/Abstract.asp">+ فرم عضویت </a></p>
+<p></p><p align="left"></p>
+      
+      
         
     
-        <a href="posts/blog13900508hl-dw-mshkhl-htmly-ps-z-nsb-slkhwr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900508hl-dw-mshkhl-htmly-ps-z-nsb-slkhwr.html">Comments</a>
+        <a class="commentLink" href="posts/blog13861030ireye-ketab.html#disqus_thread" data-disqus-identifier="cache/posts/blog13861030ireye-ketab.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-07-19 20:19
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900428ywtywb-y-dnshgh-prdh-dwm.html">یوتیوب‌؟ یا دانشگاه‌؟ پرده دوم</a></h3>
-    
-    <div class="entry-content">
-      <p>مجموعه آموزش C++ این مجموعه که من خودم در حال گذروندن آموزش‌هاش هستم‌، فوق‌العاده کامله و به جزئیات به زیبایی هر چه تمام‌تر پرداخته شده‌. نکتهٔ خیلی قشنگ دربارهٔ آموزش‌های باکی این هست که اصلا دوست نداره مسائل رو خسته کننده تحویل مخاطب بده‌، بلکه از کوچک‌ترین فرصتی برای وارد کرده جک‌هاش به آموزش استفاده می‌کنه‌. باکی دوست نداره مدت زمان ویدیو‌هاش بیشتر از ۶-۷ دقیقه بشه و این یکی دیگه از دلایل علاقهٔ من به باکی هست‌! سری اول آموزش C++ داری ۷۳ قسمت هست و از قرار قراره در آینده‌ای نه چندان دور شاهد سری جدیدی از این مجموعه باشیم‌.</p>
-<p>مجموعه آموزش پایتون که به دو بخش python (‌اصول برنامه نویسی پایتون و برنامه نویسی تحت خط فرمان‌) و wxpython (‌برنامه نویسی دارای رابط کاربری) تقسیم که کثرت مسائل آموزشی موجود در این زمینه اون رو به مجموعه‌ای فوق‌العاده تبدیل کرده‌.. همینطور مجموعه آموزش زبان جاوا که احتمالا یه روزی از این آموزش برای یادگیریش استفاده می‌کنم‌.</p>
-<p>مجموعه آموزش PHP موجود در این سایت که با همکاری گروه phpacademy آماده شده هم می‌تونه یه مجموعه عالی برای یادگیری این زبان محبوب باشه‌. البته پیشنهاد می‌کنم مجموعه Beginner PHP رو قبل از مجموعهٔ فوق بگذرونید تا با اصول پایه‌ای نحو این زبان کاملا آشنا بشید‌.</p>
-<p>جدای از آموزش‌هایی که در بالا ذکر کردم‌، باکی مجموعه‌ای از آموزش‌ها برای برنامه‌های مختلف و حتی هندسه و ریاضیات پایه داره که به نظرم اگه انگلیسیتون در حد قابل قبولی هست‌، ‌ می‌تونه خیلی بهتون کمک کنه‌.</p>
-<p><strong>پی‌نوشت‌:</strong> چقدر زندگی لذت‌بخش‌تره وقتی می‌بینی که همچین آدمایی توی دنیا هستن که برای آموزش دادن بهت‌، هیچ چشم‌داشت مالی‌ای بهش ندارن‌!</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+    <article>
+      <h2 class="title"><a href="posts/blog13861024blogfa-vs-wp-and-bloger.html">بلاگفا در مقابل وردپرس و بلاگر !</a></h2>
+      <div class="metadata">
+	<span class="date">2008-01-14 17:04</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>اما دلایل آورده شده توسط آقای شیرازی برای توجیح عقب ماندگی سرویس های ایرانی  مورد قبول من واقع نشد . (پیشنهاد می کنم قبل از مطالعه ی این مقاله , مطلب ارسالی  مهندس شیرازی را مطالعه کنید).</p>
+<p>من در واقع با موضوع ضعیف خواندن بلاگفا در برابر سرویس های خارجی مخالفم . چون  زمانی که این سرویس ارائه شد تنها سیستم وبلاگ نویسی فارسی <a href="http://persianblog.ir/">پرشین بلاگ</a> بود که کار با آن برای هر کس آسان  نبود . سادگی و کارایی بلاگفا باعث شد که این سرویس در مدت کوتاهی بتواند کاربران  زیادی را به سوی خود جلب کند . اما حالا اوضاع تغییر کرده و وبلاگ نویسان ایرانی  دارند به سیستم های خارجی مهاجرت می کنند. آیا به نظر شما تنها دلیل این مهاجرت  تبلیغات موجود در گوشه ی هر وبلاگ بلاگفاییست ؟ و یا تعداد سرورهای پشتیبان سیستم <a href="http://wordpress.com/">وردپرس</a> یا سرمایه ی هنگفتی که پشتیبان <a href="http://blogger.com/">بلاگر</a> است؟ این موضوع درست است که در ایران نمی  توان یک همچین سرمایه گذاری ای را برای یک سیستم وبلاگ فراهم کرد .و در واقع نیازی  به این سرمایه گذاری نیست . متاسفانه آقای شیرازی در این مطلب کلیه وبلاگ نویسان را  به دو دسته ی خارجی و ایرانی تقسیم کرده اند و ملیتها را مطرح نکرده اند . سیستم  بلاگر از زبان بین المللی برای پنل مدیریت خود استفاده می کند  و یا وردپرس چندین  زبان را برای کاربران ارائه می کند و در واقع از جای جای کره زمین در این سیستم ها  وبلاگ می نویسند . ولی شما چند وبلاگ نویس خارجی می شناسید که در بلاگفا وبلاگ  داشته باشند . پس هرگز تعداد صفحات خوانده شده در روز بلاگفا به ده میلیون برسد و  یا برای پاسخ گویی به چنین حجم به 300 سرور نیاز داشته باشد .</p>
+<p>متاسفانه فرهنگ بدی که در ایران رایج شده این است که می خواهیم از هر چیزی به هر  نحوی که دلمان خواست در آمد داشته باشیم . درست است که باید این در آمد وجود داشته  باشد تا سرمایه گذاران رغبت به ادامه ی کار داشته باشند ولی نه به هر نحو . سیستم  تبلیغات بلاگفا از همان ابتدای ورود مورد انتقاد های فراوان قرار گرفت اما چند  اشتباه هم از جانب مدیران بلاگفا صورت گرفت . پس از اولین نمایش تبلیغات که در مورد  کاندیداهای ریاست جمهوری بود (بماند که بعد ها در جای همان تبلیغات ,لوگوی دیگری به  نمایش در آمد که ادعای دروغی بودن تبلیغات اول را داشت) چند وبلاگ (که من دیجیتال  کیوان و گاوبندی یادم هست) راههایی برای حذف نمایش آن پیدا کرده بودند ودر وبلاگ  خودارائه کرده بودند که مدیران بلاگفا هم برای این که این شیوه گسترش پیدا نکند طی  نامه ای از این بلاگر ها خواسته بودند که این روش ها را ارئه نکنند و برای سرپوش  گذاری روی این موضوع تبلیغات موجود در وبلاگهای نام برده را با عنوان فعالترین  وبلاگهای بلاگفا حذف کردند . عملی که در آن زمانی که بلاگر تبلیغات 460 در 60  پیکسلی داشت هرگز انجام نداد . از طرفی دیگر بلاگفا در همان زمان اقدام به نظر سنجی  کرده بود که بهترین شیوه ی نمایش به نظر شما چگونه است که متاسفانه هیچ ترتیب اثری  هم برای نظرات ارسالی داده نشد . در صورتی که وردپرس پایه و اساس کار خود را بر  اساس نظرات کاربران قرار داده .</p>
+<p>اما از طرفی دیگر بیشترین دلیل محبوبیت دو سرویس وردپرس و بلاگر آپدیت بودنشان  است چیزی که به خصوص در وردپرس مشهود است و حد اکثز ماهی یک بار شاهد تغییرات زیادی  در این سرویس خواهیم بود و یا بلاگر هم پس از چند سال از فعالیت خود لازم دانست که  سیستم مدیریت خود را کلا عوض کند تا بتواند با استفاده از ویدجتها خدمات بهتری به  بلاگر ها هدیه کند که حتی برای آزمایش بهتر آن را در کنار نسخه ی قدیمی و با عنوان  بلاگر جدید ارائه کرد . اما بلاگفا حتی با گذشت بیش از چهار سال از فعالیت فقط یک  بار قالب بخش مدیریت خود را عوض کرده و امکانات ساده ای مثل لینک روزانه و چند چیز  دیگر را افزوده و حتی نتوانسته لیست پوسته های آماده خود را برای سلیقه های مختلف  تکمیل کند.</p>
+<p>اما موضوع دیگر که مطرح شده بود بحث بلوک کاربران ایرانی و یا حذف وبلاگهای  فارسی در سیستمهای خارجی بود و گفته شده بود که هیچ کس مانند یک ایرانی نمی تواند  به درستی نیاز های وبلاگ نویسان ایرانی را فراهم کند. اما همانطور که چندی پیش شاهد  بودیم به وضوح امنیت سرویس های ایرانی زیر سوال رفت که بحث های زیادی را مطرح کرد.  همچنین چه بسیار کاربران ایرانی که وبلاگهای خود را در عرض چند ثانیه در سرویسی  مانند <a href="http://mihanblog.com/">میهن بلاگ</a> از دست دادند . اشتباهاتی از  این دست باعث می شود که به کل اعتماد وبلاگ نویسان به این سرویسها از بین برود .</p>
+<p>همچنین یکی دیگر از دلایل محبوبیت سرویس های خارجی می توان ارائه سرویس هایی (به  صورت پلاگین یا ویدجت) توسط دیگر سایتهای مطرح در وب است که متاسفانه همچین همکاری  ای نمی توان در هیچ سایت ایرانی ای یافت . از طرفی دیگر شیوه ی کارکرد وردپرس به  صورتیست که خود به خود باعث آشنایی دیگر کاربران با هم می شود و در واقع عملی همچون  شبکه های اجتماعی انجام می دهد که این موضوع در تداوم و همبستگی وبلاگ نویسان یک  سرویس بسیار موثر است.</p>
+<p>آزادی عمل و سلیقه در وردپرس زیاد است و یک کاربر وردپرسی به راحتی می تواند به  سیستم های دیگر مهاجرت داشته باشد ولی در بلاگفا حتی RSS ارائه شده بیشتر از 10  مطلب آخر را نمایش نمیدهد (که برای مهاجران مشکل عظیمی بود). همچنین بخش نظر سنجی  وبلاگ های بلاگفا فوق العاده عقب مانده بود که در صفحات آزار دهنده Pop up اقدام به  نظر سنجی می کرد .</p>
+<p>اما بلاگفا می تواند خود را متحول کند و خیلی بهتر به وبلاگ نویسان فارسی زبان  خدمات خود را ارائه کند . به امید روزی که مهاجرتی شروع کنیم از حضرت وردپرس به  بلاگفای ایرانی .</p>
+      
+      
         
     
-        <a href="posts/blog13900428ywtywb-y-dnshgh-prdh-dwm.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900428ywtywb-y-dnshgh-prdh-dwm.html">Comments</a>
+        <a class="commentLink" href="posts/blog13861024blogfa-vs-wp-and-bloger.html#disqus_thread" data-disqus-identifier="cache/posts/blog13861024blogfa-vs-wp-and-bloger.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-07-15 01:04
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html">آشنایی با تکنیک مدیریت زمان پامودور (‌گوجه‌)!</a></h3>
-    
-    <div class="entry-content">
-      <p>هدف تکنیک پامودور استفاده از زمان به عنوان یک متحد ارزشمند در انجام کار‌هایی است که می‌خواهیم به بهترین وجه ممکن انجامشان دهیم‌، و اینکه ما را قادر سازد که به طور مستمر طریقی که به تحصیل و کار می‌پردازیم را بهبود بخشیم‌.<a href="http://shahinism.com/wp-content/uploads/the-pomodoro-technique.jpg" rel="prettyPhoto"><img class="alignleft size-medium wp-image-408" title="the-pomodoro-technique" src="http://shahinism.com/wp-content/uploads/the-pomodoro-technique-300x300.jpg" alt="تکنیک مدیریت زمان پامودور" width="300" height="300"></a></p>
-<p></p><h5>اهداف‌:</h5>
-<p>تکنیک پامودور می‌خواهد یک ابزار‌/‌فرآیند برای بهبود بهره‌وری را ارائه دهد (‌در خودتان و اعضای تیم‌تان‌) با استفاده از انجام گزینه‌های زیر‌:</p>
-<ul><li>کاهش اضطراب مربوط به سر آمدن مهلت مقرر‌.</li>
-    <li>افزایش تمرکز با تقسیم کردن کار‌ها توسط وقفه‌ها‌.</li>
-    <li>افزایش آگاهی در تصمیم‌گیری‌های شما‌.</li>
-    <li>افزایش انگیزه و ثابت نگه‌داشتن آن‌.</li>
-    <li>تقویت عزم و اراده برای رسیدن به هدفتان‌.</li>
-    <li>بر‌آورد روند از نظر کیفی و کمی‌.</li>
-    <li>بهبود فرآیند کار و تحصیلتان‌.</li>
-    <li>تقویت اراده‌تان در مواجهه با موقعیت‌های پیچیده‌.</li>
-</ul>
-
-<h5>اصول‌:</h5>
-
-<p>همهٔ فعالیت‌هایی که باید انجام دهید را وارد Activity Inventory Sheet کنید‌. در شروع هر روز آن‌هایی که می‌خواهید انجام دهید را انتخاب کنید و به To Do لیست منتقل کنید‌.</p>
-<h6>شروع کار‌:</h6>
-
-<ul><li>بالا‌ترین وظیفهٔ موجود در لیست را انتخاب کنید‌.</li>
-    <li>زمان را برای ۲۵ دقیقه تنظیم کنید‌.</li>
-    <li>تا زمان به صدا در آمدن ساعت کار کنید‌.</li>
-    <li>جلوی وظیفه را در To Do لیست با یک x علامت بزنید‌.</li>
-    <li>یک استراحت کوتاه کنید (۳ تا ۵ دقیقه‌)</li>
-</ul>
-
-<p>به ار کردن ادامه دهید‌. پامودور پشت پامودور‌، تا زمانی که وظیفهٔ در حال انجام تمام شود‌، و وظیفه در To Do لیست خط بخورد‌. بعد از هر ۴ پامودور یک استراحت بلند‌تر کنید (۱۵ تا ۳۰ دقیقه‌).</p>
-<h5>قوانین و نکات‌:</h5>
-
-<ol><li>یک گوجه غیر قابل تقسیم است‌.</li>
-    <li>اگر یک وظیفه نیاز به بیش از ۵ تا ۷ پامودور داشت‌، آن را بشکنید‌.</li>
-    <li>اگر کمتر از یک پامودور نیاز داشت‌، آن را با یک وظیفهٔ دیگر مخلوط کنید‌.</li>
-    <li>وقتی یک پامودور شروع شد‌، باید تا به صدا در آمدن زنگ ادامه پیدا کند‌.</li>
-    <li>پامودور بعد بهتر ادامه خواهد داشت‌.</li>
-    <li>تکنیک پامودور نباید برای فعالیت‌های در وقت آزادتان مورد استفاده قرار گیرد‌، از وقت آزادتان لذت ببرید‌.</li>
-</ol>
-
-<h5>وقفه‌ها‌:</h5>
-
-<p>یک بار که شما شروع به استفاده از تکنیک پامودور کردید‌، متوجه می‌شوید‌، وقفه‌ها می‌توانند به مشکل بزرگی برای شما تبدیل شوند‌. وقفه‌های خارجی تخریب‌گر است‌. در وقفه‌هایی که خودتان می‌دهید‌، بلند شوید‌، چیزی برای خوردن پیدا کنید‌، یا مطلب کوتاهی در اینترنت بخوانید‌.</p>
-<p>وقفه‌های خارجی را مشخص کنید‌. هر زمانی که یک وقفه غریب‌الوقوع را احساس کردید‌، که باید انجام دهید یک («) در جدولی که پامودور‌هایتان را واردش می‌کنید بگذارید و بعد یکی از موارد زیر را در موردش انجام دهید‌:</p>
-<ul><li>فعالیت را اگر فکر می‌کنید حتمی‌است و نمی‌توانید از آن بگذرید در To Do لیست در قسمت برنامه‌ریزی نشده‌ها وارد کنید.</li>
-    <li>آن را در Activity Inventory Sheet بنویسید‌ و با یک U آن را علامت بزنید‌، در صورت لزوم یک مهلت انجام برایش مشخص کنید‌.</li>
-    <li>عزم خود را برای به پایان رساندن پامودوری که در حال انجامش هستید جزم کنید‌. اما قبلش وقفه را با (») در جدول پامودور‌هایتان وارد کنید، سپس تا به صدا در آمدن زنگ به کارتان ادامه دهید‌.</li>
-</ul>
-
-<p>کسانی که در محیط‌های اجتماعی کار می‌کنند باید با وقفه‌های خارجی معامله کنند‌. یک همکار از شما می‌پرسد که چطور یک گزارش را آماده کنید‌. نرم‌افزار دریافت ایمیل پس از هر دریافت بوق می‌زند‌. ۲۵ دقیقه تا ۲ ساعت تاخیر (۴ پامودور‌) تقریبا همیشه ممکن است برای فعالیت‌هایی که فوری در نظر گرفته می‌شوند رخ دهد‌. این وقفه‌ها را کاملا مشخص کنید‌. هر زمانی که یک نفر یا یک چیزی سعی در به وقفه انداختن یک پامودور دارد‌، یک خط تیره اضافه کنید به جایی که پامودور‌هایتان را ذخیره می‌کنید‌. بعد یکی از قوانین بالا را برایشان لحاظ کنید‌.</p>
-<p><a title="Download the Book free in pdf" href="http://www.pomodorotechnique.com/resources/ThePomodoroTechnique_v1-3.pdf" target="_blank"> دانلود کتاب آموزشی</a></p>
-<p><a title="Pomodoro Technique To Do Today Worksheet" href="http://www.pomodorotechnique.com/resources/pomodoro_todo.pdf" target="_blank">دانلود نمونه لیست To Do</a></p>
-<p><a title="Pomodoro Technique Activity Inventory Worksheets" href="http://www.pomodorotechnique.com/resources/pomodoro_inventory.pdf" target="_blank">دانلود نمونه لیست Activity Inventory</a></p>
-<p><a title="Pomodoro Technique Cheat Sheet" href="http://www.pomodorotechnique.com/resources/pomodoro_cheat_sheet.pdf" target="_blank">دانلود برگه تقلب</a></p>
-<p>پیشنهاد می‌کنم <a title="۳ تکنیک پرطرفدار مدیریت زمان" href="http://thecoach.ir/1390/04/13/3-%d8%aa%da%a9%d9%86%db%8c%da%a9-%d9%be%d8%b1%d8%b7%d8%b1%d9%81%d8%af%d8%a7%d8%b1-%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d8%b2%d9%85%d8%a7%d9%86/" target="_blank">معرفی کوتاه</a> این تکنیک توسط The Coach و همینطور مطلب مربوط به <a title="مدیریت زمان با تکنیک Time Boxing" href="http://thecoach.ir/1390/01/31/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D9%87-%D8%B3%D8%A8%DA%A9-time-boxing/" target="_blank">Time Boxing</a> (که تکنیک پامودور بر همین مبنا بنا شده‌) را بخوانید‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+    <article>
+      <h2 class="title"><a href="posts/blog13861023domain-name.html">نام دامنه مناسب</a></h2>
+      <div class="metadata">
+	<span class="date">2008-01-13 19:28</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>متاسفانه با وجود دامنه های مختلف برای سطوح مختلف دامنه ی {دات} کام نه تنها در  ایران بلکه در تمامی جهان از محبوبیت خاصی بر خوردار است اما این دامنه ها هر کدام  با مفهومی خاص ارائه شده و به صورت خلاصه هستند برای مثال همین {دات} کام مخفف کلمه  ی company است که باید برای سایت هایی با مصارف تجاری در نظز گرفته شود بماند که می  توان آن را مخفف  کلمه ی Computer هم دانست . اما هم اکنون هزاران هزار سایت وجود  دارد با دامنه ی {دات} کام که هیچ ارتباطی به تجارت و یا کامپیوتر ندارد .</p>
+<p>همچنین دامنه ی {دات} نت که خلاصه ی Network است باید برای موضوعات مرتبط با  شبکه استفاده شود . اما دلیل این گسترش این اشتباه چیست ؟ به نظر من از آن جایی که  سایتهای بزرگی همچون یاهو و گوگل توانستند با ریتم خاص تلفظ در ذهن ها ماندگار شوند  و به موفقیتهایی دست یابند . صاحبان دیگر سایتها هم می خواستند با این روش سایتی  موفق ارائه کنند .</p>
+<p>شما برای کسب اطلاعات بیشتر در مورد هرکدام از این دامنه ها می توانید به<a href="http://fa.wikipedia.org/wiki/%C3%98%C2%AF%C3%98%C2%A7%C3%99%E2%80%A6%C3%99%E2%80%A0%C3%99%E2%80%A1_%C3%98%C2%A7%C3%9B%C5%92%C3%99%E2%80%A0%C3%98%C2%AA%C3%98%C2%B1%C3%99%E2%80%A0%C3%98%C2%AA%C3%9B%C5%92"> این صفحه</a> از ویکی پدیا رجوع کنید .</p>
+      
+      
         
     
-        <a href="posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html">Comments</a>
+        <a class="commentLink" href="posts/blog13861023domain-name.html#disqus_thread" data-disqus-identifier="cache/posts/blog13861023domain-name.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-07-11 22:12
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900420ywtywb-y-dnshgh-prdh-wl.html">یوتیوب‌؟ یا دانشگاه‌؟ پرده اول</a></h3>
-    
-    <div class="entry-content">
-      <p>حالا من می‌گم تو دانشگاه‌ها (‌حد‌اقل تو ایرانش‌) هم بیشتر از اون چیزی که یاد می‌گیری وقت تلف می‌کنی‌؟ پس چی کار کنیم‌؟ آره درسته‌، باس خودمون آستینا رو بالا بزنیم‌. رو همین حساب از این به بعد توی پست‌هایی با این عنوان منابع آموزشی خوبی که روی Youtube پیدا می‌کنم معرفی می‌کنم تا شما هم استفاده ببرین‌. این‌جوری حداقل تونستم دین خودم رو به تولید‌کننده‌های این آموزش‌ها ادا کنم‌.<a href="http://shahinism.com/wp-content/uploads/bryan.jpg" rel="prettyPhoto"><img class="alignleft size-medium wp-image-400" title="bryan" src="http://shahinism.com/wp-content/uploads/bryan-219x300.jpg" alt="" width="219" height="300"></a></p>
-<p>تو این قسمت قصد معرفی کانال <a title="VoidRealms on Youtube" href="http://www.youtube.com/user/VoidRealms#p/a" target="_blank">VoidRealm's</a> رو دارم. توی این کانال که مدیریتش رو <a title="voidrealms official website" href="http://www.voidrealms.com/" target="_blank">آقای برایان</a> بر عهده دارن‌، آموزش‌های برنامه نویسی در محیط‌هایی نظیر Visual Studio و Qt و زبان‌های مختلف نظیر C++، Java، C# ارائه می‌شه که با توجه به تصویری بودن آموزش‌ها و توضیحات خوب جناب برایان‌، به منابع خیلی به درد بخوری برای یاد‌گیری این زبان‌ها تبدیل شده‌.</p>
-<p>این<a title="Bryan introduction" href="http://www.voidrealms.com/contact.aspx" target="_blank"> آقا برایان</a> قبلا یه شرکت برنامه نویسی داشتن‌، که توسط یه کمپانی بزرگ‌تر خریداری شد‌، حالا ایشون هم قصد دارن که یه زندگی بی‌دغدغه رو تجربه کنن و سعی دارن که به چنین آموزش‌هایی ادامه بدن‌.</p>
-<p>آموزش‌هایی که بیشتر از همه توجه من رو به خودشون جلب کردن‌، بیست و خرده‌ای آموزش زبان C++ بود که من در محیط لینوکس (‌متفاوت با آقای برایان‌) از اون‌ها خیلی استفاده بردم‌، و آموزش Qt C++ که با رسیدن شماره قسمت‌هاش به ۷۸ نوید یه آموزش کامل و خوب رو برای این محیط توسعه به آدم می‌ده‌. من هنوز دارم روی یاد گرفتن C++ تمرکز می‌کنم‌، و قصد دارم بعد از اون به سراغ Qt برم‌.</p>
-<p>حجم آموزش‌ها به طور متوسط چیزی در حدود ده مگ هست‌، پس پیشنهاد می‌کنم‌، حتما اون‌ها رو دانلود و آرشیو کنید که بتونید در موقع نیاز بهشون برگردید‌. روون بودن آموزش‌ها و مثال‌های کاربردی‌ای که زده می‌شه به شما به درک مفاهیم مختلف کمک می‌کنم‌.</p>
-<p>فقط به این<span style="color: #993300;"><strong>نکته</strong> توجه داشته باشید‌، اگر هنوز به هیچ زبان دیگه‌ای برنامه نویسی نکردین و یا با مفاهیم اولیه برنامه نویسی‌، نظیر شروط‌، حلقه‌ها و غیره آشنا نیستین‌، آموزش‌های C++ این مجموعه به درد شما نمی‌خوره‌. بهتره یا از یه منبع دیگه استفاده کنید‌، و یا یه زبان دیگه مثل جاوا رو یاد بگیرید‌.</span></p>
-<p>وقتی هم که زبان مورد علاقتون رو یاد گرفتید می‌تونید از سایت <a title="voidrealms official website" href="posts/voidrealms" target="_blank">voidrealms.com</a> به تعدادی سورس و نرم‌افزار که جناب برایان آماده کردن دسترسی داشته باشید که می‌تونه کمک خوبی به یاد‌گیری‌تون باشه‌.</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900420ywtywb-y-dnshgh-prdh-wl.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900420ywtywb-y-dnshgh-prdh-wl.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2011-06-29 18:23
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/blog13900408frsty-bry-tkhmyl-yd-grfthhytn-z.html">فرصتی برای تکمیل یاد گرفته‌هایتان از یونیکس و اینترنت</a></h3>
-    
-    <div class="entry-content">
-      <p><a href="http://shahinism.com/wp-content/uploads/esr.jpg"><img class="size-full wp-image-389" title="esr" src="http://shahinism.com/wp-content/uploads/esr.jpg" alt="اریک اس ریموند" width="300" height="300"></a></p>
-<p>و یا حتی ممکن است دنبال چند دلیل برای برتری سیستم‌عاملتان نسبت به بقیه رقبا می‌گردید‌، ولی جز چند دلیل پیش پا افتاده و تکراری چیز دیگری سراغ ندارید‌! خوب کتابی که در این زمینه می‌خواهم معرفی کنم‌، یک حلال مشکل به معنای واقعیست‌! یک متن که به زیبایی هر چه تمام‌تر (‌که به تجربه فهمیده‌ام این شیوهٔ نگارش در خون نویسنده‌اش است‌) دقیقا مسائلی را پیش می‌کشد که نیاز به دانستنش دارید تا در واقع خانه‌های خالی اطلاعاتتان را تکمیل کند‌.</p>
-<p>کتاب «‌<a title="Unix and internet fundamentals how to" href="http://en.tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/" target="_blank">مبانی یونیکس و اینترنت‌</a>» از اریک اس ریموند‌، که به گفتهٔ نویسنده‌اش دلیل کم حجم بودنش این است که با هر کلمه‌اش به شما چیز یاد می‌دهد‌. هر چقدر هم که در گنو‌/لینوکس و در کل سیستم‌های یونیکسی خود را خبره می‌دانید پیشنهاد می‌کنم این کتاب را چندین و چند باره بخوانید‌. فقط به این نکته توجه داشته باشید که نویسنده در نوشتن گاهی زیاده روی می‌کند و اگر دانشجوی رشتهٔ نرم‌افزار نباشید و یا درس معماری کامپیو‌تر نداشته‌اید‌، ممکن است یک کمی گمراه شوید‌! اما اگر مطالب را درست حظم کنید‌، گنجینهٔ مناسبی از اطلاعات را به خود هدیه کرده‌اید‌.</p>
-<p>این کتاب توسط دوست خوبم‌، مهدی فتاحی به فارسی ترجمه شده که می‌توانید از <a title="ترجمه فارسی کتاب مبانی یونیکس و اینترنت در وبلاگ مهدی فتاحی" href="https://mehdi.wordpress.com/unix-and-internet-fundamentals-persian/" target="_blank">این آدرس</a> به آن دسترسی داشته باشید‌. (‌نسخهٔ ترجمه یک کمی قدیمی است‌، ولی ترجمهٔ معرکه‌اش لذت خواندن این کتاب را دو چندان می‌کند‌).</p>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/blog13900408frsty-bry-tkhmyl-yd-grfthhytn-z.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900408frsty-bry-tkhmyl-yd-grfthhytn-z.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
 
 <div class="pageNav">
@@ -307,23 +123,15 @@ undefined video mode number: ۳۱۶
     
 
 
-      </div>
-    </div>
-    <div id="footer">
-      <h5>Elsewhere</h5>
-      <ul class="elsewhere">
-        <a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
-<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
-<a href="https://identi.ca/shahinism">Identica</a> |
-<a href="http://twitter.com/shahinism">Twitter</a> |
-<a href="https://github.com/shahinism">Github</a>
-      </ul>
+      </div><!--columns four-->
+    </div><!--container-->
 
-      <div class="footerContent">
-        
+    <nav id="navigation">
+      <div class="logo"></div>
+      
 <!-- Custom search -->
 <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="http://shahinism.github.io/">
+<input type="hidden" name="sites" value="http://5hah.in">
 <input type="hidden" name="k8" value="#444444">
 <input type="hidden" name="k9" value="#D51920">
 <input type="hidden" name="kt" value="h">
@@ -332,10 +140,63 @@ undefined video mode number: ۳۱۶
 </form>
 <!-- End of custom search -->
 
-        <p> Contents © 2014         <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
-        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
-      </div>
-    </div>
+      <ul>
+	
+  
     
-  </body>
+      <li><a class="nav-icon home" href=".">Home</a></li>
+    
+  
+    
+      <li><a class="nav-icon about" href=".">About</a></li>
+    
+  
+    
+      <li><a class="nav-icon resume" href=".">Resume</a></li>
+    
+  
+    
+      <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
+    
+  
+    
+      <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
+    
+  
+    
+      <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
+    
+  
+
+      </ul><!--/ul-->
+    </nav><!--/navigation-->
+
+<!--/container-->
+<footer class="container">
+  <div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p><!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div><!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+
+</body>
 </html>

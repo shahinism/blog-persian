@@ -1,115 +1,12 @@
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 body {
     direction:rtl;
-    text-align:justify;
-    font-family:'Droid Arabic Naskh', serif;
+    font-family:'Raleway','Droid Arabic Naskh', serif;
 }
 
-.code {
-    border: 1px solid #CFCFCF;
-    border-radius: 5px 5px 5px 5px;
-    direction: ltr;
-    overflow-x: scroll;
-    padding: 6px;
-}
-
-.hentry img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}
-
-.entry-content {
-    text-align: justify;
-}
-
-h1, h2, h3, h4, h5, h6{
-    font-weight: bold;
-}
-
-#coreContent .single .postMeta {
-    direction: rtl;
-    text-align: right;
-}
-
-
-#footer p {
-    direction: ltr;
-    font-size: 8pt;
-}
-
-h5, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-    font-family: 'Droid Arabic Naskh', serif;
-}
-
-#coreContent li {
-    margin-right: 17px;
-}
-
-#coreContent p {
-    line-height: 2.1em;
-}
-
-#mainNav li {
+header, footer,#navigation, .code, .metadata{
     direction: ltr;
 }
 
-p {
-    font-size: 1.4em;
-}
 
-#recentPosts a {
-    float: right;
-}
-
-#recentPosts .postDate {
-    float: left;
-}
-
-.hentry {
-    border-bottom: 0;
-}
-
-
-input[type="submit"] {
-    background-color: #8EA7AA;
-    border-color: #999999;
-    border-radius: 10px 0 0 10px;
-    border-style: solid;
-    border-width: 1px;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-weight: bold;
-    height:28px;
-}
-
-
-#footer #search input[type="text"] {
-    height: 20px;
-}
-
-input[type="text"], textarea {
-    font-family: 'Droid Arabic Naskh', serif;
-    font-size: 12px;
-    padding: 3px;
-}
-
-#disqus_thread {
-    color: #333333 !important;
-}
-
-
-#disqus_thread .serif .post-message p, .serif .top-thread-post p, .serif .top-user p{
-    font-family:'Droid Arabic Naskh' !important;
-}
-
-#lfm {
-    direction:ltr !important;
-    padding: 0 0 !important;
-    font-size: 13px !important;
-}
-
-#siteDescription {
-    width: 496px;
-    margin: 10px auto 25px;
-}

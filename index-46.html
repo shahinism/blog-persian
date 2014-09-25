@@ -1,424 +1,110 @@
 <!DOCTYPE html><html lang="fa">
   <head>
     
-<meta charset="utf-8">
-<meta name="description" content="Sometimes you gotta run before you can walk">
-<meta name="author" content="شاهین آزاد">
-<title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 46) | شاهینیسم</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sometimes you gotta run before you can walk ">
+  <meta name="author" content="شاهین آزاد">
+  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 46) | شاهینیسم</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
+  
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]-->
 
-<link href="assets/css/rst.css" rel="stylesheet" type="text/css">
-<link href="assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
-<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
-
-<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]-->
-<script>
- window.onload = function() {
-   LastFMStatus.init({
-     username: "shahinism"
-   });
- };
-</script>
-
-
-<link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml">
-
-
-
+  
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
+    
+  
+  
 
     
     
   </head>
-  <body class="home blog">
-    
-    <script type="text/javascript">var addthis_config={"ui_language":"${lang}"};</script>
-    
-
-    <div id="siteWrapper">
-      <h1 id="vcard author">
-        <a href="." title="شاهینیسم">شاهینیسم</a>
-        <a href="http://internetdefenseleague.org"><img src="http://internetdefenseleague.org/images/badges/final/footer_badge.png" alt="Member of The Internet Defense League" style="float: left; position: absolute; margin: 0px 90px;"></a>
-      </h1>
-
-      <div id="mainNav">
-        <ul>
-          
-
-
-  <li><a href="archive.html">Archives</a>
-
-
-
-  </li><li><a href="categories/index.html">Tags</a>
-
-
-
-  </li><li><a href="rss.xml">RSS</a>
-
-
-</li>
-        </ul>
-      </div>
-      <div id="siteDescription">
-        
-        
-        
-      </div>
-      <div id="coreContent" class="hfeed">
-        
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-09-12 11:31
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/py3status.html">py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3</a></h3>
-    
-    <div class="entry-content">
-      <p>قبلا در مورد <a class="reference external" href="http://i3wm.org/">i3</a> <a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">حرف زده‌ام</a> و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش بود) اطلاعات وضعیت سیستمم را در i3bar <a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">نمایش می‌دهم</a>. خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> این است که اطلاعات را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک می‌کند. ولی بدبختی این <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> هم این است که به قدر کافی قابل گسترش نیست و ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!</p>
-<p>این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را <a class="reference external" href="https://github.com/ultrabug/py3status">شروع کرده</a> که در واقع حکم یک پوشش برای <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته و آن را با کمک <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> استفاده کنید و در آخر هم از فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> برای تنظیم هر دو ابزار بهره بگیرید.</p>
-<div class="section" id="id4">
-<h2>نصب و ساخت اسکریپت</h2>
-<p>برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید (مسیر ‎ ~/‌.‌i3/config):</p>
-<pre class="code bash literal-block">
-bar <span class="o">{</span>
-  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
-<span class="o">}</span>
-</pre>
-<p>با این دستور ما به <a class="reference external" href="http://i3wm.org/">i3</a> می‌فهمانیم که باید از <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> برای نمایش داده‌های i3bar استفاده کند. همینطور به <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> می‌گوییم که فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در کدام مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد (‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).</p>
-<p>لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم <a class="reference external" href="https://github.com/ultrabug/py3status">Py3status</a> داشته باشد که اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس توجه کنید:</p>
-<pre class="code python literal-block">
-<span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
-  <span class="sd">"""
-  System status in i3bar
-  """</span>
-  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
-      <span class="sd">"""calculate the memory (RAM) status and return it.
-
-      """</span>
-      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
-      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s">'full_text'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'name'</span><span class="p">:</span> <span class="s">'ram_info'</span><span class="p">}</span>
-      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
-
-      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_good'</span><span class="p">]</span>
-      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_degraded'</span><span class="p">]</span>
-      <span class="k">else</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_bad'</span><span class="p">]</span>
-
-      <span class="n">response</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"RAM: </span><span class="si">%.2f</span><span class="s">/</span><span class="si">%.2f</span><span class="s"> GB (</span><span class="si">%d%%</span><span class="s">)"</span> <span class="o">%</span> \
-                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
-      <span class="n">response</span><span class="p">[</span><span class="s">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-
-      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-</pre>
-</div>
-<div class="section" id="id5">
-<h2>پوشهٔ نمونه‌ها</h2>
-<img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png">
-<p>کاربران <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> ابزارهای مختلفی در این زمینه نوشته‌اند که در پوشهٔ Examples پروژه می‌توانید نمونه‌هایی از آن‌ها را ببینید. برای مثال دو اسکریپت netdata (که وظیفهٔ بررسی سرعت اینترنت و حجم دریافتی یا ارسالی داده را بر عهده دارد) و sysdata (که میزان مصرفی رم را محاسبه می‌کند) را من نوشته‌ام و در پروژه اصلی به اشتراک گذاشته‌ام. همینطور یک اسکریپت قابل کنترل با کیبورد برای <a class="reference external" href="http://shahinism.github.io/posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html">pomodoro</a> هم ساخته شده که می‌توانید مدیریت زمان فعالیتتان را با آن انجام دهید.</p>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+  <body>
+    <div class="container">
+      <header>
+	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="index-46.html#navigation"></a>
+      </header><!--/header-->
+      <div class="columns four">
+	
+  
+    <article>
+      <h2 class="title"><a href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html">بازیگوشی سیستم صدای لینوکس‌!</a></h2>
+      <div class="metadata">
+	<span class="date">2011-09-07 06:59</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>پس از در میان گذاشتن مشکل با ایمان‌،‌ اولین حدسش همان مشکل همیشگی Alsa (‌مشکل در پخش هم زمان چند منبع صوتی‌) بود‌. برای رفع این مشکل خواست که از <a title="Pulse Audio official website" href="http://www.pulseaudio.org/" target="_blank">PulseAudio</a> استفاده کنم‌. نصب این برنامه روی اسلکور تنها نیاز به یک وابستگی ‌(‌برنامه <a title="speex Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/speex/" target="_blank">speex</a>) و ساخت دو گروه برای PulseAudio که جزئیاتش در صفحه‌ی مربوط به <a title="pulseaudio Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/pulseaudio/" target="_blank">Slackbuild</a> شرح داده شده دارد‌.</p>
+<p>بعد از نصب و راه‌اندازی دوباره سیستم‌، شواهد از این قرار بود که PulseAudio وظیفه‌ی اجرای صدا‌ها را بر عهده گرفته‌، ولی جدای از مشکل قبلی‌ای که داشتم‌، مشکل دیگه‌ای نمایان شده بود‌. Notification‌ها کار نمی‌کرد‌! به پیشنهاد دوباره ایمان با رفتن به مسیر Applications and system notifications در System settings و سربرگ Player Setting و تغییر پلیر از حالت پیشفرض به Mplayer (‌کافیست که در فیلد Player عبارت mplayer وارد شود‌) این مشکل حل شد‌، ولی مشکل قبلی همچنان پابرجا بود‌. ‌(‌البته ایمان یک پیشنهاد دیگر هم داد که منجر به از دست رفتن کامل صدای سیستم شد‌، ولی خوب توانستیم دوباره رو به راهش کنیم‌).</p>
+<p>با این توصیفات‌، دیگر بی‌خیال این شدم که مشکل به Alsa مربوط شود‌ (‌چون در واقع من همان موقع هم تنها یک منبع صوتی در حالت اجرا داشتم‌). در جستجو‌های گوگلی‌ام این را کشف کرده بودم که KWordQuiz از Phonon برای پخش صدا کمک می‌گیرد‌. از طرفی در راهنمایی که ایمان (‌باز هم ایمان‌‌! نبود چی کار می‌کردم‌؟) برای PulseAudio در آرچ نوشته بود (‌که هنوز هم منتشر نشده‌) فهمیدم که باید GStreamer را به زور مجبور به استفاده از PulseAudio کنیم‌.</p>
+<p>با توجه به این تجربیات‌،‌ به جستجوی تنظیماتی که به این گزینه‌ها مربوط شود پرداختم‌! در شاخه Multimedia و منوی Phonon به بخشی رسیدم که عملا تنظیماتش در گذشته کاری از پیش نبرده بود‌. ولی در سربرگ Backend متوجه شدم که Gstreamer به Mplayer اولویت دارد‌. Mplayer‌ای که قبلا هم نتایج خوبی در کار با صدا برایم در بر داشت‌. اولویت اول را به Mplayer دادم‌،‌ و دا دا‌! مشکل حل شد‌!</p>
+<p>نتیجه‌ی کار ایمان فوق‌العاده از آب در آمده بود‌. و آن‌طور هم که قول داده قرار است همه‌ی ۴۰۰۰ لغت این مجموعه را به صورت فلش کارت آماده کند و به طور روزانه منتشر کند‌. به نظرم اگر می‌خواهید تکانی یه زبان انگلیسی زنگ زده‌یتان بدهید‌، این بسته‌های ایمان را از دست ندهید ;-)</p>
+      
+      
         
     
-        <a href="posts/py3status.html#disqus_thread" data-disqus-identifier="cache/posts/py3status.html">Comments</a>
+        <a class="commentLink" href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-09-02 13:58
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/coursera-think-again.html">معرفی دورهٔ آموزش تفکر Coursera</a></h3>
-    
-    <div class="entry-content">
-      <p>قبلا در مورد <a class="reference external" href="https://www.coursera.org/">Coursera</a> حرف <a class="reference external" href="http://shahinism.github.io/posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">زده‌ام</a> (و در آینده بیشتر در مورد کلاس‌های آنلاینی که نظرم را جلب می‌کنند حرف خواهم زد). آقایان والتر سینات-آرمسترانگ و رم نتا‌، از دانشگاه دوک (Duke) آمریکا جدیدا یک دورهٔ آموزشی تحت عنوان <a class="reference external" href="https://www.coursera.org/course/thinkagain">Think again: How to reason and argue</a> را در <a class="reference external" href="https://www.coursera.org/">Coursera</a> شروع کرده‌اند که ارزش مطالعه دارد. خصوصا این که جدای از ضعف فرهنگی ما ایرانی جماعت در رابطه با پذیرش نظرات مخالف و یا حتی مباحثهٔ خیلی ساده در رابطه با موضوعات کاملا پذیرفته شده‌، ما به قول خودمان‌، گیک‌های لینوکسی و نرم‌افزار آزادی هم نتوانسته‌ایم در بسیاری از بحث‌هایمان به نتیجه‌ای برسیم!</p>
-<p>پس با این تفاسیر‌، نه تنها فرهنگ ناقص ما ایرانیان‌‌، نتوانسته کمکی به آموزش بحث‌، تفکر و نتیجه‌گیریمان کند‌، پیشرفت غربی‌ها هم هنوز نیاز به آموزش درست در چنین زمینه‌هایی را لازم دارد تا به نتیجه‌ای مطلوب برسد.</p>
-<img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Paris_2010_-_Le_Penseur.jpg/399px-Paris_2010_-_Le_Penseur.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Paris_2010_-_Le_Penseur.jpg/399px-Paris_2010_-_Le_Penseur.jpg">
-<p>به طور کلی این دورهٔ آموزشی به چهار بخش تقسیم شده است که به قرار زیر است:</p>
-<ul class="simple">
-<li><strong>چطور استدلال‌ها را بررسی کنیم:</strong> عمدهٔ بحث در این قسمت مربوط به بررسی ویژگی‌های یک استدلال و چگونه یافتشان در میان عبارات است.</li>
-<li><strong>چطور استدلال‌های استقرایی را تشخیص دهیم:</strong> این که چطور موضوع ارائه شده توسط یک استدلال را کشف کنیم.</li>
-<li><strong>چطور استدلال‌های غیر استقرایی را بشناسیم</strong></li>
-<li><strong>و در آخر این که چطور از مغالطه جلوگیری کنیم</strong></li>
-</ul>
-<p>از جمله نکاتی که در شروع این دوره برایم بسیار چشم‌گیر بوده‌اند‌، تلاش بسیار ارائه دهندگان درس برای فهماندن این است که گفتمان (بحث) یک جنگ نیست‌! این که با توهین‌، یا بلند کردن صدا و نشان دادن زور بازو نمی‌توان از گفتمانی پیروز بیرون آمد و این که نباید تلاش طرف بحث این باشد که تفکرش را به کسی القا کند. نکات بسیار ضریفی که با چیز‌هایی که ما در محیط اطرافمان می‌بینیم فوق‌العاده متفاوت است و مجبوریم تمرین زیادی داشته باشیم تا بتوانیم به درک درستی در موردشان برسیم.</p>
-<p>این دورهٔ آموزشی به تازگی شروع شده و سری دوم آموزشش تازه همین دیشب روی سایت قرار گرفته است. به نظرم فرصت خوبی برای پیوستن به این آموزش و پیگیری‌اش برای علاقه‌مندان است.</p>
-<div class="section" id="id2">
-<h2>چطور دریافتش کنیم؟</h2>
-<p>در اول پست هم به یکی از <a class="reference external" href="http://shahinism.github.io/posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">ارسال‌های قبلی‌ام</a> اشاره کردم که در آن اسکریپت Coursera را معرفی کرده بودم تا کمک کند تا کل بحث‌های یک درس را به راحتی دانلود کنید.</p>
-</div>
-<div class="section" id="id4">
-<h2>کمک به انتشار این دروس</h2>
-<p>یکی از ویژگی‌های خوب دوره‌های <a class="reference external" href="https://www.coursera.org/">Coursera</a> همراه داشتن زیرنویس انگلیسی برای دروسش است که به نظرم خیلی می‌تواند کمک کننده باشد. خصوصا این که فکر می‌کنم عمده علاقه‌مندان به این بحث معرفی شده‌، ممکن است به دلیل انگلیسی زبان بودن آموزش از آن فرار کنند‌، که در نتیجه ترجمهٔ این زیرنویس‌ها به فارسی توسط این کاره‌هایش‌، می‌تواند کمک بسیار زیادی در انتشار این چنین آموزشی در سطح گسترده‌تر جامعه وب‌مان داشته باشد.</p>
-</div>
-<div class="section" id="id5">
-<h2>اضافات</h2>
-<p>عکس مربوط به مجسمهٔ برنز The thinker ساختهٔ آگوست رودین فرانسوی است که می‌توانید در <a class="reference external" href="https://en.wikipedia.org/wiki/The_Thinker">مدخل</a> ویکی‌پدیائش بیشتر در موردش بخوانید.</p>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+    <article>
+      <h2 class="title"><a href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html">چرا باید LaTeX را دوست داشت‌؟</a></h2>
+      <div class="metadata">
+	<span class="date">2011-09-05 03:38</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>تازه تجربهٔ خروجی گرفتن از یک فایل tex را از سر گذرانده‌ام و خیلی خیلی زود است که بخواهم دلیل و مدرک سنگینی بیاورم که «آره آقا‌، از فردا هر کس با لاتک مطلب ننوشت‌، و یا کار با لاتک را ندانست‌، از ما نیست‌!». اما می‌خواهم برای فعلا و ثبت در خاطراتم‌، اینجا بنویسم که چگونه کفهٔ ترازو به نفع لاتک برایم پایین رفت‌:</p>
+<p></p><ul><li>انگلیسی نوشتن‌، و ساده نوشتن در لاتک‌، فوق‌العاده آسان است‌! اما وای به حالتان اگر بخواهید فارسی بنویسید‌، در این صورت باید یک دورهٔ کامل برنامه‌نویسی بسته‌هایش را بگذرانید (‌به این شوری‌ها هم که گفتم نیست‌، در آینده بیشتر در این مورد می‌نویسم‌) ‌.</li>
+    <li>آسان‌ترین کار ممکن در لاتک‌، پانویس نوشتن است‌، که خوب من هنوز هم بلد نیستم که در هیچ کدام از ورد پرسسور‌های رایج انجامش دهم‌!</li>
+    <li>فهرست کردن مطالب در لاتک فقط زحمت نوشتن tableofcontent/ را می‌طلبد‌!</li>
+    <li>تمام سخت‌گیری‌های لاتک در مورد پاراگراف‌ها‌، خطوط‌، علامت‌های مختلف‌ و قابلیت‌هایش برای تعیین کردن سر فصل‌، و بخش‌ها‌ نتیجه‌ای فوق‌العاده زیبا و خوانا را به شما باز می‌گرداند (‌ولی آن‌چنان دهانی از شما... که...) ‌!</li>
+    <li>افزودن تصویر در لاتک به قدری سخت هست‌، که هنوز جرات نکرده‌ام نزدیکش شوم‌!</li>
+    <li>همهٔ تجربیات بالا را اضافه کنید‌، به درد و خونریزی شدیدی که باید برای افزودن قابلیت‌های تایپ فارسی بدون درد و خونریزی در لاتک متحمل شوید‌!</li>
+    <li>نوشتن مقاله در لاتک‌، عملا حکم یک برنامه‌نویسی تمام عیار را دارد‌!</li>
+</ul><p style="text-align: center;"><a href="http://shahinism.com/wp-content/uploads/latex_logo.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-438" style="margin: 7px auto;" title="latex_logo" src="http://shahinism.com/wp-content/uploads/latex_logo-300x111.png" alt="" width="300" height="111"></a></p>
+<p>در کل پس از سبک سنگین کردن قضایای بالا من هم به این نتیجه رسیدم که اگر حرف از با سواد بودن در جامعهٔ امروزی می‌زنید‌، و برای مهندس مهندس شنیدن‌، آب دهانتان سر ریز می‌شود‌، حداقلش این است که مقالاتتان را با LaTeX آماده کنید‌، نه مثل <a title="وب سایت استاد گرام" href="http://yamaghani.com/m/page-2aa58b0d-58a0-428c-95a3-e8c25e26103b.aspx" target="_blank">استاد گرامیمان‌</a>، ‌ به مسلط بودن به مجموعه نرم‌افزار آفیس افتخار ورزید‌! ‌ (‌گفتم «‌من هم‌» ‌، چون <a title="ایمان بیاورید بر LaTeX" href="http://persian.kamangir.net/?p=2533" target="_blank">آرش آبادپور</a> و <a title="آقای مهندس عزیز‌، LaTeX بلدی‌؟" href="http://aminsabeti.net/1387/11/mr-engineer-do-you-know-latex/" target="_blank">امین ثابتی</a> عزیز در این مورد قبلا سخن‌ها رانده‌اند‌) ‌.</p>
+<p>فعلا می‌توانید برای منبع‌، به <a title="منبع فارسی LaTeX" href="http://aminsabeti.net/1387/11/persian-source-for-latex/" target="_blank">این‌ها</a> که امین عزیز نشان داده است مراجعه کنید‌، البته‌ تگ لاتک وبلاگ هر دوی این عزیزان (<a title="Kamangir LaTeX Tag" href="http://persian.kamangir.net/?category_name=latex" target="_blank">‌آرش</a> و <a title="Amin's LaTeX Tag" href="http://aminsabeti.net/?s=latex" target="_blank">امین‌</a>) خواندنش خالی از لطف نیست‌.</p>
+<p>در ضمن دلتان را هم به این خوش نکنید‌ که لاتک را در وب فارسی جستجو کنید‌، چون نتیجه‌اش انواع کاندوم است که نثارتان می‌شود‌ ;-)</p>
+      
+      
         
     
-        <a href="posts/coursera-think-again.html#disqus_thread" data-disqus-identifier="cache/posts/coursera-think-again.html">Comments</a>
+        <a class="commentLink" href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900614chr-byd-latex-r-dwst-dsht.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-08-29 15:55
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/antigen.html">Antigen جعبه ابزار ZSH که فعلا استفاده‌اش نمی‌کنم</a></h3>
-    
-    <div class="entry-content">
-      <p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
-<pre class="code bash literal-block">
-curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
-<span class="nb">source </span>antigen.zsh
-</pre>
-<p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
-<pre class="code bash literal-block">
-antigen bundle zsh-users/zsh-syntax-highlighting
-</pre>
-<p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
-<p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
-<pre class="code bash literal-block">
-antigen theme XsErG/zsh-themes themes/lazyuser
-</pre>
-<p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
-<p>و اما سوال مهم:</p>
-<div class="section" id="antigen">
-<h2>چرا از <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> استفاده نمی‌کنم؟</h2>
-<p>حقیقتش <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> با تمام خوبی‌هایش‌، سرعت لود prompt را در اولین بازگشایی ترمینال‌، خیلی‌، خیلی پایین می‌آورد (منظورم نهایتا یک ثانیه است D:). این برای منی که دائما در حال تغییر ترمینال هستم‌، خیلی زود خسته کننده می‌شود و به خاطر همین‌، فعلا بی‌خیال آن شده‌ام. به همین راحتی. اما همانطور که توسعه دهنده گفته‌، این اسکریپت هنوز در وضعیت beta قرار دارد و مطمئنا در آینده بهتر از این خواهد بود. این است که دلم خواست معرفی‌اش کنم ;-)</p>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
+    <article>
+      <h2 class="title"><a href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html">نبض سیستم‌تان در دستان شما</a></h2>
+      <div class="metadata">
+	<span class="date">2011-08-22 01:37</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>پس از ارتقا KDE به نسخهٔ ۴،۷ و پیدا کردن <a title="Wallpaper Wide" href="http://wallpaperswide.com/" target="_blank">این سایت</a> که پس‌زمینه‌های فوق‌العاده‌ای در خود جای داده‌ (‌تشکر دوباره از <a title="BardiaX on wordpress" href="http://bardiax.wordpress.com/" target="_blank">بردیا</a> که در گوپس معرفی‌اش کرد‌)، خواستم یکی از معدود پلاسموید‌هایی را که استفاده می‌کنم را دوباره نصب کنم‌. نتیجه به حدی برایم دلنشین شد که آن را اینجا به اشتراک می‌گذارم‌.</p>
+<p>Yasp-Scripted را می‌توانید از <a title="Yasp-Scripted (Systemmonitor) v1.0.8a    " href="http://kde-look.org/content/show.php?content=109367" target="_blank">اینجا</a> دانلود و نصب کنید (‌کار زیاد سختی نیست‌، باید از سورس اقدام کنید‌ که در فایل INSTALL طبق معمول همه توضیحات داده شده). ولی بسته به سیستمتان بعد از افزودن پلاسموید به میزکار ممکن است نتیجه‌ای نگیرید (که من هم نگرفتم‌!). موضوع سر فایل. yasp.script که در پوشهٔ خانگیتان می‌توانید پیدایش کنید‌. این فایل کد‌های مربوط به نحوه و امکانات نمایش پلاسموید را در اختیار دارد که ممکن است با سیستم شما همخوان نباشد‌. خوشبختانه تعدادی دیگر از نمونه‌های این فایل را می‌توانید در شاخه yasp_scripts موجود در سورس کد بیابید‌. گزینه‌های مختلف را امتحان کنید‌، احتمالا به نتیجه می‌رسید‌. بعد هم می‌توانید با توجه به سلیقه و امکانات سخت‌افزاریتان‌، فایلی که برایتان اثربخش بوده را شخصی سازی کنید‌.</p>
+<p>من نمونه‌ای از این فایل را که برای خودم آماده کردم دز <a title="نمونه اسکریپت شخصی سازی شده شاهینیسم" href="http://shahinism.com/wp-content/uploads/SH-Script.tar.gz">این‌جا</a> قرار داده‌ام که می‌توانید دریافت کنید‌. این فایل را برای CPU چهار‌هسته‌ای آماده کرده‌ام و بخش‌های مربوط به سنسور حرارتش را حذف کرده‌ام (‌هر چه تلاش کردم نتوانستم به کارش بیاندازم‌) ‌. ترتیب رنگ‌ها هم تنها ترتیب رنگی است که اصولا یادم نمی‌رود (‌رنگین کمان‌) ‌. در کل چیز جالبی در می‌آید اگر روی یک بک‌گراند روشن پیاده شود‌. نمونه می‌ز‌کار من را در زیر مشاهده می‌کنید‌.</p>
+<p><a href="http://shahinism.com/wp-content/uploads/Sh-Kde.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-426" style="margin: 7px auto;" title="Sh-Kde" src="http://shahinism.com/wp-content/uploads/Sh-Kde-300x225.png" alt="" width="330" height="247"></a></p>
+      
+      
         
     
-        <a href="posts/antigen.html#disqus_thread" data-disqus-identifier="cache/posts/antigen.html">Comments</a>
+        <a class="commentLink" href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900531nbd-systmtn-dr-dstn-shm.html">Comments</a>
     
 
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-08-26 20:07
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/shahin-in-military-service.html">شاهین‌، سربازی‌، وبلاگ</a></h3>
-    
-    <div class="entry-content">
-      <div class="section" id="id1">
-<h2>سربازی</h2>
-<p>سه ماهی می‌شود که ننوشته‌ام. رفته‌ام اجباری یا به قول این ملت جان بر کف میهن‌، سربازی! آخر یکی نیست بگوید گوساله‌، شاهین کجا دلش می‌خواهد سرش را به این راحتی از دست بدهد و اسمش بشود سرباز؟ همان عبارت اجباری قدیمی‌ها خیلی بهتر حق مطلب را در موردش عدا می‌کند‌، به زور برده‌اندش (-;</p>
-<p>لپ مطلب آن که‌، نمی‌توانستم آن‌طور که باید و شاید وقتم را بگذارم پای وبلاگ و برایش بنویسم. راستش خیلی دلم می‌خواهد بنویسم‌، نه برای این که خوانده می‌شود (کسی هم اصلا پیدا می‌شود شاهینیسم بخواند؟)، نه! برای این که چیزی یاد بگیرم، برای این که یادم بماند‌، برای این که پشت این نقاب گم نشوم.</p>
-<p>نه این که فکر کنید حتما حرفی برای گفتن ندارد که بنویسد و این حرف‌ها ها‌، نه‌، از این خبر‌ها نیست! مشکل بی‌خوابی است‌، مشکل خستگی است و این اواخر گشنگی! خدا را شکر این مورد آخر به خیر از سرمان گذشت. به حول قوهٔ الهی موفق شدم از ۳۰ روزه‌، ۲۹ تایش را بخورم‌، آن یکی هم سحری خواب ماندخ D:</p>
-<p>حتما با خود فکر می‌کنید از بس در حال جنگ و رژه و این حرف‌ها هستم‌، این‌قدر خسته می‌شوم… خوب راستش‌، کار که می‌کنم‌، خیلی هم می‌کنم‌، ولی خوب بخش اصلی‌اش نامه‌نگاری و تایپ و این حرف‌هاست که جز این ویندوز XP و مایکروسافت آفیس که الان هم دارم این مطلب را تویش می‌نویسم چیز خسته کننده دیگری در موردش وجود ندارد.</p>
-<p>خسته کننده‌، آدم‌های نادان‌، پر ادعا‌، بی‌سواد و فضایی است که ساخته‌اند. فرسایش اعصاب اولین یادگار سربازیس که به سراغ آدم می‌آید. از آن طرف هم وقتی شب به خانه بر می‌گردم‌، این اینترنت کند و داغانم بیشتر روی اعصاب می‌رود. نتیجه‌اش هم که معلوم است. از زور افسردگی هی خوابت می‌آید. بعد هم چون غم تکرار مکررات فردا صبح را در دل داری‌، این خواب نمی‌خواهد رهایت کند و همین‌طور سنگین‌تر می‌شوی.
-تازه اگر هم بتوانی از این‌ها فرار کنی‌، درد عضلانی نقشی که دیروز داشته‌ای (حمال) به قدر کافی داغانت می‌کند. نمی‌دانم می‌دانید رسته چیست یا نه‌! نمی‌دانم می‌دانید که این‌ها رویشان نمی‌شود رستهٔ سرباز را رسمی کنند یا نه‌! چون این‌جایی که من خدمت می‌کنم‌، سرباز اگر درجه‌اش سرهنگ هم باشد‌، نه احترام دارد‌، نه می‌تواند استراحت کند. رسته‌اش همان حمال تمامی است ;-)</p>
-<p>این است که می‌خواهم به این‌جا پناه بیاورم. هیچ برنامه‌ای هم ندارم! نمی‌دانم اصلا می‌شود یا نه‌، ولی خوب هفته‌ای دو سه بار نوشتن و لابلایش این دل را خالی کردن‌، فکر کنم خوب بتواند کمک کند.</p>
-<p>البته این را هم بگویم که این چند وقته چیز‌هایی هم یاد گرفته‌ام. احتمالا همین‌ها می‌شود موضوع بحث‌های پیش روی وبلاگم. کتاب‌های خوبی هم خوانده‌ام. خیلی دوست دارم در موردشان حرف بزنم. امیدوارم تا سر رسیدن موعد نوشتن مطلب‌شان حس نوشتن در موردشان نپرد که آن موقع مجبورم نوشتن در موردشان را تا مرور دوبارهٔ کتاب‌ها عقب بیاندازم.</p>
-</div>
-<div class="section" id="id2">
-<h2>وبلاگستان فارسی</h2>
-<p>راستش نمی‌دانم حواستان هست یا نه‌، وبلاگستان فارسی همین‌طور دارد رمغش را از دست می‌دهد‌ها. اگر گیک هستید‌، کتاب می‌خوانید‌، عاشق موسیقی هستید‌، چه می‌دانم‌، هر هنری دارید و علاقه به شریک شدن لذتش هم درون‌تان وجود دارد‌، وبلاگ ارزان ساختن این روز‌ها کاری ندارد. اگر هم ندارید در وبلاگ‌های گروهی خوب مطلب‌تان را منتشر کنید. لینوکس‌ریویو با آن همه فعالیت‌، الان یک سالی است که یخ زده (مطلب‌های ماهی یک بارش را هم خر پف خواب زمستانی‌اش حساب کنید.) اگر همت نوشتن برایش را دارید مطمئن باشید مسعود آموزگار با علاقه مطلب‌تان را منتشر می‌کند.</p>
-</div>
-<div class="section" id="id3">
-<h2>دامنه</h2>
-<p>در آخر هم این که Shahinism.com تعطیل شده است. سرباز جماعت فقیر است و به لطف متخصصین امر کشور‌داری در دنیا فقیرتر به نظر می‌رسد. این است که فعلا Shahinism.github.io آدرس وبلاگ است.</p>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/shahin-in-military-service.html#disqus_thread" data-disqus-identifier="cache/posts/shahin-in-military-service.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="post hentry">
-  <h5 class="postDate"><abbr class="publishd">
-    ارسال شده: 2013-05-29 14:49
-  </abbr></h5>
-  <div class="postContent">
-    <h3 class="entry-title"><a href="posts/emacs-as-a-terminal-emulator.html">این ایمکس دوست داشتنی (استفاده از ایمکس به عنوان ترمینال!)</a></h3>
-    
-    <div class="entry-content">
-      <p>خوب همانطور که می‌دانید من خیلی خیلی وابسته به ترمینال‌ام هستم. خصوصا این که با هزار ترفند روی i3 یک چیزی شبیه <a class="reference external" href="http://shahinism.github.io/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html">Quake</a> درست کردم تا ترمینال‌ام با کلید F12 در دسترس باشد. به هر حال‌، این در دسترس بودن‌، وسوسه‌ام کرد که همین کار را با ایمکس هم انجام دهم. چند روز گذشته همچین وضعیتی بود. با F12 ترمینالم را داشتم و با Meta+F12 ویرایشگرم را. تا حدی قابل قبول بود. ولی خوب باز آن‌قدر‌ها که باید به دل نمی‌نشست.</p>
-<p>مهم‌ترین دلیلش این که به دلیل کوچک بودن صفحهٔ مانیتورم‌، با چند پنجرهٔ باز در آن واحد‌، خیلی شلوغ‌کاری می‌شد. این بود که امروز تصمیم گرفتم تا جای ممکن‌، اجزای اضافی را حذف کنم. و خوب وقتی پای ایمکس در میان باشد‌، هر ابزار دیگری اضافه است D:</p>
-<p>در دسترس بودن همیشگی ایمکس چند مزیت عمده دارد. اول این که می‌توانم هر وقت که خواستم‌، با <a class="reference external" href="http://orgmode.org/">org-mode</a> و آن قابلیت Capture خیلی خیلی به درد بخورش‌، هر Note, Link یا TODO‌ای که به ذهنم رسید را سریع ثبت کنم که از دستم نرود (راجع به این یکی خیلی حرف خواهیم زد. خیلی هم زود این کار را می‌کنیم). دومندش را هم نمی‌شود این‌جا گفت‌، باید اول راجع به یک چیز دیگر بگویم‌!‌</p>
-<p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> قابلیت اجرای پوستهٔ فرمان را در خودش دارد. آن هم به هزار و اندی روش مختلف‌! من هنوز راجع به تفاوت‌ها و مزیت‌های این پوسته‌ها زیاد نمی‌دانم. ولی فعلا می‌خواهم بستهٔ multi-term را نصب و تجربه کنم. این بسته در واقع یک سری امکانات اضافه را نسبت به term که همراه خود ایمکس نصب می‌شود به همراه دارد. خوب ما هم فعلا تستش می‌کنیم تا ببینیم چه می‌شود.</p>
-<pre class="code literal-block">
-package-install multi-term
-</pre>
-<p>و حالا‌ هم با دستور زیر اجرایش می‌کنم:</p>
-<pre class="code literal-block">
-M-X multi-term
-</pre>
-<!-- TEASER_END: بیشتر بخوانید -->
-<p>یک کمی بالا و پایینش می‌کنم. همه چیز خوب کار می‌کند‌، جز این که قابلیت تکمیل خود‌کار حیاتی <a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">ZSH</a> را از دست داده‌ام. چرا؟ نمی‌دانم ولی بیایید ببینیم این کلید چه فرمانی را اجرا می‌کند:</p>
-<pre class="code literal-block">
-C-h k TAB
-</pre>
-<p>ایمکس می‌گوید که دارد <strong>yas-expand-from-trigger-key</strong> را اجرا می‌کند که مربوط به بستهٔ <a class="reference external" href="https://github.com/capitaomorte/yasnippet">Yasnippet</a> است که برای دسترسی سریع به قالب‌های آماده استفاده می‌کنم. (اگر نمی‌دانید چیست نگران نباشید‌، راجع به این هم خیلی زود می‌نویسم). خوب‌، من <a class="reference external" href="https://github.com/capitaomorte/yasnippet">Yasnippet</a> را به صورت سراسری اجرا کرده‌ام. حالا چطور می‌توانم فقط برای این مد خاص خاموشش کنم؟ (عملا نیازی به قالب آماده در شل نیست D:). کمی جستجو در اینترنت و نتیجه می‌گیرم که اضافه کردن یک hook به مد term بهترین راه‌کار است. منظور این که به مد term بگوییم‌، وقتی اجرا شدی خودت Yasnippet را خاموش کن. حتما می‌پرسید چرا مد term و نه multi-term! جوابش را قبلا هم گفتم‌، multi-term یک جور بستهٔ تکمیلی برای term است و بس. اصل کار را term-mode انجام می‌دهد. پس داریم:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'term-mode-hook</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span>
-                        <span class="p">(</span><span class="nv">yas-minor-mode</span> <span class="mi">-1</span><span class="p">)))</span>
-</pre>
-<p>و تمام. حالا یک‌بار دیگر multi-term را تست می‌کنیم. عالی است. دقیقا رفتار یک Terminal emulator را انجام می‌دهد. حتی <a class="reference external" href="http://htop.sourceforge.net/">htop</a> و <a class="reference external" href="http://ranger.nongnu.org">ranger</a> هم به خوبی کار می‌کنند.</p>
-<div class="section" id="i3">
-<h2>ایمکس و i3</h2>
-<p>حالا که همه چیز خوب کار می‌کند بیایید پنجرهٔ ایمکس را به صورت Scratchpad به <a class="reference external" href="http://i3wm.org">i3wm</a> اضافه کنیم تا بتوانیم با کلید F12 به آن دسترسی داشته باشیم:</p>
-<pre class="code literal-block">
-floating_minimum_size 75 x 50
-floating_maximum_size -1 x -1
-
-for_window [instance="emacs"] move to scratchpad, border 1pixel
-bindsym F12 [instance="emacs"] scratchpad show, move position 110px 0px
-
-exec --no-startup-id emacs --no-splash -g 125x30
-</pre>
-<p>این خطوط همهٔ کاری است که باید انجام دهید. در دو خط اول یک حداقل/حداکثر برای سایز پنجره‌های float روی <a class="reference external" href="http://i3wm.org">i3wm</a> تعیین می‌کنیم. با فرستادن ‎-1 به عنوان مختصات حداکثر پنجره‌، در واقع به <a class="reference external" href="http://i3wm.org">i3wm</a> حالی می‌کنیم که کاری به کار سایز پیش‌فرض خود برنامه نداشته باشد. متاسفانه نمی‌توانم با تغییر سایز‌های i3 کنار بیایم‌، هیچ‌وقت هماهنگ نیستند. این است که ترجیح می‌دهم اندازهٔ پنجره با خود ایمکس تنظیم کنم.</p>
-<p>در خط سوم پنجرهٔ emacs را به scratchpad می‌فرستم و با خط چهارم کلید F12 را برای toggle کردنش تعیین می‌کنم. در آخر هم ایمکس را با آرگومان ‎-g برای تعیین سایز و ‎--no-splash اجرا می‌کنم. این کار را می‌توان از داخل خود فایل کانفیگ ‎.emacs هم انجام داد. ولی تا آن کاملا لود شود‌، هزار و یک جور تغییر سایز می‌بینیم که برای در رفتن از این وضعیت تغییر اندازه را به زمان اجرای برنامه می‌سپاریم.</p>
-<p>آن ‎--no-splash هم دلیل دارد که در ادامه می‌فهمیم.</p>
-<img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/vim_in_emacs.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/vim_in_emacs.png">
-</div>
-<div class="section" id="id1">
-<h2>اجرای پیش‌فرض ترمینال در ایمکس</h2>
-<p>خوب حالا که این تنظیمات را انجام دادیم می‌بینیم که بعد از هر بار روشن شدن سیستم باید خودمان multi-term را اجرا کنیم که اصلا خوب نیست. هر چه باشد عمدهٔ استفادهٔ ما روی ترمینال است. اولین کار این است که از دست آن Splash screen ایمکس خلاص شویم که خوب در مرحلهٔ قبل انجامش دادیم.و حال این خط را به ‎.emacs اضافه می‌کنیم:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="k">setq</span> <span class="nv">initial-major-mode</span> <span class="ss">'multi-term</span><span class="p">)</span>
-</pre>
-<p>این متغیر <strong>initial-major-mode</strong> یک مد پیش‌فرض را برای پنجرهٔ اولیه ایمکس تعیین می‌کند که ما با قرار دادن multi-term به عنوان مقدارش‌، به ترمینال‌مان می‌رسیم.</p>
-</div>
-<div class="section" id="id2">
-<h2>تغییر سایز پنجره</h2>
-<p>قرار که نیست همیشه در آن سایز کوچک به کارمان برسیم. مثلا برای نوشتن همین پست من به یک اندازهٔ بزرگ نیاز دارم. اما خارج کردن ایمکس از حالت floating روی ایمکس‌، آن را از کلید‌های میانبر تعریف کرده‌مان جدا می‌کند (کلید برای دوباره فرستادن این پنجره به scratchpad تعریف نکرده‌ایم). اولین چیزی که به نظرمان می‌رسد این است که یک کلید هم برای فرستادن پنجره به Scratchpad تعیین کنیم‌، ولی به نظرم یک کمی کثیف کاری می‌شود. بهتر است دنبال راه حل بهتری بگردیم.</p>
-<p>ایمکس به صورت پیش‌فرض از Fullscreen پشتیبانی می‌کند. هرچند کلی تنظیمات لازم دارد که بستهٔ <a class="reference external" href="https://github.com/ryantm/fullscreen-mode">Fullscreen-mode</a> برای‌مان انجامش می‌دهد. کافیست بسته را به صورت زیر نصب کنید:</p>
-<pre class="code literal-block">
-package-install fullscreen-mode
-</pre>
-<p>و بعد از اضافه کردن <strong>(follscreen-mode)</strong> به ‎.emacs آن را با زدن کلید F11 فراخوانی کنیم. عالی است نه؟</p>
-<p>حالا خیلی راحت تمامی امکانات پیش‌فرض <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> را همراه ترمینال‌مان داریم. خیلی راحت می‌توانیم خروجی‌ها را در فایل‌ها سیو کنیم و یا از فعالیت‌مان یک History کامل بسازیم.</p>
-<p><strong>نکته ۱</strong>: این یک پست تجربی است. هر وقت چیز جدیدی در این زمینه یاد گرفتم‌، این پست را ویرایش می‌کنم.
-<strong>نکته ۲</strong>: برای زدن C-c در ایمکس‌، باید دوبار آن را بزنید. امکانش هست که آن را تغییر دهیم‌، ولی فعلا من به آن دستی نزده‌ام.</p>
-</div>
-<div class="section" id="id3">
-<h2>ویرایش اول</h2>
-<p>خوب بعد از تقریبا دو روز سر و کله زدن با این ترمینال‌، به نکاتی بر خوردم که به نظرم خوب است در این‌جا مستند شود:</p>
-<div class="section" id="id4">
-<h3>ایجاد ترمینال جدید</h3>
-<p>اول این که ممکن است شما هم مثل <strong>علیرضا</strong> عزیز که در بخش کامنت‌ها ذکر کرد‌، با ایجاد یک ترمینال جدید مشکل داشته باشید. خوب این کار تنها با صدا زدن دوبارهٔ multi-term قابل انجام است. همان‌طور که <a class="reference external" href="http://shahinism.github.io/posts/blog13920117yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb.html">قبلا</a> هم در این مورد صحبت کردیم‌، می‌توانید برای این کار یک کلید میانبر تعریف کنید. اما اگر مثل من از <a class="reference external" href="http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">ergoemacs-mode</a> استفاده می‌کنید‌، کافیست برای ایجاد یک ترمینال جدید از C-n بهره بگیرید ;-) (این کلید‌ها به طور پیش‌فرض یک بافر در حالت lisp-mode ایجاد می‌کنند که با تغییر متغیر initial-major-mode ما آن را به یک شل جدید نسبت می‌دهیم).</p>
-</div>
-<div class="section" id="id5">
-<h3>تغییر خودکار مسیر ایمکس همزمان با ترمینال</h3>
-<p>وقتی با ترمینال وارد یک مسیر جدید می‌شویم‌، و تصمیم داریم یک فایل را با ایمکس در آن‌جا ویرایش کنیم‌، بدیهی است که کلید C-o (یا C-x C-f پیش‌فرض) باید از آن مسیر اجازهٔ جستجوی فایل را بدهند. ولی به صورت پیش‌فرض به مسیر خانگی‌مان بر می‌گردند. برای حل این مشکل از کد‌هایی که در <a class="reference external" href="https://github.com/daimrod/Emacs-config/blob/master/config-multi-term.el">این‌جا</a> پیدا کردم استفاده می‌کنیم:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-       <span class="s">"Update the current directory."</span>
-       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
-
-<span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-       <span class="s">"Update the current directory."</span>
-       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
-</pre>
-<p>خوب سواد من نسبت به این توابع خیلی کم است. اما اول این که با <strong>defadvice</strong> دو تابع term-send-input/raw را به قولی نصیحت می‌کنیم که هر بار با تغییر مسیر ترمینال‌، از مسیر ‎proc آخرین مسیر حاضر را را دریافت کند و به آن وارد شود. دستور cd استفاده شده‌، مربوط به ایمکس است و ربطی به لینوکس ندارد. ولی بدیهی است که این تابع فقط روی سیستم‌های یونیکس بیس کار خواهد کرد.</p>
-</div>
-<div class="section" id="id7">
-<h3>جانشینی کلید‌های میانبر</h3>
-<p>بعد از مدتی کار متوجه می‌شوید میانبر‌های ترمینال‌تان به درستی عمل نمی‌کنند. مثلا C-r که در تاریخچهٔ ترمینال جستجو می‌کند‌،‌ درون ایمکس‌، خود بافر را جستجو می‌کند. این است که کلید‌های میانبر را به این صورت تعریف می‌کنیم (این کد‌ها را از <a class="reference external" href="http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator">این وبلاگ</a> گرفتم):</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
-       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
-       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
-       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
-         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
-
-<span class="c1">; Define keybindings</span>
-<span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
-       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
-           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
-</pre>
-<p>با آن تابع اول دو کلید سراسری را زمانی که یک multi-term ایجاد شد تعیین می‌کنیم. این کلید‌ها امکان دسترسی سریع به ترمینال را وقتی در بافر دیگری هستیم فراهم می‌کنند. همین‌طور اسم بافر ترمینال و نوع پوستهٔ مورد استفاده را تعیین می‌کنیم که زیاد لازم نیست‌، ولی بودنش ضرری هم ندارد (خود multi-term با خواندن متغیر محیطی SHELL پوستهٔ مورد استفاده را کشف می‌کند).</p>
-<p>باقی کلید‌های تعریف شده را هم کمی تغییر دادم تا با <a class="reference external" href="http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">ergoemacs-mode</a> روی چینش <a class="reference external" href="http://shahinism.github.io/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html">workman</a> سازگار باشد. شما هم می‌توانید با توجه به نیاز‌تان تغییرشان دهید.</p>
-</div>
-<div class="section" id="line-mode-char-mode">
-<h3>line-mode, char-mode</h3>
-<p>این دو مد multi-term هر کدام امکانات متفاوتی دارند. مثلا در line-mode با بافر ترمینال مثل یک بافر معمولی ایمکس برخورد می‌شود که به راحتی قابلیت ویرایش دارد. char-mode همان مد پیش‌فرض ترمینال است. در مرحلهٔ قبل برای این دو مد هم کلید میانبر تعریف کردیم.</p>
-</div>
-<div class="section" id="openbox">
-<h3>هماهنگ‌سازی ایمکس و ترمینالش در OpenBox</h3>
-<p>ممکن است شما هم مثل علیرضای عزیز‌، از i3 استفاده نکنید. این است که لازم می‌شود به روش متفاوتی نسبت به میز‌کار‌تان این امکانات بحث شده در این پست را فراهم کنید. علیرضا زحمت کشیده و روشی برای راه‌اندازی همچین چیزی در OpenBox ساخته. این روش را در <a class="reference external" href="http://alinuxgeek.wordpress.com/2013/05/29/%d8%b4%d8%b1%d8%aa%da%a9%d8%a7%d8%aa-%d8%a8%d8%a7%d9%84%d8%a7-%d9%81%d9%88%da%a9%d9%88%d8%b3-%d8%b1%d9%88%db%8c-%d9%be%d9%86%d8%ac%d8%b1%d9%87-%d8%a7%db%8c%d9%85%da%a9%d8%b3">وبلاگش</a> بخوانید.</p>
-</div>
-</div>
-    </div>
-    <div class="postMeta">
-      <div class="comments">
-        
-        
-    
-        <a href="posts/emacs-as-a-terminal-emulator.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-as-a-terminal-emulator.html">Comments</a>
-    
-
-        
-      </div>
-    </div>
-  </div>
-</div>
+    </article>
+  
 
 
 <div class="pageNav">
@@ -440,23 +126,15 @@ package-install fullscreen-mode
     
 
 
-      </div>
-    </div>
-    <div id="footer">
-      <h5>Elsewhere</h5>
-      <ul class="elsewhere">
-        <a href="https://plus.google.com/117086743723717964659/posts">Google Plus</a> |
-<a href="http://www.goodreads.com/user/show/4795670-shahin-azad">Good Reads</a> |
-<a href="https://identi.ca/shahinism">Identica</a> |
-<a href="http://twitter.com/shahinism">Twitter</a> |
-<a href="https://github.com/shahinism">Github</a>
-      </ul>
+      </div><!--columns four-->
+    </div><!--container-->
 
-      <div class="footerContent">
-        
+    <nav id="navigation">
+      <div class="logo"></div>
+      
 <!-- Custom search -->
 <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="http://shahinism.github.io/">
+<input type="hidden" name="sites" value="http://5hah.in">
 <input type="hidden" name="k8" value="#444444">
 <input type="hidden" name="k9" value="#D51920">
 <input type="hidden" name="kt" value="h">
@@ -465,10 +143,63 @@ package-install fullscreen-mode
 </form>
 <!-- End of custom search -->
 
-        <p> Contents © 2014         <a href="mailto:ishahinism@gmail.com">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
-        <p> Design by <a href="http://themes.jimbarraud.com/manifest/">Jimbarraud</a> + some <a href="http://shahinism.com">Shahinism</a> twists. </p>
-      </div>
-    </div>
+      <ul>
+	
+  
     
-  </body>
+      <li><a class="nav-icon home" href=".">Home</a></li>
+    
+  
+    
+      <li><a class="nav-icon about" href=".">About</a></li>
+    
+  
+    
+      <li><a class="nav-icon resume" href=".">Resume</a></li>
+    
+  
+    
+      <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
+    
+  
+    
+      <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
+    
+  
+    
+      <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
+    
+  
+
+      </ul><!--/ul-->
+    </nav><!--/navigation-->
+
+<!--/container-->
+<footer class="container">
+  <div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p><!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div><!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+
+</body>
 </html>
