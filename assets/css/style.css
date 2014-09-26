@@ -342,7 +342,7 @@ li.project:before {
 
 /* Blog content */
 .next a, .prev a, .commentLink {
-  height: 30px;
+  padding: 5px;
   background: #dc322f;
   border-radius: 5px;
   color: white;
