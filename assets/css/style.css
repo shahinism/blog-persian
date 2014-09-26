@@ -52,6 +52,10 @@ body {
   color: #586e75;
   font-size: 100/1.5em; }
 
+iframe {
+  display: block;
+  margin: 0 auto; }
+
 img {
   max-width: 100%;
   max-height: auto;
