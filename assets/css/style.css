@@ -413,6 +413,9 @@ a.commentLink:after,
   border-bottom: 1px solid #e1e1e1;
   padding: 10px 0; }
 
+.postMeta > div {
+  clear: both; }
+
 /* Gallery */
 .thumbnails {
   list-style: none outside none;
