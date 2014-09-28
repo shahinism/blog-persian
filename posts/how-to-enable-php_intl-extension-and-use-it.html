@@ -3,9 +3,9 @@
     
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
+  <meta name="description" content="نحوه فعال‌سازی افزونه intl php">
   <meta name="author" content="شاهین آزاد">
-  <title>پایان خدمت سربازی | شاهینیسم</title>
+  <title>افزونه INTL PHP و کلاس NumberFormatter | شاهینیسم</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
   
@@ -38,28 +38,71 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="end-of-military-service.html#navigation"></a>
+	<a class="nav-link" href="how-to-enable-php_intl-extension-and-use-it.html#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
 	
   <article>
     <h2 class="title">
-پایان خدمت سربازی
+افزونه INTL PHP و کلاس NumberFormatter
 
 </h2>
     <div class="metadata">
-      <span class="date">2014-09-26 11:10</span>
+      <span class="date">2014-09-28 13:19</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      <img alt="My military boots." src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/Military_boots.png">
-</p><p>یکم مهر ماه ۱۳۹۳ آخرین روز خدمت سربازی‌ام بود. <a class="reference external" href="http://5hah.in/posts/shahin-in-military-service.html">قبلا</a> در مورد تمام خوش‌گذرانی‌هایی که در این دوران داشته‌ام نوشته‌ام‌، و خوب نالیدن بیشتر‌، تنها اعصاب خودم را خورد می‌کند. هر چه بود گذشت‌، تمام شد، دست خودم هم نبود انتخابش‌! باید می‌بود‌، باید اتفاق می‌افتاد! همین…</p>
+      </p><p>ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در <a class="reference external" href="http://php.net">PHP</a> نمایش بدهید. در این صورت کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:</p>
+<pre class="code php literal-block">
+<span class="cp">&lt;?php</span>
+<span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
+
+<span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
+<span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
+
+<span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</pre>
+<p>خروجی این خطوط به این صورت خواهد بود:</p>
+<pre class="code html literal-block">
+IRAN: ‎ریال۱٬۲۳۵
+</pre>
+<p>ولی ممکن است مثل من با این اخطار روبرو شوید:</p>
+<pre class="code literal-block">
+Fatal error: Class 'NumberFormatter' not found
+</pre>
+<p>و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:</p>
+<pre class="code bash literal-block">
+php -m | grep intl
+</pre>
+<p>اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در <a class="reference external" href="http://gentoo.org">Gentoo</a>:</p>
+<pre class="code bash literal-block">
+<span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
+</pre>
+<p>یا در بعضی از توزیع‌های محبوب دیگر</p>
+<pre class="code bash literal-block">
+// Debian
+apt-get install php5-intl
+// Centos
+yum install php-intl
+</pre>
+<p>حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:</p>
+<pre class="code literal-block">
+extension=php_intl.dll
+</pre>
+<p>و تمام‌، حالا این افزونه و کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> در دسترس‌تان است.</p>
     
     <div class="categories">
 
 <span>ارسال‌های بیشتر دربارهٔ</span>
 
-<a class="tag" href="../categories/srbzy.html"><span class="badge-info">سربازی</span></a>
+<a class="tag" href="../categories/intl.html"><span class="badge-info">intl</span></a>
+
+<a class="tag" href="../categories/php.html"><span class="badge-info">PHP</span></a>
+
+<a class="tag" href="../categories/numberformatter.html"><span class="badge-info">NumberFormatter</span></a>
+
+<a class="tag" href="../categories/gentoo.html"><span class="badge-info">Gentoo</span></a>
 
 
 </div>
@@ -68,13 +111,9 @@
 <ul class="pager">
   
   <div class="prev">
-    <a href="harvard-and-mit-students-launch-nsa-proof-email-service.html">← ارسال پیشین</a>
+    <a href="end-of-military-service.html">← ارسال پیشین</a>
   </div>
   
-  
-  <div class="next">
-    <a href="how-to-enable-php_intl-extension-and-use-it.html">ارسال بعدی →</a>
-  </div>
   
   </ul>
 
@@ -87,10 +126,10 @@
         <script type="text/javascript">
         var disqus_shortname ="shahinism";
         
-            var disqus_url="http://5hah.in/posts/end-of-military-service.html";
+            var disqus_url="http://5hah.in/posts/how-to-enable-php_intl-extension-and-use-it.html";
         
-        var disqus_title="\u067e\u0627\u06cc\u0627\u0646 \u062e\u062f\u0645\u062a \u0633\u0631\u0628\u0627\u0632\u06cc";
-        var disqus_identifier="cache/posts/end-of-military-service.html";
+        var disqus_title="\u0627\u0641\u0632\u0648\u0646\u0647 INTL PHP \u0648 \u06a9\u0644\u0627\u0633 NumberFormatter";
+        var disqus_identifier="cache/posts/how-to-enable-php_intl-extension-and-use-it.html";
         var disqus_config = function () {
             this.language = "";
         };
