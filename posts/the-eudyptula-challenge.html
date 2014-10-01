@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="fa">
+  <head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="شاهین آزاد">
+  <title>برنامه نویسی کرنل لینوکس با راهنمایی The Eudyptula Challenge | شاهینیسم</title>
+  
+  <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+  
+    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]-->
+
+  
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+    
+  
+  
+    
+      <link rel="icon" href="favicon.ico" sizes="32x32">
+    
+  
+
+    
+
+  
+
+
+
+    
+  </head>
+  <body>
+    <div class="container">
+      <header>
+	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="the-eudyptula-challenge.html#navigation"></a>
+      </header><!--/header-->
+      <div class="columns four">
+	
+  <article>
+    <h2 class="title">
+برنامه نویسی کرنل لینوکس با راهنمایی The Eudyptula Challenge
+
+</h2>
+    <div class="metadata">
+      <span class="date">2014-10-01 20:40</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p><p>عموما کسانی که از گنو/لینوکس به عنوان سیستم‌عامل اصلی‌شان استفاده می‌کنند‌، همه‌اش به خاطر چه می‌دانم‌، فرهنگ آزاد یا روش‌های گیکانه انجام کار‌هایشان نیست. حتی برای باحال‌تر به نظر رسیدن هم نیست. حقیقت این است که ما‌، علاقه به درک بیشتر ابزار‌هایمان داریم. این علاقه گاها آن‌قدر مفید است که پس از یک سر و کله زدن عمیق با یکی از همین ابزار‌ها سر حل یک مشکل خیلی کوچک‌، می‌بینی معادل ساعت‌ها کلاس درس چیز مجانی و خلاقانه‌، آن هم نه تنها در خصوص ابزارت‌، بلکه کل محیط کارت یاد گرفته‌ای.</p>
+<p>مهم‌ترین ابزار مورد استفاده ما گنو/لینوکسی‌ها هم خود هسته لینوکس است. نرم‌افزاری که همه هنرش این است‌ که بدون در دست و پا بودنش‌، محیطی برای ارتباط نرم‌افزار‌های دیگر و ماشین‌های مورد استفاده‌مان فراهم کند. همین در دست و پا نبودنش شاید دلیل آن است که کمتر سعی کرده‌ایم بشناسیمش. چه می‌دانم شاید آن‌قدر از خوب بودنش تعریف کرده‌ایم که می‌ترسیم پا در کفش طراحانش کنیم. ولی به هر حال همه که قرار نیست برنامه نویس هسته باشند تا نیاز به فهمیدنش داشته باشند… دانش همیشه خوب است، و دانش در رابطه با ابزار‌هایی که هر روز با آن‌ها سر و کار داریم از آن هم بهتر.</p>
+<p>این <a class="reference external" href="http://eudyptula-challenge.org/">The Eudyptula Challenge</a> یک اسکریپت ساده و خنگ دارد به اسم little penguin که همه هنرش این است که ازتان سوال بپرسد و جواب‌های شما را بررسی کند! برایش یک ایمیل می‌فرستید و بعد از این که برایتان راهنمای شروع دوره را فرستاد‌، شروع می‌کند مرحله به مرحله سوال پرسیدن. هیچ راهنمایی هم درکار نیست. خودتان می‌گردید در اینترنت‌، کم کم راه حل را پیدا می‌کنید و یاد می‌گیرد. همچین همه تلاشتان هم باید این باشد که نکند از کسی کمک بگیرید. حقیقتش همینطوری هم هست که چیز یاد می‌گیرید. تنها پیش‌نیاز مورد نیاز‌تان هم آشنایی پایه با زبان C و Make است. (البته این پیش‌نیاز اینطور فکر می‌کند که شما کاربر گنو/لینوکسید و بلدید در طول روز گلیمتان را از آب بکشید)</p>
+<p>همین‌جا هم این را اضافه کنم که سرعت کار این اسکریپت پایین است. همین الان ۳۶ ساعت است که جواب سوالش را داده‌ام و هنوز تاییدیه جوابم نیامده. آهان‌، این را هم بگویم که بهتر است از یک کلاینت برای ایمیل استفاده کنید نه رابط کاربری Gmail. ایمیل‌هایتان باید Plain text باشد و فایل‌های پیوستی متن ساده و نه base 64 که Gmail روانه می‌کند. من از <a class="reference external" href="http://www.djcbsoftware.nl/code/mu/mu4e.html">mu4e</a> استفاده کردم و مشکلی پیش نیامد.</p>
+<p>اگر هم مثل من زبان C در دوران دانشگاه غول بی شاخ و دم ترسناکی بود که با اشاره‌گر‌هایش شما را به ته جهنم راهنمایی می‌کرد‌، باید بگویم که <a class="reference external" href="http://it-ebooks.info/book/704/">Head first C</a> همان اکسیری است که به آن نیاز داشتید. کتاب فوق‌العاده آسان و روان کل قضیه را بهتان شرح می‌دهد.</p>
+<p>باز هم بگویید شاهین بد است. <a class="reference external" href="http://eudyptula-challenge.org/">little penguin</a> را معرفی کردم بهتان کمک کند تا ببینید خدایگان‌تان چطور برنامه می‌نویسند. <a class="reference external" href="http://it-ebooks.info/book/704/">Head first C</a> را معرفی کردم که یک بار دیگر مثل قدیم‌های من فکر نکنید که در جهنم C گیر کرده‌اید. و <a class="reference external" href="http://it-ebooks.info">it-ebooks</a> را معرفی کردم تا ببیند همهٔ کتاب‌های برنامه‌نویسی دنیا را عین‌الله جعفر نژاد قومی نمی‌نویسد ;-)</p>
+    
+    <div class="categories">
+
+<span>ارسال‌های بیشتر دربارهٔ</span>
+
+<a class="tag" href="../categories/linux.html"><span class="badge-info">Linux</span></a>
+
+<a class="tag" href="../categories/eudyptula.html"><span class="badge-info">Eudyptula</span></a>
+
+
+</div>
+    <div class="pageNav">
+      
+<ul class="pager">
+  
+  <div class="prev">
+    <a href="stop-bashing-bash-and-gnu.html">← ارسال پیشین</a>
+  </div>
+  
+  
+  </ul>
+
+    </div>
+    <div class="postMeta">
+      
+	
+    
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname ="shahinism";
+        
+            var disqus_url="http://5hah.in/posts/the-eudyptula-challenge.html";
+        
+        var disqus_title="\u0628\u0631\u0646\u0627\u0645\u0647 \u0646\u0648\u06cc\u0633\u06cc \u06a9\u0631\u0646\u0644 \u0644\u06cc\u0646\u0648\u06a9\u0633 \u0628\u0627 \u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc The Eudyptula Challenge";
+        var disqus_identifier="cache/posts/the-eudyptula-challenge.html";
+        var disqus_config = function () {
+            this.language = "";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+      
+    </div>
+  </article>
+
+      </div><!--columns four-->
+    </div><!--container-->
+
+    <nav id="navigation">
+      <div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<input type="text" placeholder="جستجو…" maxlength="255" name="q">
+<input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+	
+  
+    
+      <li><a class="nav-icon home" href="../">Home</a></li>
+    
+  
+    
+      <li><a class="nav-icon about" href="../">About</a></li>
+    
+  
+    
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+    
+  
+    
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+    
+  
+    
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+    
+  
+    
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+    
+  
+
+      </ul><!--/ul-->
+    </nav><!--/navigation-->
+
+<!--/container-->
+<footer class="container">
+  <div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p><!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div><!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+
+</body>
+</html>
