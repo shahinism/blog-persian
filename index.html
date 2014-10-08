@@ -39,6 +39,26 @@
 	
   
     <article>
+      <h2 class="title"><a href="posts/mary-live-codes-a-javascript-game-from-scratch.html">کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose</a></h2>
+      <div class="metadata">
+	<span class="date">2014-10-08 15:56</span>
+	<span class="writer">شاهین آزاد</span>
+      </div><!--/metadata-->
+      <p>
+	</p><p>نمی‌دونم چقدر با جاوااسکریپت آشنایی دارین، ولی جدا زبان فوق‌العاده‌ایه. خصوصا این که پلتفرم جذابی داره‌، اصلا نیاز نیست چیزی کامپایل شه یا برنامه خاصی نصب شه‌، یه مرورگر و تموم، دیگه شمایید و خلاقیتتون. گاها آدم یه چیزایی می‌بینه که بدجوری سر شوق می‌آد (هوم‌! البته این شوق هزار جور می‌شه تفسیر شه‌، حتی از نوع … بی‌خیال!). این ویدئو یکی از اون ویدوئوهای Motivational واقعیه. Mary Rose توی یه کنفرانس و در حدود ۳۰ دقیقه‌، یه بازی جذاب جاوااسکریپتی رو بدون هیچ فرم‌ویری‌ای برنامه‌نویسی می‌کنه.</p>
+<iframe src="http://player.vimeo.com/video/105955605" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+</iframe>
+      
+      
+        
+    
+        <a class="commentLink" href="posts/mary-live-codes-a-javascript-game-from-scratch.html#disqus_thread" data-disqus-identifier="cache/posts/mary-live-codes-a-javascript-game-from-scratch.html">Comments</a>
+    
+
+    </article>
+  
+
+    <article>
       <h2 class="title"><a href="posts/the-eudyptula-challenge.html">برنامه نویسی کرنل لینوکس با راهنمایی The Eudyptula Challenge</a></h2>
       <div class="metadata">
 	<span class="date">2014-10-01 20:40</span>
@@ -90,68 +110,12 @@
     </article>
   
 
-    <article>
-      <h2 class="title"><a href="posts/how-to-enable-php_intl-extension-and-use-it.html">افزونه INTL PHP و کلاس NumberFormatter</a></h2>
-      <div class="metadata">
-	<span class="date">2014-09-28 13:19</span>
-	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
-      <p>
-	</p><p>ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در <a class="reference external" href="http://php.net">PHP</a> نمایش بدهید. در این صورت کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:</p>
-<pre class="code php literal-block">
-<span class="cp">&lt;?php</span>
-<span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
-
-<span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
-<span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
-
-<span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-<span class="cp">?&gt;</span>
-</pre>
-<p>خروجی این خطوط به این صورت خواهد بود:</p>
-<pre class="code html literal-block">
-IRAN: ‎ریال۱٬۲۳۵
-</pre>
-<p>ولی ممکن است مثل من با این اخطار روبرو شوید:</p>
-<pre class="code literal-block">
-Fatal error: Class 'NumberFormatter' not found
-</pre>
-<p>و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:</p>
-<pre class="code bash literal-block">
-php -m | grep intl
-</pre>
-<p>اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در <a class="reference external" href="http://gentoo.org">Gentoo</a>:</p>
-<pre class="code bash literal-block">
-<span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
-</pre>
-<p>یا در بعضی از توزیع‌های محبوب دیگر</p>
-<pre class="code bash literal-block">
-// Debian
-apt-get install php5-intl
-// Centos
-yum install php-intl
-</pre>
-<p>حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:</p>
-<pre class="code literal-block">
-extension=php_intl.dll
-</pre>
-<p>و تمام‌، حالا این افزونه و کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> در دسترس‌تان است.</p>
-      
-      
-        
-    
-        <a class="commentLink" href="posts/how-to-enable-php_intl-extension-and-use-it.html#disqus_thread" data-disqus-identifier="cache/posts/how-to-enable-php_intl-extension-and-use-it.html">Comments</a>
-    
-
-    </article>
-  
-
 
 <div class="pageNav">
   
   
   <div class="next">
-    <a href="index-80.html">پست‌های قدیمی‌تر →</a>
+    <a href="index-81.html">پست‌های قدیمی‌تر →</a>
   </div>
   
 </div>
