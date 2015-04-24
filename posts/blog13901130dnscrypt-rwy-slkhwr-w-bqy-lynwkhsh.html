@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌) | شاهینیسم</title>
+  <title>dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌) | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,21 +23,20 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)
-
+    <h2 class="title">dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)
 </h2>
     <div class="metadata">
       <span class="date">2012-02-19 10:24</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>خوب عملا کامپیوتر‌های روی یه شبکه (‌سرور‌ها و سرویس گیرنده‌ها‌) با آدرس آی پی شناخته می‌شن‌. خوب حالا برای من کاربر که قصد داره روی اینترنت به یه سایت دسترسی داشته باشه‌، سخته که یه عدد نافهوم مثل 188.35.73.20 رو حفظ کنم‌. تازه این فقط برای دسترسی به یه سایته‌. یا فرض کنین صاحب سایت به هر دلیلی قصد تعویض سرورش رو داره‌، در این صورت باید تمام کسایی که با آی پی قبلی به سایت دسترسی داشتن‌، از آی پی سرور جدید استفاده کنن‌. حالا کار DNS Server‌ها اینه که می‌آن‌، هر آدرس معنادار (‌که طبیعتا استاندارد خودش رو داره‌) رو به یه آدرس آی پی معادلش ربط می‌دن‌. اینطوریه که وقتی شما می‌نوسین <strong>http://shahinism.com</strong> مرورگرتون آی پی و آدرس مسیری که وبلاگ من توش قرار داره رو پیدا می‌کنه و بهتون نشون می‌ده‌. به همین سادگی ;-)</p>
+      </p>
+<div>
+<p>خوب عملا کامپیوتر‌های روی یه شبکه (‌سرور‌ها و سرویس گیرنده‌ها‌) با آدرس آی پی شناخته می‌شن‌. خوب حالا برای من کاربر که قصد داره روی اینترنت به یه سایت دسترسی داشته باشه‌، سخته که یه عدد نافهوم مثل 188.35.73.20 رو حفظ کنم‌. تازه این فقط برای دسترسی به یه سایته‌. یا فرض کنین صاحب سایت به هر دلیلی قصد تعویض سرورش رو داره‌، در این صورت باید تمام کسایی که با آی پی قبلی به سایت دسترسی داشتن‌، از آی پی سرور جدید استفاده کنن‌. حالا کار DNS Server‌ها اینه که می‌آن‌، هر آدرس معنادار (‌که طبیعتا استاندارد خودش رو داره‌) رو به یه آدرس آی پی معادلش ربط می‌دن‌. اینطوریه که وقتی شما می‌نوسین <strong>http://shahinism.com</strong> مرورگرتون آی پی و آدرس مسیری که وبلاگ من توش قرار داره رو پیدا می‌کنه و بهتون نشون می‌ده‌. به همین سادگی ;-)</p>
 <p>حالا بحث سر اینه که DNS Server‌های متفاوتی توی اینترنت هستن‌. هر کدومشون با توجه به سلایق خاصی شخصی سازی شدن‌. اگه شما تا به حال نمی‌دونستین که اصلا DNS Server چی هست‌، پس احتمالا دارین از مال ISP‌تون استفاده می‌کنین‌. حالا ممکن شما از رفتار ISP‌تون نسبت به DNS‌ها راضی نباشین‌. یا فکر کنین که امنیت لازم براتون از این DNS فراهم نمی‌شه (‌حتما فهمیدین که اگه یه DNS سرور بخواد‌، می‌تونه وقتی شما <strong>http://google.com</strong> رو توی مرورگرتون می‌زنین‌، شما رو به آدرسی غیر از سرور‌های گوگل وارد کنه و این یعنی خطر‌!)</p>
 <p>این‌جاست که فایل resolv.conf توی لینوکس سر و کلش پیدا می‌شه‌. شما با استفاده از این فایل می‌تونین به لینوکس‌تون بفهمونید که از چه DNS Server‌ای استفاده کنه تا در خطر نباشین‌ (‌این کار رو اگه روترتون ازش پشتیبانی کنه می‌شه توی خود روتر هم انجام داد ;-))</p>
 <h4>مزیت استفاده از DNSCrypt</h4>
@@ -61,21 +45,21 @@ dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)
 <h4>نصب روی اسلکور (‌و اکثر توزیع‌ها‌)</h4>
 
 <p>خیلی راحت‌، اول با دستور زیر فایل‌ها رو می‌گیریم‌:</p>
-<div class="code"><pre>git clone git://github.com/opendns/dnscrypt-proxy.git
-</pre></div>
+<pre class="code literal-block">git clone git://github.com/opendns/dnscrypt-proxy.git
+</pre>
 
 
 <p>بعد وارد پوشه می‌شیم و دستورات زیر رو به ترتیب می‌زنیم‌:</p>
-<div class="code"><pre>./autogen
+<pre class="code literal-block">./autogen
 
 ./configure
 
 make -j4
-</pre></div>
+</pre>
 
 
 <p>که اون ‏‎-j4 منظورم اینه که از همه زور CPUم استفاده کن (‌اگه شما CPUتون چهار هسته‌ای نیست می‌تونین تعداد هسته خودتون رو جای چهار بزارین یا کلا تگ j رو بیخیال شین) حالا برای این که وقتی دلمون خواست پاکش کنیم این کار رو می‌کنیم‌ (مخصوص اسلکور):</p>
-<div class="code"><pre>mkdir /tmp/dnscrypt
+<pre class="code literal-block">mkdir /tmp/dnscrypt
 
 make install <span class="nv">DESTDIR</span><span class="o">=</span>/tmp/dnscrypt
 
@@ -84,82 +68,54 @@ make install <span class="nv">DESTDIR</span><span class="o">=</span>/tmp/dnscryp
 makepkg -l y -c n /tmp/dnscrypt.tgz
 
 installpkg /tmp/dnscrypt.tgz
-</pre></div>
+</pre>
 
 
 <p>توی باقی توزیع‌ها تنها کافیه بزنین make install ولی خوب پاک کردنش پای خودتونه!</p>
 <h5>کار با DNSCrypt</h5>
 
 <p>برای کار باهاش اول اون رو با دستور زیر فعال می‌کنیم‌:</p>
-<div class="code"><pre>/usr/local/sbin/dnscrypt-proxy -d
-</pre></div>
+<pre class="code literal-block">/usr/local/sbin/dnscrypt-proxy -d
+</pre>
 
 
 <p>و اگه دلتون نمی‌خواد بعد از هر بار ری‌استارت دوباره این دستور رو بزنین‌، فقط کافیه توی فایل ‏‎/etc/rc.d/rc.local همین دستور بالا رو اضافه کنین‌.</p>
 <p>و در آخر با اضافه کردن خط زیر توی ‎/etc/resolv.conf به لینوکستون بگین که از 127.0.0.1 به عنوان DNS Server استفاده کنه‌:</p>
-<div class="code"><pre>nameserver 127.0.0.1
-</pre></div>
+<pre class="code literal-block">nameserver 127.0.0.1
+</pre>
 
 
 <p>حواستون باشه که nameserver قبلی رو با اضافه کردن یه # کامنت کنین‌! حالا با مرورگرتون (‌و بدون استفاده از پروکسی‌) <a title="Are you using OpenDNS?" href="http://www.opendns.com/welcome/" target="_blank">این صفحه</a> رو ببینین‌. احتمالا بهتون تبریک می‌گه که از OpenDNS استفاده می‌کنین ;-)</p>
 <h5>حل یک مشکل:</h5>
 
 <p>احتمالا بعد از اولین ریبوت می‌فهمین که فایل resolv.conf‌تون دوباره عوض شده و آدرس قبلی توش نیست‌! این به دلیل استفاده از dhcpcd هست که تنظیمات این فایل رو بعد از هر بار شناسایی آی پی روتر دوباره‌نویسی می‌کنه‌. خوب حالا چاره چیه‌؟ هیچی دستور زیر رو می‌زنیم:</p>
-<div class="code"><pre>chattr +i /etc/resolv.conf
-</pre></div>
+<pre class="code literal-block">chattr +i /etc/resolv.conf
+</pre>
 
 
 <p>که یعنی دست خر کوتاه‌! <del>(‌یعنی هیچ‌کس غیر از صاحب فایل حق دست زدن بهش رو نداشته باشه‌)</del>  در مورد این که این دستور دقیقا چی کار می‌کنه می‌تونین به<a title="مجوزهای دسترسی فایل سیستم‌های ext در لینوکس" href="http://weblog.aqlinux.ir/?p=204" target="_blank"> این مطلب</a> از علی عزیز در آکلینوکس رجوع کنین ;-)<del></del></p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13901127zsh-dwst-shmst.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13901204byyyd-jmh-azd-khwd-r-drkh-khnym.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html";
-        
-        var disqus_title="dnscrypt \u0631\u0648\u06cc \u0627\u0633\u0644\u06a9\u0648\u0631 (\u200c\u0648 \u0628\u0627\u0642\u06cc \u0644\u06cc\u0646\u0648\u06a9\u0633\u200c\u0647\u0627\u200c)";
-        var disqus_identifier="cache/posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -176,34 +132,15 @@ installpkg /tmp/dnscrypt.tgz
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -219,16 +156,18 @@ installpkg /tmp/dnscrypt.tgz
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

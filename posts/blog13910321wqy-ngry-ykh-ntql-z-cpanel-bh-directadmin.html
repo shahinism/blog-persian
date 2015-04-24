@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>وقایع نگاری یک انتقال از Cpanel به DirectAdmin | شاهینیسم</title>
+  <title>وقایع نگاری یک انتقال از Cpanel به DirectAdmin | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,77 +23,48 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-وقایع نگاری یک انتقال از Cpanel به DirectAdmin
-
+    <h2 class="title">وقایع نگاری یک انتقال از Cpanel به DirectAdmin
 </h2>
     <div class="metadata">
       <span class="date">2012-06-10 21:49</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p><a title="پارس‌پک" href="http://parspack.com/" target="_blank">هاستینگ ابری پارسپک</a> مقصد بعدی شد‌. حقیقتش هنوز هم درک نمی‌کنم که این واژهٔ ابری پشت‌بند این هاستینگ چه معنی دارد ولی خوب امکانات جالب و متفاوتی را شامل می‌شد‌. مثل اینکه رم یا CPUی مصرفی هاست را می‌توانید خودتان انتخاب کنید‌. یا اینکه امکانات گزارشی عالی‌اش‌. اما چیزی که بیشتر از همه مورد توجه من قرار گرفت‌، تیم پشتیبانی فوق‌العاده مودب‌، حرفه‌ای و با تجربه‌شان بود‌. تیکت‌ها خیلی سریع جواب داده می‌شد و به حق ثابت کردند که به مشتری اهمیت می‌دهند‌.</p>
+      </p>
+<div>
+<p><a title="پارس‌پک" href="http://parspack.com/" target="_blank">هاستینگ ابری پارسپک</a> مقصد بعدی شد‌. حقیقتش هنوز هم درک نمی‌کنم که این واژهٔ ابری پشت‌بند این هاستینگ چه معنی دارد ولی خوب امکانات جالب و متفاوتی را شامل می‌شد‌. مثل اینکه رم یا CPUی مصرفی هاست را می‌توانید خودتان انتخاب کنید‌. یا اینکه امکانات گزارشی عالی‌اش‌. اما چیزی که بیشتر از همه مورد توجه من قرار گرفت‌، تیم پشتیبانی فوق‌العاده مودب‌، حرفه‌ای و با تجربه‌شان بود‌. تیکت‌ها خیلی سریع جواب داده می‌شد و به حق ثابت کردند که به مشتری اهمیت می‌دهند‌.</p>
 <p>دیگر تعریف کافی است‌. بهتر است برویم سراغ قضیهٔ این انتقال‌:</p>
 <p>سیستم مدیریت هاستینگ DirectAdmin بود که قبلاً آن موقع‌ها که خیلی خیلی ساده بود یک بار تجربه‌اش کرده بودم و با دیدن این همه تغییر در آن شگفت‌زده شدم‌. ولی خوب یک غم بزرگ به سراغم آمد و آن اینکه چطور اطلاعات هاست قبلی را به این‌جا منتقل کنم‌. اگر این Cpanel‌ای بود با امکانات پشتیبان‌گیری هاستینگ قبلی انتقال خیلی سر راست و آسان بود‌، ولی خوب من بی‌تجربه این‌بار در همچین موقعیتی گیر کرده بودم‌.</p>
 <p>ولی خوب یک ایدهٔ ساده به ذهنم رسید‌. پشتیبان گیری از پایگاه دادهٔ MySQL و انتقالش روی هاست جدید و سپس انتقال فایل‌ها از روی FTP‌! منطقاً باید جواب دهد دیگر‌! (خوبی مساله اینجا بود که روی هر دو هاست PHPmyadmin نصب بود‌)</p>
 <p>اولین جستجو در گوگل و رسیدن <a title="backing up your database using phpmyadmin" href="http://codex.wordpress.org/Backing_Up_Your_Database#Using_phpMyAdmin" target="_blank">به این آموزش </a>از مستندات وردپرس برای پشتیبان‌گیری از پایگاه داده روی PHPmyadmin! سر راست و سریع‌. (نکتهٔ جالبش این بود که خود پایگاه حدود ۷ مگابایت حجم داشت ولی وقتی با gzip فشرده می‌شد حجمش به ۱۰ درصد کاهش پیدا می‌کرد). پشتیبان گرفته شد و پس از ساختن یک یوزر جدید روی DirectAdmin خیلی راحت Restore شد‌. بخش اعظم کار انجام شده بود‌! فقط می‌ماند فایل‌ها‌. با Filezilla خیلی راحت انتقال داده شدند‌. ولی تفاوت عمده‌ای که کمی گیجم کرد نحوهٔ چینش دامنه‌ها روی این هاستینگ بود‌.</p>
 <p>در Cpanel شما موقع افزودن یک دامین جدید‌، انتخاب می‌کردید که درخواست این دامین به کدام شاخه از هاستینگ ارجاع داده شود‌. ولی در این‌جا خبری از آن تنظیمات برای دامنه نبود‌. بعد از کمی جستجو متوجه شدم که یه شاخه به اسم Domains نام دو دامنه را در خود دارد‌. احتمال دادم که با انتقال فایل‌های مربوط به هر وبلاگ به داخل پوشهٔ مربوط به دامنه همه چیز باید درست باشد‌. خوب این کار را کردم و DNS‌های مربوطه را نیز به دامنه‌ام اضافه کردم‌. باید جایی می‌رفتم و گفتم موقع برگشتنم معلوم می‌شود که این حدس‌ها و احتمال‌ها درست کار می‌کند یا نه‌.</p>
 <p>همین شد که دیروز چهار-پنج ساعت این وبلاگ خطای اتصال به پایگاه داده می‌داد‌! خوشبختانه تمام حدس‌ها درست بود و مشکل بر سر این بود که تنظیمات فایل wp-config وردپرس را با دیتابیس جدید هماهنگ نکرده بودم‌. با حل این مشکل انتقال کاملاً درست و بدون مشکل انجام شده بود و خیالمان راحت شد ;-)</p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13910319wqty-z-syt-dnshgh-hrf-myznym-z.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13910322hgkhwrh-z-fsl-wl-1.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html";
-        
-        var disqus_title="\u0648\u0642\u0627\u06cc\u0639 \u0646\u06af\u0627\u0631\u06cc \u06cc\u06a9 \u0627\u0646\u062a\u0642\u0627\u0644 \u0627\u0632 Cpanel \u0628\u0647 DirectAdmin";
-        var disqus_identifier="cache/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -125,34 +81,15 @@
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -168,16 +105,18 @@
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

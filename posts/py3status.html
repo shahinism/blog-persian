@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3 | شاهینیسم</title>
+  <title>py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3 | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,57 +23,54 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="py3status.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3
-
+    <h2 class="title">py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3
 </h2>
     <div class="metadata">
       <span class="date">2013-09-12 11:31</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>قبلا در مورد <a class="reference external" href="http://i3wm.org/">i3</a> <a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">حرف زده‌ام</a> و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش بود) اطلاعات وضعیت سیستمم را در i3bar <a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">نمایش می‌دهم</a>. خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> این است که اطلاعات را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک می‌کند. ولی بدبختی این <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> هم این است که به قدر کافی قابل گسترش نیست و ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!</p>
+      </p>
+<div>
+<p>قبلا در مورد <a class="reference external" href="http://i3wm.org/">i3</a> <a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">حرف زده‌ام</a> و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش بود) اطلاعات وضعیت سیستمم را در i3bar <a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">نمایش می‌دهم</a>. خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> این است که اطلاعات را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک می‌کند. ولی بدبختی این <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> هم این است که به قدر کافی قابل گسترش نیست و ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!</p>
 <p>این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را <a class="reference external" href="https://github.com/ultrabug/py3status">شروع کرده</a> که در واقع حکم یک پوشش برای <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته و آن را با کمک <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> استفاده کنید و در آخر هم از فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> برای تنظیم هر دو ابزار بهره بگیرید.</p>
 <div class="section" id="id4">
 <h2>نصب و ساخت اسکریپت</h2>
 <p>برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید (مسیر ‎ ~/‌.‌i3/config):</p>
-<pre class="code bash literal-block">
-bar <span class="o">{</span>
-  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
-<span class="o">}</span>
+<pre class="code bash"><a name="rest_code_72668e58196640049e62a7eca1df577a-1"></a>bar <span class="o">{</span>
+<a name="rest_code_72668e58196640049e62a7eca1df577a-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
+<a name="rest_code_72668e58196640049e62a7eca1df577a-3"></a><span class="o">}</span>
 </pre>
 <p>با این دستور ما به <a class="reference external" href="http://i3wm.org/">i3</a> می‌فهمانیم که باید از <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> برای نمایش داده‌های i3bar استفاده کند. همینطور به <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> می‌گوییم که فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در کدام مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد (‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).</p>
 <p>لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم <a class="reference external" href="https://github.com/ultrabug/py3status">Py3status</a> داشته باشد که اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس توجه کنید:</p>
-<pre class="code python literal-block">
-<span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
-  <span class="sd">"""
-  System status in i3bar
-  """</span>
-  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
-      <span class="sd">"""calculate the memory (RAM) status and return it.
-
-      """</span>
-      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
-      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s">'full_text'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'name'</span><span class="p">:</span> <span class="s">'ram_info'</span><span class="p">}</span>
-      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
-
-      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_good'</span><span class="p">]</span>
-      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_degraded'</span><span class="p">]</span>
-      <span class="k">else</span><span class="p">:</span>
-          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_bad'</span><span class="p">]</span>
-
-      <span class="n">response</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"RAM: </span><span class="si">%.2f</span><span class="s">/</span><span class="si">%.2f</span><span class="s"> GB (</span><span class="si">%d%%</span><span class="s">)"</span> <span class="o">%</span> \
-                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
-      <span class="n">response</span><span class="p">[</span><span class="s">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-
-      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_39836e2f25034b1b8c380d2eea676d89-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-2"></a>  <span class="sd">"""</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-3"></a><span class="sd">  System status in i3bar</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-4"></a><span class="sd">  """</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-7"></a>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-8"></a><span class="sd">      """</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s">'full_text'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'name'</span><span class="p">:</span> <span class="s">'ram_info'</span><span class="p">}</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-12"></a>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_good'</span><span class="p">]</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_degraded'</span><span class="p">]</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-17"></a>      <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_bad'</span><span class="p">]</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-19"></a>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"RAM: </span><span class="si">%.2f</span><span class="s">/</span><span class="si">%.2f</span><span class="s"> GB (</span><span class="si">%d%%</span><span class="s">)"</span> <span class="o">%</span> \
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-23"></a>
+<a name="rest_code_39836e2f25034b1b8c380d2eea676d89-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="id5">
@@ -96,69 +78,35 @@ bar <span class="o">{</span>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/py3status_in_use.png">
 <p>کاربران <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> ابزارهای مختلفی در این زمینه نوشته‌اند که در پوشهٔ Examples پروژه می‌توانید نمونه‌هایی از آن‌ها را ببینید. برای مثال دو اسکریپت netdata (که وظیفهٔ بررسی سرعت اینترنت و حجم دریافتی یا ارسالی داده را بر عهده دارد) و sysdata (که میزان مصرفی رم را محاسبه می‌کند) را من نوشته‌ام و در پروژه اصلی به اشتراک گذاشته‌ام. همینطور یک اسکریپت قابل کنترل با کیبورد برای <a class="reference external" href="http://shahinism.github.io/posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html">pomodoro</a> هم ساخته شده که می‌توانید مدیریت زمان فعالیتتان را با آن انجام دهید.</p>
 </div>
+</div>
     
     <div class="categories">
-
-<span>ارسال‌های بیشتر دربارهٔ</span>
-
+<span>ارسال‌های بیشتر دربارهٔ%s</span>
 <a class="tag" href="../categories/i3.html"><span class="badge-info">i3</span></a>
-
-<a class="tag" href="../categories/i3status.html"><span class="badge-info">i3status</span></a>
-
-<a class="tag" href="../categories/python.html"><span class="badge-info">Python</span></a>
-
-<a class="tag" href="../categories/py3status.html"><span class="badge-info">py3status</span></a>
-
 <a class="tag" href="../categories/i3bar.html"><span class="badge-info">i3bar</span></a>
-
-
+<a class="tag" href="../categories/i3status.html"><span class="badge-info">i3status</span></a>
+<a class="tag" href="../categories/py3status.html"><span class="badge-info">py3status</span></a>
+<a class="tag" href="../categories/python.html"><span class="badge-info">Python</span></a>
 </div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="coursera-think-again.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="fitness_blender.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/py3status.html";
-        
-        var disqus_title="py3status \u0627\u0628\u0632\u0627\u0631 \u0645\u0646\u0627\u0633\u0628 \u0628\u0631\u0627\u06cc \u06af\u0631\u0641\u062a\u0646 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062f\u0631 \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 i3";
-        var disqus_identifier="cache/posts/py3status.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -175,34 +123,15 @@ bar <span class="o">{</span>
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -218,16 +147,18 @@ bar <span class="o">{</span>
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

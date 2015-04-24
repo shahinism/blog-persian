@@ -1,51 +1,41 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sometimes you gotta run before you can walk ">
   <meta name="author" content="شاهین آزاد">
-  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 75) | شاهینیسم</title>
+  <title>شاهین (صفحهٔ ارسال‌های قدیمی 75) | شاهین</title>
   
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-  
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
 
-    
     
   </head>
   <body>
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="index-75.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
-  
     <article>
       <h2 class="title"><a href="posts/backup_with_dropbox.html">پشتیبان‌گیری با rsync, cron, dropbox</a></h2>
       <div class="metadata">
 	<span class="date">2013-05-28 10:25</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>خوب قربانش بروم‌، با <a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html">اعجوبه‌ای</a> که به نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.</p>
+	</p>
+<div>
+<p>خوب قربانش بروم‌، با <a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html">اعجوبه‌ای</a> که به نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.</p>
 <p>ولی نکته این‌جاست که با این کار مهم‌ترین مزیت سیستم‌های تحت وب را از دست داده‌ام. چطور؟ اول این که قابلیت انتقال این فایل‌های مهم را از دست داده‌ام و ثانیا این که نمی‌توانم ازشان یک backup درست درمان داشته باشم! نمی‌توانم؟ خوب دروغ گفتم‌، قرار است در نگاه اول این‌طور به نظر برسد! با چند ابزار ساده و به درد بخور لینوکسی، کمی هم چاشنی <a class="reference external" href="http://dropbox.com">Dropbox</a> ‌، هم می‌شود قابلیت انتقال را داشت و هم backup!</p>
 <div class="section" id="dropbox">
 <h2>Dropbox را نصب کنید</h2>
@@ -56,9 +46,8 @@
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash literal-block">
-rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_16087a616e194468b7ef80bf18790329-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_16087a616e194468b7ef80bf18790329-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -68,30 +57,26 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code literal-block">
-@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_5e927aac250b446d8fca25c36b0692fc-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
 </div>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/backup_with_dropbox.html#disqus_thread" data-disqus-identifier="cache/posts/backup_with_dropbox.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/introduction-to-irc.html">مقدمه‌ای بر IRC</a></h2>
       <div class="metadata">
 	<span class="date">2013-05-22 10:52</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><div class="section" id="id1">
+	</p>
+<div>
+<div class="section" id="id1">
 <h2>مقدمه</h2>
 <p>شروع کارم با IRC به مدت‌ها قبل بر می‌گردد‌. اما همین چند وقت پیش که نیازم به ارتباط همزمان‌، آن هم با دنگ و فنگ‌های چت GMail (که خودتان دلیل عمده‌اش را بهتر از من می‌دانید) بیشتر شد سعی کردم با این ابزار و امکاناتش بیشتر آشنا شوم. در این پست قصد داریم کمی با این ابزار قدیمی‌، ولی خیلی خیلی کاربردی آشنا شویم. در حد مثلا قطره از دریا ;-)</p>
 </div>
@@ -124,8 +109,7 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code literal-block">
-/whois shahin
+<pre class="code text"><a name="rest_code_799c6e00d6a34a6aa4184604b1e586e2-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png">
@@ -133,8 +117,7 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png">
 <p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code literal-block">
-/join technotux
+<pre class="code text"><a name="rest_code_5ad20cd8bf614063af32dbef9e881375-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -143,12 +126,10 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code literal-block">
-/set
+<pre class="code text"><a name="rest_code_63719f37f6d046a5aa92d067c1a1289c-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code literal-block">
-/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_8908b92d76e948a2894e4b5af775b206-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -163,35 +144,30 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code literal-block">
-##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_ed8e02d305eb4719929bf589f750660f-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/introduction-to-irc.html#disqus_thread" data-disqus-identifier="cache/posts/introduction-to-irc.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/emacs-flyspell-mode.html">این ایمکس دوست داشتنی (غلط‌گیر املایی)</a></h2>
       <div class="metadata">
 	<span class="date">2013-05-20 10:43</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>وقتی که بچه‌تر بودم‌، به بالا بودن نمرات املایم افتخار می‌کردم. ولی خوب انگار آن‌ها ربط مستقیمی به دایرهٔ لغات مورد استفاده‌ام در آن زمان‌ها داشت. به هر حال الان خیلی پیش می‌آید که غلط بنویسم‌! با وسط آمدن پای زبان انگلیسی این مشکل بیشتر خود‌نمایی می‌کند. به هر حال‌، خیلی خوب می‌شود که ویرایشگر محبوبم‌، در درست نوشتن‌هایم کمکم کند.</p>
+	</p>
+<div>
+<p>وقتی که بچه‌تر بودم‌، به بالا بودن نمرات املایم افتخار می‌کردم. ولی خوب انگار آن‌ها ربط مستقیمی به دایرهٔ لغات مورد استفاده‌ام در آن زمان‌ها داشت. به هر حال الان خیلی پیش می‌آید که غلط بنویسم‌! با وسط آمدن پای زبان انگلیسی این مشکل بیشتر خود‌نمایی می‌کند. به هر حال‌، خیلی خوب می‌شود که ویرایشگر محبوبم‌، در درست نوشتن‌هایم کمکم کند.</p>
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_0170898bb08049ef9abe7c82665e1850-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_0170898bb08049ef9abe7c82665e1850-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -202,8 +178,7 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl literal-block">
-<span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_98016f4fe3d74bb58dd544941fca04e6-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -211,20 +186,19 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <p>با فراخوانی این مد‌، کل بافر را تحت تاثیر قرار می‌دهید. در صورت بر خورد با هر غلط املایی‌، لغت تغییر رنگ داده و می‌توانید با کلیک وسط ماوس آن پیشنهاد‌های سیستم‌را انتخاب کنید.</p>
 </div>
 <div class="section" id="ispell-word-ispell-word">
-<h3><img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"> ispell-word</h3>
+<h3>
+<img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"> ispell-word</h3>
 <p>این دستور‌، به درد موقعی می‌خورد که نمی‌خواهید یک flyspell-mode را صدا کنید. به هر حال این مد همیشه هم آن‌قدر که باید خوب عمل نمی‌کند (بیشترین تاثیر را زمانی دارد که کلمه بعد از فراخوانی مد تایپ شود). البته برای رفع مشکلات این مد می‌توانید از <strong>flyspell-region</strong> که محدودهٔ انتخاب شده را بررسی می‌کند استفاده کنید. ولی گاها دوست دارید که تنها یک کلمه که مطمئن نیستید را بررسی کنید. آن وقت است که <strong>ispell-word</strong> دستور مورد نظرتان است. تنها کافیست نشان‌گر را روی لغت ببرید و این دستور را بزنید.</p>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_230b45a9284b4aa3a458ba423919f6ab-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_230b45a9284b4aa3a458ba423919f6ab-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl literal-block">
-<span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_26823842234248ec8754254be0778c46-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -232,38 +206,24 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <h2>مشکلات حاضر</h2>
 <p>مشکل این است که نمی‌توان دیکشنری را به صورت دو زبانه و همزمان داشت. از طرفی در صفحهٔ ویکی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> به غلط‌گیر <a class="reference external" href="http://wiki.openoffice.org/wiki/Main_Page">Hunspell</a> اشاره شده که روش خوبی هم برای بررسی متن و تغییر خودکار زبان غلط‌گیر دارد. با توجه به استفاده از این دیکشنری در OpenOffice‌ها خیلی وسوسه شده‌ام که آن را هم تست کنم. به زودی در مورد آن‌ها هم خواهم نوشت.</p>
 </div>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/emacs-flyspell-mode.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-flyspell-mode.html">Comments</a>
-    
-
     </article>
-  
-
-
 <div class="pageNav">
-  
   <div class="prev">
     <a href="index-76.html">← ارسال‌های جدید‌تر</a>
   </div>
-  
-  
   <div class="next">
     <a href="index-74.html">پست‌های قدیمی‌تر →</a>
   </div>
-  
 </div>
 
 
-    
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
-    
-
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -280,34 +240,15 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href=".">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href=".">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href=".">Home</a></li>
+      <li><a class="nav-icon about" href="stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href=".">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -323,16 +264,18 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

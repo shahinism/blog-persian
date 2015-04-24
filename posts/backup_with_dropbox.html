@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>پشتیبان‌گیری با rsync, cron, dropbox | شاهینیسم</title>
+  <title>پشتیبان‌گیری با rsync, cron, dropbox | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,21 +23,20 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="backup_with_dropbox.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-پشتیبان‌گیری با rsync, cron, dropbox
-
+    <h2 class="title">پشتیبان‌گیری با rsync, cron, dropbox
 </h2>
     <div class="metadata">
       <span class="date">2013-05-28 10:25</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>خوب قربانش بروم‌، با <a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html">اعجوبه‌ای</a> که به نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.</p>
+      </p>
+<div>
+<p>خوب قربانش بروم‌، با <a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html">اعجوبه‌ای</a> که به نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.</p>
 <p>ولی نکته این‌جاست که با این کار مهم‌ترین مزیت سیستم‌های تحت وب را از دست داده‌ام. چطور؟ اول این که قابلیت انتقال این فایل‌های مهم را از دست داده‌ام و ثانیا این که نمی‌توانم ازشان یک backup درست درمان داشته باشم! نمی‌توانم؟ خوب دروغ گفتم‌، قرار است در نگاه اول این‌طور به نظر برسد! با چند ابزار ساده و به درد بخور لینوکسی، کمی هم چاشنی <a class="reference external" href="http://dropbox.com">Dropbox</a> ‌، هم می‌شود قابلیت انتقال را داشت و هم backup!</p>
 <div class="section" id="dropbox">
 <h2>Dropbox را نصب کنید</h2>
@@ -63,9 +47,8 @@
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash literal-block">
-rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_16087a616e194468b7ef80bf18790329-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_16087a616e194468b7ef80bf18790329-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -75,75 +58,40 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code literal-block">
-@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_5e927aac250b446d8fca25c36b0692fc-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
 </div>
+</div>
     
     <div class="categories">
-
-<span>ارسال‌های بیشتر دربارهٔ</span>
-
-<a class="tag" href="../categories/dropbox.html"><span class="badge-info">dropbox</span></a>
-
-<a class="tag" href="../categories/crontab.html"><span class="badge-info">crontab</span></a>
-
-<a class="tag" href="../categories/cron.html"><span class="badge-info">cron</span></a>
-
-<a class="tag" href="../categories/rsync.html"><span class="badge-info">rsync</span></a>
-
+<span>ارسال‌های بیشتر دربارهٔ%s</span>
 <a class="tag" href="../categories/backup.html"><span class="badge-info">backup</span></a>
-
-
+<a class="tag" href="../categories/cron.html"><span class="badge-info">cron</span></a>
+<a class="tag" href="../categories/crontab.html"><span class="badge-info">crontab</span></a>
+<a class="tag" href="../categories/dropbox.html"><span class="badge-info">dropbox</span></a>
+<a class="tag" href="../categories/rsync.html"><span class="badge-info">rsync</span></a>
 </div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="introduction-to-irc.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="emacs-as-a-terminal-emulator.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/backup_with_dropbox.html";
-        
-        var disqus_title="\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u200c\u06af\u06cc\u0631\u06cc \u0628\u0627 rsync, cron, dropbox";
-        var disqus_identifier="cache/posts/backup_with_dropbox.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -160,34 +108,15 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -203,16 +132,18 @@ rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

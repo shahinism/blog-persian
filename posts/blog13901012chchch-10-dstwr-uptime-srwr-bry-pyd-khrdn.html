@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده | شاهینیسم</title>
+  <title>چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,44 +23,45 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده
-
+    <h2 class="title">چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده
 </h2>
     <div class="metadata">
       <span class="date">2012-01-02 12:37</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>دستور uptime در یونیکس/لینوکس</p>
+      </p>
+<div>
+<p>دستور uptime در یونیکس/لینوکس</p>
 <p>یک ترمینال باز کنید‌، و سپس دستور زیر را وارد کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>uptime
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>uptime
+</pre>
 
 
 <p>نمونه‌ای از خروجی به صورت روبرو خواهد بود‌:</p>
-<div class="code"><pre>۱۲: ۱۶: ۰۱ up ۵۷ min، ۳ users، load average: ۰. ۰۲، ۰. ۱۳، ۰. ۲۲
-</pre></div>
+<pre class="code literal-block">۱۲: ۱۶: <span class="m">۰۱</span> up <span class="m">۵۷</span> min، <span class="m">۳</span> users، load average: ۰. ۰۲، ۰. ۱۳، ۰. ۲۲
+</pre>
 
 
 <p>این دستور اطلاعات زیر را در یک خط به شما نمایش می‌دهد‌:</p>
-<p></p><ul><li>زمان فعلی (۱۲: ۱۶: ۰۱)</li>
+<p></p>
+<ul>
+<li>زمان فعلی (۱۲: ۱۶: ۰۱)</li>
     <li>چه مدت سیستم در حال اجرا بوده (۵۷ دقیقه)</li>
     <li>در حال حاضر چه تعداد کاربر به سیستم متصلند (۳ کاربر)</li>
     <li>میانگین لود سیستم در ۱‌، ۵ و ۱۵ دقیقه گذشته (۰. ۰۲، ۰. ۱۳، ۰. ۲۲)</li>
 </ul>
 <p>این تقریبا‌‌ همان اطلاعاتی است که در سرخط اطلاعات نمایش داده شده توسط دستورات w و top می‌توانید مشاهده کنید‌:</p>
-<div class="code"><pre>w
-</pre></div>
+<pre class="code literal-block">w
+</pre>
 
 
 <p>نمونه‌ای از خروجی به این شکل خواهد بود‌:</p>
-<div class="code"><pre>12:20:34 up 1:02, 3 users, load average: 0.01, 0.07, 0.17
+<pre class="code literal-block">12:20:34 up 1:02, <span class="m">3</span> users, load average: 0.01, 0.07, 0.17
 
 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT
 
@@ -84,65 +70,38 @@ master tty1 - 11:19 18:17 0.16s 0.00s /bin/sh /usr/bin/startx
 master pts/0 :0 12:02 0.00s 0.07s 0.00s w
 
 master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>kdeinit<span class="o">]</span>
-</pre></div>
+</pre>
 
 
-<div class="code"><pre><span class="nv">$ </span>top
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>top
+</pre>
 
 
 <p>نمونه‌ای از خروجی‌:</p>
-<p><img title="نمونه خروجی TOP" src="http://dl.dropbox.com/u/25017694/Blog-photos/TOP-sample.png" alt="" width="510" height="337"></p><p style="text-align: center;"><a title="server uptime on cyberciti" href="http://www.cyberciti.biz/faq/server-uptime-command-to-find-out-how-long-the-system-has-been-running/" target="_blank"><strong>منبع</strong></a></p>
-    
-    <div class="categories">
-
+<p><img title="نمونه خروجی TOP" src="http://dl.dropbox.com/u/25017694/Blog-photos/TOP-sample.png" alt="" width="510" height="337"></p>
+<p style="text-align: center;"><a title="server uptime on cyberciti" href="http://www.cyberciti.biz/faq/server-uptime-command-to-find-out-how-long-the-system-has-been-running/" target="_blank"><strong>منبع</strong></a></p>
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html";
-        
-        var disqus_title="\u0686\u200c\u0686\u200c\u0686\u200c (\u06f1\u06f0): \u062f\u0633\u062a\u0648\u0631 Uptime \u0633\u0631\u0648\u0631 \u0628\u0631\u0627\u06cc \u067e\u06cc\u062f\u0627 \u06a9\u0631\u062f\u0646 \u0627\u06cc\u0646\u06a9\u0647 \u0633\u06cc\u0633\u062a\u0645 \u0686\u0647 \u0645\u062f\u062a \u062f\u0631 \u062d\u0627\u0644 \u0627\u062c\u0631\u0627 \u0628\u0648\u062f\u0647";
-        var disqus_identifier="cache/posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -159,34 +118,15 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -202,16 +142,18 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

@@ -1,137 +1,110 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sometimes you gotta run before you can walk ">
   <meta name="author" content="شاهین آزاد">
-  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 46) | شاهینیسم</title>
+  <title>شاهین (صفحهٔ ارسال‌های قدیمی 46) | شاهین</title>
   
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-  
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
 
-    
     
   </head>
   <body>
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="index-46.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
-  
     <article>
       <h2 class="title"><a href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html">بازیگوشی سیستم صدای لینوکس‌!</a></h2>
       <div class="metadata">
 	<span class="date">2011-09-07 06:59</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>پس از در میان گذاشتن مشکل با ایمان‌،‌ اولین حدسش همان مشکل همیشگی Alsa (‌مشکل در پخش هم زمان چند منبع صوتی‌) بود‌. برای رفع این مشکل خواست که از <a title="Pulse Audio official website" href="http://www.pulseaudio.org/" target="_blank">PulseAudio</a> استفاده کنم‌. نصب این برنامه روی اسلکور تنها نیاز به یک وابستگی ‌(‌برنامه <a title="speex Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/speex/" target="_blank">speex</a>) و ساخت دو گروه برای PulseAudio که جزئیاتش در صفحه‌ی مربوط به <a title="pulseaudio Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/pulseaudio/" target="_blank">Slackbuild</a> شرح داده شده دارد‌.</p>
+	</p>
+<div>
+<p>پس از در میان گذاشتن مشکل با ایمان‌،‌ اولین حدسش همان مشکل همیشگی Alsa (‌مشکل در پخش هم زمان چند منبع صوتی‌) بود‌. برای رفع این مشکل خواست که از <a title="Pulse Audio official website" href="http://www.pulseaudio.org/" target="_blank">PulseAudio</a> استفاده کنم‌. نصب این برنامه روی اسلکور تنها نیاز به یک وابستگی ‌(‌برنامه <a title="speex Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/speex/" target="_blank">speex</a>) و ساخت دو گروه برای PulseAudio که جزئیاتش در صفحه‌ی مربوط به <a title="pulseaudio Slackbuild" href="http://slackbuilds.org/repository/13.37/audio/pulseaudio/" target="_blank">Slackbuild</a> شرح داده شده دارد‌.</p>
 <p>بعد از نصب و راه‌اندازی دوباره سیستم‌، شواهد از این قرار بود که PulseAudio وظیفه‌ی اجرای صدا‌ها را بر عهده گرفته‌، ولی جدای از مشکل قبلی‌ای که داشتم‌، مشکل دیگه‌ای نمایان شده بود‌. Notification‌ها کار نمی‌کرد‌! به پیشنهاد دوباره ایمان با رفتن به مسیر Applications and system notifications در System settings و سربرگ Player Setting و تغییر پلیر از حالت پیشفرض به Mplayer (‌کافیست که در فیلد Player عبارت mplayer وارد شود‌) این مشکل حل شد‌، ولی مشکل قبلی همچنان پابرجا بود‌. ‌(‌البته ایمان یک پیشنهاد دیگر هم داد که منجر به از دست رفتن کامل صدای سیستم شد‌، ولی خوب توانستیم دوباره رو به راهش کنیم‌).</p>
 <p>با این توصیفات‌، دیگر بی‌خیال این شدم که مشکل به Alsa مربوط شود‌ (‌چون در واقع من همان موقع هم تنها یک منبع صوتی در حالت اجرا داشتم‌). در جستجو‌های گوگلی‌ام این را کشف کرده بودم که KWordQuiz از Phonon برای پخش صدا کمک می‌گیرد‌. از طرفی در راهنمایی که ایمان (‌باز هم ایمان‌‌! نبود چی کار می‌کردم‌؟) برای PulseAudio در آرچ نوشته بود (‌که هنوز هم منتشر نشده‌) فهمیدم که باید GStreamer را به زور مجبور به استفاده از PulseAudio کنیم‌.</p>
 <p>با توجه به این تجربیات‌،‌ به جستجوی تنظیماتی که به این گزینه‌ها مربوط شود پرداختم‌! در شاخه Multimedia و منوی Phonon به بخشی رسیدم که عملا تنظیماتش در گذشته کاری از پیش نبرده بود‌. ولی در سربرگ Backend متوجه شدم که Gstreamer به Mplayer اولویت دارد‌. Mplayer‌ای که قبلا هم نتایج خوبی در کار با صدا برایم در بر داشت‌. اولویت اول را به Mplayer دادم‌،‌ و دا دا‌! مشکل حل شد‌!</p>
 <p>نتیجه‌ی کار ایمان فوق‌العاده از آب در آمده بود‌. و آن‌طور هم که قول داده قرار است همه‌ی ۴۰۰۰ لغت این مجموعه را به صورت فلش کارت آماده کند و به طور روزانه منتشر کند‌. به نظرم اگر می‌خواهید تکانی یه زبان انگلیسی زنگ زده‌یتان بدهید‌، این بسته‌های ایمان را از دست ندهید ;-)</p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900616bzygwshy-systm-sdy-lynwkhs.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html">چرا باید LaTeX را دوست داشت‌؟</a></h2>
       <div class="metadata">
 	<span class="date">2011-09-05 03:38</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>تازه تجربهٔ خروجی گرفتن از یک فایل tex را از سر گذرانده‌ام و خیلی خیلی زود است که بخواهم دلیل و مدرک سنگینی بیاورم که «آره آقا‌، از فردا هر کس با لاتک مطلب ننوشت‌، و یا کار با لاتک را ندانست‌، از ما نیست‌!». اما می‌خواهم برای فعلا و ثبت در خاطراتم‌، اینجا بنویسم که چگونه کفهٔ ترازو به نفع لاتک برایم پایین رفت‌:</p>
-<p></p><ul><li>انگلیسی نوشتن‌، و ساده نوشتن در لاتک‌، فوق‌العاده آسان است‌! اما وای به حالتان اگر بخواهید فارسی بنویسید‌، در این صورت باید یک دورهٔ کامل برنامه‌نویسی بسته‌هایش را بگذرانید (‌به این شوری‌ها هم که گفتم نیست‌، در آینده بیشتر در این مورد می‌نویسم‌) ‌.</li>
+	</p>
+<div>
+<p>تازه تجربهٔ خروجی گرفتن از یک فایل tex را از سر گذرانده‌ام و خیلی خیلی زود است که بخواهم دلیل و مدرک سنگینی بیاورم که «آره آقا‌، از فردا هر کس با لاتک مطلب ننوشت‌، و یا کار با لاتک را ندانست‌، از ما نیست‌!». اما می‌خواهم برای فعلا و ثبت در خاطراتم‌، اینجا بنویسم که چگونه کفهٔ ترازو به نفع لاتک برایم پایین رفت‌:</p>
+<p></p>
+<ul>
+<li>انگلیسی نوشتن‌، و ساده نوشتن در لاتک‌، فوق‌العاده آسان است‌! اما وای به حالتان اگر بخواهید فارسی بنویسید‌، در این صورت باید یک دورهٔ کامل برنامه‌نویسی بسته‌هایش را بگذرانید (‌به این شوری‌ها هم که گفتم نیست‌، در آینده بیشتر در این مورد می‌نویسم‌) ‌.</li>
     <li>آسان‌ترین کار ممکن در لاتک‌، پانویس نوشتن است‌، که خوب من هنوز هم بلد نیستم که در هیچ کدام از ورد پرسسور‌های رایج انجامش دهم‌!</li>
     <li>فهرست کردن مطالب در لاتک فقط زحمت نوشتن tableofcontent/ را می‌طلبد‌!</li>
     <li>تمام سخت‌گیری‌های لاتک در مورد پاراگراف‌ها‌، خطوط‌، علامت‌های مختلف‌ و قابلیت‌هایش برای تعیین کردن سر فصل‌، و بخش‌ها‌ نتیجه‌ای فوق‌العاده زیبا و خوانا را به شما باز می‌گرداند (‌ولی آن‌چنان دهانی از شما... که...) ‌!</li>
     <li>افزودن تصویر در لاتک به قدری سخت هست‌، که هنوز جرات نکرده‌ام نزدیکش شوم‌!</li>
     <li>همهٔ تجربیات بالا را اضافه کنید‌، به درد و خونریزی شدیدی که باید برای افزودن قابلیت‌های تایپ فارسی بدون درد و خونریزی در لاتک متحمل شوید‌!</li>
     <li>نوشتن مقاله در لاتک‌، عملا حکم یک برنامه‌نویسی تمام عیار را دارد‌!</li>
-</ul><p style="text-align: center;"><a href="http://shahinism.com/wp-content/uploads/latex_logo.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-438" style="margin: 7px auto;" title="latex_logo" src="http://shahinism.com/wp-content/uploads/latex_logo-300x111.png" alt="" width="300" height="111"></a></p>
+</ul>
+<p style="text-align: center;"><a href="http://shahinism.com/wp-content/uploads/latex_logo.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-438" style="margin: 7px auto;" title="latex_logo" src="http://shahinism.com/wp-content/uploads/latex_logo-300x111.png" alt="" width="300" height="111"></a></p>
 <p>در کل پس از سبک سنگین کردن قضایای بالا من هم به این نتیجه رسیدم که اگر حرف از با سواد بودن در جامعهٔ امروزی می‌زنید‌، و برای مهندس مهندس شنیدن‌، آب دهانتان سر ریز می‌شود‌، حداقلش این است که مقالاتتان را با LaTeX آماده کنید‌، نه مثل <a title="وب سایت استاد گرام" href="http://yamaghani.com/m/page-2aa58b0d-58a0-428c-95a3-e8c25e26103b.aspx" target="_blank">استاد گرامیمان‌</a>، ‌ به مسلط بودن به مجموعه نرم‌افزار آفیس افتخار ورزید‌! ‌ (‌گفتم «‌من هم‌» ‌، چون <a title="ایمان بیاورید بر LaTeX" href="http://persian.kamangir.net/?p=2533" target="_blank">آرش آبادپور</a> و <a title="آقای مهندس عزیز‌، LaTeX بلدی‌؟" href="http://aminsabeti.net/1387/11/mr-engineer-do-you-know-latex/" target="_blank">امین ثابتی</a> عزیز در این مورد قبلا سخن‌ها رانده‌اند‌) ‌.</p>
 <p>فعلا می‌توانید برای منبع‌، به <a title="منبع فارسی LaTeX" href="http://aminsabeti.net/1387/11/persian-source-for-latex/" target="_blank">این‌ها</a> که امین عزیز نشان داده است مراجعه کنید‌، البته‌ تگ لاتک وبلاگ هر دوی این عزیزان (<a title="Kamangir LaTeX Tag" href="http://persian.kamangir.net/?category_name=latex" target="_blank">‌آرش</a> و <a title="Amin's LaTeX Tag" href="http://aminsabeti.net/?s=latex" target="_blank">امین‌</a>) خواندنش خالی از لطف نیست‌.</p>
 <p>در ضمن دلتان را هم به این خوش نکنید‌ که لاتک را در وب فارسی جستجو کنید‌، چون نتیجه‌اش انواع کاندوم است که نثارتان می‌شود‌ ;-)</p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900614chr-byd-latex-r-dwst-dsht.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900614chr-byd-latex-r-dwst-dsht.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html">نبض سیستم‌تان در دستان شما</a></h2>
       <div class="metadata">
 	<span class="date">2011-08-22 01:37</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>پس از ارتقا KDE به نسخهٔ ۴،۷ و پیدا کردن <a title="Wallpaper Wide" href="http://wallpaperswide.com/" target="_blank">این سایت</a> که پس‌زمینه‌های فوق‌العاده‌ای در خود جای داده‌ (‌تشکر دوباره از <a title="BardiaX on wordpress" href="http://bardiax.wordpress.com/" target="_blank">بردیا</a> که در گوپس معرفی‌اش کرد‌)، خواستم یکی از معدود پلاسموید‌هایی را که استفاده می‌کنم را دوباره نصب کنم‌. نتیجه به حدی برایم دلنشین شد که آن را اینجا به اشتراک می‌گذارم‌.</p>
+	</p>
+<div>
+<p>پس از ارتقا KDE به نسخهٔ ۴،۷ و پیدا کردن <a title="Wallpaper Wide" href="http://wallpaperswide.com/" target="_blank">این سایت</a> که پس‌زمینه‌های فوق‌العاده‌ای در خود جای داده‌ (‌تشکر دوباره از <a title="BardiaX on wordpress" href="http://bardiax.wordpress.com/" target="_blank">بردیا</a> که در گوپس معرفی‌اش کرد‌)، خواستم یکی از معدود پلاسموید‌هایی را که استفاده می‌کنم را دوباره نصب کنم‌. نتیجه به حدی برایم دلنشین شد که آن را اینجا به اشتراک می‌گذارم‌.</p>
 <p>Yasp-Scripted را می‌توانید از <a title="Yasp-Scripted (Systemmonitor) v1.0.8a    " href="http://kde-look.org/content/show.php?content=109367" target="_blank">اینجا</a> دانلود و نصب کنید (‌کار زیاد سختی نیست‌، باید از سورس اقدام کنید‌ که در فایل INSTALL طبق معمول همه توضیحات داده شده). ولی بسته به سیستمتان بعد از افزودن پلاسموید به میزکار ممکن است نتیجه‌ای نگیرید (که من هم نگرفتم‌!). موضوع سر فایل. yasp.script که در پوشهٔ خانگیتان می‌توانید پیدایش کنید‌. این فایل کد‌های مربوط به نحوه و امکانات نمایش پلاسموید را در اختیار دارد که ممکن است با سیستم شما همخوان نباشد‌. خوشبختانه تعدادی دیگر از نمونه‌های این فایل را می‌توانید در شاخه yasp_scripts موجود در سورس کد بیابید‌. گزینه‌های مختلف را امتحان کنید‌، احتمالا به نتیجه می‌رسید‌. بعد هم می‌توانید با توجه به سلیقه و امکانات سخت‌افزاریتان‌، فایلی که برایتان اثربخش بوده را شخصی سازی کنید‌.</p>
 <p>من نمونه‌ای از این فایل را که برای خودم آماده کردم دز <a title="نمونه اسکریپت شخصی سازی شده شاهینیسم" href="http://shahinism.com/wp-content/uploads/SH-Script.tar.gz">این‌جا</a> قرار داده‌ام که می‌توانید دریافت کنید‌. این فایل را برای CPU چهار‌هسته‌ای آماده کرده‌ام و بخش‌های مربوط به سنسور حرارتش را حذف کرده‌ام (‌هر چه تلاش کردم نتوانستم به کارش بیاندازم‌) ‌. ترتیب رنگ‌ها هم تنها ترتیب رنگی است که اصولا یادم نمی‌رود (‌رنگین کمان‌) ‌. در کل چیز جالبی در می‌آید اگر روی یک بک‌گراند روشن پیاده شود‌. نمونه می‌ز‌کار من را در زیر مشاهده می‌کنید‌.</p>
 <p><a href="http://shahinism.com/wp-content/uploads/Sh-Kde.png" rel="prettyPhoto"><img class="aligncenter size-medium wp-image-426" style="margin: 7px auto;" title="Sh-Kde" src="http://shahinism.com/wp-content/uploads/Sh-Kde-300x225.png" alt="" width="330" height="247"></a></p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900531nbd-systmtn-dr-dstn-shm.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900531nbd-systmtn-dr-dstn-shm.html">Comments</a>
-    
-
     </article>
-  
-
-
 <div class="pageNav">
-  
   <div class="prev">
     <a href="index-47.html">← ارسال‌های جدید‌تر</a>
   </div>
-  
-  
   <div class="next">
     <a href="index-45.html">پست‌های قدیمی‌تر →</a>
   </div>
-  
 </div>
 
 
-    
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
-    
-
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -148,34 +121,15 @@
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href=".">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href=".">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href=".">Home</a></li>
+      <li><a class="nav-icon about" href="stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href=".">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -191,16 +145,18 @@
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

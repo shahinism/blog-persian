@@ -1,193 +1,163 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sometimes you gotta run before you can walk ">
   <meta name="author" content="شاهین آزاد">
-  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 51) | شاهینیسم</title>
+  <title>شاهین (صفحهٔ ارسال‌های قدیمی 51) | شاهین</title>
   
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-  
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
 
-    
     
   </head>
   <body>
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="index-51.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
-  
     <article>
       <h2 class="title"><a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!</a></h2>
       <div class="metadata">
 	<span class="date">2011-12-17 20:01</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>کار عادی‌اش به این صورت است که بنشینیم و با حوصله تک تک لینک‌ها را کپی پیست کرده و جایی ذخیره کنیم‌. ولی با وجود دویست صفحه و لینک‌، کمی (‌خیلی‌) خسته کننده (‌خریت‌ به معنای واقعی کلمه‌، البته ببخشید ;-)) است. خوب جواب مساله را خودم هم نمی‌دانستم‌، ولی مطمئن بودم‌، با ابزار‌های گنو‌/‌لینوکسی‌، نتیجه‌ی خیلی خوبی خواهم گرفت‌. اولین کاری که به فکرم رسید‌، دانلود صفحه‌ی اصلی و صفحه‌های پیوند شده به هر لینک بود که با wget خیلی خوب بلد بودم! به این صورت‌:</p>
-<div class="code"><pre>wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
-</pre></div>
+	</p>
+<div>
+<p>کار عادی‌اش به این صورت است که بنشینیم و با حوصله تک تک لینک‌ها را کپی پیست کرده و جایی ذخیره کنیم‌. ولی با وجود دویست صفحه و لینک‌، کمی (‌خیلی‌) خسته کننده (‌خریت‌ به معنای واقعی کلمه‌، البته ببخشید ;-)) است. خوب جواب مساله را خودم هم نمی‌دانستم‌، ولی مطمئن بودم‌، با ابزار‌های گنو‌/‌لینوکسی‌، نتیجه‌ی خیلی خوبی خواهم گرفت‌. اولین کاری که به فکرم رسید‌، دانلود صفحه‌ی اصلی و صفحه‌های پیوند شده به هر لینک بود که با wget خیلی خوب بلد بودم! به این صورت‌:</p>
+<pre class="code literal-block">wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
+</pre>
 
 
 <p>خوب نتیجه‌ مجموعه‌ای از فایل‌ها بود که با اسم‌هایی شبیه به آدرس‌شان در پوشه‌ی جاری ذخیره شده بود. با استفاده از آرگومان‌های rl1 به wget فهماندم که صفحه‌ی حاضر را به عمق یک صفحه رو به جلو دانلود کند‌. حالا مساله‌ی سخت این‌جا بود که چطور به grep بفهمانیم که چه چیزی را (‌در این‌جا لینک ویدیو در یوتیوب‌) برایمان جدا کند‌. دستوری که با دفعات زیادی آزمون و خطا نتیجه داد‌، به این صورت بود‌: <span style="color: #ff6600;">(‌برای دیدن دستور کامل‌تر به آخر مطلب رجوع کنید‌، ویرایش۱)</span></p>
-<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * &amp;gt; list
-</pre></div>
+<pre class="code literal-block">grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * <span class="p">&amp;</span>gt<span class="p">;</span> list
+</pre>
 
 
 <p>کار این دستور این است که یک لیست از الگوی داده شده را ایجاد و در فایل list ذخیره کند‌. آرگومان‌های ohE به طور خلاصه به grep می‌فهمانند‌ که فقط عبارت داخل پرانتز را در فایل‌ها پیدا کند و در خروجی نمایش دهد‌. قسمت جالب قضیه که بیشتر از همه وقتم را گرفت بخش زیر بود‌:</p>
-<div class="code"><pre><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
-</pre></div>
+<pre class="code literal-block"><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
+</pre>
 
 
 <p>که به grep می‌گفت ترکیبی از حروف و ارقام را به تعداد یازده عدد قبول کند‌. در مورد این عبارت‌ها در آینده‌ای نزدیک پستی در شاهینیسم خواهیم داشت.</p>
 <p>برای دانلود لینک‌ها هم می‌توانید همان فایل خروجی را به صورت زیر به youtube-dl بدهید‌:</p>
-<div class="code"><pre>youtube-dl -ta list
-</pre></div>
+<pre class="code literal-block">youtube-dl -ta list
+</pre>
 
 
 <p>البته سرعت دانلود youtube-dl واقعا پایین است‌. روی سروری با دانلود عادی ده مگ‌، سرعت به زور می‌توانست به چهل کیلوبایت برسد‌. پیشنهاد من به شما‌، نصب یک نسخه از RapidLeech است‌. سرعت و کاربرد بسیار بهتری دارد ;-)</p>
 <p>ویرایش ۱: بعد از مدتی استفاده از این دستور‌، فهمیدم که از اونجایی که توی آدرس‌های Youtube امکان وجود آندرلاین هم هست‌، تعدادی از لینک‌ها رو با دستور بالا از دست می‌دیم‌. به همین دلیل دنبال یه راه دیگه گشتم‌، و سر‌انجام به دستور زیر رسیدم که نتیجه‌ی خیلی قابل قبول‌تری می‌ده‌:</p>
-<div class="code"><pre>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * | uniq &amp;gt; list2
-</pre></div>
+<pre class="code literal-block">grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * <span class="p">|</span> uniq <span class="p">&amp;</span>gt<span class="p">;</span> list2
+</pre>
 
 
 <p>همچنین توی این دستور با استفاده از uniq از تکرار لینک‌ها در صفحه خروجی جلوگیری می‌شه ;-)</p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</a></h2>
       <div class="metadata">
 	<span class="date">2011-12-02 18:03</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:</p>
-<div class="code"><pre>ls --color
-</pre></div>
+	</p>
+<div>
+<p>برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:</p>
+<pre class="code literal-block">ls --color
+</pre>
 
 
 <p>که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:</p>
-<div class="code"><pre><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
-</pre></div>
+<pre class="code literal-block"><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
+</pre>
 
 
 <p>این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این <a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank">کانال git</a> منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:</p>
-<div class="code"><pre><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
-</pre></div>
+<pre class="code literal-block"><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
+</pre>
 
 
 <p>نمونه‌ای از خروجی این فایل به صورت زیره‌:</p>
 <p><img class="aligncenter" title="LS_COLOR" src="https://a248.e.akamai.net/assets.github.com/img/e235af63c2be86cf4e4167b7f098e28192b63488/687474703a2f2f646576656c2e6a6170682e73652f4c535f434f4c4f52532f4c535f434f4c4f52532e706e67" alt="نمونه‌ای از خروجی فایل LS_COLOR" width="238" height="136"></p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html">چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس</a></h2>
       <div class="metadata">
 	<span class="date">2011-12-02 10:46</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>نحو‌:</p>
-<div class="code"><pre>passwd -l <span class="o">(</span>username<span class="o">)</span>
-</pre></div>
+	</p>
+<div>
+<p>نحو‌:</p>
+<pre class="code literal-block">passwd -l <span class="o">(</span>username<span class="o">)</span>
+</pre>
 
 
 <p>حساب را قفل می‌کند‌. در واقع آپشن‌* ‏‎-l با تغییر رمز عبور یک حساب به یک مقدار رمز شده‌، حساب را از دسترسی خارج می‌کند‌.</p>
 <h5>مثال‌:</h5>
 
 <p>قفل کردن حسابی به اسم shahin‌. با کاربر ریشه وارد می‌شویم و دستور زیر را وارد می‌کنیم‌:</p>
-<div class="code"><pre><span class="c"># passwd -l shahin</span>
-</pre></div>
+<pre class="code literal-block"><span class="c"># passwd -l shahin</span>
+</pre>
 
 
 <h4>قفل‌گشایی یک حساب گنو‌/‌لینوکس:</h4>
 
 <p>نحو‌:</p>
-<div class="code"><pre>passwd -u <span class="o">(</span>username<span class="o">)</span>
-</pre></div>
+<pre class="code literal-block">passwd -u <span class="o">(</span>username<span class="o">)</span>
+</pre>
 
 
 <p>حساب را قفل‌گشایی می‌کند‌. این آپشن ‎-u رمز حساب رو به مقدار قبلی‌اش باز می‌گرداند و آن را دوباره فعال می‌کند‌.</p>
 <h5>مثال‌:</h5>
 
 <p>برای باز‌گشایی یک حساب کاربری به اسم shahin‌، اول با کاربر ریشه وارد می‌شویم‌، و دستور زیر را وارد می‌کنیم‌:</p>
-<div class="code"><pre><span class="c"># passwd -u shahin</span>
-</pre></div>
+<pre class="code literal-block"><span class="c"># passwd -u shahin</span>
+</pre>
 
 
 <p>*‌: هر چه سعی کردم کلمه جایگزینی برای آپشن (‌انتخاب‌) به ذهنم نرسید که جمله‌بندی را خراب نکند‌. به بزرگی خودتان ببخشید‌!</p>
 <p style="text-align: center;"><a title="Linux locking an account on cyberciti" href="http://www.cyberciti.biz/faq/linux-locking-an-account/" target="_blank">منبع</a></p>
 
 <p></p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html">Comments</a>
-    
-
     </article>
-  
-
-
 <div class="pageNav">
-  
   <div class="prev">
     <a href="index-52.html">← ارسال‌های جدید‌تر</a>
   </div>
-  
-  
   <div class="next">
     <a href="index-50.html">پست‌های قدیمی‌تر →</a>
   </div>
-  
 </div>
 
 
-    
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
-    
-
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -204,34 +174,15 @@
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href=".">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href=".">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href=".">Home</a></li>
+      <li><a class="nav-icon about" href="stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href=".">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -247,16 +198,18 @@
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

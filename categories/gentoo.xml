@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهینیسم (Gentoo)</title><link>http://5hah.in/</link><description></description><atom:link href="http://5hah.in/categories/gentoo.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Wed, 08 Oct 2014 16:22:36 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>افزونه INTL PHP و کلاس NumberFormatter</title><link>http://5hah.in/posts/how-to-enable-php_intl-extension-and-use-it.html</link><description>&lt;p&gt;ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در &lt;a class="reference external" href="http://php.net"&gt;PHP&lt;/a&gt; نمایش بدهید. در این صورت کلاس &lt;a class="reference external" href="http://php.net/manual/en/class.numberformatter.php"&gt;NumberFormatter&lt;/a&gt; می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:&lt;/p&gt;
-&lt;pre class="code php literal-block"&gt;
-&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class="nv"&gt;$number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1234.56&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="nv"&gt;$iran&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;NumberFormatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"fa-IR"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;NumberFormatter&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="na"&gt;CURRENCY&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nv"&gt;$formatted3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$iran&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$number&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"IRAN: "&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$formatted3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;br&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;خروجی این خطوط به این صورت خواهد بود:&lt;/p&gt;
-&lt;pre class="code html literal-block"&gt;
-IRAN: ‎ریال۱٬۲۳۵
-&lt;/pre&gt;
-&lt;p&gt;ولی ممکن است مثل من با این اخطار روبرو شوید:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-Fatal error: Class 'NumberFormatter' not found
-&lt;/pre&gt;
-&lt;p&gt;و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-php -m | grep intl
-&lt;/pre&gt;
-&lt;p&gt;اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در &lt;a class="reference external" href="http://gentoo.org"&gt;Gentoo&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-&lt;span class="nv"&gt;use&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"intl"&lt;/span&gt; emerge --oneshot -a php
-&lt;/pre&gt;
-&lt;p&gt;یا در بعضی از توزیع‌های محبوب دیگر&lt;/p&gt;
-&lt;pre class="code bash literal-block"&gt;
-// Debian
-apt-get install php5-intl
-// Centos
-yum install php-intl
-&lt;/pre&gt;
-&lt;p&gt;حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-extension=php_intl.dll
-&lt;/pre&gt;
-&lt;p&gt;و تمام‌، حالا این افزونه و کلاس &lt;a class="reference external" href="http://php.net/manual/en/class.numberformatter.php"&gt;NumberFormatter&lt;/a&gt; در دسترس‌تان است.&lt;/p&gt;</description><category>intl</category><category>PHP</category><category>NumberFormatter</category><category>Gentoo</category><guid>http://5hah.in/posts/how-to-enable-php_intl-extension-and-use-it.html</guid><pubDate>Sun, 28 Sep 2014 09:49:47 GMT</pubDate></item></channel></rss>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>شاهین (Gentoo)</title><link>http://5hah.in/</link><description></description><atom:link rel="self" href="http://5hah.in/categories/gentoo.xml" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Fri, 24 Apr 2015 18:52:48 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>افزونه INTL PHP و کلاس NumberFormatter</title><link>http://5hah.in/posts/how-to-enable-php_intl-extension-and-use-it.html</link><dc:creator>شاهین آزاد</dc:creator><description>&lt;div&gt;&lt;p&gt;ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در &lt;a class="reference external" href="http://php.net"&gt;PHP&lt;/a&gt; نمایش بدهید. در این صورت کلاس &lt;a class="reference external" href="http://php.net/manual/en/class.numberformatter.php"&gt;NumberFormatter&lt;/a&gt; می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:&lt;/p&gt;
+&lt;pre class="code php"&gt;&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-2"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$number&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;1234.56&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-4"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$iran&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;NumberFormatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"fa-IR"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;NumberFormatter&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="na"&gt;CURRENCY&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-5"&gt;&lt;/a&gt;&lt;span class="nv"&gt;$formatted3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$iran&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$number&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"IRAN: "&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$formatted3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;br&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_6237fca71d6042c38bc35a829ccc4656-8"&gt;&lt;/a&gt;&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;خروجی این خطوط به این صورت خواهد بود:&lt;/p&gt;
+&lt;pre class="code html"&gt;&lt;a name="rest_code_d6c39396f97744ab9d64f11f24c73ee8-1"&gt;&lt;/a&gt;IRAN: ‎ریال۱٬۲۳۵
+&lt;/pre&gt;&lt;p&gt;ولی ممکن است مثل من با این اخطار روبرو شوید:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_01225fcbc46849f2b53a1c0ea2d666fa-1"&gt;&lt;/a&gt;Fatal error: Class 'NumberFormatter' not found
+&lt;/pre&gt;&lt;p&gt;و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4e88cc86dcd441d2a33de2c0898753a2-1"&gt;&lt;/a&gt;php -m &lt;span class="p"&gt;|&lt;/span&gt; grep intl
+&lt;/pre&gt;&lt;p&gt;اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در &lt;a class="reference external" href="http://gentoo.org"&gt;Gentoo&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a1f88a324f4647afb59344fd3178de5e-1"&gt;&lt;/a&gt;&lt;span class="nv"&gt;use&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"intl"&lt;/span&gt; emerge --oneshot -a php
+&lt;/pre&gt;&lt;p&gt;یا در بعضی از توزیع‌های محبوب دیگر&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_658ba004c33440188e981099baf0eb48-1"&gt;&lt;/a&gt;// Debian
+&lt;a name="rest_code_658ba004c33440188e981099baf0eb48-2"&gt;&lt;/a&gt;apt-get install php5-intl
+&lt;a name="rest_code_658ba004c33440188e981099baf0eb48-3"&gt;&lt;/a&gt;// Centos
+&lt;a name="rest_code_658ba004c33440188e981099baf0eb48-4"&gt;&lt;/a&gt;yum install php-intl
+&lt;/pre&gt;&lt;p&gt;حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:&lt;/p&gt;
+&lt;pre class="code text"&gt;&lt;a name="rest_code_38413b4cec5f4fe599bb44dd21d2c94b-1"&gt;&lt;/a&gt;extension=php_intl.dll
+&lt;/pre&gt;&lt;p&gt;و تمام‌، حالا این افزونه و کلاس &lt;a class="reference external" href="http://php.net/manual/en/class.numberformatter.php"&gt;NumberFormatter&lt;/a&gt; در دسترس‌تان است.&lt;/p&gt;&lt;/div&gt;</description><category>Gentoo</category><category>intl</category><category>NumberFormatter</category><category>PHP</category><guid>http://5hah.in/posts/how-to-enable-php_intl-extension-and-use-it.html</guid><pubDate>Sun, 28 Sep 2014 09:49:47 GMT</pubDate></item></channel></rss>

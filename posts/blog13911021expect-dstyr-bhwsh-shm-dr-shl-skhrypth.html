@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>expect دستیار باهوش شما در شل اسکریپت‌ها! | شاهینیسم</title>
+  <title>expect دستیار باهوش شما در شل اسکریپت‌ها! | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,22 +23,21 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-expect دستیار باهوش شما در شل اسکریپت‌ها!
-
+    <h2 class="title">expect دستیار باهوش شما در شل اسکریپت‌ها!
 </h2>
     <div class="metadata">
       <span class="date">2013-01-10 22:33</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>حالا شیوهٔ عملکرد expect معلوم شد‌، بهتر است نگاهی بیاندازیم به وضعیت من. بنا به دلایل کاملا غیر عادی و نامعلومی‌، در کشوری کاملا آزاد‌، نیاز دارم که از sshuttle برای انجام برخی امور استفاده کنم. این برنامه برای انجام دادن درست کار‌هایش‌، نیاز به iptables دارد که خوب من دوست ندارم که کاربر عادی‌ام به آن دسترسی داشته باشد. پس همین دوست نداشتن من یک مرحلهٔ اضافه در فرآیند استفاده از sshuttle هزینه دارد. یعنی یک همچین چیزی:</p>
-<div class="code"><pre>su
+      </p>
+<div>
+<p>حالا شیوهٔ عملکرد expect معلوم شد‌، بهتر است نگاهی بیاندازیم به وضعیت من. بنا به دلایل کاملا غیر عادی و نامعلومی‌، در کشوری کاملا آزاد‌، نیاز دارم که از sshuttle برای انجام برخی امور استفاده کنم. این برنامه برای انجام دادن درست کار‌هایش‌، نیاز به iptables دارد که خوب من دوست ندارم که کاربر عادی‌ام به آن دسترسی داشته باشد. پس همین دوست نداشتن من یک مرحلهٔ اضافه در فرآیند استفاده از sshuttle هزینه دارد. یعنی یک همچین چیزی:</p>
+<pre class="code literal-block">su
 
 Vared Kardan Ramz
 
@@ -62,12 +46,12 @@ Vared Kardan Ramz
 ./sshuttle ...
 
 Vared Kardan Ramz
-</pre></div>
+</pre>
 
 
 <p>که خوب بعد از اولین تلاش کانکت نمی‌شود و باید دوباره دستور را بزنم و منتظر بمانم تا پرامپت رمز ssh ظاهر شود و باقی قضایا. خوب کمی سخت است. البته این را هم اضافه کنم که خوب می‌دانم می‌توانم کانکت بدون رمز ssh داشته باشم‌. می‌توانم دستور را درون یک path قرار دهم. می‌توانم‌، می‌توانم‌… ولی این روشی است که من کار می‌کنم ;-)</p>
 <p>این است که دست به دامن expect می‌شوم و همچین اسکریپتی می‌نویسم:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/expect -f</span>
+<pre class="code literal-block"><span class="c">#!/usr/bin/expect -f</span>
 
 
 
@@ -79,15 +63,15 @@ Vared Kardan Ramz
 
 
 
-<span class="nb">set </span>rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> 0 0<span class="o">]</span>
+<span class="nb">set </span>rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">0</span> 0<span class="o">]</span>
 
-<span class="nb">set </span>username <span class="o">[</span>lrange <span class="nv">$argv</span> 1 1<span class="o">]</span>
+<span class="nb">set </span>username <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">1</span> 1<span class="o">]</span>
 
-<span class="nb">set </span>password <span class="o">[</span>lrange <span class="nv">$argv</span> 2 2<span class="o">]</span>
+<span class="nb">set </span>password <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">2</span> 2<span class="o">]</span>
 
-<span class="nb">set </span>server <span class="o">[</span>lrange <span class="nv">$argv</span> 3 3<span class="o">]</span>
+<span class="nb">set </span>server <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">3</span> 3<span class="o">]</span>
 
-<span class="nb">set </span>port <span class="o">[</span>lrange <span class="nv">$argv</span> 4 4<span class="o">]</span>
+<span class="nb">set </span>port <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">4</span> 4<span class="o">]</span>
 
 
 
@@ -95,82 +79,54 @@ Vared Kardan Ramz
 
 
 
-spawn su -c <span class="s2">"/home/shahin/bin/sshuttle/sshuttle --dns -r $username@$server:$port 0/0 -vv"</span>
+spawn su -c <span class="s2">"/home/shahin/bin/sshuttle/sshuttle --dns -r </span><span class="nv">$username</span><span class="s2">@</span><span class="nv">$server</span><span class="s2">:</span><span class="nv">$port</span><span class="s2"> 0/0 -vv"</span>
 
 match_max 100000
 
 expect <span class="s2">"Password:*"</span>
 
-send -- <span class="s2">"$rootpass\r"</span>
+send -- <span class="s2">"</span><span class="nv">$rootpass</span><span class="s2">\r"</span>
 
 
 
 expect <span class="s2">"*?assword:*"</span>
 
-send -- <span class="s2">"$password\r"</span>
+send -- <span class="s2">"</span><span class="nv">$password</span><span class="s2">\r"</span>
 
 send -- <span class="s2">"\r"</span>
 
 expect eof
-</pre></div>
+</pre>
 
 
 <p>حالا همانطور که معلوم است کافی است همچین دستوری را تایپ کنم:</p>
-<div class="code"><pre>./ssh.exp client_root_pass username password server port
-</pre></div>
+<pre class="code literal-block">./ssh.exp client_root_pass username password server port
+</pre>
 
 
 <p>حالا می‌شود این اسکریپت را بدون هیچ ضرر اضافه‌ای به path اضافه کرد و حالش را برد. برای این که بفهمید این اسکریپت چطور کار می‌کند راهنما‌های زیادی در اینترنت می‌یابید. man page خود برنامه هم می‌تواند کمک خوبی باشد. ضمن این که اگر اسکریپت نویسی بدانید‌، چیز زیادی برای یاد گرفتن پیش‌رویتان نیست ;-)</p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog139110136-sl-blg-nwsy.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13911103chtwr-z-wbstgy-bh-gythb-frr-khnym-p.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html";
-        
-        var disqus_title="expect \u062f\u0633\u062a\u06cc\u0627\u0631 \u0628\u0627\u0647\u0648\u0634 \u0634\u0645\u0627 \u062f\u0631 \u0634\u0644 \u0627\u0633\u06a9\u0631\u06cc\u067e\u062a\u200c\u0647\u0627!";
-        var disqus_identifier="cache/posts/blog13911021expect-dstyr-bhwsh-shm-dr-shl-skhrypth.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -187,34 +143,15 @@ expect eof
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -230,16 +167,18 @@ expect eof
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

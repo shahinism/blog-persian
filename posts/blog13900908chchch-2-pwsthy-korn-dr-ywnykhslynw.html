@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ | شاهینیسم</title>
+  <title>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,24 +23,25 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟
-
+    <h2 class="title">چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟
 </h2>
     <div class="metadata">
       <span class="date">2011-11-29 20:32</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
+      </p>
+<div>
+<p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
 <p>نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating point) نیز پشتیبانی می‌کند‌.</p>
-<p></p><h4>ویژگی‌های پوستهٔ Korn</h4>
-<ol><li>تازیخچهٔ دستورات – بله</li>
+<p></p>
+<h4>ویژگی‌های پوستهٔ Korn</h4>
+<ol>
+<li>تازیخچهٔ دستورات – بله</li>
     <li>ویرایش خط – بله</li>
     <li>تکمیل نام فایل – بله</li>
     <li>دستورات مستعار (‌Alias Commant) – بله</li>
@@ -66,87 +52,59 @@
 <h4>‎‎/usr/bin/ksh‏</h4>
 
 <p>تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:</p>
-<div class="code"><pre><span class="c">#! /usr/bin/ksh</span>
-</pre></div>
+<pre class="code literal-block"><span class="c">#! /usr/bin/ksh</span>
+</pre>
 
 
 <p>نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/ksh</span>
+<pre class="code literal-block"><span class="c">#!/usr/bin/ksh</span>
 
 <span class="nb">echo</span> “Hello World!”
-</pre></div>
+</pre>
 
 
 <p>شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>which ksh
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>which ksh
+</pre>
 
 
 <p>نمونهٔ خروجی‌:</p>
-<div class="code"><pre>/usr/bin/ksh
-</pre></div>
+<pre class="code literal-block">/usr/bin/ksh
+</pre>
 
 
 <p>Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:</p>
-<div class="code"><pre><span class="c">#!/usr/bin/env ksh</span>
+<pre class="code literal-block"><span class="c">#!/usr/bin/env ksh</span>
 
 <span class="nb">echo</span> “Hello World!”
-</pre></div>
+</pre>
 
 
 <p style="text-align: center;"><a title="What is UNIX / Linux Korn Shell?" href="http://www.cyberciti.biz/faq/ksh-korn-shell/" target="_blank">منبع</a></p>
 
 <p></p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13900908chchch-1-pwsth-posix-chyst.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13900909chchch-3-mysql-chyst.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html";
-        
-        var disqus_title="\u0686\u200c\u0686\u200c\u0686 (\u06f2) \u200c: \u067e\u0648\u0633\u062a\u0647\u0654 Korn \u062f\u0631 \u06cc\u0648\u0646\u06cc\u06a9\u0633\u200c/\u200c\u0644\u06cc\u0646\u0648\u06a9\u0633 \u0686\u06cc\u0633\u062a\u200c\u061f";
-        var disqus_identifier="cache/posts/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -163,34 +121,15 @@
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -206,16 +145,18 @@
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

@@ -559,6 +559,10 @@ a.commentLink:after,
     width: 38px; }
 
   .nav-icon:hover {
-    border-left: 0 !important;
-    width: 120px;
-    color: #fdf6e3 !important; } }
+      border-left: 0 !important;
+      width: 120px;
+      color: #fdf6e3 !important; } }
+
+.strike{
+    text-decoration: line-through;
+}

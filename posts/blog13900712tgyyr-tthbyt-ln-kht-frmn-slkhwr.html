@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>تغییر (تثبیت‌) اعلان خط فرمان اسلکور | شاهینیسم</title>
+  <title>تغییر (تثبیت‌) اعلان خط فرمان اسلکور | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,43 +23,44 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-تغییر (تثبیت‌) اعلان خط فرمان اسلکور
-
+    <h2 class="title">تغییر (تثبیت‌) اعلان خط فرمان اسلکور
 </h2>
     <div class="metadata">
       <span class="date">2011-10-04 06:19</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>user@hostname $</p>
-<div class="code"><pre><span class="err">نشان</span> <span class="err">داده</span> <span class="err">می‌شد‌،</span> <span class="err">اما</span> <span class="err">وقتی</span> <span class="err">مثلا</span> <span class="err">در</span> <span class="err">کنسول</span> <span class="n">KDE</span> <span class="err">یک</span> <span class="n">Tab</span> <span class="err">جدید</span> <span class="err">باز</span> <span class="err">می‌کردم‌،</span> <span class="err">اعلان</span> <span class="err">به</span> <span class="err">صورت</span> <span class="err">زیر</span> <span class="err">تغییر</span> <span class="err">می‌کرد</span> <span class="err">که</span> <span class="err">متاسفانه‌،</span> <span class="err">هیچ</span> <span class="err">قابلیت</span> <span class="err">به</span> <span class="err">درد</span> <span class="err">بخوری</span> <span class="err">در</span> <span class="err">خود</span> <span class="err">نداشت‌</span><span class="o">:</span>
+      </p>
+<div>
+<p>user@hostname $</p>
+<pre class="code literal-block">نشان داده می‌شد‌، اما وقتی مثلا در کنسول KDE یک Tab جدید باز می‌کردم‌، اعلان به صورت زیر تغییر می‌کرد که متاسفانه‌، هیچ قابلیت به درد بخوری در خود نداشت‌:
 
-<span class="err">```</span><span class="n">bash</span>
+```bash
 
-<span class="n">bash</span><span class="mf">.4</span><span class="p">.</span><span class="o">?:</span> <span class="err">$</span>
-</pre></div>
+bash.4.?: $
+</pre>
 
 
 <p>این مشکل از وقتی که از برنامه <a title="yakuake official webpage" href="http://yakuake.kde.org/" target="_blank">Yakuake</a> برای دسترسی راحت‌تر به ترمینال استفاده می‌کردم‌، بیشتر به چشم می‌آمد‌، و عملا تمامی اعلان فرمان‌هایش به همین شکل بود‌. پس تصمیم گرفتم یک بار برای همیشه‌، بی‌سوادی را کنار بگذارم و حلش کنم‌. مشکل به دو فایل زیر مربوط می‌شد‌:</p>
-<div class="code"><pre>/etc/bashrc
+<pre class="code literal-block">/etc/bashrc
 
 ~/.bashrc
-</pre></div>
+</pre>
 
 
 <p>که متاسفانه هیچ‌کدامشان در اسلکور به صورت پیش‌فرض وجود نداشتند‌، و از قرار آن اعلان سالم اول کار هم از فایل HOSTNAME موجود در شاخه etc ‏استفاده می‌کرد‌. خوب پس کافی بود یکی از این فایل‌ها را بسازم‌، و از آن‌جایی که ساختن فایل دوم‌، به نظرم آسان‌تر آمد‌، با دستور vim ~/.bashrc اقدام به ساختنش کردم‌، و خط زیر را به آن اضافه کردم‌:</p>
-<div class="code"><pre><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[u@hw]$ "</span>
-</pre></div>
+<pre class="code literal-block"><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[u@hw]</span><span class="nv">$ </span><span class="s2">"</span>
+</pre>
 
 
 <p>ترمینال را یک بار بستم و باز کردم‌، و همه‌چیز خوب بود‌. حالا می‌ماند توضیحات این خط دوم‌:</p>
-<p></p><ul><li>! : شماره فعلی تاریخچه فرمان را نشان میدهد.</li>
+<p></p>
+<ul>
+<li>! : شماره فعلی تاریخچه فرمان را نشان میدهد.</li>
     <li># : شماره دستور آخرین دستور را نشان میدهد.</li>
     <li>$ : اعلان فرمان استاندارد را نشان میدهد.</li>
     <li>W : فقط دایرکتوری کاری جاری را نشان میدهد.</li>
@@ -89,61 +75,33 @@
 </ul>
 <p>من این تنظیمات را از مطلب «‌آموزش کامل خط فرمان‌» که در سایت <a title="Technotux homepage" href="http://www.technotux.org/index.php/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C" target="_blank">تکنوتاکس</a> قرار داشت‌، بدست آورده بودم‌، ولی الان هر چه گشتم لینک پیدا نکردم‌، که اضافه کنم‌!</p>
 <p>برای این که نتیجه‌ی اعلانتان را ببینید و یا این که اگر لازم شد در موقعیت خاصی وضعیت اعلانتان را عوض کنید (‌البته نه برای همیشه‌، فقط برای نشست حاظر‌) کافیست از دستور زیر در ترمینال استفاده کنید‌:</p>
-<div class="code"><pre><span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[u@hw]$ "</span>
-</pre></div>
+<pre class="code literal-block"><span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[u@hw]</span><span class="nv">$ </span><span class="s2">"</span>
+</pre>
 
 
 <p>فکر کنم به عنوان یک نکته کوچک‌، دیگر همین‌قدر توضیح دادن کافی باشد. ;-)</p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13900624wlyn-tjrbh-b-latex-khtb-amwzsh-c.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13900725nsb-texlive-bdwn-drd-w-khwnryzy.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html";
-        
-        var disqus_title="\u062a\u063a\u06cc\u06cc\u0631 (\u062a\u062b\u0628\u06cc\u062a\u200c) \u0627\u0639\u0644\u0627\u0646 \u062e\u0637 \u0641\u0631\u0645\u0627\u0646 \u0627\u0633\u0644\u06a9\u0648\u0631";
-        var disqus_identifier="cache/posts/blog13900712tgyyr-tthbyt-ln-kht-frmn-slkhwr.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -160,34 +118,15 @@
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -203,16 +142,18 @@
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

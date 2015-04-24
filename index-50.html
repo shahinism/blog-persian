@@ -1,199 +1,187 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sometimes you gotta run before you can walk ">
   <meta name="author" content="شاهین آزاد">
-  <title>شاهینیسم (صفحهٔ ارسال‌های قدیمی 50) | شاهینیسم</title>
+  <title>شاهین (صفحهٔ ارسال‌های قدیمی 50) | شاهین</title>
   
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
-  
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
 
-    
     
   </head>
   <body>
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="index-50.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
-  
     <article>
       <h2 class="title"><a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</a></h2>
       <div class="metadata">
 	<span class="date">2011-12-01 20:28</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p></p><h4>دستور mysqladmin برای تغییر کلمه عبور ریشه</h4>
+	</p>
+<div>
+<p></p>
+<h4>دستور mysqladmin برای تغییر کلمه عبور ریشه</h4>
 <p>اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqlamin -u root pasword NEWPASSWORD
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysqlamin -u root pasword NEWPASSWORD
+</pre>
 
 
 <p>به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» oldpassword» password newpass
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u root -p» oldpassword» password newpass
+</pre>
 
 
 <p>برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+</pre>
 
 
 <h4>تغییر رمز عبور MySQL برای دیگر کاربران</h4>
 
 <p>برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysqladmin -u vivek -p oldpassword password newpass
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u vivek -p oldpassword password newpass
+</pre>
 
 
 <h4>تغییر رمز عبور کاربر ریشه MySQL با استفاده از دستور sql در محیط mysql</h4>
 
 <p>این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:</p>
 <p>۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -p
+</pre>
 
 
 <p>۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&gt; ‎ وارد کنید‌):</p>
-<div class="code"><pre>mysql&amp;gt; use mysql;
-</pre></div>
+<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> use mysql<span class="p">;</span>
+</pre>
 
 
 <p>۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:</p>
-<div class="code"><pre>mysql&amp;gt; update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’;
-</pre></div>
+<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’<span class="p">;</span>
+</pre>
 
 
 <p>۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:</p>
-<div class="code"><pre>mysql&amp;gt; flush privileges;
+<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> flush privileges<span class="p">;</span>
 
-mysql&amp;gt; quit
-</pre></div>
+mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
+</pre>
 
 
 <p>از این روش می‌توانید با استفاده از API‌ها mysql در اسکریپت نویسی‌ها به زبان‌های PHP‌، پایتون و یا پرل استفاده کنید‌.</p>
 <p style="text-align: center;"><a title="MySQL change root password on cyberciti" href="http://www.cyberciti.biz/faq/mysql-change-root-password/" target="_blank">منبع</a></p>
 
 <p></p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">چ‌چ‌چ‌ (۶)‌: چگونه در خط فرمان گنو‌/‌لینوکس بزرگنمایی صفحه نمایش‌ام را پیدا کنم‌؟</a></h2>
       <div class="metadata">
 	<span class="date">2011-12-01 11:42</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>۱) استفاده از دستور xdpyinfo:</p>
-<div class="code"><pre>xdpyinfo | grep <span class="s1">'dimensions:'</span>
-</pre></div>
+	</p>
+<div>
+<p>۱) استفاده از دستور xdpyinfo:</p>
+<pre class="code literal-block">xdpyinfo <span class="p">|</span> grep <span class="s1">'dimensions:'</span>
+</pre>
 
 
 <p>که نتیجه‌ای به شکل زیر را باز می‌گرداند‌:</p>
-<div class="code"><pre>dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
-</pre></div>
+<pre class="code literal-block">dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
+</pre>
 
 
 <p>۲) استفاده از دستور xrandr:</p>
-<div class="code"><pre>xrandr | grep ‘*’
-</pre></div>
+<pre class="code literal-block">xrandr <span class="p">|</span> grep ‘*’
+</pre>
 
 
 <p>که نتیجه‌ای به صورت زیر را باز می‌گرداند‌:</p>
-<div class="code"><pre>xrandr: Failed to get size of gamma <span class="k">for </span>output default
+<pre class="code literal-block">xrandr: Failed to get size of gamma <span class="k">for</span> output default
 
 1024x768 50.0* 51.0
-</pre></div>
+</pre>
 
 
 <p>که البته منظور خط بالایی احتمالا این است که به خاطر قدیمی بودن مانیتور من‌، خروجی گاما (‌!) را اندازه گیری نمی‌کند‌ (یعنی به چه درد می‌خوره‌؟).</p>
 <p>البته بدیهی است که در محیط‌های دسکتاپ مختلف‌، با رجوع به بخش تنظیمات می‌توان به این اطلاعات دست یافت‌، ولی این روش‌ها طبیعتا سرراست‌تر است ;-)</p>
-<p></p><p style="text-align: center;"><a title="How to find resolution on cyberciti" href="http://www.cyberciti.biz/faq/how-do-i-find-out-screen-resolution-of-my-linux-desktop/" target="_blank">منبع</a></p>
-      
+<p></p>
+<p style="text-align: center;"><a title="How to find resolution on cyberciti" href="http://www.cyberciti.biz/faq/how-do-i-find-out-screen-resolution-of-my-linux-desktop/" target="_blank">منبع</a></p>
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
-    
-
     </article>
-  
-
     <article>
       <h2 class="title"><a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</a></h2>
       <div class="metadata">
 	<span class="date">2011-11-30 16:06</span>
 	<span class="writer">شاهین آزاد</span>
-      </div><!--/metadata-->
+      </div>
+<!--/metadata-->
       <p>
-	</p><p>سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.</p>
+	</p>
+<div>
+<p>سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.</p>
 <p>لطفا توجه داشته باشید حساب کاربری در MySQL با اکانت‌های یونیکس‌/‌لینوکس متفاوت است‌. برای مثال‌، کاربر root در MySQL و کاربر root در یونیکس‌/‌لینوکس جدا از هم بوده و هیچ ارتباطی با هم ندارند‌، حتی اگر نام کاربریشان شبیه به هم باشد‌.</p>
-<p></p><h4>روند ساخت یک حساب کاربری در MySQL</h4>
+<p></p>
+<h4>روند ساخت یک حساب کاربری در MySQL</h4>
 <p>با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌، دستور زیر را وارد کنید‌:):</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -p
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -p
+</pre>
 
 
 <p>و یا</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
+</pre>
 
 
 <p>یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:</p>
-<div class="code"><pre>mysql&amp;gt; CREATE DATABASE demo;
-</pre></div>
+<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> CREATE DATABASE demo<span class="p">;</span>
+</pre>
 
 
 <p>یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:</p>
-<div class="code"><pre>mysql&amp;gt; GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’;
-</pre></div>
+<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’<span class="p">;</span>
+</pre>
 
 
 <p><strong>توجه‌:</strong> GRANT ALL به این معنی است که کاربر قادر است هر کاری انجام دهد‌. می‌تواند اطلاعات را بخواند‌، دستکاری کند و یا پاکشان کند‌، اما تنها برای جداول موجود در پایگاه دادهٔ demo. او قادر به دسترسی به دیگر پایگاه‌های داده نیست‌.</p>
 <h4>من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL متصل شوم؟</h4>
 
 <p>کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه داده demo متصل شود‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -p demo
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysql -u user۱ -p demo
+</pre>
 
 
 <p>و یا‌:</p>
-<div class="code"><pre><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
-</pre></div>
+<pre class="code literal-block"><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
+</pre>
 
 
 <p>که پارامتر‌های دستور به شکل زیر معنا می‌شوند‌:</p>
-<ul><li>‎-user1 : کاربر MySQL</li>
+<ul>
+<li>‎-user1 : کاربر MySQL</li>
     <li>‏‎-h : نام کارگزار MySQL (به صورت پیش‌فرض localhost)</li>
     <li>‎-p : اعلان برای رمز عبور</li>
     <li>demo: demo نام پایگاه داده در mysql می‌باشد (اختیاری)</li>
@@ -202,38 +190,24 @@ mysql&amp;gt; quit
 <p style="text-align: center;"><a title="MySQL user creation" href="http://www.cyberciti.biz/faq/mysql-user-creation/" target="_blank">منبع</a></p>
 
 <p></p>
-      
+</div>
       
         
-    
-        <a class="commentLink" href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
-    
-
     </article>
-  
-
-
 <div class="pageNav">
-  
   <div class="prev">
     <a href="index-51.html">← ارسال‌های جدید‌تر</a>
   </div>
-  
-  
   <div class="next">
     <a href="index-49.html">پست‌های قدیمی‌تر →</a>
   </div>
-  
 </div>
 
 
-    
-        <script type="text/javascript">var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.type="text/javascript";a.src="http://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(a)}());</script>
-    
-
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -250,34 +224,15 @@ mysql&amp;gt; quit
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href=".">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href=".">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href=".">Home</a></li>
+      <li><a class="nav-icon about" href="stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href=".">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -293,16 +248,18 @@ mysql&amp;gt; quit
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

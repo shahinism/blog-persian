@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM | شاهینیسم</title>
+  <title>Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,22 +23,22 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM
-
+    <h2 class="title">Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM
 </h2>
     <div class="metadata">
       <span class="date">2012-10-13 21:43</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"><img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"></a>جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با <a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank">Dunst</a> آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:</p>
-<p></p><blockquote>
+      </p>
+<div>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png"><img class="aligncenter" title="نمونه xfce4-notifyd" src="http://dl.dropbox.com/u/25017694/Blog-photos/xfce4-notifyd-example.png" alt="نمونه xfce4-notifyd" width="392" height="159"></a>جدای از این هم به دلیل قابل کنترل نبودن با کیبورد‌، زیاد به مزاقم خوش نمی‌آمد‌. این شد که امروز چرخی زدم و با <a title="Dunst home page" href="http://knopwob.github.com/dunst/" target="_blank">Dunst</a> آشنا شدم‌ که خودش را این‌طوری معرفی می‌کند:</p>
+<p></p>
+<blockquote>
 <p style="text-align: left;">dunst - dmenu-ish notification daemon</p>
 
 </blockquote>
@@ -61,74 +46,47 @@ Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سب�
 <p>و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:</p>
 <p><a href="http://www.knopwob.org/public/dunst_wide_640.png"><img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"></a>برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.</p>
 <p>بعد از نصب هم با دستور زیر:</p>
-<div class="code"><pre>cp /usr/share/dunst/dunstrc ~/.config
-</pre></div>
+<pre class="code literal-block">cp /usr/share/dunst/dunstrc ~/.config
+</pre>
 
 
 <p>یک نمونه از فایل تنظیمات را در پوشهٔ خانگی‌تان کپی کنید‌. از من می‌شنوید چرخی در این فایل بزنید چون تنظیمات خیلی به درد بخوری در آن پیدا می‌کنید‌ (ضمن این که ظاهر اولیه اصلا شباهتی به Dmenu ندارد ;-))</p>
 <p>اما بیشترین نقاط قوت این اطلاع رسان ساده در میانبر‌های کیبوردش مخفی شده به طوری که:</p>
-<ul><li>می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.</li>
+<ul>
+<li>می‌توانید با Ctrl+Space اخطاری را که روی صفحه ظاهر شده قبل از به پایان رسیدن تایمش ببندید‌.</li>
     <li>می‌توانید با Ctrl+grave آخرین اخطاری که ظاهر شد و شما ندید را به روی صفحه برگردانید (که به نظرم خیلی به درد بخور است). grave همان دکمه‌ای است که باهاش ~ تایپ می‌کنید‌. کنار ۱ و بالای TAB ;-)</li>
     <li>یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)</li>
 </ul>
 
 <p><strong>نکته ۱:</strong> برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:</p>
-<div class="code"><pre>notify-send Test
-</pre></div>
+<pre class="code literal-block">notify-send Test
+</pre>
 
 
 <p>که جای Test هر چیزی که خواستید می‌توانید به عنوان پیغام اضافه کنید‌.</p>
 <p><strong>نکته ۲:</strong> Dunst تنها قبل از اجرای daemon‌ش فایل کانفیگی که در ‎.config ذخیره کردیم را می‌خواند‌. برای دیدن تغییرات باید اول این daemon را kill کنید و دوباره اجرایش کنید ;-)</p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13910710nskhh-jdyd-wyryshgr-mtn-ngr.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html";
-        
-        var disqus_title="Dunst \u0627\u0637\u0644\u0627\u0639 \u0631\u0633\u0627\u0646 \u06a9\u0648\u0686\u06a9 \u0628\u0631\u0627\u06cc \u0645\u062f\u06cc\u0631\u200c\u067e\u0646\u062c\u0631\u0647\u200c\u0647\u0627\u06cc \u0633\u0628\u06a9 \u0645\u062b\u0644 i3 \u06cc\u0627 DWM";
-        var disqus_identifier="cache/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -145,34 +103,15 @@ Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سب�
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -188,16 +127,18 @@ Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سب�
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>یادداشتی در مورد conky و داشتن خروجی فارسی روی آن | شاهینیسم</title>
+  <title>یادداشتی در مورد conky و داشتن خروجی فارسی روی آن | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,91 +23,62 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-یادداشتی در مورد conky و داشتن خروجی فارسی روی آن
-
+    <h2 class="title">یادداشتی در مورد conky و داشتن خروجی فارسی روی آن
 </h2>
     <div class="metadata">
       <span class="date">2012-03-27 06:14</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>امروز بر سر موضوع ایده‌ای برای افزودن یک ویجت جدید به میزکارم‌، پیگیر فارسی نویسی در conky شدم که با این روش خروجی تقریبا به درد بخوری می‌توان روی ترمینال هم داشت (‌بعضی مواقع متن روی ترمینال فوق‌العاده به هم ریخته می‌شود‌!)</p>
+      </p>
+<div>
+<p>امروز بر سر موضوع ایده‌ای برای افزودن یک ویجت جدید به میزکارم‌، پیگیر فارسی نویسی در conky شدم که با این روش خروجی تقریبا به درد بخوری می‌توان روی ترمینال هم داشت (‌بعضی مواقع متن روی ترمینال فوق‌العاده به هم ریخته می‌شود‌!)</p>
 <p>تنها کار لازم برای این کار پایپ کردن متن مورد نظر (‌یا نتیجه‌ی خروجی یک برنامه‌ی دیگر‌) به نرم‌افزار fribidi است‌. برای مثال‌:</p>
-<div class="code"><pre><span class="nb">echo</span> شاهین |fribidi
-</pre></div>
+<pre class="code literal-block"><span class="nb">echo </span>شاهین <span class="p">|</span>fribidi
+</pre>
 
 
 <p>به همین راحتی D: با استفاده از این روش‌، و استفاده از نرم‌افزار jcal یک تقویم فارسی به ویجت‌هایم اضافه کردم که برای من کم حافظه امکان خوبی برای یاد‌آوری تقویم وطنی‌ام است ;-)</p>
 <p><img class="aligncenter" title="conky screenshot" src="https://github.com/shahinism/.conkyrc/raw/master/conky.png" alt="" width="391" height="568"></p>
 <p>برای داشتن این ویجت‌ها روی کانکی می‌توانید به صورت زیر عمل کنید‌ (<a title="shahinism .conkyrc" href="https://github.com/shahinism/.conkyrc" target="_blank">لینک روی github</a>):</p>
-<div class="code"><pre>git clone https://github.com/shahinism/.conkyrc.git
+<pre class="code literal-block">git clone https://github.com/shahinism/.conkyrc.git
 
 cp .conkyrc/.* ~/
-</pre></div>
+</pre>
 
 
 <p>و آن را اجرا کنید‌. برای اجرای خودکارش روی Awesome هم می‌توان خط زیر را به rc.lua افزود:</p>
-<div class="code"><pre>awful.util.spawn_with_shell<span class="o">(</span><span class="s2">"conky"</span><span class="o">)</span>
-</pre></div>
+<pre class="code literal-block">awful.util.spawn_with_shell<span class="o">(</span><span class="s2">"conky"</span><span class="o">)</span>
+</pre>
 
 
 <p><strong>نکته</strong>: برای ویجت وضعیت هوا از<a title="وضعیت آب و هوا" href="http://cyberrabbits.net/984/accuweather/" target="_blank"> این پست </a>فرود عزیز کمک گرفتم و آن را برای وضعیت هوای رشت تنظیم کرده‌ام‌، می‌توانید با خواندن این پست آن را با توجه به نیاز خود تغییر دهید(این اسکریپت در فایل ‎.weather.sh قرار دارد) ;-)</p>
-    
-    <div class="categories">
-
 </div>
+    
+    <div class="categories"></div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="blog13910109nghy-bh-bzr-screen-w-qblythy-khrbrdy.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html";
-        
-        var disqus_title="\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f conky \u0648 \u062f\u0627\u0634\u062a\u0646 \u062e\u0631\u0648\u062c\u06cc \u0641\u0627\u0631\u0633\u06cc \u0631\u0648\u06cc \u0622\u0646";
-        var disqus_identifier="cache/posts/blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-r.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -139,34 +95,15 @@ cp .conkyrc/.* ~/
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -182,16 +119,18 @@ cp .conkyrc/.* ~/
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->

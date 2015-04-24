@@ -1,35 +1,20 @@
-<!DOCTYPE html><html lang="fa">
+<!DOCTYPE html>
+<html lang="fa">
   <head>
-    
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="شاهین آزاد">
-  <title>org-drill ایکمس‌، رفیق حافظهٔ شما! | شاهینیسم</title>
+  <title>org-drill ایکمس‌، رفیق حافظهٔ شما! | شاهین</title>
   
   <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-  
     <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  
   <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
       <![endif]-->
 
-  
-    
       <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-    
-  
-  
-    
       <link rel="icon" href="favicon.ico" sizes="32x32">
-    
-  
-
-    
-
-  
-
 
 
     
@@ -38,125 +23,85 @@
     <div class="container">
       <header>
 	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
-	<a class="nav-link" href="org-drill-introduction.html#navigation"></a>
+	<a class="nav-link" href="#navigation"></a>
       </header><!--/header-->
       <div class="columns four">
-	
   <article>
-    <h2 class="title">
-org-drill ایکمس‌، رفیق حافظهٔ شما!
-
+    <h2 class="title">org-drill ایکمس‌، رفیق حافظهٔ شما!
 </h2>
     <div class="metadata">
       <span class="date">2014-03-22 13:11</span>
       <span class="writer">شاهین آزاد</span>
     </div>
     <p>
-      </p><p>خوب اگر از پست‌های وبلاگم‌، مرا بشناسید می‌دانید که علاقهٔ زیادی به فلش‌کارت‌ها دارم! و این علاقه دلیلی جز عادت بدم در سریع خواندن مطالب مورد نیازم در هر لحظه و فراموشی سریع راه حل‌ها ندارد! خوب اگر مدتی مثل من کار کنید‌، می‌فهمید که در اکثر اوقات دنبال مسایل تکراری هستید که خیلی زود فراموش کرده‌اید و حالا دوباره باید وقت‌تان را به پایشان تلف کنید.</p>
+      </p>
+<div>
+<p>خوب اگر از پست‌های وبلاگم‌، مرا بشناسید می‌دانید که علاقهٔ زیادی به فلش‌کارت‌ها دارم! و این علاقه دلیلی جز عادت بدم در سریع خواندن مطالب مورد نیازم در هر لحظه و فراموشی سریع راه حل‌ها ندارد! خوب اگر مدتی مثل من کار کنید‌، می‌فهمید که در اکثر اوقات دنبال مسایل تکراری هستید که خیلی زود فراموش کرده‌اید و حالا دوباره باید وقت‌تان را به پایشان تلف کنید.</p>
 <p>با وجود علاقهٔ زیادم به <a class="reference external" href="http://http://fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D9%84%D8%A7%DB%8C%D8%AA%D9%86%D8%B1">فلش کارت‌ها</a> هرگز به طور جدی ازشان استفاده نکردم. جدای از این که علاقه‌ای به نوشتن روی کاغذ هر مطلب جدیدی که می‌خواهم به خاطر بسپارم ندارم‌، نمونهٔ کامپیوتری سریعی هم برای ذخیرهٔ فلش کارت‌هایم نمی‌شناختم. در واقع <a class="reference external" href="http://ankisrs.net/docs/manual.html">Anki</a> عالی بود‌، ولی آن هم پروسهٔ ذخیرهٔ فلش کارتش‌، زیادی آدم را از موضوع اصلی کار دور می‌کرد. اما الان <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> هست‌، قابلیت Capture‌ و org-mode دوست داشتنی‌اش که در <a class="reference external" href="http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html">ارسال</a> قبلی‌ام بهشان اشاره کردم هستند و فقط جای خالی <a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> برای کامل کردن حلقه خالی است.</p>
 <div class="section" id="org-mode-org-drill">
 <h2>نصب org-mode به همراه org-drill</h2>
 <p><a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> را می‌توان در پوشهٔ contrib از پروژهٔ org پیدا کرد و از آن‌جایی که orgای که همراه خود ایمکس نصب می‌شود‌، از این پوشه فاکتور گرفته‌، باید org را از مخزن اصلی‌اش و به همراه این پوشه نصب کنید. اول لیست مخازن‌تان را به صورت زیر ویرایش کنید تا مخزن رسمی org هم به بسته‌های‌تان اضافه شود:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_7c9a59ccfad74c5f9e2212fd6de6c599-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
+<a name="rest_code_7c9a59ccfad74c5f9e2212fd6de6c599-2"></a>        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_7c9a59ccfad74c5f9e2212fd6de6c599-3"></a>        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_7c9a59ccfad74c5f9e2212fd6de6c599-4"></a>        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
+<a name="rest_code_7c9a59ccfad74c5f9e2212fd6de6c599-5"></a>        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
 </pre>
 <p>حالا دستور زیر را وارد کنید:</p>
-<pre class="code cl literal-block">
-<span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
+<pre class="code cl"><a name="rest_code_0a5dbd370de64828b45f3c1b15bf4429-1"></a><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
 </pre>
 <p>حالا هم این خطوط را به ‎.emacs اضافه کنید تا org-drill فعال شود:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_9a8867dc534140418c130ef18eb5e690-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
 </pre>
 <p>تا این‌جای کار موفق به نصب <a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> شدیم. حالا کافیست که یک Capture هم برایش تعریف کنیم تا بتوان بدون دغدغهٔ زیادی اقدام به ایجاد یک فلش کارت کرد. برای مثال‌، کپچر من به شکل زیر است:</p>
-<pre class="code cl literal-block">
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
-   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
-      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_c0554d9b063b4cb481d7d4ccb1e9a20a-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
+<a name="rest_code_c0554d9b063b4cb481d7d4ccb1e9a20a-2"></a>   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
+<a name="rest_code_c0554d9b063b4cb481d7d4ccb1e9a20a-3"></a>      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
 </pre>
 <p>با این کد ایمکس فلش‌کارت‌هایم را در فایل flashcard.org موجود در پوشهٔ فایل‌های orgام ذخیره می‌کند.</p>
 </div>
 <div class="section" id="id2">
 <h2>نحوهٔ کار</h2>
 <p>برای کار با این بسته هم کافیست درون فایل مربوطه فلش کارتی به شکل زیر داشته باشیم:</p>
-<pre class="code literal-block">
-* Topic          :drill:
-Question
-** Hide
-Answer
+<pre class="code text"><a name="rest_code_4004af85514046c1b9848e68846f3ca6-1"></a>* Topic          :drill:
+<a name="rest_code_4004af85514046c1b9848e68846f3ca6-2"></a>Question
+<a name="rest_code_4004af85514046c1b9848e68846f3ca6-3"></a>** Hide
+<a name="rest_code_4004af85514046c1b9848e68846f3ca6-4"></a>Answer
 </pre>
 <p>اگر با org-mode کار کرده باشید کل قضیه برای‌تان روشن خواهد بود. اول فایل flashcard.org را باز می‌کنیم و سپس دستور زیر را وارد می‌کنیم:</p>
-<pre class="code cl literal-block">
-<span class="nv">M-x</span> <span class="nv">org-drill</span>
+<pre class="code cl"><a name="rest_code_f2a1193c950b47f6a22cc94112596925-1"></a><span class="nv">M-x</span> <span class="nv">org-drill</span>
 </pre>
 <p>org-drill به دنبال شاخه‌هایی با تگ :drill: می‌گردد و از آن‌ها به عنوان فلش کارت استفاده می‌کند. در هر نمایش هم به طور پیشفرض بخش جواب نمایش داده نمی‌شود و منتظر فشار یک کلید می‌ماند. پس از نمایش جواب هم می‌توانید به خودتان نمره دهید که بر اساس همین نمره‌ها زمان نمایش دوباره به صورت یک properties زیر Topic تعیین می‌شود که خود org-drill می‌داند چطور باید از آن استفاده کند.</p>
 <p><strong>پی‌نوشت‌ها:</strong> در حین کار با این بسته به مشکلی برخوردم که ممکن است برای شما هم اتفاق بیافتد. این قضیه را در <a class="reference external" href="https://bitbucket.org/eeeickythump/org-drill/issue/20/mapcar-wrong-type-argument-listp">bug‌های</a> org-drill مطرح کردم و پس از حل شدن راه حلش را هم آن‌جا نوشتم که ممکن است به درد‌تان بخورد.</p>
 </div>
+</div>
     
     <div class="categories">
-
-<span>ارسال‌های بیشتر دربارهٔ</span>
-
-<a class="tag" href="../categories/org.html"><span class="badge-info">org</span></a>
-
-<a class="tag" href="../categories/org-drill.html"><span class="badge-info">org-drill</span></a>
-
+<span>ارسال‌های بیشتر دربارهٔ%s</span>
 <a class="tag" href="../categories/emacs.html"><span class="badge-info">Emacs</span></a>
-
 <a class="tag" href="../categories/flashcard.html"><span class="badge-info">flashcard</span></a>
-
-
+<a class="tag" href="../categories/org.html"><span class="badge-info">org</span></a>
+<a class="tag" href="../categories/org-drill.html"><span class="badge-info">org-drill</span></a>
 </div>
     <div class="pageNav">
-      
-<ul class="pager">
-  
+      <ul class="pager">
   <div class="prev">
     <a href="satoshi_nakomoto_identified.html">← ارسال پیشین</a>
   </div>
-  
-  
   <div class="next">
     <a href="beet-introduction.html">ارسال بعدی →</a>
   </div>
-  
   </ul>
 
     </div>
     <div class="postMeta">
-      
 	
-    
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        var disqus_shortname ="shahinism";
-        
-            var disqus_url="http://5hah.in/posts/org-drill-introduction.html";
-        
-        var disqus_title="org-drill \u0627\u06cc\u06a9\u0645\u0633\u200c\u060c \u0631\u0641\u06cc\u0642 \u062d\u0627\u0641\u0638\u0647\u0654 \u0634\u0645\u0627!";
-        var disqus_identifier="cache/posts/org-drill-introduction.html";
-        var disqus_config = function () {
-            this.language = "";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-
-      
     </div>
   </article>
-
-      </div><!--columns four-->
-    </div><!--container-->
+      </div>
+<!--columns four-->
+    </div>
+<!--container-->
 
     <nav id="navigation">
       <div class="logo"></div>
@@ -173,34 +118,15 @@ Answer
 <!-- End of custom search -->
 
       <ul>
-	
-  
-    
-      <li><a class="nav-icon home" href="../">Home</a></li>
-    
-  
-    
-      <li><a class="nav-icon about" href="../">About</a></li>
-    
-  
-    
+	      <li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
-    
-  
-    
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
-    
-  
-    
       <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
-    
-  
-    
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
-    
-  
 
-      </ul><!--/ul-->
+      </ul>
+<!--/ul-->
     </nav><!--/navigation-->
 
 <!--/container-->
@@ -216,16 +142,18 @@ Answer
       <a class="social twitter" href="http://twitter.com/shahinism"></a>
       <a class="social lastfm" href="http://last.fm/shahinism"></a>
       <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
-    </p><!-- center -->
+    </p>
+<!-- center -->
   </div>
   <div class="columns one">
     <h2>Projects</h2>
-  </div><!-- column one -->
+  </div>
+<!-- column one -->
   <div class="columns one">
     <h2>Links</h2>
   </div>
   <div class="columns four copyright">
-    <p> Contents © 2014         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->
