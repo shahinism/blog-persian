@@ -55,36 +55,36 @@
 <div class="section" id="id4">
 <h2>نصب و ساخت اسکریپت</h2>
 <p>برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید (مسیر ‎ ~/‌.‌i3/config):</p>
-<pre class="code bash"><a name="rest_code_6b2cf63d03ce4c5695ebfbaf0c7ea0ba-1"></a>bar <span class="o">{</span>
-<a name="rest_code_6b2cf63d03ce4c5695ebfbaf0c7ea0ba-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
-<a name="rest_code_6b2cf63d03ce4c5695ebfbaf0c7ea0ba-3"></a><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_6b414a08e37e496b89eb3a72feb67697-1"></a>bar <span class="o">{</span>
+<a name="rest_code_6b414a08e37e496b89eb3a72feb67697-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
+<a name="rest_code_6b414a08e37e496b89eb3a72feb67697-3"></a><span class="o">}</span>
 </pre>
 <p>با این دستور ما به <a class="reference external" href="http://i3wm.org/">i3</a> می‌فهمانیم که باید از <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> برای نمایش داده‌های i3bar استفاده کند. همینطور به <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> می‌گوییم که فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در کدام مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد (‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).</p>
 <p>لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم <a class="reference external" href="https://github.com/ultrabug/py3status">Py3status</a> داشته باشد که اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس توجه کنید:</p>
-<pre class="code python"><a name="rest_code_b145555e53f44f438c55c100d4205df5-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-2"></a>  <span class="sd">"""</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-3"></a><span class="sd">  System status in i3bar</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-4"></a><span class="sd">  """</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-7"></a>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-8"></a><span class="sd">      """</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s">'full_text'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'name'</span><span class="p">:</span> <span class="s">'ram_info'</span><span class="p">}</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-12"></a>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_good'</span><span class="p">]</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_degraded'</span><span class="p">]</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-17"></a>      <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_bad'</span><span class="p">]</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-19"></a>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"RAM: </span><span class="si">%.2f</span><span class="s">/</span><span class="si">%.2f</span><span class="s"> GB (</span><span class="si">%d%%</span><span class="s">)"</span> <span class="o">%</span> \
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-23"></a>
-<a name="rest_code_b145555e53f44f438c55c100d4205df5-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-2"></a>  <span class="sd">"""</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-3"></a><span class="sd">  System status in i3bar</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-4"></a><span class="sd">  """</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-7"></a>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-8"></a><span class="sd">      """</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s">'full_text'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span> <span class="s">'name'</span><span class="p">:</span> <span class="s">'ram_info'</span><span class="p">}</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-12"></a>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_good'</span><span class="p">]</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_degraded'</span><span class="p">]</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-17"></a>      <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s">'color_bad'</span><span class="p">]</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-19"></a>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s">"RAM: </span><span class="si">%.2f</span><span class="s">/</span><span class="si">%.2f</span><span class="s"> GB (</span><span class="si">%d%%</span><span class="s">)"</span> <span class="o">%</span> \
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-23"></a>
+<a name="rest_code_cfa19e2fdf2f432182fc4c9b40480b74-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="id5">

@@ -32,35 +32,35 @@
 <div class="section" id="org-mode-org-drill">
 <h2>نصب org-mode به همراه org-drill</h2>
 <p><a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> را می‌توان در پوشهٔ contrib از پروژهٔ org پیدا کرد و از آن‌جایی که orgای که همراه خود ایمکس نصب می‌شود‌، از این پوشه فاکتور گرفته‌، باید org را از مخزن اصلی‌اش و به همراه این پوشه نصب کنید. اول لیست مخازن‌تان را به صورت زیر ویرایش کنید تا مخزن رسمی org هم به بسته‌های‌تان اضافه شود:</p>
-<pre class="code cl"><a name="rest_code_c40b94c1a09048bd8f9aa7c1a348dc8a-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
-<a name="rest_code_c40b94c1a09048bd8f9aa7c1a348dc8a-2"></a>        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
-<a name="rest_code_c40b94c1a09048bd8f9aa7c1a348dc8a-3"></a>        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
-<a name="rest_code_c40b94c1a09048bd8f9aa7c1a348dc8a-4"></a>        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
-<a name="rest_code_c40b94c1a09048bd8f9aa7c1a348dc8a-5"></a>        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_d3b570b9e35b48fbaf805960390d0692-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
+<a name="rest_code_d3b570b9e35b48fbaf805960390d0692-2"></a>        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_d3b570b9e35b48fbaf805960390d0692-3"></a>        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_d3b570b9e35b48fbaf805960390d0692-4"></a>        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
+<a name="rest_code_d3b570b9e35b48fbaf805960390d0692-5"></a>        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
 </pre>
 <p>حالا دستور زیر را وارد کنید:</p>
-<pre class="code cl"><a name="rest_code_10ff3a1110e44ca2807b39fd8af6cec9-1"></a><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
+<pre class="code cl"><a name="rest_code_20367fa08c3e4414806883b0ae1fad27-1"></a><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
 </pre>
 <p>حالا هم این خطوط را به ‎.emacs اضافه کنید تا org-drill فعال شود:</p>
-<pre class="code cl"><a name="rest_code_da30a7cbfa354c52940d985cb9f34a7f-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_52cc3205fd8c45ab91f31ad0f470ebf9-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
 </pre>
 <p>تا این‌جای کار موفق به نصب <a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> شدیم. حالا کافیست که یک Capture هم برایش تعریف کنیم تا بتوان بدون دغدغهٔ زیادی اقدام به ایجاد یک فلش کارت کرد. برای مثال‌، کپچر من به شکل زیر است:</p>
-<pre class="code cl"><a name="rest_code_13abb2e33a164285a2226d160ee89f05-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
-<a name="rest_code_13abb2e33a164285a2226d160ee89f05-2"></a>   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
-<a name="rest_code_13abb2e33a164285a2226d160ee89f05-3"></a>      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_76cefe93d0c74885b030d3290a659df7-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
+<a name="rest_code_76cefe93d0c74885b030d3290a659df7-2"></a>   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
+<a name="rest_code_76cefe93d0c74885b030d3290a659df7-3"></a>      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
 </pre>
 <p>با این کد ایمکس فلش‌کارت‌هایم را در فایل flashcard.org موجود در پوشهٔ فایل‌های orgام ذخیره می‌کند.</p>
 </div>
 <div class="section" id="id2">
 <h2>نحوهٔ کار</h2>
 <p>برای کار با این بسته هم کافیست درون فایل مربوطه فلش کارتی به شکل زیر داشته باشیم:</p>
-<pre class="code text"><a name="rest_code_71b1941ac21640d0afda3d537fc5caa1-1"></a>* Topic          :drill:
-<a name="rest_code_71b1941ac21640d0afda3d537fc5caa1-2"></a>Question
-<a name="rest_code_71b1941ac21640d0afda3d537fc5caa1-3"></a>** Hide
-<a name="rest_code_71b1941ac21640d0afda3d537fc5caa1-4"></a>Answer
+<pre class="code text"><a name="rest_code_547c2b4a820a4dd7990da4cefe848876-1"></a>* Topic          :drill:
+<a name="rest_code_547c2b4a820a4dd7990da4cefe848876-2"></a>Question
+<a name="rest_code_547c2b4a820a4dd7990da4cefe848876-3"></a>** Hide
+<a name="rest_code_547c2b4a820a4dd7990da4cefe848876-4"></a>Answer
 </pre>
 <p>اگر با org-mode کار کرده باشید کل قضیه برای‌تان روشن خواهد بود. اول فایل flashcard.org را باز می‌کنیم و سپس دستور زیر را وارد می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_874d20cd9299404abf0d6bb4582c7757-1"></a><span class="nv">M-x</span> <span class="nv">org-drill</span>
+<pre class="code cl"><a name="rest_code_a504027dca8346e693eb74181976e65b-1"></a><span class="nv">M-x</span> <span class="nv">org-drill</span>
 </pre>
 <p>org-drill به دنبال شاخه‌هایی با تگ :drill: می‌گردد و از آن‌ها به عنوان فلش کارت استفاده می‌کند. در هر نمایش هم به طور پیشفرض بخش جواب نمایش داده نمی‌شود و منتظر فشار یک کلید می‌ماند. پس از نمایش جواب هم می‌توانید به خودتان نمره دهید که بر اساس همین نمره‌ها زمان نمایش دوباره به صورت یک properties زیر Topic تعیین می‌شود که خود org-drill می‌داند چطور باید از آن استفاده کند.</p>
 <p><strong>پی‌نوشت‌ها:</strong> در حین کار با این بسته به مشکلی برخوردم که ممکن است برای شما هم اتفاق بیافتد. این قضیه را در <a class="reference external" href="https://bitbucket.org/eeeickythump/org-drill/issue/20/mapcar-wrong-type-argument-listp">bug‌های</a> org-drill مطرح کردم و پس از حل شدن راه حلش را هم آن‌جا نوشتم که ممکن است به درد‌تان بخورد.</p>
