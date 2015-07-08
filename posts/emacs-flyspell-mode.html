@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-      <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="شاهین آزاد">
-  <title>این ایمکس دوست داشتنی (غلط‌گیر املایی) | شاهین</title>
-  
-  <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>این ایمکس دوست داشتنی (غلط‌گیر املایی) | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-      <![endif]-->
-
-      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-      <link rel="icon" href="favicon.ico" sizes="32x32">
-
-
-    
-  </head>
-  <body>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
     <div class="container">
-      <header>
-	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
 	<a class="nav-link" href="#navigation"></a>
-      </header><!--/header-->
-      <div class="columns four">
-  <article>
-    <h2 class="title">این ایمکس دوست داشتنی (غلط‌گیر املایی)
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">این ایمکس دوست داشتنی (غلط‌گیر املایی)
 </h2>
     <div class="metadata">
       <span class="date">2013-05-20 10:43</span>
@@ -40,8 +31,8 @@
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_0170898bb08049ef9abe7c82665e1850-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_0170898bb08049ef9abe7c82665e1850-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -52,7 +43,7 @@
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_98016f4fe3d74bb58dd544941fca04e6-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_7f86472a63d7493da1a38ab5f2d4ccc9-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -68,11 +59,11 @@
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl"><a name="rest_code_230b45a9284b4aa3a458ba423919f6ab-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_230b45a9284b4aa3a458ba423919f6ab-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_26823842234248ec8754254be0778c46-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_0754d6f6f5da41e28a4f71f691302155-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -90,40 +81,33 @@
 </div>
     <div class="pageNav">
       <ul class="pager">
-  <div class="prev">
+<div class="prev">
     <a href="from-wordpress-to-nikola.html">← ارسال پیشین</a>
   </div>
   <div class="next">
     <a href="introduction-to-irc.html">ارسال بعدی →</a>
   </div>
   </ul>
-
-    </div>
+</div>
     <div class="postMeta">
 	
     </div>
   </article>
-      </div>
+</div>
 <!--columns four-->
     </div>
 <!--container-->
 
-    <nav id="navigation">
-      <div class="logo"></div>
+    <nav id="navigation"><div class="logo"></div>
       
 <!-- Custom search -->
 <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="http://5hah.in/">
-<input type="hidden" name="k8" value="#444444">
-<input type="hidden" name="k9" value="#D51920">
-<input type="hidden" name="kt" value="h">
-<input type="text" placeholder="جستجو…" maxlength="255" name="q">
-<input id="searchsubmit" type="submit" value="DDG Search">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
 </form>
 <!-- End of custom search -->
 
       <ul>
-	      <li><a class="nav-icon home" href="../">Home</a></li>
+<li><a class="nav-icon home" href="../">Home</a></li>
       <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
@@ -131,12 +115,7 @@
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
 
       </ul>
-<!--/ul-->
-    </nav><!--/navigation-->
-
-<!--/container-->
-<footer class="container">
-  <div class="columns one">
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
     <h2>About</h2>
     <p>Not much yet!</p>
   </div>
@@ -162,6 +141,5 @@
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->
-
 </body>
 </html>

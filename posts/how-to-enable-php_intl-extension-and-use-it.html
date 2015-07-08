@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-      <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="نحوه فعال‌سازی افزونه intl php">
-  <meta name="author" content="شاهین آزاد">
-  <title>افزونه INTL PHP و کلاس NumberFormatter | شاهین</title>
-  
-  <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="نحوه فعال‌سازی افزونه intl php">
+<meta name="author" content="شاهین آزاد">
+<title>افزونه INTL PHP و کلاس NumberFormatter | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-      <![endif]-->
-
-      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-      <link rel="icon" href="favicon.ico" sizes="32x32">
-
-
-    
-  </head>
-  <body>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
     <div class="container">
-      <header>
-	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
 	<a class="nav-link" href="#navigation"></a>
-      </header><!--/header-->
-      <div class="columns four">
-  <article>
-    <h2 class="title">افزونه INTL PHP و کلاس NumberFormatter
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">افزونه INTL PHP و کلاس NumberFormatter
 </h2>
     <div class="metadata">
       <span class="date">2014-09-28 13:19</span>
@@ -37,35 +28,35 @@
       </p>
 <div>
 <p>ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در <a class="reference external" href="http://php.net">PHP</a> نمایش بدهید. در این صورت کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:</p>
-<pre class="code php"><a name="rest_code_6237fca71d6042c38bc35a829ccc4656-1"></a><span class="cp">&lt;?php</span>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-3"></a>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-6"></a>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-<a name="rest_code_6237fca71d6042c38bc35a829ccc4656-8"></a><span class="cp">?&gt;</span><span class="x"></span>
+<pre class="code php"><a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-1"></a><span class="cp">&lt;?php</span>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-3"></a>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-6"></a>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
+<a name="rest_code_ce2f5c87d9c446dc834461e826fbec41-8"></a><span class="cp">?&gt;</span><span class="x"></span>
 </pre>
 <p>خروجی این خطوط به این صورت خواهد بود:</p>
-<pre class="code html"><a name="rest_code_d6c39396f97744ab9d64f11f24c73ee8-1"></a>IRAN: ‎ریال۱٬۲۳۵
+<pre class="code html"><a name="rest_code_8a8150ca5c864a958a2b36ed24543333-1"></a>IRAN: ‎ریال۱٬۲۳۵
 </pre>
 <p>ولی ممکن است مثل من با این اخطار روبرو شوید:</p>
-<pre class="code text"><a name="rest_code_01225fcbc46849f2b53a1c0ea2d666fa-1"></a>Fatal error: Class 'NumberFormatter' not found
+<pre class="code text"><a name="rest_code_f1c123d831344a34913b61d716036458-1"></a>Fatal error: Class 'NumberFormatter' not found
 </pre>
 <p>و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:</p>
-<pre class="code bash"><a name="rest_code_4e88cc86dcd441d2a33de2c0898753a2-1"></a>php -m <span class="p">|</span> grep intl
+<pre class="code bash"><a name="rest_code_d4fd673950624ba29860e67713ea4f80-1"></a>php -m <span class="p">|</span> grep intl
 </pre>
 <p>اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در <a class="reference external" href="http://gentoo.org">Gentoo</a>:</p>
-<pre class="code bash"><a name="rest_code_a1f88a324f4647afb59344fd3178de5e-1"></a><span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
+<pre class="code bash"><a name="rest_code_2db4f32bad864c8eb4f404632361fb3c-1"></a><span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
 </pre>
 <p>یا در بعضی از توزیع‌های محبوب دیگر</p>
-<pre class="code bash"><a name="rest_code_658ba004c33440188e981099baf0eb48-1"></a>// Debian
-<a name="rest_code_658ba004c33440188e981099baf0eb48-2"></a>apt-get install php5-intl
-<a name="rest_code_658ba004c33440188e981099baf0eb48-3"></a>// Centos
-<a name="rest_code_658ba004c33440188e981099baf0eb48-4"></a>yum install php-intl
+<pre class="code bash"><a name="rest_code_fa9635072c9848d4ba4ea8c2e57ef78a-1"></a>// Debian
+<a name="rest_code_fa9635072c9848d4ba4ea8c2e57ef78a-2"></a>apt-get install php5-intl
+<a name="rest_code_fa9635072c9848d4ba4ea8c2e57ef78a-3"></a>// Centos
+<a name="rest_code_fa9635072c9848d4ba4ea8c2e57ef78a-4"></a>yum install php-intl
 </pre>
 <p>حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_38413b4cec5f4fe599bb44dd21d2c94b-1"></a>extension=php_intl.dll
+<pre class="code text"><a name="rest_code_98f46f4dc82644c0a8ba972d11c2c461-1"></a>extension=php_intl.dll
 </pre>
 <p>و تمام‌، حالا این افزونه و کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> در دسترس‌تان است.</p>
 </div>
@@ -79,40 +70,33 @@
 </div>
     <div class="pageNav">
       <ul class="pager">
-  <div class="prev">
+<div class="prev">
     <a href="end-of-military-service.html">← ارسال پیشین</a>
   </div>
   <div class="next">
     <a href="stop-bashing-bash-and-gnu.html">ارسال بعدی →</a>
   </div>
   </ul>
-
-    </div>
+</div>
     <div class="postMeta">
 	
     </div>
   </article>
-      </div>
+</div>
 <!--columns four-->
     </div>
 <!--container-->
 
-    <nav id="navigation">
-      <div class="logo"></div>
+    <nav id="navigation"><div class="logo"></div>
       
 <!-- Custom search -->
 <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="http://5hah.in/">
-<input type="hidden" name="k8" value="#444444">
-<input type="hidden" name="k9" value="#D51920">
-<input type="hidden" name="kt" value="h">
-<input type="text" placeholder="جستجو…" maxlength="255" name="q">
-<input id="searchsubmit" type="submit" value="DDG Search">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
 </form>
 <!-- End of custom search -->
 
       <ul>
-	      <li><a class="nav-icon home" href="../">Home</a></li>
+<li><a class="nav-icon home" href="../">Home</a></li>
       <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
@@ -120,12 +104,7 @@
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
 
       </ul>
-<!--/ul-->
-    </nav><!--/navigation-->
-
-<!--/container-->
-<footer class="container">
-  <div class="columns one">
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
     <h2>About</h2>
     <p>Not much yet!</p>
   </div>
@@ -151,6 +130,5 @@
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->
-
 </body>
 </html>

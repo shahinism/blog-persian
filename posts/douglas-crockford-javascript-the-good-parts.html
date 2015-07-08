@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>خوبی‌های جاوا اسکریپت؟ | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">خوبی‌های جاوا اسکریپت؟
+</h2>
+    <div class="metadata">
+      <span class="date">2015-07-08 15:55</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
+این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
+بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
+باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
+فعالیت‌هایم‌، عمدتا تجربه‌های جدید فوق‌العاده‌ای را مزه‌مزه می‌کنم که دوست ندارم زود
+فراموش شوند و فکر می‌کنم بازگویی‌شان در این وبلاگ بتواند کمک کند. این است که:</p>
+<p>نمی‌دانم چقدر با JavaScript آشنایی دارید‌، ولی بعید می‌دانم که پی‌اش رفته باشید و
+اسم داگلاس کراکفورد (<a class="reference external" href="http://www.crockford.com/">Douglas Crockford</a>) به گوشتان نخورده باشد.</p>
+<p>عمدهٔ معروفیت ایشان هم پی کتابی به اسم Javascript the Good Parts شکل گرفته که شاید
+برای خیلی‌ها یک جک به نظر برسد. چطور؟</p>
+<p>خوب بگذارید این‌طور شروع کنم‌: آشنایی من با جاوااسکریپت به کتاب <a class="reference external" href="http://eloquentjavascript.net/">Eloquent
+Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با <a class="reference external" href="https://nodejs.org/">Nodejs</a> را بتوان چاشنی
+تجربه‌ام با این زبان دانست. حقیقت امر این است که از این زبان عمرا لذت نمی‌بردم. چه
+می‌دانم شاید اکثریتش بابت معلوم نبودن ریشهٔ درست و حسابی‌اش مثل زبان‌های دیگر
+باشد. شاید همین دلیل اولش باعث شده باشد که بتوان داخل اینترنت هزار و یک گزینهٔ
+چرند را به عنوان Best practices این زبان پیدا کرد که متاسفانه در خیلی از کد‌های
+منتشر شده به این زبان مورد استفاده قرار گرفته‌اند. شاید ساده‌ترین نمونهٔ این‌ها را
+بتوان استفاده نکردن از سمی کولون «;» برای پایان دادن به statement‌ها دانست.</p>
+<p>دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
+می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
+است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:</p>
+<pre class="code javascript"><a name="rest_code_978a6216e45943dbb0d53e68802635ed-1"></a><span class="k">return</span>
+<a name="rest_code_978a6216e45943dbb0d53e68802635ed-2"></a><span class="p">{</span>
+<a name="rest_code_978a6216e45943dbb0d53e68802635ed-3"></a>    <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
+<a name="rest_code_978a6216e45943dbb0d53e68802635ed-4"></a><span class="p">}</span>
+</pre>
+<p>همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
+می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم <a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook">این ارائهٔ</a> آقای
+کراکفورد را از دست ندهید.</p>
+<p>نکتهٔ کلی در مورد این زبان این است که نقص‌های طراحی فراوان و به صورت بحرانی
+مشکل‌زایی را می‌توان در آن یافت. همین‌طور نبود منابع یک‌پارچه با وجود پیاده‌سازی‌های
+متنوع (که به قول خود کراکفورد‌، تنها مشکلات طراحی را کپی کردن) باعث کج‌فهمی
+برنامه‌نویسانی که فکر می‌کنند می‌توانند این زبان را به راحتی یاد بگیرند شده است.
+تمام این‌ها در کنار گستردگی پلتفرمی که تقریبا هیچ زبان دیگری حتی به نزدیکی‌اش هم
+نرسیده است (مرورگرها)، و چه می‌دانم شاید امکاناتی که Prototype‌ها به برنامه‌نویس
+می‌دهند‌، آن‌چنان نقش تیغ دو لبه را برای برنامه‌نویسان زیبا ایفا می‌کند که نه می‌توان
+به کلی از خیرش گذشت (و به قول کراکفورد یادش نگرفت تا موقعی که بهش نیاز داریم) نه
+این که بتوان به عنوان یک غول همه چیز تمام برای هر مساله‌ای (سیستم‌عامل NodeJsای رو
+که یادتون می‌آد؟) به آن نگاه کرد (دارم به پایتون فکر می‌کنم، ولی اون هم نمی‌تونه
+جاهایی که جاوااسکریپت خوب عمل می‌کنه‌، خودی نشون بده).</p>
+<p>در پایان این ارائه کسی از کراکفورد نظرش را در مورد HTML5 می‌پرسد و حقیقتش یک
+جورهایی حرف دلم را می‌زند. تا قبل از HTML5 و یا CSS3 تکلیفمان روشن بود. ساختار را
+با HTML و آن DOM چلاغش نشان می‌دادیم. رنگ و لعاب را با CSS می‌گفتیم و هر جینگولک
+دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
+کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
+مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:</p>
+<pre class="code text"><a name="rest_code_11c668dc08534d93876f49825067f952-1"></a>It's easy to make things bigger, it's harder to make things better.
+</pre>
+<p>قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
+نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
+که Nodejs می‌تواند بکند بی‌خبرم.</p>
+</div>
+    
+    <div class="categories">
+<span>ارسال‌های بیشتر دربارهٔ%s</span>
+<a class="tag" href="../categories/html5.html"><span class="badge-info">Html5</span></a>
+<a class="tag" href="../categories/javascript.html"><span class="badge-info">javascript</span></a>
+</div>
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="mary-live-codes-a-javascript-game-from-scratch.html">← ارسال پیشین</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+	
+    </div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <head>
-      <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="شاهین آزاد">
-  <title>از وردپرس به نیکولا | شاهین</title>
-  
-  <link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
-    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
-  <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>از وردپرس به نیکولا | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-      <![endif]-->
-
-      <link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
-      <link rel="icon" href="favicon.ico" sizes="32x32">
-
-
-    
-  </head>
-  <body>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
     <div class="container">
-      <header>
-	<p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
 	<a class="nav-link" href="#navigation"></a>
-      </header><!--/header-->
-      <div class="columns four">
-  <article>
-    <h2 class="title">از وردپرس به نیکولا
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">از وردپرس به نیکولا
 </h2>
     <div class="metadata">
       <span class="date">2013-05-13 10:21</span>
@@ -62,7 +53,7 @@
 <div class="section" id="id3">
 <h2>نام فارسی پست‌ها و مشکلاتش</h2>
 <p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
-<pre class="code sh"><a name="rest_code_16ccf3b5fca0498db1f000b795799429-1"></a>nikola import_wordpress wordpress_output.xml
+<pre class="code sh"><a name="rest_code_358646416db749f19f591181e6809cdc-1"></a>nikola import_wordpress wordpress_output.xml
 </pre>
 <p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
 <p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
@@ -99,10 +90,10 @@
 <p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
 <p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
 <p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
-<pre class="code text"><a name="rest_code_961b91ffd108403e8d31dae69724d63b-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+<pre class="code text"><a name="rest_code_27194be2446c4619bdb87aad6ee9b3b2-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
 </pre>
 <p>که من می‌خواستم به همچین شکلی در آید:</p>
-<pre class="code text"><a name="rest_code_81f6ae0e5a194bb0aef5924f845496ef-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+<pre class="code text"><a name="rest_code_c48d18e7233e41de84c69a55ded86fcb-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
 </pre>
 <p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
 <p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>
@@ -126,40 +117,33 @@
 </div>
     <div class="pageNav">
       <ul class="pager">
-  <div class="prev">
+<div class="prev">
     <a href="blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">← ارسال پیشین</a>
   </div>
   <div class="next">
     <a href="emacs-flyspell-mode.html">ارسال بعدی →</a>
   </div>
   </ul>
-
-    </div>
+</div>
     <div class="postMeta">
 	
     </div>
   </article>
-      </div>
+</div>
 <!--columns four-->
     </div>
 <!--container-->
 
-    <nav id="navigation">
-      <div class="logo"></div>
+    <nav id="navigation"><div class="logo"></div>
       
 <!-- Custom search -->
 <form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="http://5hah.in/">
-<input type="hidden" name="k8" value="#444444">
-<input type="hidden" name="k9" value="#D51920">
-<input type="hidden" name="kt" value="h">
-<input type="text" placeholder="جستجو…" maxlength="255" name="q">
-<input id="searchsubmit" type="submit" value="DDG Search">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
 </form>
 <!-- End of custom search -->
 
       <ul>
-	      <li><a class="nav-icon home" href="../">Home</a></li>
+<li><a class="nav-icon home" href="../">Home</a></li>
       <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
       <li><a class="nav-icon resume" href="../">Resume</a></li>
       <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
@@ -167,12 +151,7 @@
       <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
 
       </ul>
-<!--/ul-->
-    </nav><!--/navigation-->
-
-<!--/container-->
-<footer class="container">
-  <div class="columns one">
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
     <h2>About</h2>
     <p>Not much yet!</p>
   </div>
@@ -198,6 +177,5 @@
     <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
   </div>
 </footer><!--/container-->
-
 </body>
 </html>
