@@ -38,8 +38,8 @@
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash"><a name="rest_code_5e9311ca187843f4b24d3a23edccdbe6-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-<a name="rest_code_5e9311ca187843f4b24d3a23edccdbe6-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_4049e0b73620455fa8e0cefe99fc542d-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_4049e0b73620455fa8e0cefe99fc542d-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -49,21 +49,13 @@
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code text"><a name="rest_code_3a9f3436b9274fb9a855ff0cb274179b-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_074f12b18fa24456ac877c803abfc6c7-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
 </div>
 </div>
     
-    <div class="categories">
-<span>ارسال‌های بیشتر دربارهٔ%s</span>
-<a class="tag" href="../categories/backup.html"><span class="badge-info">backup</span></a>
-<a class="tag" href="../categories/cron.html"><span class="badge-info">cron</span></a>
-<a class="tag" href="../categories/crontab.html"><span class="badge-info">crontab</span></a>
-<a class="tag" href="../categories/dropbox.html"><span class="badge-info">dropbox</span></a>
-<a class="tag" href="../categories/rsync.html"><span class="badge-info">rsync</span></a>
-</div>
     <div class="pageNav">
       <ul class="pager">
 <div class="prev">
@@ -75,8 +67,28 @@
   </ul>
 </div>
     <div class="postMeta">
-	
-    </div>
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/backup_with_dropbox.html",
+        disqus_title="\u067e\u0634\u062a\u06cc\u0628\u0627\u0646\u200c\u06af\u06cc\u0631\u06cc \u0628\u0627 rsync, cron, dropbox",
+        disqus_identifier="cache/posts/backup_with_dropbox.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
   </article>
 </div>
 <!--columns four-->

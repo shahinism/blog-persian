@@ -53,7 +53,7 @@
 <div class="section" id="id3">
 <h2>نام فارسی پست‌ها و مشکلاتش</h2>
 <p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
-<pre class="code sh"><a name="rest_code_358646416db749f19f591181e6809cdc-1"></a>nikola import_wordpress wordpress_output.xml
+<pre class="code sh"><a name="rest_code_f1a5ca26bb534bf8b671c6909d9f4a22-1"></a>nikola import_wordpress wordpress_output.xml
 </pre>
 <p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
 <p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
@@ -90,10 +90,10 @@
 <p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
 <p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
 <p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
-<pre class="code text"><a name="rest_code_27194be2446c4619bdb87aad6ee9b3b2-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+<pre class="code text"><a name="rest_code_9cdb343317d34f548cdeb27042a7d086-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
 </pre>
 <p>که من می‌خواستم به همچین شکلی در آید:</p>
-<pre class="code text"><a name="rest_code_c48d18e7233e41de84c69a55ded86fcb-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+<pre class="code text"><a name="rest_code_375dd8ee2ec24b11bb0641e0561b4030-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
 </pre>
 <p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
 <p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>
@@ -109,8 +109,10 @@
 </div>
 </div>
       
-        
-    </article><article><h2 class="title"><a href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)</a></h2>
+        <p class="commentline">            <a class="commentLink" href="posts/from-wordpress-to-nikola.html#disqus_thread" data-disqus-identifier="cache/posts/from-wordpress-to-nikola.html">دیدگاه‌ها</a>
+
+
+    </p></article><article><h2 class="title"><a href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)</a></h2>
       <div class="metadata">
 	<span class="date">2013-04-16 00:44</span>
 	<span class="writer">شاهین آزاد</span>
@@ -140,8 +142,10 @@
 <p>من این آموزش را نمی‌دانم از کجای اینترنت یاد گرفتم. ولی این <a title="Emacsfu" href="http://emacs-fu.blogspot.de/2009/01/balancing-your-parentheses.html" target="_blank">وبلاگ</a> هم به آن اشاره کرده که وبلاگ عالی‌ای هم هست. پیشنهاد می‌کنم از دستش ندهید. خیلی خیلی تکنیک‌های جالبی با آن یاد خواهید گرفت.</p>
 </div>
       
-        
-    </article><article><h2 class="title"><a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">این ایمکس دوست داشتنی (Backup‌ها و Autosave‌ها)</a></h2>
+        <p class="commentline">            <a class="commentLink" href="posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html#disqus_thread" data-disqus-identifier="cache/posts/blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html">دیدگاه‌ها</a>
+
+
+    </p></article><article><h2 class="title"><a href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">این ایمکس دوست داشتنی (Backup‌ها و Autosave‌ها)</a></h2>
       <div class="metadata">
 	<span class="date">2013-04-14 10:23</span>
 	<span class="writer">شاهین آزاد</span>
@@ -174,8 +178,10 @@
 <p>من این تنظیمات را از <a href="http://snarfed.org/gnu_emacs_backup_files">این پست</a> یاد گرفتم. وبلاگ قدیمی‌ایست‌، و چیز‌های خوبی در مورد ایمکس می‌توان ازش یاد گرفت.</p>
 </div>
       
-        
-    </article><div class="pageNav">
+        <p class="commentline">            <a class="commentLink" href="posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13920125yn-ymkhs-dwst-dshtny-backuph-w-autosaveh.html">دیدگاه‌ها</a>
+
+
+    </p></article><div class="pageNav">
   <div class="prev">
     <a href="index-75.html">← ارسال‌های جدید‌تر</a>
   </div>

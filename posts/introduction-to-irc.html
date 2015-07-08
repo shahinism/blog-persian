@@ -58,13 +58,13 @@
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code text"><a name="rest_code_20f5e4831fb046f6b6f55a5fa405f191-1"></a>/whois shahin
+<pre class="code text"><a name="rest_code_d483adadb9d742a0b90c68bb581e70b4-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png"><p>و خوب <a class="reference external" href="http://freenode.net">Freenode</a> یک خدمت رایگانی به اسم Cloak ارائه می‌دهد که به صورت پیش‌فرض فعال نیست. برای فعال کردنش باید یکی از مدیران خانهٔ ‎#freenode این کار را برای‌تان انجام دهد. به این خانه بروید و در خواست‌تان را در همان اتاق اصلی بیان کنید. احتمال خیلی زیاد همان لحظه به درخواست‌تان تکبیر می‌گویند و تمام. حالا وقتی whois می‌شوید همچین چیزی معلوم می‌شود:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png"><p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_b19749da50124008a82f19a78aaa1fef-1"></a>/join technotux
+<pre class="code text"><a name="rest_code_df313e09d790447c861d2a25e22c9e64-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -73,10 +73,10 @@
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code text"><a name="rest_code_d13ea1a4757e467ba5086c4bf225bfc6-1"></a>/set
+<pre class="code text"><a name="rest_code_9f2b2831557647258696a7d345fe3e55-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code text"><a name="rest_code_ffb2901159164cdaac9d38f2097a8fa3-1"></a>/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_90fc8d17efed4346b78accebc2c967d1-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -91,19 +91,12 @@
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code text"><a name="rest_code_9d05fbaf94a2482e9a8822078e4cece1-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_7d7c5842888c4f778c1831ce9368fe9d-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
 </div>
     
-    <div class="categories">
-<span>ارسال‌های بیشتر دربارهٔ%s</span>
-<a class="tag" href="../categories/erc.html"><span class="badge-info">erc</span></a>
-<a class="tag" href="../categories/hexchat.html"><span class="badge-info">hexchat</span></a>
-<a class="tag" href="../categories/irc.html"><span class="badge-info">irc</span></a>
-<a class="tag" href="../categories/xchat.html"><span class="badge-info">xchat</span></a>
-</div>
     <div class="pageNav">
       <ul class="pager">
 <div class="prev">
@@ -115,8 +108,28 @@
   </ul>
 </div>
     <div class="postMeta">
-	
-    </div>
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/introduction-to-irc.html",
+        disqus_title="\u0645\u0642\u062f\u0645\u0647\u200c\u0627\u06cc \u0628\u0631 IRC",
+        disqus_identifier="cache/posts/introduction-to-irc.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
   </article>
 </div>
 <!--columns four-->

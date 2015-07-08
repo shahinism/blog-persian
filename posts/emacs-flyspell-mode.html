@@ -31,8 +31,8 @@
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_48fa40aae4de4bbfa7df3faf44076a57-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_48fa40aae4de4bbfa7df3faf44076a57-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -43,7 +43,7 @@
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_7f86472a63d7493da1a38ab5f2d4ccc9-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_2269c7bf80c545998625bc31d2165526-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -59,11 +59,11 @@
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl"><a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_169c957e32b54a7a9110810f70c32a70-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_169c957e32b54a7a9110810f70c32a70-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_0754d6f6f5da41e28a4f71f691302155-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_e9edf8dea55846a58f234f987de5376d-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -73,12 +73,6 @@
 </div>
 </div>
     
-    <div class="categories">
-<span>ارسال‌های بیشتر دربارهٔ%s</span>
-<a class="tag" href="../categories/aspell.html"><span class="badge-info">aspell</span></a>
-<a class="tag" href="../categories/emacs.html"><span class="badge-info">Emacs</span></a>
-<a class="tag" href="../categories/flyspell.html"><span class="badge-info">flyspell</span></a>
-</div>
     <div class="pageNav">
       <ul class="pager">
 <div class="prev">
@@ -90,8 +84,28 @@
   </ul>
 </div>
     <div class="postMeta">
-	
-    </div>
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/emacs-flyspell-mode.html",
+        disqus_title="\u0627\u06cc\u0646 \u0627\u06cc\u0645\u06a9\u0633 \u062f\u0648\u0633\u062a \u062f\u0627\u0634\u062a\u0646\u06cc (\u063a\u0644\u0637\u200c\u06af\u06cc\u0631 \u0627\u0645\u0644\u0627\u06cc\u06cc)",
+        disqus_identifier="cache/posts/emacs-flyspell-mode.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
   </article>
 </div>
 <!--columns four-->

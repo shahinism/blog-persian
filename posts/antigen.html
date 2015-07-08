@@ -28,15 +28,15 @@
       </p>
 <div>
 <p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
-<pre class="code bash"><a name="rest_code_86fa67d9adfb486fab44ce2ba5ac6f8d-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
-<a name="rest_code_86fa67d9adfb486fab44ce2ba5ac6f8d-2"></a><span class="nb">source </span>antigen.zsh
+<pre class="code bash"><a name="rest_code_53d2c086dba24d6db592a315a11536b7-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
+<a name="rest_code_53d2c086dba24d6db592a315a11536b7-2"></a><span class="nb">source </span>antigen.zsh
 </pre>
 <p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
-<pre class="code bash"><a name="rest_code_088cd8cf5de24e2988aca69f15634a3d-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
+<pre class="code bash"><a name="rest_code_3602bb4b15b14baa9577fee0b7f37041-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
 </pre>
 <p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
 <p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
-<pre class="code bash"><a name="rest_code_6f2977efb69842da98ec7c4e044a7dda-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
+<pre class="code bash"><a name="rest_code_a660601539e54820a12e6ef4adca5eb2-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
 </pre>
 <p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
 <p>و اما سوال مهم:</p>
@@ -46,12 +46,6 @@
 </div>
 </div>
     
-    <div class="categories">
-<span>ارسال‌های بیشتر دربارهٔ%s</span>
-<a class="tag" href="../categories/antigen.html"><span class="badge-info">antigen</span></a>
-<a class="tag" href="../categories/oh-my-zsh.html"><span class="badge-info">oh-my-zsh</span></a>
-<a class="tag" href="../categories/zsh.html"><span class="badge-info">zsh</span></a>
-</div>
     <div class="pageNav">
       <ul class="pager">
 <div class="prev">
@@ -63,8 +57,28 @@
   </ul>
 </div>
     <div class="postMeta">
-	
-    </div>
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/antigen.html",
+        disqus_title="Antigen \u062c\u0639\u0628\u0647 \u0627\u0628\u0632\u0627\u0631 ZSH \u06a9\u0647 \u0641\u0639\u0644\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647\u200c\u0627\u0634 \u0646\u0645\u06cc\u200c\u06a9\u0646\u0645",
+        disqus_identifier="cache/posts/antigen.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
   </article>
 </div>
 <!--columns four-->

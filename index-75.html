@@ -38,8 +38,8 @@
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash"><a name="rest_code_5e9311ca187843f4b24d3a23edccdbe6-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-<a name="rest_code_5e9311ca187843f4b24d3a23edccdbe6-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_4049e0b73620455fa8e0cefe99fc542d-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_4049e0b73620455fa8e0cefe99fc542d-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -49,15 +49,17 @@
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code text"><a name="rest_code_3a9f3436b9274fb9a855ff0cb274179b-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_074f12b18fa24456ac877c803abfc6c7-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
 </div>
 </div>
       
-        
-    </article><article><h2 class="title"><a href="posts/introduction-to-irc.html">مقدمه‌ای بر IRC</a></h2>
+        <p class="commentline">            <a class="commentLink" href="posts/backup_with_dropbox.html#disqus_thread" data-disqus-identifier="cache/posts/backup_with_dropbox.html">دیدگاه‌ها</a>
+
+
+    </p></article><article><h2 class="title"><a href="posts/introduction-to-irc.html">مقدمه‌ای بر IRC</a></h2>
       <div class="metadata">
 	<span class="date">2013-05-22 10:52</span>
 	<span class="writer">شاهین آزاد</span>
@@ -97,13 +99,13 @@
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code text"><a name="rest_code_20f5e4831fb046f6b6f55a5fa405f191-1"></a>/whois shahin
+<pre class="code text"><a name="rest_code_d483adadb9d742a0b90c68bb581e70b4-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png"><p>و خوب <a class="reference external" href="http://freenode.net">Freenode</a> یک خدمت رایگانی به اسم Cloak ارائه می‌دهد که به صورت پیش‌فرض فعال نیست. برای فعال کردنش باید یکی از مدیران خانهٔ ‎#freenode این کار را برای‌تان انجام دهد. به این خانه بروید و در خواست‌تان را در همان اتاق اصلی بیان کنید. احتمال خیلی زیاد همان لحظه به درخواست‌تان تکبیر می‌گویند و تمام. حالا وقتی whois می‌شوید همچین چیزی معلوم می‌شود:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png"><p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_b19749da50124008a82f19a78aaa1fef-1"></a>/join technotux
+<pre class="code text"><a name="rest_code_df313e09d790447c861d2a25e22c9e64-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -112,10 +114,10 @@
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code text"><a name="rest_code_d13ea1a4757e467ba5086c4bf225bfc6-1"></a>/set
+<pre class="code text"><a name="rest_code_9f2b2831557647258696a7d345fe3e55-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code text"><a name="rest_code_ffb2901159164cdaac9d38f2097a8fa3-1"></a>/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_90fc8d17efed4346b78accebc2c967d1-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -130,14 +132,16 @@
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code text"><a name="rest_code_9d05fbaf94a2482e9a8822078e4cece1-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_7d7c5842888c4f778c1831ce9368fe9d-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
 </div>
       
-        
-    </article><article><h2 class="title"><a href="posts/emacs-flyspell-mode.html">این ایمکس دوست داشتنی (غلط‌گیر املایی)</a></h2>
+        <p class="commentline">            <a class="commentLink" href="posts/introduction-to-irc.html#disqus_thread" data-disqus-identifier="cache/posts/introduction-to-irc.html">دیدگاه‌ها</a>
+
+
+    </p></article><article><h2 class="title"><a href="posts/emacs-flyspell-mode.html">این ایمکس دوست داشتنی (غلط‌گیر املایی)</a></h2>
       <div class="metadata">
 	<span class="date">2013-05-20 10:43</span>
 	<span class="writer">شاهین آزاد</span>
@@ -150,8 +154,8 @@
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_c877289c5eeb48f6a9d5f8b2f4b3355e-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_48fa40aae4de4bbfa7df3faf44076a57-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_48fa40aae4de4bbfa7df3faf44076a57-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -162,7 +166,7 @@
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_7f86472a63d7493da1a38ab5f2d4ccc9-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_2269c7bf80c545998625bc31d2165526-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -178,11 +182,11 @@
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl"><a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_4a9cdaaa8cb941d1841ef045e3dd344e-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_169c957e32b54a7a9110810f70c32a70-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_169c957e32b54a7a9110810f70c32a70-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_0754d6f6f5da41e28a4f71f691302155-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_e9edf8dea55846a58f234f987de5376d-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -192,8 +196,10 @@
 </div>
 </div>
       
-        
-    </article><div class="pageNav">
+        <p class="commentline">            <a class="commentLink" href="posts/emacs-flyspell-mode.html#disqus_thread" data-disqus-identifier="cache/posts/emacs-flyspell-mode.html">دیدگاه‌ها</a>
+
+
+    </p></article><div class="pageNav">
   <div class="prev">
     <a href="index-76.html">← ارسال‌های جدید‌تر</a>
   </div>
