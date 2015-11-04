@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>آموزش HTML بخش ۲ | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">آموزش HTML بخش ۲
+</h2>
+    <div class="metadata">
+      <span class="date">2011-04-24 00:32</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>خوب‌، در <a class="reference external" href="http://shahinism.com/1390/02/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-html-%d8%a8%d8%ae%d8%b4-%db%b1/">بخش
+اول</a>
+با ساختار کلی یک سند HTML آشنا شدیم‌، و نحوهٔ ایجاد آن را یاد گرفتیم‌.
+در این بخش می‌خواهیم با امکاناتی که برای <strong>تایپوگرافی</strong> در HTML قرار
+داده شده آشنا شویم‌. <strong>نکته‌:</strong> بعضی از تگ‌های استفاده شده در این آموزش
+در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از CSS در
+کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری
+سریع‌تر CSS -که در آینده قصد بر آن داریم- کند‌.</p>
+<div class="section" id="id1">
+<h2><strong>انواع تیتر‌ها‌:</strong></h2>
+<p>در HTML تگ‌هایی برای شناساندن <strong>تیتر‌ها</strong> به مرور‌گر و در نتیجه نمایش
+مناسب آن‌ها در نظر گرفته شده است که ساختاری برابر <strong>&lt;Hn&gt;</strong> دارند‌. در
+این نوع تگ حرف <strong>n</strong> برابر با مقداری است که از یک شروع می‌شود‌، و به
+نسبت بزرگ‌تر شدن این مقدار‌، اندازهٔ تیتر به کوچک‌تر شدن میل می‌کند‌.
+برای درک بهتر این موضوع سعی می‌کنیم‌، در صفحه‌ای که قبلا ساختیم یک تیتر
+ایجاد کنیم‌: ```bash &lt;html&gt; &lt;head&gt; &lt;title&gt;First HTML!&lt;/title&gt; &lt;/head&gt;
+&lt;body text="yellow" bgcolor="brown"&gt; &lt;h1&gt;Hello World&lt;/h1&gt; &lt;/body&gt;
+&lt;/html&gt; ``` نتیجهٔ این کد برابر با تصویر زیر می‌باشد‌. همانطور که
+می‌بینید عبارت Hello World به صورت بزرگ نوشته شده است‌. <a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/04/html1-7.png"><img alt="image0" src="http://shahinism.com/wp-content/uploads/2011/04/html1-7-300x74.png"></a> برای
+درک بهتر مقدار n در &lt;Hn&gt; از دو مقدار دیگر <strong>&lt;h2&gt;&lt;h3&gt;</strong> به صورت زیر
+استفاده می‌کنم‌: ```bash &lt;html&gt; &lt;head&gt; &lt;title&gt;First HTML!&lt;/title&gt;
+&lt;/head&gt; &lt;body text="yellow" bgcolor="brown"&gt; &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;h2&gt;This is an HTML Document&lt;/h2&gt; &lt;h3&gt;Season 2&lt;h3&gt; &lt;/body&gt; &lt;/html&gt;
+``` <a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/04/html1-6.png"><img alt="image1" src="http://shahinism.com/wp-content/uploads/2011/04/html1-6-300x96.png"></a>همانطور که می‌بینید عبارات نوشته شده با اندازه‌های
+متفاوت به نمایش در آمده‌اند‌. یکی از مهم‌ترین مزایای استفاده از این
+تگ‌ها در <strong>Seo است که به موتور‌های جستجو امکان می‌دهد که به راحتی
+بخش‌های مختلف سند را **درک</strong> کنند‌. **</p>
+</div>
+<div class="section" id="id2">
+<h2>انواع نوشته‌ها‌:</h2>
+<ul class="simple">
+<li>
+<strong>Bold :</strong> برای نوشتن به صورت تو پر یا همان bold از تگ <strong>&lt;b&gt;&lt;/b&gt;</strong>
+استفاده می‌شود‌.</li>
+<li>
+<em>Italic :</em> برای نوشتن به صورت مورب نیز از تگ<strong>&lt;i&gt;&lt;/i&gt;</strong> استفاده
+می‌شود‌.</li>
+<li>[STRIKEOUT:Strike :] برای نوستن به صورت رو خط دار از تگ
+<strong>&lt;strike&gt;&lt;/strike&gt;</strong> استفاده می‌شود‌.</li>
+<li>Underline : برای نوشتن به صورت زیر خط دار از تگ <strong>&lt;u&gt;&lt;/u&gt;</strong> استفاده
+می‌شود‌.</li>
+</ul>
+<p>خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی <strong>زیبا‌تر</strong> کنیم؛ برای این کار
+از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌: ```bash &lt;html&gt;
+&lt;head&gt; &lt;title&gt;First HTML!&lt;/title&gt; &lt;/head&gt; &lt;body text="yellow"
+bgcolor="brown"&gt; &lt;h1&gt;Hello World&lt;/h1&gt; &lt;h3&gt;This is an HTML Document
+&lt;i&gt;season #2&lt;/i&gt;&lt;/h3&gt; This is an free tutorial for &lt;b&gt;HTML&lt;/b&gt; from
+&lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt; &lt;/body&gt; &lt;/html&gt; ``` <a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/04/html1-5.png"><img alt="image2" src="http://shahinism.com/wp-content/uploads/2011/04/html1-5-300x81.png"></a>همانطور که
+می‌بینید توانستیم با تگ‌هایی ساده یک تایپوگرافی معقول ایجاد کنیم‌. تنها
+نکته‌ای که در مثال اخیر باید مورد <strong>توجه</strong> قرار گیرد‌، این قسمت است‌:
+&lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;همانطور که می‌بینید از دو تگ زیر خط و نوشتهٔ
+تو پر به صورت همزمان استفاده شده‌. ولی تگ‌ها از <strong>آخر به اول بسته
+شده‌</strong>.</p>
+</div>
+<div class="section" id="id3">
+<h2>موقعیت نوشته‌:</h2>
+<p>برای تعیین موقعیت نوشته‌ها نیز در HTML امکاناتی در نظر گرفته شده‌. که به
+تعدادی از آن‌ها اشاره می‌کنیم‌:</p>
+<ul class="simple">
+<li>Center: برای <strong>وسط‌چین</strong> کردن نوشته استفاده می‌شود‌.</li>
+<li>&lt;br&gt; : برای <strong>شکستن</strong> خط و شروع در خط جدید مورد استفاده قرار
+می‌گیرد‌.</li>
+<li>&lt;sub&gt; و &lt;sub&gt; : که برای نمایش <strong>اندیس و توان</strong> مورد استفاده قرار
+می‌گیرد‌.</li>
+</ul>
+<p>اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند
+ایجاد کنیم‌: ```bash &lt;html&gt; &lt;head&gt; &lt;title&gt;First HTML!&lt;/title&gt; &lt;/head&gt;
+&lt;body text="yellow" bgcolor="brown"&gt; &lt;center&gt;&lt;h1&gt;Hello
+World&lt;/h1&gt;&lt;/center&gt; &lt;h3&gt;This is an HTML Document &lt;i&gt;season
+&lt;sub&gt;#2&lt;/sub&gt;&lt;/i&gt;&lt;/h3&gt; This is an free tutorial for &lt;b&gt;HTML&lt;/b&gt; from:
+&lt;br&gt;&lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt; &lt;/body&gt; &lt;/html&gt; ``` <a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/04/html1-4.png"><img alt="image3" src="http://shahinism.com/wp-content/uploads/2011/04/html1-4-300x62.png"></a> همانطور
+که در تصویر زیر می‌بینیم <strong>#</strong><strong>۲</strong>مقداری به پایین منتقل شده‌،
+هم‌چنین آدرس سایت نیز با توجه به اینکه در ادامهٔ خط نوشته شده‌، ولی
+پایین‌تر آمده‌. واضح‌ترین تغییر نیز در این مثال عبارت Hello World است که
+به وسط صفحه تغییر مکان داده‌.</p>
+</div>
+<div class="section" id="id4">
+<h2>تغییر قلم‌:</h2>
+<p>برای تغییر قلم نوشته <strong>(فونت‌)</strong> نیز می‌توانید از تگ فونت استفاده کنید‌.
+نمونه‌ای از استفاده از این قلم را در کد زیر ببینید‌: ```bash &lt;html&gt;
+&lt;title&gt;Font Change&lt;/title&gt; &lt;/html&gt; &lt;body&gt; Hi my friends &lt;font
+face="tahoma" size=24 color=red&gt;in this page we have 2&lt;/font&gt; different
+font. &lt;/body&gt; &lt;/html&gt; ``` نتیجه‌ی مثال زیر را در تصویر زیر می‌بینیم‌:
+<a class="reference external" href="../wp-content/uploads/2011/04/html1-3.png"><img alt="image4" src="../wp-content/uploads/2011/04/html1-3-300x39.png"></a> لازم به <strong>ذکر</strong> است‌، مرور‌گر‌ها به صورت <strong>پیش‌فرض</strong> فونتی را
+برای نمایش نوشته در نظر می‌گیرند که با مراجعه به بخش تنظیمات هر مرورگر
+قابل تغییر است‌. فونت تعیین شده در کد بالا در صورتی که روی سیستم کاربر
+موجود باشد‌، نمایش داده می‌شود‌، در غیر این صورت از فونت پیش‌فرض استفاده
+می‌شود‌. در بخش آموزش CSS روشی از CSS3 را می‌آموزیم که این <strong>نقظه ضعف</strong>
+را پوشش می‌دهد‌.</p>
+</div>
+</div>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13900201amwzsh-html-bkhsh-1wp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13900212amwzsh-html-bkhsh-3wp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13900204amwzsh-html-bkhsh-2wp.html",
+        disqus_title="\u0622\u0645\u0648\u0632\u0634 HTML \u0628\u062e\u0634 \u06f2",
+        disqus_identifier="cache/posts/blog13900204amwzsh-html-bkhsh-2.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

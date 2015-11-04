@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>راه اندازی بلوتوث در اسلکور | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">راه اندازی بلوتوث در اسلکور
+</h2>
+    <div class="metadata">
+      <span class="date">2011-05-09 14:05</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>خوب بعد از مدتی غیبت‌، توی این وبلاگ می‌خوام یه آموزش کوچیک رو به اشتراک
+بگذارم‌. یکی از ابزار‌هایی که خیلی به درد PC می‌خوره و کمک زیادی به
+اشتراک فایل‌ها بین ابزار‌های مختلف می‌کنه بلوتوثه‌! من یه چند‌تایی از
+این دانگل‌های بلوتوث داشتم که همشون به مرور زمان خراب شدن‌. ولی خیالم
+راحت بود که توی اوبونتو این ابزار‌ها خیلی راحت‌، بعد از نصب به کار
+می‌افتن‌! چند روز پیش که به لطف پسر‌دایی یکی از این دانگل‌ها البته سالمش
+رو صاحب شدم ( می‌گم به لطف چون مجانی بود ) خواستم Bluetooth Devices که
+توی منوی KDE دیده بودم رو باز کنم‌، دیدم که ای داد اخطار داد‌. مشکل سر
+این بود که Daemon مربوط به بلوتوث توی اسلکور فعال نشده بود‌. و خوب فعال
+کردنش کار خاصی نداره‌. کافیه به آدرس زیر بریم و با دستور دوم Daemon رو
+Executable کنیم‌ ( اجرایی بشه ) ، و با دستور سوم فعالش کنیم‌: ```bash
+cd /etc/rc.d chmod +x rc.bluetooth ./rc.bluetooth start ``` حالا
+ممکنه مثل من بخواین که دیگه سیستم خود به خود هنگام لود‌، این Daemon رو
+فعال کنه‌، کافیه مثل قبل که این‌جا یاد دادم‌، کد‌های زیر رو داخل
+rc.local اضافه کنید‌: ```bash #start bluetooth if [ -x
+/etc/rc.d/rc.bluetooth ]; then /etc/rc.d/rc.bluetooth start fi ``` و
+همچنین برای خاموش کردنش در هنگام شات‌داون سیستم‌،‌ کد‌های زیر رو به
+rc.local_shutdow : ```bash``` # Stop bluetooth if [ -x
+/etc/rc.d/rc.bluetooth ]; then /etc/rc.d/rc.bluetooth stop fi
+```bash```</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13900212amwzsh-html-bkhsh-3wp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13900224amwzsh-html-bkhsh-4wp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13900219rh-ndzy-blwtwth-dr-slkhwrwp.html",
+        disqus_title="\u0631\u0627\u0647 \u0627\u0646\u062f\u0627\u0632\u06cc \u0628\u0644\u0648\u062a\u0648\u062b \u062f\u0631 \u0627\u0633\u0644\u06a9\u0648\u0631",
+        disqus_identifier="cache/posts/blog13900219rh-ndzy-blwtwth-dr-slkhwr.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

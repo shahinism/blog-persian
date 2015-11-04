@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin) | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)
+</h2>
+    <div class="metadata">
+      <span class="date">2012-09-26 15:52</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>مساله این‌جاست که وقتی پای کامپیوتر می‌نشینم‌، حتی اگر کاری نداشته
+باشم‌، یادم نمی‌ماند که مسنجرم را روشن کنم‌. و خوب از طرفی دوست دارم که
+در صورت امکان‌، با رفقای اینترنتی و غیر اینترنتی‌ام در ارتباط باشم‌. خوب
+حل این مشکل ساده است‌. کافی است میز‌کارت را تنظیم کنی که با روشن شدنش‌،
+Pidgin را هم اجرا کند‌. ولی خوب این بالقوه مشکل دیگری را می‌آفریند. کدام
+مشکل؟ همین که گاها موقع کار کردن‌، یکی از دوستانت می‌پرد وسط و چیزی
+می‌گوید که کوچکترین پیامدش حواس پرتی است و این اصلا نمی‌تواند کمک خوبی
+برای بالا بردن بهره‌وری شود. راه حل کوتاه در این زمینه استفاده از
+Status‌های مسنجر است‌. جدای از این که Status‌ها در همهٔ مسنجر‌ها همانطور
+که باید نشان داده نمی‌شوند‌، چه تضمینی وجود دارد که من حواس‌پرت و البته
+تنبل (gsh سابق D:)، یادم بماند و حالش را داشته باشم که در هر وضعیتی
+Status مناسب را انتخاب کنم‌؟ بعد از کمی جستجو‌، با
+<a class="reference external" href="http://dbus.freedesktop.org/">DBus</a> آشنا شدم و البته یادم آمد که
+خیلی وقت پیش‌،<a class="reference external" href="http://jadi.net/2011/07/linux-chera-command-line/">جادی
+عزیز‌</a>، کاری
+تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی
+در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت
+نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و
+حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی
+کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به
+<a class="reference external" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html">راهنمای</a>
+Freedesktop بسنده کرد‌.) مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که
+پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت
+به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به
+مخاطب آن‌ور خط بدهد‌. با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.
+اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام
+ارسال می‌شود‌. دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.
+برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:
+[python] import sys import dbus from PyQt4.QtGui import QApplication
+from dbus.mainloop.qt import DBusQtMainLoop [/python] قرار بر این بود که
+اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید
+برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام
+دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی
+استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به
+همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در
+ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت
+حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم: [python] bus_loop
+= DBusQtMainLoop(set_as_default=True) [/python] کار با حلقهٔ اصلی هنوز
+تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام
+مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس
+از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌. [python] def
+connect_dbus(text): global answer answer = text bus = dbus.SessionBus()
+bus.add_signal_receiver(pidgin_control_func,
+dbus_interface="im.pidgin.purple.PurpleInterface",
+signal_name="ReceivedImMsg") [/python] اولین سوال در این تابع‌، این است
+که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به
+صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا
+کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از
+اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت
+bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به
+سوالی پاسخ می‌دهند‌: ۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ:
+pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت) ۲- روی DBus
+به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای
+معرفی استفاده می‌کنیم‌. ۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg
+که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط
+Pidgin شناسایی کردیم ;-) در این تابع ما از فراخوان می‌خواهیم که آرگومانی
+را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت
+می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط
+همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد. نوبت به نوشتن
+تابع دوم می‌رسد‌: [python] def pidgin_control_func(account, sender,
+message, conversation, flags): bus = dbus.SessionBus() obj =
+bus.get_object("im.pidgin.purple.PurpleService",
+"/im/pidgin/purple/PurpleObject") purple = dbus.Interface(obj,
+"im.pidgin.purple.PurpleInterface") if
+purple.PurpleAccountGetUsername(account) != sender:
+purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)
+[/python] خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان
+می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال
+ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد
+بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک
+بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در
+ادامه به سه سوال دیگر جواب می‌دهیم: ۱- روی DBus به کدام برنامه گوش کنم؟
+پاسخ im.pigin.purple.PurpleService ۲- آدرسش کجاست؟ پاسخ:
+‎/im/pidgin/purple/PurpleObject در واقع با پاسخ به این دو سوال‌، سعی به
+ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم
+یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌. ۳- کدام رابط از آبجکت
+ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface و خوب حالا تنها برای
+ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌
+و به دو سوال پاسخ دهیم: ۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان
+پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از
+شیع‌مان بخواهم که آدرسش را پیدا کند ;-) ۲- چه بگویم؟ پاسخ answer‌‌، همان
+متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌. البته من در تابع
+یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین
+تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت
+تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک
+کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin
+علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی
+Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا
+عبد ادامه خواهد داشت ;-) دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:
+[python] app = QApplication([]) connect_dbus(message) app.exec_()
+[/python] برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم
+دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه
+کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی
+Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل
+از ساختن شیع app کمک می‌گیریم: [python] import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL) [/python] کار این تابع این
+است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در
+رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه
+کند‌! یعنی بزند بترکاند برنامه‌مان را ;-) می‌توانید نسخهٔ کامل اسکریپت
+را از<a class="reference external" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py">این
+لینک</a>دانلود
+کنید و به صورت زیر اجرایش کنید: ```bash python answering_machine.py
+ANSWER_MESSAGE ``` اما خوب درست است که این اسکریپت تقریبا مشکل‌مان
+را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید
+یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این
+اصلا حال نمی‌دهد‌. این است که آن را با
+<a class="reference external" href="http://shahinism.github.com/PyPomo/">PyPomo</a> قاطی می‌کنم‌ (آخرین
+نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت
+را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را
+خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-) <strong>پی‌نوشت۱:</strong>
+متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل
+از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش
+باشم‌! <strong>پی‌نوشت۲:</strong> می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌،
+زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم
+نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب
+کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال
+کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khlswp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910710nskhh-jdyd-wyryshgr-mtn-ngrwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-rwp.html",
+        disqus_title="\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u06a9\u0648\u062a\u0627\u0647 \u06a9\u0627\u0631 \u0628\u0627 DBus \u062f\u0631 \u067e\u0627\u06cc\u062a\u0648\u0646 (\u0646\u0648\u0634\u062a\u0646 \u0631\u0648\u0628\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648 \u0628\u0631\u0627\u06cc Pidgin)",
+        disqus_identifier="cache/posts/blog13910705rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

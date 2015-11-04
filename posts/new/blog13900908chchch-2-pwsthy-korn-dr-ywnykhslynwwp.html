@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<base href="http://5hah.in/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ .. date: | شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://5hah.in/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.html">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین آزاد">
+<link rel="prev" href="blog13900908chchch-1-pwsth-posix-chystwp.html" title="چ‌چ‌چ (۱) ‌: پوستهٔ POSIX چیست؟ .. date: 2011/11/29 19:35:27" type="text/html">
+<link rel="next" href="blog13900909chchch-3-mysql-chystwp.html" title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟ .. date: 2011/11/30 14:53:32" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content="چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ .. date:">
+<meta property="og:url" content="http://5hah.in/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.html">
+<meta property="og:description" content="پوستهٔ Korn در یونیکس‌/لینوکس چیست‌؟ پوستهٔ Korn توسط دیوید کورن در
+آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ
+Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.
+همچنین این">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-11-01T00:00:00+03:30">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://5hah.in/">
+
+                <span id="blog-title">شاهین</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../">Home</a>
+                </li>
+<li>
+<a href="../../stories/about-me.html">About</a>
+                </li>
+<li>
+<a href="../../">Resume</a>
+                </li>
+<li>
+<a href="../../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.rst" id="sourcelink">منبع</a>
+    </li>
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">چ‌چ‌چ (۲) ‌: پوستهٔ Korn در یونیکس‌/‌لینوکس چیست‌؟ .. date:</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    شاهین آزاد
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-11-01T00:00:00+03:30" itemprop="datePublished" title="2015-11-01 00:00">2015-11-01 00:00</time></a></p>
+                <p class="commentline">            <a href="blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.html#disqus_thread" data-disqus-identifier="cache/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.wp.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.rst" id="sourcelink">منبع</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>پوستهٔ Korn در یونیکس‌/لینوکس چیست‌؟ پوستهٔ Korn توسط دیوید کورن در
+آزمایشگاه‌های بل توسعه پیدا کرد‌. این پوسته با بیشتر ویژگی‌های پوستهٔ
+Bourne (پدر Bash) به طور فزاینده‌ای هم‌خوانی دارد‌.</p>
+<p>همچنین این پوسته دارای ویژگی‌های تعاملی‌ای نظیر پوستهٔ C می‌باشد‌، اما
+با اجرای سریع‌تر و قابلیت‌های ویرایش بر‌خط توسعه یافته‌تر‌.</p>
+<p>نسخهٔ ksh۹۳ از شرکت‌پذیری آرایه‌ها و قوانین ریاضی نقطهٔ سر‌ریز (Floating
+point) نیز پشتیبانی می‌کند‌.</p>
+<h4></h4>
+<p>ویژگی‌های پوستهٔ Korn</p>
+<ol>
+<li>
+<p>تازیخچهٔ دستورات – بله</p>
+</li>
+<pre class="literal-block">
+&lt;li&gt;ویرایش خط – بله&lt;/li&gt;
+&lt;li&gt;تکمیل نام فایل – بله&lt;/li&gt;
+&lt;li&gt;دستورات مستعار (‌Alias Commant) – بله&lt;/li&gt;
+&lt;li&gt;پوستهٔ محدود (Restricted shells) – بله&lt;/li&gt;
+&lt;li&gt;کنترل فعالیت‌ها – بله&lt;/li&gt;
+</pre>
+</ol>
+<h4></h4>
+<p>‎‎/usr/bin/ksh‏</p>
+<p>تمام اسکریپت‌های پوستهٔ KSH با خط زیر شروع می‌شوند‌:</p>
+<pre class="code bash"><a name="rest_code_88c08ec56e5d49f893cb281ac6b3a216-1"></a><span class="c">#! /usr/bin/ksh</span>
+</pre>
+<p>نام این خط shebang‌، hashbang‌، hashpling و یا pound bang است‌. در ادامه
+نمونه دستوری از اسکریپت پوستهٔ KSH را مشاهده می‌کنید‌:</p>
+<pre class="code bash"><a name="rest_code_5da7f4798e644592a8ec5f282e42227b-1"></a><span class="c">#!/usr/bin/ksh</span>
+<a name="rest_code_5da7f4798e644592a8ec5f282e42227b-2"></a>
+<a name="rest_code_5da7f4798e644592a8ec5f282e42227b-3"></a><span class="nb">echo</span> “Hello World!”
+</pre>
+<p>شما می‌توانید مکان KSH را با استفاده از دستور which پیدا کنید‌:</p>
+<pre class="code bash"><a name="rest_code_0116544d69d94b30a0961efe594d8311-1"></a><span class="nv">$ </span>which ksh
+</pre>
+<p>نمونهٔ خروجی‌:</p>
+<pre class="code bash"><a name="rest_code_32914e747f11467a927536c7874c8047-1"></a>/usr/bin/ksh
+</pre>
+<p>Shebang‌ها مکان اصلی دستورات اجرایی سیستم را مشخص می‌کنند‌. این می‌تواند
+مشکلاتی را در سیستمی که از سیستم فایل غیر استاندارد استفاده می‌کند فراهم
+کند‌. حتی در مواقعی که سیستم مکان کاملا استانداردی را برای دستورات
+اجرایی‌اش استفاده می‌کند‌، کاملا ممکن است که نقاط مختلفی را برای ذخیر
+مترجم دستوراتتان استفاده کند‌. این مشکل می‌تواند با قابل حمل سازی
+اسکریپت‌، توسط Shebang‌ای به صورت زیر حل شود‌:</p>
+<pre class="code bash"><a name="rest_code_45a7109c95194b9d911c2bc0cffb343d-1"></a><span class="c">#!/usr/bin/env ksh</span>
+<a name="rest_code_45a7109c95194b9d911c2bc0cffb343d-2"></a>
+<a name="rest_code_45a7109c95194b9d911c2bc0cffb343d-3"></a><span class="nb">echo</span> “Hello World!”
+</pre>
+<p style="text-align: center;"></p>
+<p>منبع</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="blog13900908chchch-1-pwsth-posix-chystwp.html" rel="prev" title="چ‌چ‌چ (۱) ‌: پوستهٔ POSIX چیست؟ .. date: 2011/11/29 19:35:27">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="blog13900909chchch-3-mysql-chystwp.html" rel="next" title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟ .. date: 2011/11/30 14:53:32">ارسال بعدی</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynwwp.html",
+        disqus_title="\u0686\u200c\u0686\u200c\u0686 (\u06f2) \u200c: \u067e\u0648\u0633\u062a\u0647\u0654 Korn \u062f\u0631 \u06cc\u0648\u0646\u06cc\u06a9\u0633\u200c/\u200c\u0644\u06cc\u0646\u0648\u06a9\u0633 \u0686\u06cc\u0633\u062a\u200c\u061f .. date:",
+        disqus_identifier="cache/posts/new/blog13900908chchch-2-pwsthy-korn-dr-ywnykhslynw.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

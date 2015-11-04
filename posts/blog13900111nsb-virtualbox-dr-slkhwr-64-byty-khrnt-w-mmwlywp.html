@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>نصب VirtualBox در اسلکور 64 بیتی کارنت و معمولی‌! | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">نصب VirtualBox در اسلکور 64 بیتی کارنت و معمولی‌!
+</h2>
+    <div class="metadata">
+      <span class="date">2011-03-31 08:31</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>نصب ماشین مجازی ساز ویرچوال باکس حداقل برای دانشجو‌هایی مثل من که دوست
+دارند با لینوکس کار کنن و استادایی دارن که کار با نرم‌افزار‌های کرک شده
+رو قراره ازشون امتحان بگیرن‌، یه امر حیاتیه‌‌! نصب ویرچوال باکس روی
+اسلکور چند‌تا تکنیک کوچولو لازم داره که می‌خوام توی این پست بنویسم که در
+آینده اگه بهشون نیاز پیدا کردم‌، در دسترس باشن‌! اول از همه به قابلیت
+چند کتاب‌خانه‌ای توی اسلکور نیاز دارید که می‌تونید از سه تا لینک روبرو
+کمک بگیرین‌: <a class="reference external" href="http://slackware.com/%7Ealien/multilib/">+</a>,
+<a class="reference external" href="http://shahinism.com/1389/12/%d9%85%d8%b3%d8%a7%d9%84%d9%87%e2%80%8c-%d8%a7%d8%b3%da%a9%d8%a7%db%8c%d9%be-%d8%af%d8%b1-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1-64-%d8%a8%db%8c%d8%aa%db%8c/">+</a>,
+<a class="reference external" href="http://slack-world.com/index.php/articles/43-general-system/85-multilib-slackware64">+</a>.
+و دوم بسته‌ی Acpci رو از
+<a class="reference external" href="http://shahinism.com/wp-admin/post-new.php">این‌جا</a> دریافت و نصب
+کنین‌. برای نصب مثل آدمی‌زاد این نرم افزار کافیه اول با دستور زیر یه
+گروه برای ویرچوال باکس بسازین‌: ```bash groupadd -g 215 vboxusers
+``` و بعد هم با استفاده از این دو Slackbuild
+<a class="reference external" href="http://slackbuilds.org/repository/13.1/system/virtualbox-ose/">+</a>,
+<a class="reference external" href="http://slackbuilds.org/repository/13.1/system/virtualbox-kernel/">+</a>
+بسته‌های Virtualbox-ose و Virtualbox-kernel رو نصب کنید‌. ( اگه برای
+دانلود بسته‌های Virtualbox-ose مشکلی داشتین تا مدتی می‌تونین اون رو از
+روی سرور من یعنی
+<a class="reference external" href="http://188.40.173.20/pack/virtualbox-3.2.10-ose.tar">اینجا</a> دانلود
+کنید‌.) ولی می‌مونه یه نکته که برای موقعیه که شما از نسخه‌ی کارنت اسلکور
+استفاده می‌کنین‌. بنا به دلایلی که برام آخرش هم روشن نشد که چرا توی 13.1
+این اتفاق نیافتاد‌، ممکنه با این اخطار روبرو بشین‌: ```bash
+&lt;code&gt;kmk[2]: *** Waiting for unfinished jobs.... kmk[2]: Leaving
+directory `/tmp/VirtualBox-3.2.0_OSE' kmk[2]: Entering directory
+`/tmp/VirtualBox-3.2.0_OSE' kmk[2]: *** Exiting with status 2
+kmk[1]: *** [pass_binaries_this] Error 2 kmk[1]: Leaving directory
+`/tmp/VirtualBox-3.2.0_OSE' kmk: *** [pass_binaries_order] Error
+2&lt;/code&gt; ``` خوب من چون علاقه‌ای به این نداشتم که از بسته کامپایلش
+کنم‌، یه روش آرتیستی بهتون می‌گم که برای خودم تا الانش که جواب داده‌.
+وقتی که Slackbuild شروع به کار کرد‌، خوب کد‌های خروجی رو نگاه کنین‌، تا
+برسین به جایی که Enjoy رو ببینین‌. می‌شه تقریبا بعد از کامپایل و شروع
+make . به عبارت دیگه جایی که از پروسه‌ی چک کردن بسته‌های پیش‌نیاز فارغ
+شده‌. همین‌جا یه Ctrl+z بزنین دستور زیر رو بزنین‌: <strong>به روز رسانی‌:</strong>
+آموزشی که این‌جا نوشتم مربوط به 3.2.10 هست ولی توی Virtualbox 4.0.4 هم
+همین مشکل پا بر‌جاست و با همین روش حل می‌شه‌! <strong>به روز رسانی‌:</strong> از قرار
+اگه یه کم توجه می‌کردم نیازی به این آرتیست بازی هم نیست! توی بسته‌ی
+Slackbuild‌ی که می‌گیریم یه فایل به اسم localConfig.kmk هست که تغییراتی
+که در ادامه ذکر کردم رو توی همون اعمال کنید حله‌! ```bash vim
+/tmp/SBo/VirtualBox-3.2.10_OSE/LocalConfig.kmk ``` اگه احیانا دیدین
+که این فایل موجود نبود‌، با fg 1 بزارین یکم دیگه Slackbuild کارش رو
+بکونه و بعد Ctrl+z رو بزنین و ادامه بدین‌: توی آخر فایل اضافه کنین‌:
+```bash VBOX_WITH_WARNINGS_AS_ERRORS := ``` و حالا با fg 1
+پروسه‌ی Slackbuild‌مون رو که استاپ کرده بودیم‌، بر می‌گردونیم که کارش رو
+بکنه‌. اگه همه‌چی درست انجام شده باشه دیگه مشکلی نداریم‌. حالا که نصب رو
+انجام دادیم‌، می‌ریم که VirtualBox رو باز کنیم‌، و ماشین مجازیمون رو از
+توش اجرا کنیم‌. ولی از اون‌جایی که کور خوندیم‌، اجرا نمی‌شه‌. چرا‌؟
+بخاطر این که Vboxdrv اجرا نشده‌. چی‌کار کنیم‌؟ می‌زنیم‌: ```bash
+/etc/rc.d/rc.vboxdrv start ``` حالا اجرا می‌شه‌. ولی مشکل این‌جاست که
+بعد از یه خاموش روشن باس دوباره این کار رو انجام بدیم‌. برای این که از
+این تکرار ملالت‌بار خلاص بشیم‌، کافیه بزنیم‌: ```bash vim
+/etc/rc.d/rc.local ``` و خط‌های زیر رو بهش اضافه کنیم‌: ```bash
+#start vboxdrv if [ -x /etc/rc.d/rc.vboxdrv ]; then /etc/rc.d/rc.vboxdrv
+start fi # Start vboxnet if [ -x /etc/rc.d/rc.vboxnet ]; then
+/etc/rc.d/rc.vboxnet start fi ``` به فاصله‌ها حتما دقت کنین‌. و برای
+این که تغییراتی که تو روشن شدن سیستم دادیم‌، موقع خاموش شدن به حالت قبل
+برگردونیم بزنین‌: ```bash vim /etc/rc.d/rc.local_shutdown ``` و
+توش کد‌های زیر رو وارد کنید‌: ```bash top vboxdrv if [ -x
+/etc/rc.d/rc.vboxdrv ]; then /etc/rc.d/rc.vboxdrv stop fi # Stop vboxnet
+if [ -x /etc/rc.d/rc.vboxnet ]; then /etc/rc.d/rc.vboxnet stop fi ```
+همین‌. از مجازی سازی با VirtualBox لذت ببرین‌!</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13891224chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2wp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13900124pngwyn-khwchwlw-20-slh-shdwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13900111nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwlywp.html",
+        disqus_title="\u0646\u0635\u0628 VirtualBox \u062f\u0631 \u0627\u0633\u0644\u06a9\u0648\u0631 64 \u0628\u06cc\u062a\u06cc \u06a9\u0627\u0631\u0646\u062a \u0648 \u0645\u0639\u0645\u0648\u0644\u06cc\u200c!",
+        disqus_identifier="cache/posts/blog13900111nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>کنترل پنل Plesk (قسمت اول) | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">کنترل پنل Plesk (قسمت اول)
+</h2>
+    <div class="metadata">
+      <span class="date">2008-06-30 22:12</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>در مطلب قبلی` &lt;<a class="reference external" href="http://www.signul.com/1387/226/bye-cpanel/">http://www.signul.com/1387/226/bye-cpanel/</a>&gt;`__ به
+جایگزین شدن برنامه ی مدیریت کنترل پنل Plesk به جای Cpanel در بعضی از
+هاستینگهای ایرانی اشاره کردم . از اونجایی که تقریبا در هیچ جا مرجع کاملی
+به زبان فارسی برای آموزش این برنامه پیدا نکردم تصمیم گرفتم یک راهنمای
+کاربردی برای این برنامه بنویسم . پس در سه قسمت این مقاله را ارسال می کنم
+که به شرح زیر است : <strong>قسمت اول : معرفی کلی نرم افزار پلسک و مقایسه ی آن
+با Cpanel</strong> قسمت دوم : معرفی قسمتهای مختلف پلسک قسمت  سوم : راه اندازی
+یک سیستم مدیریت محتوا و یک میل اکانت بر روی پلسک برای کسب اطلاع از
+امکانات این نرم افزار می توانید به <a class="reference external" href="http://www.radcom.ir/services-webhosting-plesk-fa.html">توضیحات شرکت
+رادکام</a>
+نمایندگی رسمی شرکت پاراللز در ایران رجوع کنید ( که البته سعی کنید این
+موضوع را به یاد داشته باشید که نویسنده بسیار سعی در بازار گرمی دارد ).
+اما برای ورود به پلسک بر خلاف Cpanel که با آدرس mydomain/cpanel وارد می
+شدید حالا باید باید با کمک mydomain:8443 این عمل را انجام دهید . ( امکان
+دارد در بعضی مواقع ایشه بازی فایر فاکس سه گل کند و اخطاری که دقیقا یادم
+نیست را نمایش دهد . برای عبور از آن کلید سمت راست را فشار دهید و مراحل
+پیش رو را ادامه دهید تا تنظیمات خودکار انجام شود .) با اولین ورود به
+صفحه ی Login تفاوت را احساس می کنید . صفحه ی Login  مانند صفحه ی ورود
+عادی سایت هاست و بر خلاف Cpanel در صفحه ای جداگانه باز نمی شود . فقط
+مشکل کار اینجایت که اگر حتی در میانه ی انجام کاری به ناگه از اینترنت قطع
+شدید دوباره باید ورود کنید . ( که با این اینترنت کوفتی ایران واقعا سرسام
+آور می شود .) در اولین ورود همانند Cpanel فرمی نمایش داده می شود که
+اطلاعات فردی شما را دریافت می کند . در Cpanel ریشه ی اصلی واقع در آدرس
+/home/&lt;username&gt;/public_html/ بود ولی در پلسک این ریشه به آدرس
+/var/www/vhosts/&lt;domain-name&gt;/httpdocs/ تغییر مکان می دهد .همچنین پوشه
+ای به نام Httpsdocs نیز برای استفاده از SSL در نظر گرفته شده است .
+همچنین بر خلاف Cpanel که پوشه های مربوط به sub domain در شاخه ی اصلی
+قرار می دادید . در پلسک با نظم بیشتری می توانید آنها را در پوشه ای به
+همین نام آپلود کرده و زیر دامنه را به آنها متصل کنید . در سرعت بارگذاری
+با انجام عملیاتها Cpanel و پلسک به یک اندازه رنج آور هستند ولی در فایل
+منیجر پلسک بسیار سریعتر عمل می کند . در فایل منیجر Plesk بر خلاف صفحه ی
+مدیریتش همه چیز در جای خود و در دسترس شما قرار دارد که کار با آن را
+برایتان لذت بخش می کند . اما در صفحه ی مدیریتی دیگر از آن نظم Cpanel که
+تمامی اطلاعاتتان را در همان صفحه ی اول به نحو احسن به نمایش می گذاشت
+خبری نیست . برای نمونه برای ساخت دیتابیس و کاربر و اتصال آن دو به هم در
+Cpanel حداکثر به 3 دقیقه وقت نیاز داشتید ولی در پلسک باید استخوان
+بترکانید . یکی دیگر از نقاط ضعف پلسک این است که برای انجام هر کاری اول
+نام دامنه ی مربوط را می پرسد حتی اگر شما تنها یک دامنه داشته باشید . در
+پایان کار پیشنهاد می کنم اگر بسیار کنکاوید و می خواهید این نرم افزار را
+فرا بگیرید حتما از همه ی اطلاعاتتان پشتیبان تهیه کنید . لطفا فید این
+وبلاگ را از Feeds.feedburner.com/itnegar به فید جدید با آدرس
+feeds.feedburner.com/rkhani تغییر دهید .</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13870313bye-cpanelwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13870411plesk-cp-part2wp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13870410khntrl-pnl-plesk-qsmt-wlwp.html",
+        disqus_title="\u06a9\u0646\u062a\u0631\u0644 \u067e\u0646\u0644 Plesk (\u0642\u0633\u0645\u062a \u0627\u0648\u0644)",
+        disqus_identifier="cache/posts/blog13870410khntrl-pnl-plesk-qsmt-wl.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

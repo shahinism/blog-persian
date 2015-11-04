@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash! | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!
+</h2>
+    <div class="metadata">
+      <span class="date">2012-06-21 04:57</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p><a class="reference external" href="https://plus.google.com/u/0/102916660970180940856">سینا احسانی</a> عزیز
+در پلاس گفت که با VB برنامه‌ای نوشته که تمام عکس‌های سایت
+<a class="reference external" href="http://simpledesktops.com/">SimpleDesktop</a> را دانلود می‌کند‌. وقتی
+سایت را دیدم واقعا از تصاویرش خوشم آمد‌. خیلی وقت بود که پس‌زمینهٔ
+دسکتاپم یک تصویر ساده بود که ثابت مانده بود‌. این شد که تصمیم گرفتم من
+هم عکس‌ها را دانلود کنم‌. البته کاملا لینوکسی‌! بررسی اولیه سایت معلوم
+کرد که پس از انتخاب عکس و کلیک آخر برای دانلود عکس شما با لینکی به صورت
+زیر طرف هستید‌: ```bash
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=301">http://simpledesktops.com/download/?desktop=301</a> ``` همهٔ آدرس جز عدد
+۳۰۱ در انتهایش ثابتند و آن عدد از ۱ یکی‌‌یکی زیاد می‌شود‌. هر کدام از
+این عکس‌ها پس از درخواست شدنشان به آدرس یکی از عکس‌های روی سرور اشاره
+می‌کنند‌. خوب دیگر داستان از این هم ساده‌تر می‌شود؟ کافیست که اراده کنیم
+و با یک حلقهٔ for اعداد را تولید کنیم و جلوی آدرس ثابتمان بنویسیم‌. پس
+می‌شود این: ```bash #!/usr/bin/bash for i in {1..5000} do echo
+"<a class="reference external" href="http://simpledesktops.com/download/?desktop=%24i">http://simpledesktops.com/download/?desktop=$i</a>" done ``` به بش گفتیم
+که هر بار یک عدد از یک تا پنج‌هزار (البته به ترتیب از کم به زیاد) تولید
+کن و در خروجی چاپ کن‌. یک بار اسکریپت را ران می‌کنیم و ... بعله خروجی
+دقیقا همان آدرس‌هایی که خواستیم می‌شود‌: ```bash ...
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=4995">http://simpledesktops.com/download/?desktop=4995</a>
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=4996">http://simpledesktops.com/download/?desktop=4996</a>
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=4997">http://simpledesktops.com/download/?desktop=4997</a>
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=4998">http://simpledesktops.com/download/?desktop=4998</a>
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=4999">http://simpledesktops.com/download/?desktop=4999</a>
+<a class="reference external" href="http://simpledesktops.com/download/?desktop=5000">http://simpledesktops.com/download/?desktop=5000</a> ``` حالا کافیست در
+اسکریپت به جای echo که هر چه جلویش باشد را در خروجی استاندارد چاپ می‌کند
+یک wget بنویسیم تا آدرس‌های جلویش را دانلود کند‌. اما نه‌! در اولین
+اقدام تیرمان خطا رفت‌! در سرور‌های Apache یک فایلی هست به اسم ‎.htaccess
+و همان‌طور که از نامش معلوم است کارش این است که کنترل کند چه کسی به کجا
+دسترسی دارد‌. هر نرم‌افزاری هم که به یکی از این سرور‌ها درخواست بدهد
+موظف است اول خودش را معرفی کند‌. خوب wget که از نامش فساد می‌بارد عموما
+از طرف چنین سایت‌هایی مسدود می‌شود‌. این است که باید به wget بگوییم
+نقابش را به صورت بزند و دوباره اقدام کند‌. اینبار اسکریپتمان این شکلی
+می‌شود‌: ```bash #!/usr/bin/bash for i in {100..5000} do wget -U
+"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2"
+"http://simpledesktops.com/download/?desktop=$i" done ``` و بعله‌!
+ران می‌کنیم و خیلی خوشکل اقدام به دانلود عکس‌ها می‌کنیم ;-) <strong>پی‌نوشت:</strong>
+در حین جستجو برای نوشتن این اسکریپت کشف کردم که قبلا اسکریپت‌هایی با
+Python یا PHP هم برای شیره‌کشی از این سایت نوشته شده‌. ولی این اسکریپت
+از همه‌شان کوتاه‌تر بود و خوب سادگی زیبـــــاست ;-) <strong>پی‌نوشت ۲</strong>: دیگر
+خودتان حواستان باشد که ‎#!‎/‎usr/bin/bash آدرس bash سیستم من است و
+می‌توانید با یک whereis bash پیدا کنید که مال شما کجاست‌! <strong>پی‌نوشت ۳:</strong>
+ممکنه بعد از دانلود متوجه بشین که فایل‌های دانلودی با یه همچین اسمایی
+ذخیره می‌شن index.html?desktop=100 اتفاقی که برای من روی سرور آرچ
+افتاد‌. عجیب بود که اسم فایل درست رو می‌دید ولی خودش از رو این
+Querystring ساخته شده اسم رو می‌نوشت‌. پس از جستجو کشف کردم که باید آپشن
+زیر هم به wget اضافه بشه: ```bash --content-disposition ```</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910331trmyntwr-akhrlzmn-trmynlhwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wlwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bashwp.html",
+        disqus_title="\u062f\u0627\u0646\u0644\u0648\u062f \u062a\u0645\u0627\u0645 \u0639\u06a9\u0633\u200c\u0647\u0627\u06cc SimpleDesktop \u0628\u0627 \u0633\u0647 \u062e\u0637 \u062f\u0631 Bash!",
+        disqus_identifier="cache/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

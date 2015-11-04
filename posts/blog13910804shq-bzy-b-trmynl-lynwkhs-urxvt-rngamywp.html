@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>عشق بازی با ترمینال لینوکس‌ (urxvt, رنگ‌آمیزی و کانفیگش) .. | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">عشق بازی با ترمینال لینوکس‌ (urxvt, رنگ‌آمیزی و کانفیگش) ..
+</h2>
+    <div class="metadata">
+      <span class="date">2012-10-25 08:50</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>حقیقتش را بخواهید‌، کم نیستند کاربرانی که سال‌هاست با لینوکس کار
+می‌کنند‌، ولی هنوز از کار با ترمینال ترس دارند‌. حقیقت‌تر از آن هم این
+نکته است که شما هر چقدر هم در محیط‌های گرافیکی خبره باشید‌، باز هم
+نمی‌توانید آن‌طور که باید و شاید دنیای کامپیوتری‌تان را کنترل کنید‌.
+اصلا شاید زیاده روی می‌کنم‌، ولی همچین کاربرانی‌، با ویندوز هم می‌توانند
+نیاز‌هایشان را تامین کنند ;-). محیط شکیل X‌، کنترل راحت (و اصولا بدون
+یادگیری جدی) آن‌، و عمدهٔ کار‌هایی که می‌توان با ماوس سر و تهش را هم
+آورد‌، باعث می‌شود که گاها این طرز تفکر وجود داشته باشد که استفاده از
+ترمینال یک بازگشت به قرون وسطی حساب می‌آید! قبول دارم که برنامه‌هایی
+هستند که کنترل دستورات خط فرمان را برای کاربر آسان‌تر می‌کنند‌، ولی
+تقریبا غیر ممکن است که بتوان از آن‌ها به همان کیفیت دستورات ترمینالی
+استفاده کرد‌. برای من یکی‌، ترمینال حکم چوب جادوگری را دارد‌. یعنی
+آن‌قدر قدرت دارد که صاحبش را تنها به دانش‌اش محدود می‌کند‌. در دنیای
+ترمینال‌، تقریبا همه چیز ممکن است‌. این است که لازم می‌شود بهترین چوب
+جادوگری ممکن را برای رفع نیاز‌های‌مان آماده کنیم‌. قبلا در مورد
+Terminator پستی داشتم‌
+(<a class="reference external" href="http://shahinism.com/blog/1391/03/31/%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d8%aa%d9%88%d8%b1%d8%8c-%d8%a2%d8%ae%d8%b1%e2%80%8c%d8%a7%d9%84%d8%b2%d9%85%d8%a7%d9%86-%d8%aa%d8%b1%d9%85%db%8c%d9%86%d8%a7%d9%84%e2%80%8c%d9%87%d8%a7/">+</a>).
+تا همین چند روز پیش هم از آن استفاده می‌کردم‌. واقعا معرکه بود‌. همه چیز
+را آماده داشت و تا جای ممکن کمکت می‌کرد‌. اما چند روزی است که
+<a class="reference external" href="http://software.schmorp.de/pkg/rxvt-unicode.html">urxvt</a> و
+قابلیت‌هایش نظرم را جلب کرده‌. این است که ضمن جایگزین کردنش با
+Terminator چیز‌هایی از آن یاد گرفتم که می‌خواهم در این پست در موردش صحبت
+کنم‌.</p>
+<div class="section" id="urxvt-terminator">
+<h2>رنگ‌آمیزی urxvt و Terminator</h2>
+<p>اول این که حیفم آمد این روش تغییر رنگ Terminator را که یاد گرفته‌ام
+باز‌گو نکنم‌. این است که در این پست با یک تیر دو نشان می‌زنم‌. دوم هم
+این که شاید این کار را بیهوده بدانید‌. ولی قرار است که مدت زیادی در این
+ترمینال کار کنیم و به نظرم حیاتی‌ترین کاری که باید انجام دهیم‌، قابل
+تحمل کردن رنگ‌بندی‌اش است ;-) ترمینال‌هایی مثل urxvt و Terminator سر جمع
+۱۸ رنگ را برای رنگ کردن خروجی‌شان استفاده می‌کنند‌. رنگ پس‌زمینه‌، رنگ
+اصلی خروجی‌، هشت رنگ تیره و هشت رنگ روشن‌. سر هم کردن این همه رنگ‌، جوری
+که بتوان از ترکیب‌شان استفاده کرد‌، جدا کار طاقت‌فرسایی است‌. حقیقتش من
+یکی که هرگز موفق نشدم به صورت دستی این کار را انجام دهم‌. همین سختی هم
+باعث شده که <a class="reference external" href="http://ciembor.github.com/4bit/">4bit</a> به وجود بیاید‌.
+طرز کارش خیلی سر راست و ساده است‌. پالت رنگ‌تان را ایجاد کنید‌، و وقتی
+از خروجی خوشتان آمد روی Get scheme کلیک کنید (‌`رنگ‌های مورد استفاده
+من &lt;<a class="reference external" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/color_scheme_example">https://raw.github.com/shahinism/Python_scripts/master/xtt/color_scheme_example</a>&gt;`__).
+همان‌طور که می‌بینید‌، برای اکثر ترمینال‌ها یک خروجی حاضر کرده‌‌، جز
+Terminator. خوب اگر می‌خواهید مثل من urxvt را کانفیگ کنید‌، کد مربوطه‌اش
+را بگیرید و بسته به تنظیمات توزیع‌تان آن را در ‎.Xdefaults یا
+‎.Xresources وارد کنید‌ (برای فهمیدن چند و چون ماجرا man urxvt توضیحات
+خوبی داده). حالا برگردیم به تنظیم رنگ برای آن یکی ترمینال محبوب‌مان‌.
+خیلی ساده‌، همان فایل مربوط به urxvt را بگیرید‌. <a class="reference external" href="https://raw.github.com/shahinism/Python_scripts/master/xtt/xterm_to_terminator.py">این اسکریپت
+پایتون</a>
+را که نوشته‌ام را هم بگیرید و دو تا را کنار هم قرار داده و در ترمینال
+تایپ کنید: ```bash python xterm_to_terminator.py
+color_scheme_file ``` خروجی را کپی کنید و در مسیر
+‎.config/terminator/config جایگزین خطوط مربوطه کنید‌. (همه چیز سر راست
+است فکر کنم ;-)) یک نکته هم اضافه کنم‌. 4bit رنگ‌های خروجی‌اش را به صورت
+colorN یا background ارائه می‌دهد‌. در حالت کلی خوب است‌. ولی ممکن است
+شما دوست نداشته باشید تمام نرم‌افزار‌هایی که تنظیم رنگ‌شان را از منابع X
+می‌خوانند همین رنگی شود‌. این است که می‌توانید با تبدیل متغیر‌ها به صورت
+URxvt*colorN یا URxvt*background آن‌ها را به urxvt محدود کنید ;-) رنگ
+آمیزی تمام شد‌.</p>
+</div>
+<div class="section" id="urxvt">
+<h2>کانفیگ urxvt</h2>
+<p>urxvt عالی است‌. امکانات فوق‌العاده‌ای دارد‌. ولی تنظیمات پیش‌فرضش حال
+به هم زن است‌! یک ترمینال بی روح سفید نافرم‌! مشکل سفیدی‌اش که حل شد‌.
+ولی هنوز کار دارد‌.</p>
+<div class="section" id="font">
+<h3>font:</h3>
+<p>نویسندهٔ اصلی urxvt قبلا از mlterm استفاده می‌کرد‌. اما همیشه مجبور بود
+برای دیدن کاراکتر‌های ژاپنی (یا شایدم چینی) و لاتین‌، بین فونت‌های مختلف
+سوئیچ کند‌. چون هیچ فونت مناسبی پیدا نمی‌کرد که تمام کاراکتر‌های مورد
+نیازش را داشته باشد‌. همین می‌شود که کلافه از این که چرا توسعه دهنده‌ها
+فکر می‌کنند تمام کاراکتر‌های unicode را می‌توان با یک فونت نشان داد‌،
+دست به انگولک rxvt می‌زند و علاوه بر قابلیت یونیکد‌، پستیبانی از چند
+فونت را هم به آن اضافه می‌کند. برای تغییر فونت می‌توانید مثل من خط زیر
+را به ‎.Xdefaults اضافه کنید: ```bash URxvt*font:
+xft:Terminus:pixelsize=12 ``` و یا اگر فکر می‌کنید فونت انتخابی‌تان
+به حد کافی کامل نیست‌، از ویژگی چند فونتی به صورت زیر استفاده کنید:
+```bash URxvt.font: 9x15bold,
+-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1,
+-misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1,
+[codeset=JISX0208]xft:Kochi Gothic:antialias=false,
+xft:Code2000:antialias=false ``` یک قابلیت جالب دیگر urxvt این است که
+می‌توان تعیین کرد که نوشته‌های Bold, Italic و یا Underline با فونت‌های
+متفاوتی نشان داده شوند‌. من خودم این‌ها را تنظیم نکردم (حقیقتش وقت نکردم
+هنوز) ولی می‌توانید در manpage به دنبال کانفیگ‌های boldFont, italicFont,
+boldItalicFont و … بگردید‌.</p>
+</div>
+<div class="section" id="id1">
+<h3>تنظیم رابط:</h3>
+<p>اسکرول‌بار به نظرم چیز زیادی‌ای است‌. ضمن این که خود urxvt میانبر‌هایی
+برای پیمایش متن دارد‌. همچنین urxvt این قابلیت را دارد که بهش بفهمانیم
+که چند خط از خروجی ترمینال را برای‌مان ذخیره کند تا بتوانیم آن را پیمایش
+کنیم‌. ```bash URxvt*scrollBar: False URxvt*scrollTtyOutput: False
+URxvt*scrollTtyKeypress: True URxvt*secondaryScroll: True
+URxvt*saveLines: 8000 URxvt*letterSpace: 0 URxvt*cursorBlink: True
+URxvt*cursorUnderline: True ``` پنج خط اول این تنظیمات که باید در
+فایل منبع X‌تان ذخیره کنید مربوط به چیز‌هایی است که ذکر‌شان رفت‌. ممکن
+است با توجه به شرایط نصب و کانفیگ‌تان احساس کنید که کاراکتر‌های متن در
+urxvt کمی فشرده است‌. تنظیم leterSpace می‌تواند در این رابطه کمک کند‌.
+اعدادی در بازهٔ اعداد صحیح می‌تواند برای کنترل این آپشن استفاده شود‌.
+همینطور به طور پیش‌فرض نشانکر Urxvt ثابت است و من دوست دارد که بی‌حیائی
+کند و چشمک بزند‌. و البته به جای آن مربع همیشگی کاراکتر _ را ترجیح
+می‌دهم‌. دو خط آخر این تنظیمات مربوط به همین علایق است ;-)</p>
+</div>
+<div class="section" id="modifier">
+<h3>Modifier:</h3>
+<p>کلید Modifier همان کلیدی است که برای زدن کاراکتر‌های ترکیبی (کنترل)
+urxvt مورد استفاده قرار می‌گیرد‌. این کلید قرار است به طور پیش‌فرض Alt
+باشد ولی نمی‌دانم چرا اصلا هیچ‌کدام از Modifier ها برای من کار نمی‌کرد‌.
+اگر شما هم در چنین وضعیتی هستید‌، با استفاده از خط زیر این ویژگی را
+تعریف کنید: ```bash URxvt*modifier: alt ```</p>
+</div>
+<div class="section" id="id2">
+<h3>افزونه‌ها:</h3>
+<p>یکی از قابلیت‌های خوشگل urxvt افزونه‌های perl‌اش است‌. افزونه‌هایی که
+قابلیت‌های گاها غیرقابل باوری به آن اضافه می‌کنند‌. فعلا ما تنها به
+باورپذیر‌هایش کار داریم‌. و اما از آن‌جایی که افزونه‌هایی که به طور
+پیش‌فرض همراه urxvt هستند کفاف نیازمان را نمی‌دهند‌، یک چند‌تایی هم از
+<a class="reference external" href="https://github.com/muennich/urxvt-perls">این‌جا</a> می‌گیریم‌. فایل‌های
+این افزونه‌ها را دریافت کنید‌، و در مسیر ‎/usr/lib/urxvt/perl (یا اگر ۶۴
+بیتی هستید lib64) قرار دهید‌. حالا خط زیر را برای وارد کردن‌شان به urxvt
+اضافه کنید: ```bash URxvt.perl-ext-common :
+default,matcher,tabbed,keyboard-select,url-select,clipboard ```
+چند‌تای اول همراه خود i3 هستند که من آن tabbed را خیلی دوست دارم‌.
+می‌گذارد urxvt برای‌تان تب کند ;-) شوخی کردم‌، همان تب‌بندی خودمان است‌.
+برای این که به طور به درد بخوری کانفیگش کرده باشیم‌، خطوط زیر را به
+تنظیمات اضافه کنید (اعداد جلویشان همان شماره رنگ‌ها هستند): ```bash
+URxvt.tabbed.tabbar-fg: 5 URxvt.tabbed.tabbar-bg: 0 URxvt.tabbed.tab-fg:
+14 URxvt.tabbed.tab-bg: 0 ``` فوق‌العاده است‌. با Shift و فلش پایین
+می‌توانید تب جدید اضافه کنید‌. با Shift و فلش‌های دو طرف به این‌ور آن‌ور
+بروید و با Ctrl+D تب را ببندید‌. کلید‌های بیشترش را از <a class="reference external" href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Tabs">ویکی
+آرچ</a> یاد
+بگیرید ;-) اما سه افزونهٔ آخر آن‌هایی هستند که urxvt-perls برایمان
+ساخته‌. حقیقتش این است که این‌ها فقط یه سری تابع ساده به زبان perlاند‌.
+پس باید غیر از فعال کردن‌شان‌، کلید‌های میانبری برای اجرای‌شان تعریف
+کنیم‌.</p>
+</div>
+<div class="section" id="id3">
+<h3>تعریف کلید میانبر:</h3>
+<p>مثل همه جای دیگر‌، کار بسیار آسانی است‌. کلید متا یا Modifier‌مان را که
+تعریف کردیم‌، حالا کافیست که با سینتکس: ```bash keysym.: Action
+``` یک کلید میانبر تعریف کنیم‌. خوب بگذارید کمی مثال‌های واقعی‌تری
+بزنیم‌. افزونهٔ اول‌مان keyboard-select است که قابلیت‌های پیمایش ماهی در
+ترمینال به ما می‌دهد‌. تقریبا از ماوس بی‌نیازمان می‌کند. خطوط زیر را
+برای کانفیگش اضافه کنید: ```bash URxvt.keysym.M-Escape:
+perl:keyboard-select:activate URxvt.keysym.M-s:
+perl:keyboard-select:search ``` حالا گفتیم با M-Escape یا همان
+Alt+Esc تابع پرل به نام keyboard-select را فعال کن. این کلید‌ها کمک
+می‌کند که با کلید‌های میانبر vim درون متن ترمینال پیمایش کنید‌. همینطور
+M-s قابلیت سرچ درون متن ترمینال را از تابع keyboard-select رو نویس
+می‌کند‌. (این قابلیت به صورت پیش‌فرض در urxvt وجود دارد ولی این یکی بهتر
+است ;-)) افزونهٔ بعدی url-select است‌. خیلی پیش می‌آید که می‌خواهیم تنها
+روی یک url از توی ترمینال کلیک کنیم‌. خوبیت ندارد که تابع Search را برای
+این کار انتخاب کنیم‌. این است که به صورت زیر این افزونه را فعال می‌کنیم:
+```bash URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.autocopy: True URvxt.url-select.button: 2
+URxvt.url-select.launcher: firefox URxvt.url-select.underline: True
+``` فکر کنم تنظیمات به قدر کافی گویا هستند‌. پس دیگر زیاد شلوغش
+نمی‌کنم! و افزونهٔ آخر clipboard که یک کمی درد‌سرش بیشتر است‌. این تابع
+به طور پیش‌فرض از xsel برای کپی و پیست متن استفاده می‌کند‌. (البته در
+ادامه می‌گویم که اگر خواستید چطور تغییرش دهید‌). این برنامه به دستور
+xsel -ib متن را کپی می‌کند (می‌توانید این دستور را تایپ کنید‌، انتر
+کنید‌، متن مورد نظر‌تان را تایپ کنید و Ctrl+D بزنید) و با xsel -ob متن
+را پیست کنید‌. به نظرم فکر خوبی است که این برنامه را نصب کنید (ضمن این
+که باقی برنامه‌ها هم عکس‌العمل خوبی بعد از نصب این برنامه نشان دادند
+;-)) و بعد با خطوط زیر این افزونه را تنظیم کنید: ```bash
+URxvt.keysym.M-c: perl:clipboard:copy URxvt.keysym.M-v:
+perl:clipboard:paste URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+``` جای Ctrl+c و یا غیره ما از همان M استفاده کردیم‌ (آن هم از روی
+کالیبر بالایمان ;-)) ولی اگر دوست دارید که همان کلید‌های همیشگی را داشته
+باشید‌، به جای M حرف C بزرگ را تایپ کنید! اما اگر حال نصب xsel را ندارید
+و دستور کپی دیگری مد نظرتان است‌، می‌توانید آن دستور‌ها را به صورت زیر
+جایگزین xsel کنید: ```bash URxvt.clipboard.copycmd: Command
+URxvt.clipboard.pastecmd: Command ``` خوب تا همین اندازه فکر کنم برای
+شروع کار کافی باشد‌. فایل کانفیگ کامل من را می‌توانید در<a class="reference external" href="https://raw.github.com/shahinism/.configs/master/.Xdefaults">این
+لینک</a>ببینید‌.
+اما هنوز هم نکاتی هست که ذکرشان خالی از لطف نیست:</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>نکات اضافه:</h2>
+<ul class="simple">
+<li>یکی از قابلیت‌های خیلی به درد بخور urxvt این است که می‌توان به صورت
+daemon اجرایش کرد‌. یعنی یک بار هستهٔ daemon را اجرا می‌کنید و پس از
+آن ترمینال‌های مختلف را روی همان هستهٔ اصلی به صورت کلاینت صدا
+می‌کنید‌. مزیت این کار سرعت خیلی بالای فراخوانی ترمینال‌هاست‌. ولی
+خوب یک مشکل هم دارد‌. اگر یک ترمینال کرش کند‌، کل ترمینال‌ها به فنا
+می‌روند‌، ولی خوب مگر تا به حال چند بار ترمینال زیر دست‌تان کرش کرده؟
+این است که روی i3 با هر بار لود مدیر پنجره urxvtd را برای ران شدن
+daemon صدا می‌کنم و هر وقت نیاز به ترمینال داشتم urxvtc را اجرا
+می‌کنم ;-) توصیه می‌کنم که<a class="reference external" href="https://wiki.archlinux.org/index.php/Rxvt-unicode#Improved_Kuake-like_Behavior_in_Openbox">این
+بخش</a>
+از ویکی آرچ را در این رابطه بخوانید‌. اسکریپت به درد بخوری است‌!</li>
+<li>ممکن است بعد از بعد از هر بار تغییر Xdefaults فایل کانفیگ به درستی
+لود نشود‌، این است که می‌توانید از دستور زیر برای بارگذاری دوباره‌اش
+استفاده کنید:</li>
+</ul>
+<p>```bash xrdb -merge ~/.Xdefaults ```</p>
+<ul class="simple">
+<li>قبلا گفتم که می‌توان برای حالت‌های Bold, Italic و … فونت‌های مختلفی
+تعیین کرد‌. حالا اضافه می‌کنم که رنگ‌های این فونت‌ها نیز قابل تغییر
+است در manpage به دنبال آپشن‌هایی مثل colorBD, colorIT, colorUL و …
+بگردید‌.</li>
+<li>مسیر پلاگین‌های perl برای urxvt به صورت پیش‌فرض ‎/usr/lib/urxvt/perl
+است‌. اما ممکن است دوست نداشته باشید که این افزونه‌ها به صورت
+systemwide در دسترس باشد‌. یا شاید شما دسترسی نوشتن در این آدرس را
+ندارید‌. با آپشن زیر می‌توانید مسیر جدیدی برای این افزونه‌ها اضافه
+کنید:</li>
+</ul>
+<p>```bash perl-lib: PATH ```</p>
+<ul class="simple">
+<li>گاها ممکن است نیاز داشته باشید که ترمینال‌های‌تان را به صورت login
+shell ران کنید‌. که خوب مزیت‌های خودش را دارد‌. با اپشن loginShell:
+True می‌توانید به این عمل دست یابید‌.</li>
+<li>نکتهٔ آخر و خیلی مهم هم این که شما می‌توانید تمام این امکاناتی که
+بحثشان رفت را تنها در زمان فراخوانی urxvt اعمال کنید‌. تمام آپشن‌های
+ذکر شده‌، یک آرگومان خط فرمان هم دارند که کار همین‌ها را انجام
+می‌دهد‌.</li>
+</ul>
+</div>
+</div>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3wp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910819dstnwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamywp.html",
+        disqus_title="\u0639\u0634\u0642 \u0628\u0627\u0632\u06cc \u0628\u0627 \u062a\u0631\u0645\u06cc\u0646\u0627\u0644 \u0644\u06cc\u0646\u0648\u06a9\u0633\u200c (urxvt, \u0631\u0646\u06af\u200c\u0622\u0645\u06cc\u0632\u06cc \u0648 \u06a9\u0627\u0646\u0641\u06cc\u06af\u0634) ..",
+        disqus_identifier="cache/posts/blog13910804shq-bzy-b-trmynl-lynwkhs-urxvt-rngamy.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

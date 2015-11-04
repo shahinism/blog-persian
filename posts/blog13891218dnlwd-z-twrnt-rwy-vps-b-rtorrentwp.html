@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>دانلود از تورنت روی VPS با rtorrent | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">دانلود از تورنت روی VPS با rtorrent
+</h2>
+    <div class="metadata">
+      <span class="date">2011-03-09 13:12</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>خوب زیبا‌ترین و غنی‌ترین بخش اینترنت از لحاظ محتوای قابل دانلود‌، البته
+که تورنت بوده و هست‌. یکی از بهترین مزایایی هم که این شبکه اون رو به
+تنهایی پوشش داده‌، پایبند نبودن به قوانین کپی رایته که همین موضوع بستر
+مناسبی رو برای جذب مخاطب توسط تورنت فراهم کرده‌. از اون‌جایی که من و
+احتمالا امثال من با وجود داشتن اینترنت پرسرعت‌! به‌خاطر محدودیت حجم
+دانلود‌، نمی‌تونن خودشون مستقیما از این شبکه استفاده کنن‌ -چون عملا
+علاوه بر دانلود فایل باید متحمل هزینهٔ آپلود هم بشن -این‌جاست که باید به
+دنبال یه راه‌کار جدید بود‌. من خودم تا همین چند وقت پیش اگر نیاز به
+دانلود تورنت داشتم اون رو به Rapidbaz می‌سپردم‌. ولی چند وقتیه که طراحی
+واسط عجیب و غریب این سرویس مقداری کار دستم داده‌. و بسیار هم پیش اومده
+که من فایلی رو که برای مثال می‌دونم ۷−۸ تا Seed داره رو اختار داده که
+نمی‌تونه دانلود کنه‌. این بود که به فکر این افتادم که از یک سرور مجازی
+برای این کار استفاده کنم‌. چون این‌جوری بای یک تیر می‌شه چند تا نشون
+زد‌! حالا کم‌کم در آینده بیشتر در رابطه با این موضوع حرف می‌زنم‌. وقتی
+راجع به خرید VPS خواستم تصمیم بگیرم‌، یکی از مهم‌ترین مسائل برای من
+مسئله هزینه بود‌. خوب عملا می‌شه با یک هزینهٔ در حدود ۱۵۰۰۰ هزار تومان
+بک سرور ویندوز خریداری کرد‌. ولی همین لود Remote Desktop ویندوز هم خودش
+حجم زیادی از ترافیک من رو باطل می‌کرد‌! از طرف دیگه می‌شه با هزینه‌ای در
+حوالی ۱۰۰۰۰ تومان هم یک سرور لینوکسی خریداری کرد‌، ولی مساله این‌جاست که
+این تجربهٔ بد رو داشتم که Remote Desktop این سیستم عامل هم دردی از من
+دوا نمی‌کنه‌. از خط فرمان هم در قدیم یک بار تصمیم گرفته بودم که استفاده
+کنم برای این موضوع که به شکست انجامیده بود‌. در مدتی که به دنبال راه حل
+این موضوع بودم با نرم‌افزار rtorrent آشنا شدم‌. که از قرار قدرتمند‌ترین
+نرم‌افزار در این زمینه البته در محیط بش هست‌! خوب وسوسه امانم نداد و یک
+سرور با رم پایین خریداری کردم - اونم فقط به این خاطر که بتونم خودم رو
+مجبود کنم که به ترمینال وابسته بشم‌-‌. سرور خریداری شد و برای اینکه
+بتونم در اول آشناییم با این ابزار به راحتی به نرم‌افزار‌های مورد نیازم
+دسترسی داشته باشم‌، از Ubuntu Server ۱۰. ۰۴ استفاده کردم‌. خوب بعد از
+آپدیت معمول سیستم با استفاده از دستور زیر rtorrent رو روی اوبونتو نصب
+کردم‌: ```bash sudo apt-get install rtorrent ``` خوب نصب کار خیلی
+آسونی بود‌، و سرور هم سرعت اتصال اینترنتش رو به خوبی به رخ کشید‌. برای
+زیارت رخ نرم‌افزار هم دستور زیر رو تایپ کردم‌: ```bash rtorrent
+``` خوب نرم افزار در نگاه اول یکم وحشتناک به نظر می‌رسه‌! ببینین‌:</p>
+<p><a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/03/rtorrent-startup.png"><img alt="image0" src="http://shahinism.com/wp-content/uploads/2011/03/rtorrent-startup-300x225.png"></a></p>
+<p>` &lt;<a class="reference external" href="http://shahinism.com/wp-content/uploads/2011/03/rtorrent-startup.png">http://shahinism.com/wp-content/uploads/2011/03/rtorrent-startup.png</a>&gt;`__ولی
+خوب با یک نگاه به <a class="reference external" href="https://kmandla.wordpress.com/2007/05/02/howto-use-rtorrent-like-a-pro/">این
+پست</a>
+و چند خط از man نرم افزار می‌شه باهاش کار کرد‌، چون اصلا چیز پیچیده‌ای
+نبود‌. شروع می‌کنیم‌. برای اینکه یک فایل. torrent کافیه در محیط
+نرم‌افزار یک backspace بزنیم و در خط باز شده می‌تونیم هم آدرس فایل روی
+سرور رو بهش بدیم و هم لینک مستقیم تورنت رو‌! خود نرم‌افزار شروع به
+دانلود فایل تورنت می‌کنه. به همین راحتی‌. چند تا از دستور‌های مهم و
+کاربردی این نرم‌افزار رو هم این زیر می‌نویسم شاید به دردتون خورد‌:
+```bash ^s //شروع دانلود ^d //نگاه داشتن دانلود‌، و پاک کردن یک
+دانلود پاز شده‌. ^o //تغییر دادن دایرکتوری مقصد تورنت‌‌، همون
+دایرکتوری‌ای که قراره فایلهامون توش ذخیره شن‌. l //دیدن لاگ نرم‌افزار
+``` فقط یک نکته از بابت این نرم افزار باقی می‌مونه‌، اونم این که
+نرم‌افزار برای من حداقلش در هنگام دانلود دو بار با اخطار زیر از محیط نرم
+افزار خارج شد‌: ```bash rtorrent "std bad-alloc" ``` ولی خوب
+دوباره وارد نرم‌افزار شدم و همون فایل رو به خورد نرم‌افزار دادم و خیلی
+خوش و خرم نرم‌افزار ادامه‌ی تورنت رو دانلود کرد‌. حالا می‌موند یک نکته
+اونم این که چجوری فایل‌ها رو روی سیستم خودم دانلود کنم‌. اونم خیلی
+سادست‌: ```bash mv torrent-folder /var/www ``` خوب حالا فایل رو
+انتقال دادم به اون قسمتی که IP سرور بهش اشاره می‌کنه‌. پس خیلی خوشگل
+می‌رم دانلود می‌کنم‌. هر وقتی که دلم خواست‌.</p>
+</div>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13891208mslh-skhyp-dr-slkhwr-64-bytywp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13891219tgyyr-pwrt-tsl-ssh-dr-wbwntw-srwrwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13891218dnlwd-z-twrnt-rwy-vps-b-rtorrentwp.html",
+        disqus_title="\u062f\u0627\u0646\u0644\u0648\u062f \u0627\u0632 \u062a\u0648\u0631\u0646\u062a \u0631\u0648\u06cc VPS \u0628\u0627 rtorrent",
+        disqus_identifier="cache/posts/blog13891218dnlwd-z-twrnt-rwy-vps-b-rtorrent.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

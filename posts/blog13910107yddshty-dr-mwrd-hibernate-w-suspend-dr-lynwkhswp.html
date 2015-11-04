@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>یادداشتی در مورد hibernate و suspend در لینوکس | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">یادداشتی در مورد hibernate و suspend در لینوکس
+</h2>
+    <div class="metadata">
+      <span class="date">2012-03-26 00:23</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>کلا چون به دلیل سخت‌افزار قدیمی‌ام تا همین یکی دو سال پیش (شاید هم سه
+چهار سال پیش ;-)) از Windows XP استفاده می‌کردم (‌لینوکس هم کلا
+نمی‌دانستم چیست D:) تنها مدل‌هایی که از کنترل وضعیت سیستم می‌شناختم‌،
+Shutdown و reboot بود‌. بعد از مهاجرت به لینوکس هم اگر قرار بود به صورت
+دستی سیستم را خاموش کنم فقط همان halt و shutdown را می‌شناختم‌. اما
+این‌ها همیشه کافی نبودند‌. بعضی وقت‌ها ممکن است فقط برای یک ربع یا نیم
+ساعت از سیستم دور باشیم‌. انتظار بوت برای یک همچین مدتی کوتاهی‌، واقعا
+طاقت فرساست‌. مخصوصا که تمامی اطلاعات نشست حاضر از بین می‌رود‌. متاسفانه
+وقتی هم که با حالت Suspend (sleep)‎ در KDE سیستم را خاموش می‌کردم‌،
+(ذخیره اطلاعات در رم‌) امکان بازگشتن سیستم به وضعیت قبلی ۵۰-۵۰ بود‌!
+گاها تنها با یک صفحه‌ی سیاه روبرو می‌شدم که خوب یعنی سیستم باید reboot
+شود‌. این مقدمه را گفتم که بگویم‌، پس از مهاجرتم به مدیرپنجره‌ی Awesome
+به دنبال همین روش‌ها برای معرفی در پوسته‌اش بودم تا کارم را راحت کنم‌، و
+این مقدمه‌ی آشناییم با pm-utils بود‌. فریم‌ورکی که برای مدیریت وضعیت
+سیستم طراحی شده‌. و خوشبختانه به دلیل بسیار سبک بودن Awesome (‌البته حدس
+می‌زنم همین دلیل باشد‌) سیستم را به خوبی Suspend کرده و می‌توان به راحتی
+به نشست قبلی بازگشت‌. با کاربر Root می‌توان با یکی از دو دستور زیر به
+این امکان دست یافت‌: ```bash /usr/sbin/pm-hibernate
+/usr/sbin/pm-suspend ``` اولی که برای خاموش کردن سیستم است‌. و دومی
+سیستم را در رم خاموش می‌کند و به سیستم این قابلیت را می‌دهد که در هنگام
+روشن شدن به وضعیت قبلی‌اش بازگردد (‌توجه داشته باشید که خاموش شدن در این
+وضعیت به دلیل وابستگی به Ram نیازمند ولتاژ اندکی از برق است تا اطلاعات
+پاک نشود، در صورت قطع برق سیستم‌، سیستم دوباره بوت می‌شود‌). از آن‌جایی
+که این ابزار برای کار کردن نیاز به بعضی از دسترسی‌های ریشه دارد‌، پس با
+یک کاربر عادی نمی‌توان آن‌ها را اجرا کرد و به sudo نیاز است‌. از آن‌جایی
+هم که روی خوشی ندارد که هر بار برای خاموش کردن سیستم خودمان یک رمز وارد
+کنیم‌، می‌توان‌، دو خط زیر را به فایل sudoers (‌با استفاده از visudo) و
+بعد از خطوطی که دسترسی sudo را به کاربران اعلام کرده‌ایم اضافه کرد تا
+بدون پسوورد اجازه‌ی استفاده از این دستور را داشته باشیم‌: ```bash
+username ALL= NOPASSWD: /usr/sbin/pm-hibernate username ALL= NOPASSWD:
+/usr/sbin/pm-suspend ``` همچنین اگر دیگر خیلی مثل من تنبلید می‌توانید
+یک Alias تعریف کنید تا هر وقت تایپ کردید pm-hibernate خودش دستور sudo
+/usr/sbin/pm-hibernate را وارد کرده و سیستم را خاموش کند ;-)</p>
+<p><a class="reference external" href="https://wiki.archlinux.org/index.php/Pm-utils">**ویکی آرچ اطلاعات ارزشمندی در این زمینه دارد که می‌تواند کمک کننده
+باشد.**</a></p>
+</div>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910106nsb-awesome-wm-rwy-slkhwrwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910108yddshty-dr-mwrd-conky-w-dshtn-khrwjy-frsy-rwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhswp.html",
+        disqus_title="\u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f hibernate \u0648 suspend \u062f\u0631 \u0644\u06cc\u0646\u0648\u06a9\u0633",
+        disqus_identifier="cache/posts/blog13910107yddshty-dr-mwrd-hibernate-w-suspend-dr-lynwkhs.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

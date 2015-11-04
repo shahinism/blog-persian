@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>وقایع نگاری شخصی سازی emacs قسمت اول | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">وقایع نگاری شخصی سازی emacs قسمت اول
+</h2>
+    <div class="metadata">
+      <span class="date">2012-06-26 15:30</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>هاهاها! ایمکس شده بلای جانمان‌! حقیقتش نه این که خیلی آش دهن سوزی
+باشدها‌، نه‌! لعنتی اعتیادش بالاست‌. یک بار که از میانبر‌هایش استفاده
+کنید دیگر همه‌جا می‌خواهید همین میانبر‌ها باشند‌. همهٔ برنامه‌ها را مثل
+آن می‌خواهید‌. دوست دارید همه چیزتان را همین لعنتی انجام دهد‌! آن‌قدر هم
+ابزار و چیز میز برای بازی کردن دارد که می‌توانید وقتتان را به خوبی پایش
+تلف کنید‌! زیاده‌گویی بس است و می‌رویم پی اصل ماجرا‌. اول از همه این که
+emacsام را به نسخهٔ ۲۴ (بی‌خیال پیشوندش) ارتقا دادم که دو مزیت عمده
+داشت‌: <strong>اول</strong> این که جهت چینش هر پاراگراف را مثل مرورگر‌های جدید بر
+اساس نوع نوشتار تعیین می‌کند‌. این یعنی متن فارسی را می‌توان مثل
+آدمی‌زاد درش نوشت و درد نگرفت‌! <strong>دوم</strong> مدیر بسته‌هاست که کلی چیز جدید
+می‌تواند به emacsتان اضافه کند‌. بحث ما هم سر همین دومیست‌. ایمکس به
+صورت پیش‌فرض خیلی خوب است‌، خیلی‌. ولی می‌توان با دستکاری خیلی چیز بهتر
+و کارا‌تری هم از تویش در آورد‌. این است که می‌خواهم چند تا بسته برای
+کار‌هایم توش اضافه کنم‌. اما اول از همه باید یک مخزن درست و درمان به
+مدیر بسته‌هایم اضافه کنم تا برای نصب بسته‌ها درد کمتری متحمل شوم (بماند
+که خود این مدیر بسته کلی دردناک می‌شود به وقتش‌!). پس اگر فایل ‎.emacs
+در پوشهٔ خانگی‌ام ندارم یکی می‌سازم و به صورت زیر مخزن‌هایم را اضافه
+می‌کنم: ```bash (setq package-archives '(("ELPA" .
+"<a class="reference external" href="http://tromey.com/elpa/">http://tromey.com/elpa/</a>") ("gnu" . "<a class="reference external" href="http://elpa.gnu.org/packages/">http://elpa.gnu.org/packages/</a>")
+("marmalade" . "<a class="reference external" href="http://marmalade-repo.org/packages/">http://marmalade-repo.org/packages/</a>"))) ``` خوب گل سر
+سبد این مخازن اسمش <a class="reference external" href="http://marmalade-repo.org/">Marmalade</a> است که از
+<a class="reference external" href="http://cyberrabbits.net/">فرود</a> عزیز بابت معرفیش تشکر می‌کنم ;-).
+خوب بسته‌ها اضافه شد و کافیست بعد از باز کردن ایمکس کلید M + x را فشار
+دهیم‌. (M مخفف Meta است و منظور در اینجا کلید Alt و یا اگر نداریدش کلید
+Esc هست) و در اعلان ظاهر شده بنویسیم package-list-packages (اعلان ایمکس
+قابلیت Auto Completion دارد پس با Tab کارتان را در نوشتن دستوراتش
+راحت‌تر کنید). پس از مدتی انتظار لیستی از بسته‌های قابل نصب یا نصب شده
+روی سیستم‌تان نمایش داده می‌شود. نشانگر را روی هر بسته ببرید‌. Enter را
+فشار دهید تا توضیحاتش را بخوانید‌. اما فعلا بی‌خیال این بخش شوید و همراه
+من بیایید تا چند بستهٔ حیاتی به درد بخور را نصب کنیم:
+<a class="reference external" href="http://cx4a.org/software/auto-complete/">**Auto-complete:**</a> اولین
+نیاز من برای یک ادیتور به درد بخور همین قابلیت تکمیل خودکار متن است‌.
+اول این که سرعتم را بالا‌تر می‌برد‌. دوم هم این که خیالم را در خطاهای
+املایی در برنامه‌نویسی راحت‌تر می‌کند ;-) این می‌شود که در ایمکس دستور
+زیر را وارد می‌کنم M + x package-install RET auto-complete و بسته نصب
+می‌شود‌. آن‌وقت فایل ‎.emacs را باز می‌کنم و خط‌های زیر را به آن اضافه
+می‌کنم‌: ```bash ;;Start Auto-complete config (add-to-list 'load-path
+"~/.emacs.d/elpa/auto-complete-1.4") (require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+"~/.emacs.d/elpa/auto-complete-1.4/dict") (ac-config-default) ;;End
+Auto-complete config ``` حالا عملا کار باید تمام شده باشد‌. اما یک
+مشکل وجود دارد که حدود دو سه ساعت وقتم را نابود کرد تا بفهمم از کجاست‌.
+بستهٔ Auto-complete برای نمایش دادن آن جعبهٔ خوشگلش برای کلمات پیشنهادی
+از یک بستهٔ دیگر به اسم popup استفاده می‌کند که خوشبختانه مدیر بسته‌ها
+هم این بسته را به عنوان پیش‌نیاز نصب می‌کند‌. اما در یک پوشهٔ جدا‌. حالا
+بستهٔ Auto-complete هر چه می‌گردد در پوشهٔ خودش نمی‌تواند popup.el را
+پیدا کند‌. این می‌شود که می‌نویسیم: ```bash cp
+~/emacs.d/elpa/popup/popup.el ~/emacs.elpa/auto-complete-1.4 ``` حالا
+این بسته نصب شده و در همه‌جا فعال است‌. این بسته در شاخهٔ dict در محل
+نصبش یک سری فایل با شناسهٔ Modeهای مختلف ایمکس دارد که در واقع لغت‌های
+پیشنهادی را از آن‌جا می‌یابد‌. لغات در بعضی از دیکشنری‌های مخصوصا برای
+C+‎+‎ خیلی ناقص است‌. می‌توانید دستی فایل را باز کنید و کاملش کنید‌.
+<a class="reference external" href="https://github.com/bbatsov/zenburn-emacs">**zenburn-theme:**</a> این تم
+را
+<a class="reference external" href="http://shahinism.com/blog/1391/01/12/%d8%aa%d8%ba%db%8c%db%8c%d8%b1-%d9%be%d9%88%d8%b3%d8%aa%d9%87-emacs-%d8%a8%d8%a7-%d8%a8%d8%b3%d8%aa%d9%87-color-theme/">قبلا</a>
+معرفی کرده‌ام‌. برای نصبش می‌نویسیم M + x package-install RET
+zenburn-theme RET و کار تمام است. حالا برای لود شدن این تم به صورت
+پیش‌فرض خطوط زیر را به ‎.emacs اضافه می‌کنیم: ```bash ;;Start: config
+theme (add-to-list 'custom-theme-load-path
+"~/.emacs.d/elpa/zenburn-theme-1.5") (load-theme 'zenburn t) ;;End:
+config theme ``` این تم در حالت گرافیکی به راحتی لود می‌شود‌. اما در
+حالت متنی emacs -nw به خاطر کم بودن رنگ‌ها ممکن است مشکل داشته باشید‌.
+برای حل این مشکل فعلا الالحساب این خط را به فایل ‎.bashrc یا ‏‏‎.zshrc
+تان اضافه کنید تا بعدا در یک پست مجزا در موردش توضیح دهم: ```bash
+export TERM=xterm-256color ``` بعله‌. الان دیگر تمتان هم خیلی میزان
+است و همه‌جا قابل استفاده ;-) php-mode,
+<a class="reference external" href="http://code.google.com/p/js2-mode/">js2-mode</a>, css-mode: مهم‌ترین
+چیز برای برنامه‌نویس‌هایی که می‌خواهند از ایمکس برای توسعهٔ پروژه‌هایشان
+استفاده کنند همین مد‌های ایمکس هستند‌. در اینجا سه مد مختلف برای
+زبان‌های php, javascript و CSS معرفی شده‌اند که به نظرم خیلی عالی
+هستند‌. مخصوصا js2-mode که یک IDE به تمام معنا برایتان مهیا می‌کند‌!
+برای نصب که دیگر باید بدانید چه کار کنید‌. هیچ خطی هم نیاز نیست به
+‎.emacsتان اضافه کنید‌. تنها برای رفتن به هر مد کافیست تایپ کنید M + x
+mode-name RET همین. فعلا برای قسمت اول کافیست‌. در قسمت بعد با چیز‌های
+هیجان‌انگیز‌تری بر می‌گردیم D:</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bashwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdrwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wlwp.html",
+        disqus_title="\u0648\u0642\u0627\u06cc\u0639 \u0646\u06af\u0627\u0631\u06cc \u0634\u062e\u0635\u06cc \u0633\u0627\u0632\u06cc emacs \u0642\u0633\u0645\u062a \u0627\u0648\u0644",
+        disqus_identifier="cache/posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

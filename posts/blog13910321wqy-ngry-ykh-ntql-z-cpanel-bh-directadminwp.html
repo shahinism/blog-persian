@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>وقایع نگاری یک انتقال از Cpanel به DirectAdmin | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">وقایع نگاری یک انتقال از Cpanel به DirectAdmin
+</h2>
+    <div class="metadata">
+      <span class="date">2012-06-10 21:49</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>مدتی بود که از <a class="reference external" href="http://vioona.net">هاستینگ ویونا</a> استفاده می‌کردم و
+بر خلاف دیگر شرکت‌های ایرانی که قبلاً تجربهٔ کار با آن‌ها را داشتم‌، تیم
+راضی کننده‌ای بودند‌. کیفیت خدمات خوب و قیمت مناسبش باعث می‌شود که عمدتا
+پیشنهادم به دوستان همین هاستینگ باشد‌. اما نمی‌دانم متوجه شده بودید یا
+نه‌، مدتی بود که موقع ورود به وبلاگم با صفحهٔ ثبت وبلاگ وردپرس روبرو
+می‌شدید‌! انگار که اصلاً هیچ اطلاعاتی در پایگاه دادهٔ وبلاگ وجود ندارد و
+قرار است که وبلاگ از نو ساخته شود‌! (بماند که اولین بار که این وضعیت را
+دیدم و متوجه شدم هیچ رکوردی از پایگاه داده‌ام روی Cpanel وجود ندارد‌، کم
+مانده بود سکته کنم‌!) پس از پیگیری معلوم شد مشکل از آپگرید MySQL و
+ناسازگاری‌اش با Cpanel بوده و اینکه گاهی اوقات خود ویونا پایگاه داده ‌ها
+را برای بررسی لاگ‌ها از دسترس خارج می‌کرد (با تمام احترامی که برایشان
+قائلم‌، حقا کار زشتی می‌کردند‌!) یکی دو بار اول که با این وضعیت روبرو
+بودم زیاد بد به دلم راه ندادم‌، ولی وقتی دیدم که دیگر دارد زیادی روی
+آمار بازدید‌هایم تأثیر می‌گذارد تصمیم بر انتقال گرفتم (البته گرفتیم من و
+<a class="reference external" href="http://emanlog.com">ایمان</a> ;-)). جالب اینکه این تصمیم مصادف شد با
+<a class="reference external" href="http://1pezeshk.com/archives/2012/06/parspack.html">یک ریپورتاژ</a>از
+یک پزشک و آن کپن تخفیفش (شده حکایت اینکه اگه طناب مفت شه همه می‌رن
+خودشون رو دار می‌زنن ;-)). لازم می‌دانم از علیرضا مجیدی عزیز بابت این
+ربپورتاژ و تجربه‌های عالی‌ای که بر سر این انتقال به دست آوردم تشکر کنم‌.
+<a class="reference external" href="http://parspack.com/">هاستینگ ابری پارسپک</a> مقصد بعدی شد‌. حقیقتش
+هنوز هم درک نمی‌کنم که این واژهٔ ابری پشت‌بند این هاستینگ چه معنی دارد
+ولی خوب امکانات جالب و متفاوتی را شامل می‌شد‌. مثل اینکه رم یا CPUی
+مصرفی هاست را می‌توانید خودتان انتخاب کنید‌. یا اینکه امکانات گزارشی
+عالی‌اش‌. اما چیزی که بیشتر از همه مورد توجه من قرار گرفت‌، تیم پشتیبانی
+فوق‌العاده مودب‌، حرفه‌ای و با تجربه‌شان بود‌. تیکت‌ها خیلی سریع جواب
+داده می‌شد و به حق ثابت کردند که به مشتری اهمیت می‌دهند‌. دیگر تعریف
+کافی است‌. بهتر است برویم سراغ قضیهٔ این انتقال‌: سیستم مدیریت هاستینگ
+DirectAdmin بود که قبلاً آن موقع‌ها که خیلی خیلی ساده بود یک بار
+تجربه‌اش کرده بودم و با دیدن این همه تغییر در آن شگفت‌زده شدم‌. ولی خوب
+یک غم بزرگ به سراغم آمد و آن اینکه چطور اطلاعات هاست قبلی را به این‌جا
+منتقل کنم‌. اگر این Cpanel‌ای بود با امکانات پشتیبان‌گیری هاستینگ قبلی
+انتقال خیلی سر راست و آسان بود‌، ولی خوب من بی‌تجربه این‌بار در همچین
+موقعیتی گیر کرده بودم‌. ولی خوب یک ایدهٔ ساده به ذهنم رسید‌. پشتیبان
+گیری از پایگاه دادهٔ MySQL و انتقالش روی هاست جدید و سپس انتقال فایل‌ها
+از روی FTP‌! منطقاً باید جواب دهد دیگر‌! (خوبی مساله اینجا بود که روی هر
+دو هاست PHPmyadmin نصب بود‌) اولین جستجو در گوگل و رسیدن <a class="reference external" href="http://codex.wordpress.org/Backing_Up_Your_Database#Using_phpMyAdmin">به این
+آموزش</a>از
+مستندات وردپرس برای پشتیبان‌گیری از پایگاه داده روی PHPmyadmin! سر راست
+و سریع‌. (نکتهٔ جالبش این بود که خود پایگاه حدود ۷ مگابایت حجم داشت ولی
+وقتی با gzip فشرده می‌شد حجمش به ۱۰ درصد کاهش پیدا می‌کرد). پشتیبان
+گرفته شد و پس از ساختن یک یوزر جدید روی DirectAdmin خیلی راحت Restore
+شد‌. بخش اعظم کار انجام شده بود‌! فقط می‌ماند فایل‌ها‌. با Filezilla
+خیلی راحت انتقال داده شدند‌. ولی تفاوت عمده‌ای که کمی گیجم کرد نحوهٔ
+چینش دامنه‌ها روی این هاستینگ بود‌. در Cpanel شما موقع افزودن یک دامین
+جدید‌، انتخاب می‌کردید که درخواست این دامین به کدام شاخه از هاستینگ
+ارجاع داده شود‌. ولی در این‌جا خبری از آن تنظیمات برای دامنه نبود‌. بعد
+از کمی جستجو متوجه شدم که یه شاخه به اسم Domains نام دو دامنه را در خود
+دارد‌. احتمال دادم که با انتقال فایل‌های مربوط به هر وبلاگ به داخل پوشهٔ
+مربوط به دامنه همه چیز باید درست باشد‌. خوب این کار را کردم و DNS‌های
+مربوطه را نیز به دامنه‌ام اضافه کردم‌. باید جایی می‌رفتم و گفتم موقع
+برگشتنم معلوم می‌شود که این حدس‌ها و احتمال‌ها درست کار می‌کند یا نه‌.
+همین شد که دیروز چهار-پنج ساعت این وبلاگ خطای اتصال به پایگاه داده
+می‌داد‌! خوشبختانه تمام حدس‌ها درست بود و مشکل بر سر این بود که تنظیمات
+فایل wp-config وردپرس را با دیتابیس جدید هماهنگ نکرده بودم‌. با حل این
+مشکل انتقال کاملاً درست و بدون مشکل انجام شده بود و خیالمان راحت شد ;-)</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910319wqty-z-syt-dnshgh-hrf-myznym-zwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910322hgkhwrh-z-fsl-wl-1wp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadminwp.html",
+        disqus_title="\u0648\u0642\u0627\u06cc\u0639 \u0646\u06af\u0627\u0631\u06cc \u06cc\u06a9 \u0627\u0646\u062a\u0642\u0627\u0644 \u0627\u0632 Cpanel \u0628\u0647 DirectAdmin",
+        disqus_identifier="cache/posts/blog13910321wqy-ngry-ykh-ntql-z-cpanel-bh-directadmin.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

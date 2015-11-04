@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<base href="http://5hah.in/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL .. date: 2011/11/30 | شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://5hah.in/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.html">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین آزاد">
+<link rel="prev" href="blog13900909chchch-3-mysql-chystwp.html" title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟ .. date: 2011/11/30 14:53:32" type="text/html">
+<link rel="next" href="blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysqlwp.html" title="چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL .. date: 2011/12/1" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content="چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL .. date: 2011/11/30">
+<meta property="og:url" content="http://5hah.in/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.html">
+<meta property="og:description" content="وقتی که برای دسترسی به کارگزار (Server) پایگاه داده MySQL از طریق
+مشتری‌ای (Client) نظیر mysql یا حتی زبان‌های برنامه نویسی نظیر php یا
+perl اقدام می‌کنید‌، به یک حساب کاربری نیاز دارید‌. MySQL دارای ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-11-01T00:00:00+03:30">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://5hah.in/">
+
+                <span id="blog-title">شاهین</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../">Home</a>
+                </li>
+<li>
+<a href="../../stories/about-me.html">About</a>
+                </li>
+<li>
+<a href="../../">Resume</a>
+                </li>
+<li>
+<a href="../../archive.html">Archives</a>
+                </li>
+<li>
+<a href="../../categories/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- Custom search --><form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.rst" id="sourcelink">منبع</a>
+    </li>
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL .. date: 2011/11/30</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    شاهین آزاد
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-11-01T00:00:00+03:30" itemprop="datePublished" title="2015-11-01 00:00">2015-11-01 00:00</time></a></p>
+                <p class="commentline">            <a href="blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.html#disqus_thread" data-disqus-identifier="cache/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.wp.html">Comments</a>
+
+
+                    </p>
+<p class="sourceline"><a href="blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.rst" id="sourcelink">منبع</a></p>
+
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>وقتی که برای دسترسی به کارگزار (Server) پایگاه داده MySQL از طریق
+مشتری‌ای (Client) نظیر mysql یا حتی زبان‌های برنامه نویسی نظیر php یا
+perl اقدام می‌کنید‌، به یک حساب کاربری نیاز دارید‌. MySQL دارای سیستم
+مدیریت کاربر خبره‌ای است که قادر به کنترل کردن دسترسی کاربران از
+مشتری‌های مختلف به کارگزار می‌باشد‌. برای این کار MySQL از جداول مخصوص
+در پایگاه داده کمک می‌گیرد‌. به همین دلیل برای ساخت یک کاربر جدید در
+MySQL شما نیاز به کاربر root دارید‌.</p>
+<p>سپس باید با دستوری به MySQL اجازهٔ ساخت یک کاربر جدید را بدهید‌. و در
+آخر‌، با استفاده از کاربر جدید ارتباطی را با کارگذار MySQL برقرار کنید‌.</p>
+<p>لطفا توجه داشته باشید حساب کاربری در MySQL با اکانت‌های یونیکس‌/‌لینوکس
+متفاوت است‌. برای مثال‌، کاربر root در MySQL و کاربر root در
+یونیکس‌/‌لینوکس جدا از هم بوده و هیچ ارتباطی با هم ندارند‌، حتی اگر نام
+کاربریشان شبیه به هم باشد‌.</p>
+<h4></h4>
+<p>روند ساخت یک حساب کاربری در MySQL</p>
+<p>با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌،
+دستور زیر را وارد کنید‌:):</p>
+<pre class="code bash"><a name="rest_code_fad8461c06774574a65b48572c61fff1-1"></a><span class="nv">$ </span>mysql -u root -p
+</pre>
+<p>و یا</p>
+<pre class="code bash"><a name="rest_code_a0c2472539f1496880891722dccaaebe-1"></a><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
+</pre>
+<p>یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:</p>
+<pre class="code bash"><a name="rest_code_e84a3b4d674245cca10206fcb222ce84-1"></a>mysql<span class="p">&amp;</span>gt<span class="p">;</span> CREATE DATABASE demo<span class="p">;</span>
+</pre>
+<p>یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:</p>
+<pre class="code bash"><a name="rest_code_9932d37e85e84f3fb6ad348c2867a3f2-1"></a>mysql<span class="p">&amp;</span>gt<span class="p">;</span> GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’<span class="p">;</span>
+</pre>
+<p>توجه‌: GRANT ALL به این معنی است که کاربر قادر است هر کاری انجام دهد‌.
+می‌تواند اطلاعات را بخواند‌، دستکاری کند و یا پاکشان کند‌، اما تنها برای
+جداول موجود در پایگاه دادهٔ demo. او قادر به دسترسی به دیگر پایگاه‌های
+داده نیست‌.</p>
+<h4></h4>
+<p>من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL
+متصل شوم؟</p>
+<p>کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه
+داده demo متصل شود‌:</p>
+<pre class="code bash"><a name="rest_code_ff32f1a188a245ee914f6ec1e432cb4f-1"></a><span class="nv">$ </span>mysql -u user۱ -p demo
+</pre>
+<p>و یا‌:</p>
+<pre class="code bash"><a name="rest_code_3391e99590e846af8a5fb26e17dc667d-1"></a><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
+</pre>
+<p>که پارامتر‌های دستور به شکل زیر معنا می‌شوند‌:</p>
+<ul><li>
+<p>‎-user1 : کاربر MySQL</p>
+</li></ul>
+<pre class="literal-block">
+&lt;li&gt;‏‎-h : نام کارگزار MySQL (به صورت پیش‌فرض localhost)&lt;/li&gt;
+&lt;li&gt;‎-p : اعلان برای رمز عبور&lt;/li&gt;
+&lt;li&gt;demo: demo نام پایگاه داده در mysql می‌باشد (اختیاری)&lt;/li&gt;
+</pre>
+<p style="text-align: center;"></p>
+<p>منبع</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="blog13900909chchch-3-mysql-chystwp.html" rel="prev" title="چ‌چ‌چ (۳)‌: MySQL چیست‌؟ .. date: 2011/11/30 14:53:32">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysqlwp.html" rel="next" title="چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL .. date: 2011/12/1">ارسال بعدی</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysqlwp.html",
+        disqus_title="\u0686\u200c\u0686\u200c\u0686 (\u06f4)\u200c: \u0627\u06cc\u062c\u0627\u062f \u06cc\u06a9 \u06a9\u0627\u0631\u0628\u0631\u062f \u062c\u062f\u06cc\u062f \u062f\u0631 MySQL .. date: 2011/11/30",
+        disqus_identifier="cache/posts/new/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

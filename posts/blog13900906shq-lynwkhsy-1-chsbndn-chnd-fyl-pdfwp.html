@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>عشق لینوکسی (۱): چسباندن چند فایل PDF | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">عشق لینوکسی (۱): چسباندن چند فایل PDF
+</h2>
+    <div class="metadata">
+      <span class="date">2011-11-27 06:49</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<p>گاهی وقت‌ها هست که در حین کار با کامپیوتر محتاج انجام کاری می‌شوید که تا
+به حال تجربه نکرده‌اید‌. این کار هر چقدر هم کوچک که باشد‌، ولی شما شدیدا
+به انجام آن نیاز دارید‌! این بار من می‌خواستم چند فایل PDF را به هم
+بچسبانم تا وقتی برای پرینت می‌برم‌، اشک متصدی در نیاید ;-) قبلا
+برنامه‌هایی را برای ویندوز دیده بودم که چنین کاری می‌کردند‌، پس شروع به
+جستجو کردم‌، ولی با رسیدن به سایت محبوب
+<a class="reference external" href="https://www.linux.com/news/software/applications/8229-putting-together-pdf-files">Linux.com</a>
+با یک ابزار ساده که اتفاقا روی اسلکورم نصب بود و از وجودش خبر نداشتم
+آشنا شدم‌. طبق گفته‌ی این مقاله تنها کافی بود از دستوری به شکل زیر
+استفاده کنم‌: ```bash gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite
+-sOutputFile=finished.pdffile1.pdf file2.pdf ``` و بله کار برایم به
+درستی جواب داد‌، اما در بعضی شرایط نتایج عجیبی در بر داشت‌! یکی از
+فایل‌هایی که می‌خواستم به بقیه بچسبانم‌، نوشته‌هایی با حاشیه رنگی داشت‌،
+در حین پروسه‌ی چسباندن‌، اخطار‌هایی با همین موضوع دریافت کردم و در
+okular برنامه‌ی نمایش PDF در KDE هم کادر رنگی نمایش داده می‌شد ولی خبری
+از نوشته‌ها نبود‌. من هم زیاد به خودم سختی ندادم و بی‌خیال این نوشته‌ها
+شدم‌، اما بعد از پرینت‌، دیدم که همه چیز سر جایش است‌! بگذریم‌، بیایید
+نگاهی به آپشن‌های این دستور بیاندازیم‌: ```bash gs ``` خوب کار این
+بخش که کاملا معلوم است‌، برنامه‌ی ghostscript را اجرا می‌کند‌.
+```bash -dBATCH ``` وقتی که برنامه یک بار فایل‌ها را پردازش کرد‌،
+باید بسته شود‌، اگر این آپشن را وارد نکرده باشید‌، برنامه همچنان به کارش
+ادامه می‌دهد‌. ```bash -dNOPAUSE ``` ghostscript را مجبور می‌کند‌،
+بدون این که برای تعامل با کاربر pause شود به کارش ادامه دهد‌. ```bash
+q ``` از نمایش پیغام‌ها در حین کار برنامه جلوگیری می‌کند‌. ```bash
+-sDEVICE=pdfwrite ``` به ghostscript می‌فهماند از نویسنده‌ی PDF توکار
+ghostscript برای تولید فایل استفاده کند‌. ```bash
+-sOutputFile=finished.pdf ``` این قابلیت را به دستورمان اضافه می‌کند
+که نام فایل خروجی را معین کنیم‌، در این‌جا نام فایل خروجی finished.pdf
+است‌. در ادامه‌ی دستور هم که نام فایل‌های pdf مورد نظرتان را وارد
+می‌کنید‌. به نظرم بهتر است برای صرفه‌جویی در مصرف کیبورد فایل‌ها را در
+یک پوشه‌ی خالی کپی کرده و در این قسمت به جای نام فایل‌ها یک «*» قرار
+دهیم ;-) <strong>پی نوشت‌:</strong> ناگفته نماند که در
+<a class="reference external" href="https://www.linux.com/news/software/applications/8229-putting-together-pdf-files">لینکی</a>
+که در بالا گفتم‌، ابزارهای دیگری نیز معرفی شده است که دیدنشان خالی از
+لطف نیست‌!</p>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13900813pwsth-oulipo-bry-wrdprs-prsywp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13900908chchch-1-pwsth-posix-chystwp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13900906shq-lynwkhsy-1-chsbndn-chnd-fyl-pdfwp.html",
+        disqus_title="\u0639\u0634\u0642 \u0644\u06cc\u0646\u0648\u06a9\u0633\u06cc (\u06f1): \u0686\u0633\u0628\u0627\u0646\u062f\u0646 \u0686\u0646\u062f \u0641\u0627\u06cc\u0644 PDF",
+        disqus_identifier="cache/posts/blog13900906shq-lynwkhsy-1-chsbndn-chnd-fyl-pdf.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>

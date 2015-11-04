@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="شاهین آزاد">
+<title>سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم! | شاهین</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="screen">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS fa" href="../rss.xml/">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+</head>
+<body>
+    <div class="container">
+      <header><p>sometimes you gotta run before you can walk. <small><a href="https://en.wikipedia.org/wiki/Iron_Man">T Stark</a></small></p>
+	<a class="nav-link" href="#navigation"></a>
+      </header><!--/header--><div class="columns four">
+  <article><h2 class="title">سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم!
+</h2>
+    <div class="metadata">
+      <span class="date">2012-10-17 01:10</span>
+      <span class="writer">شاهین آزاد</span>
+    </div>
+    <p>
+      </p>
+<div>
+<p>از آب گل آلود ماهی گرفتن به این می‌گویند D:. به حول قوهٔ الهی و بعد از
+اول شدنمان در دنیا‌، سروری که از فرت آزادی بیان و عقیده از آن به عنوان
+چاقوی سوئیسی استفاده می‌کردیم‌، قیمتش ظرف یک دورهٔ یک ماهه‌، دو برابر
+شد‌ (تازه بماند که چقدر فروشنده پوست خربزه زیر بقلمان گذاشت که ضرر
+می‌کند). این شد که تصمیم گرفتیم سروری با منابع کمتر ابتیاع کنیم و خوب به
+خاطر این که نمی‌خواستیم به سرور بخت برگشته‌مان آن‌قدر فشار بیاوریم که
+زرتش در برود‌، تصمیم گرفتیم که بی‌خیال وب سرور شویم‌ (و البته کلی
+جینگولک دیگر)! خوب این بی‌خیال شدن یعنی دیگر نمی‌توانستیم در نهایت گشادی
+فایل‌هایی که خیر‌خواهانه از سمت کشور‌هایی کاملا دموکراتیک و آزاد از
+دسترسمان خارج شده بود -تا مبادا خدای نکرده‌، بزنیم کسی را با آن اوخ
+کنیم- را دانلود کنیم روی سرور و بعد با وب سرور بخورانیم به دانلود منیجر
+همه فن حریفمان‌، همچین هم نمی‌شد اسم سرورمان را گذاشت چاقوس سوییسی D:
+این شد که تصمیم گرفتم که راهی غیر از وب سرور برای انتقال فایل از سرور
+(که می‌توان دقیقا یک کامپیوتر با یک اتصال اینترنت به درد بخور فرضش کرد)
+به کامپیوتر خودمان پیدا کنم‌. در این مسیر همراهم باشید و عمرا قصه نخورید
+که چرا در سیستم عامل استکباریتان‌، خواب چنین وسایلی را به راحتی
+نمی‌بینیند:</p>
+<div class="section" id="konqueror">
+<h2>Konqueror:</h2>
+<p>خوب اولین ابزار دم دستمان مرورگر پیش‌فرض KDE است‌. برای دیدن فایل‌های
+روی وب‌سرور تنها کافیست در آدرس‌بار چنین چیزی بنویسیم: ```bash
+fish://USER@IPSERVER ``` خودش پس از شروع به جستجو پسوورد می‌پرسد که
+همان پسوورد ssh (پسوورد یوزر) خواهد بود‌. و دیگر می‌توانید با فایل‌ها
+جوری رفتار کنید که انگار روی کامپیوتر خودتان قرار دارند‌. ولی خوب بدیهی
+است که با سرعت اینترنت بالای ما‌، خیلی دردناک است‌. برای فایل‌های کوچک
+حداکثر تا دو سه مگابایتی می‌توان با یک کپی پیست ساده سر و ته قضیه را هم
+آورد‌. ولی اگر فایل دو گیگ باشد‌، باید دنبال چارهٔ بهتر گشت‌.</p>
+</div>
+<div class="section" id="scp">
+<h2>scp</h2>
+<p>یا همان Safe CoPy‌، که به این صورت مورد استعمال قرار می‌گیرد: ```bash
+scp <a class="reference external" href="mailto:USER@IPSERVER">USER@IPSERVER</a>:PATH_TO_FILE _Path_to_download_ ``` بعد از
+اجرا یک پرامپتی می‌آید و پسوورد می‌پرسد (عین ssh خودمان) و عملیات کپی
+انجام می‌شود‌. بدبختی‌اش این‌جاست که چون ما خیلی به سرعت انتقالمان
+اطمینان داریم‌، یک بار زبانم لال، فایلمان ناقص دانلود شود‌ (لنگر است
+دیگر‌، می‌افتد‌)، دیگر نمی‌توان Resume‌اش کرد و باید دوباره از اول شروع
+کنید‌. scp خوب است‌، ولی باز هم زیاد به درد موقعیت ما نمی‌خورد‌. می‌رویم
+گزینهٔ بعدی.</p>
+</div>
+<div class="section" id="filezilla">
+<h2>Filezilla</h2>
+<p>این فایلزیلای پدر سوخته را احتمالا از روی استفاده‌هایش برای FTP
+می‌شناسید‌. خوب خوشبختانه این‌ها از پروتکلی به اسم SFTP هم پشتیبانی
+می‌کنند که منظورش این است که SSH می‌تواند برای وصل شدن به سرور مقصد قرار
+گیرد‌. پس کافیست از منوی فایل روی Site manager کلیک کنید و صفحهٔ باز شده
+را مثل عکس زیر کانفیگ کنید:</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png"><img alt="Filezilla site manager" src="http://dl.dropbox.com/u/25017694/Blog-photos/filezilla.png"></a></p>
+<p>و بعد هم روی connect بزنید و تمام‌. خیلی راحت وصل می‌شوید و می‌توانید با
+Drog &amp; Drop فایل را انتقال دهید به سیستم‌تان‌. آسان بود‌. ولی خوب ما
+فقیر فقرا که ساعت ۲ تا ۷ صبح سرعت اینترنت‌مان سر به فلک می‌کشد‌، با تک
+نخی بودن مدل دانلود‌مان احتمالا طی پنج ساعت نمی‌توانیم ۲ درصد یک فایل دو
+گیگی را دانلود کنیم‌. می‌توانیم؟ پس فایلزیلا هم با تمام خوبی‌هایش بهتر
+است برود جلو بوق بزند‌. ما باید برای مساله‌مان دنبال یک راه حل بهتر
+باشیم‌.</p>
+</div>
+<div class="section" id="rsync">
+<h2>rsync</h2>
+<p>یاد‌تان می‌آید گفتیم که scp سرعت خوبی داشت ولی Resume نمی‌کرد‌. یک ابزار
+دیگر هم داریم که جینگولک بازی‌هایش در زمان Resume فوق‌العاده است و زبان
+زد خاص و عام‌. مثل این نقل قول:</p>
+<blockquote>
+ای کسانی که ویندوز آورده‌اید‌، اگر راست می‌گویید rsync بیاورید
+«[STRIKEOUT:منبع نامعلوم]<a class="reference external" href="http://shahinism.com/blog/1391/07/26/%d8%b3%db%8c%d8%b1-%d8%b5%d8%b9%d9%88%d8%af%db%8c-%d9%88-%d8%b1%d9%88%d8%b4%e2%80%8c%d9%87%d8%a7%db%8c-%d9%85%d8%ae%d8%aa%d9%84%d9%81%db%8c-%da%a9%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%af%d8%a7%d9%86/#comment-537">منبع خودش اومد اعتراف کرد
+;-)</a>»</blockquote>
+<p>این می‌شود که از آن به صورت زیر استفاده می‌کنیم: ```bash rsync -az
+--progress --rsh='ssh' --partial <a class="reference external" href="mailto:USER@IPSERVER">USER@IPSERVER</a>:PATH_TO_FILE
+_Path_to_download ``` خیلی هم خوب‌. یکی از ویژگی‌هایش این است که
+می‌توانید آدرس یک پوشه را برای دانلود بهش بخورانید و دیگر دست به دستور
+نزنید و فقط هر وقت خواستید رانش کنید‌. خودش آخرین فایل‌های آن پوشه را
+می‌گیرد‌. اما امان از سرعت‌. این جینگولک بازی‌های rsync روی قابلیت‌های
+فوق‌العاده resume‌اش هزینه دارد و آن هم سرعت است‌! که ما به آن هم خیلی
+نیاز داریم‌. برای این کار بسته به موقعیت می‌توانیم آن آرگومان z را حذف
+کنیم‌. ولی حقیقتش برای ما فرق چندانی نداشت‌. این است که rsync هم
+می‌گذاریم برای وقتی که لازمش داریم و می‌رویم دنبال یک راه حل بهتر که هم
+Resume کند‌، هم چند نخه دانلود کند‌، و از آن مهم‌تر این که هی مجبورمان
+نکند پسوورد بزنیم! آخر چه کسی حالش را دارد ساعت ۲ صبح پسوورد یادش
+بیاورد؟</p>
+</div>
+<div class="section" id="lftp">
+<h2>lftp</h2>
+<p>فوق‌العاده‌ است‌. فوق‌العاده‌. و این‌طوری استفاده می‌شود: ```bash
+lftp -c "mirror -c --use-pget-n=10 --verbose
+sftp://USER:PASSWORD@IPSERVER/PATH_TO_FILE" ``` هوم‌، یک کمی طولانی
+شد‌. ولی بگذارید کمی در موردش صحبت کنیم‌. چون واقعا لازم به توضیح است:</p>
+<ul class="simple">
+<li>‎-c اول یعنی این که دستور روبرو را اجرا کن‌.</li>
+<li>mirror یک برنامه توکار برای lftp است‌. یکی دیگر مثلا pget است‌. هر
+کدام به درد جایی می‌خورد و این mirror الان به درد ما‌. (از pget هم
+می‌توان استفاده کرد ولی این یکی بیشتر به مزاقم نشست).</li>
+<li>‎-c این آرگومان مال mirror است و یعنی Resume کن اگر می‌توانی D:</li>
+<li>‎--user-pget-n=10 یعنی فایل را ده قسمت کن و همه را با هم بگیر‌. این
+همان قابلیت چند نخی است که باعث افزایش سرعت می‌شود و دانلود منیجر‌های
+مدرن با آن پز می‌دهند ;-)</li>
+<li>USER:PASSWORD یعنی این‌ور یوزر را می‌نویسیم و آن‌ورش رمز عبورش را!</li>
+<li>PATH_TO_FILE این‌بار کمی با باقی مواقع فرق دارد‌. قبلا آدرس را از
+پوشهٔ خانگی یوزری که وارد شده بود وارد می‌کردیم و موضوع حل بود‌. ولی
+اینجا آدرس را از ریشه (/) می‌نویسیم‌. یعنی اگر در پوشهٔ خانگی‌تان است
+می‌شود این:</li>
+</ul>
+<p>```bash /home/USER/File ``` lftp هم مانند rsync (شاید هم scp) زورش
+را دارد که پوشه‌ای که به آن خورانده‌ایم را دانلود کند‌. همین دیگر‌.
+دیدید؟ باز هم بگویید بد است‌. لامصب را می‌بینید که چقدر به فکر جیب آدم
+است؟ با هر پولی و با هر سازی که دلتان خواست برایش بنوازید‌، برای‌تان
+آن‌قدر خوب رقص می‌کند که انگشت به دهن می‌بانید ;-)</p>
+</div>
+</div>
+    
+    <div class="pageNav">
+      <ul class="pager">
+<div class="prev">
+    <a href="blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhhwp.html">← ارسال پیشین</a>
+  </div>
+  <div class="next">
+    <a href="blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3wp.html">ارسال بعدی →</a>
+  </div>
+  </ul>
+</div>
+    <div class="postMeta">
+        <section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                          <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="http://5hah.in/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dnwp.html",
+        disqus_title="\u0633\u06cc\u0631 \u0635\u0639\u0648\u062f\u06cc $ \u0648 \u0631\u0648\u0634\u200c\u0647\u0627\u06cc \u0645\u062e\u062a\u0644\u0641\u06cc \u06a9\u0647 \u0628\u0631\u0627\u06cc \u062f\u0627\u0646\u0644\u0648\u062f \u062f\u0631 \u0644\u06cc\u0646\u0648\u06a9\u0633 \u06cc\u0627\u062f \u06af\u0631\u0641\u062a\u0645!",
+        disqus_identifier="cache/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.wp.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section>
+</div>
+  </article>
+</div>
+<!--columns four-->
+    </div>
+<!--container-->
+
+    <nav id="navigation"><div class="logo"></div>
+      
+<!-- Custom search -->
+<form method="get" id="search" action="http://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="http://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" placeholder="جستجو…" maxlength="255" name="q"><input id="searchsubmit" type="submit" value="DDG Search">
+</form>
+<!-- End of custom search -->
+
+      <ul>
+<li><a class="nav-icon home" href="../">Home</a></li>
+      <li><a class="nav-icon about" href="../stories/about-me.html">About</a></li>
+      <li><a class="nav-icon resume" href="../">Resume</a></li>
+      <li><a class="nav-icon archives" href="../archive.html">Archives</a></li>
+      <li><a class="nav-icon tags" href="../categories/index.html">Tags</a></li>
+      <li><a class="nav-icon rss" href="../rss.xml">RSS</a></li>
+
+      </ul>
+<!--/ul--></nav><!--/navigation--><!--/container--><footer class="container"><div class="columns one">
+    <h2>About</h2>
+    <p>Not much yet!</p>
+  </div>
+  <div class="columns one">
+    <h2>Social</h2>
+    <p class="center">
+      <a class="social github" href="http://github.com/shahinism"></a>
+      <a class="social twitter" href="http://twitter.com/shahinism"></a>
+      <a class="social lastfm" href="http://last.fm/shahinism"></a>
+      <a class="social reddit" href="http://reddit.com/user/shahinism"></a>
+    </p>
+<!-- center -->
+  </div>
+  <div class="columns one">
+    <h2>Projects</h2>
+  </div>
+<!-- column one -->
+  <div class="columns one">
+    <h2>Links</h2>
+  </div>
+  <div class="columns four copyright">
+    <p> Contents © 2015         <a href="mailto:me@5hah.in">شاهین آزاد</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>          </p>
+    <p>Designed by <a href="http://5hah.in">Shahin Azad</a>. All rights reserved.</p>
+  </div>
+</footer><!--/container-->
+</body>
+</html>
