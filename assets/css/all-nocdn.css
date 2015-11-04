@@ -7898,6 +7898,7 @@ article, article .metadata {
     height: 55vh;
     min-height: 180px;
     color: #fff;
+    opacity: 0.8;
 }
 
 .site-footer {
