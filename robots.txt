@@ -1,2 +1,4 @@
-Sitemap: http://5hah.in/sitemapindex.xml
+Sitemap: //5hah.in/sitemapindex.xml
 
+User-Agent: *
+Host: 5hah.in
