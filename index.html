@@ -20,7 +20,7 @@ article: http://ogp.me/ns/article#
 <link rel="canonical" href="//5hah.in/index.html">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="next" href="index-81.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/douglas-crockford-javascript-the-good-parts.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/multithreading-bug-experiment-on-PyMongo-driver.html" type="text/html">
 </head>
 <body>
   <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
@@ -97,11 +97,42 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
+        <h1 class="p-name entry-title"><a href="posts/multithreading-bug-experiment-on-PyMongo-driver.html" class="u-url">وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB</a></h1>
+            شاهین آزاد
+      <a href="posts/multithreading-bug-experiment-on-PyMongo-driver.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-09T09:58:21+03:30" title="2015-11-09 09:58">2015-11-09 09:58</time></a>
+    </div>
+    <div class="p-summary entry-summary">
+    <div>
+<p>استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به پایداری و Performance همچین استکی می‌کنند و راه‌کار‌های بسیار زیادی نیز برای بهتر کردن آن ارائه کرده‌اند. در یکی از پروژه‌های تیم <a class="reference external" href="http://www.foundersbuddy.com/">فاندرز</a> ما هم با استکی به شرح زیر، RESTFUL API مربوط به اپلیکیشمان را طراحی‌کرده‌ایم:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://mongodb.org">Mongo</a></li>
+<li>Python 3</li>
+<li><a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a></li>
+<li><a class="reference external" href="http://djangoproject.com">Django</a></li>
+<li><a class="reference external" href="http://memcached.org">Memcached</a></li>
+<li><a class="reference external" href="https://uwsgi.readthedocs.org/">uWsgi</a></li>
+<li><a class="reference external" href="http://nginx.com">Nginx</a></li>
+</ul>
+<p>در چهار ماه اول لانچ API، هیچ مشکلی در داده‌های دریافتی و پردازش‌های مورد نیاز مشاهده نمی‌شد. Performance کلی استک هم در حد قابل قبولی جواب‌گوی نیاز‌ها بود. تا این که با تغییری در نحوهٔ ارائهٔ خدمات پروژهٔ اصلی‌، حجم کاربران سرویس به نحو چشم‌گیری بالا رفت و ماجرا آغاز شد!</p>
+<p>مشکل ایجاد شده‌، نه در Performance سیستم بود و نه حتی می‌توان گفت که پایداری API زیر سوال رفته بود. قضیه از این قرار بود که درخواست‌هایی که منجر به خواندن داده از پایگاه دادهٔ سرویس بود‌ (Mongo) در زمان‌های خاصی از روز‌ (که عمدتا تایم شلوغی برای پروژه بود) تنها تکه‌ای از داده‌های مورد انتظار را بر می‌گرداندند. برای مثال اگر ما انتظار داشتیم که کوئری X روی دیتابیس‌، شامل ۲۰ سند (Document منظور آبجکت‌های دیتابیس Mongo است) باشد‌، بعضی از درخواست‌ها نتیجه‌ای در بازه‌ای کوچکتر از ۲۰ را بر می‌گرداند.</p>
+<p>قضیه جایی بحرانی می‌شد که این نتیجه را برای یک بازهٔ زمانی مشخص Cache می‌کردیم، و خوب در صورت خراب شدن یکی از این کوئری‌ها‌، کاربران در آن مدت‌، نتیجهٔ ناقص را مشاهده می‌کردند. جدای از این، هیچ ضعف مشخصی از سیستم برای تراکنش‌ها مشاهده نمی‌شد.</p>
+<p class="more"><a href="posts/multithreading-bug-experiment-on-PyMongo-driver.html">بیشتر بخوانید…</a></p>
+</div>
+    </div>
+
+    <div class="text-center">
+                    <a class="btn btn-success" href="posts/multithreading-bug-experiment-on-PyMongo-driver.html#disqus_thread" data-disqus-identifier="cache/posts/multithreading-bug-experiment-on-pymongo-driver.html">Comments</a>
+
+
+    </div>
+
+    </article><article class="h-entry post-text"><div class="text-center">
+
         <h1 class="p-name entry-title"><a href="posts/douglas-crockford-javascript-the-good-parts.html" class="u-url">خوبی‌های جاوا اسکریپت؟</a></h1>
             شاهین آزاد
       <a href="posts/douglas-crockford-javascript-the-good-parts.html" rel="bookmark"><time class="published dt-published" datetime="2015-07-08T15:55:01+04:30" title="2015-07-08 15:55">2015-07-08 15:55</time></a>
     </div>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
 این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
@@ -172,7 +203,7 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
             شاهین آزاد
       <a href="posts/mary-live-codes-a-javascript-game-from-scratch.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-08T15:56:04+03:30" title="2014-10-08 15:56">2014-10-08 15:56</time></a>
     </div>
-    <div class="e-content entry-content">
+    <div class="p-summary entry-summary">
     <div>
 <p>نمی‌دونم چقدر با جاوااسکریپت آشنایی دارین، ولی جدا زبان فوق‌العاده‌ایه. خصوصا این که پلتفرم جذابی داره‌، اصلا نیاز نیست چیزی کامپایل شه یا برنامه خاصی نصب شه‌، یه مرورگر و تموم، دیگه شمایید و خلاقیتتون. گاها آدم یه چیزایی می‌بینه که بدجوری سر شوق می‌آد (هوم‌! البته این شوق هزار جور می‌شه تفسیر شه‌، حتی از نوع … بی‌خیال!). این ویدئو یکی از اون ویدوئوهای Motivational واقعیه. Mary Rose توی یه کنفرانس و در حدود ۳۰ دقیقه‌، یه بازی جذاب جاوااسکریپتی رو بدون هیچ <span class="strike">فرم‌ویری‌ای</span> فریم‌ورکی برنامه‌نویسی می‌کنه.</p>
 <iframe src="//player.vimeo.com/video/105955605" width="281" height="500" frameborder="0" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowFullScreen">
@@ -182,29 +213,6 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
 
     <div class="text-center">
                     <a class="btn btn-success" href="posts/mary-live-codes-a-javascript-game-from-scratch.html#disqus_thread" data-disqus-identifier="cache/posts/mary-live-codes-a-javascript-game-from-scratch.html">Comments</a>
-
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/the-eudyptula-challenge.html" class="u-url">برنامه نویسی کرنل لینوکس با راهنمایی The Eudyptula Challenge</a></h1>
-            شاهین آزاد
-      <a href="posts/the-eudyptula-challenge.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-01T20:40:19+03:30" title="2014-10-01 20:40">2014-10-01 20:40</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>عموما کسانی که از گنو/لینوکس به عنوان سیستم‌عامل اصلی‌شان استفاده می‌کنند‌، همه‌اش به خاطر چه می‌دانم‌، فرهنگ آزاد یا روش‌های گیکانه انجام کار‌هایشان نیست. حتی برای باحال‌تر به نظر رسیدن هم نیست. حقیقت این است که ما‌، علاقه به درک بیشتر ابزار‌هایمان داریم. این علاقه گاها آن‌قدر مفید است که پس از یک سر و کله زدن عمیق با یکی از همین ابزار‌ها سر حل یک مشکل خیلی کوچک‌، می‌بینی معادل ساعت‌ها کلاس درس چیز مجانی و خلاقانه‌، آن هم نه تنها در خصوص ابزارت‌، بلکه کل محیط کارت یاد گرفته‌ای.</p>
-<p>مهم‌ترین ابزار مورد استفاده ما گنو/لینوکسی‌ها هم خود هسته لینوکس است. نرم‌افزاری که همه هنرش این است‌ که بدون در دست و پا بودنش‌، محیطی برای ارتباط نرم‌افزار‌های دیگر و ماشین‌های مورد استفاده‌مان فراهم کند. همین در دست و پا نبودنش شاید دلیل آن است که کمتر سعی کرده‌ایم بشناسیمش. چه می‌دانم شاید آن‌قدر از خوب بودنش تعریف کرده‌ایم که می‌ترسیم پا در کفش طراحانش کنیم. ولی به هر حال همه که قرار نیست برنامه نویس هسته باشند تا نیاز به فهمیدنش داشته باشند… دانش همیشه خوب است، و دانش در رابطه با ابزار‌هایی که هر روز با آن‌ها سر و کار داریم از آن هم بهتر.</p>
-<p>این <a class="reference external" href="http://eudyptula-challenge.org/">The Eudyptula Challenge</a> یک اسکریپت ساده و خنگ دارد به اسم little penguin که همه هنرش این است که ازتان سوال بپرسد و جواب‌های شما را بررسی کند! برایش یک ایمیل می‌فرستید و بعد از این که برایتان راهنمای شروع دوره را فرستاد‌، شروع می‌کند مرحله به مرحله سوال پرسیدن. هیچ راهنمایی هم درکار نیست. خودتان می‌گردید در اینترنت‌، کم کم راه حل را پیدا می‌کنید و یاد می‌گیرد. همچین همه تلاشتان هم باید این باشد که نکند از کسی کمک بگیرید. حقیقتش همینطوری هم هست که چیز یاد می‌گیرید. تنها پیش‌نیاز مورد نیاز‌تان هم آشنایی پایه با زبان C و Make است. (البته این پیش‌نیاز اینطور فکر می‌کند که شما کاربر گنو/لینوکسید و بلدید در طول روز گلیمتان را از آب بکشید)</p>
-<p>همین‌جا هم این را اضافه کنم که سرعت کار این اسکریپت پایین است. همین الان ۳۶ ساعت است که جواب سوالش را داده‌ام و هنوز تاییدیه جوابم نیامده. آهان‌، این را هم بگویم که بهتر است از یک کلاینت برای ایمیل استفاده کنید نه رابط کاربری Gmail. ایمیل‌هایتان باید Plain text باشد و فایل‌های پیوستی متن ساده و نه base 64 که Gmail روانه می‌کند. من از <a class="reference external" href="http://www.djcbsoftware.nl/code/mu/mu4e.html">mu4e</a> استفاده کردم و مشکلی پیش نیامد.</p>
-<p>اگر هم مثل من زبان C در دوران دانشگاه غول بی شاخ و دم ترسناکی بود که با اشاره‌گر‌هایش شما را به ته جهنم راهنمایی می‌کرد‌، باید بگویم که <a class="reference external" href="http://it-ebooks.info/book/704/">Head first C</a> همان اکسیری است که به آن نیاز داشتید. کتاب فوق‌العاده آسان و روان کل قضیه را بهتان شرح می‌دهد.</p>
-<p>باز هم بگویید شاهین بد است. <a class="reference external" href="http://eudyptula-challenge.org/">little penguin</a> را معرفی کردم بهتان کمک کند تا ببینید خدایگان‌تان چطور برنامه می‌نویسند. <a class="reference external" href="http://it-ebooks.info/book/704/">Head first C</a> را معرفی کردم که یک بار دیگر مثل قدیم‌های من فکر نکنید که در جهنم C گیر کرده‌اید. و <a class="reference external" href="http://it-ebooks.info">it-ebooks</a> را معرفی کردم تا ببیند همهٔ کتاب‌های برنامه‌نویسی دنیا را عین‌الله جعفر نژاد قومی نمی‌نویسد ;-)</p>
-</div>
-    </div>
-
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/the-eudyptula-challenge.html#disqus_thread" data-disqus-identifier="cache/posts/the-eudyptula-challenge.html">Comments</a>
 
 
     </div>

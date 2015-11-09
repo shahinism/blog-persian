@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: Wordpress,Nikola,Python
+.. tags: Wordpress,Nikola,python
 .. date: 2013/05/13 10:21:43
 .. title: از وردپرس به نیکولا
 .. slug: from-wordpress-to-nikola

@@ -34,6 +34,10 @@
   <lastmod>2015-11-09T06:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>//5hah.in/categories/cat_databases-programming.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>//5hah.in/categories/cron.xml</loc>
   <lastmod>2015-11-09T06:44:00Z</lastmod>
  </sitemap>
@@ -95,15 +99,15 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/i3.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/i3bar.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/i3status.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/intl.xml</loc>
@@ -130,8 +134,16 @@
   <lastmod>2015-11-09T06:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>//5hah.in/categories/mongodb.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>//5hah.in/categories/mp3.xml</loc>
   <lastmod>2015-11-09T06:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>//5hah.in/categories/multithreading.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/music.xml</loc>
@@ -139,7 +151,11 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/nikola.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>//5hah.in/categories/nosql.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/numberformatter.xml</loc>
@@ -166,6 +182,10 @@
   <lastmod>2015-11-09T06:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>//5hah.in/categories/performance.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>//5hah.in/categories/php.xml</loc>
   <lastmod>2015-11-09T06:44:00Z</lastmod>
  </sitemap>
@@ -175,11 +195,15 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/py3status.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>//5hah.in/categories/pymongo.xml</loc>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/python.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/richard-stallman.xml</loc>
@@ -215,7 +239,7 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/wordpress.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T08:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/categories/xchat.xml</loc>
@@ -231,10 +255,10 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/rss.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T19:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/sitemap.xml</loc>
-  <lastmod>2015-11-09T06:44:00Z</lastmod>
+  <lastmod>2015-11-09T19:41:00Z</lastmod>
  </sitemap>
 </sitemapindex>
