@@ -38,6 +38,10 @@
   <lastmod>2015-11-09T19:58:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>//5hah.in/categories/cat_mysql-wordpress-filesystem.xml</loc>
+  <lastmod>2015-11-16T17:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>//5hah.in/categories/cron.xml</loc>
   <lastmod>2015-11-09T19:58:00Z</lastmod>
  </sitemap>
@@ -255,10 +259,10 @@
  </sitemap>
  <sitemap>
   <loc>//5hah.in/rss.xml</loc>
-  <lastmod>2015-11-09T19:58:00Z</lastmod>
+  <lastmod>2015-11-16T17:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>//5hah.in/sitemap.xml</loc>
-  <lastmod>2015-11-09T20:00:00Z</lastmod>
+  <lastmod>2015-11-16T17:26:00Z</lastmod>
  </sitemap>
 </sitemapindex>

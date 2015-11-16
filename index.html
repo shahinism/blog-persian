@@ -19,8 +19,8 @@ article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="//5hah.in/index.html">
 <link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="next" href="index-81.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/multithreading-bug-experiment-on-PyMongo-driver.html" type="text/html">
+<link rel="next" href="index-82.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/no-space-mysql-problem.html" type="text/html">
 </head>
 <body>
   <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
@@ -96,6 +96,55 @@ article: http://ogp.me/ns/article#
         
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
+
+        <h1 class="p-name entry-title"><a href="posts/no-space-mysql-problem.html" class="u-url">وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!</a></h1>
+            شاهین
+      <a href="posts/no-space-mysql-problem.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-16T19:15:57+03:30" title="2015-11-16 19:15">2015-11-16 19:15</time></a>
+    </div>
+    <div class="p-summary entry-summary">
+    <div>
+<p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
+<p><a class="reference external" href="http://navid.kashani.ir/">نوید</a>  چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین اخطاری می‌دهد:</p>
+<pre class="code bash"><a name="rest_code_967fa57c608c41b78b0b7833569b417b-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+</pre>
+<p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا خرخره پر شده. یک فایل log که از <a class="reference external" href="http://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و دیگر نمی‌تواند نفس بکشد.</p>
+<pre class="code bash"><a name="rest_code_d377af4936344ac99f0c451a787edc69-1"></a>rm -rfv PATH_TO_FAT_FILE
+</pre>
+<p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite> می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده حالا؟ Only GOD knows :)</p>
+<pre class="code bash"><a name="rest_code_717059429492454a87e0c6ffe0e86131-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+</pre>
+<p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل خودش چیست؟ <cite>lsof</cite></p>
+<pre class="code bash"><a name="rest_code_f3cd894f57d94ab39c3ef36a5a1bbf2d-1"></a>lsof PATH_TO_FAT_FILE
+</pre>
+<p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
+<pre class="code bash"><a name="rest_code_c3898e40dfae431682d8a5018e2d099e-1"></a>sudo !!
+</pre>
+<p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
+<pre class="code bash"><a name="rest_code_716cd7b7f57e41058895a648e6ab549a-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+</pre>
+<p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به مشکل داشته باشد؟ کمی جستجو  و <cite>df -i</cite>:</p>
+<pre class="code bash"><a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-1"></a>...
+<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
+<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-3"></a>...
+</pre>
+<p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
+<blockquote>
+آی‌نود (به انگلیسی: inode) به ساختمان داده‌هایی گفته می‌شود که در سیستم‌فایل‌های شبیه به یونیکس مانند UFS استفاده می‌شود. یک inode اطلاعات پایه‌ای در مورد فایل‌ها، دایرکتوری‌ها و اشیاء دیگر موجود در فایل‌سیستم را در خود نگهداری می‌کند.</blockquote>
+<p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
+<pre class="code bash"><a name="rest_code_71ccafe01da14df4b9ef50edc7eb282f-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+</pre>
+<p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل دیتابیس MySQL و وردپرس بود. یک بار دیگر صفحه را باز کنیم تا ببینیم دقیقا چه اتفاقی می‌افتد… و… عه؟ مشکل حل شده! بریم ببینیم تنظیمات جدید را ذخیره می‌کند؟ ها‌، آره آن هم حل شده. ضرب‌المثل ربط … به … این‌جا خیلی قشنگ صدق می‌کند :)</p>
+<p>به هر حال چند تا درس گنده یاد گرفتم، همچین باگ‌هایی ارزش یک کلاس درس واقعی را دارند‌، این‌طور نیست؟</p>
+</div>
+    </div>
+
+    <div class="text-center">
+                    <a class="btn btn-success" href="posts/no-space-mysql-problem.html#disqus_thread" data-disqus-identifier="cache/posts/no-space-mysql-problem.html">Comments</a>
+
+
+    </div>
+
+    </article><article class="h-entry post-text"><div class="text-center">
 
         <h1 class="p-name entry-title"><a href="posts/multithreading-bug-experiment-on-PyMongo-driver.html" class="u-url">وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB</a></h1>
             شاهین
@@ -197,31 +246,11 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
 
     </div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/mary-live-codes-a-javascript-game-from-scratch.html" class="u-url">کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose</a></h1>
-            شاهین
-      <a href="posts/mary-live-codes-a-javascript-game-from-scratch.html" rel="bookmark"><time class="published dt-published" datetime="2014-10-08T15:56:04+03:30" title="2014-10-08 15:56">2014-10-08 15:56</time></a>
-    </div>
-    <div class="p-summary entry-summary">
-    <div>
-<p>نمی‌دونم چقدر با جاوااسکریپت آشنایی دارین، ولی جدا زبان فوق‌العاده‌ایه. خصوصا این که پلتفرم جذابی داره‌، اصلا نیاز نیست چیزی کامپایل شه یا برنامه خاصی نصب شه‌، یه مرورگر و تموم، دیگه شمایید و خلاقیتتون. گاها آدم یه چیزایی می‌بینه که بدجوری سر شوق می‌آد (هوم‌! البته این شوق هزار جور می‌شه تفسیر شه‌، حتی از نوع … بی‌خیال!). این ویدئو یکی از اون ویدوئوهای Motivational واقعیه. Mary Rose توی یه کنفرانس و در حدود ۳۰ دقیقه‌، یه بازی جذاب جاوااسکریپتی رو بدون هیچ <span class="strike">فرم‌ویری‌ای</span> فریم‌ورکی برنامه‌نویسی می‌کنه.</p>
-<iframe src="//player.vimeo.com/video/105955605" width="281" height="500" frameborder="0" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowFullScreen">
-</iframe>
-</div>
-    </div>
-
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/mary-live-codes-a-javascript-game-from-scratch.html#disqus_thread" data-disqus-identifier="cache/posts/mary-live-codes-a-javascript-game-from-scratch.html">Comments</a>
-
-
-    </div>
-
     </article>
 </div>
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-81.html" rel="next">پست‌های قدیمی‌تر</a>
+                <a href="index-82.html" rel="next">پست‌های قدیمی‌تر</a>
             </li>
         </ul></nav><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
