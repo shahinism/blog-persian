@@ -115,8 +115,8 @@ article: http://ogp.me/ns/article#
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash"><a name="rest_code_691dc744edcf4cb6b074a32df44b3582-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-<a name="rest_code_691dc744edcf4cb6b074a32df44b3582-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_8e6487d4dbbb40a38ce9f3e9eaf3ca9a-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_8e6487d4dbbb40a38ce9f3e9eaf3ca9a-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -126,7 +126,7 @@ article: http://ogp.me/ns/article#
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code text"><a name="rest_code_e14fe1a8d5864fce885806338037a441-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_7e6856807a2c49bca606601c0c5a86a3-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
@@ -181,8 +181,8 @@ article: http://ogp.me/ns/article#
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_a215cbcf025d46379face63855471b38-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_a215cbcf025d46379face63855471b38-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_57b4bee477484a2bbcbfc00ad16f8b19-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_57b4bee477484a2bbcbfc00ad16f8b19-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -193,7 +193,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_199fe50c3e274a9b8d5d2d508a1d3b35-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_baae4038e3e741719c8acc722ec604c4-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -209,11 +209,11 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl"><a name="rest_code_77d90df28fea4b05bb5f8ecdac97cbb3-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_77d90df28fea4b05bb5f8ecdac97cbb3-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_92f5038c989642e6bd34960b3785bc2e-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_92f5038c989642e6bd34960b3785bc2e-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_15c9581e50114786917bf250be58ff86-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_9440aa5ddd734260aa7930922a68795f-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>

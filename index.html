@@ -20,7 +20,7 @@ article: http://ogp.me/ns/article#
 <link rel="canonical" href="http://5hah.in/index.html">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="next" href="index-82.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/no-space-mysql-problem.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/version-control-is-not-optional.html" type="text/html">
 </head>
 <body>
   <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
@@ -97,6 +97,54 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
+        <h1 class="p-name entry-title"><a href="posts/version-control-is-not-optional.html" class="u-url">ورژن کنترل اختیاری نیست!</a></h1>
+            شاهین
+      <a href="posts/version-control-is-not-optional.html" rel="bookmark"><time class="published dt-published" datetime="2015-12-27T10:49:45+03:30" title="2015-12-27 10:49">2015-12-27 10:49</time></a>
+    </div>
+    <div class="p-summary entry-summary">
+    <div>
+<p>حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم که ورژن کنترل یک جورهایی جزء غرایض جامعه‌ی نرم‌افزاری است‌، آن هم با درجه‌ی اهمیتی مثل نفس کشیدن. دوستی دارم که حدوداً دو سال پیش روی دیوار فیس‌بوک‌اش از پاک شدن اتفاقی فایل‌های یکی از پروژه‌هایش شکایت کرده بود‌، که وا مصیبتا‌، مسلمانان چه نشسته‌اید که نتیجه‌ی تلاش چند سال گذشته‌ام به فنا رفت!</p>
+<p>یادم می‌آید‌‌‌ همان موقع با یک لحن خیلی مودبانه پرسیدم «مگه از ورژن کنترل استفاده نمی‌کردی؟ خوب خطرناکه حسن…» و جوابی در این حدود‌ها گرفتم که «چون این پروژه‌ها یا شخصی بودن یا کوچیک‌، زیاد مباحث مهندسی نرم‌افزار رو توشون رعایت نکردم!». خوب اینکه می‌گویم دوست شاید‌، خیال بد کنید‌، ولی خوب خوشبختانه چند سالی هست که حسن را از نزدیک ملاقات نکرده‌ام‌، وگرنه احتمالاً آن موقع نمی‌توانستم خودم را کنترل کنم و ایشان را به کما می‌فرستادم تا این مشکل دوباره برایش تکرار نشود.</p>
+<p>دوباره؟ بله دوباره‌، چند هفته‌ی پیش بود که این حسن آقای گل پستی همراه با نفرین و ناله علیه چند تن از رفقای نزدیک‌ترش نوشت که چرا مجبورش کردند که ویندوز (نه انگار باید در این رفاقت جدا تجدید نظر کرد ;))) عوض کند (یا یک بلایی سر ویندوزش آوردند یا همچین چیزهایی) و فایل‌های دو تا از پروژه‌هایش به فنا رفته…</p>
+<p>البته یک بار خیال برتان ندارد که حسن تازه‌کار است و یا از این حرف‌ها… هر چند هم که ویندوزی باشد، یکی از خلاق‌ترین توسعه دهنده‌های PHP است که می‌شناسم.</p>
+<p>ماجرا البته به حسن ختم نمی‌شود. دوست دیگری دارم که ارشد نرم‌افزار خوانده و ورژن کنترل را فقط از دهان من در دوره‌ی کارشناسی‌اش شنیده‌. یا سال گذشته در حال استفاده از نرم‌افزار اتوماسیون صنعتی یکی از شرکت‌های مطرح این زمینه در محل کارم‌، متوجه شدم که نسخه‌های مختلفشان را با فایل‌های زیپ مدیریت می‌کنند. فکرش را بکنید‌، مثلاً می‌خواستند یک آپدیت بدهند‌، باید هماهنگ می‌شد تکنسینشان در محل شرکت حاضر شود‌، پشت سرور بنشیند‌، فایل زیپ را دانلود و روی پوشه‌ی قبلی overwrite کند‌، تا آپدیت داشته باشیم. این روند البته همانطور که گفتم پروژه‌ی دانشگاهی نبود‌، شرکتی مطرح در حوزه‌ی نرم‌افزار کشور‌، پروژه‌ی ‎.Net می‌نوشت و آن را این‌طور به مشتری می‌رساند (که البته معلوم است خرج دوبله‌اش را از جیب مبارک مشتری کسر می‌کرد). این پروژه حتی مشتری خارجی هم داشت (تا جایی که یادم می‌آید از ترکیه) به هر حال خواستم بگویم:</p>
+<div class="section" id="id1">
+<h2>ورژن کنترل اختیاری نیست:</h2>
+<p>مهم نیست پروژه چقدر کوچک است‌، مهم نیست چقدر کم اهمیت است، مهم نیست شما چقدر کارتان درست است. همین دلیل کفایت می‌کند «اگر همین الان اتفاقی فایل‌ها پاک شد‌، احساس تأسف می‌کنید؟» اگر آره‌، پس استفاده از ورژن کنترل اجباریست! تعارف که نداریم، در توسعه‌ی نرم‌افزار هر چقدر هم این‌کاره باشیم‌، باید بار‌ها اشتباه کنیم تا بتوانیم به نتیجه‌ی دلخواه برسیم. مجبوریم راه‌هایی را امتحان کنیم که قبلاً کسی نرفته، بار‌ها حتی مسیری که خودمان رفته‌ایم را عوض کنیم… جدا چه چیزی قشنگ‌تر از ورژن کنترل می‌تواند کمک کند؟</p>
+</div>
+<div class="section" id="id2">
+<h2>ورژن کنترل تنها محدود به توسعه نرم‌افزار نیست:</h2>
+<p>دارید کتاب می‌نویسد؟ مقاله؟ پایان نامه‌ی دانشگاه‌تان؟ اوه شما طراحید؟ سر و کارتان فقط با HTML و CSS است؟ ‌ گرافیستید؟ مهم نیست، تا جایی که پروژه‌تان بتواند در قالب یک ورژن کنترل توسعه پیدا کند‌، استفاده از آن لطف بزرگی به خودتان است.</p>
+</div>
+<div class="section" id="id3">
+<h2>ورژن کنترل فقط برای توسعه نیست:</h2>
+<p>در <a class="reference external" href="http://foundersbuddy.com">فاندرز بادی</a> ما از ورژن کنترل برای دیپلوی هم استفاده می‌کنیم. این است که حتی اگر چیزی را اشتباها کنیم، برای برگشتش دو ثانیه وقت نیاز است! راستش این قضیه یک بار اتفاق هم افتاد. در حین دیپلوی تغییرات جدید سایت‌، یک ویژگی که هنوز کامل نشده بود هم اشتباهاً روی سایت قرار گرفت… این هم کاری که کردیم:</p>
+<img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/Screenshot%20at%202015-12-26%2023%3A08%3A26.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/Screenshot%20at%202015-12-26%2023%3A08%3A26.png"><p>خوب حالا اگر موافق بحث اصلی متن هستید‌، احتمالاً می‌خواهید بدانید:</p>
+</div>
+<div class="section" id="id4">
+<h2>کدام ورژن کنترل؟</h2>
+<p>جواب کوتاه Git، و بلندش اینکه هر کدامی که دلتان خواست. گیت برای من تا الان انتخاب خوبی بوده و هرگز فایلی نداشته‌ام که مرز ۵۰ مگابایتی‌اش را رد کند. ولی اگر این سناریوی شماست‌، احتمالاً راه حل‌های خوب دیگری هم بتوانید پیدا کنید.</p>
+</div>
+<div class="section" id="id5">
+<h2>از کجا شروع کنیم؟</h2>
+<p>اگر انتخابتان گیت است‌، و کمی با کلاً بحث ورژن کنترل آشنایی دارید‌، <a class="reference external" href="http://try.github.com">این آموزش پویا</a> احتمالاً کارتان را راه بیاندازد. اگر هم این کاره‌اید و یا می‌خواهید سر تا پای این ابزار دوست‌داشتنی را بشناسید، <a class="reference external" href="http://udacity.com">Udacity</a> یک <a class="reference external" href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">دوره‌ی فوق‌العاده عالی</a> دارد. اگر توانستید فیل‌تر گوگل احمق برای <a class="reference external" href="http://udacity.com">Udacity</a> و تامین کننده اینترنت احمق‌ترتان را برای Youtube بردارید‌، احتمالاً از دیدنش لذت خواهید برد.
+و البته <a class="reference external" href="http://navid.kashani.ir">نوید</a> هم <a class="reference external" href="http://navid.kashani.ir/549/git-commit-good-practice/">پست خیلی خوبی</a> برای بهتر کردن تجربهٔ استفاده از ورژن کنترل دارد که می‌تواند استفاده از گیت را برای‌تان خیلی خوشمزه‌تر کند ;) همینطور اگر از کافران ویندوزی هستید‌، <a class="reference external" href="http://navid.kashani.ir/tag/%DA%AF%DB%8C%D8%AA/">برچسب گیت</a> مطالبش را از دست ندهید…</p>
+</div>
+<div class="section" id="id6">
+<h2>اضافه:</h2>
+<p>اگر کاربر ایمکس هستید‌، <a class="reference external" href="http://magit.vc/">magit</a> را از دست ندهید. تجربه‌ی کار با گیت را برایتان واقعاً دلنشین می‌کند. اگر هم مثل من که به تازگی کوچ کرده‌ام (جهت تغییر آب و هوا البته) از <a class="reference external" href="https://atom.io">atom</a> استفده می‌کنید‌، <a class="reference external" href="https://atom.io/packages/git-plus">git-plus</a> همان امکان را به ارمقان می‌آورد.</p>
+</div>
+</div>
+    </div>
+
+    <div class="text-center">
+                    <a class="btn btn-success" href="posts/version-control-is-not-optional.html#disqus_thread" data-disqus-identifier="cache/posts/version-control-is-not-optional.html">Comments</a>
+
+
+    </div>
+
+    </article><article class="h-entry post-text"><div class="text-center">
+
         <h1 class="p-name entry-title"><a href="posts/no-space-mysql-problem.html" class="u-url">وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!</a></h1>
             شاهین
       <a href="posts/no-space-mysql-problem.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-16T19:15:57+03:30" title="2015-11-16 19:15">2015-11-16 19:15</time></a>
@@ -105,33 +153,33 @@ article: http://ogp.me/ns/article#
     <div>
 <p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
 <p><a class="reference external" href="http://navid.kashani.ir/">نوید</a>  چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین اخطاری می‌دهد:</p>
-<pre class="code bash"><a name="rest_code_967fa57c608c41b78b0b7833569b417b-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_1b014c5fba9c4b62808e79733fee9a3c-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا خرخره پر شده. یک فایل log که از <a class="reference external" href="http://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و دیگر نمی‌تواند نفس بکشد.</p>
-<pre class="code bash"><a name="rest_code_d377af4936344ac99f0c451a787edc69-1"></a>rm -rfv PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_7f0f8e12c1a342e5a52b5332b43f5012-1"></a>rm -rfv PATH_TO_FAT_FILE
 </pre>
 <p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite> می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده حالا؟ Only GOD knows :)</p>
-<pre class="code bash"><a name="rest_code_717059429492454a87e0c6ffe0e86131-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_08e9a763a685467d953bd4072e00159c-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
 </pre>
 <p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل خودش چیست؟ <cite>lsof</cite></p>
-<pre class="code bash"><a name="rest_code_f3cd894f57d94ab39c3ef36a5a1bbf2d-1"></a>lsof PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_ea2f9b3e248d4a7283d20fc42c7c05f8-1"></a>lsof PATH_TO_FAT_FILE
 </pre>
 <p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
-<pre class="code bash"><a name="rest_code_c3898e40dfae431682d8a5018e2d099e-1"></a>sudo !!
+<pre class="code bash"><a name="rest_code_f3465a9a0a164224b89924b615628eb6-1"></a>sudo !!
 </pre>
 <p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
-<pre class="code bash"><a name="rest_code_716cd7b7f57e41058895a648e6ab549a-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_8ef792b6dfa34da29aaff20c552655ea-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به مشکل داشته باشد؟ کمی جستجو  و <cite>df -i</cite>:</p>
-<pre class="code bash"><a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-1"></a>...
-<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
-<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-3"></a>...
+<pre class="code bash"><a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-1"></a>...
+<a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
+<a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-3"></a>...
 </pre>
 <p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
 <blockquote>
 آی‌نود (به انگلیسی: inode) به ساختمان داده‌هایی گفته می‌شود که در سیستم‌فایل‌های شبیه به یونیکس مانند UFS استفاده می‌شود. یک inode اطلاعات پایه‌ای در مورد فایل‌ها، دایرکتوری‌ها و اشیاء دیگر موجود در فایل‌سیستم را در خود نگهداری می‌کند.</blockquote>
 <p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
-<pre class="code bash"><a name="rest_code_71ccafe01da14df4b9ef50edc7eb282f-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+<pre class="code bash"><a name="rest_code_dbd25e37eceb4fd381625bf0492823c4-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
 </pre>
 <p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل دیتابیس MySQL و وردپرس بود. یک بار دیگر صفحه را باز کنیم تا ببینیم دقیقا چه اتفاقی می‌افتد… و… عه؟ مشکل حل شده! بریم ببینیم تنظیمات جدید را ذخیره می‌کند؟ ها‌، آره آن هم حل شده. ضرب‌المثل ربط … به … این‌جا خیلی قشنگ صدق می‌کند :)</p>
 <p>به هر حال چند تا درس گنده یاد گرفتم، همچین باگ‌هایی ارزش یک کلاس درس واقعی را دارند‌، این‌طور نیست؟</p>
@@ -171,77 +219,6 @@ article: http://ogp.me/ns/article#
 
     <div class="text-center">
                     <a class="btn btn-success" href="posts/multithreading-bug-experiment-on-PyMongo-driver.html#disqus_thread" data-disqus-identifier="cache/posts/multithreading-bug-experiment-on-pymongo-driver.html">Comments</a>
-
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/douglas-crockford-javascript-the-good-parts.html" class="u-url">خوبی‌های جاوا اسکریپت؟</a></h1>
-            شاهین
-      <a href="posts/douglas-crockford-javascript-the-good-parts.html" rel="bookmark"><time class="published dt-published" datetime="2015-07-08T15:55:01+04:30" title="2015-07-08 15:55">2015-07-08 15:55</time></a>
-    </div>
-    <div class="p-summary entry-summary">
-    <div>
-<p>خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
-این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
-بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
-باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
-فعالیت‌هایم‌، عمدتا تجربه‌های جدید فوق‌العاده‌ای را مزه‌مزه می‌کنم که دوست ندارم زود
-فراموش شوند و فکر می‌کنم بازگویی‌شان در این وبلاگ بتواند کمک کند. این است که:</p>
-<p>نمی‌دانم چقدر با JavaScript آشنایی دارید‌، ولی بعید می‌دانم که پی‌اش رفته باشید و
-اسم داگلاس کراکفورد (<a class="reference external" href="http://www.crockford.com/">Douglas Crockford</a>) به گوشتان نخورده باشد.</p>
-<p>عمدهٔ معروفیت ایشان هم پی کتابی به اسم Javascript the Good Parts شکل گرفته که شاید
-برای خیلی‌ها یک جک به نظر برسد. چطور؟</p>
-<p>خوب بگذارید این‌طور شروع کنم‌: آشنایی من با جاوااسکریپت به کتاب <a class="reference external" href="http://eloquentjavascript.net/">Eloquent
-Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با <a class="reference external" href="https://nodejs.org/">Nodejs</a> را بتوان چاشنی
-تجربه‌ام با این زبان دانست. حقیقت امر این است که از این زبان عمرا لذت نمی‌بردم. چه
-می‌دانم شاید اکثریتش بابت معلوم نبودن ریشهٔ درست و حسابی‌اش مثل زبان‌های دیگر
-باشد. شاید همین دلیل اولش باعث شده باشد که بتوان داخل اینترنت هزار و یک گزینهٔ
-چرند را به عنوان Best practices این زبان پیدا کرد که متاسفانه در خیلی از کد‌های
-منتشر شده به این زبان مورد استفاده قرار گرفته‌اند. شاید ساده‌ترین نمونهٔ این‌ها را
-بتوان استفاده نکردن از سمی کولون «;» برای پایان دادن به statement‌ها دانست.</p>
-<p>دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
-می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
-است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:</p>
-<pre class="code javascript"><a name="rest_code_1db46b86109c4bc4a56be1fbdd27718c-1"></a><span class="k">return</span>
-<a name="rest_code_1db46b86109c4bc4a56be1fbdd27718c-2"></a><span class="p">{</span>
-<a name="rest_code_1db46b86109c4bc4a56be1fbdd27718c-3"></a>    <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
-<a name="rest_code_1db46b86109c4bc4a56be1fbdd27718c-4"></a><span class="p">}</span>
-</pre>
-<p>همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
-می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم <a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook">این ارائهٔ</a> آقای
-کراکفورد را از دست ندهید.</p>
-<p>نکتهٔ کلی در مورد این زبان این است که نقص‌های طراحی فراوان و به صورت بحرانی
-مشکل‌زایی را می‌توان در آن یافت. همین‌طور نبود منابع یک‌پارچه با وجود پیاده‌سازی‌های
-متنوع (که به قول خود کراکفورد‌، تنها مشکلات طراحی را کپی کردن) باعث کج‌فهمی
-برنامه‌نویسانی که فکر می‌کنند می‌توانند این زبان را به راحتی یاد بگیرند شده است.
-تمام این‌ها در کنار گستردگی پلتفرمی که تقریبا هیچ زبان دیگری حتی به نزدیکی‌اش هم
-نرسیده است (مرورگرها)، و چه می‌دانم شاید امکاناتی که Prototype‌ها به برنامه‌نویس
-می‌دهند‌، آن‌چنان نقش تیغ دو لبه را برای برنامه‌نویسان زیبا ایفا می‌کند که نه می‌توان
-به کلی از خیرش گذشت (و به قول کراکفورد یادش نگرفت تا موقعی که بهش نیاز داریم) نه
-این که بتوان به عنوان یک غول همه چیز تمام برای هر مساله‌ای (سیستم‌عامل NodeJsای رو
-که یادتون می‌آد؟) به آن نگاه کرد (دارم به پایتون فکر می‌کنم، ولی اون هم نمی‌تونه
-جاهایی که جاوااسکریپت خوب عمل می‌کنه‌، خودی نشون بده).</p>
-<a class="reference external image-reference" href="https://xkcd.com/1508/"><img alt="XKCD operation systems" src="https://imgs.xkcd.com/comics/operating_systems.png"></a>
-<p>در پایان این ارائه کسی از کراکفورد نظرش را در مورد HTML5 می‌پرسد و حقیقتش یک
-جورهایی حرف دلم را می‌زند. تا قبل از HTML5 و یا CSS3 تکلیفمان روشن بود. ساختار را
-با HTML و آن DOM چلاغش نشان می‌دادیم. رنگ و لعاب را با CSS می‌گفتیم و هر جینگولک
-دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
-کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
-مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:</p>
-<pre class="code text"><a name="rest_code_bcc3add408dd4880a3bb3e555b8bbac5-1"></a>It's easy to make things bigger, it's harder to make things better.
-</pre>
-<p>قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
-نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
-که Nodejs می‌تواند بکند بی‌خبرم. هدفم از نوشتن این مطلب برایم حکم ثبت استارت یک
-تجربه جدید را دارد. احتمالا در آینده بیشتر در مورد کلنجارهایم با جاوااسکریپت
-خواهم نوشت. هر چند بعید می‌دانم به این زودی‌ها دوستش داشته باشم :)</p>
-</div>
-    </div>
-
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/douglas-crockford-javascript-the-good-parts.html#disqus_thread" data-disqus-identifier="cache/posts/douglas-crockford-javascript-the-good-parts.html">Comments</a>
 
 
     </div>

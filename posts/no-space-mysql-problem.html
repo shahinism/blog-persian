@@ -20,6 +20,7 @@ article: http://ogp.me/ns/article#
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
 <link rel="prev" href="multithreading-bug-experiment-on-PyMongo-driver.html" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB" type="text/html">
+<link rel="next" href="version-control-is-not-optional.html" title="ورژن کنترل اختیاری نیست!" type="text/html">
 <meta property="og:site_name" content="شاهین">
 <meta property="og:title" content="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!">
 <meta property="og:url" content="http://5hah.in/posts/no-space-mysql-problem.html">
@@ -110,33 +111,33 @@ article: http://ogp.me/ns/article#
     <div>
 <p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
 <p><a class="reference external" href="http://navid.kashani.ir/">نوید</a>  چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین اخطاری می‌دهد:</p>
-<pre class="code bash"><a name="rest_code_967fa57c608c41b78b0b7833569b417b-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_1b014c5fba9c4b62808e79733fee9a3c-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا خرخره پر شده. یک فایل log که از <a class="reference external" href="http://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و دیگر نمی‌تواند نفس بکشد.</p>
-<pre class="code bash"><a name="rest_code_d377af4936344ac99f0c451a787edc69-1"></a>rm -rfv PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_7f0f8e12c1a342e5a52b5332b43f5012-1"></a>rm -rfv PATH_TO_FAT_FILE
 </pre>
 <p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite> می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده حالا؟ Only GOD knows :)</p>
-<pre class="code bash"><a name="rest_code_717059429492454a87e0c6ffe0e86131-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_08e9a763a685467d953bd4072e00159c-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
 </pre>
 <p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل خودش چیست؟ <cite>lsof</cite></p>
-<pre class="code bash"><a name="rest_code_f3cd894f57d94ab39c3ef36a5a1bbf2d-1"></a>lsof PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_ea2f9b3e248d4a7283d20fc42c7c05f8-1"></a>lsof PATH_TO_FAT_FILE
 </pre>
 <p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
-<pre class="code bash"><a name="rest_code_c3898e40dfae431682d8a5018e2d099e-1"></a>sudo !!
+<pre class="code bash"><a name="rest_code_f3465a9a0a164224b89924b615628eb6-1"></a>sudo !!
 </pre>
 <p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
-<pre class="code bash"><a name="rest_code_716cd7b7f57e41058895a648e6ab549a-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_8ef792b6dfa34da29aaff20c552655ea-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به مشکل داشته باشد؟ کمی جستجو  و <cite>df -i</cite>:</p>
-<pre class="code bash"><a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-1"></a>...
-<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
-<a name="rest_code_c26923dfa0ea4db0aaf966b3f43f85a5-3"></a>...
+<pre class="code bash"><a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-1"></a>...
+<a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
+<a name="rest_code_5b6c71785b0d419b85d5603e0d1cfab8-3"></a>...
 </pre>
 <p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
 <blockquote>
 آی‌نود (به انگلیسی: inode) به ساختمان داده‌هایی گفته می‌شود که در سیستم‌فایل‌های شبیه به یونیکس مانند UFS استفاده می‌شود. یک inode اطلاعات پایه‌ای در مورد فایل‌ها، دایرکتوری‌ها و اشیاء دیگر موجود در فایل‌سیستم را در خود نگهداری می‌کند.</blockquote>
 <p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
-<pre class="code bash"><a name="rest_code_71ccafe01da14df4b9ef50edc7eb282f-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+<pre class="code bash"><a name="rest_code_dbd25e37eceb4fd381625bf0492823c4-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
 </pre>
 <p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل دیتابیس MySQL و وردپرس بود. یک بار دیگر صفحه را باز کنیم تا ببینیم دقیقا چه اتفاقی می‌افتد… و… عه؟ مشکل حل شده! بریم ببینیم تنظیمات جدید را ذخیره می‌کند؟ ها‌، آره آن هم حل شده. ضرب‌المثل ربط … به … این‌جا خیلی قشنگ صدق می‌کند :)</p>
 <p>به هر حال چند تا درس گنده یاد گرفتم، همچین باگ‌هایی ارزش یک کلاس درس واقعی را دارند‌، این‌طور نیست؟</p>
@@ -148,6 +149,9 @@ article: http://ogp.me/ns/article#
               <ul class="pager hidden-print">
 <li class="previous">
                 <a href="multithreading-bug-experiment-on-PyMongo-driver.html" rel="prev" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="version-control-is-not-optional.html" rel="next" title="ورژن کنترل اختیاری نیست!">ارسال بعدی</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
                         <div id="disqus_thread"></div>

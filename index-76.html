@@ -105,15 +105,15 @@ article: http://ogp.me/ns/article#
     <div class="p-summary entry-summary">
     <div>
 <p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
-<pre class="code bash"><a name="rest_code_4e21325336a54b6789f042d088f1fa2d-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
-<a name="rest_code_4e21325336a54b6789f042d088f1fa2d-2"></a><span class="nb">source </span>antigen.zsh
+<pre class="code bash"><a name="rest_code_9f9d24c8fedf4469b10cb21cb6599994-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
+<a name="rest_code_9f9d24c8fedf4469b10cb21cb6599994-2"></a><span class="nb">source </span>antigen.zsh
 </pre>
 <p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
-<pre class="code bash"><a name="rest_code_077942eb27a34f5caa8b079906645d15-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
+<pre class="code bash"><a name="rest_code_327aa9b6a55e423399e69ec1e1bb562a-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
 </pre>
 <p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
 <p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
-<pre class="code bash"><a name="rest_code_94fdf2c970874440a1971077a8cae069-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
+<pre class="code bash"><a name="rest_code_6f1b3fc9af154a118ad8ab44874d9a26-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
 </pre>
 <p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
 <p>و اما سوال مهم:</p>
@@ -178,10 +178,10 @@ article: http://ogp.me/ns/article#
 <p>مهم‌ترین دلیلش این که به دلیل کوچک بودن صفحهٔ مانیتورم‌، با چند پنجرهٔ باز در آن واحد‌، خیلی شلوغ‌کاری می‌شد. این بود که امروز تصمیم گرفتم تا جای ممکن‌، اجزای اضافی را حذف کنم. و خوب وقتی پای ایمکس در میان باشد‌، هر ابزار دیگری اضافه است D:</p>
 <p>در دسترس بودن همیشگی ایمکس چند مزیت عمده دارد. اول این که می‌توانم هر وقت که خواستم‌، با <a class="reference external" href="http://orgmode.org/">org-mode</a> و آن قابلیت Capture خیلی خیلی به درد بخورش‌، هر Note, Link یا TODO‌ای که به ذهنم رسید را سریع ثبت کنم که از دستم نرود (راجع به این یکی خیلی حرف خواهیم زد. خیلی هم زود این کار را می‌کنیم). دومندش را هم نمی‌شود این‌جا گفت‌، باید اول راجع به یک چیز دیگر بگویم‌!‌</p>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> قابلیت اجرای پوستهٔ فرمان را در خودش دارد. آن هم به هزار و اندی روش مختلف‌! من هنوز راجع به تفاوت‌ها و مزیت‌های این پوسته‌ها زیاد نمی‌دانم. ولی فعلا می‌خواهم بستهٔ multi-term را نصب و تجربه کنم. این بسته در واقع یک سری امکانات اضافه را نسبت به term که همراه خود ایمکس نصب می‌شود به همراه دارد. خوب ما هم فعلا تستش می‌کنیم تا ببینیم چه می‌شود.</p>
-<pre class="code text"><a name="rest_code_e467355580db40e19e14b105dbf94966-1"></a>package-install multi-term
+<pre class="code text"><a name="rest_code_83c6c347e3464e4889138a2f826be0d2-1"></a>package-install multi-term
 </pre>
 <p>و حالا‌ هم با دستور زیر اجرایش می‌کنم:</p>
-<pre class="code text"><a name="rest_code_9b73a6e8bb014446abd41cc3a2590b16-1"></a>M-X multi-term
+<pre class="code text"><a name="rest_code_176090c60ef64999b1c4f0165bc99601-1"></a>M-X multi-term
 </pre>
 <p class="more"><a href="posts/emacs-as-a-terminal-emulator.html"> بیشتر بخوانید …</a></p>
 </div>

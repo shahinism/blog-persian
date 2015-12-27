@@ -145,13 +145,13 @@ article: http://ogp.me/ns/article#
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code text"><a name="rest_code_229b670ec4804d0eac811226c38ebce2-1"></a>/whois shahin
+<pre class="code text"><a name="rest_code_e348da7082684c3991b3829504d3f043-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png"><p>و خوب <a class="reference external" href="http://freenode.net">Freenode</a> یک خدمت رایگانی به اسم Cloak ارائه می‌دهد که به صورت پیش‌فرض فعال نیست. برای فعال کردنش باید یکی از مدیران خانهٔ ‎#freenode این کار را برای‌تان انجام دهد. به این خانه بروید و در خواست‌تان را در همان اتاق اصلی بیان کنید. احتمال خیلی زیاد همان لحظه به درخواست‌تان تکبیر می‌گویند و تمام. حالا وقتی whois می‌شوید همچین چیزی معلوم می‌شود:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png"><p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_e9f5658900824e89851a6305f6ccf8a4-1"></a>/join technotux
+<pre class="code text"><a name="rest_code_2a6c89cdaabd453db12ac09b16a38311-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -160,10 +160,10 @@ article: http://ogp.me/ns/article#
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code text"><a name="rest_code_297369bd4c5c4c8aa12891a3b6f4ef64-1"></a>/set
+<pre class="code text"><a name="rest_code_9e3420ed13454ce9acb81d9cca6228d3-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code text"><a name="rest_code_adea0e86209b4dd4a168e55aede3dd3c-1"></a>/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_1cd085c576d246f0b2b0921a56bbbcf4-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -178,7 +178,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code text"><a name="rest_code_ed258fd8abc84328b15e5d43b2fc7400-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_e8a47c14435e473fb3faef7a99929fc0-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
