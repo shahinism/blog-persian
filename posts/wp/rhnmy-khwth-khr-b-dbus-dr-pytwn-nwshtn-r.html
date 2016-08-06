@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<base href="https://5hah.in/posts/wp/rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin) | شاهین</title>
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/style.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://5hah.in/posts/wp/rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
+<link rel="prev" href="skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html" title="اسکریپتی برای کاهش هزینهٔ شرکت در کلاس‌های دانشگاه Coursera" type="text/html">
+<link rel="next" href="nskhh-jdyd-wyryshgr-mtn-ngr.html" title="نسخهٔ جدید ویرایشگر متن نگار" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content="راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)">
+<meta property="og:url" content="https://5hah.in/posts/wp/rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html">
+<meta property="og:description" content="بعد از کمی جستجو‌، با DBus آشنا شدم و البته یادم آمد که خیلی وقت پیش‌، جادی عزیز‌، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-09-26T15:52:57+03:30">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me.html">درباره</a>
+                </li>
+<li>
+<a href="../../">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/index.html">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form class="navbar-form navbar-left" role="search" method="get" id="search" action="//duckduckgo.com/">
+<div class="input-group">
+<input type="hidden" name="sites" value="https://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" class="form-control" placeholder="جستجو..."><span class="input-group-btn">
+<input class="btn btn-default" type="submit" value="برو"></span>
+</div>
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><div class="jumbotron">
+    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
+        <h1>شاهین</h1>
+        <hr class="hdrline">
+<a class="social" href="https://github.com/shahinism">
+          <img src="../../assets/images/github.png"></a>
+        <a class="social" href="https://twitter.com/shahinism">
+          <img src="../../assets/images/twitter.png"></a>
+        <a class="social" href="https://ir.linkedin.com/in/shahinism">
+          <img src="../../assets/images/linkedin.png"></a>
+      </div>
+    </section>
+</div>
+
+  <div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+          <h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">راهنمای کوتاه کار با DBus در پایتون (نوشتن روبات پاسخگو برای Pidgin)</a></h1>
+
+        شاهین
+      <a href="#" rel="bookmark"><time class="published dt-published" datetime="2012-09-26T15:52:57+03:30" itemprop="datePublished" title="2012-09-26 15:52">2012-09-26 15:52</time></a>
+    </div>
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>بعد از کمی جستجو‌، با <a title="dbus official webpage" href="http://dbus.freedesktop.org/" target="_blank">DBus</a> آشنا شدم و البته یادم آمد که خیلی وقت پیش‌،<a title="jadi dbus" href="http://jadi.net/2011/07/linux-chera-command-line/" target="_blank"> جادی عزیز‌</a>، کاری تقریبا در همین مایه‌ها با DBus و Pidgin انجام داده بود‌. توضیحات تکمیلی در مورد DBus را می‌توانید در وبلاگ جادی بخوانید‌، خصوصا این که اسکریپت نوشته شده توسط جادی در آن پست‌، پیش در آمد خوبی برای این کار است‌، و حقیقتش تنها منبع به درد بخورم در این زمینه بود‌! (منظورم در زمینهٔ عملی کار با DBus است‌، در زمینهٔ تئوری و به عنوان یک راهنما می‌توان به <a title="dbus-python turorila" href="http://dbus.freedesktop.org/doc/dbus-python/doc/tutorial.html" target="_blank">راهنمای</a> Freedesktop بسنده کرد‌.)</p>
+<p>مساله این‌جاست که می‌خواهیم اسکریپتی بنویسیم که پس از اجرا‌، منتظر Pidgin بماند‌. اگر Pidgin پیغامی دریافت کرد‌، اسکریپت به صورت خود‌کار و بلافاصله‌، جوابی را که از قبل بهش خورانده‌ایم رو به مخاطب آن‌ور خط بدهد‌.</p>
+<p>با این وصف‌، اسکریپت‌مان دو مرحله خواهد داشت‌.</p>
+<p>اول‌، منتظر ماندن برای یک علامت که از طرف Pidgin‌، پس از دریافت پیام ارسال می‌شود‌.</p>
+<p>دوم‌، ارسال جواب برای مخاطبی که پیغام را ارسال کرده‌.</p>
+<p>برای انجام این کار اول از همه‌، ابزار‌های مورد نیازمان را وارد می‌کنیم‌:</p>
+<p>[python]</p>
+<p>import sys</p>
+<p>import dbus</p>
+<p>from PyQt4.QtGui import QApplication</p>
+<p>from dbus.mainloop.qt import DBusQtMainLoop</p>
+<p>[/python]</p>
+<p>قرار بر این بود که اسکریپت پس از اجرا منتظر بماند‌، درست؟ خوب همان‌طور که می‌دانید برنامه‌ها منطقا جوری نوشته می‌شوند که یک کاری را شروع کنند‌، انجام دهند‌، و پایان یابند‌. این روند زیاد برای کار ما مناسب نیست‌. از طرفی استفاده از حلقه‌های بی‌نهایت مرسوم‌‌، جز پیچیده کردن کار‌، نتیجه‌ای به همراه ندارد‌. این است که برای سازگاری بیشتر اسکریپت با برنامه‌های Qt (در ادامه دلیلش را می‌گویم) از QApplication و DBusQtMainLoop برای مدیریت حلقهٔ اصلی استفاده می‌کنیم‌. در ادامه اضافه می‌کنیم:</p>
+<p>[python]</p>
+<p>bus_loop = DBusQtMainLoop(set_as_default=True)</p>
+<p>[/python]</p>
+<p>کار با حلقهٔ اصلی هنوز تمام نشده‌، باقی کار را آخر انجام می‌دهیم‌. و اما حالا نوبت به انجام مرحلهٔ اول کارمان می‌رسد. تابع گیرندهٔ سیگنال (همان علامتی که Pidgin پس از دریافت پیغام ارسال می‌کند) را می‌نویسیم‌.</p>
+<p>[python]</p>
+<p>def connect_dbus(text):</p>
+<p>global answer</p>
+<p>answer = text</p>
+<p>bus = dbus.SessionBus()</p>
+<p>bus.add_signal_receiver(pidgin_control_func,</p>
+<p>dbus_interface="im.pidgin.purple.PurpleInterface",</p>
+<p>signal_name="ReceivedImMsg")</p>
+<p>[/python]</p>
+<p>اولین سوال در این تابع‌، این است که به کدام DBus وصل شویم؟ به طور معمول دو DBus داریم‌، SystemBus که به صورت سراسری (System wide) است‌‌. و دومی SessionBus که محدود به یوزر اجرا کنندهٔ برنامه می‌شود‌. برای کار ما‌، دومی‌، انتخاب معقول‌تری است‌. پس از اتصال‌، نوبت به نصب یک پیغام‌گیر می‌شود‌. تابع مورد استفاده به صورت bus.add_signal_receiver است که سه آرگومان می‌گیرد‌. که هر کدام به سوالی پاسخ می‌دهند‌:</p>
+<p>۱- پس از دریافت سیگنال کدام تابع را صدا کنم؟ پاسخ: pidgin_control_func (تابعی که در مرحلهٔ دوم خواهیم ساخت)</p>
+<p>۲- روی DBus به حرف کدام برنامه گوش کنم؟ پاسخ: Pidign که خوب ما از آدرس DBusاش برای معرفی استفاده می‌کنیم‌.</p>
+<p>۳- منتظر چه نوع علامتی باشم؟ پاسخ: ReceivedImMsg که با کمی جستجو در مستندات Pidgin به عنوان علامت دریافت پیغام توسط Pidgin شناسایی کردیم ;-)</p>
+<p>در این تابع ما از فراخوان می‌خواهیم که آرگومانی را به عنوان text برایمان ارسال کند و آن را به متغیر سراسری answer نسبت می‌دهیم‌. دلیل این کار ساده است‌. چون می‌خواهیم کلا در برنامهٔ اصلی فقط همین تابع را صدا کنیم و خودش باقی کار‌ها را انجام دهد.</p>
+<p>نوبت به نوشتن تابع دوم می‌رسد‌:</p>
+<p>[python]</p>
+<p>def pidgin_control_func(account, sender, message, conversation, flags):</p>
+<p>bus = dbus.SessionBus()</p>
+<p>obj = bus.get_object("im.pidgin.purple.PurpleService", "/im/pidgin/purple/PurpleObject")</p>
+<p>purple = dbus.Interface(obj, "im.pidgin.purple.PurpleInterface")</p>
+<p>if purple.PurpleAccountGetUsername(account) != sender:</p>
+<p>purple.PurpleConvImSend(purple.PurpleConvIm(conversation), answer)</p>
+<p>[/python]</p>
+<p>خوب اول از همه این که ما در نوشتن این تابع ۶ آرگومان می‌گیریم‌. و البته این شش آرگومان چیز‌هایی هستند که همان سیگنال ReceivedImMsg برای‌مان می‌فرستد‌. که البته اطلاعات خیلی به درد بخوری‌اند‌. طبق روال قبلی به SessionBus وصل می‌شویم (این کار را می‌شد یک بار انجام داد‌، ولی موقع استفاده به صورت ماژول کمی جفتک می‌انداخت). در ادامه به سه سوال دیگر جواب می‌دهیم:</p>
+<p>۱- روی DBus به کدام برنامه گوش کنم؟ پاسخ im.pigin.purple.PurpleService</p>
+<p>۲- آدرسش کجاست؟ پاسخ: ‎/im/pidgin/purple/PurpleObject</p>
+<p>در واقع با پاسخ به این دو سوال‌، سعی به ساخت یک شیع ارتباطی با برنامهٔ مورد نظر داریم‌. حال با این شیع می‌توانیم یک رابط برای مکاتبهٔ تابع‌مان با Pidgin بسازیم‌.</p>
+<p>۳- کدام رابط از آبجکت ساخته شده؟ پاسخ: im.pidgin.purple.PurpleInterface</p>
+<p>و خوب حالا تنها برای ارسال پیام کافی است تابع PurpleConvImSend را از شیع ساخته شده صدا کنیم‌ و به دو سوال پاسخ دهیم:</p>
+<p>۱- به چه کسی پیغام بفرستم؟ پاسخ: کسی که برای‌مان پیغام فرستاده‌. برای به دست آوردنش کافی است که از تابع PurpleConvIm از شیع‌مان بخواهم که آدرسش را پیدا کند ;-)</p>
+<p>۲- چه بگویم؟ پاسخ answer‌‌، همان متغیر سراسری که که در تابع اول‌، مقدار دهی‌اش کردیم‌.</p>
+<p>البته من در تابع یک قفل کودک هم گذاشته‌ام‌. چطور؟ ماجرا این‌جاست که با نوشتن هم‌چین تابعی‌، وقتی وسوسه می‌شوید که خود‌تان امتحانش کنید‌، به یک لوپ بی‌نهایت تبدیلش می‌کنید! کافیسیت برای دیدن این لوپ شرط if موجود در تابع را پاک کرده و تابع را امتحان کنید‌. یک بار به خود‌تان پیغام بدهید‌، Pidgin علامت می‌دهد‌، روبات پاسخ می‌دهد و دوباره پس از دریافت پیغام روبات روی Pidgin‌، این برنامه دوباره سیگنال ارسال می‌کند و این کار اگر ولش کنید تا عبد ادامه خواهد داشت ;-)</p>
+<p>دیگر وقت اجرای تابع اصلی رسیده‌، و کافیست که:</p>
+<p>[python]</p>
+<p>app = QApplication([])</p>
+<p>connect_dbus(message)</p>
+<p>app.exec_()</p>
+<p>[/python]</p>
+<p>برنامه الان به راحتی اجرا می‌شود و کاری را هم که می‌خواهیم دقیقا انجام می‌دهد(البته طبیعی است که چیز‌های ساده‌ای باید به آن اضافه کنید‌.)‌. ولی هنوز یک مشکل دارد‌، آن هم این که نمی‌توان آن را بست‌! حتی Ctrl+c هم در ترمینال آن را نمی‌کشد‌. این است که از دو خط زیر و دقیقا قبل از ساختن شیع app کمک می‌گیریم:</p>
+<p>[python]</p>
+<p>import signal</p>
+<p>signal.signal(signal.SIGINT, signal.SIG_DFL)</p>
+<p>[/python]</p>
+<p>کار این تابع این است که وقتی SIGINT یا همان Ctrl+c ما را گرفت (توجه کنید که این کلید در رابط گرافیکی Qt برای کپی متن استفاده می‌شود) آن را به SIG_DFL ترجمه کند‌! یعنی بزند بترکاند برنامه‌مان را ;-)</p>
+<p>می‌توانید نسخهٔ کامل اسکریپت را از<a title="Download answering machine" href="https://github.com/shahinism/PyPomo/raw/master/src/answering_machine.py" target="_blank"> این لینک </a>دانلود کنید و به صورت زیر اجرایش کنید:</p>
+<pre class="code literal-block"><span></span>python answering_machine.py ANSWER_MESSAGE
+</pre>
+
+
+<p>اما خوب درست است که این اسکریپت تقریبا مشکل‌مان را حل می‌کند‌، اما هنوز یک جای کارش می‌لنگد‌! باز هم من کم حواس باید یادم باشد که اجرایش کنم‌! و از آن بد‌تر در وقت آزادم خاموشش کنم‌! و این اصلا حال نمی‌دهد‌. این است که آن را با <a title="PyPomo Official webpage" href="http://shahinism.github.com/PyPomo/" target="_blank">PyPomo</a> قاطی می‌کنم‌ (آخرین نسخهٔ روی گیت). جوری که وقتی در حال انجام یک پامودور هستم‌، این اسکریپت را روشن کند‌، و وقتی که موقع استراحت است یا interrupt داده‌ام‌، آن را خاموش کند‌. حالا دیگر تقریبا همه چیز حل شده است ;-)</p>
+<p><strong>پی‌نوشت۱: </strong>متاسفانه هر کاری کردم نتوانستم این دندانه گذاری کد‌ها را درست کنم‌. مشکل از پلاگین وردپرس‌ام است‌، یا همچین چیزی‌، باید به فکر جایگزینی برایش باشم‌!</p>
+<p><strong>پی‌نوشت۲:</strong> می‌دانم برنامه به بهترین شکل ممکن نوشته نشده‌، زیاده کاری دارد و حتی در ترکیبش با PyPomo باگ‌هایی هست که به چشمم نیامده‌، ولی خوب حداقل تلاشم را کرده‌ام دیگر‌. اگر برنامه نظرتان را جلب کرده‌، و راه بهتری بلدید‌، روی گیت فورکش کنید و تغییرات‌تان را اعمال کنید‌. مطمئنم چیز‌های بهتری می‌توان ازش ساخت‌!</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="bg-info">
+        
+      </div>
+              <ul class="pager hidden-print">
+<li class="previous">
+                <a href="skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html" rel="prev" title="اسکریپتی برای کاهش هزینهٔ شرکت در کلاس‌های دانشگاه Coursera">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="nskhh-jdyd-wyryshgr-mtn-ngr.html" rel="next" title="نسخهٔ جدید ویرایشگر متن نگار">ارسال بعدی</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://5hah.in/posts/wp/rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html",
+        disqus_title="\u0631\u0627\u0647\u0646\u0645\u0627\u06cc \u06a9\u0648\u062a\u0627\u0647 \u06a9\u0627\u0631 \u0628\u0627 DBus \u062f\u0631 \u067e\u0627\u06cc\u062a\u0648\u0646 (\u0646\u0648\u0634\u062a\u0646 \u0631\u0648\u0628\u0627\u062a \u067e\u0627\u0633\u062e\u06af\u0648 \u0628\u0631\u0627\u06cc Pidgin)",
+        disqus_identifier="cache/posts/wp/rhnmy-khwth-khr-b-dbus-dr-pytwn-nwshtn-r.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -99,33 +99,33 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html" class="u-url">چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html" class="u-url">چ‌چ‌چ (۵)‌: تغییر رمز عبور root در MySQL</a></h1>
             شاهین
-      <a href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-01T20:28:18+03:30" title="2011-12-01 20:28">2011-12-01 20:28</time></a>
+      <a href="posts/wp/chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-01T20:28:18+03:30" title="2011-12-01 20:28">2011-12-01 20:28</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p></p>
 <h4>دستور mysqladmin برای تغییر کلمه عبور ریشه</h4>
 <p>اگر شما هرگز برای کاربر ریشهٔ کارگزار MySQLتان یک رمز عبور تعیین نکرده‌اید‌، کارگزار دیگر نیازی به کلمهٔ عبور برای متصل شدن به عنوان کاربر ریشه نخواهد داشت‌. برای ایجاد رمز عبور ریشه برای اولین بار‌، از دستور mysqlamin در خط فرمان به صورت زیر عمل کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysqlamin -u root pasword NEWPASSWORD
+<pre class="code literal-block"><span></span>$ mysqlamin -u root pasword NEWPASSWORD
 </pre>
 
 
 <p>به هر حال‌، اگر می‌خواهید رمز عبور کاربر ریشه را تعویض (‌یا به روز رسانی‌) کنید‌، پس باید دستور فوق را به شکل زیر تغییر دهید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u root -p» oldpassword» password newpass
+<pre class="code literal-block"><span></span>$ mysqladmin -u root -p» oldpassword» password newpass
 </pre>
 
 
 <p>برای مثال‌، اگر رمز عبور قدیمی abc باشد‌، شما می‌توانید روز جدید را به صورت ۱۲۳۴۵۶ با دستور زیر ایجاد کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
+<pre class="code literal-block"><span></span>$ mysqladmin -u root -p» abc» password «۱۲۳۴۵۶»
 </pre>
 
 
 <h4>تغییر رمز عبور MySQL برای دیگر کاربران</h4>
 
 <p>برای تغییر رمز عبور کاربر عادی (‌فرض می‌کنیم که می‌خواهیم رمز عبور کاربر vivek را تغییر دهیم‌) باید از دستور زیر استفاده کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysqladmin -u vivek -p oldpassword password newpass
+<pre class="code literal-block"><span></span>$ mysqladmin -u vivek -p oldpassword password newpass
 </pre>
 
 
@@ -133,22 +133,22 @@ article: http://ogp.me/ns/article#
 
 <p>این روشی دیگر است‌. MySQL نام‌های کاربری و رمز عبور‌ها را در یک جدول در پایگاه دادهٔ MySQL ذخیره می‌کند‌. با استفاده از روش زیر می‌توانید مستقیما رمز عبور کاربر Vivek را تغییر دهید‌:</p>
 <p>۱) به کارگزار mysql وارد شوید‌ و دستور زیر را در خط فرمان وارد کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -p
+<pre class="code literal-block"><span></span>$ mysql -u root -p
 </pre>
 
 
 <p>۲) از پایگاه داده mysql استفاده کنید (‌فرمان را در اعلان mysql&gt; ‎ وارد کنید‌):</p>
-<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> use mysql<span class="p">;</span>
+<pre class="code literal-block"><span></span>mysql<span class="p">&amp;</span>gt<span class="p">;</span> use mysql<span class="p">;</span>
 </pre>
 
 
 <p>۳) رمز عبور کاربر vivek را با وارد کردن دستور زیر تغییر دهید‌:</p>
-<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’<span class="p">;</span>
+<pre class="code literal-block"><span></span>mysql<span class="p">&amp;</span>gt<span class="p">;</span> update user <span class="nb">set</span> <span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span>“NEWPASSWORD”<span class="o">)</span> where <span class="nv">User</span><span class="o">=</span>’vivek’<span class="p">;</span>
 </pre>
 
 
 <p>۴) سرانجام‌، ابزار‌ها را دوباره بارگزاری کنید‌:</p>
-<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> flush privileges<span class="p">;</span>
+<pre class="code literal-block"><span></span>mysql<span class="p">&amp;</span>gt<span class="p">;</span> flush privileges<span class="p">;</span>
 
 mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
 </pre>
@@ -162,36 +162,36 @@ mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900910chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-5-tgyyr-rmz-bwr-root-dr-mysql.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html" class="u-url">چ‌چ‌چ‌ (۶)‌: چگونه در خط فرمان گنو‌/‌لینوکس بزرگنمایی صفحه نمایش‌ام را پیدا کنم‌؟</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-6-chgwnh-dr-kht-frmn-gnwl.html" class="u-url">چ‌چ‌چ‌ (۶)‌: چگونه در خط فرمان گنو‌/‌لینوکس بزرگنمایی صفحه نمایش‌ام را پیدا کنم‌؟</a></h1>
             شاهین
-      <a href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-01T11:42:56+03:30" title="2011-12-01 11:42">2011-12-01 11:42</time></a>
+      <a href="posts/wp/chchch-6-chgwnh-dr-kht-frmn-gnwl.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-01T11:42:56+03:30" title="2011-12-01 11:42">2011-12-01 11:42</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>۱) استفاده از دستور xdpyinfo:</p>
-<pre class="code literal-block">xdpyinfo <span class="p">|</span> grep <span class="s1">'dimensions:'</span>
+<pre class="code literal-block"><span></span>xdpyinfo <span class="p">|</span> grep <span class="s1">'dimensions:'</span>
 </pre>
 
 
 <p>که نتیجه‌ای به شکل زیر را باز می‌گرداند‌:</p>
-<pre class="code literal-block">dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
+<pre class="code literal-block"><span></span>dimensions: 1024x768 pixels <span class="o">(</span>347x260 millimeters<span class="o">)</span>
 </pre>
 
 
 <p>۲) استفاده از دستور xrandr:</p>
-<pre class="code literal-block">xrandr <span class="p">|</span> grep ‘*’
+<pre class="code literal-block"><span></span>xrandr <span class="p">|</span> grep ‘*’
 </pre>
 
 
 <p>که نتیجه‌ای به صورت زیر را باز می‌گرداند‌:</p>
-<pre class="code literal-block">xrandr: Failed to get size of gamma <span class="k">for</span> output default
+<pre class="code literal-block"><span></span>xrandr: Failed to get size of gamma <span class="k">for</span> output default
 
 1024x768 50.0* 51.0
 </pre>
@@ -205,16 +205,16 @@ mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900910chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-6-chgwnh-dr-kht-frmn-gnwl.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-6-chgwnh-dr-kht-frmn-gnwl.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html" class="u-url">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html" class="u-url">چ‌چ‌چ (۴)‌: ایجاد یک کاربرد جدید در MySQL</a></h1>
             شاهین
-      <a href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html" rel="bookmark"><time class="published dt-published" datetime="2011-11-30T16:06:28+03:30" title="2011-11-30 16:06">2011-11-30 16:06</time></a>
+      <a href="posts/wp/chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html" rel="bookmark"><time class="published dt-published" datetime="2011-11-30T16:06:28+03:30" title="2011-11-30 16:06">2011-11-30 16:06</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -223,22 +223,22 @@ mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
 <p></p>
 <h4>روند ساخت یک حساب کاربری در MySQL</h4>
 <p>با استفاده از کاربر root برنامهٔ mysql وارد شوید (‌در پوستهٔ فرمان‌، دستور زیر را وارد کنید‌:):</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -p
+<pre class="code literal-block"><span></span>$ mysql -u root -p
 </pre>
 
 
 <p>و یا</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysql -u root -h myserver-server. com -p
+<pre class="code literal-block"><span></span>$ mysql -u root -h myserver-server. com -p
 </pre>
 
 
 <p>یک پایگاه دادهٔ جدید به اسم demo ایجاد کنید‌:</p>
-<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> CREATE DATABASE demo<span class="p">;</span>
+<pre class="code literal-block"><span></span>mysql<span class="p">&amp;</span>gt<span class="p">;</span> CREATE DATABASE demo<span class="p">;</span>
 </pre>
 
 
 <p>یک کاربر جدید برای پایگاه داده demo به اسم user۱ بسازید‌:</p>
-<pre class="code literal-block">mysql<span class="p">&amp;</span>gt<span class="p">;</span> GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’<span class="p">;</span>
+<pre class="code literal-block"><span></span>mysql<span class="p">&amp;</span>gt<span class="p">;</span> GRANT ALL ON demo.* TO user1@localhost IDENTIFIED BY ‘mypassword’<span class="p">;</span>
 </pre>
 
 
@@ -246,12 +246,12 @@ mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
 <h4>من چطور می‌توانم با استفاده از حساب user۱ به کارگزار پایگاه داده MySQL متصل شوم؟</h4>
 
 <p>کاربر user۱ می‌تواند با استفاده از دستور زیر به حساب کاربری‌اش در پایگاه داده demo متصل شود‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysql -u user۱ -p demo
+<pre class="code literal-block"><span></span>$ mysql -u user۱ -p demo
 </pre>
 
 
 <p>و یا‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>mysql -u user۱ -h mysql. server. com -p demo
+<pre class="code literal-block"><span></span>$ mysql -u user۱ -h mysql. server. com -p demo
 </pre>
 
 
@@ -269,7 +269,7 @@ mysql<span class="p">&amp;</span>gt<span class="p">;</span> quit
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900909chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-4-yjd-ykh-khrbrd-jdyd-dr-mysql.html">Comments</a>
 
 
     </div>

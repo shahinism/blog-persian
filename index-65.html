@@ -99,20 +99,20 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html" class="u-url">PyPomo پروژهٔ کوچک برای تمرکز به روش پامودورو!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html" class="u-url">PyPomo پروژهٔ کوچک برای تمرکز به روش پامودورو!</a></h1>
             شاهین
-      <a href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-11T12:18:10+04:30" title="2012-09-11 12:18">2012-09-11 12:18</time></a>
+      <a href="posts/wp/pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-11T12:18:10+04:30" title="2012-09-11 12:18">2012-09-11 12:18</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p></p>
 <h5>نصب PyPomo</h5>
 <p>اول از همه بسته به توزیع‌تان pysetuptools و PyQt4 (در اسلکور نصب است) را نصب کنید. و سپس به ترتیب دستورات زیر را اجرا کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>git clone https://github.com/shahinism/PyPomo.git
+<pre class="code literal-block"><span></span>$ git clone https://github.com/shahinism/PyPomo.git
 
-<span class="nv">$ </span><span class="nb">cd </span>PyPomo
+$ <span class="nb">cd</span> PyPomo
 
-<span class="nv">$ </span>sudo python setup.py install
+$ sudo python setup.py install
 </pre>
 
 
@@ -133,16 +133,16 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910621pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html#disqus_thread" data-disqus-identifier="cache/posts/wp/pypomo-prwjh-khwchkh-bry-tmrkhz-bh-rwsh-pmwdwr.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html" class="u-url">چطور نمای oxygen را برای GTK و Qt در هر مدیر‌پنجره‌ای داشته باشیم‌؟</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html" class="u-url">چطور نمای oxygen را برای GTK و Qt در هر مدیر‌پنجره‌ای داشته باشیم‌؟</a></h1>
             شاهین
-      <a href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-10T06:45:43+04:30" title="2012-09-10 06:45">2012-09-10 06:45</time></a>
+      <a href="posts/wp/chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-10T06:45:43+04:30" title="2012-09-10 06:45">2012-09-10 06:45</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -153,12 +153,12 @@ article: http://ogp.me/ns/article#
 <h5>oxygen در Qt:</h5>
 
 <p>حقیقتش خیلی وقت بود که بعضی چیز‌ها در نمای Qt اذیتم می‌کرد‌. مثلا فونت ریز این بالون‌هایی که در Systemtry برای اخطار ظاهر می‌شوند (برای دیدن ترجمهٔ لغاتم در mdic زیاد با آن‌ها روبرو می‌شوم) با این چشم ضعیف و رزولوشن کم مانیتور‌، جدا خسته کننده می‌شد‌! این بود که دیروز خیلی اتفاقی دستور زیر را پیدا کردم:</p>
-<pre class="code literal-block">qtconfig
+<pre class="code literal-block"><span></span>qtconfig
 </pre>
 
 
 <p>(و اصلا همین دستور زمینهٔ حل کل مشکلات مطرح شده در این پست را فراهم کرد!) خوب محتویات دستور که تماما مهیاست‌. اما احتمال دارد مثل من‌، Oxygen جزء تم‌های qtconfig‌تان نباشد‌. و دقیقا این همان دلیلی است که جدیدا در اسلکور نمای Qt ناجور شده بود‌. برای حل این مشکل کافیست آدرس پوشهٔ Plugin بستهٔ KDE را به متغیر QT_PLUGIN_PATH (سراسری) نسبت دهیم‌! یعنی در نسخهٔ ۶۴ بیتی اسلکور باید همچین خطی را به فایل ‎/etc/profile اضافه کنیم:</p>
-<pre class="code literal-block"><span class="nb">export </span><span class="nv">QT_PLUGIN_PATH</span><span class="o">=</span>/usr/lib64/kde4/plugins/
+<pre class="code literal-block"><span></span><span class="nb">export</span> <span class="nv">QT_PLUGIN_PATH</span><span class="o">=</span>/usr/lib64/kde4/plugins/
 </pre>
 
 
@@ -167,21 +167,21 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910620chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chtwr-nmy-oxygen-r-bry-gtk-w-qt-dr-hr-mdyrpnjrh.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html" class="u-url">Surfraw فرزند خلف ژولین آسانژ جستجو‌گر!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html" class="u-url">Surfraw فرزند خلف ژولین آسانژ جستجو‌گر!</a></h1>
             شاهین
-      <a href="posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-04T07:38:01+04:30" title="2012-09-04 07:38">2012-09-04 07:38</time></a>
+      <a href="posts/wp/surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html" rel="bookmark"><time class="published dt-published" datetime="2012-09-04T07:38:01+04:30" title="2012-09-04 07:38">2012-09-04 07:38</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>Originally written by Julian Assange.</p>
-<pre class="code literal-block">و خوب فکر می‌کنم برنامهٔ خوبی برای آشنا شدن با یک هکر و اخلاقیاتش باشد‌. می‌پرسید چطور؟ قبلا هم ابزار‌هایی معرفی کرده‌ام که سرعت کار با سیستم را برای من کاربر افزایش می‌دهند‌. خصوصا در زمینهٔ مرور وب وقتی که پای هیولایی مثل <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)"</span> <span class="na">href=</span><span class="s">"http://shahinism.com/blog/1391/01/05/%da%a9%d9%86%d8%aa%d8%b1%d9%84-%da%a9%d8%a7%d9%85%d9%84-%d9%81%d8%a7%db%8c%d8%b1%d9%81%d8%a7%da%a9%d8%b3-%d8%a8%d8%a7-%da%a9%db%8c%d8%a8%d9%88%d8%b1%d8%af-pentadactyl-vimperator-firemacs/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>Pentadactyl<span class="nt">&lt;/a&gt;</span> وسط می‌آید‌، تقریبا حرفی برای گفتن باقی نمی‌ماند‌. اما خوب ما یک کاربر عادی نیستیم‌. اصولا زندگی دیجیتال ما به موتور‌های جستجو (خصوصا گوگل) پیوند خورده و خوب حتی با ابزار‌های قبلی‌ای که می‌شناختم‌، جستجوی پیشرفته در گوگل کاری تکراری و غیر جذاب بود‌. از طرف دیگر کار جستجوی ما تنها به گوگل ختم نمی‌شود‌. Wikipedia‌، یا IMDB یا حتی از آن‌ها مهم‌تر Youtube را هم عموما من از داخل گوگل جستجو می‌کردم‌، و خوب این بار ترافیک تحمیل شدهٔ اضافی گوگل‌، خصوصا با بعضی خواص کوچک و آزار دهنده‌اش‌، زیادی هم گیکانه نبود‌!
+<pre class="code literal-block"><span></span>و خوب فکر می‌کنم برنامهٔ خوبی برای آشنا شدن با یک هکر و اخلاقیاتش باشد‌. می‌پرسید چطور؟ قبلا هم ابزار‌هایی معرفی کرده‌ام که سرعت کار با سیستم را برای من کاربر افزایش می‌دهند‌. خصوصا در زمینهٔ مرور وب وقتی که پای هیولایی مثل <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"کنترل کامل فایرفاکس با کیبورد (Pentadactyl, Vimperator, Firemacs)"</span> <span class="na">href=</span><span class="s">"http://shahinism.com/blog/1391/01/05/%da%a9%d9%86%d8%aa%d8%b1%d9%84-%da%a9%d8%a7%d9%85%d9%84-%d9%81%d8%a7%db%8c%d8%b1%d9%81%d8%a7%da%a9%d8%b3-%d8%a8%d8%a7-%da%a9%db%8c%d8%a8%d9%88%d8%b1%d8%af-pentadactyl-vimperator-firemacs/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>Pentadactyl<span class="nt">&lt;/a&gt;</span> وسط می‌آید‌، تقریبا حرفی برای گفتن باقی نمی‌ماند‌. اما خوب ما یک کاربر عادی نیستیم‌. اصولا زندگی دیجیتال ما به موتور‌های جستجو (خصوصا گوگل) پیوند خورده و خوب حتی با ابزار‌های قبلی‌ای که می‌شناختم‌، جستجوی پیشرفته در گوگل کاری تکراری و غیر جذاب بود‌. از طرف دیگر کار جستجوی ما تنها به گوگل ختم نمی‌شود‌. Wikipedia‌، یا IMDB یا حتی از آن‌ها مهم‌تر Youtube را هم عموما من از داخل گوگل جستجو می‌کردم‌، و خوب این بار ترافیک تحمیل شدهٔ اضافی گوگل‌، خصوصا با بعضی خواص کوچک و آزار دهنده‌اش‌، زیادی هم گیکانه نبود‌!
 
 اگر از کار کردن در ترمینال نه تنها ترسی ندارید‌، بلکه لذت هم می‌برید‌، <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"surfraw official webpage"</span> <span class="na">href=</span><span class="s">"http://surfraw.alioth.debian.org/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>Surfraw<span class="nt">&lt;/a&gt;</span> می‌تواند نقش یک چاقوی سوئیسی مخصوص جستجو در اینترنت را بازی کند‌. چطور؟ اول بسته به توزیع‌تان یک نسخه از آن را نصب کنید (مدارک Slackbuild‌اش هم موجود است ;-))
 
@@ -195,17 +195,17 @@ surfraw google -l Julian Assange
 
 <p>ها ها‌، نتیجه جالب بود؟ خوش‌تان آمد؟ نکند با خود فکر می‌کنید که تایپ دوباره و دوبارهٔ surfraw خسته کننده است‌؟ خوب می‌توانید از Alias مخصوصش یعنی sr استفاده کنید‌. باز هم طولانی است؟ بهترش را می‌خواهید؟ پس‌، بگذارید کمی با ساختار دستور بالا آشنا شویم‌.</p>
 <p>بعد از دستور surfraw در بالا ما google را داریم که طبیعتا نام یکی از موتور‌های جستجوی پشتیبانی شده در surfraw است‌. خوب در surfraw به این موتور‌های جستجو می‌گوییم elvi‌! چه می‌دانم‌، شاید ژولین عاشق الویس پریسلی بوده ;-) برای دیدن لیستی از elvi‌هایتان (موتور‌هایی که surfraw الان پشتیبانی می‌کند‌، دستور زیر را تایپ کنید‌:</p>
-<pre class="code literal-block">sr -elvi
+<pre class="code literal-block"><span></span>sr -elvi
 </pre>
 
 
 <p>هوم؟ شگفت زده شده‌اید؟‌ چند لحظهٔ دیگر خود را کنترل کنید‌. قرار شده بود از دست آن sr کذایی هم خلاص شویم‌. کار سختی نیست‌، کافیست پوشهٔ مربوط به همین elvi‌ها (برنامه‌های منحصر به فرد کوچکی که برای کار با هر موتور جستجو طراحی شده‌) به PATH‌تان اضافه کنید‌. این پوشه را:</p>
-<pre class="code literal-block">/usr/share/surfraw
+<pre class="code literal-block"><span></span>/usr/share/surfraw
 </pre>
 
 
 <p>خوب این یک خبر خوش دیگر هم به ما می‌دهد‌. آن هم مربوط به آن ‎-l ای می‌شود که ما در دستور بالا استفاده کردیم و به قولی استفاده از آیتم (I'm feeling lucky) گوگل را برای‌مان به ارمغان آورد‌. چطور؟ این‌جاست که در حقیقت این چاقوی سوئیسی برگ برنده‌اش را رو می‌کند‌. در ترمینال تایپ کنید‌:</p>
-<pre class="code literal-block">sr google --help
+<pre class="code literal-block"><span></span>sr google --help
 </pre>
 
 
@@ -215,7 +215,7 @@ surfraw google -l Julian Assange
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910614surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html#disqus_thread" data-disqus-identifier="cache/posts/wp/surfraw-frznd-khlf-jwlyn-asnj-jstjwgr.html">Comments</a>
 
 
     </div>

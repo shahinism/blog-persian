@@ -149,71 +149,71 @@ article: http://ogp.me/ns/article#
 <p>حالا دیگر تایم زیادی از مواجهه به مشکل گذشته بود‌ و کاربران پروژه‌، چندین برابر قبل بود. دیگر به جایی رسیده بودیم که حتی بدون کش هم بسیاری از ریکوئست‌ها خراب بود. در بین بحث‌ها Hackett به نکته‌ای اشاره کرد که می‌توانست جواب مساله باشد… البته با چیز‌هایی که از مستندات دیده بودیم و قولی که برای Thread safe بودن مونگو می‌داد‌، بیشتر تیری در تاریکی بود.</p>
 <p>قضیه از این قرار است که <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a>، خصوصا در نسخهٔ ۳ به بعد‌، دیگر آبجکت Cursor را به جای یک آبجکت پایتونی استاندارد‌، برای نتایج کوئری بر می‌گرداند. طوری که Hackett در تیکت اشاره کرده‌، هر باری که به قولی کلیهٔ عناصر این Cursor، پیمایش (Iterate) شوند‌، آبجکت Cursor بسته می‌شود. ما هم تا به الان قضیه دیده‌ایم که نتایج Cursorها کمتر از میزان مورد انتظار ما هستند، ولی نمی‌دانیم دقیقا این نتایج از کجا می‌آیند. اول لیست؟ آخرش؟ آن وسط مسط‌ها؟</p>
 <p>این بود که سعی کردیم بی‌خیال کل استک شویم و جور دیگری قضیه را تست کنیم.</p>
-<pre class="code python"><a name="rest_code_14ab234f48d445f38d6eb9929e91470b-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s">'key'</span><span class="p">:</span> <span class="s">'STH'</span><span class="p">})</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-5"></a>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
-<a name="rest_code_14ab234f48d445f38d6eb9929e91470b-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
+<pre class="code python"><a name="rest_code_bab25a7bf0b440fa9c835806f879d916-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-5"></a>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
+<a name="rest_code_bab25a7bf0b440fa9c835806f879d916-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
 </pre>
 <p>همانطور که انتظار داشتیم‌، بعد از بار اول، دیگر Cursor خالی شده و نتیجه‌ای را در بر نمی‌گیرد. حالا یک کمی قضیه را عوض می‌کنیم:</p>
-<pre class="code python"><a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s">'key'</span><span class="p">:</span> <span class="s">'STH'</span><span class="p">})</span>
-<a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-3"></a>
-<a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
-<a name="rest_code_d63e6d36f45b4a4e900328dcdc253afc-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
+<pre class="code python"><a name="rest_code_2f7818461b194996a96125d8b11be59d-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_2f7818461b194996a96125d8b11be59d-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<a name="rest_code_2f7818461b194996a96125d8b11be59d-3"></a>
+<a name="rest_code_2f7818461b194996a96125d8b11be59d-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_2f7818461b194996a96125d8b11be59d-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
+<a name="rest_code_2f7818461b194996a96125d8b11be59d-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
 </pre>
 <p>حالا می‌دانیم اگر قبل از شروع پیمایش‌، یک بار  متد <cite>next()‎</cite> را صدا کنیم‌، زمان فراخوانی پیمایش‌، آیتم اول دیگر در نتیجه وجود نخواهد داشت! چه می‌شود اگر همین Cursor را تحویل چند Thread مختلف بدهیم؟</p>
-<pre class="code text"><a name="rest_code_4968f7de1297411d9480959ccc06a80a-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
-<a name="rest_code_4968f7de1297411d9480959ccc06a80a-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<pre class="code text"><a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
+<a name="rest_code_be8f6dc91b5447f7a43a38e8c7c9f0bf-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
 </pre>
 <p>این نتیجهٔ اجرای ایده روی سیستم ضعیف من است. نتیجهٔ ناقص نمی‌بینیم‌، ولی در سه بار از فراخوانی‌ها‌، بیش از یک Thread به یک Cursor دسترسی پیدا کرده است! این مساله را می‌توان در یک مقیاس خیلی بزرگتر مثل سرور Production این پروژه و آن همه Thread، به نتایج ناقص هم ربط داد… این‌طور نیست؟ جواب <a class="reference external" href="https://emptysqua.re/blog/">A. Jesse Jiryu Davis</a> توسعه دهندهٔ <a class="reference external" href="https://motor.readthedocs.org">Motor</a> (درایور پایتونی و async -بله پایتون هم از این کارها بلد است- :)) تایید همین مطلب است.</p>
 <p>خوب چه کار کنیم؟‌ بیاییم، Cursorهایی که کلا Thread safe نیستند‌ را به یک آبجکت پایتونی Thread safe تبدیل کنیم. یک همچین پترنی شاید:</p>
-<pre class="code python"><a name="rest_code_d3fee4e721024c20b34adc09619b1fd3-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s">'key'</span><span class="p">:</span> <span class="s">'STH'</span><span class="p">}))</span>
+<pre class="code python"><a name="rest_code_251f709948af42979c01a57e7c7eaa61-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">}))</span>
 </pre>
 <p>و انگار جواب مساله را پیدا کرده‌ایم. بماند که بعد از این که بار‌ها به در بسته خوردن سر این مساله، اعضای تیم را کمی بد‌بین کرده بود و تا دلشان خواست انتقامشان ر موقع تست تئوری جدید گرفتند (<a class="reference external" href="http://amirbitaraf.ir/">امیر</a> حتی به Multithread پایتون هم رضایت نداد و یک نمونهٔ C++‎ هم از اسکریپت تستش نوشت)‌، API با یک Performance عالی‌، بدون هیچ مشکلی همهٔ تست‌ها را درست رد کرد.</p>
 <p>نتیجه؟ یکی از طولانی‌ترین دیباگ‌هایی که تا به الان انجام داده‌ایم‌، به سادگی یک <cite>list()‎</cite> قابل حل بود، ولی در این مسیر‌، طی تبادل نظرات‌، تست تئوری‌ها‌، بررسی‌های کلی استک‌، تجربه‌های زیادی کسب کردیم که نهایتا به بسیار بهتر شدن API نسبت به وضعیت قبل و نه تنها در رابطه با همین مساله منجر شد.</p>

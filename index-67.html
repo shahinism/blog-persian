@@ -99,15 +99,15 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html" class="u-url">ترمینال dropdown (مثل quake) در مدیر پنجرهٔ i3</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html" class="u-url">ترمینال dropdown (مثل quake) در مدیر پنجرهٔ i3</a></h1>
             شاهین
-      <a href="posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-22T18:52:08+03:30" title="2012-10-22 18:52">2012-10-22 18:52</time></a>
+      <a href="posts/wp/trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-22T18:52:08+03:30" title="2012-10-22 18:52">2012-10-22 18:52</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>گذشت تا امروز که دیدم Arch باز‌ها یک<a title="HOWTO: get a quake-like urxvt terminal in openbox" href="http://downloads.sourceforge.net/tilda" target="_blank"> کلکی سوار</a> کرده‌اند و توانسته‌اند urxvt را به صورت quake در OpenBox (یک راهنمای عالی برای کار با این مدیرپنجره را دوست خوبم <a title="وبلاگ ایمان امینی!" href="http://emanlog.com" target="_blank">ایمان</a> در <a title="Openbox on linuxreview wiki" href="http://wiki.linuxreview.ir/OpenBox" target="_blank">ویکی لینوکس ریویو</a> فراهم کرده) اجرا کنند‌. بماند که کلی ژانگولر بازی در آوردم که پیاده‌اش کنم و اخرش نتوانستم در i3 اجرایش کنم‌.</p>
 <p>این شد که طبق معمول دست به<a title="problem on i3 faq site" href="http://faq.i3wm.org/question/671/kuake-like-behavior-with-urxvt/" target="_blank"> دامن i3 </a>باز‌ها شدم و با کمال تعجب دیدم که نوشابه در کوزه و ما دنبال آب می‌گردیم‌! قضیه از این قرار است که i3 با تمام کوچکی‌اش یک قابلیت خیلی ماه دارد به اسم scratchpad. که یعنی می‌توانید با آن هر موقع خواستید هر پنجره‌ای را غیب کنید و هر وقت دیگر خواستید ظاهر کنید‌. این است که برای مثال ما که مصادف شده با مهاجرتم به ترمینال urxvt‌، این چنین i3 را کانفیگ می‌کنیم تا به نتیجهٔ دلخواه‌مان برسیم:</p>
-<pre class="code literal-block">for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"dropdown_urxvt"</span><span class="o">]</span> move to scratchpad, border 1pixel
+<pre class="code literal-block"><span></span>for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"dropdown_urxvt"</span><span class="o">]</span> move to scratchpad, border 1pixel
 
 for_window <span class="o">[</span><span class="nv">instance</span><span class="o">=</span><span class="s2">"dropdown_urxvt"</span><span class="o">]</span> focus<span class="p">;</span> resize grow width 300px
 
@@ -120,12 +120,12 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <p>تا این‌جای کار‌، ما گفتیم که اگه پنجرهٔ مورد نظرمان را دیدی‌، چه کار کن‌. اما حالا مسئله این‌جاست که این پنجره را چطور ایجاد کنیم‌. طوری که منحصر به فرد باشد‌. هر چه باشد نمی‌خواهم هر بار که urxvt را صدا زدم همان بالا باز شود‌. گاهی به یک ترمینال گنده نیاز دارم‌!</p>
 <p>urxvt یک قابلیت خیلی به درد بخور دارد و آن هم این که می‌توان آن را به صورت daemon اجرا کرد‌. بعد هم هر وقت خواستیم ترمینالی باز کنیم‌، یک کلاینت از همان daemon باز می‌شود که مزیتش سرعت بالای در دسترس قرار گرفتن پنجره است‌.</p>
 <p>این است که اول از همه ترتیبی می‌دهیم که با باز شده i3 به صورت خودکار این daemon هم اجرا شود:</p>
-<pre class="code literal-block"><span class="nb">exec </span>urxvtd
+<pre class="code literal-block"><span></span><span class="nb">exec</span> urxvtd
 </pre>
 
 
 <p>حالا هم نوبت به ساخت پنجره‌مان می‌رسد‌. ظاهر خوشی ندارد که هر بار به صورت دستی بازش کنم‌، چون بلافاصله غیب می‌شود و باید با F12 صدایش کرد‌. این است که این را هم می‌گذارم خود i3 موقع بالا آمدن اجرا کند‌. به هر حال ما که یک نمونه از این کلاینت بیشتر نمی‌خواهیم:</p>
-<pre class="code literal-block"><span class="nb">exec </span>urxvtc -name dropdown_urxvt
+<pre class="code literal-block"><span></span><span class="nb">exec</span> urxvtc -name dropdown_urxvt
 </pre>
 
 
@@ -138,16 +138,16 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html#disqus_thread" data-disqus-identifier="cache/posts/wp/trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html" class="u-url">سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html" class="u-url">سیر صعودی $ و روش‌های مختلفی که برای دانلود در لینوکس یاد گرفتم!</a></h1>
             شاهین
-      <a href="posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-17T01:10:24+03:30" title="2012-10-17 01:10">2012-10-17 01:10</time></a>
+      <a href="posts/wp/syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-17T01:10:24+03:30" title="2012-10-17 01:10">2012-10-17 01:10</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -155,7 +155,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <p></p>
 <h5>Konqueror:</h5>
 <p>خوب اولین ابزار دم دستمان مرورگر پیش‌فرض KDE است‌. برای دیدن فایل‌های روی وب‌سرور تنها کافیست در آدرس‌بار چنین چیزی بنویسیم:</p>
-<pre class="code literal-block">fish://USER@IPSERVER
+<pre class="code literal-block"><span></span>fish://USER@IPSERVER
 </pre>
 
 
@@ -163,7 +163,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <h5>scp</h5>
 
 <p>یا همان Safe CoPy‌، که به این صورت مورد استعمال قرار می‌گیرد:</p>
-<pre class="code literal-block">scp USER@IPSERVER:PATH_TO_FILE _Path_to_download_
+<pre class="code literal-block"><span></span>scp USER@IPSERVER:PATH_TO_FILE _Path_to_download_
 </pre>
 
 
@@ -182,7 +182,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <blockquote>ای کسانی که ویندوز آورده‌اید‌، اگر راست می‌گویید rsync بیاورید «<del>منبع نامعلوم</del><a href="http://shahinism.com/blog/1391/07/26/%d8%b3%db%8c%d8%b1-%d8%b5%d8%b9%d9%88%d8%af%db%8c-%d9%88-%d8%b1%d9%88%d8%b4%e2%80%8c%d9%87%d8%a7%db%8c-%d9%85%d8%ae%d8%aa%d9%84%d9%81%db%8c-%da%a9%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d8%af%d8%a7%d9%86/#comment-537"> منبع خودش اومد اعتراف کرد ;-)</a>»</blockquote>
 
 <p>این می‌شود که از آن به صورت زیر استفاده می‌کنیم:</p>
-<pre class="code literal-block">rsync -az --progress --rsh<span class="o">=</span><span class="s1">'ssh'</span> --partial USER@IPSERVER:PATH_TO_FILE _Path_to_download
+<pre class="code literal-block"><span></span>rsync -az --progress --rsh<span class="o">=</span><span class="s1">'ssh'</span> --partial USER@IPSERVER:PATH_TO_FILE _Path_to_download
 </pre>
 
 
@@ -191,7 +191,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <h5>lftp</h5>
 
 <p>فوق‌العاده‌ است‌. فوق‌العاده‌. و این‌طوری استفاده می‌شود:</p>
-<pre class="code literal-block">lftp -c <span class="s2">"mirror -c --use-pget-n=10 --verbose sftp://USER:PASSWORD@IPSERVER/PATH_TO_FILE"</span>
+<pre class="code literal-block"><span></span>lftp -c <span class="s2">"mirror -c --use-pget-n=10 --verbose sftp://USER:PASSWORD@IPSERVER/PATH_TO_FILE"</span>
 </pre>
 
 
@@ -204,7 +204,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
     <li>USER:PASSWORD یعنی این‌ور یوزر را می‌نویسیم و آن‌ورش رمز عبورش را!</li>
     <li>PATH_TO_FILE این‌بار کمی با باقی مواقع فرق دارد‌. قبلا آدرس را از پوشهٔ خانگی یوزری که وارد شده بود وارد می‌کردیم و موضوع حل بود‌. ولی اینجا آدرس را از ریشه (/) می‌نویسیم‌. یعنی اگر در پوشهٔ خانگی‌تان است می‌شود این:</li>
 </ul>
-<pre class="code literal-block">/home/USER/File
+<pre class="code literal-block"><span></span>/home/USER/File
 </pre>
 
 
@@ -214,16 +214,16 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910726syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html#disqus_thread" data-disqus-identifier="cache/posts/wp/syr-swdy-w-rwshhy-mkhtlfy-khh-bry-dn.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html" class="u-url">Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html" class="u-url">Dunst اطلاع رسان کوچک برای مدیر‌پنجره‌های سبک مثل i3 یا DWM</a></h1>
             شاهین
-      <a href="posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-13T21:43:04+03:30" title="2012-10-13 21:43">2012-10-13 21:43</time></a>
+      <a href="posts/wp/dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html" rel="bookmark"><time class="published dt-published" datetime="2012-10-13T21:43:04+03:30" title="2012-10-13 21:43">2012-10-13 21:43</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -237,7 +237,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
 <p>و خوب از آن‌جایی که Dmenu بخش حیاتی زندگی‌مان در i3 شده‌، احتمالا Dunst هم می‌تواند انتخاب خوبی باشد‌. خصوصا با همچین اسکرین‌شاتی که معلوم می‌شود ظاهری بسیار شبیه به Dmenu دارد‌:</p>
 <p><a href="http://www.knopwob.org/public/dunst_wide_640.png"><img class="aligncenter" title="نمونه dunst" src="http://www.knopwob.org/public/dunst_wide_640.png" alt="نمونه dunst" width="384" height="288"></a>برای نصبش کار سختی پیش رو ندارید‌. جز این که اول notification daemon‌ای که قبلا استفاده می‌کردید (روی اسلکور xfce4-notify) را پاک کنید و حالا بسته به توزیع‌تان با مخازن‌تان بگیرید و یا با دو دستور (که در صفحهٔ اصلی پروژه نوشته شده) نصبش کنید‌.</p>
 <p>بعد از نصب هم با دستور زیر:</p>
-<pre class="code literal-block">cp /usr/share/dunst/dunstrc ~/.config
+<pre class="code literal-block"><span></span>cp /usr/share/dunst/dunstrc ~/.config
 </pre>
 
 
@@ -249,7 +249,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
     <li>یا اگر زیر بار حملهٔ Notificationها در حال له شدنید با Ctrl+Shift+Space با یک تیر همه را قتل عامل کنید ;-)</li>
 </ul>
 <p><strong>نکته ۱:</strong> برای ایجاد یک Notification می‌توانید از دستور زیر استفاده کنید:</p>
-<pre class="code literal-block">notify-send Test
+<pre class="code literal-block"><span></span>notify-send Test
 </pre>
 
 
@@ -259,7 +259,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910722dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/dunst-tl-rsn-khwchkh-bry-mdyrpnjrhh.html">Comments</a>
 
 
     </div>

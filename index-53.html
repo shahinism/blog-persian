@@ -99,9 +99,9 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html" class="u-url">dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html" class="u-url">dnscrypt روی اسلکور (‌و باقی لینوکس‌ها‌)</a></h1>
             شاهین
-      <a href="posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-19T10:24:53+03:30" title="2012-02-19 10:24">2012-02-19 10:24</time></a>
+      <a href="posts/wp/dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-19T10:24:53+03:30" title="2012-02-19 10:24">2012-02-19 10:24</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -114,12 +114,12 @@ article: http://ogp.me/ns/article#
 <h4>نصب روی اسلکور (‌و اکثر توزیع‌ها‌)</h4>
 
 <p>خیلی راحت‌، اول با دستور زیر فایل‌ها رو می‌گیریم‌:</p>
-<pre class="code literal-block">git clone git://github.com/opendns/dnscrypt-proxy.git
+<pre class="code literal-block"><span></span>git clone git://github.com/opendns/dnscrypt-proxy.git
 </pre>
 
 
 <p>بعد وارد پوشه می‌شیم و دستورات زیر رو به ترتیب می‌زنیم‌:</p>
-<pre class="code literal-block">./autogen
+<pre class="code literal-block"><span></span>./autogen
 
 ./configure
 
@@ -128,7 +128,7 @@ make -j4
 
 
 <p>که اون ‏‎-j4 منظورم اینه که از همه زور CPUم استفاده کن (‌اگه شما CPUتون چهار هسته‌ای نیست می‌تونین تعداد هسته خودتون رو جای چهار بزارین یا کلا تگ j رو بیخیال شین) حالا برای این که وقتی دلمون خواست پاکش کنیم این کار رو می‌کنیم‌ (مخصوص اسلکور):</p>
-<pre class="code literal-block">mkdir /tmp/dnscrypt
+<pre class="code literal-block"><span></span>mkdir /tmp/dnscrypt
 
 make install <span class="nv">DESTDIR</span><span class="o">=</span>/tmp/dnscrypt
 
@@ -144,13 +144,13 @@ installpkg /tmp/dnscrypt.tgz
 <h5>کار با DNSCrypt</h5>
 
 <p>برای کار باهاش اول اون رو با دستور زیر فعال می‌کنیم‌:</p>
-<pre class="code literal-block">/usr/local/sbin/dnscrypt-proxy -d
+<pre class="code literal-block"><span></span>/usr/local/sbin/dnscrypt-proxy -d
 </pre>
 
 
 <p>و اگه دلتون نمی‌خواد بعد از هر بار ری‌استارت دوباره این دستور رو بزنین‌، فقط کافیه توی فایل ‏‎/etc/rc.d/rc.local همین دستور بالا رو اضافه کنین‌.</p>
 <p>و در آخر با اضافه کردن خط زیر توی ‎/etc/resolv.conf به لینوکستون بگین که از 127.0.0.1 به عنوان DNS Server استفاده کنه‌:</p>
-<pre class="code literal-block">nameserver 127.0.0.1
+<pre class="code literal-block"><span></span>nameserver 127.0.0.1
 </pre>
 
 
@@ -158,7 +158,7 @@ installpkg /tmp/dnscrypt.tgz
 <h5>حل یک مشکل:</h5>
 
 <p>احتمالا بعد از اولین ریبوت می‌فهمین که فایل resolv.conf‌تون دوباره عوض شده و آدرس قبلی توش نیست‌! این به دلیل استفاده از dhcpcd هست که تنظیمات این فایل رو بعد از هر بار شناسایی آی پی روتر دوباره‌نویسی می‌کنه‌. خوب حالا چاره چیه‌؟ هیچی دستور زیر رو می‌زنیم:</p>
-<pre class="code literal-block">chattr +i /etc/resolv.conf
+<pre class="code literal-block"><span></span>chattr +i /etc/resolv.conf
 </pre>
 
 
@@ -167,16 +167,16 @@ installpkg /tmp/dnscrypt.tgz
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901130dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/dnscrypt-rwy-slkhwr-w-bqy-lynwkhsh.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901127zsh-dwst-shmst.html" class="u-url">Zsh دوست شماست‌!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/zsh-dwst-shmst.html" class="u-url">Zsh دوست شماست‌!</a></h1>
             شاهین
-      <a href="posts/blog13901127zsh-dwst-shmst.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-16T02:04:41+03:30" title="2012-02-16 02:04">2012-02-16 02:04</time></a>
+      <a href="posts/wp/zsh-dwst-shmst.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-16T02:04:41+03:30" title="2012-02-16 02:04">2012-02-16 02:04</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -188,12 +188,12 @@ installpkg /tmp/dnscrypt.tgz
 <p style="text-align: center;"><a href="wp-content/uploads/snapshot1.png"><img class=" wp-image-603  aligncenter" title="snapshot1" src="wp-content/uploads/snapshot1.png" alt="نمونه‌ای از تکمیل خودکار Zsh" width="571" height="186"></a></p>
 
 <p>خوب می‌دونم الان چی می‌خواین‌، ارزشش چیه؟ خوب بیاین یه نمونه عالی از تکمیل خودکار رو با هم ببینیم‌. بیاین از kill به عنوان یه مثال استفاده کنیم‌. شما تایپ می‌کنین‌:</p>
-<pre class="code literal-block"><span class="nb">kill </span>TAB
+<pre class="code literal-block"><span></span><span class="nb">kill</span> TAB
 </pre>
 
 
 <p>توی bash شما چی می‌بینین؟ لیست تمام فایل‌هایی که توی پوشهٔ حاضرتون قرار داره‌. اینکه برای من یه ویژگی عالی به حساب نمی‌آد‌. حالا چی رخ می‌ده اگه توی Zsh بنویسین‌:</p>
-<pre class="code literal-block"><span class="nb">kill </span>TAB
+<pre class="code literal-block"><span></span><span class="nb">kill</span> TAB
 </pre>
 
 
@@ -207,7 +207,7 @@ installpkg /tmp/dnscrypt.tgz
 <p>خوب ما تکمیل خودکار سریع و فوق‌العاده‌ای داریم با یه تاریخچهٔ اشتراکی‌. چقدر چیز شگفت‌انگیز دیگه‌ای می‌شه اونجا پیدا کرد‌؟ یه عالمه‌!</p>
 <h5>تصحیح خودکار واقعاً عالیه‌</h5>
 
-<pre class="code literal-block"><span class="p">&amp;</span>gt<span class="p">;</span> <span class="nv">$ </span>awesome git:<span class="o">(</span>master<span class="o">)</span> ✗ gut status
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>gt<span class="p">;</span> $ awesome git:<span class="o">(</span>master<span class="o">)</span> ✗ gut status
 
 zsh: correct <span class="s1">'gut'</span> to <span class="s1">'git'</span> <span class="o">[</span>nyae<span class="o">]</span>? y
 </pre>
@@ -229,16 +229,16 @@ zsh: correct <span class="s1">'gut'</span> to <span class="s1">'git'</span> <spa
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901127zsh-dwst-shmst.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901127zsh-dwst-shmst.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/zsh-dwst-shmst.html#disqus_thread" data-disqus-identifier="cache/posts/wp/zsh-dwst-shmst.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html" class="u-url">افزودن قابلیت تکمیل خودکار به Emacs</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html" class="u-url">افزودن قابلیت تکمیل خودکار به Emacs</a></h1>
             شاهین
-      <a href="posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-08T05:34:54+03:30" title="2012-02-08 05:34">2012-02-08 05:34</time></a>
+      <a href="posts/wp/fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html" rel="bookmark"><time class="published dt-published" datetime="2012-02-08T05:34:54+03:30" title="2012-02-08 05:34">2012-02-08 05:34</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -262,7 +262,7 @@ zsh: correct <span class="s1">'gut'</span> to <span class="s1">'git'</span> <spa
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901119fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html#disqus_thread" data-disqus-identifier="cache/posts/wp/fzwdn-qblyt-tkhmyl-khwdkhr-bh-emacs.html">Comments</a>
 
 
     </div>

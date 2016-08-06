@@ -99,21 +99,21 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910923twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html" class="u-url">تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html" class="u-url">تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت</a></h1>
             شاهین
-      <a href="posts/blog13910923twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html" rel="bookmark"><time class="published dt-published" datetime="2012-12-13T21:24:31+03:30" title="2012-12-13 21:24">2012-12-13 21:24</time></a>
+      <a href="posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html" rel="bookmark"><time class="published dt-published" datetime="2012-12-13T21:24:31+03:30" title="2012-12-13 21:24">2012-12-13 21:24</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>ولی خوب‌، ایمان هم کالیبرش بالاست‌. شاید هم کمال همنشین… این است که بعد از یک مدتی که خیلی ذوق داشت و همه مدل فلش کارت آماده می‌کرد‌، چون سختش بود‌، کم کم فرمت‌های آماده شده را آنقدر کم کرد که این اواخر دیگر تنها kvtml آماده می‌کرد‌. فرمتی که آماده کردنش خیلی آسان‌تر از باقی قضایا بود‌، ولی مال نرم‌افزار بسیار به درد نخور kwordquiz میزکار KDE بود! این بود که دو سه هفته پیش‌، این ایده به سرم افتاد که اول کمی از کار ایمان کم کنم‌! بندهٔ خدا زحمت زیادی می‌کشد و به هر حال حیف است که فقط مصرف کننده باشم‌. این شد که با پایتون اسکریپتی برایش نوشتم که kvtml‌ها را خیلی راحت به anki تبدیل کند‌. ذکر خیر این اسکریپت را خودش <a title="kvtml 2 anki in emanlog" href="http://emanlog.com/?p=292" target="_blank">کرده‌</a>.</p>
 <p>معنی این اسکریپت قبلی این بود که حالا حالاها خوراک اضافه خواهم داشت‌. ولی حقیقتش کلمه‌های ایمان‌، حداقل تا این‌جایی که من دیده‌ام‌، اکثریتشان‌ در سطح من نیست‌. اگر هم باشد من خودم خیلی خیلی بیشتر از آن‌ها را در کتاب‌ها و مطالبی که روزانه می‌خوانم می‌بینم! مساله این‌جاست که از روی تنبلی‌، فقط به زور دیکشنری (mdic روی میزکار، google translate روی اینترنت و mobidic روی موبایل) ترجمه‌شان می‌کنم و بعد از چند جمله معنی‌شان از یادم می‌پرد‌. خسته کننده است‌. این طور نیست؟</p>
 <p>خوب کمی با خودم دو دو تا چهارتا می‌کنم و یادم می‌آید که روی آن اسکریپت تبدیل kvtml دوست خوبم anki یک فرمت متنی خیلی تمیزی را به عنوان ورودی می‌گرفت و فلش کارتش می‌کرد‌. (اصلا آن اسکریپت بر همین مبنا کار می‌کند) یک همچین نحوی:</p>
-<pre class="code literal-block">English<span class="p">;</span>انگلیسی
+<pre class="code literal-block"><span></span>English<span class="p">;</span>انگلیسی
 </pre>
 
 
 <p>که البته می‌توان بهش فایل‌های چند رسانه‌ای هم چسباند و یا با HTML خوشگلش کرد‌. خوب این یعنی می‌شود هر وقت که کلمه‌ای ترجمه می‌کنم‌، ترمینالم را باز کنم و مثلا از یک همچین دستوری استفاده کنم:</p>
-<pre class="code literal-block"><span class="nb">echo</span> <span class="s2">"English;انگلیسی"</span> <span class="p">&amp;</span>gt<span class="p">;&amp;</span>gt<span class="p">;</span> deck.txt
+<pre class="code literal-block"><span></span><span class="nb">echo</span> <span class="s2">"English;انگلیسی"</span> <span class="p">&amp;</span>gt<span class="p">;&amp;</span>gt<span class="p">;</span> deck.txt
 </pre>
 
 
@@ -123,12 +123,12 @@ article: http://ogp.me/ns/article#
 <p></p>
 <h5>معرفی:</h5>
 <p>این اسکریپت برای اجرا به fribidi, ffmpeg, curl و html2text نیاز دارد‌. سه تای اول که عموما وضع و حال‌شان مشخص است‌. اما این آخری یک اسکریپت پایتون است که می‌توانید از مخازن‌تان نصب کنید‌. ولی من پیشنهاد می‌کنم به جای آن distribute یا pysetuptools پایتون را نصب کنید و پس از آن با دستور زیر سر و ته این اسکریپت را هم بیاورید:</p>
-<pre class="code literal-block">sudo pip install html2text
+<pre class="code literal-block"><span></span>sudo pip install html2text
 </pre>
 
 
 <p>دلیلش هم ساده است‌. مخازن پایتون خیلی سریع‌تر از مخازن توزیع‌تان به روز می‌شوند و صد البته در آخر کار مدیریت این بسته‌ها با آن‌ها آسان‌تر است‌! حالا اسکریپت را از <a title="fcgenerator on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/fcgenerator.sh" target="_blank">این‌جا</a> دانلود کنید و به صورت زیر چشم‌تان را به جمالش روشن کنید:</p>
-<pre class="code literal-block">chmod +x fcgenerator.sh
+<pre class="code literal-block"><span></span>chmod +x fcgenerator.sh
 
 ./fcgenerator.sh -w <span class="s2">"Some english word"</span> -d firstDeck
 </pre>
@@ -138,7 +138,7 @@ article: http://ogp.me/ns/article#
 <p>مثلا فرض کنید که شما از ترجمهٔ google translate حال نمی‌کنید‌. خوب راحت است‌. کافی است که با استفاده از اپراتور ‎-t ترجمهٔ خودتان را به لغت بچسبانید‌. همین‌طور می‌توانید به جای تلفظ گوگل‌، از espeak استفاده کنید‌. برای این کار هم از اپراتور ‎-e استفاده می‌کنید. طرز کارش ساده است‌، این‌طور نیست؟</p>
 <p>بعد از اجرای فرمان بالا اسکریپت برای ما یک فایل firstDeck.txt و یک دایرکتوری firstDeck.media ساخته‌. اگر کلمات دیگری هم داشتید و خواستید به این فلش کارت اضافه کنید‌، کافیست به دایرکتوری که این فایل‌ها در آن قرار دارند بروید و فقط مقدار ‎-w دستور را با کلمهٔ جدید‌تان عوض کنید‌.</p>
 <p>حالا نوبت نصب Deck جدید‌تان روی Ankiاست‌. اگر Deck‌های شما هم در مسیر ‎~/.anki/decks قرار دارد (اگر توزیع‌تان خوشمزگی نکرده و جای دیگر نریخته باشد‌، بعید می‌دانم این مسیر فرق کند) می‌توانید با دستور زیر دایرکتوری مدیا را در این مسیر کپی کنید:</p>
-<pre class="code literal-block">./fcgenerator.sh -i firstDeck
+<pre class="code literal-block"><span></span>./fcgenerator.sh -i firstDeck
 </pre>
 
 
@@ -147,7 +147,7 @@ article: http://ogp.me/ns/article#
 <h5>چطور کار می‌کند؟</h5>
 
 <p>خوب اکثر دستورات اگر سواد شل اسکریپتینگ داشته باشید‌، سر راست‌اند‌. من در این‌جا فقط به چیز‌های جالبی که از کد‌های دیگران بهره گرفتم اشاره می‌کنم‌. یکی از خوشگل‌ترین‌شان برایم این تابع بود:</p>
-<pre class="code literal-block"><span class="k">function</span> deps<span class="o">(){</span>
+<pre class="code literal-block"><span></span><span class="k">function</span> deps<span class="o">(){</span>
 
 <span class="nv">DEPENDENCIES</span><span class="o">=</span><span class="nv">$@</span>
 
@@ -173,7 +173,7 @@ article: http://ogp.me/ns/article#
 
 <span class="nb">echo</span> -e <span class="s2">"Aborting!"</span>
 
-<span class="nb">exit </span>1
+<span class="nb">exit</span> 1
 
 <span class="k">else</span>
 
@@ -187,7 +187,7 @@ article: http://ogp.me/ns/article#
 
 <p>خوب می‌دانم چیز ساده‌ای است. ولی حقیقتش من عقلم نمی‌رسید که می‌توان به این خوشگلی پیش‌نیاز‌های اسکریپت را بررسی کرد‌. این اسکریپت را از <a title="bash support function check dependencies" href="http://www.snabelb.net/content/bash_support_function_check_dependencies" target="_blank">این لینک</a> برداشتم و کمی دستکاری‌اش کردم تا به اسکریپت من بیاید‌.</p>
 <p>بخش بعدی ماجرا‌، هیولا‌ترین قسمت اسکریپت است‌. Google مثل همیشه احمق‌بازی در آورده و ما را از داشتن یک API ساده محروم کرده‌. ولی خوب این مرحمت گوگل باعث نشده که <a title="access google translate from a terminal" href="http://crunchbang.org/forums/viewtopic.php?id=17034" target="_blank">این دوست </a>ندیده و نشنیدهٔ عزیزمان دست از انگولک گوگل و نجات ما بردارد‌.</p>
-<pre class="code literal-block"><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>curl -s -i --user-agent <span class="s2">""</span> -d <span class="s2">"sl=</span><span class="nv">$FROMT</span><span class="s2">"</span> -d <span class="s2">"tl=</span><span class="nv">$TARGETT</span><span class="s2">"</span> --data-urlencode <span class="s2">"text=</span><span class="nv">$WORD</span><span class="s2">"</span> http://translate.google.com<span class="k">)</span>
+<pre class="code literal-block"><span></span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>curl -s -i --user-agent <span class="s2">""</span> -d <span class="s2">"sl=</span><span class="nv">$FROMT</span><span class="s2">"</span> -d <span class="s2">"tl=</span><span class="nv">$TARGETT</span><span class="s2">"</span> --data-urlencode <span class="s2">"text=</span><span class="nv">$WORD</span><span class="s2">"</span> http://translate.google.com<span class="k">)</span>
 
 <span class="nv">encoding</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">'/Content-Type: .* charset=/ {sub(/^.*charset=["'</span><span class="se">\'</span><span class="s1">']?/,""); sub(/[ "'</span><span class="se">\'</span><span class="s1">'].*$/,""); print}'</span> <span class="p">&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;</span><span class="s2">"</span><span class="nv">$result</span><span class="s2">"</span><span class="k">)</span>
 
@@ -206,16 +206,16 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910923twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910923twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html#disqus_thread" data-disqus-identifier="cache/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html" class="u-url"> Calculate the total CPU time.</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html" class="u-url"> Calculate the total CPU time.</a></h1>
             شاهین
-      <a href="posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html" rel="bookmark"><time class="published dt-published" datetime="2012-11-24T00:55:09+03:30" title="2012-11-24 00:55">2012-11-24 00:55</time></a>
+      <a href="posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html" rel="bookmark"><time class="published dt-published" datetime="2012-11-24T00:55:09+03:30" title="2012-11-24 00:55">2012-11-24 00:55</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -237,7 +237,7 @@ article: http://ogp.me/ns/article#
 <h5>تاریخ</h5>
 
 <p>خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:</p>
-<pre class="code literal-block"><span class="nv">date</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">"%a %Y.%m.%d %H:%M"</span><span class="k">)</span>
+<pre class="code literal-block"><span></span><span class="nv">date</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">"%a %Y.%m.%d %H:%M"</span><span class="k">)</span>
 </pre>
 
 
@@ -245,7 +245,7 @@ article: http://ogp.me/ns/article#
 <h5>اطلاعات شبکه</h5>
 
 <p>اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:</p>
-<pre class="code literal-block"><span class="k">function</span> getNetBytes
+<pre class="code literal-block"><span></span><span class="k">function</span> getNetBytes
 
 <span class="o">{</span>
 
@@ -259,7 +259,7 @@ article: http://ogp.me/ns/article#
 
 <p>متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)</p>
 <p>حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:</p>
-<pre class="code literal-block"><span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+<pre class="code literal-block"><span></span><span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
 
 <span class="nv">upSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Btransmited</span><span class="o">-</span><span class="nv">$oldBTransmited</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
 
@@ -272,7 +272,7 @@ article: http://ogp.me/ns/article#
 <h5>وضعیت RAM</h5>
 
 <p>گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:</p>
-<pre class="code literal-block"><span class="k">function</span> getRamInfo
+<pre class="code literal-block"><span></span><span class="k">function</span> getRamInfo
 
 <span class="o">{</span>
 
@@ -290,7 +290,7 @@ article: http://ogp.me/ns/article#
 <h5>وضعیت CPU</h5>
 
 <p>خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:</p>
-<pre class="code literal-block"><span class="k">function</span> getCpuInfo<span class="o">()</span>
+<pre class="code literal-block"><span></span><span class="k">function</span> getCpuInfo<span class="o">()</span>
 
 <span class="o">{</span>
 
@@ -298,17 +298,17 @@ article: http://ogp.me/ns/article#
 
 <span class="nv">addr</span><span class="o">=</span><span class="s2">"^cpu</span><span class="si">${</span><span class="nv">CORE</span><span class="si">}</span><span class="s2">"</span>
 
-<span class="nb">local </span><span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat <span class="p">|</span> grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c"># Get the total CPU statistics.</span>
+<span class="nb">local</span> <span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat <span class="p">|</span> grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c1"># Get the total CPU statistics.</span>
 
-<span class="nb">unset </span>CPU<span class="o">[</span>0<span class="o">]</span> <span class="c"># Discard the "cpu" prefix.</span>
+<span class="nb">unset</span> CPU<span class="o">[</span>0<span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
 
-<span class="nb">local </span><span class="nv">IDLE</span><span class="o">=</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="si">}</span> <span class="c"># Get the idle CPU time.</span>
+<span class="nb">local</span> <span class="nv">IDLE</span><span class="o">=</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="si">}</span> <span class="c1"># Get the idle CPU time.</span>
 
 
 
-<span class="c"># Calculate the total CPU time.</span>
+<span class="c1"># Calculate the total CPU time.</span>
 
-<span class="nb">local </span><span class="nv">TOTAL</span><span class="o">=</span>0
+<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -318,15 +318,15 @@ article: http://ogp.me/ns/article#
 
 
 
-<span class="c"># Catch current cores last state</span>
+<span class="c1"># Catch current cores last state</span>
 
-<span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+<span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
 
-<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
 
 
 
-<span class="c"># Calculate the CPU usage since we last checked.</span>
+<span class="c1"># Calculate the CPU usage since we last checked.</span>
 
 <span class="nb">let</span> <span class="s2">"DIFF_IDLE=</span><span class="nv">$IDLE</span><span class="s2">-</span><span class="nv">$PREV_IDLE</span><span class="s2">"</span>
 
@@ -346,7 +346,7 @@ article: http://ogp.me/ns/article#
 
 <p>برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.</p>
 <p>با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:</p>
-<pre class="code literal-block"><span class="nb">local </span><span class="nv">TOTAL</span><span class="o">=</span>0
+<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -357,21 +357,21 @@ article: http://ogp.me/ns/article#
 
 
 <p>ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:</p>
-<pre class="code literal-block"><span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOTAL</span><span class="s2">"</span>
+<pre class="code literal-block"><span></span><span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOTAL</span><span class="s2">"</span>
 
 <span class="nb">eval</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$IDLE</span><span class="s2">"</span>
 </pre>
 
 
 <p>این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:</p>
-<pre class="code literal-block"><span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+<pre class="code literal-block"><span></span><span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
 
-<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
 </pre>
 
 
 <p>حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:</p>
-<pre class="code literal-block"><span class="nb">let</span> <span class="s2">"DIFF_IDLE=</span><span class="nv">$IDLE</span><span class="s2">-</span><span class="nv">$PREV_IDLE</span><span class="s2">"</span>
+<pre class="code literal-block"><span></span><span class="nb">let</span> <span class="s2">"DIFF_IDLE=</span><span class="nv">$IDLE</span><span class="s2">-</span><span class="nv">$PREV_IDLE</span><span class="s2">"</span>
 
 <span class="nb">let</span> <span class="s2">"DIFF_TOTAL=</span><span class="nv">$TOTAL</span><span class="s2">-</span><span class="nv">$PREV_TOTAL</span><span class="s2">"</span>
 
@@ -382,7 +382,7 @@ article: http://ogp.me/ns/article#
 <p>چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)</p>
 <h5>پایان کار</h5>
 
-<pre class="code literal-block"><span class="k">while</span> <span class="nb">true</span><span class="p">;</span>
+<pre class="code literal-block"><span></span><span class="k">while</span> true<span class="p">;</span>
 
 <span class="k">do</span>
 
@@ -431,7 +431,7 @@ sleep 1
 <p>حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.</p>
 <p>همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.</p>
 <p>حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:</p>
-<pre class="code literal-block">CPU: 48,3,40,3 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+<pre class="code literal-block"><span></span>CPU: 48,3,40,3 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
 
 CPU: 8,4,76,4 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
 
@@ -445,23 +445,23 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html#disqus_thread" data-disqus-identifier="cache/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html" class="u-url">تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html" class="u-url">تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون</a></h1>
             شاهین
-      <a href="posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html" rel="bookmark"><time class="published dt-published" datetime="2012-11-22T00:28:24+03:30" title="2012-11-22 00:28">2012-11-22 00:28</time></a>
+      <a href="posts/wp/tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html" rel="bookmark"><time class="published dt-published" datetime="2012-11-22T00:28:24+03:30" title="2012-11-22 00:28">2012-11-22 00:28</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>مشکل این‌جاست که در ایمکس فونت سراسری‌ام متن فارسی را به صورت جدا جدا نشان می‌دهد‌. ولی طبق روشی که به آن اشاره کردم‌، کاراکتر‌هایی که در رنج خاصی از کد‌های یونیکد هستند‌، باید با فونت Tahoma (انتخاب من) نمایش داده شوند. اما وقتی فایل خروجی Okular را باز می‌کنم می‌بینم کاراکتر‌ها کاملا درست‌، ولی با فونتی غیر از تاهوما دیده می‌شوند‌. خوب تجربه ثابت کرده که هیچ مشکلی به این راحتی حل نمی‌شود‌. کمی از خروجی را به یک فایل tex تبدیل می‌کنم و خروجی PDFش را بررسی می‌کنم‌. خروجی تقریبا قابل قبول است ولی در بعضی از خطوط کاراکتر‌ها به صورت مبهمی به هم ریخته‌اند‌. از آن‌جایی که خودم برنامهٔ officeای روی سیستم ندارم و <a title="وقتی دزدی می‌کن(م،ن،ید)" href="http://shahinism.com/blog/1391/08/25/%d9%88%d9%82%d8%aa%db%8c-%d8%af%d8%b2%d8%af%db%8c-%d9%85%db%8c%e2%80%8c%da%a9%d9%86%d9%85%d8%8c%d9%86%d8%8c%db%8c%d8%af/" target="_blank">وضع اینترنت‌ام</a> هم معلوم است‌، از دوست <a title="لیبره آفیس قدم رو" href="http://emanlog.com/?p=303" target="_blank">libreoffice کار قهارم</a> می‌خواهم که فایل خروجی Okular را یک بار دیگر و این‌بار با libreoffice تست کند و ببیند آیا قابل ویرایش است یا نه‌؟ ایمان در جواب می‌گوید که کاراکتر‌ها مثل تصویر عمل می‌کنند و قدرت ویرایش چندانی روی آن‌ها ندارم.(اگر دروغ گفته‌، یقهٔ خودش رو بگیرید ;-))</p>
 <p>پس حالا نوبت این است که کمی دست‌هایمان را کثیف‌تر کنیم‌. مساله ساده است‌. فایلی داریم شامل کاراکتر‌هایی که امیدواریم حداقل یونیکد باشند‌، ولی می‌خواهیم آن‌ها را به رنج استانداردی که می‌شناسیم تبدیل کنیم (یک Find &amp; Replace سریع و دوست داشتنی D:)‌. پایتون دوست‌داشتنی چند تابع خیلی‌، خیلی باحال برای کمک به ما در همچین وضعیت‌هایی دارد‌. اولی‌شان ord است‌. کارش این است که یک کاراکتر را به عنوان ورودی بگیرد و در خروجی کد معادلش را چاپ کند‌. دیگری unichr است که تقریبا کاری برعکس کار ord می‌کند‌. یک کد (که فکر می‌کند یونیکد است) در ورودی می‌گیرد‌، و کاراکتر یونیکد معادلش را در خروجی بر می‌گرداند‌.</p>
 <p>پس برای شروع کار چند تابع کوچک می‌نویسیم که برای دستکاری فایل کمک‌مان کند‌. تابع اول‌مان‌، چیزی است که در بقیه راه نیازش داریم‌. تابعی که یک فایل را از ورودی بخواند‌:</p>
-<pre class="code literal-block">def read_file<span class="o">(</span>file_name<span class="o">)</span>:
+<pre class="code literal-block"><span></span>def read_file<span class="o">(</span>file_name<span class="o">)</span>:
 
 <span class="nv">the_file</span> <span class="o">=</span> codecs.open<span class="o">(</span>file_name, <span class="nv">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">)</span>
 
@@ -470,7 +470,7 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
 
 
 <p>همین‌طور برای این که خیال‌مان راحت شود‌، تابعی می‌نویسیم که کل محتوای فایل ورودی‌اش را به صورت کاراکتر به کاراکتر (هر کاراکتر در یک خط) چاپ کند:</p>
-<pre class="code literal-block">def show_characters<span class="o">(</span>input_file<span class="o">)</span>:
+<pre class="code literal-block"><span></span>def show_characters<span class="o">(</span>input_file<span class="o">)</span>:
 
 <span class="k">for</span> line in read_file<span class="o">(</span>input_file<span class="o">)</span>.readlines<span class="o">()</span>:
 
@@ -481,7 +481,7 @@ print char
 
 
 <p>حالا نوبت بخش هیجان‌انگیز‌تر ماجرا می‌رسد‌. تابعی دیگر می‌نویسیم که این‌بار به جای کاراکتر‌ها‌، کد‌های معادل‌شان را چاپ کند:</p>
-<pre class="code literal-block">def show_unicode_code<span class="o">(</span>input_file<span class="o">)</span>:
+<pre class="code literal-block"><span></span>def show_unicode_code<span class="o">(</span>input_file<span class="o">)</span>:
 
 <span class="k">for</span> line in read_file<span class="o">(</span>input_file<span class="o">)</span>.readlines<span class="o">()</span>:
 
@@ -492,7 +492,7 @@ print ord<span class="o">(</span>char<span class="o">)</span>
 
 
 <p>و سر‌انجام تابعی می‌نویسیم که عکس کار بالا را انجام دهد:</p>
-<pre class="code literal-block">def replace_unicode_char<span class="o">(</span>input_file<span class="o">)</span>:
+<pre class="code literal-block"><span></span>def replace_unicode_char<span class="o">(</span>input_file<span class="o">)</span>:
 
 <span class="k">for</span> line in read_file<span class="o">(</span>input_file<span class="o">)</span>.readlines<span class="o">()</span>:
 
@@ -502,29 +502,29 @@ print unichr<span class="o">(</span>int<span class="o">(</span>line<span class="
 
 <p>مطمئنا می‌شد این توابع را به صورت‌های ساده‌تری هم نوشت‌. ولی خوب اولا سواد من به همین‌قدر می‌رسید‌، دوما هم به نظرم برنامه خوانا‌تر شده‌. برای کسانی که پایتون می‌دانند به نظرم کد‌ها به قدر کافی گویا هستند (آن‌هایی هم که نمی‌دانند کافیست انگلیسی‌شان کفایت کند‌. نا سلامتی هنر پایتون همین است D:). فقط یک نکته در تابع replace_unicode_char باقی می‌ماند و آن هم این که کاراکتر‌های ورودی به صورت رشته هستند و قبل از خوراندنشان به unichar باید تبدیل به عدد (int) شوند‌. همینطور اگر می‌خواهید کاراکتر‌ها را در خروجی چاپ کنید‌، باید به صورت utf-8 کد کنید که خود دستور به قدر کافی گویا هست‌.</p>
 <p>من کل این توابع به علاوهٔ یک تابع مهم‌تر از آن‌ها را (که پایین‌تر توضیح‌اش می‌دهم) به صورت یک اسکریپت نوشته‌ام که می‌توانید از<a title="لینک به اسکریپت chrvalidator.py" href="https://github.com/shahinism/Scripts/blob/master/Python/chrvalidator/chrvalidator.py" target="_blank"> این‌جا </a>دریافتش کنید‌. که خوب به عنوان راهنما اضافه کنم که در صورتی که خواستید فایل را به صورت کاراکتر به کاراکتر در خروجی ببینید از دستور زیر بهره بگیرید:</p>
-<pre class="code literal-block">python chrvalidator.py -i INPUT_FILE -c
+<pre class="code literal-block"><span></span>python chrvalidator.py -i INPUT_FILE -c
 </pre>
 
 
 <p>اگر خواستید که کد‌های یونیکد کاراکتر‌هایش را ببینید از دستور زیر استفاده کنید:</p>
-<pre class="code literal-block">python chrvalidator.py -i INPUT_FILE -u
+<pre class="code literal-block"><span></span>python chrvalidator.py -i INPUT_FILE -u
 </pre>
 
 
 <p>و اگر هم خواستید که بر عکس کار فوق (تبدیل کد‌های یونیکد به کاراکتر‌های نظیرشان) را انجام دهید‌، به جای ‎-u در دستور فوق از ‎-U استفاده کنید‌. خوب بگذارید به مسالهٔ اصلی‌مان برگردیم‌. برای شروع کار بیایید با دستورات زیر‌، لیستی از کد‌های کاراکتر استفاده شده در فایل‌مان به دست آوریم:</p>
-<pre class="code literal-block">python chrvalidator.py -i ashamloo.txt -u <span class="p">&amp;</span>gt<span class="p">;</span> chrcodes.txt
+<pre class="code literal-block"><span></span>python chrvalidator.py -i ashamloo.txt -u <span class="p">&amp;</span>gt<span class="p">;</span> chrcodes.txt
 
 sort -u chrcodes.txt <span class="p">&amp;</span>gt<span class="p">;</span> uniq.txt
 </pre>
 
 
 <p>خوب همان‌طور که معلوم است اول از همه کد تمام کاراکتر‌ها را استخراج کردیم‌. و سپس از آن‌جایی که مطمئنیم کاراکتر‌های تکراری زیادی داریم‌، و صد البته مطمئن‌تریم که یک فایل مرتب شده بیشتر به دردمان می‌خورد با استفاده از دستور sort -u کاراکتر‌های تکراری را حذف کرده و فایل را مرتب می‌کنیم‌. حالا همین فایل مرتب شده را دوباره به اسکریپت‌مان می‌خورانیم تا کاراکتر‌های نظیر‌شان را پیدا کنیم:</p>
-<pre class="code literal-block">python chrvalidator.py -i uniq.txt <span class="p">&amp;</span>gt<span class="p">;</span> uniqchr.txt
+<pre class="code literal-block"><span></span>python chrvalidator.py -i uniq.txt <span class="p">&amp;</span>gt<span class="p">;</span> uniqchr.txt
 </pre>
 
 
 <p>یک بررسی سرسری‌، نشان‌مان می‌دهد که تنها کاراکتر‌های محدودی از مجموع کاراکتر‌ها نیاز به تعویض دارند‌. دسته‌ای از کل کاراکتر‌ها مربوط به حروف انگلیسی یا اعدادند‌. دسته‌ای دیگر هم در این بین کاراکتر‌های استانداردند. و این وسط ما اکثرا نیاز به تغییر کاراکتر‌هایی موسوم به <a title="unicode character table" href="http://www.ssec.wisc.edu/~tomw/java/unicode.html#xFE70" target="_blank">Arabic Presentation Forms-B</a> داریم‌. خوب همانطور که می‌بینید در بین این کاراکتر‌ها برای نمونه حرف «ب» در سه حالت مختلف «اول‌، وسط‌، آخر» نمایش داده می‌شود که هر کدام کاراکتر مربوط به خود و در نتیجه کد مربوط به خود را دارند‌. برای همین ما تابعی دیگری نیز به صورت زیر به اسکریپت‌مان اضافه می‌کنیم:</p>
-<pre class="code literal-block"><span class="k">for</span> line in read_file<span class="o">(</span>input_file<span class="o">)</span>.readlines<span class="o">()</span>:
+<pre class="code literal-block"><span></span><span class="k">for</span> line in read_file<span class="o">(</span>input_file<span class="o">)</span>.readlines<span class="o">()</span>:
 
 <span class="k">for</span> char in line:
 
@@ -535,7 +535,7 @@ sort -u chrcodes.txt <span class="p">&amp;</span>gt<span class="p">;</span> uniq
 
 
 <p>در این تابع همان‌طور که پر واضح است‌، می‌گوییم فایل را کاراکتر به کاراکتر بخوان‌، کد دسیمال کاراکتر را پیدا کن‌، و اگر این کد دسیمال شبیه به یکی از سه عدد (کد‌های مربوط به حروف پ اول‌، وسط و آخر) بود آن را با حرف پ جایگزین کن‌. ساده است‌، این‌طور نیست؟ خوب من این کار را برای تقریبا چهل کاراکتر استاندارد انجام دادم که نتیجه‌اش در اسکریپت معلوم است (اگر شما خواستید فایل دیگری را به این روش تبدیل کنید و کاراکتری به این لیست اضافه کردید‌، خوشحال می‌شوم که اسکریپت تکمیل شده‌تان را با من و بقیه به اشتراک بگذارید‌)‌. در آخر کار هم با دستور زیر تابع را می‌بندیم:</p>
-<pre class="code literal-block">sys.stdout.softspace<span class="o">=</span>False
+<pre class="code literal-block"><span></span>sys.stdout.softspace<span class="o">=</span>False
 
 try:
 
@@ -549,7 +549,7 @@ print char,
 
 <p>خوب خط اول این مجموعه مربوط به این است که به پایتون بفهمانیم در هنگام چاپ کاراکتر‌ها بین‌شان فاصله نگذارد‌. اگر این مقدار درست باشد‌، کاراکتر‌ها به صورت س ل ا م نوشته می‌شوند، که خوب به درد ما نمی‌خورد‌. همینطور ممکن است به دلیل این که بعضی اوقات در بین کاراکتر‌ها‌، کاراکتر به صورت utf-8 کد شده‌ای پیدا شود و خروجی را بشکند‌، با یک try, except جلوی این اتفاق را می‌گیریم‌، که یک کمی ممکن است گیج کنند باشد‌. در این مورد فقط به من اعتماد داشته باشید که اسکریپت کار می‌کند ;-)</p>
 <p>برای پایان کار هم فایل تکست اولیه‌مان را به صورت زیر با اسکریپت حاضرمان ویرایش می‌کنیم:</p>
-<pre class="code literal-block">python chrvalidator.py -i ashamloo.txt <span class="p">&amp;</span>gt<span class="p">;</span> validashamloo.txt
+<pre class="code literal-block"><span></span>python chrvalidator.py -i ashamloo.txt <span class="p">&amp;</span>gt<span class="p">;</span> validashamloo.txt
 </pre>
 
 
@@ -559,7 +559,7 @@ print char,
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910902tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html#disqus_thread" data-disqus-identifier="cache/posts/wp/tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b.html">Comments</a>
 
 
     </div>

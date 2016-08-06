@@ -99,9 +99,9 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910423chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html" class="u-url">چگونه ایمکس‌مان را تربیت کنیم (قسمت اول)</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html" class="u-url">چگونه ایمکس‌مان را تربیت کنیم (قسمت اول)</a></h1>
             شاهین
-      <a href="posts/blog13910423chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-13T13:45:12+04:30" title="2012-07-13 13:45">2012-07-13 13:45</time></a>
+      <a href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-13T13:45:12+04:30" title="2012-07-13 13:45">2012-07-13 13:45</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -116,39 +116,39 @@ article: http://ogp.me/ns/article#
 <h4>ساختار دستورات elisp</h4>
 
 <p>اولین نکته در مورد لیسپ (یا در این مورد elisp) این است که تمامی دستوراتش باید داخل پرانتز نوشته شود‌. یعنی فرمی به صورت زیر:</p>
-<pre class="code literal-block"><span class="o">(</span><span class="nb">command</span><span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span><span class="nb">command</span><span class="o">)</span>
 </pre>
 
 
 <p>نکتهٔ بعد نوع نوشتن دستورات است‌. در زبان‌هایی مانند C یا Python یا دیگر زبان‌هایی که تا الان دیده بودم‌ (جز اسمبلی) دستورات تقریبا به صورت عامیانه نوشته می‌شد‌. مثلا ۲ + ۳ را دقیقا همینطور می‌نوشتیم‌. ولی در لیسپ باید این ترتیب رعایت شود:‌ ۱- عملگر ۲- آرگومان‌ها‌. یعنی برای دستور ۲ + ۳ داریم:</p>
-<pre class="code literal-block"><span class="o">(</span>+ <span class="m">2</span> 3<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">2</span> 3<span class="o">)</span>
 </pre>
 
 
 <p>خوب مزیتش می‌شود این که دیگر برای ۲ + ۳ + ۴ + ۵ + ۶ فقط می‌نویسیم:</p>
-<pre class="code literal-block"><span class="o">(</span>+ <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="o">)</span>
 </pre>
 
 
 <p>و دیگر خبری هم از دردسر اولویت عملگر‌ها نمی‌شود‌. مثلا:</p>
-<pre class="code literal-block"><span class="o">(</span>+ <span class="m">3</span> <span class="o">(</span>* <span class="m">4</span> 5<span class="o">))</span> که جوابش می‌شود ۲۳
+<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">3</span> <span class="o">(</span>* <span class="m">4</span> 5<span class="o">))</span> که جوابش می‌شود ۲۳
 
 <span class="o">(</span>* <span class="o">(</span>+ <span class="m">3</span> 4<span class="o">)</span> 5<span class="o">)</span> که جوابش می‌شود ۳۵
 </pre>
 
 
 <p>یا مثلا اگر قرار بود قبلا تابعی را با آرگومان‌هایش به صورت زیر فرا بخوانیم:</p>
-<pre class="code literal-block">foo <span class="o">(</span><span class="m">3</span> + 4, <span class="m">5</span> + 6<span class="o">)</span>
+<pre class="code literal-block"><span></span>foo <span class="o">(</span><span class="m">3</span> + 4, <span class="m">5</span> + 6<span class="o">)</span>
 </pre>
 
 
 <p>الان کارمان به این صورت انجام می‌گیرد:</p>
-<pre class="code literal-block"><span class="o">(</span>foo <span class="o">(</span>+ <span class="m">3</span> 4<span class="o">)</span> <span class="o">(</span>+ <span class="m">5</span> 6<span class="o">))</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>foo <span class="o">(</span>+ <span class="m">3</span> 4<span class="o">)</span> <span class="o">(</span>+ <span class="m">5</span> 6<span class="o">))</span>
 </pre>
 
 
 <p>ساده بود؟‌ خوب نکتهٔ‌ بعدی لیست‌ها هستند‌. که به صورت زیر تعریف می‌شوند:</p>
-<pre class="code literal-block"><span class="o">(</span>hello there<span class="o">)</span> که لیست شامل دو نشانه است.
+<pre class="code literal-block"><span></span><span class="o">(</span>hello there<span class="o">)</span> که لیست شامل دو نشانه است.
 
 <span class="o">(</span><span class="m">1</span> <span class="m">2</span> xyz <span class="s2">") که لیستی شامل دو عدد و یک رشته است‌.</span>
 
@@ -163,17 +163,17 @@ article: http://ogp.me/ns/article#
 <h4>کلید‌ها در elisp</h4>
 
 <p>برای این که به ایمکس بفمانیم با فشرده شدن فلان کلید فلان کار را انجام بده‌، باید اول بدانیم که چطور یک کلید را تعریف کنیم‌. کلید‌ها در حالت عادی بین دو کتیشن "" و به صورت یک رشته تعریف می‌شوند‌. مثلا در مثلا زیر ما سه کلید xyz را تعریف می‌کنیم:</p>
-<pre class="code literal-block"><span class="s2">"xyz"</span>
+<pre class="code literal-block"><span></span><span class="s2">"xyz"</span>
 </pre>
 
 
 <p>اما نکته این‌جاست که چطور کلید‌های Ctrl و Alt را به ایمکس حالی کنیم‌! این کلید‌ها عملا با حرف C بزرگ برای Ctrl و M برای کلید Meta یا همان Alt شناخته می‌شوند‌. اما اگر ما "M" یا "C" استفاده کنیم، حروف M بزرگ و C بزرگ را معرفی کرده‌ایم و نه Ctrl و Alt را‌. این‌جاست که از علامت شکنندهٔ «\» استفاده می‌کنیم‌. (اگر قبلا برنامه نویسی کرده باشید احتمالا خوب از مزایایش با خبرید‌). و داریم:</p>
-<pre class="code literal-block"><span class="s2">"\M"</span>
+<pre class="code literal-block"><span></span><span class="s2">"\M"</span>
 </pre>
 
 
 <p>خوب دیگر کارمان راحت شد‌. فقط یک نکتهٔ کوچک دیگر باقی می‌ماند‌. این که چطور فرق بین پایین نگه داشتن کلید Ctrl و زدن x و بعد رها کردن هر دویشان و زدن مثلا کلید l را تعیین کنیم‌. این عبارت در ایمکس به صورت C-x l نوشته می‌شود‌. خوب احتمالا حدس زده‌اید‌:</p>
-<pre class="code literal-block"><span class="s2">"\C-x l"</span>
+<pre class="code literal-block"><span></span><span class="s2">"\C-x l"</span>
 </pre>
 
 
@@ -181,18 +181,18 @@ article: http://ogp.me/ns/article#
 <h4>امتحان تغییرات ایجاد شده روی ایمکس</h4>
 
 <p>خوب ما تغییرات و توابع ایجاد شده‌یمان را در فایل ‎.emacs موجود در پوشهٔ خانگیمان وارد می‌کنیم‌. اما چطور تغییرات را اعمال کنیم؟ ساده‌ترین راه و اولین چیزی که احتمالا به ذهنتان می‌رسد بستن ایمکس و باز کردن دوباره‌اش است. روش خوبی است‌‌، ولی آسان‌تر از این هم پیدا می‌شود‌. مثلا زدن دستور زیر:</p>
-<pre class="code literal-block">M-x <span class="nb">eval</span>-buffer RET
+<pre class="code literal-block"><span></span>M-x eval-buffer RET
 </pre>
 
 
 <p>این دستور تقریبا کار راه انداز است‌. ولی موقعی که فایل کانفیگتان زیادی سنگین شد‌، و مثلا رسید به هزار خط (‌می‌رسد‌، غم مخورید ;-)) ممکن است زمان زیادی تا لود شدن طول بکشد‌. پس منطقی نیست که همهٔ فایل را لود کنیم‌. چطور است که فقط تغییرات ایجاد شده را دوباره لود کنیم؟ (همین انتخاب‌های گسترده است که دارد عاشق دل باخته‌ام می‌کند ;-)) پس راه بعدی‌مان می‌شود این که برویم در انتهای خطی که تغییر جدیدمان را اعمال کرده‌ایم بایستیم و کلید‌های زیر را وارد کنیم:</p>
-<pre class="code literal-block">C-x C-e
+<pre class="code literal-block"><span></span>C-x C-e
 </pre>
 
 
 <p>کار این کلید‌ها این است که خط قبل از علامت نشانگر را پردازش کنند و در کانفیگ حاضر ایمکس مداخله دهند‌. </p>
 <p>خوب ما می‌دانیم که این کلید‌ها حتما یک دستوری را پشت پردهٔ ایمکس اجرا می‌کنند‌. می‌خواهید بدانید که آن دستور چیست؟ اول دستور زیر را وارد کنید:</p>
-<pre class="code literal-block">M-x describe-key
+<pre class="code literal-block"><span></span>M-x describe-key
 </pre>
 
 
@@ -202,22 +202,22 @@ article: http://ogp.me/ns/article#
 
 <p>مساله خیلی ساده است‌. تا به حال حتما پیش آمده که چند تا پنجرهٔ باز دارید و می‌خواهید بین‌شان سوئیچ کرده و به پنجرهٔ سمت راست‌تان بروید. خوب برای این کار از کلید‌های C-x o استفاده می‌کنید‌. حالا اگر بخواهید به سمت چپ بروید چطور؟ شاید وقتی دو پنجرهٔ باز دارید کار سختی نباشد و با تکرار همین دستور به سمت چپی هدایت شوید‌. ولی در پنج پنجرهٔ باز چطور؟ چهار بار باید این کار را انجام دهید‌. یا شاید اصلا نظرتان به نظر من نزدیک باشد که C-x o یک کمی را دست نباشد‌. (این نظر شخصیست) طی ادامهٔ این شماره از مقاله و شمارهٔ بعد قصد حل این مساله را داریم‌. یعنی اول این که کلید‌های C-x o که وظیفه‌شان پرش به پنجرهٔ بعدی است را با یک کلید دلخواه جایگزین کنیم‌. و سپس یک کلید که بتواند عکس همین عمل را یعنی پرش به پنجرهٔ سمت چپ را انجام دهد هم بسازیم‌.</p>
 <p>خوب تا این‌جای کار می‌دانیم چه کار‌هایی می‌توان انجام داد و می‌دانیم که چه مساله‌ای پیش رو داریم‌. پس حل تقریبا آسان است‌. پس شروع می‌کنیم‌. اولین کاری که باید بکنیم این است که بفهمیم با چه دستوری می‌توان یک کلید میانبر تعریف کرد‌. دستور مورد نظر ما global-set-key نام دارد‌. که به صورت زیر می‌تواند مورد استفاده قرار گیرد:</p>
-<pre class="code literal-block"><span class="o">(</span>global-set-key KEY COMMAND<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>global-set-key KEY COMMAND<span class="o">)</span>
 </pre>
 
 
 <p>خوب حالا دو چیز بعدی که نیاز داریم هم سر و کله‌شان پیدا شد‌. اولی KEY که منظور کلید‌های میانبر مورد نظرمان است‌، و دیگری COMMAND که دستوری است که می‌خواهیم با زدن کلید‌های KEY اجرا شود‌. خوب چه کلید‌هایی را انتخاب کنیم؟ این کتابی که من به عنوان راهنما استفاده می‌کنم کلید‌های C-x C-n را برای پرش به پنجرهٔ سمت راست و C-x C-p را برای پرش به پنجرهٔ سمت چپ انتخاب کرده‌. انتخاب جالبی به نظر می‌رسد و من هم همان‌ها را انتخاب می‌کنم‌. اما نکته این‌جاست که اول ببینیم نکند یادمان نباشد و بزنیم یکی از کلید‌های میانبر حاضرمان را ناکار کنیم‌. پس می‌آییم و با describe-key ته و توی قضیه را می‌ریزیم روی دایره‌. هاها بعله‌، این کلید‌ها به ترتیب برای فراخوانی set-goal-column و mark-page استفاده می‌شوند‌. که خوب حتی روحم هم از وجود چنین چیز‌هایی خبر‌دار نبود‌. پس فکر نمی‌کنم که این تغییر اشکالی داشته باشد‌. ضمن این که هر وقت که بخواهم می‌توانم دستورام را بعد از M-x وارد و اجرا کنم D:. پس کلید‌ها هم تعیین شد و تا اینجای کار دستور مربوط به پرشمان به پنجرهٔ سمت راست چیزی شبیه به این شده:</p>
-<pre class="code literal-block"><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> COMMAND<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> COMMAND<span class="o">)</span>
 </pre>
 
 
 <p>و حالا بخش آخر داستان‌. حتما دیگر یاد گرفته‌اید که چطور دستور مربوط به C-x o را که می‌خواهیم به C-x C-n پیوند بدهیم را پیدا کنید‌. ما پیدایش کردیم و فهمیدیم که دستوری به اسم other-window را اجرا می‌کند‌. پس احتمالا می‌گویید که دستورمان بعد از تکامل می‌شود این:</p>
-<pre class="code literal-block"><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> other-window<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> other-window<span class="o">)</span>
 </pre>
 
 
 <p>خوب تا حدودی راست گفته‌اید‌. ولی مشکل اینجاست که لیسپ کمی خنگ است و آن دستوری که سمت راست نوشته‌ایم other-window را هم اجرا می‌کند و این اصلا خوب نیست‌. پس باید یک جوری حالیش کنیم که بی‌خیال این دستور شود و فقط سمت چپی را اجرا کند‌. این است که یک «'» به تنهایی به کمکمان می‌آید و دستور می‌شود:</p>
-<pre class="code literal-block"><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> <span class="err">'</span>other-window<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-n"</span> <span class="err">'</span>other-window<span class="o">)</span>
 </pre>
 
 
@@ -227,16 +227,16 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910423chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910423chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-w.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910417yddshty-bry-khnfyg-i3.html" class="u-url">یادداشتی برای کانفیگ i3</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/yddshty-bry-khnfyg-i3.html" class="u-url">یادداشتی برای کانفیگ i3</a></h1>
             شاهین
-      <a href="posts/blog13910417yddshty-bry-khnfyg-i3.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-07T06:32:28+04:30" title="2012-07-07 06:32">2012-07-07 06:32</time></a>
+      <a href="posts/wp/yddshty-bry-khnfyg-i3.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-07T06:32:28+04:30" title="2012-07-07 06:32">2012-07-07 06:32</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -252,7 +252,7 @@ article: http://ogp.me/ns/article#
 آماده کردم‌. دوستان آرچر می‌توانند از این
 <a title="i3 pango aur" href="https://aur.archlinux.org/packages.php?ID=59344" target="_blank">بسته</a>
 برای نصب استفاده کنند‌. اما باقی که می‌خواهند خودشان کامپایل کنند کافیست پچ را در پوشهٔ‌ سورس کپی کنند و با دستور زیر ترتیب کار را بدهند:‌</p>
-<pre class="code literal-block">patch -p1 &lt; i3-wm-pango.patch
+<pre class="code literal-block"><span></span>patch -p1 &lt; i3-wm-pango.patch
 </pre>
 
 
@@ -261,28 +261,28 @@ article: http://ogp.me/ns/article#
 
 <p>قبل از این که بگویید این که چیزی ندارد تا بخواهیم کانفیگش کنیم بگذارید بگویم که دو روز وقتم را گرفت تا بتوانم به اینجا برسانمش ;-)</p>
 <p>برای شروع کار می‌خواهیم فونت میزکار را تعیین کنیم‌. فایل کانفیگ i3 برای هر کاربر از شاخهٔ ‎~/.i3/config خوانده می‌شود‌ (توجه داشته باشید که در اولین اجرا اگر این فایل وجود نداشته باشد برنامهٔ کانفیگ خودکار i3 شروع می‌شود و از شما می‌پرسد که کدام کلید را به عنوان metaیتان تعریف کند‌ و بعد این فایل ساخته می‌شود-اگر هم نشد در <a title="i3 userguide" href="http://i3wm.org/docs/userguide.html" target="_blank">userguide</a> دنبالش بگردید و مسیرش را ببینید!) فایل کانفیگ را پیدا می‌کنیم و دنبال خط زیر می‌گردیم:</p>
-<pre class="code literal-block">font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+<pre class="code literal-block"><span></span>font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 </pre>
 
 
 <p>و آن را به صورت زیر ویرایش می‌کنیم:</p>
-<pre class="code literal-block">font xft:Terminus 9
+<pre class="code literal-block"><span></span>font xft:Terminus 9
 </pre>
 
 
 <p>همچنین از آن‌جا که ترمینال پیش‌فرض i3 را دوست نداریم و می‌خواهیم Terminator جایگزینش شود به دنبال ‎# start a terminal می‌گردیم و خط زیرش را به صورت زیر ویرایش می‌کنیم:</p>
-<pre class="code literal-block">bindsym <span class="nv">$mod</span>+Return <span class="nb">exec</span> --no-startup-id terminator
+<pre class="code literal-block"><span></span>bindsym <span class="nv">$mod</span>+Return <span class="nb">exec</span> --no-startup-id terminator
 </pre>
 
 
 <p>در ادامهٔ کار با کانفیگ‌های پیش‌فرض i3 می‌سازیم‌، جز این که یک مشکل کوچک و قابل حل وجود دارد‌. آن هم این که بعد از تغییر layout کیبورد به فارسی دیگر کلید‌های میانبر میزکارمان کار نمی‌کنند و باید layout را انگلیسی کنیم تا به کار بیافتند‌. برای حل این مشکل باید به جای کلید‌های bindsym (کلید‌های میانبری که با اسم کلید مثلا shift, Return و ... تعریف می‌شوند) از bindcode استفاده کنیم‌. برای نمونه ما کلید‌های میانبر تغییر layout را به این صورت تعریف می‌کنیم.</p>
 <p>کلید‌های مدنظر ما برای تغییر صفحه کلید Alt+Shift است‌. اول از همه در اول فایل کانفیگ یک متغیر به اسم ‎$mod1 که به Alt اشاره می‌کند به صورت زیر تعریف می‌کنیم:</p>
-<pre class="code literal-block"><span class="nb">set</span> <span class="nv">$mod1</span> Mod1
+<pre class="code literal-block"><span></span><span class="nb">set</span> <span class="nv">$mod1</span> Mod1
 </pre>
 
 
 <p>و سپس خطوط زیر را در انتهای فایل کانفیگ اضافه می‌کنیم:</p>
-<pre class="code literal-block">bindcode <span class="nv">$mod1</span>+62 <span class="nb">exec</span> ~/.i3/changekb.sh
+<pre class="code literal-block"><span></span>bindcode <span class="nv">$mod1</span>+62 <span class="nb">exec</span> ~/.i3/changekb.sh
 
 bindcode <span class="nv">$mod1</span>+50 <span class="nb">exec</span> ~/.i3/changekb.sh
 </pre>
@@ -290,7 +290,7 @@ bindcode <span class="nv">$mod1</span>+50 <span class="nb">exec</span> ~/.i3/cha
 
 <p>خوب حالا این دو خط چه می‌کنند؟ دستور bindcode به i3 می‌فهماند که باید از کد کلید‌های کیبورد برای شناسایی کلید ترکیبی استفاده کند‌. ‎$mod1 را هم که پیشتر خودمان به عنوان کلید Alt تعریف کردیم‌. حالا می‌ماند اعداد ۶۲ و ۵۰‌. این اعداد کد‌هایی هستند که کلید‌های شیفت چپ و راست کیبورد با آن‌ها شناخته می‌شوند و دقیقا مختص همین کلید‌ها هستند‌. برای کشفشان می‌توانید در ترمینال برنامهٔ xev را اجرا کنید کلید مورد نظرتان را فشار دهید و در خروجی‌ها به دنبال عبارت keycode و عدد روبرویش بگردید‌.</p>
 <p>exec هم فرمانی است که با استفاده از آن می‌توانیم یک اسکریپت خارجی را اجرا کنیم که در اینجا ما اسکریپتی که layout را بررسی می‌کند و با توجه به وضعیت فعلی‌اش آن را به انگلیسی یا فارسی تغییر می‌دهد را به آن شناساندیم‌. پس لازم است کد زیر را که مربوط به این اسکریپت است در فایل changekb.sh وارد کرده و فایل را به پوشهٔ ‎.i3 در پوشهٔ خانگیتان کپی کنید:</p>
-<pre class="code literal-block"><span class="c">#This is a script for changing keyboard between English and Persian layouts</span>
+<pre class="code literal-block"><span></span><span class="c1">#This is a script for changing keyboard between English and Persian layouts</span>
 
 <span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>setxkbmap -print <span class="p">|</span> grep xkb_symbols <span class="p">|</span> awk <span class="s1">'{print $4}'</span> <span class="p">|</span> awk -F<span class="s2">"+"</span> <span class="s1">'{print $2}'</span><span class="sb">`</span> <span class="o">=</span> us <span class="o">]</span><span class="p">;</span>
 
@@ -304,14 +304,14 @@ bindcode <span class="nv">$mod1</span>+50 <span class="nb">exec</span> ~/.i3/cha
 
 <p>نکته اینجاست که نمی‌دانم چرا Alt+Shift راست پس از تغییر layout به فارسی قادر به بازگردانیش به انگلیسی نیستند‌، در حالی که کلید‌های سمت چپ به راحتی این کار را انجام می‌دهند‌! البته این کار مزیتی برای خودش دارد و آن هم این که با استفاده از کلید‌های سمت راست دیگر خیالم راحت است که کیبورد فارسی است ;-)</p>
 <p>در ادامه به حیاتی‌ترین بخش میزکارمان می‌رسیم‌. بخش گزارش‌گیری‌! نوار پایینی میزکار توسط برنامهٔ i3bar کنترل می‌شود‌. این برنامه می‌تواند خروجی برنامه‌های مختلف را در خود نمایش دهد‌. خود i3 برنامه‌ای به اسم i3status برای گزارش‌گیری دارد که من زیاد از آن خوشم نیامد‌. این شد که تصمیم گرفتم از conky برای این بخش استفاده کنم‌. چون هم ابزار‌های بیشتری دارد و هم قابلیت اجرای یک اسکریپت خارجی را بدون درد و خونریزی! این شد که به دنبال خط bar که احتمالا در انتهای فایل کانفیگ قرار دارد می‌گردیم و در میان آکولاد‌های روبرویش دو خط زیر را اضافه می‌کنیم:</p>
-<pre class="code literal-block">font -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+<pre class="code literal-block"><span></span>font -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso10646-*
 
-status_command <span class="nb">exec </span>conky -c ~/.i3/i3conky
+status_command <span class="nb">exec</span> conky -c ~/.i3/i3conky
 </pre>
 
 
 <p>خط اول این دستور که فونت terminus را برای خروجی i3bar تعریف کرده را می‌توانید نادیده بگیرید و یا به صورت xft مثل دفعهٔ قبل تعیین کنید‌. اما خط دوم دستور conky را با فایل کانفیگ i3conky که در شاخهٔ ‎.i3 قرار دارد اجرا می‌کند‌. پس لازم است این فایل را ایجاد کنید و دستورات زیر را در آن کپی کنید:</p>
-<pre class="code literal-block">background no
+<pre class="code literal-block"><span></span>background no
 
 out_to_console yes
 
@@ -338,19 +338,19 @@ CPU: <span class="si">${</span><span class="nv">cpu</span><span class="p"> cpu1<
 
 
 <p>توضیح آرگومان‌های این فایل بماند به عهدهٔ خودتان‌. فقط من برای دیدن وضعیت فعلی صفحه کلید اسکریپت تغییر صفحه کلید را ویرایش کردم و آن را به اسم kbstatus.sh در شاخهٔ ‎.i3 قرار دادم تا از conky آن را فرا بخوانم‌. این اسکریپت فقط layout فعلی را در خروجی نشان می‌دهد و کدش به صورت زیر است:</p>
-<pre class="code literal-block"><span class="c">#!/usr/bin/bas</span>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/bas</span>
 
 setxkbmap -print <span class="p">|</span> grep xkb_symbols <span class="p">|</span> awk <span class="s1">'{print $4}'</span> <span class="p">|</span> awk -F<span class="s2">"+"</span> <span class="s1">'{print $2}'</span>
 </pre>
 
 
 <p>کانفیگ میزکارمان دیگر تقریبا تمام شده‌. فقط می‌ماند یک چند تا ریزه کاری‌. i3 به صورت پیش‌فرض صفحه را از طرفی که بزرگتر است نصف می‌کند‌. پس دز عمدهٔ مانیتور‌ها این مسیر به صورت افقی تعریف می‌شود‌. حال آن که من تقسیم عمودی را بیشتر ترجیح می‌دهم‌. پس با خط زیر به i3 می‌فهمانم که این کار را طبق نظر من انجام دهد:</p>
-<pre class="code literal-block">default_orientation vertical
+<pre class="code literal-block"><span></span>default_orientation vertical
 </pre>
 
 
 <p>همچنین می‌خواهم تعدادی از برنامه‌هایم مثل mdic یا vlc به صورت float (تایل نشده) باز شوند که برای این کار دستورات زیر را اضافه می‌کنم:</p>
-<pre class="code literal-block">for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">"Vlc"</span><span class="o">]</span> floating <span class="nb">enable</span>
+<pre class="code literal-block"><span></span>for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">"Vlc"</span><span class="o">]</span> floating <span class="nb">enable</span>
 
 for_window <span class="o">[</span><span class="nv">class</span><span class="o">=</span><span class="s2">"Mdic"</span><span class="o">]</span> floating <span class="nb">enable</span>
 
@@ -363,7 +363,7 @@ for_window <span class="o">[</span><span class="nv">instance</span><span class="
 
 
 <p>مقدار class و یا instance را می‌توانید پس از ران کردن دستور xprop WM_CLASS و سپس کلیک روی برنامهٔ مورد نظر به دست آورید‌. مثلا در مورد فایرفاکس خروجی به صورت زیر است:</p>
-<pre class="code literal-block">WM_CLASS<span class="o">(</span>STRING<span class="o">)</span> <span class="o">=</span> <span class="s2">"Navigator"</span>, <span class="s2">"Firefox"</span>
+<pre class="code literal-block"><span></span>WM_CLASS<span class="o">(</span>STRING<span class="o">)</span> <span class="o">=</span> <span class="s2">"Navigator"</span>, <span class="s2">"Firefox"</span>
 </pre>
 
 
@@ -373,16 +373,16 @@ for_window <span class="o">[</span><span class="nv">instance</span><span class="
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910417yddshty-bry-khnfyg-i3.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910417yddshty-bry-khnfyg-i3.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/yddshty-bry-khnfyg-i3.html#disqus_thread" data-disqus-identifier="cache/posts/wp/yddshty-bry-khnfyg-i3.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html" class="u-url">تجربهٔ کار با i3 یک رقیب قدر‌!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/tjrbh-khr-b-i3-ykh-rgyb-qdr.html" class="u-url">تجربهٔ کار با i3 یک رقیب قدر‌!</a></h1>
             شاهین
-      <a href="posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-05T05:46:57+04:30" title="2012-07-05 05:46">2012-07-05 05:46</time></a>
+      <a href="posts/wp/tjrbh-khr-b-i3-ykh-rgyb-qdr.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-05T05:46:57+04:30" title="2012-07-05 05:46">2012-07-05 05:46</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -419,7 +419,7 @@ for_window <span class="o">[</span><span class="nv">instance</span><span class="
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/tjrbh-khr-b-i3-ykh-rgyb-qdr.html#disqus_thread" data-disqus-identifier="cache/posts/wp/tjrbh-khr-b-i3-ykh-rgyb-qdr.html">Comments</a>
 
 
     </div>

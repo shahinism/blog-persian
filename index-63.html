@@ -99,9 +99,9 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910521prwjh-ngr-w-msybsh.html" class="u-url">پروژهٔ نگار و مصائبش</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/prwjh-ngr-w-msybsh.html" class="u-url">پروژهٔ نگار و مصائبش</a></h1>
             شاهین
-      <a href="posts/blog13910521prwjh-ngr-w-msybsh.html" rel="bookmark"><time class="published dt-published" datetime="2012-08-11T03:31:44+04:30" title="2012-08-11 03:31">2012-08-11 03:31</time></a>
+      <a href="posts/wp/prwjh-ngr-w-msybsh.html" rel="bookmark"><time class="published dt-published" datetime="2012-08-11T03:31:44+04:30" title="2012-08-11 03:31">2012-08-11 03:31</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -130,16 +130,16 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910521prwjh-ngr-w-msybsh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910521prwjh-ngr-w-msybsh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/prwjh-ngr-w-msybsh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/prwjh-ngr-w-msybsh.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html" class="u-url">از Autojump در ترمینال غافل نشوید‌!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/z-autojump-dr-trmynl-qfl-nshwyd.html" class="u-url">از Autojump در ترمینال غافل نشوید‌!</a></h1>
             شاهین
-      <a href="posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html" rel="bookmark"><time class="published dt-published" datetime="2012-08-04T09:09:09+04:30" title="2012-08-04 09:09">2012-08-04 09:09</time></a>
+      <a href="posts/wp/z-autojump-dr-trmynl-qfl-nshwyd.html" rel="bookmark"><time class="published dt-published" datetime="2012-08-04T09:09:09+04:30" title="2012-08-04 09:09">2012-08-04 09:09</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -147,43 +147,43 @@ article: http://ogp.me/ns/article#
 <h5>نصب</h5>
 
 <p>برای نصب اگر پایتون روی سیستم‌تان بالا‌تر از ۲.۷ است که خیال‌تان راحت و تنها کافییست که آن را از کانال گیتش دریافت کنید و پس از ورود به پوشه‌اش اسکریپت install.sh را اجرا کنید‌. اما اگر مثل من با این ترافیک داغان اینترنت روی اسلکور استیبل گیر کرده‌اید (این یعنی پایتون ۲.۶) پس باید یک چند‌تا کار اضافه انجام دهید‌ (یا شاید هم بخواهید به ورژن ۱۹ که توی اسلک‌بیلد‌ها پیدا می‌شود بسنده کنید):</p>
-<pre class="code literal-block">sbopkg -R -i <span class="s2">"pysetuptools pip"</span>
+<pre class="code literal-block"><span></span>sbopkg -R -i <span class="s2">"pysetuptools pip"</span>
 </pre>
 
 
 <p>امیدوارم sbopkg را نصب کرده و بی‌خودی زندگی را برای خود سخت نگیرید ;-) حالا هم کافیست که با pip بستهٔ مورد نیاز Autojump را نصب کنید‌:</p>
-<pre class="code literal-block">pip install argparse
+<pre class="code literal-block"><span></span>pip install argparse
 </pre>
 
 
 <p>و سپس:</p>
-<pre class="code literal-block">git clone git://github.com/joelthelion/autojump.git
+<pre class="code literal-block"><span></span>git clone git://github.com/joelthelion/autojump.git
 
-<span class="nb">cd </span>autojump
+<span class="nb">cd</span> autojump
 
 ./install.sh --force
 </pre>
 
 
 <p>و حالا خط زیر را به ‎.zshrc اضافه کنید:</p>
-<pre class="code literal-block"><span class="o">[[</span> -s /etc/profile.d/autojump.zsh <span class="o">]]</span> <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> <span class="nb">source</span> /etc/profile.d/autojump.zsh
+<pre class="code literal-block"><span></span><span class="o">[[</span> -s /etc/profile.d/autojump.zsh <span class="o">]]</span> <span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span> <span class="nb">source</span> /etc/profile.d/autojump.zsh
 </pre>
 
 
 <p>و سر‌انجام:</p>
-<pre class="code literal-block"><span class="nb">source</span> ~/.zshrc
+<pre class="code literal-block"><span></span><span class="nb">source</span> ~/.zshrc
 </pre>
 
 
 <h5>مشکل</h5>
 
 <p>و خوب کار باید تمام شده باشد اما دستور زیر را امتحان کنید:</p>
-<pre class="code literal-block">vim ~/.zsh<span class="o">[</span>TAB<span class="o">]</span>
+<pre class="code literal-block"><span></span>vim ~/.zsh<span class="o">[</span>TAB<span class="o">]</span>
 </pre>
 
 
 <p>که احتمالا چیزی شبیه خروجی زیر نصیبتان می‌شود:</p>
-<pre class="code literal-block">_arguments:439: _vim_files: <span class="k">function</span> definition file not found
+<pre class="code literal-block"><span></span>_arguments:439: _vim_files: <span class="k">function</span> definition file not found
 
 _arguments:439: _vim_files: <span class="k">function</span> definition file not found
 
@@ -192,13 +192,13 @@ _arguments:439: _vim_files: <span class="k">function</span> definition file not 
 
 
 <p>و این یعنی اتوکامپلیشن فوق‌العادهٔ ZSH جلوی دستور vim از کار می‌افتد‌! خوب چه کنیم؟ تنها یک راه حل در اینترنت جواب این مساله بود و آن هم <a title="Problem on Arch forum" href="https://bbs.archlinux.org/viewtopic.php?id=37245" target="_blank">از انجمن آرچر‌های </a>اعظم:</p>
-<pre class="code literal-block"><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$fpath</span> <span class="o">(</span>see the <span class="k">function</span> PATH of zsh<span class="o">)</span>
+<pre class="code literal-block"><span></span>$ <span class="nb">echo</span> <span class="nv">$fpath</span> <span class="o">(</span>see the <span class="k">function</span> PATH of zsh<span class="o">)</span>
 
 /usr/share/zsh/site-functions /usr/share/zsh/4.3.11/functions
 
-<span class="nv">$ </span><span class="nb">cd</span> /usr/share/zsh/4.3.11/functions
+$ <span class="nb">cd</span> /usr/share/zsh/4.3.11/functions
 
-<span class="nv">$ </span>ls _vi*
+$ ls _vi*
 
 _vim
 
@@ -211,16 +211,16 @@ rm _vim
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910514z-autojump-dr-trmynl-qfl-nshwyd.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/z-autojump-dr-trmynl-qfl-nshwyd.html#disqus_thread" data-disqus-identifier="cache/posts/wp/z-autojump-dr-trmynl-qfl-nshwyd.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910502chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html" class="u-url">چگونه ایمکس‌مان را تربیت کنیم (قسمت دوم)</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html" class="u-url">چگونه ایمکس‌مان را تربیت کنیم (قسمت دوم)</a></h1>
             شاهین
-      <a href="posts/blog13910502chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-23T10:49:27+04:30" title="2012-07-23 10:49">2012-07-23 10:49</time></a>
+      <a href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html" rel="bookmark"><time class="published dt-published" datetime="2012-07-23T10:49:27+04:30" title="2012-07-23 10:49">2012-07-23 10:49</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -229,7 +229,7 @@ rm _vim
 <h5>تعریف اولیه other-window-backward</h5>
 
 <p>برای این که از سختی وارد کردن همچون دستوری بکاهیم‌، بهتر است که آن را به صورت یک تابع تعریف کنیم تا هر جایی که نیاز بود بتوانیم به راحتی از آن استفاده کنیم:</p>
-<pre class="code literal-block"><span class="o">(</span>defun other-window-backward <span class="o">(</span> <span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>defun other-window-backward <span class="o">(</span> <span class="o">)</span>
 
 <span class="s2">"Select the previous window."</span>
 
@@ -240,31 +240,31 @@ rm _vim
 
 
 <p>خوب این خطوط به چه معناست؟ به ترتیب آن‌ها را بررسی می‌کنیم:</p>
-<pre class="code literal-block"><span class="o">(</span>defun other-window-backward <span class="o">(</span> <span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>defun other-window-backward <span class="o">(</span> <span class="o">)</span>
 </pre>
 
 
 <p>در این خط مثل اکثر زبان‌های برنامه‌نویسی دیگر‌، شروع به تعریف تابع می‌کنیم‌. defun عبارتی است مانند def در پایتون که وظیفهٔ تعریف توابع را بر عهده دارد‌. در ادامه نیز اسم تابع other-window-backward و یک جفت پرانتز خالی (که محل تعریف آرگومان‌هایمان در آینده است) را قرار می‌دهیم‌.</p>
 <p>در خط دوم:</p>
-<pre class="code literal-block"><span class="s2">"Select the previous window"</span>
+<pre class="code literal-block"><span></span><span class="s2">"Select the previous window"</span>
 </pre>
 
 
 <p>تنها یک توضیح کوتاه برای عملکرد تابع می‌نویسیم‌. این توضیح عملا تاثیری در روند اجرا تابع ندارد‌. اما وقتی کاربر بخواهد با دستوری مثل describe-function از نحوهٔ عملکرد تابع مطلع شود‌، این توضیح است که نمایش داده می‌شود‌.</p>
 <p>خط سوم شامل:</p>
-<pre class="code literal-block"><span class="o">(</span>interactive<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>interactive<span class="o">)</span>
 </pre>
 
 
 <p>این خط در واقع بر نوع عملکرد تابع نسبت به آرگومان‌ها در زمان فراخوانی‌شان دلالت می‌کند‌. در ادامه با مزایای این دستور بیشتر آشنا خواهیم شد‌. فعلا الاالحساب آن را همانطور که هست وارد می‌کنیم‌.</p>
 <p>و خط آخر:</p>
-<pre class="code literal-block"><span class="o">(</span>other-window -1<span class="o">))</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>other-window -1<span class="o">))</span>
 </pre>
 
 
 <p>همان‌طور که معلوم است‌، تابع other-window آشنایمان را با آرگومان ‎-۱ صدا می‌کند‌. این آرگومان منفی همانطور که توضیح دادیم به تابع می‌فهماند که باید عقب‌گرد حرکت کند‌.</p>
 <p>حالا دیگر تقریبا کارمان تمام است‌. تنها کافی است که آن را به کلید ترکیبی مد نظرمان (C-x C-p چنان که در قسمت قبل تصمیم گرفتیم) پیوند دهیم:</p>
-<pre class="code literal-block"><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-p"</span> <span class="err">'</span>other-window-backward<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>global-set-key <span class="s2">"\C-x\C-p"</span> <span class="err">'</span>other-window-backward<span class="o">)</span>
 </pre>
 
 
@@ -273,7 +273,7 @@ rm _vim
 
 <p>تا این‌جای کار other-window-backward کاری که می‌خواهیم را درست انجام می‌دهد‌. اما هنوز یک کمبود دارد‌. کدام کمبود؟ همانطور که بالا‌تر توضیح دادم ما می‌توانستیم با C-u به other-window بگوییم که مثلا به دو پنجره بعد بپرد و ما را از فراخوانی دوباره و دوباره‌اش نجات دهد‌. اما تابعی که الان تعریف کردیم‌، این قابلیت را ندارد‌. در نتیجه کاربر بخت برگشته باید برای پرش به سه پنجره قبل سه بار این کلید‌ها را فشار دهد‌! و این یعنی عذاب ;-)</p>
 <p>برای این که تابع‌مان یک آرگومان بپذیرد‌، آن را به شکل زیر ویرایش می‌کنیم:</p>
-<pre class="code literal-block"><span class="o">(</span>defun other-window-backward <span class="o">(</span>n<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>defun other-window-backward <span class="o">(</span>n<span class="o">)</span>
 
 <span class="s2">"Select Nth previous window."</span>
 
@@ -286,18 +286,18 @@ rm _vim
 <p>همانطور که می‌بینید در خط اول‌، یک آرگومان به لیست آرگومان‌های تابع به اسم n اضافه کردیم‌. با این کار به تابع فهماندیم اگر کاربر با C-u آرگومانی را فرستاد (مثلا ۲) آن را در متغیر n قرار بده‌.</p>
 <p>همینطور در خط آخر به جای استفاده از ‎-۱ تابع other-window را با آرگومان منفی n صدا زدیم‌. یعنی هر عددی به n فرستاده شد‌، به ترکیب فوق‌، به صورت منفی به other-window فرستاده می‌شود‌.</p>
 <p><strong>توجه:</strong> به فاصلهٔ میان علامت منفی و حرف n توجه کنید‌. در صورتی که بخواهید آن را به صورت:</p>
-<pre class="code literal-block"><span class="o">(</span>-n<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>-n<span class="o">)</span>
 </pre>
 
 
 <p>بنویسید‌، مفسر لیسپ به مشکل بر می‌خورد‌. احتمالا یادتان هست که برای تفریق دو عدد چه کار باید می‌کردیم:</p>
-<pre class="code literal-block"><span class="o">(</span>- <span class="m">2</span> 6<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>- <span class="m">2</span> 6<span class="o">)</span>
 </pre>
 
 
 <p>لیسپ در این‌جا دو عدد را از هم کم می‌کند‌، اما اگر به جای دو عدد فقط یک عدد وجود داشته باشد‌، مثل تابع ما‌، آن را به صورت عدد منفی تلقی می‌کند‌.</p>
 <p>اما یک نکتهٔ مهم و اساسی در خط سوم وجود دارد که باید به آن نیز بپردازیم‌. ما در این خط به صورت زیر عمل کردیم‌:</p>
-<pre class="code literal-block"><span class="o">(</span>interactive <span class="s2">"p"</span><span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>interactive <span class="s2">"p"</span><span class="o">)</span>
 </pre>
 
 
@@ -305,7 +305,7 @@ rm _vim
 <h5>اختیاری کردن آرگومان</h5>
 
 <p>همان‌طور که می‌بینید‌، این تابع قابلیت فراخوانی توسط توابع دیگر لیسپ را نیز دارد‌. اما در این وضعیت (منظورم در حالتی است که تابع توسط توابع دیگر فراخوانده شود و نه در صورتی که توسط کاربر صدا زده می‌شوند) حتما باید به همراه فراخوانی تابع یک آرگومان هم به آن اطلاق شود‌. و این کمی کار را پیچیده می‌کند و ممکن است در آینده خسته کننده به نظر بیاید‌. بهتر است تابع را طوری تعریف کنیم که وقتی به صورت other-window-backward صدا شد خودکار روش انجام کار پیش‌فرضش را پیش بگیرد‌. پس آن را به صورت زیر ویرایش می‌کنیم:</p>
-<pre class="code literal-block"><span class="o">(</span>defun other-window-backward <span class="o">(</span><span class="p">&amp;</span>amp<span class="p">;</span>optional n<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>defun other-window-backward <span class="o">(</span><span class="p">&amp;</span>amp<span class="p">;</span>optional n<span class="o">)</span>
 
 <span class="s2">"Select Nth previous window."</span>
 
@@ -326,7 +326,7 @@ rm _vim
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910502chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910502chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chgwnh-ymkhsmn-r-trbyt-khnym-qsmt-dw.html">Comments</a>
 
 
     </div>

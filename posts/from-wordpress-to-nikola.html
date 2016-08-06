@@ -20,7 +20,7 @@ article: http://ogp.me/ns/article#
 <link rel="canonical" href="https://5hah.in/posts/from-wordpress-to-nikola.html">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
-<link rel="prev" href="blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)" type="text/html">
+<link rel="prev" href="wp/yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)" type="text/html">
 <link rel="next" href="emacs-flyspell-mode.html" title="این ایمکس دوست داشتنی (غلط‌گیر املایی)" type="text/html">
 <meta property="og:site_name" content="شاهین">
 <meta property="og:title" content="از وردپرس به نیکولا">
@@ -139,7 +139,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id3">
 <h2>نام فارسی پست‌ها و مشکلاتش</h2>
 <p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
-<pre class="code sh"><a name="rest_code_6deef4ac502b4aff8e31470c2e032874-1"></a>nikola import_wordpress wordpress_output.xml
+<pre class="code sh"><a name="rest_code_a033bba264f645d5a9eb3d8490a944c0-1"></a>nikola import_wordpress wordpress_output.xml
 </pre>
 <p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
 <p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
@@ -176,10 +176,10 @@ article: http://ogp.me/ns/article#
 <p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
 <p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
 <p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
-<pre class="code text"><a name="rest_code_0435b9998b524a4b9066e970f067e25c-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+<pre class="code text"><a name="rest_code_65ccd005a2f84fdc98884ba7f23bfeb0-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
 </pre>
 <p>که من می‌خواستم به همچین شکلی در آید:</p>
-<pre class="code text"><a name="rest_code_2fd7588328bc48e1a137500a87042d9b-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+<pre class="code text"><a name="rest_code_f92a2314041f4088b462de692db32cc4-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
 </pre>
 <p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
 <p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>
@@ -204,7 +204,7 @@ article: http://ogp.me/ns/article#
 </div>
               <ul class="pager hidden-print">
 <li class="previous">
-                <a href="blog13920127yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html" rel="prev" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)">ارسال پیشین</a>
+                <a href="wp/yn-ymkhs-dwst-dshtny-blns-khrdn-prn.html" rel="prev" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)">ارسال پیشین</a>
             </li>
             <li class="next">
                 <a href="emacs-flyspell-mode.html" rel="next" title="این ایمکس دوست داشتنی (غلط‌گیر املایی)">ارسال بعدی</a>

@@ -99,14 +99,14 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html" class="u-url">چ‌چ‌چ (۱۱)‌: چگونه می‌توانم بفهمم کارت اترنتم (NIC) شناخته شده یا نه‌؟</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-11-chgwnh-mytwnm-bfhmm-khrt.html" class="u-url">چ‌چ‌چ (۱۱)‌: چگونه می‌توانم بفهمم کارت اترنتم (NIC) شناخته شده یا نه‌؟</a></h1>
             شاهین
-      <a href="posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html" rel="bookmark"><time class="published dt-published" datetime="2012-01-03T22:12:43+03:30" title="2012-01-03 22:12">2012-01-03 22:12</time></a>
+      <a href="posts/wp/chchch-11-chgwnh-mytwnm-bfhmm-khrt.html" rel="bookmark"><time class="published dt-published" datetime="2012-01-03T22:12:43+03:30" title="2012-01-03 22:12">2012-01-03 22:12</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <h2>/sbin/ifconfig</h2>
-<pre class="code literal-block">خروجی‌:
+<pre class="code literal-block"><span></span>خروجی‌:
 
 ```bash
 
@@ -132,27 +132,27 @@ Interrupt: ۴۰ Base address: ۰x۸۰۰۰
 
 <p>توجه کنید که اگر در خروجی eth۰ را دیدید‌، پس کارت شما شناخته شده‌. نکته دیگر اینکه در سرور‌های مجازی با عبارات دیگری نظیر venet روبرو هستید‌، که پس از تجربه کردنشان‌، می‌توانید بهتر درکشان کنید ;-)</p>
 <p>برنامه dmesg به کاربران کمک می‌کند پیغام‌های هنگام بوت را مشاهده کنند‌. این پیغام‌ها در فایل ‎/var/log/dmesg (‌لینوکس دبیان‌) ذخیره می‌شوند‌:</p>
-<pre class="code literal-block">cat /var/log/dmesg <span class="p">|</span> grep -i eth۰
+<pre class="code literal-block"><span></span>cat /var/log/dmesg <span class="p">|</span> grep -i eth۰
 </pre>
 
 
 <p>خروجی‌:</p>
-<pre class="code literal-block"><span class="o">[</span>۴. ۷۰۹۳۴۷<span class="o">]</span> r۸۱۶۹ ۰۰۰۰: ۰۲: ۰۰. ۰: eth۰: RTL۸۱۶۸c/۸۱۱۱c at ۰xffffc۹۰۰۱۰۹c۸۰۰۰، ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰، XID ۱c۴۰۰۰c۰ IRQ ۴۰
+<pre class="code literal-block"><span></span><span class="o">[</span>۴. ۷۰۹۳۴۷<span class="o">]</span> r۸۱۶۹ ۰۰۰۰: ۰۲: ۰۰. ۰: eth۰: RTL۸۱۶۸c/۸۱۱۱c at ۰xffffc۹۰۰۱۰۹c۸۰۰۰، ۰۰: ۲۴: ۱d: d۱: ۰۴: d۰، XID ۱c۴۰۰۰c۰ IRQ ۴۰
 </pre>
 
 
 <p>و یا:</p>
-<pre class="code literal-block"><span class="c"># dmesg | grep -i eth۰</span>
+<pre class="code literal-block"><span></span><span class="c1"># dmesg | grep -i eth۰</span>
 </pre>
 
 
 <p>نمایش جدول تمام رابط‌های شبکه‌:</p>
-<pre class="code literal-block"><span class="c"># netstat -i</span>
+<pre class="code literal-block"><span></span><span class="c1"># netstat -i</span>
 </pre>
 
 
 <p>خروجی‌:</p>
-<pre class="code literal-block">Kernel Interface table
+<pre class="code literal-block"><span></span>Kernel Interface table
 
 Iface MTU Met RX-OK RX-ERR RX-DRP RX-OVR TX-OK TX-ERR TX-DRP TX-OVR Flg
 
@@ -164,17 +164,17 @@ lo <span class="m">۱۶۴۳۶</span> <span class="m">۰</span> <span class="m">�
 
 <p>پیدا کردن چیپ NIC</p>
 <p>برای رفع نقض کردن کارت ارتنت (NIC) من پیشنهاد می‌کنم که از دستور lspci استفاده کنید‌. Lspci ابزاری برای نمایش اطلاعات تمام درگاه‌های PCI موجود در سیستم که ابزار‌ی به‌شان متصل شده می‌باشد‌.</p>
-<pre class="code literal-block">lspci <span class="p">|</span> less
+<pre class="code literal-block"><span></span>lspci <span class="p">|</span> less
 </pre>
 
 
 <p>یا</p>
-<pre class="code literal-block">&lt;code&gt;lspci <span class="p">|</span> grep Ethernet&lt;/code&gt;
+<pre class="code literal-block"><span></span>&lt;code&gt;lspci <span class="p">|</span> grep Ethernet&lt;/code&gt;
 </pre>
 
 
 <p>خروجی‌:</p>
-<pre class="code literal-block">۰۲: ۰۰. <span class="m">۰</span> Ethernet controller: Realtek Semiconductor Co.، Ltd. RTL۸۱۱۱/۸۱۶۸B PCI Express Gigabit Ethernet controller <span class="o">(</span>rev ۰۲<span class="o">)</span>
+<pre class="code literal-block"><span></span>۰۲: ۰۰. <span class="m">۰</span> Ethernet controller: Realtek Semiconductor Co.، Ltd. RTL۸۱۱۱/۸۱۶۸B PCI Express Gigabit Ethernet controller <span class="o">(</span>rev ۰۲<span class="o">)</span>
 </pre>
 
 
@@ -185,27 +185,27 @@ lo <span class="m">۱۶۴۳۶</span> <span class="m">۰</span> <span class="m">�
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901013chchch-11-chgwnh-mytwnm-bfhmm-khrt.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-11-chgwnh-mytwnm-bfhmm-khrt.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-11-chgwnh-mytwnm-bfhmm-khrt.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html" class="u-url">چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html" class="u-url">چ‌چ‌چ‌ (۱۰): دستور Uptime سرور برای پیدا کردن اینکه سیستم چه مدت در حال اجرا بوده</a></h1>
             شاهین
-      <a href="posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html" rel="bookmark"><time class="published dt-published" datetime="2012-01-02T12:37:12+03:30" title="2012-01-02 12:37">2012-01-02 12:37</time></a>
+      <a href="posts/wp/chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html" rel="bookmark"><time class="published dt-published" datetime="2012-01-02T12:37:12+03:30" title="2012-01-02 12:37">2012-01-02 12:37</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>دستور uptime در یونیکس/لینوکس</p>
 <p>یک ترمینال باز کنید‌، و سپس دستور زیر را وارد کنید‌:</p>
-<pre class="code literal-block"><span class="nv">$ </span>uptime
+<pre class="code literal-block"><span></span>$ uptime
 </pre>
 
 
 <p>نمونه‌ای از خروجی به صورت روبرو خواهد بود‌:</p>
-<pre class="code literal-block">۱۲: ۱۶: <span class="m">۰۱</span> up <span class="m">۵۷</span> min، <span class="m">۳</span> users، load average: ۰. ۰۲، ۰. ۱۳، ۰. ۲۲
+<pre class="code literal-block"><span></span>۱۲: ۱۶: <span class="m">۰۱</span> up <span class="m">۵۷</span> min، <span class="m">۳</span> users، load average: ۰. ۰۲، ۰. ۱۳، ۰. ۲۲
 </pre>
 
 
@@ -218,12 +218,12 @@ lo <span class="m">۱۶۴۳۶</span> <span class="m">۰</span> <span class="m">�
     <li>میانگین لود سیستم در ۱‌، ۵ و ۱۵ دقیقه گذشته (۰. ۰۲، ۰. ۱۳، ۰. ۲۲)</li>
 </ul>
 <p>این تقریبا‌‌ همان اطلاعاتی است که در سرخط اطلاعات نمایش داده شده توسط دستورات w و top می‌توانید مشاهده کنید‌:</p>
-<pre class="code literal-block">w
+<pre class="code literal-block"><span></span>w
 </pre>
 
 
 <p>نمونه‌ای از خروجی به این شکل خواهد بود‌:</p>
-<pre class="code literal-block">12:20:34 up 1:02, <span class="m">3</span> users, load average: 0.01, 0.07, 0.17
+<pre class="code literal-block"><span></span>12:20:34 up 1:02, <span class="m">3</span> users, load average: 0.01, 0.07, 0.17
 
 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT
 
@@ -235,7 +235,7 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
 </pre>
 
 
-<pre class="code literal-block"><span class="nv">$ </span>top
+<pre class="code literal-block"><span></span>$ top
 </pre>
 
 
@@ -246,21 +246,21 @@ master pts/1 :0 12:02 18:01 0.00s 0.94s kdeinit4: kded4 <span class="o">[</span>
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901012chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-10-dstwr-uptime-srwr-bry-pyd-khrdn.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html" class="u-url">حل مشکل USB Stick‌هایی که به صورت Unsafe از سیستم جدا شده‌اند</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html" class="u-url">حل مشکل USB Stick‌هایی که به صورت Unsafe از سیستم جدا شده‌اند</a></h1>
             شاهین
-      <a href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-31T00:20:55+03:30" title="2011-12-31 00:20">2011-12-31 00:20</time></a>
+      <a href="posts/wp/hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-31T00:20:55+03:30" title="2011-12-31 00:20">2011-12-31 00:20</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>Error opening file '/media/Shahin_LG/1.jpg': Permission denied</p>
-<pre class="code literal-block">معمولا این اشکال در ازای جدا کردنش از سیستم در حین کار اتفاق می‌افتد‌. حال ممکن است که روی یک سیستم واقعی بوده باشد‌، یا یک فکش پلیر‌! به شخصه در اولین بر خورد با چنین مشکلی‌، آسیب دیدن فایل سیستم را دلیل دانستم‌، ولی پس از چک کردن فایل سیستم متوجه شدم که چنین نیست‌. راه حل این بار سوار کردن (Mount) دستی فلش درایو به صورت زیر است‌:
+<pre class="code literal-block"><span></span>معمولا این اشکال در ازای جدا کردنش از سیستم در حین کار اتفاق می‌افتد‌. حال ممکن است که روی یک سیستم واقعی بوده باشد‌، یا یک فکش پلیر‌! به شخصه در اولین بر خورد با چنین مشکلی‌، آسیب دیدن فایل سیستم را دلیل دانستم‌، ولی پس از چک کردن فایل سیستم متوجه شدم که چنین نیست‌. راه حل این بار سوار کردن (Mount) دستی فلش درایو به صورت زیر است‌:
 
 ```bash
 
@@ -274,7 +274,7 @@ sudo mount -t ntfs-3g /dev/sdb1 /media/LG -o force
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html#disqus_thread" data-disqus-identifier="cache/posts/blog13901010hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html#disqus_thread" data-disqus-identifier="cache/posts/wp/hl-mshkhl-usb-stickhyy-khh-bh-swrt-unsafe-z-systm-jd.html">Comments</a>
 
 
     </div>

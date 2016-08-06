@@ -99,36 +99,36 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html" class="u-url">چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-9-chtwr-bh-swrt-flhy-lynkhh.html" class="u-url">چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!</a></h1>
             شاهین
-      <a href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-17T20:01:46+03:30" title="2011-12-17 20:01">2011-12-17 20:01</time></a>
+      <a href="posts/wp/chchch-9-chtwr-bh-swrt-flhy-lynkhh.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-17T20:01:46+03:30" title="2011-12-17 20:01">2011-12-17 20:01</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>کار عادی‌اش به این صورت است که بنشینیم و با حوصله تک تک لینک‌ها را کپی پیست کرده و جایی ذخیره کنیم‌. ولی با وجود دویست صفحه و لینک‌، کمی (‌خیلی‌) خسته کننده (‌خریت‌ به معنای واقعی کلمه‌، البته ببخشید ;-)) است. خوب جواب مساله را خودم هم نمی‌دانستم‌، ولی مطمئن بودم‌، با ابزار‌های گنو‌/‌لینوکسی‌، نتیجه‌ی خیلی خوبی خواهم گرفت‌. اولین کاری که به فکرم رسید‌، دانلود صفحه‌ی اصلی و صفحه‌های پیوند شده به هر لینک بود که با wget خیلی خوب بلد بودم! به این صورت‌:</p>
-<pre class="code literal-block">wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
+<pre class="code literal-block"><span></span>wget -rl1 http://thenewboston.org/list.php?cat<span class="o">=</span>11
 </pre>
 
 
 <p>خوب نتیجه‌ مجموعه‌ای از فایل‌ها بود که با اسم‌هایی شبیه به آدرس‌شان در پوشه‌ی جاری ذخیره شده بود. با استفاده از آرگومان‌های rl1 به wget فهماندم که صفحه‌ی حاضر را به عمق یک صفحه رو به جلو دانلود کند‌. حالا مساله‌ی سخت این‌جا بود که چطور به grep بفهمانیم که چه چیزی را (‌در این‌جا لینک ویدیو در یوتیوب‌) برایمان جدا کند‌. دستوری که با دفعات زیادی آزمون و خطا نتیجه داد‌، به این صورت بود‌: <span style="color: #ff6600;">(‌برای دیدن دستور کامل‌تر به آخر مطلب رجوع کنید‌، ویرایش۱)</span></p>
-<pre class="code literal-block">grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * <span class="p">&amp;</span>gt<span class="p">;</span> list
+<pre class="code literal-block"><span></span>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:]-]{11}"</span> * <span class="p">&amp;</span>gt<span class="p">;</span> list
 </pre>
 
 
 <p>کار این دستور این است که یک لیست از الگوی داده شده را ایجاد و در فایل list ذخیره کند‌. آرگومان‌های ohE به طور خلاصه به grep می‌فهمانند‌ که فقط عبارت داخل پرانتز را در فایل‌ها پیدا کند و در خروجی نمایش دهد‌. قسمت جالب قضیه که بیشتر از همه وقتم را گرفت بخش زیر بود‌:</p>
-<pre class="code literal-block"><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
+<pre class="code literal-block"><span></span><span class="o">[[</span>:alnum:<span class="o">]</span>-<span class="o">]{</span>11<span class="o">}</span>
 </pre>
 
 
 <p>که به grep می‌گفت ترکیبی از حروف و ارقام را به تعداد یازده عدد قبول کند‌. در مورد این عبارت‌ها در آینده‌ای نزدیک پستی در شاهینیسم خواهیم داشت.</p>
 <p>برای دانلود لینک‌ها هم می‌توانید همان فایل خروجی را به صورت زیر به youtube-dl بدهید‌:</p>
-<pre class="code literal-block">youtube-dl -ta list
+<pre class="code literal-block"><span></span>youtube-dl -ta list
 </pre>
 
 
 <p>البته سرعت دانلود youtube-dl واقعا پایین است‌. روی سروری با دانلود عادی ده مگ‌، سرعت به زور می‌توانست به چهل کیلوبایت برسد‌. پیشنهاد من به شما‌، نصب یک نسخه از RapidLeech است‌. سرعت و کاربرد بسیار بهتری دارد ;-)</p>
 <p>ویرایش ۱: بعد از مدتی استفاده از این دستور‌، فهمیدم که از اونجایی که توی آدرس‌های Youtube امکان وجود آندرلاین هم هست‌، تعدادی از لینک‌ها رو با دستور بالا از دست می‌دیم‌. به همین دلیل دنبال یه راه دیگه گشتم‌، و سر‌انجام به دستور زیر رسیدم که نتیجه‌ی خیلی قابل قبول‌تری می‌ده‌:</p>
-<pre class="code literal-block">grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * <span class="p">|</span> uniq <span class="p">&amp;</span>gt<span class="p">;</span> list2
+<pre class="code literal-block"><span></span>grep -ohE <span class="s2">"http://www.youtube.com/watch\?v=[[:alnum:](-|_)]{11}"</span> * <span class="p">|</span> uniq <span class="p">&amp;</span>gt<span class="p">;</span> list2
 </pre>
 
 
@@ -137,31 +137,31 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900926chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-9-chtwr-bh-swrt-flhy-lynkhh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-9-chtwr-bh-swrt-flhy-lynkhh.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html" class="u-url">چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html" class="u-url">چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</a></h1>
             شاهین
-      <a href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-02T18:03:08+03:30" title="2011-12-02 18:03">2011-12-02 18:03</time></a>
+      <a href="posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-02T18:03:08+03:30" title="2011-12-02 18:03">2011-12-02 18:03</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:</p>
-<pre class="code literal-block">ls --color
+<pre class="code literal-block"><span></span>ls --color
 </pre>
 
 
 <p>که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:</p>
-<pre class="code literal-block"><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
+<pre class="code literal-block"><span></span><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
 </pre>
 
 
 <p>این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این <a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank">کانال git</a> منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:</p>
-<pre class="code literal-block"><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
+<pre class="code literal-block"><span></span><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
 </pre>
 
 
@@ -171,21 +171,21 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900911chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html" class="u-url">چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html" class="u-url">چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس</a></h1>
             شاهین
-      <a href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-02T10:46:37+03:30" title="2011-12-02 10:46">2011-12-02 10:46</time></a>
+      <a href="posts/wp/chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-02T10:46:37+03:30" title="2011-12-02 10:46">2011-12-02 10:46</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p>نحو‌:</p>
-<pre class="code literal-block">passwd -l <span class="o">(</span>username<span class="o">)</span>
+<pre class="code literal-block"><span></span>passwd -l <span class="o">(</span>username<span class="o">)</span>
 </pre>
 
 
@@ -193,14 +193,14 @@ article: http://ogp.me/ns/article#
 <h5>مثال‌:</h5>
 
 <p>قفل کردن حسابی به اسم shahin‌. با کاربر ریشه وارد می‌شویم و دستور زیر را وارد می‌کنیم‌:</p>
-<pre class="code literal-block"><span class="c"># passwd -l shahin</span>
+<pre class="code literal-block"><span></span><span class="c1"># passwd -l shahin</span>
 </pre>
 
 
 <h4>قفل‌گشایی یک حساب گنو‌/‌لینوکس:</h4>
 
 <p>نحو‌:</p>
-<pre class="code literal-block">passwd -u <span class="o">(</span>username<span class="o">)</span>
+<pre class="code literal-block"><span></span>passwd -u <span class="o">(</span>username<span class="o">)</span>
 </pre>
 
 
@@ -208,7 +208,7 @@ article: http://ogp.me/ns/article#
 <h5>مثال‌:</h5>
 
 <p>برای باز‌گشایی یک حساب کاربری به اسم shahin‌، اول با کاربر ریشه وارد می‌شویم‌، و دستور زیر را وارد می‌کنیم‌:</p>
-<pre class="code literal-block"><span class="c"># passwd -u shahin</span>
+<pre class="code literal-block"><span></span><span class="c1"># passwd -u shahin</span>
 </pre>
 
 
@@ -220,7 +220,7 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html#disqus_thread" data-disqus-identifier="cache/posts/blog13900911chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html#disqus_thread" data-disqus-identifier="cache/posts/wp/chchch-7bstn-ykh-hsb-khrbry-dr-gnw.html">Comments</a>
 
 
     </div>

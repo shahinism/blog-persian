@@ -99,16 +99,16 @@ article: http://ogp.me/ns/article#
 <div class="postindex">
     <article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html" class="u-url">وقایع نگاری شخصی سازی emacs قسمت اول</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html" class="u-url">وقایع نگاری شخصی سازی emacs قسمت اول</a></h1>
             شاهین
-      <a href="posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-26T15:30:01+04:30" title="2012-06-26 15:30">2012-06-26 15:30</time></a>
+      <a href="posts/wp/wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-26T15:30:01+04:30" title="2012-06-26 15:30">2012-06-26 15:30</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
 <p><strong>اول</strong> این که جهت چینش هر پاراگراف را مثل مرورگر‌های جدید بر اساس نوع نوشتار تعیین می‌کند‌. این یعنی متن فارسی را می‌توان مثل آدمی‌زاد درش نوشت و درد نگرفت‌!</p>
 <p><strong>دوم</strong> مدیر بسته‌هاست که کلی چیز جدید می‌تواند به emacsتان اضافه کند‌. بحث ما هم سر همین دومیست‌.</p>
 <p>ایمکس به صورت پیش‌فرض خیلی خوب است‌، خیلی‌. ولی می‌توان با دستکاری خیلی چیز بهتر و کارا‌تری هم از تویش در آورد‌. این است که می‌خواهم چند تا بسته برای کار‌هایم توش اضافه کنم‌. اما اول از همه باید یک مخزن درست و درمان به مدیر بسته‌هایم اضافه کنم تا برای نصب بسته‌ها درد کمتری متحمل شوم (بماند که خود این مدیر بسته کلی دردناک می‌شود به وقتش‌!). پس اگر فایل ‎.emacs در پوشهٔ خانگی‌ام ندارم یکی می‌سازم و به صورت زیر مخزن‌هایم را اضافه می‌کنم:</p>
-<pre class="code literal-block"><span class="o">(</span>setq package-archives <span class="err">'</span><span class="o">((</span><span class="s2">"ELPA"</span> . <span class="s2">"http://tromey.com/elpa/"</span><span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>setq package-archives <span class="err">'</span><span class="o">((</span><span class="s2">"ELPA"</span> . <span class="s2">"http://tromey.com/elpa/"</span><span class="o">)</span>
 
 <span class="o">(</span><span class="s2">"gnu"</span> . <span class="s2">"http://elpa.gnu.org/packages/"</span><span class="o">)</span>
 
@@ -119,7 +119,7 @@ article: http://ogp.me/ns/article#
 <p>خوب گل سر سبد این مخازن اسمش <a title="Marmalade repo" href="http://marmalade-repo.org/" target="_blank">Marmalade</a> است که از <a title="یادداشت‌های بیت نیمسوز" href="http://cyberrabbits.net/" target="_blank">فرود</a> عزیز بابت معرفیش تشکر می‌کنم ;-). خوب بسته‌ها اضافه شد و کافیست بعد از باز کردن ایمکس کلید M + x را فشار دهیم‌. (M مخفف Meta است و منظور در اینجا کلید Alt و یا اگر نداریدش کلید Esc هست) و در اعلان ظاهر شده بنویسیم package-list-packages (اعلان ایمکس قابلیت Auto Completion دارد پس با Tab کارتان را در نوشتن دستوراتش راحت‌تر کنید). پس از مدتی انتظار لیستی از بسته‌های قابل نصب یا نصب شده روی سیستم‌تان نمایش داده می‌شود. نشانگر را روی هر بسته ببرید‌. Enter را فشار دهید تا توضیحاتش را بخوانید‌. اما فعلا بی‌خیال این بخش شوید و همراه من بیایید تا چند بستهٔ حیاتی به درد بخور را نصب کنیم:</p>
 <p><a href="http://cx4a.org/software/auto-complete/" target="_blank"> <strong>Auto-complete:</strong></a></p>
 <p>اولین نیاز من برای یک ادیتور به درد بخور همین قابلیت تکمیل خودکار متن است‌. اول این که سرعتم را بالا‌تر می‌برد‌. دوم هم این که خیالم را در خطاهای املایی در برنامه‌نویسی راحت‌تر می‌کند ;-) این می‌شود که در ایمکس دستور زیر را وارد می‌کنم M + x package-install RET auto-complete و بسته نصب می‌شود‌. آن‌وقت فایل ‎.emacs را باز می‌کنم و خط‌های زیر را به آن اضافه می‌کنم‌:</p>
-<pre class="code literal-block"><span class="p">;;</span>Start Auto-complete config
+<pre class="code literal-block"><span></span><span class="p">;;</span>Start Auto-complete config
 
 <span class="o">(</span>add-to-list <span class="s1">'load-path "~/.emacs.d/elpa/auto-complete-1.4")</span>
 
@@ -134,14 +134,14 @@ article: http://ogp.me/ns/article#
 
 
 <p>حالا عملا کار باید تمام شده باشد‌. اما یک مشکل وجود دارد که حدود دو سه ساعت وقتم را نابود کرد تا بفهمم از کجاست‌. بستهٔ Auto-complete برای نمایش دادن آن جعبهٔ خوشگلش برای کلمات پیشنهادی از یک بستهٔ دیگر به اسم popup استفاده می‌کند که خوشبختانه مدیر بسته‌ها هم این بسته را به عنوان پیش‌نیاز نصب می‌کند‌. اما در یک پوشهٔ جدا‌. حالا بستهٔ Auto-complete هر چه می‌گردد در پوشهٔ خودش نمی‌تواند popup.el را پیدا کند‌. این می‌شود که می‌نویسیم:</p>
-<pre class="code literal-block">cp ~/emacs.d/elpa/popup/popup.el ~/emacs.elpa/auto-complete-1.4
+<pre class="code literal-block"><span></span>cp ~/emacs.d/elpa/popup/popup.el ~/emacs.elpa/auto-complete-1.4
 </pre>
 
 
 <p>حالا این بسته نصب شده و در همه‌جا فعال است‌. این بسته در شاخهٔ dict در محل نصبش یک سری فایل با شناسهٔ Modeهای مختلف ایمکس دارد که در واقع لغت‌های پیشنهادی را از آن‌جا می‌یابد‌. لغات در بعضی از دیکشنری‌های مخصوصا برای C+‎+‎ خیلی ناقص است‌. می‌توانید دستی فایل را باز کنید و کاملش کنید‌.</p>
 <p><a href="https://github.com/bbatsov/zenburn-emacs" target="_blank"><strong>zenburn-theme:</strong></a></p>
 <p>این تم را <a title="تغییر پوسته Emacs با بسته color-theme" href="http://shahinism.com/blog/1391/01/12/%d8%aa%d8%ba%db%8c%db%8c%d8%b1-%d9%be%d9%88%d8%b3%d8%aa%d9%87-emacs-%d8%a8%d8%a7-%d8%a8%d8%b3%d8%aa%d9%87-color-theme/" target="_blank">قبلا</a> معرفی کرده‌ام‌. برای نصبش می‌نویسیم M + x package-install RET zenburn-theme RET و کار تمام است. حالا برای لود شدن این تم به صورت پیش‌فرض خطوط زیر را به ‎.emacs اضافه می‌کنیم:</p>
-<pre class="code literal-block"><span class="p">;;</span>Start: config theme
+<pre class="code literal-block"><span></span><span class="p">;;</span>Start: config theme
 
 <span class="o">(</span>add-to-list <span class="s1">'custom-theme-load-path "~/.emacs.d/elpa/zenburn-theme-1.5")</span>
 
@@ -152,7 +152,7 @@ article: http://ogp.me/ns/article#
 
 
 <p>این تم در حالت گرافیکی به راحتی لود می‌شود‌. اما در حالت متنی emacs -nw به خاطر کم بودن رنگ‌ها ممکن است مشکل داشته باشید‌. برای حل این مشکل فعلا الالحساب این خط را به فایل ‎.bashrc یا ‏‏‎.zshrc تان اضافه کنید تا بعدا در یک پست مجزا در موردش توضیح دهم:</p>
-<pre class="code literal-block"><span class="nb">export </span><span class="nv">TERM</span><span class="o">=</span>xterm-256color
+<pre class="code literal-block"><span></span><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>xterm-256color
 </pre>
 
 
@@ -163,25 +163,25 @@ article: http://ogp.me/ns/article#
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910406wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html#disqus_thread" data-disqus-identifier="cache/posts/wp/wqy-ngry-shkhsy-szy-emacs-qsmt-wl.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html" class="u-url">دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html" class="u-url">دانلود تمام عکس‌های SimpleDesktop با سه خط در Bash!</a></h1>
             شاهین
-      <a href="posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-21T04:57:20+04:30" title="2012-06-21 04:57">2012-06-21 04:57</time></a>
+      <a href="posts/wp/dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-21T04:57:20+04:30" title="2012-06-21 04:57">2012-06-21 04:57</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
-<pre class="code literal-block">http://simpledesktops.com/download/?desktop<span class="o">=</span>301
+<pre class="code literal-block"><span></span>http://simpledesktops.com/download/?desktop<span class="o">=</span>301
 </pre>
 
 
 <p>همهٔ آدرس جز عدد ۳۰۱ در انتهایش ثابتند و آن عدد از ۱ یکی‌‌یکی زیاد می‌شود‌. هر کدام از این عکس‌ها پس از درخواست شدنشان به آدرس یکی از عکس‌های روی سرور اشاره می‌کنند‌. خوب دیگر داستان از این هم ساده‌تر می‌شود؟ کافیست که اراده کنیم و با یک حلقهٔ for اعداد را تولید کنیم و جلوی آدرس ثابتمان بنویسیم‌. پس می‌شود این:</p>
-<pre class="code literal-block"><span class="c">#!/usr/bin/bash</span>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/bash</span>
 
 
 
@@ -196,7 +196,7 @@ article: http://ogp.me/ns/article#
 
 
 <p>به بش گفتیم که هر بار یک عدد از یک تا پنج‌هزار (البته به ترتیب از کم به زیاد) تولید کن و در خروجی چاپ کن‌. یک بار اسکریپت را ران می‌کنیم و ... بعله خروجی دقیقا همان آدرس‌هایی که خواستیم می‌شود‌:</p>
-<pre class="code literal-block">...
+<pre class="code literal-block"><span></span>...
 
 http://simpledesktops.com/download/?desktop<span class="o">=</span>4995
 
@@ -214,7 +214,7 @@ http://simpledesktops.com/download/?desktop<span class="o">=</span>5000
 
 <p>حالا کافیست در اسکریپت به جای echo که هر چه جلویش باشد را در خروجی استاندارد چاپ می‌کند یک wget بنویسیم تا آدرس‌های جلویش را دانلود کند‌. اما نه‌! در اولین اقدام تیرمان خطا رفت‌! در سرور‌های Apache یک فایلی هست به اسم ‎.htaccess و همان‌طور که از نامش معلوم است کارش این است که کنترل کند چه کسی به کجا دسترسی دارد‌. هر نرم‌افزاری هم که به یکی از این سرور‌ها درخواست بدهد موظف است اول خودش را معرفی کند‌. خوب wget که از نامش فساد می‌بارد عموما از طرف چنین سایت‌هایی مسدود می‌شود‌.</p>
 <p>این است که باید به wget بگوییم نقابش را به صورت بزند و دوباره اقدام کند‌. اینبار اسکریپتمان این شکلی می‌شود‌:</p>
-<pre class="code literal-block"><span class="c">#!/usr/bin/bash</span>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/bash</span>
 
 
 
@@ -239,16 +239,16 @@ wget -U <span class="s2">"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910401dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html#disqus_thread" data-disqus-identifier="cache/posts/wp/dnlwd-tmm-khshy-simpledesktop-b-sh-kht-dr-bash.html">Comments</a>
 
 
     </div>
 
     </article><article class="h-entry post-text"><div class="text-center">
 
-        <h1 class="p-name entry-title"><a href="posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html" class="u-url">ترمیناتور، آخر‌الزمان ترمینال‌ها</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/trmyntwr-akhrlzmn-trmynlh.html" class="u-url">ترمیناتور، آخر‌الزمان ترمینال‌ها</a></h1>
             شاهین
-      <a href="posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-20T09:34:13+04:30" title="2012-06-20 09:34">2012-06-20 09:34</time></a>
+      <a href="posts/wp/trmyntwr-akhrlzmn-trmynlh.html" rel="bookmark"><time class="published dt-published" datetime="2012-06-20T09:34:13+04:30" title="2012-06-20 09:34">2012-06-20 09:34</time></a>
     </div>
     <div class="p-summary entry-summary">
     <div>
@@ -262,7 +262,7 @@ wget -U <span class="s2">"Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101
     </div>
 
     <div class="text-center">
-                    <a class="btn btn-success" href="posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html#disqus_thread" data-disqus-identifier="cache/posts/blog13910331trmyntwr-akhrlzmn-trmynlh.html">Comments</a>
+                    <a class="btn btn-success" href="posts/wp/trmyntwr-akhrlzmn-trmynlh.html#disqus_thread" data-disqus-identifier="cache/posts/wp/trmyntwr-akhrlzmn-trmynlh.html">Comments</a>
 
 
     </div>
