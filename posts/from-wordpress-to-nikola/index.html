@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<base href="https://5hah.in/posts/from-wordpress-to-nikola/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>از وردپرس به نیکولا | شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://5hah.in/posts/from-wordpress-to-nikola/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
+<link rel="prev" href="../wp/yn-ymkhs-dwst-dshtny-blns-khrdn-prn/" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)" type="text/html">
+<link rel="next" href="../emacs-flyspell-mode/" title="این ایمکس دوست داشتنی (غلط‌گیر املایی)" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content="از وردپرس به نیکولا">
+<meta property="og:url" content="https://5hah.in/posts/from-wordpress-to-nikola/">
+<meta property="og:description" content="خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-05-13T10:21:43+04:30">
+<meta property="article:tag" content="Nikola">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="Wordpress">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><div class="jumbotron">
+    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
+        <h1>شاهین</h1>
+        <hr class="hdrline">
+<a class="social" href="https://github.com/shahinism">
+          <img src="../../assets/images/github.png"></a>
+        <a class="social" href="https://twitter.com/shahinism">
+          <img src="../../assets/images/twitter.png"></a>
+        <a class="social" href="https://ir.linkedin.com/in/shahinism">
+          <img src="../../assets/images/linkedin.png"></a>
+      </div>
+    </section>
+</div>
+
+  <div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+          <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">از وردپرس به نیکولا</a></h1>
+
+        شاهین
+      <a href="." rel="bookmark"><time class="published dt-published" datetime="2013-05-13T10:21:43+04:30" itemprop="datePublished" title="2013-05-13 10:21">2013-05-13 10:21</time></a>
+    </div>
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)</p>
+<div class="section" id="id1">
+<h2>چرا یک وبلاگ ایستا؟</h2>
+<p>خوب به طور کلی دلایلش از این قرارند:</p>
+<ul class="simple">
+<li>
+<strong>سرعت‌، سرعت‌، سرعت:</strong> دیگر در این نوع از وبلاگ‌، خبری از پایگاه داده نیست. همین‌طور قرار نیست هیچ پردازشی در سمت سرور وبلاگ قرار گیرد. و خوب طبیعتا خیلی خیلی امکاناتی که این ابزار‌ها فراهم می‌کنند را نمی‌توانم داشته باشم. اما حقیقتش در یک وبلاگ‌، به بسیاری از این ابزار‌ها نیاز ندارم. به هر حال این نبودن‌ها‌، یعنی سرعت بیشتر. در مورد من‌، سرعت لود صفحات‌، حدودا سه برابر بیشتر شد.</li>
+<li>
+<strong>سادگی:</strong> فکر نمی‌کنم چیز زیادی در این زمینه برای گفتن باقی گذاشته باشم.</li>
+<li>
+<strong>امنیت:</strong> وقتی تنها با صفحات سادهٔ HTML روبرو هستید. وقتی یک سیستم انتشار قابل اطمینان دارید‌‌، دیگر نباید نگران آپدیت بودن ابزار وبلاگ‌نویسی‌تان و یا هک شدنش باشید. این‌طور نیست؟</li>
+<li>
+<strong>محدود نبودن پهنای باند:</strong> این یکی از آن کابوس‌هایی است که بی‌خبر به سراغ‌تان می‌آید. ولی خوب خوشبختانه روی گیت‌هاب‌، این نگرانی را نداریم ;-)</li>
+<li>
+<strong>قابلیت بازیابی:</strong> خوب این یکی زیاد مربوط به خود سیستم وبلاگ‌نویسی نیست. ولی چون نتیجهٔ کارش را می‌توان با هر سیستم دلخواهی منتشر کرد و من گیت را انتخاب کرده‌ام‌، خیلی راحت می‌توانم در صورت گند زدن‌، بدون هیچ استرسی آن را به حالت قبل برگردانم. این قابلیت روی هاست‌های اشتراکی پولی و گران است و در سرور‌های اختصاصی‌، خیلی پر دردسر‌تر از چیزی که در این‌جا با آن طرفیم ;-)</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>کدام سیستم؟</h2>
+<p>به هر حال‌، پس از قطعی شدن تصمیم انتقال‌، باید یکی از سیستم‌ها را انتخاب می‌کردم. به طور کلی این سیستم‌ها اعم از <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a>, <a class="reference external" href="http://docs.getpelican.com/">Pelican</a>, <a class="reference external" href="http://octopress.github.ip/">Octopress</a> و خیلی‌های دیگر که با یک سرچ در اینترنت می‌توانید پیدایشان کنید‌، تفاوت عمده‌ای در نتیجهٔ کار ندارند. طرز کارشان فوق‌العاده ساده است. شما متن پست وبلاگ‌تان را در یک فایل حالا به هر فرمتی که سیستم مورد نظر برای‌تان مهیا کرده می‌نویسید‌، یک قالب هم بر اساس قوائد تعیین شدهٔ سیستم به آن می‌خورانید و می‌گویید که وبلاگ آماده شود. در نهایت این سیستم می‌آید یک سایت کاملا ایستا در فایل‌های html آماده می‌کند که شامل پست‌های شماست و بر اساس قالب مورد نظر‌تان قالب‌بندی شده.</p>
+<p>من <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> را انتخاب کردم‌، چون اولا پایتونی است‌ و بعد از آن خیلی راحت‌تر از <a class="reference external" href="http://docs.getpelican.com/">Pelican</a> که آن هم پایتونی است نصب می‌شود. همین!</p>
+<!-- TEASER_END: بیشتر بخوانید -->
+</div>
+<div class="section" id="id3">
+<h2>نام فارسی پست‌ها و مشکلاتش</h2>
+<p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
+<pre class="code sh"><a name="rest_code_d7ff805e372544f69b9450bf00c3a1cd-1"></a>nikola import_wordpress wordpress_output.xml
+</pre>
+<p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
+<p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
+<p>خوشبختانه پایتون در ماژول urllib متدی به اسم unqoute دارد که می‌تواند این رشته‌ها را به هم‌تای یونیکدی‌شان ترجمه کند. این مساله را با نویسندهٔ <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> در میان گذاشتم و او هم این قابلیت را به نیکولا اضافه کرد. با این تفاوت که اسم فایل‌ها باز هم فارسی نبود. برای مثال پستی به اسم <strong>این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)</strong> اسمی به صورت <strong>yn-ymkhs-dwst-dshtny-blns-khrdn-prn</strong> می‌گرفت. خوب که توجه کنید یک تلاش ناشیانه برای فینگلیش کردن کاراکتر‌ها را می‌بینید. این‌طور نیست؟ خوب این برایم خیلی جالب بود. این عمل با استفاده از تابع <a class="reference external" href="http://www.tablix.org/~avian/blog/archives/2009/01/unicode_transliteration_in_python/">unidecode</a> پایتون در متد slugify نیکولا انجام می‌گرفت. چند نفر دیگر هم این مشکل را با توسعه دهندهٔ <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> در میان گذاشتند‌، ولی از قرار فعلا نیکولا لازم است که از این تابع استفاده کند‌ و راهی برای دور زدنش نیست (من هم هرچند سوادش را ندارم‌، ولی زیاد درگیرش نشده‌ام).</p>
+<p>این است که پست‌های قبلی وبلاگم‌، آدرس‌هایی کوتاه‌تر‌، شکیل‌تر ولی نامفهوم و غیر SEO دارند. اما هر چه باشد‌، فعلا قابل تحمل است‌، شاید در آینده فکری به حالش کردم.</p>
+</div>
+<div class="section" id="id4">
+<h2>طراحی قالب</h2>
+<p>نیکولا قابلیت استفاده از دو زبان برای طراحی قالبش را دارد. <a class="reference external" href="http://www.makotemplates.org/">Mako</a> و <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a>. من به خاطر خوشگلی <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> را انتخاب کردم و پس از مطالعهٔ <a class="reference external" href="http://jinja.pocoo.org/docs/templates/">مستنداتش</a> شروع به نوشتن یک قالب برای <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> کردم. و خوب از آن‌جایی که بنیاد اصلی قالب‌های نیکولا <a class="reference external" href="http://www.makotemplates.org/">Mako</a> بود‌، زیاد دستم به جایی بند نبود. این بود که قالب <strong>Orphan</strong> نیکولا را که با <a class="reference external" href="http://www.makotemplates.org/">Mako</a> نوشته شده بود به <a class="reference external" href="http://jinja.pocoo.org/">Jinja2</a> ترجمه کردم و روی آن کار کردم. ترکیبش با استایل و Markup قالب وردپرسی <a class="reference external" href="http://themes.jimbarraud.com/manifest">Manifest</a> چیزی است که الان روی این وبلاگ می‌بینید.
+ترجمهٔ Jinja2‌ای قالب Orphan را برای اضافه شدن به <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> کامیت کردم‌، ولی هنوز اضافه نشدم (همان بهتر که اضافه نشده‌، چون مشکلاتی دارد که باید حل کنم). قالب فعلی هم بعد از تکامل به لیست قالب‌های <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> اضافه می‌شود.</p>
+</div>
+<div class="section" id="syntax-highlighter">
+<h2>Syntax highlighter در پست‌ها</h2>
+<p>خوب من در وبلاگم زیاد کد به اشتراک می‌گذارم. این است که یک <strong>Syntax highlighter</strong> خوب می‌تواند خیلی کمک کننده باشد. قبلا از دو افزونهٔ مختلف وردپرس که هر کدام نحو مخصوص به خودشان را داشتند استفاده کرده بودم و با هزار بدبختی نحو یکی را با دیگری منطبق کردم که ساختار وبلاگ یک‌پارچه به نظر آید. ولی بعد از انتقال به <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> هیچ کدام از این نحو‌ها درست کار نمی‌کرد.</p>
+<p>باید بیش از ۲۰۰ پست را جستجو می‌کردم و هر جا کدی بود آن را به صورت دستی ویرایش می‌کردم و به شکلی منطبق با <strong>Markdown</strong> در می‌آوردم (<a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> پس از وارد کردن پست‌های وردپرسی به وبلاگ‌، به صورت خودکار آن‌ها را با Markdown کامپایل می‌کند). خوب وقتی <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> کبیر ویرایش‌گر محبوب‌تان باشد‌، با <strong>dired</strong> و یک Query می‌توانید کل این ویرایش‌ها را یک‌جا انجام دهید (نکات تکنیکی کار را بعدا در پست‌های جداگانه می‌نویسم. ولی همین اشاره‌ها هم باید به قدر کافی روشنگر باشند).</p>
+<p>این را هم اضافه کنم که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برای این کار از Pygments استفاده می‌کند که لیست Lexer‌هایش را می‌توانید از <a class="reference external" href="http://pygments.org/docs/lexers/">اینجا</a> ببینید.</p>
+</div>
+<div class="section" id="id5">
+<h2>دیدگاه‌ها</h2>
+<p>قبلا گفتم که با <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> دیگر خبری از پایگاه داده نیست. تنها ابزار خیلی خیلی مهم مورد نیاز برای وبلاگ‌نویسی بخش دیدگاه‌هاست که از چند وقت پیش دوباره برگردانده بودمش روی <a class="reference external" href="http://disqus.com">Disqus</a>. این ابزار فوق‌العاده است. ولی خوب فعلا یک مشکل عمده‌ای که با آن دارم این است که نمی‌توانم متن کامنت‌ها را در آن راست به چپ کنم. قبلا این امکان در آن وجود داشت که با CSS آن را کنترل کنم. ولی در نسخهٔ جدید این امکان را حذف کرده‌اند (چرا؟ نمی‌دانم). با مدیرانش تماس گرفتم و گفتند که در تلاشند تا امکان نمایش درست دیدگاه‌های RTL را به <a class="reference external" href="http://disqus.com">Disqus</a> اضافه کنند. تا آن موقع مجبوریم با این یکی کنار بیاییم D:</p>
+<p>اما یک نکتهٔ دیگر هم باقی می‌ماند. همانطور که قبلا گفتیم‌، بعد از انتقال به <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> آدرس پست‌های‌مان تغییر کرده. در نتیجه‌، <a class="reference external" href="http://disqus.com">Disqus</a> از آدرس‌های جدید برای کامنت‌های وبلاگ‌مان استفاده می‌کند و کامنت‌های قبلی‌مان را در جای درست نشان نمی‌دهد. <a class="reference external" href="http://disqus.com">Disqus</a> برای این کار یک قابلیت Migration دارد که با گرفتن یک فایل ‎.csv آدرس کامنت‌های قبلی را به هم‌تایان جدید‌شان تبدیل می‌کند. <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> به طور خودکار پس از وارد کردن وردپرس‌، این فایل را در شاخهٔ اصلی ایجاد می‌کند که می‌توانید استفاده کنید.</p>
+</div>
+<div class="section" id="github">
+<h2>استفاده از Github</h2>
+<p>برای این‌کار کافی است یک مخزن در <a class="reference external" href="http://github.com">Github</a> ایجاد کنید و پوشهٔ <strong>output</strong> را به آن بسپارید. ضمنا توجه کنید در صورتی که قصد دارید مثل من وبلاگ (برای کاربر یا یک گروه) ایجاد کنید نام مخزن باید به صورت <strong>username.github.io</strong> باشد و صفحات در برنچ <strong>master</strong> آپلود شوند.</p>
+<div class="section" id="id6">
+<h3>انتقال دامنه</h3>
+<p>اگر مثل من قصد داشتید که یک دامنهٔ مستقل به وبلاگ پیوند بزنید‌، کافیست یک فایل به اسم CNAME که تنها حاوی دامنهٔ مورد نظر به صورت text است در شاخهٔ اصلی مخزن اضافه کنید. و سپس در دامنه‌تان یک <a class="reference external" href="http://en.wikipedia.org/wiki/Domain_Name_System">A Record</a> به IP شمارهٔ 204.232.175.78 اضافه کنید (برای این کار باید به DNS Management دامنه‌تان دسترسی داشته باشید).
+و خوب مشکل بعدی این‌جا سر راهم سبز شد. در هنگام ثبت دامنه‌ام‌، قرار بود من دسترسی کامل به دامنه داشته باشم و چون قبل از این نمی‌دانستم A Record چیست‌، فکر می‌کردم همین‌طور هم هست. می‌توانستم DNS‌ها را کنترل کنم‌، ولی هیچ‌وقت نیاز به یک Record نداشتم. به هر حال‌‌، چون دیدم به DNS Manager دسترسی ندارم‌، یک تیکت به ثبت کنندهٔ دامنه‌ام زدم و کاشف به عمل آمد این یکی جزء خدمات پولی است‌! خوب چون مدت زیادی به پایان دامنه‌ام نمانده‌، قصد دارم دامنه را به یک Provider اجنبی منتقل کنم که این خدمات و خیلی چیز‌های دیگر که تا قبل از این نمی‌دانستم می‌توانم با دامنه‌ام انجام دهم را مجانی بهم می‌دهد و پول تمدید خیلی کمتری هم طلب می‌کند!</p>
+</div>
+<div class="section" id="redirect">
+<h3>301 Redirect</h3>
+<p>چون نمی‌توانستم دامینم را منتقل کنم (این اتفاق بانی خیر شد)‌، یک‌جور‌هایی ناجور بود که دو دامنهٔ متفاوت با یک محتوا فعال باشند (Google به این خاطر امتیاز کم می‌کند). جستجو کردم و دیدم از قبل برای این کار پیش‌بینی‌های لازم شده. این اخطار‌های ۴.۴ یا ۴۰۳ (که این دومی را ما ایرانی‌ها خوب می‌شناسیم) را که یادتان هست. از قرار در زمان اولیه اینترنت اتاق ۳۰۱‌ای بوده که وظیفهٔ انتقال دادن درخواست‌ها را بر عهده داشته.</p>
+<p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
+<p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
+<p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
+<pre class="code text"><a name="rest_code_897851bb81714e6887403414dcdce576-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+</pre>
+<p>که من می‌خواستم به همچین شکلی در آید:</p>
+<pre class="code text"><a name="rest_code_591791a54ddf4482b055c9f213fadc90-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+</pre>
+<p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
+<p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>
+<p>منابع دیگر:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://nikola.ralsina.com.ar/handbook.html">راهنمای نیکولا</a></li>
+<li><a class="reference external" href="http://pages.github.com/">راهنمای صفحات گیت‌هاب</a></li>
+<li>
+<a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html#external-hyperlink-targets">راهنمای restructuredText</a> که من برای نوشتن این پست از آن استفاده کردم و فوق‌العاده لذت بردم.</li>
+<li><a class="reference external" href="http://nikola.ralsina.com.ar/creating-a-theme.html">راهنمای سادهٔ تغییر قالب Orphan با Mako</a></li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="bg-info">
+                <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/nikola/" rel="tag">Nikola</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/wordpress/" rel="tag">Wordpress</a></li>
+        </ul>
+</div>
+              <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../wp/yn-ymkhs-dwst-dshtny-blns-khrdn-prn/" rel="prev" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../emacs-flyspell-mode/" rel="next" title="این ایمکس دوست داشتنی (غلط‌گیر املایی)">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://5hah.in/posts/from-wordpress-to-nikola/",
+        disqus_title="\u0627\u0632 \u0648\u0631\u062f\u067e\u0631\u0633 \u0628\u0647 \u0646\u06cc\u06a9\u0648\u0644\u0627",
+        disqus_identifier="cache/posts/from-wordpress-to-nikola.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

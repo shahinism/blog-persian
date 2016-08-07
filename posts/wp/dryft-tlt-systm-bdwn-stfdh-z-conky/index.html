@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<base href="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Calculate the total CPU time. | شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
+<link rel="prev" href="../tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b/" title="تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون" type="text/html">
+<link rel="next" href="../twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" title="تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content=" Calculate the total CPU time.">
+<meta property="og:url" content="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/">
+<meta property="og:description" content="برای دیدن در اندازهٔ بزرگ کلیک کنید
+و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Con">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-11-24T00:55:09+03:30">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><div class="jumbotron">
+    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
+        <h1>شاهین</h1>
+        <hr class="hdrline">
+<a class="social" href="https://github.com/shahinism">
+          <img src="../../../assets/images/github.png"></a>
+        <a class="social" href="https://twitter.com/shahinism">
+          <img src="../../../assets/images/twitter.png"></a>
+        <a class="social" href="https://ir.linkedin.com/in/shahinism">
+          <img src="../../../assets/images/linkedin.png"></a>
+      </div>
+    </section>
+</div>
+
+  <div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+          <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url"> Calculate the total CPU time.</a></h1>
+
+        شاهین
+      <a href="." rel="bookmark"><time class="published dt-published" datetime="2012-11-24T00:55:09+03:30" itemprop="datePublished" title="2012-11-24 00:55">2012-11-24 00:55</time></a>
+    </div>
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png"><img class=" " title="ConkyOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/ConkyOni3.png" alt="" width="540" height="44"></a> برای دیدن در اندازهٔ بزرگ کلیک کنید</p>
+<p>و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Conky ندارم (مثلا آن قسمت درصد استفاده از CPU برای درصد‌های مختلف تک رقمی‌، دو رقمی و سه رقمی‌، طول‌های متفاوتی می‌گیرد و کمی قضیه را لوس می‌کند) و سوم این که اگر به ماندن در همین وضعیت رضایت دهم‌، سوادم هیچ وقت زیاد نمی‌شود‌ D:</p>
+<p>پس تصمیم می‌گیرم که خروجی فعلی کانکی را (البته با چند تغییر کوچک) با ابزار ساده‌تری جایگزین کنم‌. خوب کار تقریبا پیچیده و سختی به نظر می‌رسد (وقتی که از لینوکس هیچ چیز ندانم) اما خوب همین Conky هم اطلاعاتش را از روی هوا نمی‌گیرد که! از طرفی مسالهٔ زبان پایش به میان می‌آید‌. به چه زبانی بنویسم؟ من که ته تهش پایتون را (آن هم دست و پا شکسته) می‌دانم‌.</p>
+<p>بعد از کمی جستجو و دو دو تا چهار تا با دانسته‌های قبلی‌ام‌، مساله را این‌طور حل می‌کنم (از راست به چپ تصویر):</p>
+<p></p>
+<ul>
+<li>زمان: روی توزیعم با دستور date می‌توانم زمان حاضر را به طور کامل ببینم و البته می‌توانم آن را به صورت دلخواهم فرمت کنم‌.</li>
+    <li>صدا: حقیقتش کشف کردم نیازی به این ندارم و زیاد دنبال واکشی مقدارش نگشتم‌. ولی مطمئنم یک راه ساده برای فهمیدنش هست ;-)</li>
+    <li>مجموع آپلود/دانلود نشست حاضر (TU/TD): خوب بعد از کمی جستجو‌، با دوست قدیمی ولی ناشناخته‌ام proc آشنا شدم‌، که از قرار خیلی خیلی‌، بیشتر از چیز‌هایی که می‌خواهم را بهم می‌رساند‌. فعلا ‎/proc/net/dev جواب تا این‌جای کار است‌.</li>
+    <li>سرعت دانلود/آپلود (D/U): راستش را بخواهید‌، این یکی مرا خیلی در کف نگه داشت‌! فکر می‌کردم باید جایی مثلا در proc برای این قضیه باشد‌. ولی نکته‌اش این‌جا بود که من اصلا نفهمیده بودم که چه می‌خواهم‌. که البته با تقلب از روی این <a title="code-project-monitor-proc-python-and-clutter" href="http://www.tuxradar.com/content/code-project-monitor-proc-python-and-clutter" target="_blank">آموزش</a> آن هم به صورت اتفاقی قضیه را درک کردم و شبیه سازی (البته نکاتی هم باقی می‌ماند که در ادامه مطرح می‌کنم).</li>
+    <li>وضعیت رم: خوب این یکی هم مثل date. می‌دانستم که دستوری به اسم free برای این‌کار ساخته شده‌. ولی باید کمی خروجی‌اش را انگولک می‌کردم و چیزی که می‌خواستم را بیرون می‌کشیدم.</li>
+    <li>وضعیت CPU: این یکی ترکیبی از همهٔ کار‌هاییست که در بالا باید انجام دهم به علاوه کلی چیز جدید که باید یاد بگیرم‌. فایل ‎/proc/stat وضعیت فعلی CPU را در خودش نگه می‌دارد که با اسکریپتی که در <a title="cpu usage monitor script on github" href="https://github.com/moisespsena/linux-cpu-usage/blob/master/cpu-usage-monitor.sh" target="_blank">این‌جا</a> دیدم فهمیدم که چطور وضعیت کل CPU را واکشی کنم‌. اما من وضعیت کل را نمی‌خواستم‌، بلکه به دنبال وضعیت تک تک هسته‌ها بودم که خوب باید دست و بالم رو کثیف‌تر می‌کردم ;-)</li>
+</ul>
+<p>خوب تمام این کار‌ها را می‌شود با پایتون هم انجام داد (با هر زبان دیگری هم می‌شود) ولی‌، دم دستی‌ترین چیز ممکن shell scripting است‌. هم احتمالا کمتر از مفسر پایتون به سیستم فشار می‌آورد و هم این که اصلا چیزی در موردش نمی‌دانم (نه این که اصلا‌، ولی نه در حد یک اسکریپت نویس ;-)). این می‌شود که طی دو روز گذشته‌، تمام فکر و ذکرم را می‌گذارم روی نوشتن این اسکریپت‌، تا هم چیز یاد بگیرم‌، و هم مستقل‌تر شوم ;-)</p>
+<p>اسکریپت حاضر است و از <a title="sysdata script on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/sysdata.sh" target="_blank">این‌جا</a> قابل دریافت. در ادامه ذره‌، ذره به بررسی‌اش می‌پردازیم‌:</p>
+<h5>تاریخ</h5>
+
+<p>خوب اولین چیزی که لازم داشتیم‌، خروجی گرفتن زمان فعلی سیستم بود که گفتیم با دستور date قادر به انجامش هستیم‌. به صورت زیر:</p>
+<pre class="code literal-block"><span></span><span class="nv">date</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">"%a %Y.%m.%d %H:%M"</span><span class="k">)</span>
+</pre>
+
+
+<p>نکتهٔ این دستور آن‌جاست که من برای مقدار دهی به متغیر date، از خروجی یک دستور استفاده کرده‌ام (کاری که در ادامه خیلی زیاد انجام می‌دهم‌). برای این کار کافیست دستور مورد نظر را در ‎$(‎)‎ بنویسیم‌. به همین راحتی!</p>
+<h5>اطلاعات شبکه</h5>
+
+<p>اولین چیز‌هایی که می‌خواهیم‌، این است که بفهمیم چقدر دانلود یا آپلود کرده‌ایم‌. که همانطور که گفتم این اطلاعات را در فایل ‎/proc/net/dev می‌توان یافت‌. همینطور‌، با محاسبهٔ این که در یک ثانیهٔ گذشته‌، چقدر دانلود/آپلود کرده‌ایم‌، می‌توان سرعت دانلود بر ثانیه را محاسبه کرد. این است که برای تمیزی کار‌، اول یک تابع می‌نویسیم که از proc ذکر شده‌، مقدار بایت‌های ارسالی یا دریافتی را واکشی کند:</p>
+<pre class="code literal-block"><span></span><span class="k">function</span> getNetBytes
+
+<span class="o">{</span>
+
+<span class="nv">Brecived</span><span class="o">=</span><span class="k">$(</span>cat <span class="nv">$netInterface</span> <span class="p">|</span> grep <span class="s2">"eth0"</span> <span class="p">|</span> awk <span class="s1">'{print($2)}'</span><span class="k">)</span>
+
+<span class="nv">Btransmited</span><span class="o">=</span><span class="k">$(</span>cat <span class="nv">$netInterface</span> <span class="p">|</span> grep <span class="s2">"eth0"</span> <span class="p">|</span> awk <span class="s1">'{print($10)}'</span><span class="k">)</span>
+
+<span class="o">}</span>
+</pre>
+
+
+<p>متغیر ‎$netInterface اشاره به همان فایل ‎/proc/net/dev می‌کند که در اول اسکریپت تعریفش کرده‌ام‌. بعد هم با grep تنها خطی که مربوط به اینترفیسی که می‌خواهم است را جدا می‌کنم (eth0) و حالا با awk خانهٔ شمارهٔ ۲ را برای بایت‌های دریافت شده‌، و خانهٔ شمارهٔ ۱۰ این خروجی را برای بایت‌های فرستاده شده جدا می‌کنم‌. این کار را به روش‌های دیگری هم می‌شد انجام داد‌، ولی به نظرم با این روش‌، خط‌های کمتری تایپ کردم ;-)</p>
+<p>حالا با دستورات زیر‌، چیز‌هایی که می‌خواهم را محاسبه می‌کنم:</p>
+<pre class="code literal-block"><span></span><span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">upSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Btransmited</span><span class="o">-</span><span class="nv">$oldBTransmited</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">traffic</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$Brecived</span><span class="s2"> </span><span class="nv">$Btransmited</span><span class="s2">"</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", ($1+$2)/1024/1024 )}'</span><span class="k">)</span>
+</pre>
+
+
+<p>طی این دستورات‌، از قابلیت متغیر‌گیری به صورت ‎$num و همینطور‌، پرینت فرمت شده (برای نمایش حداکثر دو رقم اعشار) awk استفاده کرده‌ام. این کار‌ها با dc هم قابل انجام بود‌، ولی خروجی به تمیزی awk نبود‌. همانطور که می‌بینید در این دستورات از متغیر‌های ‎$oldBRecived و ‎$oldBTransmited استفاده شده‌ که در واقع وضعیت یک ثانیه قبل دانلود/آپلود را در خود نگاه می‌دارند‌. تنها کافیست دستورات فوق را هر یک ثانیه اجرا کنیم تا خروجی درست را بگیریم‌. (حلقهٔ کامل این دستورات در آخر مطلب توضیح داده می‌شود)</p>
+<p>نکته‌ای که می‌ماند دقت این محاسبه است‌. حقیقتش همانطور که گفتم من این روش را از این‌جا [link] یاد گرفتم. اما دقیقا همان را پیاده سازی نکردم. مساله سر زمان محاسبه بود. نمی‌دانم چرا نویسنده در آن‌جا از epoch (تاریخ ۱/۱/۱۹۷۰) استفاده کرده بود (خوشحال می‌شوم اگر کسی می‌داند به من هم توضیح دهد‌.) نویسنده در آن‌جا می‌گوید مساله سر چند کیلوبایت است و از این حرف‌ها!</p>
+<h5>وضعیت RAM</h5>
+
+<p>گفتم که دستور free -m این‌کارها را انجام می‌دهد‌، پس:</p>
+<pre class="code literal-block"><span></span><span class="k">function</span> getRamInfo
+
+<span class="o">{</span>
+
+<span class="nv">totalMemory</span><span class="o">=</span><span class="k">$(</span>free -m <span class="p">|</span> grep <span class="s2">"Mem:"</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $2/1024)}'</span> <span class="k">)</span>
+
+<span class="nv">usedMemory</span><span class="o">=</span><span class="k">$(</span>free -m <span class="p">|</span> grep <span class="s2">"buffers/cache"</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $3/1024)}'</span><span class="k">)</span>
+
+<span class="nv">memInPercent</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$totalMemory</span><span class="s2"> </span><span class="nv">$usedMemory</span><span class="s2">"</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.0f", $2/($1/100)) }'</span><span class="k">)</span>
+
+<span class="o">}</span>
+</pre>
+
+
+<p>فکر نکنم نکته‌ای باقی مانده باشد که قبلا توضیح نداده باشم‌. پس دیگر توضیح نمی‌دهم!</p>
+<h5>وضعیت CPU</h5>
+
+<p>خوب گفتم که برای یادگیری این کار‌، از این اسکریپت[link] استفاده کردم. ولی این اسکریپت تنها وضعیت کل CPU را بر می‌گرداند‌. من آن را طوری تغییر دادم که هر بار‌، آدرس هسته‌ای که می‌خواهم اطلاعاتش را بدانم در ورودی بگیرد‌، و فقط همان را هسته را محاسبه کند و در خروجی نشان دهد:</p>
+<pre class="code literal-block"><span></span><span class="k">function</span> getCpuInfo<span class="o">()</span>
+
+<span class="o">{</span>
+
+<span class="nv">CORE</span><span class="o">=</span><span class="nv">$1</span>
+
+<span class="nv">addr</span><span class="o">=</span><span class="s2">"^cpu</span><span class="si">${</span><span class="nv">CORE</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="nb">local</span> <span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat <span class="p">|</span> grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c1"># Get the total CPU statistics.</span>
+
+<span class="nb">unset</span> CPU<span class="o">[</span>0<span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
+
+<span class="nb">local</span> <span class="nv">IDLE</span><span class="o">=</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="si">}</span> <span class="c1"># Get the idle CPU time.</span>
+
+
+
+<span class="c1"># Calculate the total CPU time.</span>
+
+<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+
+<span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
+
+<span class="nb">let</span> <span class="s2">"TOTAL=</span><span class="nv">$TOTAL</span><span class="s2">+</span><span class="nv">$VALUE</span><span class="s2">"</span>
+
+<span class="k">done</span>
+
+
+
+<span class="c1"># Catch current cores last state</span>
+
+<span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+
+
+
+<span class="c1"># Calculate the CPU usage since we last checked.</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_IDLE=</span><span class="nv">$IDLE</span><span class="s2">-</span><span class="nv">$PREV_IDLE</span><span class="s2">"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_TOTAL=</span><span class="nv">$TOTAL</span><span class="s2">-</span><span class="nv">$PREV_TOTAL</span><span class="s2">"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_USAGE=(1000*(</span><span class="nv">$DIFF_TOTAL</span><span class="s2">-</span><span class="nv">$DIFF_IDLE</span><span class="s2">)/</span><span class="nv">$DIFF_TOTAL</span><span class="s2">+5)/10"</span>
+
+
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOTAL</span><span class="s2">"</span>
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$IDLE</span><span class="s2">"</span>
+
+<span class="o">}</span>
+</pre>
+
+
+<p>برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.</p>
+<p>با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:</p>
+<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+
+<span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
+
+<span class="nb">let</span> <span class="s2">"TOTAL=</span><span class="nv">$TOTAL</span><span class="s2">+</span><span class="nv">$VALUE</span><span class="s2">"</span>
+
+<span class="k">done</span>
+</pre>
+
+
+<p>ساده است این‌طور نیست؟ آن let آن‌جا همان کار ‎(())$ را می‌کند‌. حالا وقت انجام محاسبات است‌. چون هر بار نیاز است که وضعیت قبلی CPU مورد نظر را داشته باشیم‌، پس لازم است برای هر CPU متغیر‌های مربوطه را بسازیم‌. که این کار را با دستورات زیر انجام می‌دهیم:</p>
+<pre class="code literal-block"><span></span><span class="nb">eval</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOTAL</span><span class="s2">"</span>
+
+<span class="nb">eval</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="o">=</span><span class="s2">"</span><span class="nv">$IDLE</span><span class="s2">"</span>
+</pre>
+
+
+<p>این دستور eval فوق‌العاده است‌. با استفاده از آدرس CPU فعلی (CORE) متغیر‌های مورد نظرم را می‌سازد و مقادیر مربوطه را درشان ذخیره می‌کند‌. اما چون نمی‌خواهم زیادی کثیف کاری شود‌، قبل از انجام محاسبات‌، متغیر‌هایی که ساخته‌ایم را به یک نام ثابت در می‌آورم تا کارم را آسان کنم:</p>
+<pre class="code literal-block"><span></span><span class="nv">PREV_IDLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_IDLE<span class="nv">$CORE</span><span class="k">)</span>
+
+<span class="nv">PREV_TOTAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">eval</span> <span class="nb">echo</span> <span class="se">\P</span>REV_TOTAL<span class="nv">$CORE</span><span class="k">)</span>
+</pre>
+
+
+<p>حالا این دو متغیر‌، وضعیت قبلی CPU را در خود نگه می‌دارند‌. پس نوبت این است که محاسباتم را انجام دهم:</p>
+<pre class="code literal-block"><span></span><span class="nb">let</span> <span class="s2">"DIFF_IDLE=</span><span class="nv">$IDLE</span><span class="s2">-</span><span class="nv">$PREV_IDLE</span><span class="s2">"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_TOTAL=</span><span class="nv">$TOTAL</span><span class="s2">-</span><span class="nv">$PREV_TOTAL</span><span class="s2">"</span>
+
+<span class="nb">let</span> <span class="s2">"DIFF_USAGE=(1000*(</span><span class="nv">$DIFF_TOTAL</span><span class="s2">-</span><span class="nv">$DIFF_IDLE</span><span class="s2">)/</span><span class="nv">$DIFF_TOTAL</span><span class="s2">+5)/10"</span>
+</pre>
+
+
+<p>چیز خاصی نیست دیگر‌، همه چیز روشن است ;-)</p>
+<h5>پایان کار</h5>
+
+<pre class="code literal-block"><span></span><span class="k">while</span> true<span class="p">;</span>
+
+<span class="k">do</span>
+
+getNetBytes
+
+getRamInfo
+
+<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span>0<span class="p">;</span> COUNT <span class="p">&amp;</span>lt<span class="p">;</span> <span class="nv">$CORES</span><span class="p">;</span> COUNT++ <span class="o">))</span><span class="p">;</span><span class="k">do</span>
+
+getCpuInfo <span class="nv">$COUNT</span>
+
+<span class="nb">eval</span> <span class="se">\c</span>pu<span class="nv">$COUNT</span><span class="o">=</span><span class="nv">$DIFF_USAGE</span>
+
+<span class="k">done</span>
+
+
+
+<span class="nv">dlSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Brecived</span><span class="o">-</span><span class="nv">$oldBRecived</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">upSpeed</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="k">$((</span> <span class="nv">$Btransmited</span><span class="o">-</span><span class="nv">$oldBTransmited</span> <span class="k">))</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", $1/1024)}'</span><span class="k">)</span>
+
+<span class="nv">traffic</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$Brecived</span><span class="s2"> </span><span class="nv">$Btransmited</span><span class="s2">"</span> <span class="p">|</span> awk <span class="s1">'{printf( "%.2f", ($1+$2)/1024/1024 )}'</span><span class="k">)</span>
+
+
+
+<span class="nb">printf</span> <span class="se">\</span>
+
+<span class="s2">"CPU: %3s,%3s,%3s,%3s | RAM: %sG/%sG (%s%%) | LAN: ↓: %4sƘ ↑: %4sƘ T↕: %6s | %s\n"</span> <span class="se">\</span>
+
+<span class="s2">"</span><span class="nv">$cpu0</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$cpu1</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$cpu2</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$cpu3</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$usedMemory</span><span class="s2">"</span> <span class="se">\</span>
+
+<span class="s2">"</span><span class="nv">$totalMemory</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$memInPercent</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$dlSpeed</span><span class="s2">"</span> <span class="se">\</span>
+
+<span class="s2">"</span><span class="nv">$upSpeed</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$traffic</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$date</span><span class="s2">"</span>
+
+<span class="nv">oldBRecived</span><span class="o">=</span><span class="nv">$Brecived</span>
+
+<span class="nv">oldBTransmited</span><span class="o">=</span><span class="nv">$Btransmited</span>
+
+sleep 1
+
+<span class="k">done</span>
+</pre>
+
+
+<p>حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.</p>
+<p>همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.</p>
+<p>حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:</p>
+<pre class="code literal-block"><span></span>CPU: 48,3,40,3 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+
+CPU: 8,4,76,4 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+
+CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+</pre>
+
+
+<p>می‌بینید‌، هنوز هم طول خروجی کم و زیاد می‌شود که اصلا خوب نیست‌. این است که باید دنبال دستوری باشم که خروجی را آرایش کند و بیرون بدهد‌. printf سالاری که از زمان یادگیری C می‌شناسم این کار را برایم می‌کند‌. کافیست فضای متغیر‌ها را به صورت ‎%Ns که N همان طول مینیموم رشته است را مشخص کنم‌. خودش باقی کار‌ها را انجام می‌دهد‌. خوب همین دیگر‌. کارمان تمام شد‌. مرحلهٔ بعدی این است که یک خروجی json دار درست حسابی بسازم که i3 بتواند رنگی رنگی‌اش کند ;-)</p>
+<p><a href="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png"><img title="SysdataOni3" src="http://dl.dropbox.com/u/25017694/Blog-photos/SysdataOni3.png" alt="" width="527" height="50"></a> برای دیدن در اندازهٔ بزرگ‌تر کلیک کنید</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="bg-info">
+        
+      </div>
+              <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b/" rel="prev" title="تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" rel="next" title="تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/",
+        disqus_title=" Calculate the total CPU time.",
+        disqus_identifier="cache/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

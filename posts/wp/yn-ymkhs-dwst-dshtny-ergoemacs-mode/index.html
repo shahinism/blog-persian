@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<base href="https://5hah.in/posts/wp/yn-ymkhs-dwst-dshtny-ergoemacs-mode/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>این ایمکس دوست داشتنی (ergoemacs-mode) | شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://5hah.in/posts/wp/yn-ymkhs-dwst-dshtny-ergoemacs-mode/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="شاهین">
+<link rel="prev" href="../yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb/" title="این ایمکس دوست داشتنی (تعریف کلید میانبر)" type="text/html">
+<link rel="next" href="../yn-ymkhs-dwst-dshtny-ido-mode/" title="این ایمکس دوست داشتنی (ido-mode)" type="text/html">
+<meta property="og:site_name" content="شاهین">
+<meta property="og:title" content="این ایمکس دوست داشتنی (ergoemacs-mode)">
+<meta property="og:url" content="https://5hah.in/posts/wp/yn-ymkhs-dwst-dshtny-ergoemacs-mode/">
+<meta property="og:description" content="سخت‌تر از همه این که به QWERTY وابسته‌اند. آن وقت است که اگر به Workman یا Colemak سوئیچ کنید‌، انگار به کیبورد‌تان دینامیت بسته‌اید! از آن بد‌تر این که با کاراکتر‌های فارسی کار نمی‌کنند.
+این مقدمه را">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-04-08T14:24:21+04:30">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><div class="jumbotron">
+    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
+        <h1>شاهین</h1>
+        <hr class="hdrline">
+<a class="social" href="https://github.com/shahinism">
+          <img src="../../../assets/images/github.png"></a>
+        <a class="social" href="https://twitter.com/shahinism">
+          <img src="../../../assets/images/twitter.png"></a>
+        <a class="social" href="https://ir.linkedin.com/in/shahinism">
+          <img src="../../../assets/images/linkedin.png"></a>
+      </div>
+    </section>
+</div>
+
+  <div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+          <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">این ایمکس دوست داشتنی (ergoemacs-mode)</a></h1>
+
+        شاهین
+      <a href="." rel="bookmark"><time class="published dt-published" datetime="2013-04-08T14:24:21+04:30" itemprop="datePublished" title="2013-04-08 14:24">2013-04-08 14:24</time></a>
+    </div>
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>سخت‌تر از همه این که به QWERTY وابسته‌اند. آن وقت است که اگر به <a title="چینش (لایوت) Workman و داستان مهاجرتم" href="http://shahinism.com/blog/1392/01/14/%da%86%db%8c%d9%86%d8%b4-%d9%84%d8%a7%db%8c%d9%88%d8%aa-workman-%d9%88-%d8%af%d8%a7%d8%b3%d8%aa%d8%a7%d9%86-%d9%85%d9%87%d8%a7%d8%ac%d8%b1%d8%aa%d9%85/">Workman</a> یا Colemak سوئیچ کنید‌، انگار به کیبورد‌تان دینامیت بسته‌اید! از آن بد‌تر این که با کاراکتر‌های فارسی کار نمی‌کنند.</p>
+<p>این مقدمه را گفتم که بگویم‌، عده‌ای جمع شده‌اند و مدی ساخته‌اند به اسم <a title="Ergoemacs official page" href="http://ergoemacs.org/index.html" target="_blank">ergoemacs-mode</a> که هدفش حل مشکلات ذکر شده در مقدمهٔ بالاست. نتیجه‌، از عکس زیر معلوم است:</p>
+<p><img class=" " alt="ergoemacs-mode رو چینش workman" src="http://dl.dropbox.com/u/25017694/Blog-photos/ergoworkman.png" width="586" height="218"> ergoemacs-mode رو چینش workman</p>
+<p>این عکس طبق چینش Workman تولید شده‌،‌ ولی جای دکمه‌ها در لایوت‌های دیگر‌، از جمله QWERTY و Colemak هم یک‌سان است. از نکات مهم مد نظر قرار داده شده در هنگام طراحی این Key binding‌ها می‌توان به موارد زیر اشاره کرد:</p>
+<p></p>
+<ul>
+<li>  کلید‌های Home row بهترین‌ها هستند.</li>
+    <li>Alt خیلی بهتر از Ctrl است. Alt را باید با شصت گرفت که زورش خیلی بیشتر از انگشت کوچیکهٔ مخصوص Ctrl است!</li>
+    <li>به جای سرحرف اول دستورات‌، بهتر است به مکان دستورات هم خوانواده توجه شود. مثلا به مکان کلید‌های جاب‌جایی نگاه کنید. همین‌طور کلید‌های پاک کردن را ببینید!</li>
+    <li>و چند‌تای دیگر که آن‌قدرها هم مهم نیستند.</li>
+</ul>
+<p>نکته این‌جاست که نتیجهٔ کار خیلی عالی شده. آن‌قدر عالی که طی رد و بدل چند ایمیل‌ در<a title="ergoemacs mailing list" href="https://groups.google.com/group/ergoemacs" target="_blank"> لیست ایمیل</a> پروژه‌، زبان فارسی را هم به این مجموعهٔ کامل اضافه کردیم که نتیجه‌اش را در زیر می‌بینید:</p>
+<p><img class=" " alt="ergoemacs-mode روی چینتش استاندارد فارسی" src="http://dl.dropbox.com/u/25017694/Blog-photos/ergofa.png" width="586" height="218"> ergoemacs-mode روی چینتش استاندارد فارسی</p>
+<p>کیبورد استاندارد فارسی است که به صورت پیش‌فرض در لینوکس وجود دارد‌، ولی ویندوزی‌ها باید برنامهٔ متناسبش را پیدا و نصب کنند تا پشتیبانی شود D:</p>
+<h5>نصب</h5>
+
+<p>طبق<a title="این ایمکس دوست داشتنی (مدیر بسته)" href="http://shahinism.com/blog/1392/01/08/%d8%a7%db%8c%d9%86-%d8%a7%db%8c%d9%85%da%a9%d8%b3-%d8%af%d9%88%d8%b3%d8%aa-%d8%af%d8%a7%d8%b4%d8%aa%d9%86%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d8%a8%d8%b3%d8%aa%d9%87/" target="_blank"> آن‌چه که در گذشته گفتم‌</a>، ergoemacs-mode را از مدیر‌بسته‌های ایمکس نصب کنید و سپس تنظیمات زیر را به فایل ‎.emacs‌‌تان اضافه کنید:</p>
+<pre class="code literal-block"><span></span><span class="p">(</span><span class="nv">setenv</span> <span class="s">"ERGOEMACS_KEYBOARD_LAYOUT"</span> <span class="s">"workman"</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">'ergoemacs-mode</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">ergoemacs-mode</span> <span class="mi">1</span><span class="p">)</span>
+</pre>
+
+
+<p>در خط اول‌، اسم لایوت پیش‌فرض را اضافه می‌کنیم‌، و در خط‌های بعد ergoemacs-mode را فراخوانی و فعال می‌کنیم. بعد از یک Restart‌، با کلید‌های جدید روبرو می‌شوید D:</p>
+<h5>گرفتن کمک</h5>
+
+<p>خوب یک تغییر عادت است و احتمالا اول کار خیلی پیش می‌آید که دستورات قبلی‌تان را بزنید و نتیجه نگیرید! برای پیدا کردن کلید‌های جدید‌، کافیست C-h o را وارد کرده و سپس کلید قبلی‌تان را وارد کنید. این تابع بعد از بررسی کلید‌های قدیمی‌، هم‌تایان جدید‌شان را معرفی می‌کند.</p>
+<h5>دیگر سطوح</h5>
+
+<p>یکی از ویژگی‌های ergoemacs-mode‌، قابلیت تعیین سطحش است. سطوح مختلفی که با توجه به سلیقه‌های مختلف کاربران طراحی شده است. مثلا سطح guru کلید‌های فلش را برای تغییر موقعیت نشانگر می‌بندد و بعد از هر بار زدنشان‌، کلید‌های متناسب با سلیقهٔ ایمکس را نشان‌تان می‌دهد. و یا سطح master (فکر کنم) کلید backspace را خاموش می‌کند تا مجبور شوید از روش‌های پاک کردن کاراکتر ایمکس بهره بگیرید که سریع‌تر است. برای تنظیم این ویژگی‌ها کافیست سطح مورد نظر را انتخاب کنید (بعد از نصب ergoemacs از منو انتخابش کنید و ergoemacs variants را ببینید) و در دستور(setq ergoemacs-variant "SATH") آن را در جای SATH قرار دهید.</p>
+<h5>ergoemacs-extras</h5>
+
+<p>با فراخوانی این تابع در ایمکس‌، ergoemacs اقدام به ایجاد فایل‌های راهنمای کیبورد ergo در سطوح مختلف به فرمت svg می‌کند که می‌تواند خیلی کمک کننده باشد (عکس‌های موجود در این نوشته هم با همین روش ایجاد شده‌اند.). همین‌طور فایل‌هایی برای تطابق این کلید‌ها با محیط‌های دیگر از جمله bash ایجاد می‌شود که می‌توانند در ایجاد یک‌پارچگی برای محیط کار عالی باشند. (هنوز امتحانش نکرده‌ام ولی نتیجه‌اش را به زودی اطلاع می‌دهم.)</p>
+<p>این فایل‌ها در مسیر ‎~‎‍/.emacs/ergoemacs-extras در دسترسند که با توجه به سطوح مختلف پوشه‌بندی شده‌اند.</p>
+<h5>نتیجه</h5>
+
+<p>به نظر من نتیجهٔ کار فوق‌العاده قابل قبول است. راحتی استفاده از کلید‌های پر کاربرد و راحت‌تر از آن معکوس کردن اکثر دستورات با Shift فوق‌العاده کمک می‌کند. به طور پیش‌فرض برای خیلی کار‌ها مجبوریم در ایمکس از ارسال آرگومان به دستورات برای تغییر حالت‌شان استفاده کنیم که در Ergoemacs این کار عموما با Shift انجام می‌گیرد. مثلا C-f جستجوی رو به جلو انجام می‌دهد و C-S-f جستجوی رو به عقب!</p>
+<p>از طرفی کلید‌های C-a که در تمام محیط‌های دیگر برای انتخاب کل محتویات صفحه است و یا کلید‌های C-z, C-x, C-c, C-v, C-f, C-o, C-s, C-s-s , و خیلی کلید‌های دیگر که در محیط‌های دیگر از آن‌ها بهره می‌گیریم‌، به راحتی در این‌جا نیز جواب می‌دهند و کار ویرایش را فوق‌العاده راحت‌تر کرده‌اند. حتی با Ergoemacs دستور جدیدی اضافه شده که می‌توان با C-n یک صفحهٔ جدید ساخت‌، بدون این که نیاز به افزودن نامی به آن داشته باشیم.</p>
+<p>یک قابلیت جالب دیگر‌، استفاده از کلید‌های yanking‌ (کپی پیست در ایمکس) بدون Region (متن انتخاب شده) است. در این صورت‌، دستورات کل خط یا صفحه را تحت تاثیر قرار می‌دهند.</p>
+<p>در آینده بیشتر هم در مورد ergoemacs حرف می‌زنیم.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div class="bg-info">
+        
+      </div>
+              <ul class="pager hidden-print">
+<li class="previous">
+                <a href="../yn-ymkhs-dwst-dshtny-tryf-khlyd-mynb/" rel="prev" title="این ایمکس دوست داشتنی (تعریف کلید میانبر)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../yn-ymkhs-dwst-dshtny-ido-mode/" rel="next" title="این ایمکس دوست داشتنی (ido-mode)">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://5hah.in/posts/wp/yn-ymkhs-dwst-dshtny-ergoemacs-mode/",
+        disqus_title="\u0627\u06cc\u0646 \u0627\u06cc\u0645\u06a9\u0633 \u062f\u0648\u0633\u062a \u062f\u0627\u0634\u062a\u0646\u06cc (ergoemacs-mode)",
+        disqus_identifier="cache/posts/wp/yn-ymkhs-dwst-dshtny-ergoemacs-mode.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>
