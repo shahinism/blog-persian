@@ -89,7 +89,7 @@ article: http://ogp.me/ns/article#
     <div class="col-md-6 col-md-offset-3">
       <div class="row">
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
           <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">از وردپرس به نیکولا</a></h1>
 
         شاهین
@@ -97,7 +97,7 @@ article: http://ogp.me/ns/article#
     </div>
     
   </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+      <div>
 <p>خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static) بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)</p>
 <div class="section" id="id1">
 <h2>چرا یک وبلاگ ایستا؟</h2>
@@ -124,7 +124,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id3">
 <h2>نام فارسی پست‌ها و مشکلاتش</h2>
 <p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
-<pre class="code sh"><a name="rest_code_d7ff805e372544f69b9450bf00c3a1cd-1"></a>nikola import_wordpress wordpress_output.xml
+<pre class="code sh"><a name="rest_code_7ef5d08311ff45b0a9b9e999346af815-1"></a>nikola import_wordpress wordpress_output.xml
 </pre>
 <p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
 <p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
@@ -161,10 +161,10 @@ article: http://ogp.me/ns/article#
 <p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
 <p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
 <p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
-<pre class="code text"><a name="rest_code_897851bb81714e6887403414dcdce576-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+<pre class="code text"><a name="rest_code_1b1e69952ac44654a826bb2c4a00cf70-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
 </pre>
 <p>که من می‌خواستم به همچین شکلی در آید:</p>
-<pre class="code text"><a name="rest_code_591791a54ddf4482b055c9f213fadc90-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+<pre class="code text"><a name="rest_code_3250b068ee0c4a5e9d9d396629e751fc-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
 </pre>
 <p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
 <p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>
@@ -180,14 +180,40 @@ article: http://ogp.me/ns/article#
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><div class="bg-info">
-                <ul itemprop="keywords" class="tags">
+    <aside class="share"><!-- Sharingbutton Facebook --><a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/from-wordpress-to-nikola/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Twitter -->
+      <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=%D8%A7%D8%B2%20%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3%20%D8%A8%D9%87%20%D9%86%DB%8C%DA%A9%D9%88%D9%84%D8%A7%20from%20@shahinism&amp;url=https://5hah.in/posts/from-wordpress-to-nikola/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Google+ -->
+      <a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https://5hah.in/posts/from-wordpress-to-nikola/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"></path><polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"></polygon></g></svg>
+</div>
+        </div>
+      </a>
+
+    </aside><!-- aside.share --><aside class="postpromonav"><nav><div class="bg-info">
+                  <ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/nikola/" rel="tag">Nikola</a></li>
             <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
             <li><a class="tag p-category" href="../../categories/wordpress/" rel="tag">Wordpress</a></li>
         </ul>
 </div>
-              <ul class="pager hidden-print">
+                <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../wp/yn-ymkhs-dwst-dshtny-blns-khrdn-prn/" rel="prev" title="این ایمکس دوست داشتنی (بالانس کردن پرانتز‌ها)">Previous post</a>
             </li>
@@ -214,7 +240,7 @@ article: http://ogp.me/ns/article#
     <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
     </div>
     <!--End of body content-->

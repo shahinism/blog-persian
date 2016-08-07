@@ -95,36 +95,36 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id4">
 <h2>نصب و ساخت اسکریپت</h2>
 <p>برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید (مسیر ‎ ~/‌.‌i3/config):</p>
-<pre class="code bash"><a name="rest_code_fae5258d05904245a9219e793be19808-1"></a>bar <span class="o">{</span>
-<a name="rest_code_fae5258d05904245a9219e793be19808-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
-<a name="rest_code_fae5258d05904245a9219e793be19808-3"></a><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_4451ab95be2b4e41b74d8e58f7bd26fc-1"></a>bar <span class="o">{</span>
+<a name="rest_code_4451ab95be2b4e41b74d8e58f7bd26fc-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
+<a name="rest_code_4451ab95be2b4e41b74d8e58f7bd26fc-3"></a><span class="o">}</span>
 </pre>
 <p>با این دستور ما به <a class="reference external" href="http://i3wm.org/">i3</a> می‌فهمانیم که باید از <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> برای نمایش داده‌های i3bar استفاده کند. همینطور به <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> می‌گوییم که فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در کدام مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد (‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).</p>
 <p>لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم <a class="reference external" href="https://github.com/ultrabug/py3status">Py3status</a> داشته باشد که اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس توجه کنید:</p>
-<pre class="code python"><a name="rest_code_1b36b320105e4d38986190b359299714-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-2"></a>  <span class="sd">"""</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-3"></a><span class="sd">  System status in i3bar</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-4"></a><span class="sd">  """</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-7"></a>
-<a name="rest_code_1b36b320105e4d38986190b359299714-8"></a><span class="sd">      """</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'full_text'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'ram_info'</span><span class="p">}</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-12"></a>
-<a name="rest_code_1b36b320105e4d38986190b359299714-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_good'</span><span class="p">]</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_degraded'</span><span class="p">]</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-17"></a>      <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_bad'</span><span class="p">]</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-19"></a>
-<a name="rest_code_1b36b320105e4d38986190b359299714-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"RAM: </span><span class="si">%.2f</span><span class="s2">/</span><span class="si">%.2f</span><span class="s2"> GB (</span><span class="si">%d%%</span><span class="s2">)"</span> <span class="o">%</span> \
-<a name="rest_code_1b36b320105e4d38986190b359299714-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-<a name="rest_code_1b36b320105e4d38986190b359299714-23"></a>
-<a name="rest_code_1b36b320105e4d38986190b359299714-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_17fc12feac864007b776acfdf4608b63-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-2"></a>  <span class="sd">"""</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-3"></a><span class="sd">  System status in i3bar</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-4"></a><span class="sd">  """</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-7"></a>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-8"></a><span class="sd">      """</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'full_text'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'ram_info'</span><span class="p">}</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-12"></a>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_good'</span><span class="p">]</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_degraded'</span><span class="p">]</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-17"></a>      <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_bad'</span><span class="p">]</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-19"></a>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"RAM: </span><span class="si">%.2f</span><span class="s2">/</span><span class="si">%.2f</span><span class="s2"> GB (</span><span class="si">%d%%</span><span class="s2">)"</span> <span class="o">%</span> \
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-23"></a>
+<a name="rest_code_17fc12feac864007b776acfdf4608b63-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="id5">
@@ -191,15 +191,15 @@ article: http://ogp.me/ns/article#
     <div class="e-content entry-content">
     <div>
 <p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
-<pre class="code bash"><a name="rest_code_b625a701d3284d258777c5fe8cc123b9-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
-<a name="rest_code_b625a701d3284d258777c5fe8cc123b9-2"></a><span class="nb">source</span> antigen.zsh
+<pre class="code bash"><a name="rest_code_aca7cf2273c846d081b60567cc247010-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
+<a name="rest_code_aca7cf2273c846d081b60567cc247010-2"></a><span class="nb">source</span> antigen.zsh
 </pre>
 <p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
-<pre class="code bash"><a name="rest_code_2ac2c71634254c1a967b4f0b93c15981-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
+<pre class="code bash"><a name="rest_code_51ea9a92eae74ff1a318a36463002a66-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
 </pre>
 <p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
 <p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
-<pre class="code bash"><a name="rest_code_c173a644c3ec4160a1614d30314a7a27-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
+<pre class="code bash"><a name="rest_code_bc81bff38a3d47cfba7abf60f334c215-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
 </pre>
 <p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
 <p>و اما سوال مهم:</p>
@@ -264,30 +264,30 @@ article: http://ogp.me/ns/article#
 <p>مهم‌ترین دلیلش این که به دلیل کوچک بودن صفحهٔ مانیتورم‌، با چند پنجرهٔ باز در آن واحد‌، خیلی شلوغ‌کاری می‌شد. این بود که امروز تصمیم گرفتم تا جای ممکن‌، اجزای اضافی را حذف کنم. و خوب وقتی پای ایمکس در میان باشد‌، هر ابزار دیگری اضافه است D:</p>
 <p>در دسترس بودن همیشگی ایمکس چند مزیت عمده دارد. اول این که می‌توانم هر وقت که خواستم‌، با <a class="reference external" href="http://orgmode.org/">org-mode</a> و آن قابلیت Capture خیلی خیلی به درد بخورش‌، هر Note, Link یا TODO‌ای که به ذهنم رسید را سریع ثبت کنم که از دستم نرود (راجع به این یکی خیلی حرف خواهیم زد. خیلی هم زود این کار را می‌کنیم). دومندش را هم نمی‌شود این‌جا گفت‌، باید اول راجع به یک چیز دیگر بگویم‌!‌</p>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> قابلیت اجرای پوستهٔ فرمان را در خودش دارد. آن هم به هزار و اندی روش مختلف‌! من هنوز راجع به تفاوت‌ها و مزیت‌های این پوسته‌ها زیاد نمی‌دانم. ولی فعلا می‌خواهم بستهٔ multi-term را نصب و تجربه کنم. این بسته در واقع یک سری امکانات اضافه را نسبت به term که همراه خود ایمکس نصب می‌شود به همراه دارد. خوب ما هم فعلا تستش می‌کنیم تا ببینیم چه می‌شود.</p>
-<pre class="code text"><a name="rest_code_74ca75c179d44179b980dbc91c24e5c9-1"></a>package-install multi-term
+<pre class="code text"><a name="rest_code_b0ec851d125c4d96aab147afae48353b-1"></a>package-install multi-term
 </pre>
 <p>و حالا‌ هم با دستور زیر اجرایش می‌کنم:</p>
-<pre class="code text"><a name="rest_code_60de6c0f67a744e68e4059f5d44c675d-1"></a>M-X multi-term
+<pre class="code text"><a name="rest_code_6a94f484bd6441cb8370fa8e6fc6c5a5-1"></a>M-X multi-term
 </pre>
 <!-- TEASER_END: بیشتر بخوانید -->
 <p>یک کمی بالا و پایینش می‌کنم. همه چیز خوب کار می‌کند‌، جز این که قابلیت تکمیل خود‌کار حیاتی <a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">ZSH</a> را از دست داده‌ام. چرا؟ نمی‌دانم ولی بیایید ببینیم این کلید چه فرمانی را اجرا می‌کند:</p>
-<pre class="code text"><a name="rest_code_0d88ec7feccc49dfaf0c38e7ff685887-1"></a>C-h k TAB
+<pre class="code text"><a name="rest_code_776da592d7bb45d08fbeb10d27a71c3f-1"></a>C-h k TAB
 </pre>
 <p>ایمکس می‌گوید که دارد <strong>yas-expand-from-trigger-key</strong> را اجرا می‌کند که مربوط به بستهٔ <a class="reference external" href="https://github.com/capitaomorte/yasnippet">Yasnippet</a> است که برای دسترسی سریع به قالب‌های آماده استفاده می‌کنم. (اگر نمی‌دانید چیست نگران نباشید‌، راجع به این هم خیلی زود می‌نویسم). خوب‌، من <a class="reference external" href="https://github.com/capitaomorte/yasnippet">Yasnippet</a> را به صورت سراسری اجرا کرده‌ام. حالا چطور می‌توانم فقط برای این مد خاص خاموشش کنم؟ (عملا نیازی به قالب آماده در شل نیست D:). کمی جستجو در اینترنت و نتیجه می‌گیرم که اضافه کردن یک hook به مد term بهترین راه‌کار است. منظور این که به مد term بگوییم‌، وقتی اجرا شدی خودت Yasnippet را خاموش کن. حتما می‌پرسید چرا مد term و نه multi-term! جوابش را قبلا هم گفتم‌، multi-term یک جور بستهٔ تکمیلی برای term است و بس. اصل کار را term-mode انجام می‌دهد. پس داریم:</p>
-<pre class="code cl"><a name="rest_code_229d5d6ed799494f916a2cac60c1f23b-1"></a><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'term-mode-hook</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span>
-<a name="rest_code_229d5d6ed799494f916a2cac60c1f23b-2"></a>                        <span class="p">(</span><span class="nv">yas-minor-mode</span> <span class="mi">-1</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_07ce555ac4c04457a69564994f15aec9-1"></a><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'term-mode-hook</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span>
+<a name="rest_code_07ce555ac4c04457a69564994f15aec9-2"></a>                        <span class="p">(</span><span class="nv">yas-minor-mode</span> <span class="mi">-1</span><span class="p">)))</span>
 </pre>
 <p>و تمام. حالا یک‌بار دیگر multi-term را تست می‌کنیم. عالی است. دقیقا رفتار یک Terminal emulator را انجام می‌دهد. حتی <a class="reference external" href="http://htop.sourceforge.net/">htop</a> و <a class="reference external" href="http://ranger.nongnu.org">ranger</a> هم به خوبی کار می‌کنند.</p>
 <div class="section" id="i3">
 <h2>ایمکس و i3</h2>
 <p>حالا که همه چیز خوب کار می‌کند بیایید پنجرهٔ ایمکس را به صورت Scratchpad به <a class="reference external" href="http://i3wm.org">i3wm</a> اضافه کنیم تا بتوانیم با کلید F12 به آن دسترسی داشته باشیم:</p>
-<pre class="code text"><a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-1"></a>floating_minimum_size 75 x 50
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-2"></a>floating_maximum_size -1 x -1
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-3"></a>
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-4"></a>for_window [instance="emacs"] move to scratchpad, border 1pixel
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-5"></a>bindsym F12 [instance="emacs"] scratchpad show, move position 110px 0px
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-6"></a>
-<a name="rest_code_ea549cddd5094ef18c9a6e4a7c9b29b8-7"></a>exec --no-startup-id emacs --no-splash -g 125x30
+<pre class="code text"><a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-1"></a>floating_minimum_size 75 x 50
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-2"></a>floating_maximum_size -1 x -1
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-3"></a>
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-4"></a>for_window [instance="emacs"] move to scratchpad, border 1pixel
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-5"></a>bindsym F12 [instance="emacs"] scratchpad show, move position 110px 0px
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-6"></a>
+<a name="rest_code_1ab07b156d0248a5bca52f03e4cda106-7"></a>exec --no-startup-id emacs --no-splash -g 125x30
 </pre>
 <p>این خطوط همهٔ کاری است که باید انجام دهید. در دو خط اول یک حداقل/حداکثر برای سایز پنجره‌های float روی <a class="reference external" href="http://i3wm.org">i3wm</a> تعیین می‌کنیم. با فرستادن ‎-1 به عنوان مختصات حداکثر پنجره‌، در واقع به <a class="reference external" href="http://i3wm.org">i3wm</a> حالی می‌کنیم که کاری به کار سایز پیش‌فرض خود برنامه نداشته باشد. متاسفانه نمی‌توانم با تغییر سایز‌های i3 کنار بیایم‌، هیچ‌وقت هماهنگ نیستند. این است که ترجیح می‌دهم اندازهٔ پنجره با خود ایمکس تنظیم کنم.</p>
 <p>در خط سوم پنجرهٔ emacs را به scratchpad می‌فرستم و با خط چهارم کلید F12 را برای toggle کردنش تعیین می‌کنم. در آخر هم ایمکس را با آرگومان ‎-g برای تعیین سایز و ‎--no-splash اجرا می‌کنم. این کار را می‌توان از داخل خود فایل کانفیگ ‎.emacs هم انجام داد. ولی تا آن کاملا لود شود‌، هزار و یک جور تغییر سایز می‌بینیم که برای در رفتن از این وضعیت تغییر اندازه را به زمان اجرای برنامه می‌سپاریم.</p>
@@ -297,7 +297,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id1">
 <h2>اجرای پیش‌فرض ترمینال در ایمکس</h2>
 <p>خوب حالا که این تنظیمات را انجام دادیم می‌بینیم که بعد از هر بار روشن شدن سیستم باید خودمان multi-term را اجرا کنیم که اصلا خوب نیست. هر چه باشد عمدهٔ استفادهٔ ما روی ترمینال است. اولین کار این است که از دست آن Splash screen ایمکس خلاص شویم که خوب در مرحلهٔ قبل انجامش دادیم.و حال این خط را به ‎.emacs اضافه می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_77c5a862e6164a40b6d87b381bca0719-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">initial-major-mode</span> <span class="ss">'multi-term</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_4c7f4b8815fe4e31a515c867790cc067-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">initial-major-mode</span> <span class="ss">'multi-term</span><span class="p">)</span>
 </pre>
 <p>این متغیر <strong>initial-major-mode</strong> یک مد پیش‌فرض را برای پنجرهٔ اولیه ایمکس تعیین می‌کند که ما با قرار دادن multi-term به عنوان مقدارش‌، به ترمینال‌مان می‌رسیم.</p>
 </div>
@@ -305,7 +305,7 @@ article: http://ogp.me/ns/article#
 <h2>تغییر سایز پنجره</h2>
 <p>قرار که نیست همیشه در آن سایز کوچک به کارمان برسیم. مثلا برای نوشتن همین پست من به یک اندازهٔ بزرگ نیاز دارم. اما خارج کردن ایمکس از حالت floating روی ایمکس‌، آن را از کلید‌های میانبر تعریف کرده‌مان جدا می‌کند (کلید برای دوباره فرستادن این پنجره به scratchpad تعریف نکرده‌ایم). اولین چیزی که به نظرمان می‌رسد این است که یک کلید هم برای فرستادن پنجره به Scratchpad تعیین کنیم‌، ولی به نظرم یک کمی کثیف کاری می‌شود. بهتر است دنبال راه حل بهتری بگردیم.</p>
 <p>ایمکس به صورت پیش‌فرض از Fullscreen پشتیبانی می‌کند. هرچند کلی تنظیمات لازم دارد که بستهٔ <a class="reference external" href="https://github.com/ryantm/fullscreen-mode">Fullscreen-mode</a> برای‌مان انجامش می‌دهد. کافیست بسته را به صورت زیر نصب کنید:</p>
-<pre class="code text"><a name="rest_code_bc52166520d3455eb3c693bbc45b47b0-1"></a>package-install fullscreen-mode
+<pre class="code text"><a name="rest_code_2768f3ab0ca74d85b9682ba1c62e3bfc-1"></a>package-install fullscreen-mode
 </pre>
 <p>و بعد از اضافه کردن <strong>(follscreen-mode)</strong> به ‎.emacs آن را با زدن کلید F11 فراخوانی کنیم. عالی است نه؟</p>
 <p>حالا خیلی راحت تمامی امکانات پیش‌فرض <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> را همراه ترمینال‌مان داریم. خیلی راحت می‌توانیم خروجی‌ها را در فایل‌ها سیو کنیم و یا از فعالیت‌مان یک History کامل بسازیم.</p>
@@ -322,49 +322,49 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id5">
 <h3>تغییر خودکار مسیر ایمکس همزمان با ترمینال</h3>
 <p>وقتی با ترمینال وارد یک مسیر جدید می‌شویم‌، و تصمیم داریم یک فایل را با ایمکس در آن‌جا ویرایش کنیم‌، بدیهی است که کلید C-o (یا C-x C-f پیش‌فرض) باید از آن مسیر اجازهٔ جستجوی فایل را بدهند. ولی به صورت پیش‌فرض به مسیر خانگی‌مان بر می‌گردند. برای حل این مشکل از کد‌هایی که در <a class="reference external" href="https://github.com/daimrod/Emacs-config/blob/master/config-multi-term.el">این‌جا</a> پیدا کردم استفاده می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-1"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-2"></a>       <span class="s">"Update the current directory."</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-3"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-4"></a>          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-5"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-6"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-7"></a>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-8"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-9"></a>       <span class="s">"Update the current directory."</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-10"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-11"></a>           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-12"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<a name="rest_code_2aebb7a4cdb04f5cb5983f53f37e840c-13"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_b04b35a848a5409a8d0d201522854809-1"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-2"></a>       <span class="s">"Update the current directory."</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-3"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-4"></a>          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-5"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-6"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-7"></a>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-8"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-9"></a>       <span class="s">"Update the current directory."</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-10"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-11"></a>           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-12"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<a name="rest_code_b04b35a848a5409a8d0d201522854809-13"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
 </pre>
 <p>خوب سواد من نسبت به این توابع خیلی کم است. اما اول این که با <strong>defadvice</strong> دو تابع term-send-input/raw را به قولی نصیحت می‌کنیم که هر بار با تغییر مسیر ترمینال‌، از مسیر ‎proc آخرین مسیر حاضر را را دریافت کند و به آن وارد شود. دستور cd استفاده شده‌، مربوط به ایمکس است و ربطی به لینوکس ندارد. ولی بدیهی است که این تابع فقط روی سیستم‌های یونیکس بیس کار خواهد کرد.</p>
 </div>
 <div class="section" id="id7">
 <h3>جانشینی کلید‌های میانبر</h3>
 <p>بعد از مدتی کار متوجه می‌شوید میانبر‌های ترمینال‌تان به درستی عمل نمی‌کنند. مثلا C-r که در تاریخچهٔ ترمینال جستجو می‌کند‌،‌ درون ایمکس‌، خود بافر را جستجو می‌کند. این است که کلید‌های میانبر را به این صورت تعریف می‌کنیم (این کد‌ها را از <a class="reference external" href="http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator">این وبلاگ</a> گرفتم):</p>
-<pre class="code cl"><a name="rest_code_39b76bda10dc4b1ab31153125fc61097-1"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-2"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-3"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-4"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-5"></a>         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-6"></a>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-7"></a><span class="c1">; Define keybindings</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-8"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-9"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-10"></a>           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-11"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-12"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-13"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-14"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-15"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-16"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-17"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-18"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-19"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-20"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-21"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-22"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-23"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-<a name="rest_code_39b76bda10dc4b1ab31153125fc61097-24"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
+<pre class="code cl"><a name="rest_code_4741c5199f51422683e0379365c9fc25-1"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-2"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-3"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-4"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-5"></a>         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-6"></a>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-7"></a><span class="c1">; Define keybindings</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-8"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-9"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-10"></a>           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-11"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-12"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-13"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-14"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-15"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-16"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-17"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-18"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-19"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-20"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-21"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-22"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-23"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+<a name="rest_code_4741c5199f51422683e0379365c9fc25-24"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
 </pre>
 <p>با آن تابع اول دو کلید سراسری را زمانی که یک multi-term ایجاد شد تعیین می‌کنیم. این کلید‌ها امکان دسترسی سریع به ترمینال را وقتی در بافر دیگری هستیم فراهم می‌کنند. همین‌طور اسم بافر ترمینال و نوع پوستهٔ مورد استفاده را تعیین می‌کنیم که زیاد لازم نیست‌، ولی بودنش ضرری هم ندارد (خود multi-term با خواندن متغیر محیطی SHELL پوستهٔ مورد استفاده را کشف می‌کند).</p>
 <p>باقی کلید‌های تعریف شده را هم کمی تغییر دادم تا با <a class="reference external" href="http://shahinism.github.io/posts/blog13920119yn-ymkhs-dwst-dshtny-ergoemacs-mode.html">ergoemacs-mode</a> روی چینش <a class="reference external" href="http://shahinism.github.io/posts/blog13920114chynsh-lywt-workman-w-dstn-mhjrtm.html">workman</a> سازگار باشد. شما هم می‌توانید با توجه به نیاز‌تان تغییرشان دهید.</p>
@@ -406,8 +406,8 @@ article: http://ogp.me/ns/article#
 <div class="section" id="backup">
 <h2>اسکریپت backup</h2>
 <p>حالا که تنها کافیست فایل‌های مهم‌مان را درون یک پوشه بریزیم تا خود به خود روی <a class="reference external" href="http://dropbox.com">Dropbox</a> کپی شود‌، یک اسکریپت می‌خواهیم که این کار را به نحو مناسبی برای‌مان انجام دهد. عملا کپی (cp) کردن فایل جواب مساله‌مان نیست. چطور؟ خوب ممکن است بخواهیم فایل‌مان را تغییر دهیم یا چه می‌دانم‌، فایل خاصی به دایرکتوری اضافه کنیم. این است که دوست قدیمی‌مان rsync را صدا می‌زنیم. اسکریپت من یک هم‌چین چیزی از آب در آمد:</p>
-<pre class="code bash"><a name="rest_code_fbacd273541b4c329cdea2de7e223114-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
-<a name="rest_code_fbacd273541b4c329cdea2de7e223114-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
+<pre class="code bash"><a name="rest_code_4c529989e1284e209315b111fd78a0e7-1"></a>rsync -a -v ~/.pwsafe* ~/Workspace/Dropbox/safe
+<a name="rest_code_4c529989e1284e209315b111fd78a0e7-2"></a>rsync -r -v ~/Workspace/org ~/Workspace/Dropbox
 </pre>
 <p>سر راست است این‌طور نیست؟ فعلا شروع کار است‌، احتمالا در آینده عملش طولانی‌تر هم می‌شود‌، ولی احتمالا باز هم به همین سادگی‌ست. حالا کافیست هر بار آن را اجرا کنم تا فایل‌ها خیلی تمیز کپی شوند داخل پوشهٔ <a class="reference external" href="http://dropbox.com">dropbox</a> ام و برنامهٔ dropbox آن را برایم بفرستد روی Cloud!</p>
 </div>
@@ -417,7 +417,7 @@ article: http://ogp.me/ns/article#
 <p>این است که به سراغ آن یکی دوست قدیمی‌مان می‌رویم‌، cron! وظیفهٔ این دوست‌مان این است که یک دستوری را بگیرد و به طبق زمان‌بندی خاصی اجرایش کند. اگر درست نمی‌شناسیدش کافیست یک سری به manpage‌اش بزنید و یا <a class="reference external" href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">این پست cyberciti</a> را بخوانید.</p>
 <p>برای اضافه‌کردن یک job جدید‌، کافیست دستور <strong>crontab -e</strong> را وارد کنیم. خودش فایل را باز می‌کند و نوبت ویرایش شما می‌رسد. اما قبل از آن بهتر است که تعیین کنید که کدام ویرایش‌گر برای این کار استفاده شود. خودش به صورت پیش‌فرض از vi استفاده می‌کند که من دوستش ندارم. این است که با گذاشتن <strong>export EDITOR=vim</strong> داخل ‎~/.zshrc‌ام بهش می‌گویم که از vim استفاده کند که بسیار قابل تحمل‌تر است.</p>
 <p>حالا خط زیر را به عنوان job اضافه می‌کنم.</p>
-<pre class="code text"><a name="rest_code_65df566dcebe494d9661aa8dbb633ae1-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
+<pre class="code text"><a name="rest_code_6559b0b3af1d41a1a645729716b3574d-1"></a>@hourly ID=backup-hourly /home/shahin/Workspace/bin/dropbackup.sh &gt; /home/shahin/.cronstatus
 </pre>
 <p>یعنی هر ساعت (‎@hourly) دستور dropbackup.sh را اجرا کن و خروجی‌اش را جای ایمیل کردن برایم (ایمیل داخل خود سیستم منظورم است) آن را درون فایل ‎.cronstatus ذخیره کن. به همین راحتی ;-)</p>
 <p><strong>ویرایش اول</strong>: تگ ID حتما باید در دستور وجود داشته باشد‌، در غیر این صورت دستور به درستی عمل نمی‌کند.</p>
@@ -470,13 +470,13 @@ article: http://ogp.me/ns/article#
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code text"><a name="rest_code_8f25a1774c5a45f5ac5aa1e815bafa9e-1"></a>/whois shahin
+<pre class="code text"><a name="rest_code_6478542e461e4829960d0e1af7b3daf5-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png"><p>و خوب <a class="reference external" href="http://freenode.net">Freenode</a> یک خدمت رایگانی به اسم Cloak ارائه می‌دهد که به صورت پیش‌فرض فعال نیست. برای فعال کردنش باید یکی از مدیران خانهٔ ‎#freenode این کار را برای‌تان انجام دهد. به این خانه بروید و در خواست‌تان را در همان اتاق اصلی بیان کنید. احتمال خیلی زیاد همان لحظه به درخواست‌تان تکبیر می‌گویند و تمام. حالا وقتی whois می‌شوید همچین چیزی معلوم می‌شود:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png"><p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_cbde08e2088840f4bc32e3997eef64c7-1"></a>/join technotux
+<pre class="code text"><a name="rest_code_7005742b8fb943efbb52a6750653433e-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -485,10 +485,10 @@ article: http://ogp.me/ns/article#
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code text"><a name="rest_code_f7a9667c81154b6bb4d264467adfa869-1"></a>/set
+<pre class="code text"><a name="rest_code_3d4e1baa0bac4cf098300ee36b299719-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code text"><a name="rest_code_40f7fd86615f401e8f0914e3c7ee9ef0-1"></a>/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_89440f38c318448980ab7a6d27d65670-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -503,7 +503,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code text"><a name="rest_code_a9247c0fbf6c49abb237ff2cc04718ae-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_bef5c386e43f473a97cddbd5f938efeb-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
@@ -528,8 +528,8 @@ article: http://ogp.me/ns/article#
 <div class="section" id="aspell">
 <h2>تنظیم aspell</h2>
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_94e9799a44b643a6aa3a17a3acda0372-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_94e9799a44b643a6aa3a17a3acda0372-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_ff2f4e68590e4c8986f819c5da9c2628-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_ff2f4e68590e4c8986f819c5da9c2628-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور لیستی که همراه با برنامه استفاده می‌شود را مشخص می‌کند. به صورت پیش‌فرض این مقدار برابر ‎-l است که همتای آن در برنامهٔ <a class="reference external" href="http://aspell.net/">aspell</a> مقدار list است.</p>
 </div>
@@ -540,7 +540,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id4">
 <h2>نحوهٔ کار</h2>
 <p>در عمل شما می‌توانید به چند روش از این غلط‌گیر استفاده کنید. اما اول از همه باید تعیین کنید که از چه زبانی استفاده می‌کنید. زبان پیش‌فرض انگلیسی است. اما شما می‌توانید با فراخوانی تابع <strong>ispell-change-dictionary</strong> (یادتان که نرفته‌، M-x) و وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_8de9115aa70c4d8c86fc7b481a338435-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_83ead9604bf14b36b1a83627d018d8b8-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
 <div class="section" id="flyspell-mode">
@@ -556,11 +556,11 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id5">
 <h2>کلید‌های میانبر</h2>
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های مورد استفادهٔ من این‌ها هستند:</p>
-<pre class="code cl"><a name="rest_code_b0975228623e43538d941bda551a8c7b-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_b0975228623e43538d941bda551a8c7b-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_b00268031b8e46e69656cd501baba6a3-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_b00268031b8e46e69656cd501baba6a3-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_9fae1b352db14695b81ed8177dab82dc-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_c2994cdff9224dbe8b73108e24a6d990-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -611,7 +611,7 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id3">
 <h2>نام فارسی پست‌ها و مشکلاتش</h2>
 <p>برای انتقال وبلاگ وردپرسی‌ام کافی بود که یک خروجی XML از وبلاگم بگیرم و آن را به صورت زیر به نیکولا بخورانم:</p>
-<pre class="code sh"><a name="rest_code_d7ff805e372544f69b9450bf00c3a1cd-1"></a>nikola import_wordpress wordpress_output.xml
+<pre class="code sh"><a name="rest_code_7ef5d08311ff45b0a9b9e999346af815-1"></a>nikola import_wordpress wordpress_output.xml
 </pre>
 <p>و در این‌جا یک مشکل ساده پیش رویم بود. من روی وبلاگ وردپرسی‌ام از URL‌های فارسی برای پست‌ها استفاده می‌کردم. همان‌طور که می‌دانید کاراکتر‌های Unicode در URL‌ها به صورت خاصی کد می‌شوند و اگر ما آن‌ها را در مرورگرمان به صورت فارسی می‌بینیم‌، این تنها قابلیت مرورگرمان است و بس! یعنی آدرس اصلی URL‌ها همان کد‌های در هم و شلخته است. به هر حال روی وردپرس این امکان مشکل زیادی ایجاد نمی‌کرد و از قرار به SEO سایت هم کمک می‌کرد.</p>
 <p>در فرآیند انتقال‌، نیکولا به ازای هر پست یک فایل تکست که حاوی متن پست است با پسوند wp و یک فایل جدا با فرمت meta که حاوی تگ‌ها و اطلاعات دیگر پست است ایجاد می‌کند. نام این فایل‌ها را با کمی دستکاری‌، از روی آدرس قبلی پست‌ها بر می‌دارد. اولین باری که وبلاگ را وارد کردم‌، یک کابوس واقعی بود‌! اسم فایل‌ها همان کاراکتر‌های یونیکد کد شده بود و مدیریت‌شان واقعا سخت.</p>
@@ -648,10 +648,10 @@ article: http://ogp.me/ns/article#
 <p>اما قبل از این که به چگونگی این کار بپردازم به این نکته اشاره کنم که اول از همه به فکرم رسید که دامین را فروارد کنم (که خوشبختانه رایگان بود D:) و این کار را هم کردم. ولی نمی‌دانم Github چرا دامین منتقل شده را درک نمی‌کند و اخطار ۴۰۴ می‌دهد. به هر حال بعدش بود که تغییر مسیر ۳۰۱ را پیدا کردم و دیدم که چقدر بهتر از آن Forward است.</p>
 <p>برای این کار چند انتخاب داشتم. اول این که ‎.htaccess را دستکاری کنم. دوم این که به مخزن عظیم پلاگین‌های وردپرس پناه ببرم. خوب من دومی را انتخاب کردم. چون این‌طوری هنوز هم به خیلی از اطلاعات دیگری که وردپرس فعلا می‌تواند در اختیارم بگذارد دسترسی دارم. افزونهٔ <a class="reference external" href="http://wordpress.org/extend/plugins/redirection/">Redirection</a> وردپرس این کار را انجام می‌دهد. و خوشبختانه هم فایل با پسوند CSV‌مان را می‌خواند هم دستور ‎.htaccess را به عنوان ورودی می‌گیرد.</p>
 <p>من که یک فایل CSV که <a class="reference external" href="http://nikola.ralsina.com.ar/">Nikola</a> برایم آماده کرده بود را داشتم‌، هدفم هم استفاده از همان بود. ولی یک مشکلی بود! آدرس‌ها با این فرض ساخته شده بود که دامینم بعد از انتقال Shahinism.com می‌ماند که فعلا این‌طور نیست. یعنی یک همچین چیزی:</p>
-<pre class="code text"><a name="rest_code_897851bb81714e6887403414dcdce576-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
+<pre class="code text"><a name="rest_code_1b1e69952ac44654a826bb2c4a00cf70-1"></a>shahinism.com/oldversion/page1, shahinism.com/page1
 </pre>
 <p>که من می‌خواستم به همچین شکلی در آید:</p>
-<pre class="code text"><a name="rest_code_591791a54ddf4482b055c9f213fadc90-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
+<pre class="code text"><a name="rest_code_3250b068ee0c4a5e9d9d396629e751fc-1"></a>shahinism.com/oldversion/page1, shahinsm.github.io/page1
 </pre>
 <p>خوب برای یک خط ساده است‌‌، ولی برای دویست و خرده‌ای خط و قاطی با کلی کاراکتر کد شدهٔ یونیکد چطور؟ آن هم ساده است. باز هم <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> و این‌بار با کمک <a class="reference external" href="http://emacsrocks.com/e13.html">Multiple cursor</a> که اعجوبه‌ای است برای خودش. این است که تا موعد سر رسیدن هاستینگم‌، آدرس تمام پست‌های قبلی به این وبلاگ منتقل می‌شوند و گوگل هم گم نمی‌شود.</p>
 <p>بعد از آن هم که دیگر امیدوارم دامین اصلی‌ام روی وبلاگ سوار شده باشد.</p>

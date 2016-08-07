@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>شاهین (Html5)</title><link>https://5hah.in/</link><description></description><atom:link href="https://5hah.in/categories/html5.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 07 Aug 2016 08:23:03 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>خوبی‌های جاوا اسکریپت؟</title><link>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهین (Html5)</title><link>https://5hah.in/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://5hah.in/categories/html5.xml"></atom:link><language>en</language><lastBuildDate>Sun, 07 Aug 2016 09:02:05 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>خوبی‌های جاوا اسکریپت؟</title><link>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
 این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
 بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
 باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
@@ -20,10 +20,10 @@ Javascript&lt;/a&gt; بر می‌گردد. و شاید یک آشنایی جزئ�
 &lt;p&gt;دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
 می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
 است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:&lt;/p&gt;
-&lt;pre class="code javascript"&gt;&lt;a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;return&lt;/span&gt;
-&lt;a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-3"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;done&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;pre class="code javascript"&gt;&lt;a name="rest_code_63b1df55964145c8b51776697059914a-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;return&lt;/span&gt;
+&lt;a name="rest_code_63b1df55964145c8b51776697059914a-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_63b1df55964145c8b51776697059914a-3"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;done&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;a name="rest_code_63b1df55964145c8b51776697059914a-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
 می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم &lt;a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook"&gt;این ارائهٔ&lt;/a&gt; آقای
 کراکفورد را از دست ندهید.&lt;/p&gt;
@@ -45,7 +45,7 @@ Javascript&lt;/a&gt; بر می‌گردد. و شاید یک آشنایی جزئ�
 دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
 کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
 مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_c6354f7ab6a7435394c8246330811dd1-1"&gt;&lt;/a&gt;It's easy to make things bigger, it's harder to make things better.
+&lt;pre class="code text"&gt;&lt;a name="rest_code_221713cda21f43dd986206faf1dc073e-1"&gt;&lt;/a&gt;It's easy to make things bigger, it's harder to make things better.
 &lt;/pre&gt;&lt;p&gt;قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
 نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
 که Nodejs می‌تواند بکند بی‌خبرم. هدفم از نوشتن این مطلب برایم حکم ثبت استارت یک

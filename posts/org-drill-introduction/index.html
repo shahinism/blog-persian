@@ -90,7 +90,7 @@ article: http://ogp.me/ns/article#
     <div class="col-md-6 col-md-offset-3">
       <div class="row">
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
           <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">org-drill ایکمس‌، رفیق حافظهٔ شما!</a></h1>
 
         شاهین
@@ -98,56 +98,82 @@ article: http://ogp.me/ns/article#
     </div>
     
   </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+      <div>
 <p>خوب اگر از پست‌های وبلاگم‌، مرا بشناسید می‌دانید که علاقهٔ زیادی به فلش‌کارت‌ها دارم! و این علاقه دلیلی جز عادت بدم در سریع خواندن مطالب مورد نیازم در هر لحظه و فراموشی سریع راه حل‌ها ندارد! خوب اگر مدتی مثل من کار کنید‌، می‌فهمید که در اکثر اوقات دنبال مسایل تکراری هستید که خیلی زود فراموش کرده‌اید و حالا دوباره باید وقت‌تان را به پایشان تلف کنید.</p>
 <p>با وجود علاقهٔ زیادم به <a class="reference external" href="http://http://fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D9%84%D8%A7%DB%8C%D8%AA%D9%86%D8%B1">فلش کارت‌ها</a> هرگز به طور جدی ازشان استفاده نکردم. جدای از این که علاقه‌ای به نوشتن روی کاغذ هر مطلب جدیدی که می‌خواهم به خاطر بسپارم ندارم‌، نمونهٔ کامپیوتری سریعی هم برای ذخیرهٔ فلش کارت‌هایم نمی‌شناختم. در واقع <a class="reference external" href="http://ankisrs.net/docs/manual.html">Anki</a> عالی بود‌، ولی آن هم پروسهٔ ذخیرهٔ فلش کارتش‌، زیادی آدم را از موضوع اصلی کار دور می‌کرد. اما الان <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> هست‌، قابلیت Capture‌ و org-mode دوست داشتنی‌اش که در <a class="reference external" href="http://shahinism.github.io/posts/bookmark_links_from_firefox_to_emacs_orgmode.html">ارسال</a> قبلی‌ام بهشان اشاره کردم هستند و فقط جای خالی <a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> برای کامل کردن حلقه خالی است.</p>
 <div class="section" id="org-mode-org-drill">
 <h2>نصب org-mode به همراه org-drill</h2>
 <p><a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> را می‌توان در پوشهٔ contrib از پروژهٔ org پیدا کرد و از آن‌جایی که orgای که همراه خود ایمکس نصب می‌شود‌، از این پوشه فاکتور گرفته‌، باید org را از مخزن اصلی‌اش و به همراه این پوشه نصب کنید. اول لیست مخازن‌تان را به صورت زیر ویرایش کنید تا مخزن رسمی org هم به بسته‌های‌تان اضافه شود:</p>
-<pre class="code cl"><a name="rest_code_5f6a86212d804580bb13a6124a2d87db-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
-<a name="rest_code_5f6a86212d804580bb13a6124a2d87db-2"></a>        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
-<a name="rest_code_5f6a86212d804580bb13a6124a2d87db-3"></a>        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
-<a name="rest_code_5f6a86212d804580bb13a6124a2d87db-4"></a>        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
-<a name="rest_code_5f6a86212d804580bb13a6124a2d87db-5"></a>        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_490b677f1f1c42c783e6c310167d693b-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">package-archives</span> <span class="o">'</span><span class="p">((</span><span class="s">"org"</span> <span class="o">.</span> <span class="s">"http://orgmode.org/elpa/"</span><span class="p">)</span>
+<a name="rest_code_490b677f1f1c42c783e6c310167d693b-2"></a>        <span class="p">(</span><span class="s">"gnu"</span> <span class="o">.</span> <span class="s">"http://elpa.gnu.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_490b677f1f1c42c783e6c310167d693b-3"></a>        <span class="p">(</span><span class="s">"marmalade"</span> <span class="o">.</span> <span class="s">"http://marmalade-repo.org/packages/"</span><span class="p">)</span>
+<a name="rest_code_490b677f1f1c42c783e6c310167d693b-4"></a>        <span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"http://melpa.milkbox.net/packages/"</span><span class="p">)</span>
+<a name="rest_code_490b677f1f1c42c783e6c310167d693b-5"></a>        <span class="p">(</span><span class="s">"SC"</span> <span class="o">.</span> <span class="s">"http://joseito.republika.pl/sunrise-commander/"</span><span class="p">)))</span>
 </pre>
 <p>حالا دستور زیر را وارد کنید:</p>
-<pre class="code cl"><a name="rest_code_0f6b8f7806354b0ab5ea62a453a113ae-1"></a><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
+<pre class="code cl"><a name="rest_code_dffe310a3fff44d38be85eafd0842d8d-1"></a><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">org-plus-contrib</span>
 </pre>
 <p>حالا هم این خطوط را به ‎.emacs اضافه کنید تا org-drill فعال شود:</p>
-<pre class="code cl"><a name="rest_code_ec47356584a34d4f82b69bf7c327f7e3-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_44f5bf9dec4f49949b63115fec57f015-1"></a><span class="p">(</span><span class="nb">require</span> <span class="ss">'org-drill</span><span class="p">)</span>
 </pre>
 <p>تا این‌جای کار موفق به نصب <a class="reference external" href="http://orgmode.org/worg/org-contrib/org-drill.html">org-drill</a> شدیم. حالا کافیست که یک Capture هم برایش تعریف کنیم تا بتوان بدون دغدغهٔ زیادی اقدام به ایجاد یک فلش کارت کرد. برای مثال‌، کپچر من به شکل زیر است:</p>
-<pre class="code cl"><a name="rest_code_ce5ea217617042ebbb71112ed07292b6-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
-<a name="rest_code_ce5ea217617042ebbb71112ed07292b6-2"></a>   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
-<a name="rest_code_ce5ea217617042ebbb71112ed07292b6-3"></a>      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_41da09d8afec4d96b0ecdb0532e91e3e-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span>
+<a name="rest_code_41da09d8afec4d96b0ecdb0532e91e3e-2"></a>   <span class="o">'</span><span class="p">((</span><span class="s">"f"</span> <span class="s">"Flashcard"</span> <span class="nv">plain</span> <span class="p">(</span><span class="nv">file</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">org-dir</span> <span class="s">"flashcard.org"</span><span class="p">))</span>
+<a name="rest_code_41da09d8afec4d96b0ecdb0532e91e3e-3"></a>      <span class="s">"* %^{Topic}\t\t\t\t:drill:\n%^{Question}\n** Answer\n%^{Answer}"</span><span class="p">)))</span>
 </pre>
 <p>با این کد ایمکس فلش‌کارت‌هایم را در فایل flashcard.org موجود در پوشهٔ فایل‌های orgام ذخیره می‌کند.</p>
 </div>
 <div class="section" id="id2">
 <h2>نحوهٔ کار</h2>
 <p>برای کار با این بسته هم کافیست درون فایل مربوطه فلش کارتی به شکل زیر داشته باشیم:</p>
-<pre class="code text"><a name="rest_code_70cdfd3ca54c48b89b81d1c8a404494c-1"></a>* Topic          :drill:
-<a name="rest_code_70cdfd3ca54c48b89b81d1c8a404494c-2"></a>Question
-<a name="rest_code_70cdfd3ca54c48b89b81d1c8a404494c-3"></a>** Hide
-<a name="rest_code_70cdfd3ca54c48b89b81d1c8a404494c-4"></a>Answer
+<pre class="code text"><a name="rest_code_ef5445f9e0ee434f8ed7577652105f30-1"></a>* Topic          :drill:
+<a name="rest_code_ef5445f9e0ee434f8ed7577652105f30-2"></a>Question
+<a name="rest_code_ef5445f9e0ee434f8ed7577652105f30-3"></a>** Hide
+<a name="rest_code_ef5445f9e0ee434f8ed7577652105f30-4"></a>Answer
 </pre>
 <p>اگر با org-mode کار کرده باشید کل قضیه برای‌تان روشن خواهد بود. اول فایل flashcard.org را باز می‌کنیم و سپس دستور زیر را وارد می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_4147e2b9e9d649d7b4ffcfd5926b6589-1"></a><span class="nv">M-x</span> <span class="nv">org-drill</span>
+<pre class="code cl"><a name="rest_code_ab60e3e6b3d34faf861d77b667d3a99b-1"></a><span class="nv">M-x</span> <span class="nv">org-drill</span>
 </pre>
 <p>org-drill به دنبال شاخه‌هایی با تگ :drill: می‌گردد و از آن‌ها به عنوان فلش کارت استفاده می‌کند. در هر نمایش هم به طور پیشفرض بخش جواب نمایش داده نمی‌شود و منتظر فشار یک کلید می‌ماند. پس از نمایش جواب هم می‌توانید به خودتان نمره دهید که بر اساس همین نمره‌ها زمان نمایش دوباره به صورت یک properties زیر Topic تعیین می‌شود که خود org-drill می‌داند چطور باید از آن استفاده کند.</p>
 <p><strong>پی‌نوشت‌ها:</strong> در حین کار با این بسته به مشکلی برخوردم که ممکن است برای شما هم اتفاق بیافتد. این قضیه را در <a class="reference external" href="https://bitbucket.org/eeeickythump/org-drill/issue/20/mapcar-wrong-type-argument-listp">bug‌های</a> org-drill مطرح کردم و پس از حل شدن راه حلش را هم آن‌جا نوشتم که ممکن است به درد‌تان بخورد.</p>
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><div class="bg-info">
-                <ul itemprop="keywords" class="tags">
+    <aside class="share"><!-- Sharingbutton Facebook --><a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/org-drill-introduction/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Twitter -->
+      <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=org-drill%20%D8%A7%DB%8C%DA%A9%D9%85%D8%B3%E2%80%8C%D8%8C%20%D8%B1%D9%81%DB%8C%D9%82%20%D8%AD%D8%A7%D9%81%D8%B8%D9%87%D9%94%20%D8%B4%D9%85%D8%A7!%20from%20@shahinism&amp;url=https://5hah.in/posts/org-drill-introduction/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Google+ -->
+      <a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https://5hah.in/posts/org-drill-introduction/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"></path><polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"></polygon></g></svg>
+</div>
+        </div>
+      </a>
+
+    </aside><!-- aside.share --><aside class="postpromonav"><nav><div class="bg-info">
+                  <ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/emacs/" rel="tag">Emacs</a></li>
             <li><a class="tag p-category" href="../../categories/flashcard/" rel="tag">flashcard</a></li>
             <li><a class="tag p-category" href="../../categories/org/" rel="tag">org</a></li>
             <li><a class="tag p-category" href="../../categories/org-drill/" rel="tag">org-drill</a></li>
         </ul>
 </div>
-              <ul class="pager hidden-print">
+                <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../satoshi_nakomoto_identified/" rel="prev" title="ساتوشی ناکوموتو‌، خالق بیت کوین‌، شناسایی شد؟ یا بهترین راه پنهان کردن‌، تو چشم بودن است!">Previous post</a>
             </li>
@@ -174,7 +200,7 @@ article: http://ogp.me/ns/article#
     <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
     </div>
     <!--End of body content-->

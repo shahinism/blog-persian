@@ -139,33 +139,33 @@ article: http://ogp.me/ns/article#
     <div>
 <p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
 <p><a class="reference external" href="http://navid.kashani.ir/">نوید</a>  چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین اخطاری می‌دهد:</p>
-<pre class="code bash"><a name="rest_code_fda175757f32499d852a59bae92ae4b6-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_26e5ca91c6fb43bc8d756d0080c1e937-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا خرخره پر شده. یک فایل log که از <a class="reference external" href="http://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و دیگر نمی‌تواند نفس بکشد.</p>
-<pre class="code bash"><a name="rest_code_fb05f17addac4021b6b2b4f31637999d-1"></a>rm -rfv PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_0b232d5662214262aa323acbbc0f4fd8-1"></a>rm -rfv PATH_TO_FAT_FILE
 </pre>
 <p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite> می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده حالا؟ Only GOD knows :)</p>
-<pre class="code bash"><a name="rest_code_e74a19202db849b7a0b258b228fa8d2a-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_a9842c134af44e38a087882ece5b9f9f-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
 </pre>
 <p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل خودش چیست؟ <cite>lsof</cite></p>
-<pre class="code bash"><a name="rest_code_30eba78f3c68452884113833873068b6-1"></a>lsof PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_3d5de8e08980466a9abcf3f832770522-1"></a>lsof PATH_TO_FAT_FILE
 </pre>
 <p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
-<pre class="code bash"><a name="rest_code_b31e93e78fbb4b6ea00afc800f0ba1b2-1"></a>sudo !!
+<pre class="code bash"><a name="rest_code_5e59d981490142aa9d101e61255dbeab-1"></a>sudo !!
 </pre>
 <p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
-<pre class="code bash"><a name="rest_code_da0504c80d3e4bbbb276d0b01f8ca196-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_b3b9e08bd39d48a2a7eab5b9dca3446b-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به مشکل داشته باشد؟ کمی جستجو  و <cite>df -i</cite>:</p>
-<pre class="code bash"><a name="rest_code_187ce3af96d849b2a0fa051ecad15725-1"></a>...
-<a name="rest_code_187ce3af96d849b2a0fa051ecad15725-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
-<a name="rest_code_187ce3af96d849b2a0fa051ecad15725-3"></a>...
+<pre class="code bash"><a name="rest_code_b5ea5ef26e894f9498bd4a2a0f24b58e-1"></a>...
+<a name="rest_code_b5ea5ef26e894f9498bd4a2a0f24b58e-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
+<a name="rest_code_b5ea5ef26e894f9498bd4a2a0f24b58e-3"></a>...
 </pre>
 <p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
 <blockquote>
 آی‌نود (به انگلیسی: inode) به ساختمان داده‌هایی گفته می‌شود که در سیستم‌فایل‌های شبیه به یونیکس مانند UFS استفاده می‌شود. یک inode اطلاعات پایه‌ای در مورد فایل‌ها، دایرکتوری‌ها و اشیاء دیگر موجود در فایل‌سیستم را در خود نگهداری می‌کند.</blockquote>
 <p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
-<pre class="code bash"><a name="rest_code_581ed6f52d544e01ac45cb18651739dc-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+<pre class="code bash"><a name="rest_code_e5a16eee646041709da07130db792306-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
 </pre>
 <p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل دیتابیس MySQL و وردپرس بود. یک بار دیگر صفحه را باز کنیم تا ببینیم دقیقا چه اتفاقی می‌افتد… و… عه؟ مشکل حل شده! بریم ببینیم تنظیمات جدید را ذخیره می‌کند؟ ها‌، آره آن هم حل شده. ضرب‌المثل ربط … به … این‌جا خیلی قشنگ صدق می‌کند :)</p>
 <p>به هر حال چند تا درس گنده یاد گرفتم، همچین باگ‌هایی ارزش یک کلاس درس واقعی را دارند‌، این‌طور نیست؟</p>
@@ -219,71 +219,71 @@ article: http://ogp.me/ns/article#
 <p>حالا دیگر تایم زیادی از مواجهه به مشکل گذشته بود‌ و کاربران پروژه‌، چندین برابر قبل بود. دیگر به جایی رسیده بودیم که حتی بدون کش هم بسیاری از ریکوئست‌ها خراب بود. در بین بحث‌ها Hackett به نکته‌ای اشاره کرد که می‌توانست جواب مساله باشد… البته با چیز‌هایی که از مستندات دیده بودیم و قولی که برای Thread safe بودن مونگو می‌داد‌، بیشتر تیری در تاریکی بود.</p>
 <p>قضیه از این قرار است که <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a>، خصوصا در نسخهٔ ۳ به بعد‌، دیگر آبجکت Cursor را به جای یک آبجکت پایتونی استاندارد‌، برای نتایج کوئری بر می‌گرداند. طوری که Hackett در تیکت اشاره کرده‌، هر باری که به قولی کلیهٔ عناصر این Cursor، پیمایش (Iterate) شوند‌، آبجکت Cursor بسته می‌شود. ما هم تا به الان قضیه دیده‌ایم که نتایج Cursorها کمتر از میزان مورد انتظار ما هستند، ولی نمی‌دانیم دقیقا این نتایج از کجا می‌آیند. اول لیست؟ آخرش؟ آن وسط مسط‌ها؟</p>
 <p>این بود که سعی کردیم بی‌خیال کل استک شویم و جور دیگری قضیه را تست کنیم.</p>
-<pre class="code python"><a name="rest_code_905e439bfab442718d190275de12c147-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-5"></a>
-<a name="rest_code_905e439bfab442718d190275de12c147-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
-<a name="rest_code_905e439bfab442718d190275de12c147-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
+<pre class="code python"><a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-5"></a>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
+<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
 </pre>
 <p>همانطور که انتظار داشتیم‌، بعد از بار اول، دیگر Cursor خالی شده و نتیجه‌ای را در بر نمی‌گیرد. حالا یک کمی قضیه را عوض می‌کنیم:</p>
-<pre class="code python"><a name="rest_code_7112b4b3156744059a07804514f2cb5f-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
-<a name="rest_code_7112b4b3156744059a07804514f2cb5f-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<a name="rest_code_7112b4b3156744059a07804514f2cb5f-3"></a>
-<a name="rest_code_7112b4b3156744059a07804514f2cb5f-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_7112b4b3156744059a07804514f2cb5f-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
-<a name="rest_code_7112b4b3156744059a07804514f2cb5f-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
+<pre class="code python"><a name="rest_code_411c88c023e24643bee55f9266001618-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_411c88c023e24643bee55f9266001618-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<a name="rest_code_411c88c023e24643bee55f9266001618-3"></a>
+<a name="rest_code_411c88c023e24643bee55f9266001618-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_411c88c023e24643bee55f9266001618-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
+<a name="rest_code_411c88c023e24643bee55f9266001618-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
 </pre>
 <p>حالا می‌دانیم اگر قبل از شروع پیمایش‌، یک بار  متد <cite>next()‎</cite> را صدا کنیم‌، زمان فراخوانی پیمایش‌، آیتم اول دیگر در نتیجه وجود نخواهد داشت! چه می‌شود اگر همین Cursor را تحویل چند Thread مختلف بدهیم؟</p>
-<pre class="code text"><a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
-<a name="rest_code_b29c2ef29f304e22b1947b3f7cd02fed-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<pre class="code text"><a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
+<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
 </pre>
 <p>این نتیجهٔ اجرای ایده روی سیستم ضعیف من است. نتیجهٔ ناقص نمی‌بینیم‌، ولی در سه بار از فراخوانی‌ها‌، بیش از یک Thread به یک Cursor دسترسی پیدا کرده است! این مساله را می‌توان در یک مقیاس خیلی بزرگتر مثل سرور Production این پروژه و آن همه Thread، به نتایج ناقص هم ربط داد… این‌طور نیست؟ جواب <a class="reference external" href="https://emptysqua.re/blog/">A. Jesse Jiryu Davis</a> توسعه دهندهٔ <a class="reference external" href="https://motor.readthedocs.org">Motor</a> (درایور پایتونی و async -بله پایتون هم از این کارها بلد است- :)) تایید همین مطلب است.</p>
 <p>خوب چه کار کنیم؟‌ بیاییم، Cursorهایی که کلا Thread safe نیستند‌ را به یک آبجکت پایتونی Thread safe تبدیل کنیم. یک همچین پترنی شاید:</p>
-<pre class="code python"><a name="rest_code_4badb9423e474c3a8110bd19eaeb8719-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">}))</span>
+<pre class="code python"><a name="rest_code_0fbb401c011343cdbaf8b40ba4dade86-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">}))</span>
 </pre>
 <p>و انگار جواب مساله را پیدا کرده‌ایم. بماند که بعد از این که بار‌ها به در بسته خوردن سر این مساله، اعضای تیم را کمی بد‌بین کرده بود و تا دلشان خواست انتقامشان ر موقع تست تئوری جدید گرفتند (<a class="reference external" href="http://amirbitaraf.ir/">امیر</a> حتی به Multithread پایتون هم رضایت نداد و یک نمونهٔ C++‎ هم از اسکریپت تستش نوشت)‌، API با یک Performance عالی‌، بدون هیچ مشکلی همهٔ تست‌ها را درست رد کرد.</p>
 <p>نتیجه؟ یکی از طولانی‌ترین دیباگ‌هایی که تا به الان انجام داده‌ایم‌، به سادگی یک <cite>list()‎</cite> قابل حل بود، ولی در این مسیر‌، طی تبادل نظرات‌، تست تئوری‌ها‌، بررسی‌های کلی استک‌، تجربه‌های زیادی کسب کردیم که نهایتا به بسیار بهتر شدن API نسبت به وضعیت قبل و نه تنها در رابطه با همین مساله منجر شد.</p>
@@ -325,10 +325,10 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
 <p>دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
 می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
 است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:</p>
-<pre class="code javascript"><a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-1"></a><span class="k">return</span>
-<a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-2"></a><span class="p">{</span>
-<a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-3"></a>    <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
-<a name="rest_code_4bee200e7d73429abdd4f5b150484e4d-4"></a><span class="p">}</span>
+<pre class="code javascript"><a name="rest_code_63b1df55964145c8b51776697059914a-1"></a><span class="k">return</span>
+<a name="rest_code_63b1df55964145c8b51776697059914a-2"></a><span class="p">{</span>
+<a name="rest_code_63b1df55964145c8b51776697059914a-3"></a>    <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
+<a name="rest_code_63b1df55964145c8b51776697059914a-4"></a><span class="p">}</span>
 </pre>
 <p>همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
 می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم <a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook">این ارائهٔ</a> آقای
@@ -351,7 +351,7 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
 دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
 کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
 مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:</p>
-<pre class="code text"><a name="rest_code_c6354f7ab6a7435394c8246330811dd1-1"></a>It's easy to make things bigger, it's harder to make things better.
+<pre class="code text"><a name="rest_code_221713cda21f43dd986206faf1dc073e-1"></a>It's easy to make things bigger, it's harder to make things better.
 </pre>
 <p>قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
 نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
@@ -450,35 +450,35 @@ Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با
     <div class="e-content entry-content">
     <div>
 <p>ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست در <a class="reference external" href="http://php.net">PHP</a> نمایش بدهید. در این صورت کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> می‌تواند کارتان را راه بیاندازد. برای مثال به تکه کد زیر نگاه کنید:</p>
-<pre class="code php"><a name="rest_code_6a90f8212e5349f9bc37951e781aca38-1"></a><span class="cp">&lt;?php</span>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-3"></a>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-6"></a>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-<a name="rest_code_6a90f8212e5349f9bc37951e781aca38-8"></a><span class="cp">?&gt;</span><span class="x"></span>
+<pre class="code php"><a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-1"></a><span class="cp">&lt;?php</span>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-3"></a>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-6"></a>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
+<a name="rest_code_f6620334b8c9477fb1bd067176f8fe4e-8"></a><span class="cp">?&gt;</span><span class="x"></span>
 </pre>
 <p>خروجی این خطوط به این صورت خواهد بود:</p>
-<pre class="code html"><a name="rest_code_fbead7daac644274a3761f3b02c984d1-1"></a>IRAN: ‎ریال۱٬۲۳۵
+<pre class="code html"><a name="rest_code_a9172c060ccd424e9b6f67d822228c4d-1"></a>IRAN: ‎ریال۱٬۲۳۵
 </pre>
 <p>ولی ممکن است مثل من با این اخطار روبرو شوید:</p>
-<pre class="code text"><a name="rest_code_c23b2538883f479ab5d8e63b4ec6156f-1"></a>Fatal error: Class 'NumberFormatter' not found
+<pre class="code text"><a name="rest_code_bcf8a18e67344552a4be82e8956a6660-1"></a>Fatal error: Class 'NumberFormatter' not found
 </pre>
 <p>و این به این معناست که احتمالا افزونه intl در در نصب PHP‌تان فعال نیست. برای تست این که آیا نیاز به نصب دارید یا نه‌، دستور زیر را اجرا کنید:</p>
-<pre class="code bash"><a name="rest_code_8477116582d8472e8b132684faa4e98b-1"></a>php -m <span class="p">|</span> grep intl
+<pre class="code bash"><a name="rest_code_1ee22c571da24b68ba70f310ea74ce20-1"></a>php -m <span class="p">|</span> grep intl
 </pre>
 <p>اگر خروجی‌ای نداشتید یعنی این افزونه نصب نیست. بسته به توزیع مورد استفاده‌تان باید به دنبال روش نصبش باشید. مثلا در <a class="reference external" href="http://gentoo.org">Gentoo</a>:</p>
-<pre class="code bash"><a name="rest_code_7d870364d9c74fa1bdb6e64e721416fd-1"></a><span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
+<pre class="code bash"><a name="rest_code_e2d24b7fd7eb4f1980fa18a8c79dc196-1"></a><span class="nv">use</span><span class="o">=</span><span class="s2">"intl"</span> emerge --oneshot -a php
 </pre>
 <p>یا در بعضی از توزیع‌های محبوب دیگر</p>
-<pre class="code bash"><a name="rest_code_410c0a0a55a24e91ba46b1b4558e708b-1"></a>// Debian
-<a name="rest_code_410c0a0a55a24e91ba46b1b4558e708b-2"></a>apt-get install php5-intl
-<a name="rest_code_410c0a0a55a24e91ba46b1b4558e708b-3"></a>// Centos
-<a name="rest_code_410c0a0a55a24e91ba46b1b4558e708b-4"></a>yum install php-intl
+<pre class="code bash"><a name="rest_code_dee51bbf82ff44f192be660df1d011d4-1"></a>// Debian
+<a name="rest_code_dee51bbf82ff44f192be660df1d011d4-2"></a>apt-get install php5-intl
+<a name="rest_code_dee51bbf82ff44f192be660df1d011d4-3"></a>// Centos
+<a name="rest_code_dee51bbf82ff44f192be660df1d011d4-4"></a>yum install php-intl
 </pre>
 <p>حالا که کار نصب تمام شد کافیست در فایل php.ini‌تان این خط را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_c58cede74b434b2090ae0ec9d04c04b0-1"></a>extension=php_intl.dll
+<pre class="code text"><a name="rest_code_6765117887ba4c02ab45b1c65fa6cbba-1"></a>extension=php_intl.dll
 </pre>
 <p>و تمام‌، حالا این افزونه و کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> در دسترس‌تان است.</p>
 </div>

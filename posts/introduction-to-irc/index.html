@@ -91,7 +91,7 @@ article: http://ogp.me/ns/article#
     <div class="col-md-6 col-md-offset-3">
       <div class="row">
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
           <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">مقدمه‌ای بر IRC</a></h1>
 
         شاهین
@@ -99,7 +99,7 @@ article: http://ogp.me/ns/article#
     </div>
     
   </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+      <div>
 <div class="section" id="id1">
 <h2>مقدمه</h2>
 <p>شروع کارم با IRC به مدت‌ها قبل بر می‌گردد‌. اما همین چند وقت پیش که نیازم به ارتباط همزمان‌، آن هم با دنگ و فنگ‌های چت GMail (که خودتان دلیل عمده‌اش را بهتر از من می‌دانید) بیشتر شد سعی کردم با این ابزار و امکاناتش بیشتر آشنا شوم. در این پست قصد داریم کمی با این ابزار قدیمی‌، ولی خیلی خیلی کاربردی آشنا شویم. در حد مثلا قطره از دریا ;-)</p>
@@ -131,13 +131,13 @@ article: http://ogp.me/ns/article#
 <h3>بعد از ثبت نام</h3>
 <p>حالا بعد از ثبت نام می‌توانیم به یکی از خانه‌ها برویم؟ بله‌، ولی بهتر است اول به خانهٔ خود <a class="reference external" href="http://freenode.net">freenode</a> به آدرس ‎#freenode برویم تا یک درخواست امنیتی از صاحبانش داشته باشیم. قبل از آن‌، توجه کردید که هر وقت خواستم آدرس خانه‌ای را بدهم‌، اولش یک # (Hash) گذاشتم؟ خوب این روش آدرس‌دهی در محلات IRCاست‌! اما چه در خواست امنیتی‌ای؟</p>
 <p>الان‌، با وجود این که ثبت‌نام کرده‌اید‌، دیگر کاربران حاضر در شبکه‌، می‌توانند با یک whois ساده‌، IP آدرس‌تان را به دست آورند. کافیست مثلا برای یوزر shahin (که خودم برای تست از آن استفاده می‌کنم) همچین دستوری بزنم:</p>
-<pre class="code text"><a name="rest_code_8f25a1774c5a45f5ac5aa1e815bafa9e-1"></a>/whois shahin
+<pre class="code text"><a name="rest_code_6478542e461e4829960d0e1af7b3daf5-1"></a>/whois shahin
 </pre>
 <p>که همچین نتیجه‌ای دارد:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois.png"><p>و خوب <a class="reference external" href="http://freenode.net">Freenode</a> یک خدمت رایگانی به اسم Cloak ارائه می‌دهد که به صورت پیش‌فرض فعال نیست. برای فعال کردنش باید یکی از مدیران خانهٔ ‎#freenode این کار را برای‌تان انجام دهد. به این خانه بروید و در خواست‌تان را در همان اتاق اصلی بیان کنید. احتمال خیلی زیاد همان لحظه به درخواست‌تان تکبیر می‌گویند و تمام. حالا وقتی whois می‌شوید همچین چیزی معلوم می‌شود:</p>
 <img alt="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/hexchat_whois1.png"><p>در حین نوشتن این مقاله‌، کشف کردم که Whois از یوزر خودی‌، اطلاعات کامل‌تری نسبت به غریبه‌ها در اختیار می‌گذارد. این است که از Timmy پرس و جو کردم و همان‌طور که می‌بینید هیچ خبری از محل تولد‌اش در دسترس نیست (همان IP منظورم است D:).</p>
 <p>خوب حالا می‌توانیم وصل شویم؟ بله‌، این گوی و این میدان. از منوی Server گزینهٔ Join a channel را انتخاب کنید. و یا مثلا به صورت زیر دستورتان را وارد کنید:</p>
-<pre class="code text"><a name="rest_code_cbde08e2088840f4bc32e3997eef64c7-1"></a>/join technotux
+<pre class="code text"><a name="rest_code_7005742b8fb943efbb52a6750653433e-1"></a>/join technotux
 </pre>
 <p>و تمام. حالا می‌توانید با هم‌نشینی در میان خدایگان کیفور شوید ;-)</p>
 </div>
@@ -146,10 +146,10 @@ article: http://ogp.me/ns/article#
 <h2>ترفندها:</h2>
 <p>احتمالا بعد از چند بار استفاده می‌فهمید که می‌توانید کانال‌ها را Bookmark کنید تا در اتصال‌های بعدی به صورت خودکار به آن‌ها متصل شوید. ولی یک مشکل کوچک وجود دارد. این که کلاینت قبل از این که احراض هویت‌تان قطعی شود شما را به کانال‌ها معرفی می‌کند و این کار دست‌تان می‌دهد. ممکن است مثل کانال ‎‎#‎#c که فقط به اعضای <a class="reference external" href="http://freenode.net">freenode</a> اجازهٔ اتصال می‌دهد‌، تایید صلاحیت نشوید و با اردنگی بیرون‌تان کنند!</p>
 <p>خوب خوشبختانه IRC در دورانی توسعه یافته که دستورات کاربردی‌، به جای منو‌های خوشگل حکم‌رانی می‌کردند. این یعنی می‌توانید هر رفتار کلاینت را کنترل کنید. اول دستور زیر را بزنید:</p>
-<pre class="code text"><a name="rest_code_f7a9667c81154b6bb4d264467adfa869-1"></a>/set
+<pre class="code text"><a name="rest_code_3d4e1baa0bac4cf098300ee36b299719-1"></a>/set
 </pre>
 <p>مجموعه‌ای از تنظیمات پیش‌فرض کلاینت را می‌بینید. از جمله <strong>irc_join_delay...............: 3</strong> را که مد نظر ماست. این آپشن‌، مدت زمان Delay قبل از اتصال به کانال‌های مورد علاقه‌تان را کنترل می‌کند. به طور پیش‌فرض پس از اتصال به IRC سه ثانیه طول می‌کشد که درخواست اتصال به شبکه‌ها ارسال شود. خوب این خیلی کم است. بیایید تغییرش دهیم:</p>
-<pre class="code text"><a name="rest_code_40f7fd86615f401e8f0914e3c7ee9ef0-1"></a>/set irc_join_delay 30
+<pre class="code text"><a name="rest_code_89440f38c318448980ab7a6d27d65670-1"></a>/set irc_join_delay 30
 </pre>
 <p>به همین راحتی. حالا ۳۰ ثانیه طول می‌کشد که در خواست‌ها فرستاده شود و در این مدت‌، تمام مراحل احراض هویت مطمئنا به درستی انجام می‌شود ;-)</p>
 <div class="section" id="id7">
@@ -164,21 +164,47 @@ article: http://ogp.me/ns/article#
 <div class="section" id="id9">
 <h2>معرفی چند کانال:</h2>
 <p>این لیست کانال‌های محبوب من است. این‌جا می‌گذارم شاید به درد شما هم خورد:</p>
-<pre class="code text"><a name="rest_code_a9247c0fbf6c49abb237ff2cc04718ae-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
+<pre class="code text"><a name="rest_code_bef5c386e43f473a97cddbd5f938efeb-1"></a>##c,##slackware,#emacs,#python,#slackbuilds,#technotux,#wikipedia-fa
 </pre>
 <p>چهار‌تای اول که معلوم است به درد کجا می‌خورند. پنجمی کانال کاربران slackbuilds.org است. ششمی کانال سایت <a class="reference external" href="http://technotux.org">Technotux</a> خودمان است. آخری هم کاربران ویکی‌پدیای فارسی. این دو تای آخر خیلی نسبت به بقیه خلوت‌ترند و عموما بحثی درشان جریان ندارد. شاید چون اصولا ما ایرانی‌ها چیز‌های دیگری جدای از حوضهٔ تخصصیمان‌، مورد توجه‌مان است. اصلا شاید به همین دلیل است که عمرا باید خواب یک Stream حرفه‌ای فارسی زبان را ببینید که از <strong>شکست‌های عشقی</strong> یا دیدگاه‌های فیلسوفانهٔ <strong>سیاسی</strong> خالی باشد!</p>
 </div>
 </div>
     </div>
-    <aside class="postpromonav"><nav><div class="bg-info">
-                <ul itemprop="keywords" class="tags">
+    <aside class="share"><!-- Sharingbutton Facebook --><a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/introduction-to-irc/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Twitter -->
+      <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=%D9%85%D9%82%D8%AF%D9%85%D9%87%E2%80%8C%D8%A7%DB%8C%20%D8%A8%D8%B1%20IRC%20from%20@shahinism&amp;url=https://5hah.in/posts/introduction-to-irc/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path></g></svg>
+</div>
+        </div>
+      </a>
+
+      <!-- Sharingbutton Google+ -->
+      <a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https://5hah.in/posts/introduction-to-irc/" target="_blank" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
+<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"></path><polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"></polygon></g></svg>
+</div>
+        </div>
+      </a>
+
+    </aside><!-- aside.share --><aside class="postpromonav"><nav><div class="bg-info">
+                  <ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/erc/" rel="tag">erc</a></li>
             <li><a class="tag p-category" href="../../categories/hexchat/" rel="tag">hexchat</a></li>
             <li><a class="tag p-category" href="../../categories/irc/" rel="tag">irc</a></li>
             <li><a class="tag p-category" href="../../categories/xchat/" rel="tag">xchat</a></li>
         </ul>
 </div>
-              <ul class="pager hidden-print">
+                <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../emacs-flyspell-mode/" rel="prev" title="این ایمکس دوست داشتنی (غلط‌گیر املایی)">Previous post</a>
             </li>
@@ -205,7 +231,7 @@ article: http://ogp.me/ns/article#
     <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
     </div>
     <!--End of body content-->
