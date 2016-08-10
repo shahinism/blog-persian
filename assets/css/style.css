@@ -8,9 +8,9 @@
   font-weight: 400;
   src: url(../fonts/DroidNaskh-Regular.eot);
   src: url(../fonts/DroidNaskh-Regular.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/DroidNaskh-Regular.woff2) format('woff2'),
-       url(../fonts/DroidNaskh-Regular.woff) format('woff'),
-       url(../fonts/DroidNaskh-Regular.ttf) format('truetype');
+  url(../fonts/DroidNaskh-Regular.woff2) format('woff2'),
+  url(../fonts/DroidNaskh-Regular.woff) format('woff'),
+  url(../fonts/DroidNaskh-Regular.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Droid Arabic Naskh';
@@ -18,214 +18,189 @@
   font-weight: 700;
   src: url(../fonts/DroidNaskh-Bold.eot);
   src: url(../fonts/DroidNaskh-Bold.eot?#iefix) format('embedded-opentype'),
-       url(../fonts/DroidNaskh-Bold.woff2) format('woff2'),
-       url(../fonts/DroidNaskh-Bold.woff) format('woff'),
-       url(../fonts/DroidNaskh-Bold.ttf) format('truetype');
+  url(../fonts/DroidNaskh-Bold.woff2) format('woff2'),
+  url(../fonts/DroidNaskh-Bold.woff) format('woff'),
+  url(../fonts/DroidNaskh-Bold.ttf) format('truetype');
 }
 
 body {
-    font-family: "Droid Arabic Naskh", "Raleway", sans-serif, Tahoma;
+  font-family: "Droid Arabic Naskh", "Raleway", sans-serif, Tahoma;
+  background-color: #fafafa;
 }
 
 article {
-    text-align: justify;
-    line-height: normal;
+  text-align: justify;
+  line-height: normal;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #e8e8e8;
 }
 
 article, article .metadata {
-    border-bottom: 1px solid #e7eef2;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+  border-bottom: 1px solid #e7eef2;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .jumbotron {
-    background: #303538 none no-repeat scroll center center / cover;
-    background-image: url("/assets/images/bgc.png");
-    height: 55vh;
-    min-height: 180px;
-    color: #fff;
-    opacity: 0.8;
+  background: #303538 none no-repeat scroll center center / cover;
+  background-image: url("/assets/images/bgc.png");
+  height: 55vh;
+  min-height: 180px;
+  color: #fff;
+  opacity: 0.8;
 }
 
 .site-footer {
-    background: #f7fafb none repeat scroll 0 0;
-    border-top: 1px solid #ebf2f6;
-    color: #bbc7cc;
-    font-size: 1.3rem;
-    line-height: 1.7em;
-    margin: 0;
-    padding: 4rem 0;
-    position: relative;
-    text-align: center;
+  background: #f7fafb none repeat scroll 0 0;
+  border-top: 1px solid #ebf2f6;
+  color: #bbc7cc;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 4rem 0;
+  position: relative;
+  text-align: center;
 }
 
 article img, article iframe {
-    max-width: 100%;
-    margin: 5px auto;
-    display: block;
-}
-
-iframe {
-    width: 100%;
-}
-
-nav.navbar {
-    margin: 0;
-    border-radius: 0;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.navbar-brand {
-    padding: 7px;
-}
-
-.social {
-    margin: 20px 10px;
-}
-
-hr.hdrline {
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0)) repeat scroll 0 0;
-    border: 0 none;
-    height: 1px;
-}
-
-.code {
-    direction: ltr;
-}
-
-#headerbox {
-    background: #616161 none repeat scroll 0 0;
-    border-radius: 10px;
-    box-shadow: 0 1px 5px black;
-    opacity: 0.9;
-    padding: 10px;
-}
-
-aside.share {
-  text-align: center;
-}
-
-.resp-sharing-button {
-  display: inline-block;
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  transition: background-color 25ms ease-out, border-color 25ms ease-out, opacity 250ms ease-out;
-  margin: 0.5em;
-  padding: 0.5em 0.5em;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-
-.resp-sharing-button a {
-  text-decoration: none;
-  color: #FFF;
+  max-width: 100%;
+  margin: 5px auto;
   display: block;
 }
 
-.resp-sharing-button__icon {
-  display: inline-block;
+iframe {
+  width: 100%;
 }
 
-.resp-sharing-button__icon svg {
-  width: 1em;
-  height: 1em;
-  margin-bottom: -0.1em;
+nav.navbar {
+  margin: 0;
+  border-radius: 0;
 }
 
-/* Non solid icons get a stroke */
-.resp-sharing-button__icon {
-  stroke: #FFF;
-  fill: none;
-}
-
-/* Solid icons get a fill */
-.resp-sharing-button__icon--solid,
-.resp-sharing-button__icon--solidcircle {
-  fill: #FFF;
-  stroke: none;
-}
-
-.resp-sharing-button__link {
+a:hover {
   text-decoration: none;
-  color: #FFF;
 }
 
-.resp-sharing-button--large .resp-sharing-button__icon svg, .resp-sharing-button--medium .resp-sharing-button__icon svg {
-  padding-right: 0.4em;
+.navbar-brand {
+  padding: 7px;
 }
 
-.resp-sharing-button__wrapper {
-  display: inline-block;
+.social {
+  margin: 20px 10px;
 }
 
-.resp-sharing-button--facebook {
-  background-color: #3b5998;
-  border-color: #3b5998;
+.code {
+  direction: ltr;
 }
 
-.resp-sharing-button--facebook:hover,
-.resp-sharing-button--facebook:active {
-  background-color: #2d4373;
-  border-color: #2d4373;
+div.col-centered {
+  margin: 0 auto;
+  float: none;
 }
 
-.resp-sharing-button--twitter {
-  background-color: #55acee;
-  border-color: #55acee;
+div.publish-date {
+  color: #cfcfcf;
 }
 
-.resp-sharing-button--twitter:hover,
-.resp-sharing-button--twitter:active {
-  background-color: #2795e9;
-  border-color: #2795e9;
+h1 {
+  font-size: 25px;
 }
 
-.resp-sharing-button--google {
-  background-color: #dd4b39;
-  border-color: #dd4b39;
+h2 {
+  font-size: 22px;
 }
 
-.resp-sharing-button--google:hover,
-.resp-sharing-button--google:active {
-  background-color: #c23321;
-  border-color: #c23321;
+h3 {
+  font-size: 20px;
 }
 
-.resp-sharing-button--tumblr {
-  background-color: #35465C;
-  border-color: #35465C;
+h4 {
+  font-size: 17px;
 }
 
-.resp-sharing-button--tumblr:hover,
-.resp-sharing-button--tumblr:active {
-  background-color: #222d3c;
-  border-color: #222d3c;
+.entry-title a {
+  color: #2b2b2b;
 }
 
-.resp-sharing-button--email {
-  background-color: #777777;
-  border-color: #777777;
+.p-summary.entry-summary {
+    color: #8a8a8a;
 }
 
-.resp-sharing-button--email:hover
-.resp-sharing-button--email:active {
-  background-color: #5e5e5e;
-  border-color: #5e5e5e;
+.left {
+  float: left;
 }
 
-.resp-sharing-button--pinterest {
-  background-color: #bd081c;
-  border-color: #bd081c;
+.clear {
+  clear: both;
 }
 
-.resp-sharing-button--pinterest:hover,
-.resp-sharing-button--pinterest:active {
-  background-color: #8c0615;
-  border-color: #8c0615;
+div#headerbox {
+  margin-top: 25px;
+  border-radius: 5px 5px 0 0;
 }
+
+article .terminal, div#headerbox {
+  border-width: 1px 1px 0;
+  border-color: #e8e8e8;
+  border-style: solid;
+  background-color: #3c4556;
+  padding: 10px;
+  color: #BCC2CD;
+}
+
+article .terminal {
+  border-width: 1px 0;
+  margin: 0 -20px;
+}
+
+.terminal {
+  direction: ltr;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.terminal ul li:after {
+  content: "/";
+}
+
+.terminal ul li {
+  list-style: none;
+  margin: 0;
+}
+
+.terminal ul {
+  padding-left: 5px;
+}
+
+.terminal ol {
+  padding-left: 25px;
+}
+
+.terminal a {
+  color: #8be9fd;
+}
+
+.prompt {
+  color: #50fa7b;
+}
+
+.prompt:before {
+  content: "shahin@5hah.in:~$ "
+}
+
+.cursor {
+  animation: blink 1s linear infinite;
+}
+
+.cursor:after {
+  content: "\2588"
+}
+
+@keyframes blink {  
+  50% { opacity: 0.0; }
+}
+
+blockquote {
+  font-size: inherit;
+}
+

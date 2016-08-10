@@ -2,7 +2,7 @@
 <html prefix="
 og: http://ogp.me/ns#
 article: http://ogp.me/ns/article#
-" lang="en">
+" dir="rtl" lang="fa">
 <head>
 <meta charset="utf-8">
 <meta name="wot-verification" content="1e0ce5594a67af53269c">
@@ -19,7 +19,9 @@ article: http://ogp.me/ns/article#
 <meta property="og:site_name" content="شاهین">
 <meta property="og:title" content="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB">
 <meta property="og:url" content="https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/">
-<meta property="og:description" content="استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به پایداری و Performance همچین استکی می‌ک">
+<meta property="og:description" content="استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور
+از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به
+پایداری و Performance همچین استکی می‌ک">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-11-09T09:58:21+03:30">
 <meta property="article:tag" content="mongodb">
@@ -28,9 +30,11 @@ article: http://ogp.me/ns/article#
 <meta property="article:tag" content="performance">
 <meta property="article:tag" content="PyMongo">
 <meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
 </head>
 <body>
-  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
 
   <div class="navigator">
     
@@ -69,39 +73,41 @@ article: http://ogp.me/ns/article#
                     
         </li>
 </ul>
-</div>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container-fluid -->
-  </nav><div class="jumbotron">
-    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
-        <h1>شاهین</h1>
-        <hr class="hdrline">
-<a class="social" href="https://github.com/shahinism">
-          <img src="../../assets/images/github.png"></a>
-        <a class="social" href="https://twitter.com/shahinism">
-          <img src="../../assets/images/twitter.png"></a>
-        <a class="social" href="https://ir.linkedin.com/in/shahinism">
-          <img src="../../assets/images/linkedin.png"></a>
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
       </div>
-    </section>
-</div>
-
-  <div class="container" id="content" role="main">
+    </div>
+  </section><div class="container" id="content" role="main">
     <!--Body content-->
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-7 col-centered">
       <div class="row">
         
-  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="text-center">
-          <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB</a></h1>
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2015-11-09T09:58:21+03:30" title="2015-11-09 09:58">2015-11-09 09:58</time>
+</div>
 
-        شاهین
-      <a href="." rel="bookmark"><time class="published dt-published" datetime="2015-11-09T09:58:21+03:30" itemprop="datePublished" title="2015-11-09 09:58">2015-11-09 09:58</time></a>
-    </div>
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB</a></h1>
+
     
   </header><div class="e-content entry-content" itemprop="articleBody text">
       <div>
-<p>استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به پایداری و Performance همچین استکی می‌کنند و راه‌کار‌های بسیار زیادی نیز برای بهتر کردن آن ارائه کرده‌اند. در یکی از پروژه‌های تیم <a class="reference external" href="http://www.foundersbuddy.com/">فاندرز</a> ما هم با استکی به شرح زیر، RESTFUL API مربوط به اپلیکیشمان را طراحی‌کرده‌ایم:</p>
+<p>استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور
+از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به
+پایداری و Performance همچین استکی می‌کنند و راه‌کار‌های بسیار زیادی نیز برای بهتر
+کردن آن ارائه کرده‌اند. در یکی از پروژه‌های تیم <a class="reference external" href="http://www.foundersbuddy.com/">فاندرز</a> ما هم با استکی به شرح
+زیر، RESTFUL API مربوط به اپلیکیشمان را طراحی‌کرده‌ایم:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://mongodb.org">Mongo</a></li>
 <li>Python 3</li>
@@ -111,127 +117,204 @@ article: http://ogp.me/ns/article#
 <li><a class="reference external" href="https://uwsgi.readthedocs.org/">uWsgi</a></li>
 <li><a class="reference external" href="http://nginx.com">Nginx</a></li>
 </ul>
-<p>در چهار ماه اول لانچ API، هیچ مشکلی در داده‌های دریافتی و پردازش‌های مورد نیاز مشاهده نمی‌شد. Performance کلی استک هم در حد قابل قبولی جواب‌گوی نیاز‌ها بود. تا این که با تغییری در نحوهٔ ارائهٔ خدمات پروژهٔ اصلی‌، حجم کاربران سرویس به نحو چشم‌گیری بالا رفت و ماجرا آغاز شد!</p>
-<p>مشکل ایجاد شده‌، نه در Performance سیستم بود و نه حتی می‌توان گفت که پایداری API زیر سوال رفته بود. قضیه از این قرار بود که درخواست‌هایی که منجر به خواندن داده از پایگاه دادهٔ سرویس بود‌ (Mongo) در زمان‌های خاصی از روز‌ (که عمدتا تایم شلوغی برای پروژه بود) تنها تکه‌ای از داده‌های مورد انتظار را بر می‌گرداندند. برای مثال اگر ما انتظار داشتیم که کوئری X روی دیتابیس‌، شامل ۲۰ سند (Document منظور آبجکت‌های دیتابیس Mongo است) باشد‌، بعضی از درخواست‌ها نتیجه‌ای در بازه‌ای کوچکتر از ۲۰ را بر می‌گرداند.</p>
-<p>قضیه جایی بحرانی می‌شد که این نتیجه را برای یک بازهٔ زمانی مشخص Cache می‌کردیم، و خوب در صورت خراب شدن یکی از این کوئری‌ها‌، کاربران در آن مدت‌، نتیجهٔ ناقص را مشاهده می‌کردند. جدای از این، هیچ ضعف مشخصی از سیستم برای تراکنش‌ها مشاهده نمی‌شد.</p>
+<p>در چهار ماه اول لانچ API، هیچ مشکلی در داده‌های دریافتی و پردازش‌های مورد نیاز
+مشاهده نمی‌شد. Performance کلی استک هم در حد قابل قبولی جواب‌گوی نیاز‌ها بود. تا
+این که با تغییری در نحوهٔ ارائهٔ خدمات پروژهٔ اصلی‌، حجم کاربران سرویس به نحو
+چشم‌گیری بالا رفت و ماجرا آغاز شد!</p>
 <!-- TEASER_END -->
-<p>حدس اولیه می‌توانست خود سیستم کش (Memcached) باشد. ولی همانطور که اگر با Mongo کار کرده باشید می‌دانید‌، داده‌ها در این دیتابیس به صورت JSON ذخیره می‌شوند‌، و ما حتی در نتایج ناقص دریافتی‌، هیچ سند ناقصی نمی‌دیدیم. نتایجی که نهایتا توسط Django به صورت JSON سرو می‌شدند هم کاملا ولید بودند. از طرف دیگر‌، وقتی سعی می‌کردیم با اجرای متد <cite>‎.count()‎‍</cite> روی Cursor دریافتی از Mongo نتایج دریافت شده را بسنجیم‌، نتایع دقیقا همان مشکلی را داشتند که ما در خروجی JSON جانگو می‌دیدیم.</p>
-<p>پس از مدتی جستجو و نیافتن نتیجهٔ خاصی‌، سعی کردیم بتوانیم مشکل را باز تولید کنیم تا شاید با بررسی لاگ‌ها بتوانیم‌، علت آن را پیدا کنیم. <a class="reference external" href="http://amirbitaraf.ir/">امیر</a> یکی از اعضای پروژه‌، با پایتون اسکریپتی نوشت که به صورت Multithread ریکوئست‌هایی را به سمت Endpoint‌هایی که این مشکل را در آن‌ها مشاهده کرده بودیم ارسال کند تا شاید مشکل سریع‌تر بروز کند. ساختار کلی این اسکریپت بسیار ساده بود‌، و درست یا اشتباه بودن نتایج را با استفاده از Parse کردن نتیجهٔ JSON دریافتی‌، شمارش تعداد آبجکت‌ها و مقایسه با نتیجهٔ مورد نظر انجام می‌داد.(بدیهی است که در زمان بررسی دیگر از Cache استفاده نمی‌کردیم :))</p>
-<p>هر بار که اسکریپت را اجرا می‌کردیم، چیزی حدود ۳-۴ ساعت زمان لازم بود تا اولین نتایج اشتباه را دریافت کنیم. و بعد از اولین مشاهدهٔ نتایج اشتباه‌، به سرعت تعداد این نتایج زیاد می‌شد تا این که ۸۰٪ نتایج دریافتی را شامل می‌شد. یعنی ۳ ساعت هیچ مشکلی نداشتیم‌، بعد در عرض ۱۰ دقیقه‌، ۸۰٪ نتایج ناقص می‌شدند. حالا این وضعیت را چطور رفع کنیم؟‌ کافی بود uWSGI را ری استارت کنیم‌، تا برای یک مدت طولانی دیگر، نتایج کاملا درست بگیریم.</p>
-<p>این قضیه ری‌استارت کردن uWSGI باعث شد‌، به پروسه‌های اجرا شده توسط آن مشکوک شویم. پس سعی کردیم مشکل را در تنظیمات uWSGI پیدا کنیم. یکسری تغییرات مثل کم کردن تعداد پروسه‌های در حال اجرا‌ و یا respawn کردن پروسه‌ها بعد از ۵۰۰۰ درخواست‌، نتایج را کمی بهتر کرد. ولی باز هم بعد از گذشت چیزی در حدود ۸ ساعت‌، مشکل را مشاهده می‌کردیم.</p>
-<p>حتی در اقدامی‌، که بعد از بررسی دقیق کد‌های <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> توسط <a class="reference external" href="http://amirbitaraf.ir/">امیر</a> رخ داد‌، سعی کردیم به طور مستقیم Cursorهای دریافتی <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> را هر کجای کد که دیگر نیازی بهشان نداریم close()‎ کنیم. یا همانطور که در مستندات <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> اشاره شده‌، تنها از یک MongoClient در سراسر کد استفاده کنیم تا خود درایور بتواند به درستی Thread safety کوئری‌های را فراهم کند. نتیجه این شد که یک بار در یک بازهٔ طولانی ۴۸ ساعته‌، هیچ مشکلی در سیستم ندیدیم و بعد‌، دوباره، روز از نو…</p>
-<p>در این مرحله سعی کردیم مساله را جمع‌بندی کنیم و از دیگران راهنمایی بگیریم. طرح مساله در <a class="reference external" href="http://stackoverflow.com/questions/33234204/pymongo-find-query-returns-empty-partial-cursor-when-running-in-a-djangouwsgi-p">Stackoverflow</a> ، چند گروه ایمیلی‌، تماس مستقیم با اشخاص مطلع در این خصوص و حتی مشاوره اسکایپی با یک نفر که از <a class="reference external" href="http://hackhands.com">Hackhands</a> پیدا کرده بودیم، از جملهٔ این درخواست راهنمایی‌ها بود. نتیجه؟ خوب نتایج در نوع خودشان عالی بودند:</p>
+<p>مشکل ایجاد شده‌، نه در Performance سیستم بود و نه حتی می‌توان گفت که پایداری API
+زیر سوال رفته بود. قضیه از این قرار بود که درخواست‌هایی که منجر به خواندن داده از
+پایگاه دادهٔ سرویس بود‌ (Mongo) در زمان‌های خاصی از روز‌ (که عمدتا تایم شلوغی برای
+پروژه بود) تنها تکه‌ای از داده‌های مورد انتظار را بر می‌گرداندند. برای مثال اگر ما
+انتظار داشتیم که کوئری X روی دیتابیس‌، شامل ۲۰ سند (Document منظور آبجکت‌های
+دیتابیس Mongo است) باشد‌، بعضی از درخواست‌ها نتیجه‌ای در بازه‌ای کوچکتر از ۲۰ را بر
+می‌گرداند.</p>
+<p>قضیه جایی بحرانی می‌شد که این نتیجه را برای یک بازهٔ زمانی مشخص Cache می‌کردیم، و
+خوب در صورت خراب شدن یکی از این کوئری‌ها‌، کاربران در آن مدت‌، نتیجهٔ ناقص را مشاهده
+می‌کردند. جدای از این، هیچ ضعف مشخصی از سیستم برای تراکنش‌ها مشاهده نمی‌شد.</p>
+<!-- TEASER_END -->
+<p>حدس اولیه می‌توانست خود سیستم کش (Memcached) باشد. ولی همانطور که اگر با Mongo
+کار کرده باشید می‌دانید‌، داده‌ها در این دیتابیس به صورت JSON ذخیره می‌شوند‌، و ما
+حتی در نتایج ناقص دریافتی‌، هیچ سند ناقصی نمی‌دیدیم. نتایجی که نهایتا توسط Django
+به صورت JSON سرو می‌شدند هم کاملا ولید بودند. از طرف دیگر‌، وقتی سعی می‌کردیم با
+اجرای متد <cite>‎.count()‎‍</cite> روی Cursor دریافتی از Mongo نتایج دریافت شده را بسنجیم‌،
+نتایع دقیقا همان مشکلی را داشتند که ما در خروجی JSON جانگو می‌دیدیم.</p>
+<p>پس از مدتی جستجو و نیافتن نتیجهٔ خاصی‌، سعی کردیم بتوانیم مشکل را باز تولید کنیم
+تا شاید با بررسی لاگ‌ها بتوانیم‌، علت آن را پیدا کنیم. <a class="reference external" href="http://amirbitaraf.ir/">امیر</a> یکی از اعضای پروژه‌،
+با پایتون اسکریپتی نوشت که به صورت Multithread ریکوئست‌هایی را به سمت
+Endpoint‌هایی که این مشکل را در آن‌ها مشاهده کرده بودیم ارسال کند تا شاید مشکل
+سریع‌تر بروز کند. ساختار کلی این اسکریپت بسیار ساده بود‌، و درست یا اشتباه بودن
+نتایج را با استفاده از Parse کردن نتیجهٔ JSON دریافتی‌، شمارش تعداد آبجکت‌ها و
+مقایسه با نتیجهٔ مورد نظر انجام می‌داد.(بدیهی است که در زمان بررسی دیگر از Cache
+استفاده نمی‌کردیم :))</p>
+<p>هر بار که اسکریپت را اجرا می‌کردیم، چیزی حدود ۳-۴ ساعت زمان لازم بود تا اولین
+نتایج اشتباه را دریافت کنیم. و بعد از اولین مشاهدهٔ نتایج اشتباه‌، به سرعت تعداد
+این نتایج زیاد می‌شد تا این که ۸۰٪ نتایج دریافتی را شامل می‌شد. یعنی ۳ ساعت هیچ
+مشکلی نداشتیم‌، بعد در عرض ۱۰ دقیقه‌، ۸۰٪ نتایج ناقص می‌شدند. حالا این وضعیت را
+چطور رفع کنیم؟‌ کافی بود uWSGI را ری استارت کنیم‌، تا برای یک مدت طولانی دیگر،
+نتایج کاملا درست بگیریم.</p>
+<p>این قضیه ری‌استارت کردن uWSGI باعث شد‌، به پروسه‌های اجرا شده توسط آن مشکوک شویم.
+پس سعی کردیم مشکل را در تنظیمات uWSGI پیدا کنیم. یکسری تغییرات مثل کم کردن تعداد
+پروسه‌های در حال اجرا‌ و یا respawn کردن پروسه‌ها بعد از ۵۰۰۰ درخواست‌، نتایج را کمی
+بهتر کرد. ولی باز هم بعد از گذشت چیزی در حدود ۸ ساعت‌، مشکل را مشاهده می‌کردیم.</p>
+<p>حتی در اقدامی‌، که بعد از بررسی دقیق کد‌های <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> توسط <a class="reference external" href="http://amirbitaraf.ir/">امیر</a> رخ داد‌، سعی
+کردیم به طور مستقیم Cursorهای دریافتی <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> را هر کجای کد که دیگر نیازی
+بهشان نداریم close()‎ کنیم. یا همانطور که در مستندات <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a> اشاره شده‌، تنها
+از یک MongoClient در سراسر کد استفاده کنیم تا خود درایور بتواند به درستی Thread
+safety کوئری‌های را فراهم کند. نتیجه این شد که یک بار در یک بازهٔ طولانی ۴۸ ساعته‌،
+هیچ مشکلی در سیستم ندیدیم و بعد‌، دوباره، روز از نو…</p>
+<p>در این مرحله سعی کردیم مساله را جمع‌بندی کنیم و از دیگران راهنمایی بگیریم. طرح
+مساله در <a class="reference external" href="http://stackoverflow.com/questions/33234204/pymongo-find-query-returns-empty-partial-cursor-when-running-in-a-djangouwsgi-p">Stackoverflow</a> ، چند گروه ایمیلی‌، تماس مستقیم با اشخاص مطلع در این
+خصوص و حتی مشاوره اسکایپی با یک نفر که از <a class="reference external" href="http://hackhands.com">Hackhands</a> پیدا کرده بودیم، از جملهٔ
+این درخواست راهنمایی‌ها بود. نتیجه؟ خوب نتایج در نوع خودشان عالی بودند:</p>
 <ol class="arabic simple">
-<li>بعضی‌ها مشکل را درست درک نمی‌کردند و خوب طبیعی بود‌، چون اگر این مشکل آن‌چنان فراگیر بود‌، مطمئنا منابع زیادی می‌شد در خصوصش روی اینترنت پیدا کرد.</li>
-<li>بعضی‌ها که در واقع جزء با مرام‌های دستهٔ اول بودند‌، سعی می‌کردند بهمان نشان بدهند که اگر خودشان در این موقعیت گیر می‌کردند‌، از چه روش‌هایی برای دیباگ کردن قضیه استفاده می‌کردند.</li>
-<li>بعضی‌ها می‌گفتند‌، کلا استفاده از Mongo اشتباه است و کاش MySQL بود (نه باور کنید دقیقا همین جایگزین). یا چه می‌دانم‌، پایتون؟ نه آقا شوخی نکنید‌، فقط Nodejs جواب مساله است.</li>
+<li>بعضی‌ها مشکل را درست درک نمی‌کردند و خوب طبیعی بود‌، چون اگر این مشکل آن‌چنان
+فراگیر بود‌، مطمئنا منابع زیادی می‌شد در خصوصش روی اینترنت پیدا کرد.</li>
+<li>بعضی‌ها که در واقع جزء با مرام‌های دستهٔ اول بودند‌، سعی می‌کردند بهمان نشان بدهند
+که اگر خودشان در این موقعیت گیر می‌کردند‌، از چه روش‌هایی برای دیباگ کردن قضیه
+استفاده می‌کردند.</li>
+<li>بعضی‌ها می‌گفتند‌، کلا استفاده از Mongo اشتباه است و کاش MySQL بود (نه باور کنید
+دقیقا همین جایگزین). یا چه می‌دانم‌، پایتون؟ نه آقا شوخی نکنید‌، فقط Nodejs جواب
+مساله است.</li>
 </ol>
-<p>کمک‌های دستهٔ دوم‌، بسیار ارزشمند بود‌، خصوصا این که برای جاهای مختلف استک‌، با یک دوجین ابزار دیباگ مختلف آشنایمان کرد که حداقل نه برای پیدا کردن جواب مساله‌، ولی برای تست تئوری‌های‌مان بسیار کمک کننده بود.</p>
-<p>ولی راهنمایی‌های دستهٔ سوم که شامل تغییر یکی از اعضای استک‌، بدون دانستن این که مشکل به وجود آمده در کجای استک رخ داده‌، جدای از این که تایم زیادی می‌خواست و معلوم نبود بتواند مشکل را به صورت ۱۰۰٪ حل کند‌، نمی‌توانست حس کنجکاوی دولوپر‌های تیم را ارضا کند. بماند که به قولی تغییر صورت مساله بود و رسما در فرهنگ لغت <a class="reference external" href="https://nl.linkedin.com/in/ashkanroshanayi">اشکان</a> (لیدر تیم) جایی ندارد :)</p>
-<p>نا امید از این که نتوانسته بودیم حتی یک اشارهٔ کوچک در رابطه با این که مشکل اصلی کجای استک دارد رخ می‌دهد پیدا کنیم‌، سعی کردیم‌، سرویس را روی سرور ضعیف‌تری که داشتیم اجرا کنیم و وضعیت را روی آن بررسی کنیم. با این تفاوت که کلیه کانفیگ‌ها را خودمان انجام داده‌ایم و از ریز به ریز جزئیات تراکنش‌ها می‌توانیم در یک محیط ایزوله‌تر لاگ بگیریم. نتیجه؟ در بیشترین فشار ممکن‌، حتی یک نتیجهٔ ناقص هم دریافت نکردیم! CPU این سرور فوق‌العاده ضعیف‌تر بود و تعداد پروسه‌ها برابر با سرور اصلی. اما هیچ نتیجهٔ ناقصی نمی‌دیدیم!</p>
-<p>این در حالی بود که حتی با خارج کرد uWSGI از استک و اجرای سرویس با سرور توسعهٔ Django، بعد از ۱۰-۱۲ ساعت‌، مشکل را مشاهده می‌کردیم. پس از جستجوی بیشتر حقیقتش دیگر داشتیم کم کم راضی می‌شدیم که به نصایح دسته سومی‌ها عمل کنیم! چرا که سرویس دیگری برای همین پروژه‌، روی همان سرور که دقیقا از همین Mongo دیتا را می‌خواند‌، ولی با یک کش بسیار بلند‌تر ارائه می‌کرد‌، در این مدت داشت مثل ساعت کار می‌کرد.</p>
-<p>به عنوان آخرین امید‌، سعی کردیم تیکتی در باب مطرح کردن مشکل روی <a class="reference external" href="https://jira.mongodb.org/browse/PYTHON-1005">Issue tracker</a> پروژهٔ‌درایور پایتون Mongo، باز کنیم تا شاید نتیجه‌ای بگیریم. <a class="reference external" href="https://www.linkedin.com/in/berniehackett">Bernie Hackett</a> توسعه دهندهٔ اصلی درایور به کارت اساین شد و انصافا‌، خیلی خوب و با صبر‌، پیگیری مساله را انجام می‌داد.</p>
-<p>حالا دیگر تایم زیادی از مواجهه به مشکل گذشته بود‌ و کاربران پروژه‌، چندین برابر قبل بود. دیگر به جایی رسیده بودیم که حتی بدون کش هم بسیاری از ریکوئست‌ها خراب بود. در بین بحث‌ها Hackett به نکته‌ای اشاره کرد که می‌توانست جواب مساله باشد… البته با چیز‌هایی که از مستندات دیده بودیم و قولی که برای Thread safe بودن مونگو می‌داد‌، بیشتر تیری در تاریکی بود.</p>
-<p>قضیه از این قرار است که <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a>، خصوصا در نسخهٔ ۳ به بعد‌، دیگر آبجکت Cursor را به جای یک آبجکت پایتونی استاندارد‌، برای نتایج کوئری بر می‌گرداند. طوری که Hackett در تیکت اشاره کرده‌، هر باری که به قولی کلیهٔ عناصر این Cursor، پیمایش (Iterate) شوند‌، آبجکت Cursor بسته می‌شود. ما هم تا به الان قضیه دیده‌ایم که نتایج Cursorها کمتر از میزان مورد انتظار ما هستند، ولی نمی‌دانیم دقیقا این نتایج از کجا می‌آیند. اول لیست؟ آخرش؟ آن وسط مسط‌ها؟</p>
+<p>کمک‌های دستهٔ دوم‌، بسیار ارزشمند بود‌، خصوصا این که برای جاهای مختلف استک‌، با یک
+دوجین ابزار دیباگ مختلف آشنایمان کرد که حداقل نه برای پیدا کردن جواب مساله‌، ولی
+برای تست تئوری‌های‌مان بسیار کمک کننده بود.</p>
+<p>ولی راهنمایی‌های دستهٔ سوم که شامل تغییر یکی از اعضای استک‌، بدون دانستن این که
+مشکل به وجود آمده در کجای استک رخ داده‌، جدای از این که تایم زیادی می‌خواست و
+معلوم نبود بتواند مشکل را به صورت ۱۰۰٪ حل کند‌، نمی‌توانست حس کنجکاوی دولوپر‌های
+تیم را ارضا کند. بماند که به قولی تغییر صورت مساله بود و رسما در فرهنگ لغت
+<a class="reference external" href="https://nl.linkedin.com/in/ashkanroshanayi">اشکان</a> (لیدر تیم) جایی ندارد :)</p>
+<p>نا امید از این که نتوانسته بودیم حتی یک اشارهٔ کوچک در رابطه با این که مشکل اصلی
+کجای استک دارد رخ می‌دهد پیدا کنیم‌، سعی کردیم‌، سرویس را روی سرور ضعیف‌تری که
+داشتیم اجرا کنیم و وضعیت را روی آن بررسی کنیم. با این تفاوت که کلیه کانفیگ‌ها را
+خودمان انجام داده‌ایم و از ریز به ریز جزئیات تراکنش‌ها می‌توانیم در یک محیط
+ایزوله‌تر لاگ بگیریم. نتیجه؟ در بیشترین فشار ممکن‌، حتی یک نتیجهٔ ناقص هم دریافت
+نکردیم! CPU این سرور فوق‌العاده ضعیف‌تر بود و تعداد پروسه‌ها برابر با سرور اصلی.
+اما هیچ نتیجهٔ ناقصی نمی‌دیدیم!</p>
+<p>این در حالی بود که حتی با خارج کرد uWSGI از استک و اجرای سرویس با سرور توسعهٔ
+Django، بعد از ۱۰-۱۲ ساعت‌، مشکل را مشاهده می‌کردیم. پس از جستجوی بیشتر حقیقتش
+دیگر داشتیم کم کم راضی می‌شدیم که به نصایح دسته سومی‌ها عمل کنیم! چرا که سرویس
+دیگری برای همین پروژه‌، روی همان سرور که دقیقا از همین Mongo دیتا را می‌خواند‌، ولی
+با یک کش بسیار بلند‌تر ارائه می‌کرد‌، در این مدت داشت مثل ساعت کار می‌کرد.</p>
+<p>به عنوان آخرین امید‌، سعی کردیم تیکتی در باب مطرح کردن مشکل روی <a class="reference external" href="https://jira.mongodb.org/browse/PYTHON-1005">Issue tracker</a>
+پروژهٔ‌درایور پایتون Mongo، باز کنیم تا شاید نتیجه‌ای بگیریم. <a class="reference external" href="https://www.linkedin.com/in/berniehackett">Bernie Hackett</a>
+توسعه دهندهٔ اصلی درایور به کارت اساین شد و انصافا‌، خیلی خوب و با صبر‌، پیگیری
+مساله را انجام می‌داد.</p>
+<p>حالا دیگر تایم زیادی از مواجهه به مشکل گذشته بود‌ و کاربران پروژه‌، چندین برابر
+قبل بود. دیگر به جایی رسیده بودیم که حتی بدون کش هم بسیاری از ریکوئست‌ها خراب
+بود. در بین بحث‌ها Hackett به نکته‌ای اشاره کرد که می‌توانست جواب مساله باشد… البته
+با چیز‌هایی که از مستندات دیده بودیم و قولی که برای Thread safe بودن مونگو می‌داد‌،
+بیشتر تیری در تاریکی بود.</p>
+<p>قضیه از این قرار است که <a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a>، خصوصا در نسخهٔ ۳ به بعد‌، دیگر آبجکت Cursor را
+به جای یک آبجکت پایتونی استاندارد‌، برای نتایج کوئری بر می‌گرداند. طوری که Hackett
+در تیکت اشاره کرده‌، هر باری که به قولی کلیهٔ عناصر این Cursor، پیمایش (Iterate)
+شوند‌، آبجکت Cursor بسته می‌شود. ما هم تا به الان قضیه دیده‌ایم که نتایج Cursorها
+کمتر از میزان مورد انتظار ما هستند، ولی نمی‌دانیم دقیقا این نتایج از کجا می‌آیند.
+اول لیست؟ آخرش؟ آن وسط مسط‌ها؟</p>
 <p>این بود که سعی کردیم بی‌خیال کل استک شویم و جور دیگری قضیه را تست کنیم.</p>
-<pre class="code python"><a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-5"></a>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
-<a name="rest_code_51ffe5e3797f433bae6beac9e63736b6-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
+<pre class="code python"><a name="rest_code_7959d71514db4d9b94913f83f773fbca-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-2"></a><span class="n">a_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">a_test</span><span class="p">)</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-4"></a><span class="o">&gt;&gt;</span> <span class="mi">25</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-5"></a>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-6"></a><span class="n">b_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-7"></a><span class="nb">len</span><span class="p">(</span><span class="n">b_test</span><span class="p">)</span>
+<a name="rest_code_7959d71514db4d9b94913f83f773fbca-8"></a><span class="o">&gt;&gt;</span> <span class="mi">0</span>
 </pre>
-<p>همانطور که انتظار داشتیم‌، بعد از بار اول، دیگر Cursor خالی شده و نتیجه‌ای را در بر نمی‌گیرد. حالا یک کمی قضیه را عوض می‌کنیم:</p>
-<pre class="code python"><a name="rest_code_411c88c023e24643bee55f9266001618-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
-<a name="rest_code_411c88c023e24643bee55f9266001618-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-<a name="rest_code_411c88c023e24643bee55f9266001618-3"></a>
-<a name="rest_code_411c88c023e24643bee55f9266001618-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
-<a name="rest_code_411c88c023e24643bee55f9266001618-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
-<a name="rest_code_411c88c023e24643bee55f9266001618-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
+<p>همانطور که انتظار داشتیم‌، بعد از بار اول، دیگر Cursor خالی شده و نتیجه‌ای را در
+بر نمی‌گیرد. حالا یک کمی قضیه را عوض می‌کنیم:</p>
+<pre class="code python"><a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-1"></a><span class="n">res</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">})</span>
+<a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-2"></a><span class="n">first_elem</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-3"></a>
+<a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-4"></a><span class="n">all_elems</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+<a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-5"></a><span class="nb">len</span><span class="p">(</span><span class="n">all_elems</span><span class="p">)</span>
+<a name="rest_code_27ea2bb5410f4c79b0d438556ff0343f-6"></a><span class="o">&gt;&gt;</span> <span class="mi">24</span>
 </pre>
-<p>حالا می‌دانیم اگر قبل از شروع پیمایش‌، یک بار  متد <cite>next()‎</cite> را صدا کنیم‌، زمان فراخوانی پیمایش‌، آیتم اول دیگر در نتیجه وجود نخواهد داشت! چه می‌شود اگر همین Cursor را تحویل چند Thread مختلف بدهیم؟</p>
-<pre class="code text"><a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
-<a name="rest_code_5d25c62c47644cd585903cac38bf3c6a-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<p>حالا می‌دانیم اگر قبل از شروع پیمایش‌، یک بار متد <cite>next()‎</cite> را صدا کنیم‌، زمان
+فراخوانی پیمایش‌، آیتم اول دیگر در نتیجه وجود نخواهد داشت! چه می‌شود اگر همین
+Cursor را تحویل چند Thread مختلف بدهیم؟</p>
+<pre class="code text"><a name="rest_code_4ab84c948ced4e029137679782be83c3-1"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 0 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-2"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 1 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-3"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 2 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-4"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 3 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-5"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 4 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-6"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 5 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-7"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 6 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-8"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 7 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-9"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 8 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-10"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad8d0&gt; 9 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-11"></a>[31/Oct/2015 19:30:43]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-12"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 0 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-13"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 1 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-14"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 2 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-15"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 3 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-16"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 4 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-17"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 5 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-18"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 6 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-19"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 7 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-20"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 8 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-21"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5ad668&gt; 9 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-22"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-23"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 0 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-24"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 1 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-25"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 3 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-26"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 4 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-27"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 2 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-28"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 5 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-29"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 7 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-30"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 8 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-31"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 9 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-32"></a>&lt;pymongo.cursor.Cursor object at 0x7f6aac5a5320&gt; 6 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-33"></a>[31/Oct/2015 19:30:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-34"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 0 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-35"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 4 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-36"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 1 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-37"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 5 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-38"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 6 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-39"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 3 15
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-40"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 8 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-41"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 9 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-42"></a>&lt;pymongo.cursor.Cursor object at 0x7f4153a28208&gt; 7 0
+<a name="rest_code_4ab84c948ced4e029137679782be83c3-43"></a>[31/Oct/2015 19:20:44]"GET /v1/apps/featured/ HTTP/1.1" 200 34652
 </pre>
-<p>این نتیجهٔ اجرای ایده روی سیستم ضعیف من است. نتیجهٔ ناقص نمی‌بینیم‌، ولی در سه بار از فراخوانی‌ها‌، بیش از یک Thread به یک Cursor دسترسی پیدا کرده است! این مساله را می‌توان در یک مقیاس خیلی بزرگتر مثل سرور Production این پروژه و آن همه Thread، به نتایج ناقص هم ربط داد… این‌طور نیست؟ جواب <a class="reference external" href="https://emptysqua.re/blog/">A. Jesse Jiryu Davis</a> توسعه دهندهٔ <a class="reference external" href="https://motor.readthedocs.org">Motor</a> (درایور پایتونی و async -بله پایتون هم از این کارها بلد است- :)) تایید همین مطلب است.</p>
-<p>خوب چه کار کنیم؟‌ بیاییم، Cursorهایی که کلا Thread safe نیستند‌ را به یک آبجکت پایتونی Thread safe تبدیل کنیم. یک همچین پترنی شاید:</p>
-<pre class="code python"><a name="rest_code_0fbb401c011343cdbaf8b40ba4dade86-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">}))</span>
+<p>این نتیجهٔ اجرای ایده روی سیستم ضعیف من است. نتیجهٔ ناقص نمی‌بینیم‌، ولی در سه بار
+از فراخوانی‌ها‌، بیش از یک Thread به یک Cursor دسترسی پیدا کرده است! این مساله را
+می‌توان در یک مقیاس خیلی بزرگتر مثل سرور Production این پروژه و آن همه Thread، به
+نتایج ناقص هم ربط داد… این‌طور نیست؟ جواب <a class="reference external" href="https://emptysqua.re/blog/">A. Jesse Jiryu Davis</a> توسعه دهندهٔ
+<a class="reference external" href="https://motor.readthedocs.org">Motor</a> (درایور پایتونی و async -بله پایتون هم از این کارها بلد است- :)) تایید
+همین مطلب است.</p>
+<p>خوب چه کار کنیم؟‌ بیاییم، Cursorهایی که کلا Thread safe نیستند‌ را به یک آبجکت
+پایتونی Thread safe تبدیل کنیم. یک همچین پترنی شاید:</p>
+<pre class="code python"><a name="rest_code_4f2bcbd3f02c41cb80392ba0cc28a633-1"></a><span class="n">res</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">'key'</span><span class="p">:</span> <span class="s1">'STH'</span><span class="p">}))</span>
 </pre>
-<p>و انگار جواب مساله را پیدا کرده‌ایم. بماند که بعد از این که بار‌ها به در بسته خوردن سر این مساله، اعضای تیم را کمی بد‌بین کرده بود و تا دلشان خواست انتقامشان ر موقع تست تئوری جدید گرفتند (<a class="reference external" href="http://amirbitaraf.ir/">امیر</a> حتی به Multithread پایتون هم رضایت نداد و یک نمونهٔ C++‎ هم از اسکریپت تستش نوشت)‌، API با یک Performance عالی‌، بدون هیچ مشکلی همهٔ تست‌ها را درست رد کرد.</p>
-<p>نتیجه؟ یکی از طولانی‌ترین دیباگ‌هایی که تا به الان انجام داده‌ایم‌، به سادگی یک <cite>list()‎</cite> قابل حل بود، ولی در این مسیر‌، طی تبادل نظرات‌، تست تئوری‌ها‌، بررسی‌های کلی استک‌، تجربه‌های زیادی کسب کردیم که نهایتا به بسیار بهتر شدن API نسبت به وضعیت قبل و نه تنها در رابطه با همین مساله منجر شد.</p>
+<p>و انگار جواب مساله را پیدا کرده‌ایم. بماند که بعد از این که بار‌ها به در بسته
+خوردن سر این مساله، اعضای تیم را کمی بد‌بین کرده بود و تا دلشان خواست انتقامشان ر
+موقع تست تئوری جدید گرفتند (<a class="reference external" href="http://amirbitaraf.ir/">امیر</a> حتی به Multithread پایتون هم رضایت نداد و یک
+نمونهٔ C++‎ هم از اسکریپت تستش نوشت)‌، API با یک Performance عالی‌، بدون هیچ مشکلی
+همهٔ تست‌ها را درست رد کرد.</p>
+<p>نتیجه؟ یکی از طولانی‌ترین دیباگ‌هایی که تا به الان انجام داده‌ایم‌، به سادگی یک
+<cite>list()‎</cite> قابل حل بود، ولی در این مسیر‌، طی تبادل نظرات‌، تست تئوری‌ها‌، بررسی‌های کلی
+استک‌، تجربه‌های زیادی کسب کردیم که نهایتا به بسیار بهتر شدن API نسبت به وضعیت قبل
+و نه تنها در رابطه با همین مساله منجر شد.</p>
 </div>
     </div>
-    <aside class="share"><!-- Sharingbutton Facebook --><a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank" aria-label="">
-        <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
-<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z"></path></g></svg>
-</div>
-        </div>
-      </a>
 
-      <!-- Sharingbutton Twitter -->
-      <a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=%D9%88%D9%82%D8%A7%DB%8C%D8%B9%20%D9%86%DA%AF%D8%A7%D8%B1%DB%8C%20%DB%8C%DA%A9%20%D8%AF%DB%8C%D8%A8%D8%A7%DA%AF:%20%D9%88%D8%B6%D8%B9%DB%8C%D8%AA%20%D8%B9%D8%AC%DB%8C%D8%A8%20MongoDB%20from%20@shahinism&amp;url=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank" aria-label="">
-        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z"></path></g></svg>
+    <div class="terminal">
+      <span class="prompt">python share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D9%88%D9%82%D8%A7%DB%8C%D8%B9%20%D9%86%DA%AF%D8%A7%D8%B1%DB%8C%20%DB%8C%DA%A9%20%D8%AF%DB%8C%D8%A8%D8%A7%DA%AF:%20%D9%88%D8%B6%D8%B9%DB%8C%D8%AA%20%D8%B9%D8%AC%DB%8C%D8%A8%20MongoDB%20from%20@shahinism&amp;url=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank">facebook</a></li>
+        </ol>
 </div>
-        </div>
-      </a>
-
-      <!-- Sharingbutton Google+ -->
-      <a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver/" target="_blank" aria-label="">
-        <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
-<div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-            <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewbox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g><path d="M11.366,12.928c-0.729-0.516-1.393-1.273-1.404-1.505c0-0.425,0.038-0.627,0.988-1.368 c1.229-0.962,1.906-2.228,1.906-3.564c0-1.212-0.37-2.289-1.001-3.044h0.488c0.102,0,0.2-0.033,0.282-0.091l1.364-0.989 c0.169-0.121,0.24-0.338,0.176-0.536C14.102,1.635,13.918,1.5,13.709,1.5H7.608c-0.667,0-1.345,0.118-2.011,0.347 c-2.225,0.766-3.778,2.66-3.778,4.605c0,2.755,2.134,4.845,4.987,4.91c-0.056,0.22-0.084,0.434-0.084,0.645 c0,0.425,0.108,0.827,0.33,1.216c-0.026,0-0.051,0-0.079,0c-2.72,0-5.175,1.334-6.107,3.32C0.623,17.06,0.5,17.582,0.5,18.098 c0,0.501,0.129,0.984,0.382,1.438c0.585,1.046,1.843,1.861,3.544,2.289c0.877,0.223,1.82,0.335,2.8,0.335 c0.88,0,1.718-0.114,2.494-0.338c2.419-0.702,3.981-2.482,3.981-4.538C13.701,15.312,13.068,14.132,11.366,12.928z M3.66,17.443 c0-1.435,1.823-2.693,3.899-2.693h0.057c0.451,0.005,0.892,0.072,1.309,0.2c0.142,0.098,0.28,0.192,0.412,0.282 c0.962,0.656,1.597,1.088,1.774,1.783c0.041,0.175,0.063,0.35,0.063,0.519c0,1.787-1.333,2.693-3.961,2.693 C5.221,20.225,3.66,19.002,3.66,17.443z M5.551,3.89c0.324-0.371,0.75-0.566,1.227-0.566l0.055,0 c1.349,0.041,2.639,1.543,2.876,3.349c0.133,1.013-0.092,1.964-0.601,2.544C8.782,9.589,8.363,9.783,7.866,9.783H7.865H7.844 c-1.321-0.04-2.639-1.6-2.875-3.405C4.836,5.37,5.049,4.462,5.551,3.89z"></path><polygon points="23.5,9.5 20.5,9.5 20.5,6.5 18.5,6.5 18.5,9.5 15.5,9.5 15.5,11.5 18.5,11.5 18.5,14.5 20.5,14.5 20.5,11.5  23.5,11.5 	"></polygon></g></svg>
-</div>
-        </div>
-      </a>
-
-    </aside><!-- aside.share --><aside class="postpromonav"><nav><div class="bg-info">
-                  <ul itemprop="keywords" class="tags">
+      
+      <span class="prompt">cat ./tags</span>
+              <ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/mongodb/" rel="tag">mongodb</a></li>
             <li><a class="tag p-category" href="../../categories/multithreading/" rel="tag">multithreading</a></li>
             <li><a class="tag p-category" href="../../categories/nosql/" rel="tag">nosql</a></li>
@@ -239,15 +322,16 @@ article: http://ogp.me/ns/article#
             <li><a class="tag p-category" href="../../categories/pymongo/" rel="tag">PyMongo</a></li>
             <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
         </ul>
-</div>
-                <ul class="pager hidden-print">
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../douglas-crockford-javascript-the-good-parts/" rel="prev" title="خوبی‌های جاوا اسکریپت؟">Previous post</a>
+                <a href="../douglas-crockford-javascript-the-good-parts/" rel="prev" title="خوبی‌های جاوا اسکریپت؟">ارسال پیشین</a>
             </li>
             <li class="next">
-                <a href="../no-space-mysql-problem/" rel="next" title="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!">Next post</a>
+                <a href="../no-space-mysql-problem/" rel="next" title="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!">ارسال بعدی</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
                         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="shahinism",
@@ -255,7 +339,7 @@ article: http://ogp.me/ns/article#
         disqus_title="\u0648\u0642\u0627\u06cc\u0639 \u0646\u06af\u0627\u0631\u06cc \u06cc\u06a9 \u062f\u06cc\u0628\u0627\u06af: \u0648\u0636\u0639\u06cc\u062a \u0639\u062c\u06cc\u0628 MongoDB",
         disqus_identifier="cache/posts/multithreading-bug-experiment-on-pymongo-driver.html",
         disqus_config = function () {
-            this.language = "en";
+            this.language = "fa";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;
@@ -276,8 +360,8 @@ article: http://ogp.me/ns/article#
   <footer id="footer" class="site-footer">
     Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
-  </footer><script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
     fancydates(0, "YYYY-MM-DD HH:mm");
   </script><!-- end fancy dates -->
 </body>

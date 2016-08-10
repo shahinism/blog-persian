@@ -2,14 +2,14 @@
 <html prefix="
 og: http://ogp.me/ns#
 article: http://ogp.me/ns/article#
-" lang="en">
+" dir="rtl" lang="fa">
 <head>
 <meta charset="utf-8">
 <meta name="wot-verification" content="1e0ce5594a67af53269c">
 <base href="https://5hah.in/index-11.html">
 <meta name="description" content="Sometimes you gotta run before you can walk">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>شاهین (old posts, page 11) | شاهین</title>
+<title>شاهین (صفحهٔ ارسال‌های قدیمی 11) | شاهین</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
@@ -19,7 +19,7 @@ article: http://ogp.me/ns/article#
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
-  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
 
   <div class="navigator">
     
@@ -58,342 +58,144 @@ article: http://ogp.me/ns/article#
                     
         </li>
 </ul>
-</div>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
 <!-- /.navbar-collapse -->
     </div>
 <!-- /.container-fluid -->
-  </nav><div class="jumbotron">
-    <section class="container"><div id="headerbox" class="col-md-6 col-md-offset-3 text-center">
-        <h1>شاهین</h1>
-        <hr class="hdrline">
-<a class="social" href="https://github.com/shahinism">
-          <img src="assets/images/github.png"></a>
-        <a class="social" href="https://twitter.com/shahinism">
-          <img src="assets/images/twitter.png"></a>
-        <a class="social" href="https://ir.linkedin.com/in/shahinism">
-          <img src="assets/images/linkedin.png"></a>
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
       </div>
-    </section>
-</div>
-
-  <div class="container" id="content" role="main">
+    </div>
+  </section><div class="container" id="content" role="main">
     <!--Body content-->
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-7 col-centered">
       <div class="row">
         
-<div class="postindex">
-    <article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb/" class="u-url">مشکل رزولوشن پایین در اوبونتو پس از نصب درایور NVIDIA</a></h1>
-            شاهین
-      <a href="posts/wp/mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb/" rel="bookmark"><time class="published dt-published" datetime="2010-06-19T09:16:02+04:30" title="2010-06-19 09:16">2010-06-19 09:16</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>جستجو در بین انجمن‌های لینوکسی فارسی هم نتیجه‌ای جز وارد کردن دستی رزولوشن در بر نداشت‌. اما این کار اصلا تغییری در تنظیمات Nvidia Settings ایجاد نمی‌کرد‌. سر انجام کاشف جور دیگری به عمل آمد‌. یعنی اصلا مشکل سر این قسمت زیری نبود‌:</p>
-<pre class="code literal-block"><span></span>Section <span class="s2">"Screen"</span>
-
-DefaultDepth 24
-
-SubSection <span class="s2">"Display"</span>
-
-Depth      15
-
-Modes      <span class="s2">"1152x864"</span> <span class="s2">"1024x768"</span> <span class="s2">"1024x600"</span> <span class="s2">"800x600"</span> <span class="s2">"768x576"</span> <span class="s2">"640x480"</span>
-
-EndSubSection
-</pre>
-
-
-<p>که دوستان می‌گفتند باید دستی رزولوشن‌های جدید را وارد کنم‌. مشکل اینجا بود که NVIDIA در هنگام نصب مانیتور مرا شناسایی نکرده بود در نتیجه VertRefresh و HorizSync ای که برای مانیتور Unknown نشان می‌داد اصلا قدرت نمایش رزولوشنی بالاتر از 800x600 را نداشت‌. پس باید به صورت دستی این قسمت را تغییر می‌دادم‌. در زیر نمایی از کد را می‌بینید‌:</p>
-<pre class="code literal-block"><span></span>Section <span class="s2">"Monitor"</span>
-
-Option       <span class="s2">"CalcAlgorithm"</span> <span class="s2">"XServerPool"</span>
-
-DisplaySize  <span class="m">331</span> 207
-
-HorizSync    30-62
-
-VertRefresh  43-60
-
-UseModes     <span class="s2">"Modes[0]"</span>
-
-EndSection
-</pre>
-
-
-<p>کد های بالا از  فایل کانفیگ سیستم من نیست‌، ولی چند نکته هست که باید بهش توجه داشته باشید‌: یک اینکه باید HorizSync و VertRefresh رو در بخش Section "Monitor" تغییر بدید‌. نکته مهم بعدی اینه که این مقادیری که برای این دو متغیر در اینجا قرار داده شده رزولوشن مانیتور شما رو در حالت عادی برای 1152x864 آماده می‌کنه ولی تا چند رزولوشن بالاتر هم پشتیبانی می‌کنه‌. و سه این‌که خیلی مراقب تغییر این اعداد باشید‌. اول از فایل کانفیگتون یه بک آپ بگیرید‌، بعد این‌ها رو تغییز بدید‌. اگر دیدید که مانیتور Out Of Range شد کافیه که اون فایل بک آپ رو برگردونید‌.</p>
-<p>در کل کار آسونیه فقط یکم باس قلق سیستم دستتون باشه‌. برای این‌که بیشتر موضوع رو درک کنید‌، به لینک‌های زیر یه نگاه بندازید‌:</p>
-<p></p>
-<p style="text-align:left;"><a href="http://www.cyberciti.biz/faq/howto-use-linux-ddcprobe-command/" target="_blank">Linux find out monitor VertRefresh values and  HorizSync rate with ddcprobe</a></p>
-<p style="text-align:left;"><a href="http://forums.opensuse.org/get-help-here/laptop/432735-resolution-1152x864-not-possible.html" target="_blank">Resolution 1152x864 not possible</a></p>
-
-<p></p>
+  <div class="postindex">
+      <article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2007-09-26T20:32:59+03:30" title="2007-09-26 20:32">2007-09-26 20:32</time>
 </div>
-    </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb/#disqus_thread" data-disqus-identifier="cache/posts/wp/mshkhl-rzwlwshn-pyyn-dr-wbwntw-ps-z-nsb.html">Comments</a>
+        <h1 class="p-name entry-title"><a href="posts/wp/popuri-us/" class="u-url">جایگاه وبلاگ شما کجاست</a></h1>
 
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/mshkhl-b-windows-write-protection/" class="u-url">مشکل با Windows Write Protection</a></h1>
-            شاهین
-      <a href="posts/wp/mshkhl-b-windows-write-protection/" rel="bookmark"><time class="published dt-published" datetime="2010-06-15T23:29:00+04:30" title="2010-06-15 23:29">2010-06-15 23:29</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>یکی از مسخره‌ترینشان هنگامی‌است که شما حافظه‌ای خارجی ( برای من هر نوع حافظه از طریق USB ) را به سیستم وصل می‌کنید‌، ویندوز نمی‌تواند چیزی روی آن ذخیره کند و یا از آن پاک کند‌، این مشکل طبق معمول تمام مشکلات مایکروسافت اسم با ‌کلاسی دارد تا پیدا کردن راه حلش در گوگل آسان باشد‌. اسم این مشکل Windows Write Protection است‌. اما راه حلی که این بار در گوگل یافتم عملا کاربردی نداشت‌. خلاصه‌ی این راه حل در تصویر زیر معلوم است‌:</p>
-<p><a href="http://shahinism.files.wordpress.com/2010/06/diskpart.jpg"><img class="aligncenter size-full wp-image-109" title="diskpart" src="http://shahinism.files.wordpress.com/2010/06/diskpart.jpg" alt="" width="450" height="227"></a>حالا خود راه حل هم <a href="http://www.t3chworks.com/index.php?p=2_1" target="_blank">این‌جاست‌</a>. خواندنش خالی از لطف نیست‌. اما در عمل کاربردی ندارد‌.</p>
-<p>اما برای رفع این مشکل راه حل سر‌ راست تری هم هست که اتفاقا کاربردی است‌:</p>
-<p>بر روی هر درایوی که این مشکل را داشت کلیک راست کرده در properties سر‌برگ Sharing را انتخاب کنید‌. روی کلید Advanced Sharing کلیک کنید و باز هم کلید Permissions را فشار دهید‌. دقت کنید که تمامی اختیارات را به کاربر حاضر در سیستم داده باشید‌، یعنی Full Control در حالت Allow باشد‌.</p>
-<p>همین‌! تمام شد‌. اما اگر باز هم جایی یا فایلی اخطاری داد که شما اجازه‌ی دسترسی ندارید کافیست که با یوزر اصلی همین قسمت‌ها را در فایل اصلی انگولک کنید‌. خلاصه این که راه حل پرمیشن‌های غیر مجاز تو ویندوز 7 یه جایی همین جاها قایم شده‌.</p>
+          <div class="p-summary entry-summary">
+            <div>
+<p>.. title: جایگاه وبلاگ شما کجاست
+.. date: 2007/9/26 20:32:59 
+</p>
+<span lang="fa">همونطور که قبلا هم گفتم یکی از مهمترین مسایل برای یک بلاگر این هست که وضعیت وبلاگ خود رو تو سایتهای معتبر مختلف بدونه ولی سایتی پ<span lang="fa">یدا میشه که  بدون درد و خون ریزی اطلاعات رو بهتون بده . <a href="http://popuri.us/" target="_blank">پاپوریوس</a> (یا حالا هر چیز دیگه !!!) سایتی بسیار جالب - ساده و از همه بهتر بر مبنای آژاکس است . این سایت یک مجموعه کامل از امتیازات شما رو نمایان می کنه که از جمله ی اون ها میشه به پیج رنک گوگل و آلکسا وتکنوارتی و همچنین تعداد لینک های ثبت شده از سایتتون تو خوشمزه هست . از طرفی تعداد لینک های سایت شما در لیست سیاه گوگل و یاهو رو هم نشون میده .  در مجموع باید بگم که برنامه ی فوق العاده جالب و هست و تنها دلیل لذت بخش بودن کار باهاش رایگان بودن و بر مبنای وب ۲ بودنش است پیشنهاد می کنم ازش استفاده کنم . (اگه خواستین فضولی هم بکنین :d<span lang="fa">).</span></span></span>
 </div>
-    </div>
+            </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/mshkhl-b-windows-write-protection/#disqus_thread" data-disqus-identifier="cache/posts/wp/mshkhl-b-windows-write-protection.html">Comments</a>
-
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/ay-pd-pl-dr-bzr-yrn/" class="u-url">آی پد اپل در بازار ایران</a></h1>
-            شاهین
-      <a href="posts/wp/ay-pd-pl-dr-bzr-yrn/" rel="bookmark"><time class="published dt-published" datetime="2010-04-29T01:12:33+04:30" title="2010-04-29 01:12">2010-04-29 01:12</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <span></span>
-    </div>
-
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/ay-pd-pl-dr-bzr-yrn/#disqus_thread" data-disqus-identifier="cache/posts/wp/ay-pd-pl-dr-bzr-yrn.html">Comments</a>
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/popuri-us/#disqus_thread" data-disqus-identifier="cache/posts/wp/popuri-us.html">Comments</a>
 
 
-    </div>
+            </div>
+            <div class="clear"></div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d/" class="u-url">قطعی اینترنت کشور همچنان ادامه خواهد داشت</a></h1>
-            شاهین
-      <a href="posts/wp/qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d/" rel="bookmark"><time class="published dt-published" datetime="2010-04-28T20:58:14+04:30" title="2010-04-28 20:58">2010-04-28 20:58</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>مشکلاتی که هم‌اکنون شاهد آن هستیم طبق گفته‌ی<a href="http://www.tic.ir/web/content/2?p_p_id=sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9&amp;p_p_lifecycle=0&amp;p_p_state=maximized&amp;p_p_mode=view&amp;p_p_col_id=column-3&amp;p_p_col_count=1&amp;_sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9_cmd=detail&amp;_sps_news_portlet_WAR_spspublicportlet_INSTANCE_OYH9_newsId=1765" target="_blank"> سایت ارتباطات </a>زیر ساخت در مسیری 20 هزار کیلومتری از کابل SMW 4 رخ داده و احتمالا قطعی‌ها به نقل قول از DU اپراطور این کابل به جای 5 روز بین یک هفته تا ده روز ادامه خواهد داشت‌. که این مشکلات به صورت‌هایی مانند قطعی اینترنت به صورت کامل در پاکستان و یا افت سرعت اینترنت در ایران روی می‌دهند‌.</p>
-<p>همچنین اطلاعاتی در <a href="http://en.wikipedia.org/wiki/SEA-ME-WE_4">ویکیپدیا</a> در رابطه با این کابل پیدا کردم که در نوع خود جالب است‌. کابل SMW 4 با طول تقریبی 18800 کیلومتر ( که نمی‌دانم چرا در سایت ارتباطات زیر ساخت ذکر شده که قطعی در مسیری 20 هزار کیلوتری یعنی 1200 کیلومتر بیشتر از طول واقعی کابل رخ داده ) از کشور‌های : سنگاپور‌، مالزی‌، تایلند‌، بنگلادش‌، هند‌، سریلانکا‌، پاکستان‌، عمارات متحده عربی‌، عربستان‌، سودان‌، مصر‌، تانزانیا‌ و فرانسه‌ عبور کرده‌، یعنی عملا ایران از یکی از انشعابات این کابل استفاده می‌کنه‌! برای دیدن این مسیر می‌توانید به تصویر زیر رجوع کنید‌:</p>
-<p><a href="http://shahinism.files.wordpress.com/2010/04/4.jpg"><img class="aligncenter size-full wp-image-86" title="4" src="http://shahinism.files.wordpress.com/2010/04/4.jpg" alt="" width="450" height="280"></a>خوب انگار بلایای طبیعی برای اینترنت کشور همچنان دست بردار نیست و حالا حالا‌ها ادامه داره‌. واقعا مسئولین کشور کی می‌خوان به فکر مسیر‌های مطمئن‌تری برای اینترنت کشور باشن‌. در ضمن از قرار ما به غیر از این کابل از دو کابل دیگه هم استفاده می‌کنیم که کاراییشون همین الان هم معلومه‌. به امید بازگشتن وضع عادی به اینترنت کشور‌.</p>
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2007-09-26T19:46:32+03:30" title="2007-09-26 19:46">2007-09-26 19:46</time>
 </div>
-    </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d/#disqus_thread" data-disqus-identifier="cache/posts/wp/qty-yntrnt-khshwr-hmchnn-dmh-khwhd-d.html">Comments</a>
+        <h1 class="p-name entry-title"><a href="posts/wp/twitter/" class="u-url">تویتر را دریابید</a></h1>
+
+          <div class="p-summary entry-summary">
+            <p><span lang="fa"> <font face="Tahoma">خلاصه کنم اگه وبلاگ دارین و یا عاشق  وب بخصوص وب ۲ هستین برین تو <a href="http://twitter.com/" target="_blank">تویتر </a>ثبت نام کنین و تا همه ی امکاناتش رو ندیدین ازش دست برندارین اگر هم ازش خوشتون اومد می تونین توش بنویسین . بابا حداقل کاری که می تونین بکنین اینه که عوض اینکه تو وبلاگتون کارایی رو که دارین انجام میدین رو پست کنین و سر همه رو درد بیارین با استفاده از این تویتر می تونین مثل من این گوشه بنویسین (قشنگه نه !!!)</font><font face="Tahoma"><span lang="fa">  پلاگینش رو آقا مهرداد <a href="http://mehrdad.rajabi.ir/category/wordpress/plugin/" target="_blank">اینجا </a>توضیح  دادن پلاگین دیگه ای هم وجو نداره </span></font></span></p>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/twitter/#disqus_thread" data-disqus-identifier="cache/posts/wp/twitter.html">Comments</a>
 
 
-    </div>
+            </div>
+            <div class="clear"></div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/trjdy-zbn-frsy-dr-wb-2/" class="u-url">تراژدی زبان فارسی در وب</a></h1>
-            شاهین
-      <a href="posts/wp/trjdy-zbn-frsy-dr-wb-2/" rel="bookmark"><time class="published dt-published" datetime="2010-04-11T21:03:28+04:30" title="2010-04-11 21:03">2010-04-11 21:03</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>برای شروع داستان پیشنهاد می‌کنم این مقاله از سایت دانشگاه شریف را بخوانید‌: « <a href="http://physics.sharif.edu/~amp/misc_articles/Persian_Web_Catastrophe.html" target="_blank">فاجعه‌ی وب فارسی و یا چرا فیزیک با فیزیک فرق دارد‌؟ </a>»‌. اصل داستان بسیار ساده است‌، اما از آن‌جا که اصول به طور کامل رعایت نمی‌شوند‌، تنها توانسته‌اند دو‌گانگی‌ها را بیشتر کنند‌. از آنجا که حتی دانشجو‌های رشته‌ی کام‍یوتر‌مان هم تایپ را در حد اکابر نمی‌دانند این موضوع درد‌ناکتر می‌شود‌!<a href="http://shahinism.files.wordpress.com/2010/04/ferdowsi.jpg"><img class="alignleft size-full wp-image-70" title="ferdowsi" src="http://shahinism.files.wordpress.com/2010/04/ferdowsi.jpg" alt="" width="317" height="389"></a></p>
-<p>از طرف دیگر با توجه به تلاش <a href="http://www.google.com/url?sa=t&amp;source=web&amp;ct=res&amp;cd=1&amp;ved=0CAgQFjAA&amp;url=http%3A%2F%2Fwww.persianacademy.ir%2F&amp;ei=PoXBS9--K8eWOLr4pJcE&amp;usg=AFQjCNGB3j6e-Pm4P83AxwP02CDN4R6-Xw&amp;sig2=l_-tJ0o75ANn6d5Jkb6WFQ" target="_blank"><strong>مسئولین</strong></a>‌، که به هر نحوی سعی دارند که کلمات وارد شده از زبان‌های غربی را از فارسی خارج کنند ولی هیچ تلاشی برای نمونه‌های عربی نمی‌کنند و یا حتی دست به نوعی فرهنگ‌سازی برای اجرای درست رسم‌الخط فارسی در برنامه‌هایشان ندارند‌، باز هم این جامعه‌ی پویای وب فارسی است که باید دست به این فرهنگ‌سازی بزند‌. خوشبختانه تا این‌جای کار بلاگر‌های با تجربه و تمامی کاربران نور چراغ خورده‌ای‌! که به نحوی به تولید محتوا در وب فارسی مشغولند سعی می‌کنند به این اصول پایبند باشند که دلیل عمده‌اش بر می‌گردد به سری مطالب « <a href="http://www.khabgard.com/?search=%D8%BA%D9%84%D8%B7+%D9%80%D9%80%D9%80%D9%80%D9%80+%D9%86%D8%A7%D9%85%D9%87" target="_blank"><strong>غلط ـــــ نامه</strong></a> » وبلاگ خوابگرد که به کاربردی‌ترین نحو ممکن در چند ارسال این قوانین را مرور کرده‌. به همه‌ی تازه واردان حوزه‌ی وبلاگ‌نویسی پیشنهاد می‌کنم حتما این مطالب را بخوانند‌.</p>
-<p>اما مشکل بعدی بر می‌گردد به استاندارد فارسی صفحه کلید ویندوز‌! در توزیعات گنو /  لینوکس این مشکل مدت‌هاست که به بهترین نحو ممکن حل شده‌. ولی مایکروسافت هنوز هم تلاشی در این زمینه انجام نداده و همان استاندارد قدیمی را اجرا می‌کند‌. لایوت‌هایی هم که در سطح وب پراکنده شده‌اند نیز تماما کامل نیستند‌، مخصوصا این نوعی که خودشان به صورت اتوماتیک همه‌ی مراحل را انجام می‌دهند‌. یکی ویرگول ندارد آن یکی هم حرف « پ » را هنوز در جای قدیمی‌اش می‌چسباند‌! اما بهترین لایوتی که استفاده کردم که دقیقا شبیه نسخه‌ی لینوکسی عمل می‌کند مربوط می‌شد به <strong><a href="http://mediabuilder.org/?q=fa/node/222" target="_blank">این روش</a></strong> که بر  پایه‌ی لایوت <a href="http://fa.farsiweb.ir/fawiki/Main" target="_blank"><strong>فارسی وب شریف</strong></a> نصب می‌شد‌.</p>
-<p>این لایوت مسخره‌ی استفاده شده توسط مایکروسافت بحران را تا حدی پیش برده که حتی شرکت‌های وطنی تولید کننده‌ی کیبورد هم کلید‌ها را جابجا چاپ می‌کنند و بیشتر به این گمراهی دامن می‌زنند‌. تا به حال فکر کنم فقط کیبورد <strong><a href="http://www.farassoo.com/iran/product/keyboard/fcr-8900.htm" target="_blank">فراسی </a></strong>شرکت فراسو باشد که کلید‌های فارسی را در جای درست چاپ کرده که آن هم بیشتر به درد عمه‌ی گرامشان می‌خورد چون چاپ انگلیسی روی کیبورد ندارد‌!</p>
-<p>تا این‌جای کار به کنار اما موضوع اصلی بحثم بر می‌گردد به دو پروژه‌ای که در وب فارسی شروع به کار کرده‌اند که واقعا از طراحانشان از همین‌جا تشکر می‌کنم‌. اولی وب‌سایت <a href="http://mediabuilder.org/" target="_blank"><strong>رسانه‌ساز </strong></a>است که جدای از اینترفیس کور کننده‌اش -‌یه خاطر آن خط آریال کذایی در ویندوز‌! - مطالب مفید و بسیار کاربردی‌ای در زمینه‌ی تولید محتوای فارسی در وب ارائه کرده‌، و از طرفی سعی کرده کاربران را با نرم‌افزار‌های آزاد مورد استفاده در این عرصه آشنا کند که در نوع خود کاری قابل ستایش است‌.</p>
-<p>پروژه‌ی بعدی که انتظار دارم بیشتر از این پیشرفت کند‌، ولی در همین حدش هم در وب فارسی وجود نداشت <a href="http://persianwebstandard.info/" target="_blank">پروژه‌ی استاندارد سازی وب پارسی</a> است که پایگاه‌های فارسی ثبت شده را از نظر استاندارد‌هایی مورد بررسی قرار می‌دهد و در پایان با ارائه‌ی امتیازاتی رتبه بندی می‌کند‌. در ضمن کتابی هم توسط این پایگاه منتشر شده که اطلاعات مفیدی در رابطه با استاندارد‌سازی دارد (‌<a href="http://persianwebstandard.info/book/" target="_blank"><strong>+</strong></a>‌).</p>
-<p>این همه گفتم این را هم در پایان اضافه کنم که خیلی وقت است روی دلم سنگینی می‌کند‌! پایگاه<strong> <a href="http://www.farsisubtitle.com/" target="_blank">زیر‌نویس فارسی</a> </strong>در بخش دانلودش برای قسمت نظرات قانون گذاشته که حتما فینگیلیش یا انگلیسی تایپ کنید! در صورتی که از تایپ فارسی استفاده کنید حذف خواهد شد‌! (<a href="http://www.farsisubtitle.com/download/index.php?act=view&amp;id=2798" target="_blank">+</a>) توجه کردید‌؟ یکی از پایگاههایی که باید این اصول اولیه را بیشتر از بقیه مورد استفاده قرار دهد این چنین رفتاری دارد‌. حالا اگر باز خواسته بود فقط به انگلیسی بنویسیم یک بحث جدایی بود که زیاد هم بد نبود ولی این زبان فینگیلیش که قاتل بالفطره‌ی رسم‌الخط فارسی است اصلا قابل تحمل نیست‌.</p>
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2007-09-26T17:58:39+03:30" title="2007-09-26 17:58">2007-09-26 17:58</time>
 </div>
-    </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/trjdy-zbn-frsy-dr-wb-2/#disqus_thread" data-disqus-identifier="cache/posts/wp/trjdy-zbn-frsy-dr-wb-2.html">Comments</a>
+        <h1 class="p-name entry-title"><a href="posts/wp/apple-30-years-old/" class="u-url">اپل ۳۰ ساله و آی پاد و آی تونز</a></h1>
 
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/mwsyqy_dr_wb_frsy/" class="u-url">موسیقی در وب فارسی‌</a></h1>
-            شاهین
-      <a href="posts/wp/mwsyqy_dr_wb_frsy/" rel="bookmark"><time class="published dt-published" datetime="2010-04-04T18:39:56+04:30" title="2010-04-04 18:39">2010-04-04 18:39</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>اما در این میان نکته‌ای که زیاد به چشم می‌آید کیفیت بیش از اندازه پایین این سایت‌هاست‌. سایت‌هایی که عمدتا شبیه به هم هستند و در بیشتر مواقع تنها تفاوتشان تم CMS شان است‌.</p>
-<p>بگذارید به چند نکته از مشکلات این سایت‌ها که دیگر امروزه در میان استاندارد‌های وب جایی ندارند اشاره کنم‌:</p>
-<p><strong>رعایت نکردن کپی رایت‌/ حتی از خودی‌: </strong>بارها و بارها پیش آمده که به چند سایت مختلف از این دست سر زده‌ام و تمامی پست‌های صفحه‌ی اولشان شبیه هم بوده‌, تا جایی که حتی عکس مربوط به آهنگ‌ها را هم از روی سایت‌های همکارشان کپی می‌کنند‌. در واقع در این حوزه دو‌- سه سایت هستند که آهنگ‌ها را تهیه می‌کنند و ما‌بقی سایت‌ها نقش آینه‌ی آن‌ها را بازی می‌کنندد‌.</p>
-<p><strong>رعایت نکردن کپی رایت موزیسن‌ها‌: </strong>افراط بیش از حد در این زمینه باعث به فساد کشیده شدن صنعت موسیقی شده‌, تا جایی که کاربران دیگر واقعا نیازی ندارند که آلبوم‌ها را با کیفیتی نامطلوب‌ - به دلیل صرفه‌جویی‌های بیش از اندازه کمپانی ها برای کم کردن قیمت - خریداری کنند‌. کافیست چند روز منتظر بمانند تا در سرور‌های مختلف امکان دانلود بیایند‌.</p>
-<p><strong>طراحی‌های غیر حرفه‌ای صفحه‌ی اول سایت‌: </strong>استفاده از CMS های بر پایه PHP که عمدتا Nuke و Fusion هستند و قالب‌های پیش‌فرض آنها دیگر واقعا قدیمی شده‌. ساختار این CMS ها جدای از پیشرفتی که در این سال‌ها داشته‌اند واقعا سنگین هستند و برای کاربران ایرانی که کیفیت اتصالشان <a href="http://shahinism.wordpress.com/2010/03/29/%d8%a7%db%8c%d8%b1%d8%a7%d9%86%e2%80%8c-%d9%be%db%8c%d8%b4-%d8%a8%d9%87-%d8%b3%d9%88%db%8c-%d8%b9%d8%b5%d8%b1-%d9%87%d8%ac%d8%b1-%d8%af%d9%88%d8%b1%d8%a7%d9%86-%d8%a7%d8%b1%d8%aa%d8%a8%d8%a7%d8%b7/" target="_blank">معلوم </a>است‌, واقعا زجر‌آور‌. از طرفی دیگر استفاده‌ی افراطی از عکس‌ها و بنر‌ها در سایز‌های بزرگ در جا‌های مختلف سایت نیز سرعت لود صفحات را به میزان زیادی کاهش می‌دهد‌.</p>
-<p>توجه کنید که گفتم CMS های قدیمی بر پایه‌ی PHP و نه ابزار‌های جدید همچون <a href="http://wordpress.org" target="_blank">ورد‌پرس‌ </a>عزیز.</p>
-<p><strong>نداشتن آرشیو مناسب و مطابق با استاندارد SEO :</strong> در دسترس نبودن آرشیو سالم از سایت و خراب بودن عمده‌ی لینک‌هایی که بر روی سرور‌های رایگان قرار دارند و همچنین مرتب نبودن آرشیو موضوعی سایت و فقدان تگ‌های مناسب همه و همه باعث دوری این سایت‌ها از استاندارد‌های SEO و نعمات باد آورده‌ی آن می‌شود‌.</p>
-<p><strong>استفاده‌ی افراطی از آدرس سایت در فایل‌ها‌:</strong> فایلی را دانلود می‌کنید که در اسمش آدرس سایت هک شده‌. می‌خواهید از آرشیو ( فشرده )  خارجش کنید رمز می‌خواهد که همان آدرس سایت است‌. آهنگ را اجرا می‌کنید و در تمامی تگ‌های MP3 اعم از نام خواننده‌. آلبوم و ... آدرس سایت را می‌بینید‌. این کار به جای این‌که تبلیغ باشد باعث آزردگی کاربر می‌شود و فحش‌هایی را روانه‌ی صاحب سایت می‌کند‌. احترام گذاشتن به تگ‌ها در فایل‌های صوتی باعث می‌شود که کاربران راحت‌تر بتوانند موزیک‌هایشان را آرشیو کنند‌.</p>
-<p><strong>نداشتن یک فید درست درمان‌: </strong>در زمانه‌ای که همه می‌خواهند با راحت‌ترین روش‌ها به اطلاعات دسترسی داشته باشند , فید‌ها اهمیت زیادی یافته‌اند‌. اما عمرا نمی‌توانید در یکی از این سایت‌های موسیقی یک فید درست و کامل بیابید‌. در نود درصد مواقع فید فقط حکم خبر رسان را برایتان بازی می‌کند و شما موظفید که دوباره به سایت رجوع کنید تا لینک‌های دریافت را رویت کنید‌.</p>
-<p>رعایت کردن این اصول کار چندان سختی نیست و در تمامی موارد هم به نفع کاربران است و هم به نفع وب‌مستر‌ها‌. اما شاید بی‌اطلاعی از این امکانات و ابزار‌هاست که تا‌کنون کمتر سایت حرفه‌ای در این زمینه را می‌بینیم که آنها را رعایت می‌کند‌. امیدوارم در آینده‌ای نزدیک سایت‌های قدرتمندتر و بهتر در این زمینه شروع به کار کنند تا وب فارسی هم در این زمینه دچار عقب ماندگی نشود‌.</p>
+          <div class="p-summary entry-summary">
+            <div>
+<p>در داخل ایران بیشتر کاربران از ویندوز استفاده می کنند و عده ی بسیار کمی هم از توزیعهای مختلف لینوکس استفاده می کنند ولی در کشورهای اروپایی و آمریکا یکی از جدیترین رقیبان برای ویندوز سیستم عامل مکینتاش از اپل هست که بر روی سیستم های مخصوص اپل به صورت یک کامپیوتر کامل خریداری میشه و قابل اسستفاده است یکی از برتریهای این سیستمها قدرت گرافیکی این سیستم ها می باشد که برای کارهای گرافیکی و میکس و مونتاژ و نمایش انواع فیلم ها استفاده می شود که هم اکنون در استودیوهای هالیوود استفاده های زیادی از این کامپیوتر ها می شود . در کنار این سیستم ها اپل به تولید ابزارهای مختلفی می پردازد که از جمله ی معروف ترین آنها پلیر ipod هست که در مدت زمان کمی به سرعت در بین جهانیان معروف شد که از جمله برتریهای این پلیر توانایی دانلود موسیقی از سایت اینترنتی می باشد . از دیگر محصولات ارائه شده از این شرکت می توان به نرم افزار فروشگاهی itunes ارائه کرد که طبق گفته ی مدیر شرکت اپل استیو جابز طبق نظر سنجی های انجام شده به یکی از محبوبترین نرم افزار های تحت ویندوز کاربران تبدیل شده .</p>
+<p>اما سر انجام جدیدترین محصول شرکت اپل که طبق گزارش عصرونه در ۲۹ ژوئن امسال به صورت محدود پخش میشه هست که بر اساس سازندگان گوشی ۵ سال از تمامی گوشی های حال حاضر دنیا جلوتر هست که اینجوری که من فهمیدم این گوشی علاوه بر لمسی بودن از نوعی فناوری خاص استفاده میکنه که بر خلاف دیگر گوشی های لمسی برخورد های سطحی دست بر روی گوشی را فیلتر می کند و تنها به فشارهایی عمل می کنند که به مقصود انجام عمل فشار داده شده است از قدرتهای دیگر این گوشی میشه به قدرت بالای گرافیکی LCD نسبتا بزرگ آن اشاره کرد که اینجور که از تصاویر ارائه شده معلومه فوق العاده شفاف است .  به تازگی ویدئویی تبلیغاتی برای این گوشی آماده شده که می توانید از<a href="http://youtube.com/watch?v=bhhbaaWBgnk&amp;eurl=" target="_blank"> این لینک</a> آن را مشاهده کنید .</p>
+<p>در پایان هم شما رو به خواندن مطالبی چند در مورد شرکت اپل و محصولاتش در بلاگستان فارسی و انگلیسی منتشر شده جلب می کنم :</p>
+<p><a href="http://winbeta.net/comments.php?shownews=2669" target="_blank">استیو جابز : ویندوز جهنم است</a></p>
+<p><a href="http://itmen.ir/main1.asp?a_id=7148" target="_blank">روباتی که با ipod می رقصی</a></p>
+<p><a href="http://feeds.feedburner.com/%7Er/asroone/%7E3/122014290/" target="_blank">منتظر آی پاد باشید در همین ماه</a></p>
+<p><a href="http://feeds.feedburner.com/%7Er/Techcrunch/%7E3/122311885/" target="_blank">اپل ۳۰ ساله شد (انگلیسی) </a></p>
+<p><a href="http://fakesteve.blogspot.com/" target="_blank">وبلاگ استیو جابز مدیر شرکن گوگل (انگلیسی) </a></p>
+<p><a href="http://www.narenji.ir/content/view/202/1/" target="_blank">ابن همه انتظار برای ۴ میلیون </a></p>
 </div>
-    </div>
+            </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/mwsyqy_dr_wb_frsy/#disqus_thread" data-disqus-identifier="cache/posts/wp/mwsyqy_dr_wb_frsy.html">Comments</a>
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/apple-30-years-old/#disqus_thread" data-disqus-identifier="cache/posts/wp/apple-30-years-old.html">Comments</a>
 
 
-    </div>
+            </div>
+            <div class="clear"></div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/ay-b-wrwd-bzrhy-jtmy-wblg/" class="u-url">آیا با ورود ابزار‌های اجتماعی وبلاگ‌ها می‌میرند‌؟</a></h1>
-            شاهین
-      <a href="posts/wp/ay-b-wrwd-bzrhy-jtmy-wblg/" rel="bookmark"><time class="published dt-published" datetime="2010-04-01T11:18:01+04:30" title="2010-04-01 11:18">2010-04-01 11:18</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>در واقع به نظر بنده وبلاگ‌ها در کنار این شبکه‌های اجتماعی است که به جایگاه خود در اینترنت می‌رسند‌. فراموش نکنیم که شروع وب 2 از ورود وبلاگ‌ها به اینترنت صورت گرفت‌.</p>
-<p></p>
-<p style="text-align:center;"><a href="http://shahinism.files.wordpress.com/2010/04/blog.jpg"><img class="size-full wp-image-39 aligncenter" title="Blog" src="http://shahinism.files.wordpress.com/2010/04/blog.jpg" alt="" width="400" height="153"></a></p>
-<p>بلاگ‌ها پس از ورود این نوع شبکه‌ها در واقع به سوی تخصصی نویسی پیش می‌روند و کمتر شاهد هرز‌نویسی‌های سابق در میانشان هستیم‌. توجه داشته باشید که هیچ یک از زاده‌های نوین وب دو نمی‌توانند در رده‌ی تولید محتوا به رغابت با وبلاگ‌ها بر‌خیزند‌. بلاگ‌ها با توجه به قدرت بالا در آرشیو مطالب و هم‌چنین سادگی کار کرد و مدیریت آنها و صد البته امکان دریافت باز‌خورد ابزار خوبی برای اطلاع رسانی و اشتراک مطالب به حساب می‌آیند‌.</p>
-<p>از طرفی وبلاگ‌نویسی حرفه‌ای هم‌چنان که در بسیاری از کشور‌های غربی می‌بینیم می‌تواند به یک منبع در‌آمد حرفه‌ای برای وبلاگ‌نویسان تبدیل شود‌. شغلی که به نظر من یکی از شیرین‌ترین شغل‌های عالم است‌ -‌البته سختی‌های خودش را هم دارد -‌.</p>
-<p>نکته‌ی مهم دیگر این که ساختار وبلاگ‌ها به خبر‌نگاری شهروندی که یکی از حوضه‌های مهم علم اطلاع رسانی‌ است بسیار نزدیک‌تر است و همانطور که دیدیم در اتفاقات سال گذشته‌ی کشور‌مان با چه قدرتی سعی به جریان آزاد اطلاعات داشت‌. در واقع این نوع خبر‌نگاری به دور از فضای خشک رسانه‌های دیگر در آینده می‌تواند به یکی از مطمئن‌ترین رسانه‌ها تبدیل شود‌. با توجه به این‌که فشار دولت‌ها را روی دوش خود احساس نمی‌کند‌.</p>
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2007-09-26T13:51:33+03:30" title="2007-09-26 13:51">2007-09-26 13:51</time>
 </div>
-    </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/ay-b-wrwd-bzrhy-jtmy-wblg/#disqus_thread" data-disqus-identifier="cache/posts/wp/ay-b-wrwd-bzrhy-jtmy-wblg.html">Comments</a>
+        <h1 class="p-name entry-title"><a href="posts/wp/who-link-you/" class="u-url">چه کسی به شما لینک داده</a></h1>
+
+          <div class="p-summary entry-summary">
+            <p>حالا به این فکر کنید که اگر کاربر بلاگر هستید با یک ویدجت ساده و یا اگر ورد پرس و موویبل تایپ دارید با یک پلاگین خیلی ساده تر و اگر هیچ کدوم از اینها رو ندارید با یک کد جاوای از همه راحت تر تو وبلاگتون خیلی راحت به این اطلاعات ارزشمند دست پیدا کنید و همچنین خیلی فوری لینک ایشون رو تو صفحه ی شخصی خودتون قرار بدین تا اینجوری دیگه به سرعت تلافی کرده باشین . سایت <a href="http://wholinked.com/" target="_blank">Who Linked</a> یا چه کسی لینکیده این خدمات ساده و بسیار مفید رو به شما میده فقط برای گرفتن کد باید در صفحه ی اول نوع سیستم مصرفیتون رو انتخاب کنید تا همه ی خدمات خود به خود بیاد بالا به همین راحتی .</p>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/who-link-you/#disqus_thread" data-disqus-identifier="cache/posts/wp/who-link-you.html">Comments</a>
 
 
-    </div>
+            </div>
+            <div class="clear"></div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/hstyng-yrny-bh-chh-qymty/" class="u-url">هاستینگ ایرانی‌, به چه قیمتی‌؟</a></h1>
-            شاهین
-      <a href="posts/wp/hstyng-yrny-bh-chh-qymty/" rel="bookmark"><time class="published dt-published" datetime="2010-03-31T16:40:08+04:30" title="2010-03-31 16:40">2010-03-31 16:40</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>قبل از شروع بحث به سه نکته‌ی کوتاه اشاره می‌کنم‌:</p>
-<p></p>
-<ol>
-<li>فضا یکی از اصلی‌ترین بخش‌های مورد نیاز برای هاست شماست‌. بسته به نوع وبلاگ یا وب‌سایتتان به آن نیاز پیدا می‌کنید‌. اگر وبلاگ نویسی هستید که عموما برای دانلود در وبلاگ خود مطلب ندارید و یا حجم ابزار و یا عکس‌های وبلاگتان ممکن است در یک سال به صد مگ هم نرسد روی این مقوله زیاد توجه نکنید‌.</li>
-    <li>پهنای باند یا همان قدر دانلود‌ها و آپلود‌هایی که از سرورتان در طول یک ماه انجام می‌شود‌. در این مورد به من اعتماد کنید اگر حتی یک وبلاگ‌نویسید ولی در کارتان حرفه‌ای هستید ممکن است در حد نرمال بازدید‌ها 5 گیگ‌هم برای یک‌ماهتان کفایت نکند‌, در نتیجه ممکن‌است روز‌های آخر ماه وبلاگتان از دسترس خارج شود‌.</li>
-    <li>بانک اطلاعاتی که در واقع محل نگهداری مطالب آمار‌ها و خیلی دیگر از جداول اطلاعاتی که عموما سیستم‌های مدیریت محتوی به آن نیاز دارند هم بسیار مهم است‌.</li>
-</ol>
-<p>عموما وقتی قصد خرید یک هاست به سرتان می‌زند دو انتخاب پیش رو دارید‌: اول اینکه از فروشندگان وطنی بخرید و سرتان حسابی کلاه برود (‌البته استثنا هم طبق معمول همه جا هست که در ادامه توضیح می‌دهم )‌‌. دو این که به هزینه‌ی تقریبا زیاد حول و هوش 100 هزار تومان از یکی از فروشندگان خارجی هاست تهیه کنید که ممکن است خیالتان را تا حدی راحت کند ولی دردسر‌های خودش را هم دارد‌. اول از همه به عکس زیر نگاهی بیاندازید‌:</p>
-<p style="text-align:center;"><a href="http://shahinism.files.wordpress.com/2010/03/total_hcs-php.png"><img class="size-full wp-image-33 aligncenter" title="total_hcs.php" src="http://shahinism.files.wordpress.com/2010/03/total_hcs-php.png" alt="" width="450" height="270"></a></p>
-
-<p>این عکس براساس تعداد دامنه‌های ثبت شده به وسیله سرویس دهندگان توسط <a href="http://www.webhosting.info" target="_blank">Web Hosting information</a> تنظیم شده‌ (<a href="http://www.webhosting.info/webhosts/tophosts/Country/IR" target="_blank">+</a>). سری به چند سایت اول می‌زنم و قیمت‌های بخش هاستینگ بر پایه‌ی لینوکس را در پایین‌ترین حجم مقایسه می‌کنم‌.</p>
-<ol>
-<li>
-<a href="http://www.parsdata.com/default.aspx?page=Document&amp;app=Documents&amp;docId=11631&amp;docParId=0" target="_blank"><strong>پارس دیتا </strong></a>که رسما قهرمان میدان است برای صد مگابایت فضا و یک گیگابایت‌ - به این مقدار توجه کنید : یک گیگابایت - پهنای باند سالانه 35000 تومان طلب می‌کند‌. بیست عدد ایمیل هم بهتان می‌دهد‌!</li>
-    <li>
-<a href="http://iranhost.com/webhosting/" target="_blank"><strong>ایران هاست</strong></a> هم همان خدمات قهرمان جدول را با 5000 توما ن قیمت بالاتر یعنی چهل هزار تومان سالانه ارائه می‌دهد‌.</li>
-    <li> <a href="http://hosting.persiantools.com/" target="_blank"><strong>پرشین تولز</strong></a> که یکی از معروف‌ترین ارائه دهندگان در بین جماعت وبلاگ‌نویس است و خیلی از وبلاگ‌نویسانی که الان روی سرویس‌های خارجی می‌نویسند هم از اینجا شروع کرده‌اند جدیدا دو نوع خدمات دارد‌. نوع اول مثل همه هاست در خارج از ایران‌! است و دیگری در داخل که قیمتش سر به آسمان می‌کشد‌. برای هاست معمولی 100 مگ و با دو گیگ پهنای باند 40 هزار تومان می‌پردازید ولی برای هم‌تای وطنی‌اش با 200 مگ فضا و 4 گیگ پهنای باند 100 هزار تومان‌.</li>
-    <li>
-<a href="http://www.netsups.com/shared/linux/plans.pspx?Nav=2&amp;NavIn=1" target="_blank"><strong>پشتیبان شبکه </strong></a>که در واقع در لیست فوق حضور ندارد ولی یکی از قدیمی‌های این بازار است و برای کامل کردن عجایب این بازار لازم دانستم در این جمع حضور داشته باشد‌. این شرکت 250 مگ فضا را با سی گیگ پهنای باند به شما با قیمت 39 هزار تومان ارائه می‌دهد که در جای خود جالب توجه است‌. اما به شما حتی یک بانک اطلاعاتی نمی‌دهد‌! یعنی در واقع برای بدست آوردن این بانک اطلاعاتی باید 10 هزار تومان جداگانه بپردازید‌ - در واقع به ازای هر عدد ده هزار تومان‌! - .</li>
-</ol>
-<p>خوب شاید تا اینجا معنای اصلی رغابت حس نشده‌. در شرکت‌هایی که به صورت بین‌المللی فعالند قضیه کاملا متفاوت است‌ :</p>
-<ol>
-<li>
-<a href="http://www.hostmonster.com/" target="_blank"><strong>Host monster </strong></a>یکی از غول‌های واقعی این عرصه است و به غول خودش هم‌اکنون بیش از 750 هزار دامنه ثبت کرده است‌. تمامی امکانات هاستینگ را به صورت نا‌محدود به قیمتی در حدود 50 دلار سالانه ارائه می‌دهد‌.البته برای مدت محدود و در زمان عادی این قیمت به چیزی در حدود 85 دلار می‌رسد‌.</li>
-    <li>
-<strong><a href="http://www.bluehost.com/" target="_blank">Blue host </a></strong>هم که به دلیل پیشنهاد شدن از سوی وردپرس بین کاربران ایرانی معروف‌تر است همه‌ی امکانات را با قیمتی همانند رغیب قبلی‌اش ارائه می‌کند‌.</li>
-    <li>
-<a href="http://mediatemple.net/webhosting/gs/" target="_blank"><strong>Media Temple</strong></a> هاستینگ دیگری است که سه پلان متفاوت دارد‌. عمده‌ی تفاوت هم در کیفیت سرور میزبان و نحوه‌ی اشتراک سرور خلاصه می‌شود‌. در این سرویس شما می‌توانید 100 گیگابایت فضا را به همراه یک ترابایت پهنای باند به قیمت 240 دلار خریداری کنید‌.</li>
-</ol>
-<p>تفاوت قیمت‌ها واقعا فاحش است‌. سرویس‌های وطنی عمدتا چشم به جیب مبارک دوخته‌اند تا کیفیت خدمات‌. اما هستند شرکت‌های وطنی‌ای که خدمات خوبی برای هموطنان ارائه می‌دهند‌. یکی از این شرکت‌ها <a href="http://www.mayahost.net/web-hosting.html" target="_blank"><strong>مایا‌هاست</strong></a> است‌. این شرکت‌ هم همانند پرشین‌تولز خدمات را به دو دسته‌ی خارجی و وطنی تقسیم کزده که بررسی قیمت‌ها در اینجا هم خالی از لطف نیست‌. برای دویست مگ فضا و تمامی امکانات نامحدود شما فقط 15 هزار تومان در سال برای سرویس خارجی می‌‌پردازید‌. ولی در حالت وطنی باید برای 50 مگ فضا و ده گیگ پهنای باند 35 هزار تومان پیاده شوید‌!</p>
-<p>حرف پایانی این است که برای خرید هاست گول زرق و برق شرکت‌های بزرگ و معروف را نخورید که تقریبا کیفیت هاست ایرانی در بیشتر این شرکت‌ها در یک حد است‌. آپ‌تایم بالای عمده‌ی این شرکت‌ها هم چنان قابل اعتماد نیست‌. بیشتر برای انتخاب سعی کنید به تجربه وبلاگ‌نویسان دیگر و جستجوی در گوگل روی آورید تا سرتان کمتر کلاه رود‌. در آینده بیشتر به این موضوع می‌پردازم‌.</p>
-<!--more-->
-
-<p style="text-align:center;"><span style="color:#ff0000;"><strong>برای‌تان مفید بود‌؟ اگر می‌خواهید باقی مطالب این وبلاگ را از دست ندهید کافیست فید این وبلاگ را از آدرس زیر دنبال کنید‌:</strong></span></p>
-
-<p style="text-align:center;"><strong><a href="http://feeds.feedburner.com/Shahinism" target="_blank">http://feeds.feedburner.com/Shahinism</a></strong></p>
-
-<p></p>
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2007-09-26T10:08:06+03:30" title="2007-09-26 10:08">2007-09-26 10:08</time>
 </div>
-    </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/hstyng-yrny-bh-chh-qymty/#disqus_thread" data-disqus-identifier="cache/posts/wp/hstyng-yrny-bh-chh-qymty.html">Comments</a>
+        <h1 class="p-name entry-title"><a href="posts/wp/itblogs/" class="u-url">می‌نازم‌، ممی‌نازی‌، می‌نازد و همبستگی وبلاگ‌های IT</a></h1>
 
-
-    </div>
-
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/yrn-pysh-bh-swy-sr-hjr-dwrn-rtbt/" class="u-url">ایران‌: پیش به سوی عصر حجر دوران ارتباطات‌</a></h1>
-            شاهین
-      <a href="posts/wp/yrn-pysh-bh-swy-sr-hjr-dwrn-rtbt/" rel="bookmark"><time class="published dt-published" datetime="2010-03-29T04:08:52+04:30" title="2010-03-29 04:08">2010-03-29 04:08</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p>چند سال پیش بود - فکر کنم در دوره‌ی رئیس جمهور خاتمی - هزینه‌ی اینترنت به نصف کاهش پیدا کرد‌, اما این قیمت با وجود این‌که همان موقع هم زیاد بود بعد از گذشت 5 - 6 سال هنوز هم تغییری نکرده‌. شرکت‌های خدمات اینترنتی ( ISP ) هم برای جذب بیشتر کاربران دست به کار‌های احمقانه‌ای همچونن ارائه‌ی اینترنت رایگان در ساعات خاصی از روز می‌زنند که همانطور هم که می‌توان حدس زد این سرعت هیچ فرقی با ارتباط دایل آپ ندارد‌.</p>
-<p>هم اکنون شرکت‌های خارجی خدماتی به مراتب با کیفیت بالاتر را با هزینه‌هایی بسیار بسیار کمتر از ایران به مشتریانشان عرضه می‌کنند تا جایی که اینترنت موبایلی برخی کشور‌ها , اینترنت رویایی کاربران ایرانیست‌. برای نمونه به <a href="http://1pezeshk.com/archives/2010/03/htc-evo-4g.html" target="_blank">این مطلب</a> از وبلاگ دکتر مجیدی رجوع کنید و خبر ارائه اینترنت تا سقف 20 مگابایت بر ثانیه را توسط شرکت اسپرینت بخوانید‌. حال این خدمات را با خدمات ارائه شده توسط اپراتور‌هاب داخلی مقایسه کنید‌.</p>
-<p>تفاوت اینترنت ایران با دیگر کشور‌ها به همین‌جا ختم نمی‌شود , به طوری که کاربر پس از پرداخت این‌چنین مبلغی باز هم با انواع و اقسام سانسور‌های داخلی و خارحی روبروست‌. سانسوری که دیگر هیچ هدف معقولی برایش پیدا نیست و از همه نوع سایت و وبلاگی را در بر می‌گیرد‌. البته ممکن است در آینده‌ای نزدیک از دست سانسور کشور‌های خارجی رهایی یابیم‌, ولی سانسور داخلی اجتناب ناپذیر است‌.</p>
-<p>این چنین کیفیت پایینی دامن‌گیر بسیاری از ایرانیان می‌شود و مهم‌ترین عامل نابود شونده در این بین زمان کاربران است‌. همانطور که در سال گذشته شاهد قطعی‌های کامل شبکه‌ی اینترنت کشور با دلایل واهی و غیر قابل باور بودیم. در واقع ترس از اینترنت مسئولین ایران دست کاربران را روز به روز از علوم و ابزار جدید کوتاه‌تر می‌کند و مشکلات اجتناب ناپذیری برای کشورمان به ارمغان می‌آورد‌.</p>
-<p><strong>پی‌نوشت‌:</strong> ممنون از دوست عزیزم محسن که این نکته را تذکر دادند‌. kb در واقع کیلوبیت است که مقدارش 0.125 کیلوبایت kB یا همان یک هشتم است‌ (<a href="http://www.google.com/search?hl=fa&amp;client=firefox-a&amp;hs=EUQ&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=convert+kb+to+KB&amp;btnG=%D8%A8%D9%8A%D8%A7%D8%A8&amp;lr=" target="_blank">+</a>).</p>
-<!--more-->
-
-<p style="text-align:center;"><span style="color:#4173b3;"><strong>با افزودن آدرس زیر به فید‌خوانتان از جدید‌ترین مطالب شاهینیسم بهره‌مند شوید‌.</strong></span></p>
-
-<p style="text-align:center;"><a href="http://feeds.feedburner.com/Shahinism">http://feeds.feedburner.com/Shahinism</a></p>
-
-<p></p>
+          <div class="p-summary entry-summary">
+            <div>
+<p>نظر من درباره ی این کار ایشون اینه که واقعا لازمه که اینجور پاک سازی ها تو وبلاگ ها مخصوصا فارسیش انجام بشه . حالااین که ایشون میگه خیلی ها خودشون رو میگیرن راست میگه اما وقتی تو جامعه ای به اصطلاح وبلاگ نویسیمون یه همچین مشکلاتی داریم این اعتماد کاربران اینترنت ماست که به وبلاگهای فارسی کم میشه . برای نمونه سردمداران بلاگفا بر می گردن میگن که بلاگفا برای مثال ۵۰۰ هزار وبلاگ تو بلاگفا ثبت شده اما خدا شاهده خود من وقتی میام برای مطلبی تو گوگل سرچ می کنم خیلی کم پیش بیاد لینک های مربوط به وبلاگهای بلاگفا رو باز کنم . حالا بگذریم از اینا و برگردیم سر موضوع بحث آقا عرفان :</p>
+<p>آقا این عرفان بنده ی خدا راست میگه دیگه اصلا صبر کنین قبل از همه بگم من به جهنم فکر کنین اصلا این صفحه وبلاگ نیست ولی کلا چرا بعضی وبلاگ ها هستند وقتی یک بلاگر دیگه ازشون چیزی می خواد با کلی ناز و اشوه جوابش رو میدن واقعا عرفان راست میگه اینا به چی شون می نازن اصلا این کلام دین ماست که تنها رمز پیروزی هم فکری است . حالا مثلا چی بشه که اصلا به وبلاگهای دیگه نگاه نمی کنین . اما باید این رو اضافه کنم که تو همین بلاگستان فارسی ما وبلاگ های فوق العاده خوبی هم داریم که نه تنها به وبلاگهای دیگه برای انتشار مطالب کمک می کنن اما وبلاگهای موفقی هستند . الان دیگه فکر کنم کمتر کاربر اینترنتی باشه که وبلاگ های فارسی رو بخونه ولی وبلاگ <a href="http://asroone.net/" target="_blank">عصرونه</a> رو نشناسه . این وبلاگ مطعلق به نوید کاشانی هست همونطور که اگه مطالبش رو دنبال کرده باشین در یک سری از پست های خودش به نمایش سر تیتر مجالب وبلاگ ها می پردازه که به نظر من این خودش باعث تشویق وبلاگ نویسها میشه . همینطور <a href="http://mhmazidi.wordpress.com/" target="_blank">وبلاگ پزشکی دیگر</a> از دکتر مزیدی هم در مطالب خودش به معرفی وبلاگهای فارسی و همچنین معرفی نقاط قوت و ضعف اونا می پردازه . همونطور که همتون میبینین این دو وبلاگ از برترین نمونه های وبلاگ های فارسی هستند و علاوه بر این که جایگاه خودشون رو تو وبلاگ نویسها دارن ولی در هر موضوعی که بتونن سعی می کنن به بلاگر ها کمک کنن . خداییش تا حالا نشده که من درباره ی موضوعی از نوید کمک بخوام و ایشون بهم کمک نکنه و یا بخواد کلاس بزاره .</p>
+<p>حالا اینجور که معلومه قراره یک سری جنبش های همبستگی بین بلاگرها در زمینه ی IT انجام بشه تا وبلاگ نویسها بتونن بیشتر با هم دیگه آشنا بشن و برای بهتر شدن کیفیت ولاگ ها از استانداردهایی درست و اساسی پیروی کنن .</p>
 </div>
-    </div>
+            </div>
 
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/yrn-pysh-bh-swy-sr-hjr-dwrn-rtbt/#disqus_thread" data-disqus-identifier="cache/posts/wp/yrn-pysh-bh-swy-sr-hjr-dwrn-rtbt.html">Comments</a>
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/itblogs/#disqus_thread" data-disqus-identifier="cache/posts/wp/itblogs.html">Comments</a>
 
 
-    </div>
+            </div>
+            <div class="clear"></div>
 
-    </article><article class="h-entry post-text"><div class="text-center">
-
-        <h1 class="p-name entry-title"><a href="posts/wp/rwytrz-byd-z-blgstn-frsy-dhrkhwh/" class="u-url">رویترز باید از بلاگستان فارسی عذرخواهی کند</a></h1>
-            شاهین
-      <a href="posts/wp/rwytrz-byd-z-blgstn-frsy-dhrkhwh/" rel="bookmark"><time class="published dt-published" datetime="2009-10-19T02:13:35+03:30" title="2009-10-19 02:13">2009-10-19 02:13</time></a>
-    </div>
-    <div class="e-content entry-content">
-    <div>
-<p style="text-align:justify;" dir="rtl">با سلام!</p>
-
-<p style="text-align:justify;" dir="rtl">شنیدن <a title="جایزه «محمد امین» برای وبلاگ‌نویسان ایرانی" href="http://zamaaneh.com/news/2009/10/post_10835.html" target="_blank">خبر</a> اهدای جایزه محمد امین به وبلاگ نویسان ایرانی، به خاطر «تعهد، شجاعت و فداکاری آن‌ها تحت شرایط جان‌فرسا و فشارهای فوق‌العاده در حین پوشش دادن اخبار انتخابات ریاست‌جمهوری» به اندازه‌ی تلخیِ اهدای این جایزه به سرکار خانم دلبر توکلی، به عنوان نماینده وبلاگ نویسان، مسرّت بخش بود!</p>
-
-<p style="text-align:justify;" dir="rtl">شکی نیست بلاگ نویسانی که در طول دوره سانسور شدید رسانه‌ها، زندگی‌شان را برای خبررسانی از وضعیت ملتهب ایران، قمار می‌کردند، شایسته دریافت این جایزه هستند، اما باید از خود پرسید که آیا بلاگ‌نویسی که حتی در این دوره، وبلاگش با موضوعات دیگر هم به روز نشده، می‌تواند شایسته نمایندگی از این قشر، جهت دریافت نشان شجاعت باشد؟!</p>
-
-<p style="text-align:justify;" dir="rtl">مگر نبودند بلاگ‌نویسانی همچون <a title="برساحل سلامت" href="http://smto.ir/" target="_blank">سمیه توحیدلو</a>، <a title="وحید آنلاین" href="http://vahid-online.net/" target="_blank">وحید آنلاین</a>، <a title="دفتر بی مخاطب" href="http://hanif.ir/" target="_blank">حنیف مزروعی</a>، <a title="جمهور" href="http://jomhouri.info/" target="_blank">مهدی محسنی</a> و… که در این راه دربند شده اند و در به در گردیده‌اند؟! آیا اهدای این جایزه، به نویسنده وبلاگ “<a title="خانه دلبر" href="http://mdhf49.persianblog.ir/" target="_blank">خانه دلبر</a>” – که به صراحت می‌توان گفت اکثریت قاطع بلاگ‌نویسان و بلاگ‌خوانان فارسی، وی را تا این زمان نمی‌شناختند! – نوعی کم ارزش جلوه دادن تلاش این عزیزان نیست؟! آیا بهتر نبود، که اصلاً این جایزه به شخص خاصی اهدا نمی‌شد تا اینکه به دم دست‌ترین فرد تعلق گیرد؟!</p>
-
-<p style="text-align:justify;" dir="rtl">انتظار جامعه بلاگ نویسان ایرانی، از رویترز بیش از این‌ها بود! حداقلش اینکه وبلاگِ شخصی را که به عنوان نماینده بلاگستان، معرفی کرده‌اید از نظر می‌گذراندید!</p>
-
-<p style="text-align:justify;" dir="rtl">حقیر و بسیاری دیگر از بلاگ‌نویسان ایرانی، خواستار شنیدن عذرخواهی رسمی رویترز به دلیلِ خبط پیش آمده هستیم.</p>
-
-<p style="text-align:justify;" dir="rtl"><strong>پی‌نوشت : با تشکر فراوان از <a href="http://www.blognevesht.com/">صادق جم</a> برای تنظیم این نامه‌، برای دیدن لیست کامل امضا کنندگان این نامه<a href="http://www.blognevesht.com/1388/07/27/reuters-should-apology-from-iranian-bloggers" target="_blank"> اینجا</a> را ببینید‌.</strong></p>
-
-<p></p>
+      </article>
 </div>
-    </div>
-
-    <div class="text-center">
-                    <a class="btn btn-success" href="posts/wp/rwytrz-byd-z-blgstn-frsy-dhrkhwh/#disqus_thread" data-disqus-identifier="cache/posts/wp/rwytrz-byd-z-blgstn-frsy-dhrkhwh.html">Comments</a>
-
-
-    </div>
-
-    </article>
-</div>
-        <nav class="postindexpager"><ul class="pager">
+              <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index-12.html" rel="prev">Newer posts</a>
+                <a href="index-12.html" rel="prev">ارسال‌های جدید‌تر</a>
             </li>
             <li class="next">
-                <a href="index-10.html" rel="next">Older posts</a>
+                <a href="index-10.html" rel="next">پست‌های قدیمی‌تر</a>
             </li>
         </ul></nav><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
@@ -404,8 +206,8 @@ EndSection
   <footer id="footer" class="site-footer">
     Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
-  </footer><script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
+  </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
     fancydates(0, "YYYY-MM-DD HH:mm");
   </script><!-- end fancy dates -->
 </body>

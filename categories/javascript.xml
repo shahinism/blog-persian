@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهین (javascript)</title><link>https://5hah.in/</link><description></description><atom:link type="application/rss+xml" rel="self" href="https://5hah.in/categories/javascript.xml"></atom:link><language>en</language><lastBuildDate>Sun, 07 Aug 2016 09:02:05 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>خوبی‌های جاوا اسکریپت؟</title><link>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهین (javascript)</title><link>https://5hah.in/</link><description></description><atom:link rel="self" href="https://5hah.in/categories/javascript.xml" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Wed, 10 Aug 2016 14:23:23 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>خوبی‌های جاوا اسکریپت؟</title><link>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
 این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
 بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
 باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
@@ -9,48 +9,13 @@
 اسم داگلاس کراکفورد (&lt;a class="reference external" href="http://www.crockford.com/"&gt;Douglas Crockford&lt;/a&gt;) به گوشتان نخورده باشد.&lt;/p&gt;
 &lt;p&gt;عمدهٔ معروفیت ایشان هم پی کتابی به اسم Javascript the Good Parts شکل گرفته که شاید
 برای خیلی‌ها یک جک به نظر برسد. چطور؟&lt;/p&gt;
-&lt;p&gt;خوب بگذارید این‌طور شروع کنم‌: آشنایی من با جاوااسکریپت به کتاب &lt;a class="reference external" href="http://eloquentjavascript.net/"&gt;Eloquent
-Javascript&lt;/a&gt; بر می‌گردد. و شاید یک آشنایی جزئی با &lt;a class="reference external" href="https://nodejs.org/"&gt;Nodejs&lt;/a&gt; را بتوان چاشنی
-تجربه‌ام با این زبان دانست. حقیقت امر این است که از این زبان عمرا لذت نمی‌بردم. چه
-می‌دانم شاید اکثریتش بابت معلوم نبودن ریشهٔ درست و حسابی‌اش مثل زبان‌های دیگر
-باشد. شاید همین دلیل اولش باعث شده باشد که بتوان داخل اینترنت هزار و یک گزینهٔ
-چرند را به عنوان Best practices این زبان پیدا کرد که متاسفانه در خیلی از کد‌های
-منتشر شده به این زبان مورد استفاده قرار گرفته‌اند. شاید ساده‌ترین نمونهٔ این‌ها را
-بتوان استفاده نکردن از سمی کولون «;» برای پایان دادن به statement‌ها دانست.&lt;/p&gt;
-&lt;p&gt;دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
-می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
-است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:&lt;/p&gt;
-&lt;pre class="code javascript"&gt;&lt;a name="rest_code_63b1df55964145c8b51776697059914a-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;return&lt;/span&gt;
-&lt;a name="rest_code_63b1df55964145c8b51776697059914a-2"&gt;&lt;/a&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_63b1df55964145c8b51776697059914a-3"&gt;&lt;/a&gt;    &lt;span class="nx"&gt;done&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
-&lt;a name="rest_code_63b1df55964145c8b51776697059914a-4"&gt;&lt;/a&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
-می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم &lt;a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook"&gt;این ارائهٔ&lt;/a&gt; آقای
-کراکفورد را از دست ندهید.&lt;/p&gt;
-&lt;p&gt;نکتهٔ کلی در مورد این زبان این است که نقص‌های طراحی فراوان و به صورت بحرانی
-مشکل‌زایی را می‌توان در آن یافت. همین‌طور نبود منابع یک‌پارچه با وجود پیاده‌سازی‌های
-متنوع (که به قول خود کراکفورد‌، تنها مشکلات طراحی را کپی کردن) باعث کج‌فهمی
-برنامه‌نویسانی که فکر می‌کنند می‌توانند این زبان را به راحتی یاد بگیرند شده است.
-تمام این‌ها در کنار گستردگی پلتفرمی که تقریبا هیچ زبان دیگری حتی به نزدیکی‌اش هم
-نرسیده است (مرورگرها)، و چه می‌دانم شاید امکاناتی که Prototype‌ها به برنامه‌نویس
-می‌دهند‌، آن‌چنان نقش تیغ دو لبه را برای برنامه‌نویسان زیبا ایفا می‌کند که نه می‌توان
-به کلی از خیرش گذشت (و به قول کراکفورد یادش نگرفت تا موقعی که بهش نیاز داریم) نه
-این که بتوان به عنوان یک غول همه چیز تمام برای هر مساله‌ای (سیستم‌عامل NodeJsای رو
-که یادتون می‌آد؟) به آن نگاه کرد (دارم به پایتون فکر می‌کنم، ولی اون هم نمی‌تونه
-جاهایی که جاوااسکریپت خوب عمل می‌کنه‌، خودی نشون بده).&lt;/p&gt;
-&lt;a class="reference external image-reference" href="https://xkcd.com/1508/"&gt;&lt;img alt="XKCD operation systems" src="https://imgs.xkcd.com/comics/operating_systems.png"&gt;&lt;/a&gt;
-&lt;p&gt;در پایان این ارائه کسی از کراکفورد نظرش را در مورد HTML5 می‌پرسد و حقیقتش یک
-جورهایی حرف دلم را می‌زند. تا قبل از HTML5 و یا CSS3 تکلیفمان روشن بود. ساختار را
-با HTML و آن DOM چلاغش نشان می‌دادیم. رنگ و لعاب را با CSS می‌گفتیم و هر جینگولک
-دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
-کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
-مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:&lt;/p&gt;
-&lt;pre class="code text"&gt;&lt;a name="rest_code_221713cda21f43dd986206faf1dc073e-1"&gt;&lt;/a&gt;It's easy to make things bigger, it's harder to make things better.
-&lt;/pre&gt;&lt;p&gt;قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
-نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
-که Nodejs می‌تواند بکند بی‌خبرم. هدفم از نوشتن این مطلب برایم حکم ثبت استارت یک
-تجربه جدید را دارد. احتمالا در آینده بیشتر در مورد کلنجارهایم با جاوااسکریپت
-خواهم نوشت. هر چند بعید می‌دانم به این زودی‌ها دوستش داشته باشم :)&lt;/p&gt;&lt;/div&gt;</description><category>Html5</category><category>javascript</category><guid>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</guid><pubDate>Wed, 08 Jul 2015 11:25:01 GMT</pubDate></item><item><title>کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose</title><link>https://5hah.in/posts/mary-live-codes-a-javascript-game-from-scratch/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;نمی‌دونم چقدر با جاوااسکریپت آشنایی دارین، ولی جدا زبان فوق‌العاده‌ایه. خصوصا این که پلتفرم جذابی داره‌، اصلا نیاز نیست چیزی کامپایل شه یا برنامه خاصی نصب شه‌، یه مرورگر و تموم، دیگه شمایید و خلاقیتتون. گاها آدم یه چیزایی می‌بینه که بدجوری سر شوق می‌آد (هوم‌! البته این شوق هزار جور می‌شه تفسیر شه‌، حتی از نوع … بی‌خیال!). این ویدئو یکی از اون ویدوئوهای Motivational واقعیه. Mary Rose توی یه کنفرانس و در حدود ۳۰ دقیقه‌، یه بازی جذاب جاوااسکریپتی رو بدون هیچ &lt;span class="strike"&gt;فرم‌ویری‌ای&lt;/span&gt; فریم‌ورکی برنامه‌نویسی می‌کنه.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/"&gt;بیشتر بخوانید…&lt;/a&gt; (3 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>Html5</category><category>javascript</category><guid>https://5hah.in/posts/douglas-crockford-javascript-the-good-parts/</guid><pubDate>Wed, 08 Jul 2015 11:25:01 GMT</pubDate></item><item><title>کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose</title><link>https://5hah.in/posts/mary-live-codes-a-javascript-game-from-scratch/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;نمی‌دونم چقدر با جاوااسکریپت آشنایی دارین، ولی جدا زبان فوق‌العاده‌ایه. خصوصا این
+که پلتفرم جذابی داره‌، اصلا نیاز نیست چیزی کامپایل شه یا برنامه خاصی نصب شه‌، یه
+مرورگر و تموم، دیگه شمایید و خلاقیتتون. گاها آدم یه چیزایی می‌بینه که بدجوری سر
+شوق می‌آد (هوم‌! البته این شوق هزار جور می‌شه تفسیر شه‌، حتی از نوع … بی‌خیال!). این
+ویدئو یکی از اون ویدوئوهای Motivational واقعیه. Mary Rose توی یه کنفرانس و در
+حدود ۳۰ دقیقه‌، یه بازی جذاب جاوااسکریپتی رو بدون هیچ &lt;span class="strike"&gt;فرم‌ویری‌ای&lt;/span&gt;
+فریم‌ورکی برنامه‌نویسی می‌کنه.&lt;/p&gt;
 &lt;div class="vimeo-video"&gt;
 &lt;iframe src="https://player.vimeo.com/video/105955605" width="1280" height="720" frameborder="0" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowFullScreen"&gt;
 &lt;/iframe&gt;
