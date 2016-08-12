@@ -7886,10 +7886,6 @@ a:hover {
   margin: 20px 10px;
 }
 
-.code {
-  direction: ltr;
-}
-
 div.col-centered {
   margin: 0 auto;
   float: none;
@@ -7936,7 +7932,7 @@ div#headerbox {
   border-radius: 5px 5px 0 0;
 }
 
-article .terminal, div#headerbox {
+pre, article .terminal, div#headerbox {
   border-width: 1px 1px 0;
   border-color: #e8e8e8;
   border-style: solid;
@@ -7945,12 +7941,12 @@ article .terminal, div#headerbox {
   color: #BCC2CD;
 }
 
-article .terminal {
+article .terminal, pre {
   border-width: 1px 0;
   margin: 0 -20px;
 }
 
-.terminal {
+.terminal, pre {
   direction: ltr;
   font-family: monospace;
   font-size: 11px;
