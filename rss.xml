@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>شاهین</title><link>https://5hah.in/</link><description>Sometimes you gotta run before you can walk</description><atom:link rel="self" href="https://5hah.in/rss.xml" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Wed, 10 Aug 2016 14:23:22 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ورژن کنترل اختیاری نیست!</title><link>https://5hah.in/posts/version-control-is-not-optional/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>وبلاگ شاهین</title><link>https://5hah.in/</link><description>چهاردیواری شخصی یک برنامه‌نویس که در آن یاد می‌گیرد‌، به اشتراک می‌گذارد و گاها غرغر می‌کند!</description><atom:link href="https://5hah.in/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>fa</language><lastBuildDate>Sat, 15 Oct 2016 19:24:10 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>معجون بهشتی Selenium, PhantomJS و Requests برای web scraping</title><link>https://5hah.in/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی برگ برندهٔ کاربران،
+توسعه‌دهندگان و یا حتی تیم‌های فعال در حوزهٔ نرم‌افزار محسوب می‌شود. از پتانسیل بالای
+درآمد‌زایی‌اش در بعضی شرایط اگر بگذریم‌، کاهش زمان مورد نیاز انجام کار‌ها به میزان
+زیاد و قابلیت اطمینان بسیار بیشتر نسبت به شرایطی که نیروی انسانی وظیفهٔ به پایان
+رساندن کار را بر عهده دارد‌، از جمله دلایلی است که می‌تواند زمان و هزینهٔ مورد نیاز
+جهت خودکار کردن اکثر کار‌ها را به راحتی توجیح کند.&lt;/p&gt;
+&lt;p&gt;یکی از زمینه‌های هدف همچین فرآیند‌هایی می‌تواند سرویس‌های تحت وب باشند. روند‌هایی
+تکراری که لازم است در زمان مشخص و با دقت کافی انجام گیرد. مثال‌های زیادی از این
+دست می‌توان نام برد. مثلا‌، انتخاب واحد دانشگاه‌ها… که حقیقتش الان مطمئن نیستم که
+چقدر بهتر شده‌، ولی زمانی که من دانشجو بودم‌، از زمان اعلامی شروع انتخاب واحد‌، اگر
+موفق می‌شدیم طی پنج دقیقهٔ اول انتخاب‌هایمان را انجام دهیم که هیچ‌، و اگرنه‌، همین
+انتخاب واحد ساده (وارد کردن چند کد واحد درسی و زدن کلید ثبت) می‌توانست ساعت‌ها
+وقت‌مان را تلف کند. یا به عنوان مثالی دیگر از این دست می‌توان به روند خرید سهام‌ها
+از روی درگاه‌های کارگزاری‌ها اشاره کرد. عموما در شرایط حساس‌، جدای از سرعت اینترنت
+کافی (اصلا اگر بتوانید)، سرمایه و سیاست لازم جهت انتخاب و خرید سهم مورد نظر‌،
+گاها به یک سرعت عمل خارق‌العاده نیاز دارید که تا به خود بجنبید‌، از قافله عقب
+نمانده باشید. ناسلامتی چنین شرایطی از مزایای ایرانی بودن‌مان است.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://5hah.in/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/"&gt;بیشتر بخوانید…&lt;/a&gt; (6 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>phantomjs</category><category>python</category><category>requests</category><category>selenium</category><category>web scrapping</category><guid>https://5hah.in/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/</guid><pubDate>Sat, 15 Oct 2016 16:33:06 GMT</pubDate></item><item><title>ورژن کنترل اختیاری نیست!</title><link>https://5hah.in/posts/version-control-is-not-optional/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم
 که ورژن کنترل یک جورهایی جزء غرایض جامعه‌ی نرم‌افزاری است‌، آن هم با درجه‌ی اهمیتی
 مثل نفس کشیدن. دوستی دارم که حدوداً دو سال پیش روی دیوار فیس‌بوک‌اش از پاک شدن
 اتفاقی فایل‌های یکی از پروژه‌هایش شکایت کرده بود‌، که وا مصیبتا‌، مسلمانان چه
@@ -94,9 +111,4 @@
 &lt;p&gt;یکم مهر ماه ۱۳۹۳ آخرین روز خدمت سربازی‌ام بود. &lt;a class="reference external" href="http://5hah.in/posts/shahin-in-military-service.html"&gt;قبلا&lt;/a&gt; در مورد تمام
 خوش‌گذرانی‌هایی که در این دوران داشته‌ام نوشته‌ام‌، و خوب نالیدن بیشتر‌، تنها اعصاب
 خودم را خورد می‌کند. هر چه بود گذشت‌، تمام شد، دست خودم هم نبود انتخابش‌! باید
-می‌بود‌، باید اتفاق می‌افتاد! همین…&lt;/p&gt;&lt;/div&gt;</description><category>سربازی</category><guid>https://5hah.in/posts/end-of-military-service/</guid><pubDate>Fri, 26 Sep 2014 07:40:27 GMT</pubDate></item><item><title>رونمایی از سرویس ایمیل «ضد NSA» توسط دانش‌آموزان ام‌آی‌تی و هاروارد</title><link>https://5hah.in/posts/harvard-and-mit-students-launch-nsa-proof-email-service/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;بحث ایمیل امن و کل امنیت اینترنت بعد از انتشار اخبار جاسوسی‌های آمریکا (که بماند
-چون تنها کشوریست که مدرک مستدل بر علیهش وجود دارد‌، اسمش این‌طور دارد توی چشم فرو
-می‌رود‌، وگرنه که جاسوس‌ها از رگ گردن هم به ما نزدیک‌ترند) برای فعالان حرفه‌ای وب‌،
-نکتهٔ قابل توجهی است. حالا تعدادی از دانش‌آموزان دو دانشگاه هاروارد و ام‌آی‌تی
-ایمیلی را معرفی کرده‌اند که ادعا می‌کنند ایمیلی امن در برابر جاسوسی‌های NSA است.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://5hah.in/posts/harvard-and-mit-students-launch-nsa-proof-email-service/"&gt;بیشتر بخوانید…&lt;/a&gt; (2 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>Edward Snowden</category><category>Harvard</category><category>MIT</category><category>Protonmail</category><guid>https://5hah.in/posts/harvard-and-mit-students-launch-nsa-proof-email-service/</guid><pubDate>Mon, 19 May 2014 13:32:45 GMT</pubDate></item></channel></rss>
+می‌بود‌، باید اتفاق می‌افتاد! همین…&lt;/p&gt;&lt;/div&gt;</description><category>سربازی</category><guid>https://5hah.in/posts/end-of-military-service/</guid><pubDate>Fri, 26 Sep 2014 07:40:27 GMT</pubDate></item></channel></rss>

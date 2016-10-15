@@ -7942,7 +7942,7 @@ pre, article .terminal, div#headerbox {
 }
 
 pre {
-  color:: #878c94;
+  color: #878c94 !important;
 }
 
 article .terminal, pre {

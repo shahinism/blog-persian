@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selenium, PhantomJS and Requests, a match made in heaven | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://5hah.in",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../version-control-is-not-optional/" title="ورژن کنترل اختیاری نیست!" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="Selenium, PhantomJS and Requests, a match made in heaven">
+<meta property="og:url" content="https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/">
+<meta property="og:description" content="این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-10-15T20:03:06+03:30">
+<meta property="article:tag" content="phantomjs">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="requests">
+<meta property="article:tag" content="selenium">
+<meta property="article:tag" content="web scrapping">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2016-10-15T20:03:06+03:30" title="2016-10-15 20:03">2016-10-15 20:03</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Selenium, PhantomJS and Requests, a match made in heaven</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p>این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی</p>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=Selenium,%20PhantomJS%20and%20Requests,%20a%20match%20made%20in%20heaven%20by%20@shahinism&amp;url=https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+              <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/phantomjs/" rel="tag">phantomjs</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/requests/" rel="tag">requests</a></li>
+            <li><a class="tag p-category" href="../../categories/selenium/" rel="tag">selenium</a></li>
+            <li><a class="tag p-category" href="../../categories/web-scrapping/" rel="tag">web scrapping</a></li>
+        </ul>
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../version-control-is-not-optional/" rel="prev" title="ورژن کنترل اختیاری نیست!">ارسال پیشین</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://5hah.in/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven/",
+        disqus_title="Selenium, PhantomJS and Requests, a match made in heaven",
+        disqus_identifier="cache/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>
