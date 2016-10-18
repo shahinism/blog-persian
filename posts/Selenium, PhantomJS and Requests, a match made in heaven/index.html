@@ -133,7 +133,7 @@ article: http://ogp.me/ns/article#
 گاها به یک سرعت عمل خارق‌العاده نیاز دارید که تا به خود بجنبید‌، از قافله عقب
 نمانده باشید. ناسلامتی چنین شرایطی از مزایای ایرانی بودن‌مان است.</p>
 <!-- TEASER_END -->
-<p>البته محدودهٔ مسائل ممکن به چنین مسال‌هایی ختم نمی‌شود. پیشنهاد می‌کنم ویدئوی زیر را
+<p>البته محدودهٔ مسائل ممکن به چنین مثال‌هایی ختم نمی‌شود. پیشنهاد می‌کنم ویدئوی زیر را
 در این زمینه از دست ندهید:</p>
 <div class="youtube-video">
 <iframe width="425" height="344" src="https://www.youtube.com/embed/qcTVW95QWyg?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
@@ -182,17 +182,17 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 <div class="section" id="id1">
 <h2>شروع فرآیند</h2>
 <p>در ادامه به تعریف‌های زیر نیاز خواهیم داشت:</p>
-<pre class="code python"><a name="rest_code_41676202af314c8c8b815bc6a748ea03-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-2"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-3"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-4"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-5"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-6"></a><span class="kn">from</span> <span class="nn">selenium.common.exceptions</span> <span class="kn">import</span> <span class="n">TimeoutException</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-7"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-8"></a>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-9"></a><span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-10"></a><span class="n">display</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_41676202af314c8c8b815bc6a748ea03-11"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">PhantomJS</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_578c07db34984332a904d5ee2f91afd5-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-3"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-4"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-5"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-6"></a><span class="kn">from</span> <span class="nn">selenium.common.exceptions</span> <span class="kn">import</span> <span class="n">TimeoutException</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-7"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-8"></a>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-9"></a><span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-10"></a><span class="n">display</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_578c07db34984332a904d5ee2f91afd5-11"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">PhantomJS</span><span class="p">()</span>
 </pre>
 <p>ایمپورت‌های انجام شده که طبیعتا ابزار‌های مورد نیاز از کتاب‌خانهٔ Seleniumاند. ولی
 بخش مهم این تکه کد‌، تعریف display و driver است. display توسط pyvirtualdisplay
@@ -202,17 +202,17 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 <div class="section" id="id2">
 <h2>لاگین به حساب کاربری</h2>
 <p>برای این کار کافیست صفحهٔ مورد نظر را باز کنیم:</p>
-<pre class="code python"><a name="rest_code_3cfe17ce49e64b2397c5098c9582146a-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://fly.customer.io'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_c61fe16db1ee4a878dca41b0d3a0817f-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://fly.customer.io'</span><span class="p">)</span>
 </pre>
 <p>فیلد‌های فرم مورد نظر را جهت لاگین و دکمهٔ سابمیت را انتخاب کنیم:</p>
-<pre class="code python"><a name="rest_code_25463ad9f07f4d8b893435814f1615a5-1"></a><span class="n">username</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_email"</span><span class="p">)</span>
-<a name="rest_code_25463ad9f07f4d8b893435814f1615a5-2"></a><span class="n">password</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_password"</span><span class="p">)</span>
-<a name="rest_code_25463ad9f07f4d8b893435814f1615a5-3"></a><span class="n">submit</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s2">"//input[@name='commit']"</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_88af5c25b16a40c1b44c2c565764c91c-1"></a><span class="n">username</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_email"</span><span class="p">)</span>
+<a name="rest_code_88af5c25b16a40c1b44c2c565764c91c-2"></a><span class="n">password</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_password"</span><span class="p">)</span>
+<a name="rest_code_88af5c25b16a40c1b44c2c565764c91c-3"></a><span class="n">submit</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s2">"//input[@name='commit']"</span><span class="p">)</span>
 </pre>
 <p>و نهایتا فیلد‌ها را تکمیل و روی سابمیت کلیک کنیم:</p>
-<pre class="code python"><a name="rest_code_ca62b6156109415e8ff1ff5f038f9693-1"></a><span class="n">username</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"shahinism"</span><span class="p">)</span>
-<a name="rest_code_ca62b6156109415e8ff1ff5f038f9693-2"></a><span class="n">password</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"mypassword"</span><span class="p">)</span>
-<a name="rest_code_ca62b6156109415e8ff1ff5f038f9693-3"></a><span class="n">submit</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_1648e3f9bf484c86822396ff4b064cbe-1"></a><span class="n">username</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"shahinism"</span><span class="p">)</span>
+<a name="rest_code_1648e3f9bf484c86822396ff4b064cbe-2"></a><span class="n">password</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"mypassword"</span><span class="p">)</span>
+<a name="rest_code_1648e3f9bf484c86822396ff4b064cbe-3"></a><span class="n">submit</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 </pre>
 <p>احتمالا اگر قدری HTML و پایتون بدانید‌، دستورات به قدر کافی گویا هستند. اگر هم که
 نه می‌توانید به <a class="reference external" href="../Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/selenium-python.readthedocs.io">مستندات کتابخانه پایتون Selenium</a> مراجعه کنید.</p>
@@ -221,8 +221,8 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 <h2>رفتن به صفحهٔ اطلاعات کاربر</h2>
 <p>این صفحه بسته به حساب کاربری‌، URL متفاوتی دارد و به همین دلیل نمی‌توان از
 <tt class="docutils literal">driver.get</tt> استفاده کرد. در عوض باید دنبال لینک حاوی آن بگردیم و رویش کلیک کنیم:</p>
-<pre class="code python"><a name="rest_code_0cdb383230ff402da990495166e643c0-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">)</span>
-<a name="rest_code_0cdb383230ff402da990495166e643c0-2"></a><span class="n">people</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_43b6161c5cc4438d8b9730de4f6c2781-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">)</span>
+<a name="rest_code_43b6161c5cc4438d8b9730de4f6c2781-2"></a><span class="n">people</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 </pre>
 <p>شبیه به مراحل قبل. اما این کد در اکثر مواقع به درستی کار نخواهد کرد. آن هم به
 دلیل این که به خاطر سرعت زیاد پردازش این خطوط‌، قبل از این که المنت با شناسه آیدی
@@ -235,14 +235,14 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 <p>مشکل این‌جاست که رابط کاربری کاستومر‌، با <a class="reference external" href="http://emberjs.com/">Ember</a> نوشته شده‌، و المنت مورد نظر ما
 بعد از لود صفحه به آن اضافه می‌شوند (دقیقا داخل همان <tt class="docutils literal">document.ready</tt>). این است
 که ما باید منتظر اضافه شدن این المنت بمانیم. ولی چطور؟</p>
-<pre class="code python"><a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-1"></a><span class="k">def</span> <span class="nf">wait_and_get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-2"></a>    <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-3"></a>        <span class="n">element_present</span> <span class="o">=</span> <span class="n">EC</span><span class="o">.</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">))</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-4"></a>        <span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">element_present</span><span class="p">)</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-5"></a>    <span class="k">except</span> <span class="n">TimeoutException</span><span class="p">:</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Loading took too much time!"</span><span class="p">)</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-7"></a>        <span class="n">close_browser</span><span class="p">()</span>
-<a name="rest_code_14acc7f92a3c4b2e9ac2fea6efc9320d-8"></a>    <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-1"></a><span class="k">def</span> <span class="nf">wait_and_get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-2"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-3"></a>        <span class="n">element_present</span> <span class="o">=</span> <span class="n">EC</span><span class="o">.</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">))</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-4"></a>        <span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">element_present</span><span class="p">)</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-5"></a>    <span class="k">except</span> <span class="n">TimeoutException</span><span class="p">:</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Loading took too much time!"</span><span class="p">)</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-7"></a>        <span class="n">close_browser</span><span class="p">()</span>
+<a name="rest_code_a562ba7bc1ee4df9b76f25c9c0a9e344-8"></a>    <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
 </pre>
 <p>در تابع فوق‌، سعی می‌کنیم از درایور بخواهیم به مدت ۵ ثانیه در انتظار اضافه شدن این
 المنت بماند و اگر اضافه شد آن را به ما برگرداند و در غیر این صورت‌، خارج شود. (آن
@@ -250,7 +250,7 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 <p>مقدار query در این تابع یک سلکتور متنی است که by مشخص می‌کند که از چه نوعی است.
 مثلا در مثال فوق‌، ما می‌خواهیم منتظر المنتی با شناسه آیدی‌، <tt class="docutils literal"><span class="pre">people-nav-link</span></tt> بمانیم‌،
 پس مقدار query می‌شود <tt class="docutils literal"><span class="pre">people-nav-link</span></tt> و مقدار by می‌شود‌، <tt class="docutils literal">By.ID</tt>:</p>
-<pre class="code python"><a name="rest_code_c1d4767f55004fed89fd0375b913fd0a-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_ac1e0c80b6574d05a578cd42126ba165-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="export-to-csv">
@@ -259,15 +259,15 @@ post request بود. در این شرایط دو راه داشتید‌، یا �
 استفاده کرد و از قرار همان شناسه‌های موجود هم بسته به ساختار صفحه عوض می‌شوند. ولی
 خوب یک چیز ثابت در همهٔ شرایط وجود دارد. و آن این که اسم این دکمه همیشه Export to
 CSV است. پس می‌توان به همین صورت هم انتخابش کرد:</p>
-<pre class="code python"><a name="rest_code_8106c5d269314b45baa0d8ef9f6b156f-1"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Requesting new export..."</span><span class="p">)</span>
-<a name="rest_code_8106c5d269314b45baa0d8ef9f6b156f-2"></a><span class="n">export</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'//button[text()="Export to CSV"]'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">)</span>
-<a name="rest_code_8106c5d269314b45baa0d8ef9f6b156f-3"></a><span class="n">export</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_f6ea782286a244daa030495671c24075-1"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Requesting new export..."</span><span class="p">)</span>
+<a name="rest_code_f6ea782286a244daa030495671c24075-2"></a><span class="n">export</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'//button[text()="Export to CSV"]'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">)</span>
+<a name="rest_code_f6ea782286a244daa030495671c24075-3"></a><span class="n">export</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
 </pre>
 </div>
 <div class="section" id="id4">
 <h2>رفتن به صفحهٔ پشتیبان‌های موجود</h2>
 <p>این تغییر صفحه برخلاف قبلی خیلی آسان است:</p>
-<pre class="code python"><a name="rest_code_5c6eec8272c74248962411dea63dca9c-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://fly.customer.io/account/exports"</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_39e9aa4e16174997b603278fca9c4e76-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://fly.customer.io/account/exports"</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="id5">
@@ -275,10 +275,10 @@ CSV است. پس می‌توان به همین صورت هم انتخابش کر
 <p>این روند به این صورت است که پس از درخواست‌، چند ثانیه‌ای طول می‌کشد تا پشتیبان حاضر
 شود و این چند ثانیه با نمایش متن Processing به جای دکمهٔ دانلود مشخص می‌شود.
 احتمالا راه‌های متفاوتی برای این کار وجود دارد‌، ولی من ساده‌ترینش به نظر خودم را انتخاب کردم:</p>
-<pre class="code python"><a name="rest_code_8d9a4756226246dd9bd0770ff17bcfd6-1"></a><span class="k">while</span> <span class="s1">'Processing'</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span><span class="p">:</span>
-<a name="rest_code_8d9a4756226246dd9bd0770ff17bcfd6-2"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"Processing..."</span><span class="p">)</span>
-<a name="rest_code_8d9a4756226246dd9bd0770ff17bcfd6-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_8d9a4756226246dd9bd0770ff17bcfd6-4"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_79cd42e9297149a694b26618c0fd8bcd-1"></a><span class="k">while</span> <span class="s1">'Processing'</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span><span class="p">:</span>
+<a name="rest_code_79cd42e9297149a694b26618c0fd8bcd-2"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"Processing..."</span><span class="p">)</span>
+<a name="rest_code_79cd42e9297149a694b26618c0fd8bcd-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_79cd42e9297149a694b26618c0fd8bcd-4"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
 </pre>
 <p>خیلی ساده به درایور می‌گویم تا زمانی که عبارت Processing در صفحه وجود دارد‌، ۲ ثانیه
 استراحت کن و بعد صفحه را رفرش کن و آنقدر ادامه بده تا این عبارت حذف شود :)</p>
@@ -286,9 +286,9 @@ CSV است. پس می‌توان به همین صورت هم انتخابش کر
 <div class="section" id="id6">
 <h2>کلیک روی لینک دانلود و دانلود فایل</h2>
 <p>لینک دانلود را به صورت زیر پیدا می‌کنیم:</p>
-<pre class="code python"><a name="rest_code_a33524e024c242d6bab488567d72bbfa-1"></a><span class="n">latest_download</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span>
-<a name="rest_code_a33524e024c242d6bab488567d72bbfa-2"></a>    <span class="s1">'a.fly-btn.fly-btn--sm'</span><span class="p">)</span>
-<a name="rest_code_a33524e024c242d6bab488567d72bbfa-3"></a><span class="n">latest_link</span> <span class="o">=</span> <span class="n">latest_download</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_0420b116387e4a8bac5032dcff6ba2d1-1"></a><span class="n">latest_download</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span>
+<a name="rest_code_0420b116387e4a8bac5032dcff6ba2d1-2"></a>    <span class="s1">'a.fly-btn.fly-btn--sm'</span><span class="p">)</span>
+<a name="rest_code_0420b116387e4a8bac5032dcff6ba2d1-3"></a><span class="n">latest_link</span> <span class="o">=</span> <span class="n">latest_download</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span>
 </pre>
 <p>ولی متاسفانه PhantomJS با همهٔ خوبی‌هایش‌، در حال حاضر امکان دانلود فایل ندارد. و
 خوب راستش را بخواهید وقتی به این‌جای مساله رسیدم‌، دیگر خیلی دیر شده بود :)</p>
@@ -297,24 +297,24 @@ CSV است. پس می‌توان به همین صورت هم انتخابش کر
 پایتونیست‌ها <a class="reference external" href="https://github.com/kennethreitz/requests">Requests</a> وارد می‌شود. requests امکان استفاده از session در هنگام
 ارسال درخواست‌ها را دارد. و درایور هم یک کپی از کوکی‌های مورد نیاز لاگین را در
 اختیار دارد پس:</p>
-<pre class="code python"><a name="rest_code_b652cf699c754fc593250bb857138771-1"></a><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-<a name="rest_code_b652cf699c754fc593250bb857138771-2"></a><span class="n">cookies</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>
-<a name="rest_code_b652cf699c754fc593250bb857138771-3"></a><span class="k">for</span> <span class="n">cookie</span> <span class="ow">in</span> <span class="n">cookies</span><span class="p">:</span>
-<a name="rest_code_b652cf699c754fc593250bb857138771-4"></a>    <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cookie</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="n">cookie</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<pre class="code python"><a name="rest_code_3d71b4b0d9ef4f1fa4103ff58ab47326-1"></a><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<a name="rest_code_3d71b4b0d9ef4f1fa4103ff58ab47326-2"></a><span class="n">cookies</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>
+<a name="rest_code_3d71b4b0d9ef4f1fa4103ff58ab47326-3"></a><span class="k">for</span> <span class="n">cookie</span> <span class="ow">in</span> <span class="n">cookies</span><span class="p">:</span>
+<a name="rest_code_3d71b4b0d9ef4f1fa4103ff58ab47326-4"></a>    <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cookie</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="n">cookie</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
 </pre>
 <p>حالا requests می‌تواند لینک را دانلود کند:</p>
-<pre class="code python"><a name="rest_code_f483522130a54329bd37c74b8b20fcbf-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">latest_link</span><span class="p">)</span>
-<a name="rest_code_f483522130a54329bd37c74b8b20fcbf-2"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">result_file</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">result_file</span><span class="p">:</span>
-<a name="rest_code_f483522130a54329bd37c74b8b20fcbf-3"></a>      <span class="n">result_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<pre class="code python"><a name="rest_code_6de41d722e1b4c5c9520a87ee22ffa77-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">latest_link</span><span class="p">)</span>
+<a name="rest_code_6de41d722e1b4c5c9520a87ee22ffa77-2"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">result_file</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">result_file</span><span class="p">:</span>
+<a name="rest_code_6de41d722e1b4c5c9520a87ee22ffa77-3"></a>      <span class="n">result_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre>
 </div>
 <div class="section" id="id7">
 <h2>بستن مرورگر</h2>
 <p>احتمالا دیدید در موقع ایجاد مشکل‌، تابع <tt class="docutils literal">close_browser</tt> را صدا می‌کردم. دلیلش هم
 این بود که مطمئن شوم فرآیند‌های ایجاد شده PhantomJS و XVFB به درستی بسته می‌شوند.</p>
-<pre class="code python"><a name="rest_code_d0c93347a524452faa34cf9d57e07e8d-1"></a><span class="k">def</span> <span class="nf">close_browser</span><span class="p">():</span>
-<a name="rest_code_d0c93347a524452faa34cf9d57e07e8d-2"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<a name="rest_code_d0c93347a524452faa34cf9d57e07e8d-3"></a>    <span class="n">display</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<pre class="code python"><a name="rest_code_715e6acc5e6f4855b43e1025d046f335-1"></a><span class="k">def</span> <span class="nf">close_browser</span><span class="p">():</span>
+<a name="rest_code_715e6acc5e6f4855b43e1025d046f335-2"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<a name="rest_code_715e6acc5e6f4855b43e1025d046f335-3"></a>    <span class="n">display</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </pre>
 </div>
 <div class="section" id="id8">
@@ -324,7 +324,7 @@ CSV است. پس می‌توان به همین صورت هم انتخابش کر
 منابع اشاره به <a class="reference external" href="http://casperjs.org/">CasperJS</a> کرده بود که این امکان را فراهم می‌کرد. ولی متاسفانه
 ریکوئست به دامنه‌های SSL تایم‌اوت می‌گرفت. و در مورد کاستومر حتی دستور زیر هم
 نتیجه‌ای نداشت:</p>
-<pre class="code sh"><a name="rest_code_6b796db230e847c5b6f591fd82b20666-1"></a>casperjs --ssl-protocol<span class="o">=</span>tlsv1  --ignore-ssl-errors<span class="o">=</span>yes index.js
+<pre class="code sh"><a name="rest_code_39ebd2b1144b459d9072312c2fed86d6-1"></a>casperjs --ssl-protocol<span class="o">=</span>tlsv1  --ignore-ssl-errors<span class="o">=</span>yes index.js
 </pre>
 <p>فعلا برای من این مجموعه‌، در مورد مسائل مشابه‌، انتخاب مناسبی به نظر می‌رسد.</p>
 </div>
