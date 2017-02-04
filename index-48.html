@@ -105,14 +105,14 @@ article: http://ogp.me/ns/article#
 <p>ممکن است مثل امروز من بخواهید یک مقدار عددی را به واحد پولی کشوری و به صورت درست
 در <a class="reference external" href="http://php.net">PHP</a> نمایش بدهید. در این صورت کلاس <a class="reference external" href="http://php.net/manual/en/class.numberformatter.php">NumberFormatter</a> می‌تواند کارتان را راه
 بیاندازد. برای مثال به تکه کد زیر نگاه کنید:</p>
-<pre class="code php"><a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-1"></a><span class="cp">&lt;?php</span>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-3"></a>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-6"></a>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
-<a name="rest_code_d0b5e9a59574439f8c64bd9c19fc7f55-8"></a><span class="cp">?&gt;</span><span class="x"></span>
+<pre class="code php"><a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-1"></a><span class="cp">&lt;?php</span>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-2"></a><span class="nv">$number</span> <span class="o">=</span> <span class="mf">1234.56</span><span class="p">;</span>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-3"></a>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-4"></a><span class="nv">$iran</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NumberFormatter</span><span class="p">(</span><span class="s2">"fa-IR"</span><span class="p">,</span> <span class="nx">NumberFormatter</span><span class="o">::</span><span class="na">CURRENCY</span><span class="p">);</span>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-5"></a><span class="nv">$formatted3</span> <span class="o">=</span> <span class="nv">$iran</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-6"></a>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-7"></a><span class="k">print</span> <span class="s2">"IRAN: "</span><span class="o">.</span><span class="nv">$formatted3</span><span class="o">.</span><span class="s1">'&lt;br&gt;'</span><span class="p">;</span>
+<a name="rest_code_6003ff215c594d9f9d7f53f20af7e9ed-8"></a><span class="cp">?&gt;</span><span class="x"></span>
 </pre>
 <p>خروجی این خطوط به این صورت خواهد بود:</p>
 <p class="more"><a href="posts/how-to-enable-php_intl-extension-and-use-it/">بیشتر بخوانید…</a></p>

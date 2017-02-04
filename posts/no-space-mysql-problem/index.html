@@ -120,38 +120,38 @@ article: http://ogp.me/ns/article#
 به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین
 اخطاری می‌دهد:</p>
 <!-- TEASER_END -->
-<pre class="code bash"><a name="rest_code_682b3107e7574344a9bf2ae8876b7ce2-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_48425f9d197644ed8fded5eafd902757-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا
 خرخره پر شده. یک فایل log که از <a class="reference external" href="http://5hah.in/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و
 دیگر نمی‌تواند نفس بکشد.</p>
-<pre class="code bash"><a name="rest_code_5fd965f9ba4d461693e1626f6e9d5d2b-1"></a>rm -rfv PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_49d6014b743c40edbdc3762047dd89bd-1"></a>rm -rfv PATH_TO_FAT_FILE
 </pre>
 <p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite>
 می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری
 سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده
 حالا؟ Only GOD knows :)</p>
-<pre class="code bash"><a name="rest_code_fd12a014cd0d4c37bd069096e85e830d-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_eea4ca694995483da76711576576a142-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
 </pre>
 <p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به
 خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل
 خودش چیست؟ <cite>lsof</cite></p>
-<pre class="code bash"><a name="rest_code_1fc8094fd083403a88e253a1b58767a6-1"></a>lsof PATH_TO_FAT_FILE
+<pre class="code bash"><a name="rest_code_80c2d8a938df4249b86e4a46248c0d41-1"></a>lsof PATH_TO_FAT_FILE
 </pre>
 <p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
-<pre class="code bash"><a name="rest_code_e2ca8f0acff64b57bb4d4217f5c9a486-1"></a>sudo !!
+<pre class="code bash"><a name="rest_code_c35e53400506460aa572058a8f4d76f4-1"></a>sudo !!
 </pre>
 <p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
-<pre class="code bash"><a name="rest_code_10846d6b536245d3b7520ec540abd262-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+<pre class="code bash"><a name="rest_code_8d5d33cab72a41baa15066730b947d77-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
 </pre>
 <p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp
 ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا
 عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک
 کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به
 مشکل داشته باشد؟ کمی جستجو و <cite>df -i</cite>:</p>
-<pre class="code bash"><a name="rest_code_8c4ad12523f647d5ae947e0493867b56-1"></a>...
-<a name="rest_code_8c4ad12523f647d5ae947e0493867b56-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
-<a name="rest_code_8c4ad12523f647d5ae947e0493867b56-3"></a>...
+<pre class="code bash"><a name="rest_code_095b86c1c055473a9f920648cd7034d1-1"></a>...
+<a name="rest_code_095b86c1c055473a9f920648cd7034d1-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    100% /tmp
+<a name="rest_code_095b86c1c055473a9f920648cd7034d1-3"></a>...
 </pre>
 <p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
 <blockquote>
@@ -161,7 +161,7 @@ article: http://ogp.me/ns/article#
 <p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان
 ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم
 عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
-<pre class="code bash"><a name="rest_code_5ca5781d930e463bb6e812b45c179b56-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+<pre class="code bash"><a name="rest_code_b997bd62f4f74b92b8b7d99fc55b6bab-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
 </pre>
 <p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست
 دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل

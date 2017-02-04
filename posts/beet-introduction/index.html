@@ -133,17 +133,17 @@ article: http://ogp.me/ns/article#
 <p>دسته‌بندی دستی این همه آهنگ آرشیو شدهٔ شلخته هم که گاو نر می‌خواهد و مرد کهن. قبلا
 چند باری ابزار‌های مشابه دیده بودم‌، ولی شیوهٔ کار <a class="reference external" href="http://beets.radbox.org/">beet</a> خیلی خیلی به دلم نشسته
 است. بعد از نصبش کافیست یک همچین فایلی بسازد:</p>
-<pre class="code sh"><a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-1"></a>~/.config/beet/config.yaml:
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-2"></a>-----------------------------------------------------
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-3"></a>directory:  /media/Entertainment/Music
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-4"></a>library: /media/Entertainment/Music/musiclibrary.lbl
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-5"></a>plugins:
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-6"></a>       fromfilename
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-7"></a>       fetchart
-<a name="rest_code_27656d5589ea4adc9edd712d23d6ce67-8"></a>       embedart
+<pre class="code sh"><a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-1"></a>~/.config/beet/config.yaml:
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-2"></a>-----------------------------------------------------
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-3"></a>directory:  /media/Entertainment/Music
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-4"></a>library: /media/Entertainment/Music/musiclibrary.lbl
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-5"></a>plugins:
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-6"></a>       fromfilename
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-7"></a>       fetchart
+<a name="rest_code_ccd2ce328db7424b8d60468e40df03c8-8"></a>       embedart
 </pre>
 <p>و هر وقت که آلبوم جدیدی دانلود کردید بزنید:</p>
-<pre class="code sh"><a name="rest_code_aacd0a2535b94e0ab04489bd7f86e16b-1"></a>:~ beet import /PATH/TO/YOUR/NEW/ALBUM
+<pre class="code sh"><a name="rest_code_1d27fc69a3f44a2cbd0fbdb8c71298ca-1"></a>:~ beet import /PATH/TO/YOUR/NEW/ALBUM
 </pre>
 <p>خودش برای‌تان آهنگ‌ها را برچسب می‌کند‌، نامشان را بر اساس قوائد از پیش تعیین شده
 مشخص می‌کند و می‌اندازت‌شان توی دایرکتوری موسیقی‌ای که بهش نشان داده‌اید. برای من
@@ -152,36 +152,36 @@ article: http://ogp.me/ns/article#
 پایگاه داده موسیقی‌تان (همان فایل lbl) که در تنظیمات مشخص کردیم باشد‌، ازتان
 می‌پرسد که کدام یکی را ذخیره کند. و این به این معنی است که طراح نرم‌افزار فکر هر
 موقعیتی را کرده. حالا مثلا بخشی از دایرکتوری موسیقی‌ام به این شکل است:</p>
-<pre class="code sh"><a name="rest_code_cf72b366d9de456e969b648940e4f064-1"></a><span class="p">|</span>-- Tiësto
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-2"></a><span class="p">|</span>   <span class="sb">`</span>-- Club Life, Volume Two_ Miami
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-3"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">01</span> Chasing Summers <span class="o">(</span>Miami<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-4"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">02</span> We Own The Night.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-5"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">03</span> What Can We Do <span class="o">(</span>A Deeper Love<span class="o">)</span> <span class="o">(</span>Third Party remix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-6"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">04</span> If A Lie Was Love <span class="o">(</span>Baggi Begovic KNAL mix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-7"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">05</span> Somebody I Used To Know <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-8"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">06</span> Paradise <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-9"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">07</span> Walls.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-10"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">08</span> Young Blood <span class="o">(</span>Tiësto <span class="p">&amp;</span> Hardwell remix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-11"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">09</span> Life.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-12"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">10</span> Long Time.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-13"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">11</span> In My Mind <span class="o">(</span>Axwell mix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-14"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">12</span> Arena.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-15"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">13</span> Can<span class="err">'</span>t Stop Me <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-16"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">14</span> Make Some Noise.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-17"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">15</span> Maximal Crazy.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-18"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">16</span> Club Life_ Miami <span class="o">(</span>continuous DJ mix<span class="o">)</span>.mp3
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-19"></a><span class="p">|</span>       <span class="sb">`</span>-- cover.jpg
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-20"></a><span class="p">|</span>-- Vicente Amigo
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-21"></a><span class="p">|</span>   <span class="sb">`</span>-- Tierra
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-22"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">01</span> Prologo y epílogo.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-23"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">02</span> Estación primavera.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-24"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">03</span> Tierra.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-25"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">04</span> Boléro a los padres.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-26"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">05</span> Campos de San Gregorío.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-27"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">06</span> Río de la seda.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-28"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">07</span> Canción de Laura.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-29"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">08</span> Idílico.m4a
-<a name="rest_code_cf72b366d9de456e969b648940e4f064-30"></a><span class="p">|</span>       <span class="sb">`</span>-- <span class="m">09</span> Roma.m4a
+<pre class="code sh"><a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-1"></a><span class="p">|</span>-- Tiësto
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-2"></a><span class="p">|</span>   <span class="sb">`</span>-- Club Life, Volume Two_ Miami
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-3"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">01</span> Chasing Summers <span class="o">(</span>Miami<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-4"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">02</span> We Own The Night.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-5"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">03</span> What Can We Do <span class="o">(</span>A Deeper Love<span class="o">)</span> <span class="o">(</span>Third Party remix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-6"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">04</span> If A Lie Was Love <span class="o">(</span>Baggi Begovic KNAL mix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-7"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">05</span> Somebody I Used To Know <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-8"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">06</span> Paradise <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-9"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">07</span> Walls.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-10"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">08</span> Young Blood <span class="o">(</span>Tiësto <span class="p">&amp;</span> Hardwell remix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-11"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">09</span> Life.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-12"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">10</span> Long Time.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-13"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">11</span> In My Mind <span class="o">(</span>Axwell mix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-14"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">12</span> Arena.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-15"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">13</span> Can<span class="err">'</span>t Stop Me <span class="o">(</span>Tiësto remix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-16"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">14</span> Make Some Noise.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-17"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">15</span> Maximal Crazy.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-18"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">16</span> Club Life_ Miami <span class="o">(</span>continuous DJ mix<span class="o">)</span>.mp3
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-19"></a><span class="p">|</span>       <span class="sb">`</span>-- cover.jpg
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-20"></a><span class="p">|</span>-- Vicente Amigo
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-21"></a><span class="p">|</span>   <span class="sb">`</span>-- Tierra
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-22"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">01</span> Prologo y epílogo.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-23"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">02</span> Estación primavera.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-24"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">03</span> Tierra.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-25"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">04</span> Boléro a los padres.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-26"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">05</span> Campos de San Gregorío.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-27"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">06</span> Río de la seda.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-28"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">07</span> Canción de Laura.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-29"></a><span class="p">|</span>       <span class="p">|</span>-- <span class="m">08</span> Idílico.m4a
+<a name="rest_code_eff696d0d9754f04aab907ee89dfbd20-30"></a><span class="p">|</span>       <span class="sb">`</span>-- <span class="m">09</span> Roma.m4a
 </pre>
 <p>خوب البته باز هم مشکل موسیقی ایرانی به جای خودش باقی است. چون این فایل‌ها تگ که
 ندارند هیچ‌، اسم درست درمان هم ندارند. تگ گذاری اتوماتشان مطمئناُ خواهد … درون

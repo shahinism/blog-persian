@@ -131,16 +131,16 @@ Meta+F12 ویرایشگرم را. تا حدی قابل قبول بود. ولی �
 می‌خواهم بستهٔ multi-term را نصب و تجربه کنم. این بسته در واقع یک سری امکانات
 اضافه را نسبت به term که همراه خود ایمکس نصب می‌شود به همراه دارد. خوب ما هم فعلا
 تستش می‌کنیم تا ببینیم چه می‌شود.</p>
-<pre class="code text"><a name="rest_code_6f2b8e676bfd4affa1bbe76cce9a72df-1"></a>package-install multi-term
+<pre class="code text"><a name="rest_code_3581688db68c4ac9a298560a7cc9c181-1"></a>package-install multi-term
 </pre>
 <p>و حالا‌ هم با دستور زیر اجرایش می‌کنم:</p>
-<pre class="code text"><a name="rest_code_1cc03ed5bc5c421686db69f026b63601-1"></a>M-X multi-term
+<pre class="code text"><a name="rest_code_776f5eef30344f0589184706ef0c5f1f-1"></a>M-X multi-term
 </pre>
 <!-- TEASER_END: بیشتر بخوانید -->
 <p>یک کمی بالا و پایینش می‌کنم. همه چیز خوب کار می‌کند‌، جز این که قابلیت تکمیل خود‌کار
 حیاتی <a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">ZSH</a> را از دست داده‌ام. چرا؟ نمی‌دانم ولی بیایید ببینیم این کلید چه فرمانی
 را اجرا می‌کند:</p>
-<pre class="code text"><a name="rest_code_f8aa934cc2fb4f35a6452ae0bef196bb-1"></a>C-h k TAB
+<pre class="code text"><a name="rest_code_8b5fd5d0b152423c9c2605947d64efd9-1"></a>C-h k TAB
 </pre>
 <p>ایمکس می‌گوید که دارد <strong>yas-expand-from-trigger-key</strong> را اجرا می‌کند که مربوط به
 بستهٔ <a class="reference external" href="https://github.com/capitaomorte/yasnippet">Yasnippet</a> است که برای دسترسی سریع به قالب‌های آماده استفاده می‌کنم. (اگر
@@ -151,8 +151,8 @@ Meta+F12 ویرایشگرم را. تا حدی قابل قبول بود. ولی �
 وقتی اجرا شدی خودت Yasnippet را خاموش کن. حتما می‌پرسید چرا مد term و نه
 multi-term! جوابش را قبلا هم گفتم‌، multi-term یک جور بستهٔ تکمیلی برای term است و
 بس. اصل کار را term-mode انجام می‌دهد. پس داریم:</p>
-<pre class="code cl"><a name="rest_code_f8bf68a3abe240f6a1fdcdc09f000c27-1"></a><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'term-mode-hook</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span>
-<a name="rest_code_f8bf68a3abe240f6a1fdcdc09f000c27-2"></a>                        <span class="p">(</span><span class="nv">yas-minor-mode</span> <span class="mi">-1</span><span class="p">)))</span>
+<pre class="code cl"><a name="rest_code_7f838535611b42e5877db2562f2666e1-1"></a><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'term-mode-hook</span> <span class="p">(</span><span class="k">lambda</span><span class="p">()</span>
+<a name="rest_code_7f838535611b42e5877db2562f2666e1-2"></a>                        <span class="p">(</span><span class="nv">yas-minor-mode</span> <span class="mi">-1</span><span class="p">)))</span>
 </pre>
 <p>و تمام. حالا یک‌بار دیگر multi-term را تست می‌کنیم. عالی است. دقیقا رفتار یک
 Terminal emulator را انجام می‌دهد. حتی <a class="reference external" href="http://htop.sourceforge.net/">htop</a> و <a class="reference external" href="http://ranger.nongnu.org">ranger</a> هم به خوبی کار می‌کنند.</p>
@@ -160,13 +160,13 @@ Terminal emulator را انجام می‌دهد. حتی <a class="reference exte
 <h2>ایمکس و i3</h2>
 <p>حالا که همه چیز خوب کار می‌کند بیایید پنجرهٔ ایمکس را به صورت Scratchpad به <a class="reference external" href="http://i3wm.org">i3wm</a>
 اضافه کنیم تا بتوانیم با کلید F12 به آن دسترسی داشته باشیم:</p>
-<pre class="code text"><a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-1"></a>floating_minimum_size 75 x 50
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-2"></a>floating_maximum_size -1 x -1
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-3"></a>
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-4"></a>for_window [instance="emacs"] move to scratchpad, border 1pixel
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-5"></a>bindsym F12 [instance="emacs"] scratchpad show, move position 110px 0px
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-6"></a>
-<a name="rest_code_fba6ba8a5036472bb6bf56b42654f8b8-7"></a>exec --no-startup-id emacs --no-splash -g 125x30
+<pre class="code text"><a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-1"></a>floating_minimum_size 75 x 50
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-2"></a>floating_maximum_size -1 x -1
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-3"></a>
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-4"></a>for_window [instance="emacs"] move to scratchpad, border 1pixel
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-5"></a>bindsym F12 [instance="emacs"] scratchpad show, move position 110px 0px
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-6"></a>
+<a name="rest_code_f10fe3de3e004cfe8a05389a53427de2-7"></a>exec --no-startup-id emacs --no-splash -g 125x30
 </pre>
 <p>این خطوط همهٔ کاری است که باید انجام دهید. در دو خط اول یک حداقل/حداکثر برای سایز
 پنجره‌های float روی <a class="reference external" href="http://i3wm.org">i3wm</a> تعیین می‌کنیم. با فرستادن ‎-1 به عنوان مختصات حداکثر
@@ -187,7 +187,7 @@ toggle کردنش تعیین می‌کنم. در آخر هم ایمکس را ب�
 باید خودمان multi-term را اجرا کنیم که اصلا خوب نیست. هر چه باشد عمدهٔ استفادهٔ ما
 روی ترمینال است. اولین کار این است که از دست آن Splash screen ایمکس خلاص شویم که
 خوب در مرحلهٔ قبل انجامش دادیم.و حال این خط را به ‎.emacs اضافه می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_70586b5ab6ad4463b4a7e5aec4dcd02b-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">initial-major-mode</span> <span class="ss">'multi-term</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_788b3c581554440793eac5c3aa52dcd3-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">initial-major-mode</span> <span class="ss">'multi-term</span><span class="p">)</span>
 </pre>
 <p>این متغیر <strong>initial-major-mode</strong> یک مد پیش‌فرض را برای پنجرهٔ اولیه ایمکس تعیین می‌کند که ما با قرار دادن multi-term به عنوان مقدارش‌، به ترمینال‌مان می‌رسیم.</p>
 </div>
@@ -202,7 +202,7 @@ toggle کردنش تعیین می‌کنم. در آخر هم ایمکس را ب�
 <p>ایمکس به صورت پیش‌فرض از Fullscreen پشتیبانی می‌کند. هرچند کلی تنظیمات لازم دارد
 که بستهٔ <a class="reference external" href="https://github.com/ryantm/fullscreen-mode">Fullscreen-mode</a> برای‌مان انجامش می‌دهد. کافیست بسته را به صورت زیر نصب
 کنید:</p>
-<pre class="code text"><a name="rest_code_8988d3e381d74e5fb12407bdbc138b8d-1"></a>package-install fullscreen-mode
+<pre class="code text"><a name="rest_code_0455c66508f94643b62291ff51d766b9-1"></a>package-install fullscreen-mode
 </pre>
 <p>و بعد از اضافه کردن <strong>(follscreen-mode)</strong> به ‎.emacs آن را با زدن کلید F11 فراخوانی کنیم. عالی است نه؟</p>
 <p>حالا خیلی راحت تمامی امکانات پیش‌فرض <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">ایمکس</a> را همراه ترمینال‌مان داریم. خیلی راحت
@@ -231,19 +231,19 @@ initial-major-mode ما آن را به یک شل جدید نسبت می‌دهی
 اجازهٔ جستجوی فایل را بدهند. ولی به صورت پیش‌فرض به مسیر خانگی‌مان بر می‌گردند. برای
 حل این مشکل از کد‌هایی که در <a class="reference external" href="https://github.com/daimrod/Emacs-config/blob/master/config-multi-term.el">این‌جا</a>
 پیدا کردم استفاده می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_1eb025bc5f634fdfb7966c147f441944-1"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-2"></a>       <span class="s">"Update the current directory."</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-3"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-4"></a>          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-5"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-6"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-7"></a>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-8"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-9"></a>       <span class="s">"Update the current directory."</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-10"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-11"></a>           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-12"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
-<a name="rest_code_1eb025bc5f634fdfb7966c147f441944-13"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-1"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-input</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-2"></a>       <span class="s">"Update the current directory."</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-3"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-4"></a>          <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-5"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-6"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-input</span><span class="p">)</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-7"></a>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-8"></a><span class="p">(</span><span class="nv">defadvice</span> <span class="nv">term-send-raw</span> <span class="p">(</span><span class="nv">after</span> <span class="nv">update-current-directory</span><span class="p">)</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-9"></a>       <span class="s">"Update the current directory."</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-10"></a>       <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">pid</span> <span class="p">(</span><span class="nv">process-id</span> <span class="p">(</span><span class="nv">get-buffer-process</span> <span class="p">(</span><span class="nv">current-buffer</span><span class="p">))))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-11"></a>           <span class="p">(</span><span class="nv">cwd</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="p">(</span><span class="nb">format</span> <span class="s">"/proc/%d/cwd"</span> <span class="nv">pid</span><span class="p">))))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-12"></a>       <span class="p">(</span><span class="nv">cd</span> <span class="nv">cwd</span><span class="p">)))</span>
+<a name="rest_code_5860ca89f5fe49ddb1a594eb92d359b7-13"></a><span class="p">(</span><span class="nv">ad-activate</span> <span class="ss">'term-send-raw</span><span class="p">)</span>
 </pre>
 <p>خوب سواد من نسبت به این توابع خیلی کم است. اما اول این که با <strong>defadvice</strong> دو
 تابع term-send-input/raw را به قولی نصیحت می‌کنیم که هر بار با تغییر مسیر
@@ -257,30 +257,30 @@ cd استفاده شده‌، مربوط به ایمکس است و ربطی به
 که در تاریخچهٔ ترمینال جستجو می‌کند‌،‌ درون ایمکس‌، خود بافر را جستجو می‌کند. این است
 که کلید‌های میانبر را به این صورت تعریف می‌کنیم (این کد‌ها را از <a class="reference external" href="http://paralambda.org/2012/07/02/using-gnu-emacs-as-a-terminal-emulator">این وبلاگ</a>
 گرفتم):</p>
-<pre class="code cl"><a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-1"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-2"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-3"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-4"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-5"></a>         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-6"></a>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-7"></a><span class="c1">; Define keybindings</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-8"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-9"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-10"></a>           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-11"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-12"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-13"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-14"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-15"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-16"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-17"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-18"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-19"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-20"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-21"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-22"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-23"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
-<a name="rest_code_6e89e6c982dc4d6eae05e9e5479da0e4-24"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
+<pre class="code cl"><a name="rest_code_74856eb78a0b4fedad789d91c62fc156-1"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'multi-term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-2"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-up&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-next</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-3"></a>       <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;C-down&gt;"</span><span class="p">)</span> <span class="ss">'multi-term-prev</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-4"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">multi-term-buffer-name</span> <span class="s">"term"</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-5"></a>         <span class="nv">multi-term-program</span> <span class="s">"/bin/zsh"</span><span class="p">))</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-6"></a>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-7"></a><span class="c1">; Define keybindings</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-8"></a><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">'term</span> <span class="no">nil</span> <span class="no">t</span><span class="p">)</span> <span class="c1">; only if term can be loaded..</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-9"></a>       <span class="p">(</span><span class="k">setq</span> <span class="nv">term-bind-key-alist</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-10"></a>           <span class="p">(</span><span class="nb">list</span> <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-c"</span> <span class="ss">'term-interrupt-subjob</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-11"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-u"</span> <span class="ss">'previous-line</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-12"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-e"</span> <span class="ss">'next-line</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-13"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-o"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-14"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-n"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-15"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-j"</span> <span class="ss">'term-line-mode</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-16"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-c C-k"</span> <span class="ss">'term-char-mode</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-17"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-r"</span> <span class="ss">'term-send-backward-kill-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-18"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-w"</span> <span class="ss">'term-send-forward-kill-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-19"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-left&gt;"</span> <span class="ss">'term-send-backward-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-20"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"&lt;C-right&gt;"</span> <span class="ss">'term-send-forward-word</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-21"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"C-r"</span> <span class="ss">'term-send-reverse-search-history</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-22"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-x"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-23"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-m"</span> <span class="ss">'term-send-raw-meta</span><span class="p">)</span>
+<a name="rest_code_74856eb78a0b4fedad789d91c62fc156-24"></a>               <span class="p">(</span><span class="nb">cons</span> <span class="s">"M-c"</span> <span class="ss">'term-send-raw</span><span class="p">))))</span>
 </pre>
 <p>با آن تابع اول دو کلید سراسری را زمانی که یک multi-term ایجاد شد تعیین می‌کنیم.
 این کلید‌ها امکان دسترسی سریع به ترمینال را وقتی در بافر دیگری هستیم فراهم
