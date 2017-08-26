@@ -125,7 +125,7 @@ article: http://ogp.me/ns/article#
 
 
 <p>نکتهٔ بعد نوع نوشتن دستورات است‌. در زبان‌هایی مانند C یا Python یا دیگر زبان‌هایی که تا الان دیده بودم‌ (جز اسمبلی) دستورات تقریبا به صورت عامیانه نوشته می‌شد‌. مثلا ۲ + ۳ را دقیقا همینطور می‌نوشتیم‌. ولی در لیسپ باید این ترتیب رعایت شود:‌ ۱- عملگر ۲- آرگومان‌ها‌. یعنی برای دستور ۲ + ۳ داریم:</p>
-<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">2</span> 3<span class="o">)</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">2</span> <span class="m">3</span><span class="o">)</span>
 </pre>
 
 
@@ -135,19 +135,19 @@ article: http://ogp.me/ns/article#
 
 
 <p>و دیگر خبری هم از دردسر اولویت عملگر‌ها نمی‌شود‌. مثلا:</p>
-<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">3</span> <span class="o">(</span>* <span class="m">4</span> 5<span class="o">))</span> که جوابش می‌شود ۲۳
+<pre class="code literal-block"><span></span><span class="o">(</span>+ <span class="m">3</span> <span class="o">(</span>* <span class="m">4</span> <span class="m">5</span><span class="o">))</span> که جوابش می‌شود <span class="m">۲۳</span>
 
-<span class="o">(</span>* <span class="o">(</span>+ <span class="m">3</span> 4<span class="o">)</span> 5<span class="o">)</span> که جوابش می‌شود ۳۵
+<span class="o">(</span>* <span class="o">(</span>+ <span class="m">3</span> <span class="m">4</span><span class="o">)</span> <span class="m">5</span><span class="o">)</span> که جوابش می‌شود <span class="m">۳۵</span>
 </pre>
 
 
 <p>یا مثلا اگر قرار بود قبلا تابعی را با آرگومان‌هایش به صورت زیر فرا بخوانیم:</p>
-<pre class="code literal-block"><span></span>foo <span class="o">(</span><span class="m">3</span> + 4, <span class="m">5</span> + 6<span class="o">)</span>
+<pre class="code literal-block"><span></span>foo <span class="o">(</span><span class="m">3</span> + <span class="m">4</span>, <span class="m">5</span> + <span class="m">6</span><span class="o">)</span>
 </pre>
 
 
 <p>الان کارمان به این صورت انجام می‌گیرد:</p>
-<pre class="code literal-block"><span></span><span class="o">(</span>foo <span class="o">(</span>+ <span class="m">3</span> 4<span class="o">)</span> <span class="o">(</span>+ <span class="m">5</span> 6<span class="o">))</span>
+<pre class="code literal-block"><span></span><span class="o">(</span>foo <span class="o">(</span>+ <span class="m">3</span> <span class="m">4</span><span class="o">)</span> <span class="o">(</span>+ <span class="m">5</span> <span class="m">6</span><span class="o">))</span>
 </pre>
 
 
@@ -282,7 +282,7 @@ article: http://ogp.me/ns/article#
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

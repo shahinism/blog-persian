@@ -9,7 +9,7 @@ article: http://ogp.me/ns/article#
 <meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
 <meta name="author" content="شاهین آزاد">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Calculate the total CPU time. | وبلاگ شاهین</title>
+<title>dryft-tlt-systm-bdwn-stfdh-z-conky | وبلاگ شاهین</title>
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
@@ -31,7 +31,7 @@ article: http://ogp.me/ns/article#
 <link rel="prev" href="../tbdyl-pdf-frsy-bh-mtn-b-stfdh-z-chnd-b/" title="تبدیل PDF فارسی به متن با استفاده از چند ابزار لینوکسی و کمی پایتون" type="text/html">
 <link rel="next" href="../twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" title="تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت" type="text/html">
 <meta property="og:site_name" content="وبلاگ شاهین">
-<meta property="og:title" content=" Calculate the total CPU time.">
+<meta property="og:title" content="dryft-tlt-systm-bdwn-stfdh-z-conky">
 <meta property="og:url" content="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/">
 <meta property="og:description" content="برای دیدن در اندازهٔ بزرگ کلیک کنید
 و فعلا چند اشکال به آن وارد است‌: اول این که دارم از یک برنامهٔ خیلی گنده‌، برای یک کار ساده استفاده می‌کنم‌. دوم این که در حالت شل قدرت زیادی برای انگولک خروجی Con">
@@ -105,7 +105,7 @@ article: http://ogp.me/ns/article#
       <time class="published dt-published" datetime="2012-11-24T00:55:09+03:30" title="2012-11-24 00:55">2012-11-24 00:55</time>
 </div>
 
-        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url"> Calculate the total CPU time.</a></h1>
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">dryft-tlt-systm-bdwn-stfdh-z-conky</a></h1>
 
     
   </header><div class="e-content entry-content" itemprop="articleBody text">
@@ -191,7 +191,7 @@ article: http://ogp.me/ns/article#
 
 <span class="nb">local</span> <span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat <span class="p">|</span> grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c1"># Get the total CPU statistics.</span>
 
-<span class="nb">unset</span> CPU<span class="o">[</span>0<span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
+<span class="nb">unset</span> CPU<span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
 
 <span class="nb">local</span> <span class="nv">IDLE</span><span class="o">=</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="si">}</span> <span class="c1"># Get the idle CPU time.</span>
 
@@ -199,7 +199,7 @@ article: http://ogp.me/ns/article#
 
 <span class="c1"># Calculate the total CPU time.</span>
 
-<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span><span class="m">0</span>
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -237,7 +237,7 @@ article: http://ogp.me/ns/article#
 
 <p>برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.</p>
 <p>با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:</p>
-<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span><span class="m">0</span>
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -281,7 +281,7 @@ getNetBytes
 
 getRamInfo
 
-<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span>0<span class="p">;</span> COUNT <span class="p">&amp;</span>lt<span class="p">;</span> <span class="nv">$CORES</span><span class="p">;</span> COUNT++ <span class="o">))</span><span class="p">;</span><span class="k">do</span>
+<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span><span class="m">0</span><span class="p">;</span> COUNT <span class="p">&amp;</span>lt<span class="p">;</span> <span class="nv">$CORES</span><span class="p">;</span> COUNT++ <span class="o">))</span><span class="p">;</span><span class="k">do</span>
 
 getCpuInfo <span class="nv">$COUNT</span>
 
@@ -313,7 +313,7 @@ getCpuInfo <span class="nv">$COUNT</span>
 
 <span class="nv">oldBTransmited</span><span class="o">=</span><span class="nv">$Btransmited</span>
 
-sleep 1
+sleep <span class="m">1</span>
 
 <span class="k">done</span>
 </pre>
@@ -322,11 +322,11 @@ sleep 1
 <p>حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.</p>
 <p>همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.</p>
 <p>حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:</p>
-<pre class="code literal-block"><span></span>CPU: 48,3,40,3 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+<pre class="code literal-block"><span></span>CPU: <span class="m">48</span>,3,40,3 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 
-CPU: 8,4,76,4 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+CPU: <span class="m">8</span>,4,76,4 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 
-CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+CPU: <span class="m">24</span>,5,64,6 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 </pre>
 
 
@@ -342,7 +342,7 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
           If you enjoyed it you can use following links to share this article:
         </span>
         <ol>
-<li><a href="https://twitter.com/intent/tweet/?text=%20Calculate%20the%20total%20CPU%20time.%20by%20@shahinism&amp;url=https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" target="_blank">twitter</a></li>
+<li><a href="https://twitter.com/intent/tweet/?text=dryft-tlt-systm-bdwn-stfdh-z-conky%20by%20@shahinism&amp;url=https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" target="_blank">twitter</a></li>
           <li><a href="https://plus.google.com/share?url=https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" target="_blank">google_plus</a></li>
           <li><a href="https://facebook.com/sharer/sharer.php?u=https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" target="_blank">facebook</a></li>
         </ol>
@@ -365,7 +365,7 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
         <script>
         var disqus_shortname ="shahinism",
             disqus_url="https://5hah.in/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/",
-        disqus_title=" Calculate the total CPU time.",
+        disqus_title="dryft-tlt-systm-bdwn-stfdh-z-conky",
         disqus_identifier="cache/posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky.html",
         disqus_config = function () {
             this.language = "fa";
@@ -387,7 +387,7 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

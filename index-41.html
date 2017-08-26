@@ -172,7 +172,7 @@ sort -u chrcodes.txt <span class="p">&amp;</span>gt<span class="p">;</span> uniq
 
 <span class="k">for</span> char in line:
 
-<span class="k">if</span> ord<span class="o">(</span>char<span class="o">)</span> in <span class="o">(</span>64343, 64344, 64345<span class="o">)</span>:
+<span class="k">if</span> ord<span class="o">(</span>char<span class="o">)</span> in <span class="o">(</span><span class="m">64343</span>, <span class="m">64344</span>, <span class="m">64345</span><span class="o">)</span>:
 
 <span class="nv">char</span> <span class="o">=</span> <span class="s2">"پ"</span>
 </pre>
@@ -307,7 +307,7 @@ print char,
 <h6>font:</h6>
 
 <p>نویسندهٔ اصلی urxvt قبلا از mlterm استفاده می‌کرد‌. اما همیشه مجبور بود برای دیدن کاراکتر‌های ژاپنی (یا شایدم چینی) و لاتین‌، بین فونت‌های مختلف سوئیچ کند‌. چون هیچ فونت مناسبی پیدا نمی‌کرد که تمام کاراکتر‌های مورد نیازش را داشته باشد‌. همین می‌شود که کلافه از این که چرا توسعه دهنده‌ها فکر می‌کنند تمام کاراکتر‌های unicode را می‌توان با یک فونت نشان داد‌، دست به انگولک rxvt می‌زند و علاوه بر قابلیت یونیکد‌، پستیبانی از چند فونت را هم به آن اضافه می‌کند. برای تغییر فونت می‌توانید مثل من خط زیر را به ‎.Xdefaults اضافه کنید:</p>
-<pre class="code literal-block"><span></span>URxvt*font: xft:Terminus:pixelsize<span class="o">=</span>12
+<pre class="code literal-block"><span></span>URxvt*font: xft:Terminus:pixelsize<span class="o">=</span><span class="m">12</span>
 </pre>
 
 
@@ -336,9 +336,9 @@ URxvt*scrollTtyKeypress: True
 
 URxvt*secondaryScroll: True
 
-URxvt*saveLines: 8000
+URxvt*saveLines: <span class="m">8000</span>
 
-URxvt*letterSpace: 0
+URxvt*letterSpace: <span class="m">0</span>
 
 URxvt*cursorBlink: True
 
@@ -364,13 +364,13 @@ URxvt*cursorUnderline: True
 
 
 <p>چند‌تای اول همراه خود i3 هستند که من آن tabbed را خیلی دوست دارم‌. می‌گذارد urxvt برای‌تان تب کند ;-) شوخی کردم‌، همان تب‌بندی خودمان است‌. برای این که به طور به درد بخوری کانفیگش کرده باشیم‌، خطوط زیر را به تنظیمات اضافه کنید (اعداد جلویشان همان شماره رنگ‌ها هستند):</p>
-<pre class="code literal-block"><span></span>URxvt.tabbed.tabbar-fg: 5
+<pre class="code literal-block"><span></span>URxvt.tabbed.tabbar-fg: <span class="m">5</span>
 
-URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tabbar-bg: <span class="m">0</span>
 
-URxvt.tabbed.tab-fg: 14
+URxvt.tabbed.tab-fg: <span class="m">14</span>
 
-URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tab-bg: <span class="m">0</span>
 </pre>
 
 
@@ -396,7 +396,7 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.url-select.autocopy: True
 
-URvxt.url-select.button: 2
+URvxt.url-select.button: <span class="m">2</span>
 
 URxvt.url-select.launcher: firefox
 
@@ -520,7 +520,7 @@ bindsym F12 <span class="o">[</span><span class="nv">instance</span><span class=
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

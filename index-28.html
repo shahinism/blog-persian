@@ -135,9 +135,9 @@ article: http://ogp.me/ns/article#
           <div class="p-summary entry-summary">
             <div>
 <p>قبل از هر کاری pysetuptools را از <a title="pysetuptools" href="http://slackbuilds.org/repository/13.37/python/pysetuptools/" target="_blank">اینجا</a> دریافت و نصب کنید‌. دیگر پیش نیاز‌های اولیه‌تان برای نصب این‌ها هستند‌:</p>
-<pre class="code literal-block"><span></span>sqlalchemy 0.4.3
+<pre class="code literal-block"><span></span>sqlalchemy <span class="m">0</span>.4.3
 
-simplejson 1.7.3
+simplejson <span class="m">1</span>.7.3
 </pre>
 
 
@@ -162,11 +162,11 @@ simplejson 1.7.3
 <p>دستور فوق را یا با کاربر root و یا با استفاده از sudo اجرا کنید‌. پس از پایان عملیات نصب می‌توانید برنامه را با دستور anki اجرا کنید‌. متاسفانه نصاب این برنامه برای anki در منوی KDE هیچ گزینه‌ای اضافه نمی‌کند‌، پس باید زحمت این را شما بکشید‌. ظاهرا الان برنامه درست کار می‌کند‌، اما برای دیدن روی بد سکه‌، سعی کنید فلش کارت جدیدی ایجاد کنید و یا یک فلش کارت به آن اضافه کنید‌. متاسفانه با اخطار زیر روبرو می‌شوید‌:</p>
 <pre class="code literal-block"><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
 
-File <span class="s2">"/usr/lib/python2.6/site-packages/ankiqt/ui/main.py"</span>, line 953, in onNew
+File <span class="s2">"/usr/lib/python2.6/site-packages/ankiqt/ui/main.py"</span>, line <span class="m">953</span>, in onNew
 
 self.deck.initUndo<span class="o">()</span>
 
-File <span class="s2">"/usr/lib/python2.6/site-packages/anki/deck.py"</span>, line 3415, in initUndo
+File <span class="s2">"/usr/lib/python2.6/site-packages/anki/deck.py"</span>, line <span class="m">3415</span>, in initUndo
 
 <span class="o">(</span>null, <span class="s1">'delete from %(t)s where rowid = '</span> <span class="o">||</span> new.rowid<span class="o">)</span><span class="p">;</span> end<span class="s2">""" % {'t': table})</span>
 
@@ -326,7 +326,7 @@ _undo_sqlite_stat2_itnafter insert on sqlite_stat2 beginninsert into undoLog val
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

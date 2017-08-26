@@ -191,23 +191,23 @@ Vared Kardan Ramz
 
 
 
-<span class="k">if</span> <span class="o">{[</span>llength <span class="nv">$argv</span><span class="o">]</span> !<span class="o">=</span> 5<span class="o">}</span> <span class="o">{</span>
+<span class="k">if</span> <span class="o">{[</span>llength <span class="nv">$argv</span><span class="o">]</span> !<span class="o">=</span> <span class="m">5</span><span class="o">}</span> <span class="o">{</span>
     puts <span class="s2">"usage: ssh.exp client_root_pass username password server port"</span>
-<span class="nb">exit</span> 1
+<span class="nb">exit</span> <span class="m">1</span>
 
 <span class="o">}</span>
 
 
 
-<span class="nb">set</span> rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">0</span> 0<span class="o">]</span>
+<span class="nb">set</span> rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">0</span> <span class="m">0</span><span class="o">]</span>
 
-<span class="nb">set</span> username <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">1</span> 1<span class="o">]</span>
+<span class="nb">set</span> username <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">1</span> <span class="m">1</span><span class="o">]</span>
 
-<span class="nb">set</span> password <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">2</span> 2<span class="o">]</span>
+<span class="nb">set</span> password <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">2</span> <span class="m">2</span><span class="o">]</span>
 
-<span class="nb">set</span> server <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">3</span> 3<span class="o">]</span>
+<span class="nb">set</span> server <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">3</span> <span class="m">3</span><span class="o">]</span>
 
-<span class="nb">set</span> port <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">4</span> 4<span class="o">]</span>
+<span class="nb">set</span> port <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">4</span> <span class="m">4</span><span class="o">]</span>
 
 
 
@@ -217,7 +217,7 @@ Vared Kardan Ramz
 
 spawn su -c <span class="s2">"/home/shahin/bin/sshuttle/sshuttle --dns -r </span><span class="nv">$username</span><span class="s2">@</span><span class="nv">$server</span><span class="s2">:</span><span class="nv">$port</span><span class="s2"> 0/0 -vv"</span>
 
-match_max 100000
+match_max <span class="m">100000</span>
 
 expect <span class="s2">"Password:*"</span>
 
@@ -349,11 +349,11 @@ expect eof
 
 <span class="nb">echo</span> -e <span class="s2">"Aborting!"</span>
 
-<span class="nb">exit</span> 1
+<span class="nb">exit</span> <span class="m">1</span>
 
 <span class="k">else</span>
 
-<span class="k">return</span> 0
+<span class="k">return</span> <span class="m">0</span>
 
 <span class="k">fi</span>
 
@@ -393,7 +393,7 @@ expect eof
           <time class="published dt-published" datetime="2012-11-24T00:55:09+03:30" title="2012-11-24 00:55">2012-11-24 00:55</time>
 </div>
 
-        <h1 class="p-name entry-title"><a href="posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" class="u-url"> Calculate the total CPU time.</a></h1>
+        <h1 class="p-name entry-title"><a href="posts/wp/dryft-tlt-systm-bdwn-stfdh-z-conky/" class="u-url">dryft-tlt-systm-bdwn-stfdh-z-conky</a></h1>
 
           <div class="p-summary entry-summary">
             <div>
@@ -478,7 +478,7 @@ expect eof
 
 <span class="nb">local</span> <span class="nv">CPU</span><span class="o">=(</span><span class="sb">`</span>cat /proc/stat <span class="p">|</span> grep <span class="nv">$addr</span><span class="sb">`</span><span class="o">)</span> <span class="c1"># Get the total CPU statistics.</span>
 
-<span class="nb">unset</span> CPU<span class="o">[</span>0<span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
+<span class="nb">unset</span> CPU<span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="c1"># Discard the "cpu" prefix.</span>
 
 <span class="nb">local</span> <span class="nv">IDLE</span><span class="o">=</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[4]</span><span class="si">}</span> <span class="c1"># Get the idle CPU time.</span>
 
@@ -486,7 +486,7 @@ expect eof
 
 <span class="c1"># Calculate the total CPU time.</span>
 
-<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+<span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span><span class="m">0</span>
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -524,7 +524,7 @@ expect eof
 
 <p>برای این کار از یک متغیر برای تابع استفاده می‌کنم و مقدارش را به متغیر CORE اختصاص می‌دهم‌. با استفاده از این آدرس یک عبارت با قائده (Regex) به صورت "‎^cpu${CORE}‎" می‌سازم‌. این عبارت باقائده با خطوطی که در اولشان عبارت cpuN را دارند مطابقت می‌کند‌. و سپس با استفاده از داده‌هایی که دارم یک آرایه با استفاده از پردازش فایل ‎/proc/stat می‌سازم و آن را به متغیر CPU نسبت می‌دهم‌. خوب حالا چون اولین خانهٔ این آرایه اسم CPU را دارد‌، و به درد محاسبات بعدی نمی‌خورد‌، آن را از آرایه بیرون می‌اندازم (unset CPU[0]‎) و همین‌طور مقدار خانهٔ IDLE را هم در متغیری به همین نام ذخیره می‌کنم‌.</p>
 <p>با جمع کردن تمامی مقادیر موجود در آرایهٔ CPU می‌توانم کل وضعیت کارکرد CPU را به دست آورم‌. این می‌شود که به صورت زیر این کار را انجام می‌دهم:</p>
-<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span>0
+<pre class="code literal-block"><span></span><span class="nb">local</span> <span class="nv">TOTAL</span><span class="o">=</span><span class="m">0</span>
 
 <span class="k">for</span> VALUE in <span class="s2">"</span><span class="si">${</span><span class="nv">CPU</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
 
@@ -568,7 +568,7 @@ getNetBytes
 
 getRamInfo
 
-<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span>0<span class="p">;</span> COUNT <span class="p">&amp;</span>lt<span class="p">;</span> <span class="nv">$CORES</span><span class="p">;</span> COUNT++ <span class="o">))</span><span class="p">;</span><span class="k">do</span>
+<span class="k">for</span> <span class="o">((</span> <span class="nv">COUNT</span><span class="o">=</span><span class="m">0</span><span class="p">;</span> COUNT <span class="p">&amp;</span>lt<span class="p">;</span> <span class="nv">$CORES</span><span class="p">;</span> COUNT++ <span class="o">))</span><span class="p">;</span><span class="k">do</span>
 
 getCpuInfo <span class="nv">$COUNT</span>
 
@@ -600,7 +600,7 @@ getCpuInfo <span class="nv">$COUNT</span>
 
 <span class="nv">oldBTransmited</span><span class="o">=</span><span class="nv">$Btransmited</span>
 
-sleep 1
+sleep <span class="m">1</span>
 
 <span class="k">done</span>
 </pre>
@@ -609,11 +609,11 @@ sleep 1
 <p>حالا نوبت این است که کار را تمام کنم‌. یک حلقهٔ همیشه درست می‌سازم و فقط بهش می‌گویم بعد از این که همهٔ کار‌هایت را انجام دادی یک ثانیه استراحت کن (برای این که سرعت اینترنت را درست محاسبه کند‌، این مقدار ضروری است). بر همین اساس تابع‌های getNetBytes و getRamInfo را صدا می‌کنم تا متغیر‌های جدیدشان را تولید کنند‌. اما در مورد تابع getCpuInfo قضیه کمی فرق دارد‌. قرار است که چهار بار این تابع را با متغیر‌های متفاوت صدا کنیم و نتیجهٔ حاصله‌اش را در متغیرهای جداگانه ذخیره کنیم‌. این است که آن حلقهٔ for سر و کله‌اش پیدا می‌شود‌. یک حلقهٔ for به سبک C که خداییش به نظرم کامل‌ترین حلقه‌های for است D: حالا تابع را درش به صورت getCpuInfo $COUNT صدا می‌زنم و متغیر ‎$DIFF_USAGE که همان طرصد مصرف است را به یک متغیر به صورت cpuN نسبت می‌دهم‌. این N همان آدرس هسته است.</p>
 <p>همان‌طور که می‌بینید در ادامه محاسبهٔ سرعت اینترنت می‌آید که قبلا توضیحش داده‌ام‌. printf را فعلا ول کنید و به دو خط بعدش نگاهی کنید‌. همان دو متغیری که وضعیت قبلی ترافیک را نگه می‌دارند‌. فکر کنم دیگر همه چیز روشن شده باشد‌.</p>
 <p>حالا برسیم به آن printf. حتما می‌پرسید چرا از echo استفاده نکردم‌. echo خوب است‌، ولی خیلی ساده هم هست‌. آن مشکل کنترل فضای پرینت که در Conky گرفتارش بودم‌، این‌جا هم پیدا می‌شد‌. یک نگاهی به این خروجی بیاندازید:</p>
-<pre class="code literal-block"><span></span>CPU: 48,3,40,3 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+<pre class="code literal-block"><span></span>CPU: <span class="m">48</span>,3,40,3 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 
-CPU: 8,4,76,4 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+CPU: <span class="m">8</span>,4,76,4 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 
-CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span>57%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat 2012.11.24 14:41
+CPU: <span class="m">24</span>,5,64,6 <span class="p">|</span> RAM: <span class="m">1</span>.11G/1.95G <span class="o">(</span><span class="m">57</span>%<span class="o">)</span> <span class="p">|</span> LAN: ↓:0.00Ƙ ↑:0.00Ƙ T↕:221.20 <span class="p">|</span> Sat <span class="m">2012</span>.11.24 <span class="m">14</span>:41
 </pre>
 
 
@@ -645,7 +645,7 @@ CPU: 24,5,64,6 <span class="p">|</span> RAM: 1.11G/1.95G <span class="o">(</span
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

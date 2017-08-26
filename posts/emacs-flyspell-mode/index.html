@@ -123,8 +123,8 @@ article: http://ogp.me/ns/article#
 <p>خوشبختانه <a class="reference external" href="http://shahinism.github.io/categories/emacs.html">Emacs</a> به صورت پیش‌فرض بستهٔ <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> را همراه دارد که قرار است کمک‌مان
 کند. اول از همه با دستور زیر برنامهٔ غلط‌گیر املایی مورد نظرم را جایگزین برنامهٔ
 پیش‌فرض <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a> می‌کنم.</p>
-<pre class="code cl"><a name="rest_code_3a14ca5154264eeb80bdcd6f243ff12f-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
-<a name="rest_code_3a14ca5154264eeb80bdcd6f243ff12f-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_87e6aa3fb2a04570b44f47bbf6662917-1"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-program-name</span> <span class="s">"aspell"</span><span class="p">)</span>
+<a name="rest_code_87e6aa3fb2a04570b44f47bbf6662917-2"></a><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">"list"</span><span class="p">)</span>
 </pre>
 <!-- TEASER_END -->
 <p>دستور اول متغیر برنامهٔ غلط‌گیر املایی را به <a class="reference external" href="http://aspell.net/">aspell</a> تغییر می‌دهد و دستور دوم دستور
@@ -147,7 +147,7 @@ article: http://ogp.me/ns/article#
 وارد کردن اسم دیکشنری (مثل خیلی دیگر از دستورات فراخوانی شده با این روش‌، با tab
 قابلیت تکمیل خودکار دارد) دیکشنری مد نظر‌تان را صدا کنید. مثلا برای زبان فارسی
 همچین کاری می‌کنیم:</p>
-<pre class="code cl"><a name="rest_code_7fc8327de7c2428f8c905b3d065944fd-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
+<pre class="code cl"><a name="rest_code_5ae55ec9b81b4f679f5208243bc6283c-1"></a><span class="nv">M-x</span> <span class="nv">ispell-change-dictionary</span> <span class="nv">fa</span>
 </pre>
 <p>البته دیکشنری‌های متفاوتی با نصب بستهٔ فارسی ispell اضافه می‌شود که بسته به نیاز‌تان
 (من نفهمیدم فرق‌شان چیست‌، اگر می‌دانید بگویید که ممنون‌تان شوم) یکی را انتخاب کنید.</p>
@@ -159,7 +159,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="section" id="ispell-word-ispell-word">
 <h3>
-<img alt="ispell-word" src="https://dl.dropboxusercontent.com/u/25017694/Blog-photos/emacs_aspell.png"> ispell-word</h3>
+<img alt="ispell-word" src="https://res.cloudinary.com/shahinism/image/upload/v1503767533/BlogPhotos/emacs_aspell.png"> ispell-word</h3>
 <p>این دستور‌، به درد موقعی می‌خورد که نمی‌خواهید یک flyspell-mode را صدا کنید. به هر
 حال این مد همیشه هم آن‌قدر که باید خوب عمل نمی‌کند (بیشترین تاثیر را زمانی دارد که
 کلمه بعد از فراخوانی مد تایپ شود). البته برای رفع مشکلات این مد می‌توانید از
@@ -174,13 +174,13 @@ article: http://ogp.me/ns/article#
 <p>بدیهی است که بهتر است برای این دستورات‌، کلید‌های میانبر تعریف کنیم. مثلا کلید‌های
 مورد استفادهٔ من این‌ها هستن
 د:</p>
-<pre class="code cl"><a name="rest_code_61a9547f01474dc6b5c7714d34ba24cc-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
-<a name="rest_code_61a9547f01474dc6b5c7714d34ba24cc-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
+<pre class="code cl"><a name="rest_code_554dc43656774e1aa0c9fff5bdad33c8-1"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'ispell-word</span><span class="p">)</span>
+<a name="rest_code_554dc43656774e1aa0c9fff5bdad33c8-2"></a><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">"C-S-&lt;f8&gt;"</span><span class="p">)</span> <span class="ss">'flyspell-mode</span><span class="p">)</span>
 </pre>
 <p>همین‌کار را می‌توانید برای <strong>ispell-change-dictionary</strong> هم انجام دهید. ولی <a class="reference external" href="http://www.emacswiki.org/emacs/InteractiveSpell#toc5">ispell</a>
 این قابلیت را دارد که از روی سر خط فایل‌، زبان آن را تشخیص دهد. این یعنی این که
 اگر متنی با زبان فارسی دارم‌، کافیست در خط اول آن یک همچین متنی داشته باشم:</p>
-<pre class="code cl"><a name="rest_code_3170e2ea8009463ca36a410bf476d258-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
+<pre class="code cl"><a name="rest_code_25536daa55b9493f8608d43de5830bda-1"></a><span class="nv">-*-</span> <span class="nv">ispell-dictionary:</span> <span class="s">"fa"</span> <span class="nv">-*-</span>
 </pre>
 <p>تا زبان تنها برای همین بافر حاضر به فارسی تغییر کند. به هر حال این انتخاب‌ها اختیاری است.</p>
 </div>
@@ -249,7 +249,7 @@ article: http://ogp.me/ns/article#
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");

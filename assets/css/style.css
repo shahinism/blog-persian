@@ -145,7 +145,7 @@ pre, article .terminal, div#headerbox {
 }
 
 pre {
-  color: #878c94 !important;
+  color:: #878c94;
 }
 
 article .terminal, pre {

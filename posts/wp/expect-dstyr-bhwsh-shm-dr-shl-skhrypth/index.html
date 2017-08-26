@@ -130,23 +130,23 @@ Vared Kardan Ramz
 
 
 
-<span class="k">if</span> <span class="o">{[</span>llength <span class="nv">$argv</span><span class="o">]</span> !<span class="o">=</span> 5<span class="o">}</span> <span class="o">{</span>
+<span class="k">if</span> <span class="o">{[</span>llength <span class="nv">$argv</span><span class="o">]</span> !<span class="o">=</span> <span class="m">5</span><span class="o">}</span> <span class="o">{</span>
     puts <span class="s2">"usage: ssh.exp client_root_pass username password server port"</span>
-<span class="nb">exit</span> 1
+<span class="nb">exit</span> <span class="m">1</span>
 
 <span class="o">}</span>
 
 
 
-<span class="nb">set</span> rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">0</span> 0<span class="o">]</span>
+<span class="nb">set</span> rootpass <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">0</span> <span class="m">0</span><span class="o">]</span>
 
-<span class="nb">set</span> username <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">1</span> 1<span class="o">]</span>
+<span class="nb">set</span> username <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">1</span> <span class="m">1</span><span class="o">]</span>
 
-<span class="nb">set</span> password <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">2</span> 2<span class="o">]</span>
+<span class="nb">set</span> password <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">2</span> <span class="m">2</span><span class="o">]</span>
 
-<span class="nb">set</span> server <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">3</span> 3<span class="o">]</span>
+<span class="nb">set</span> server <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">3</span> <span class="m">3</span><span class="o">]</span>
 
-<span class="nb">set</span> port <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">4</span> 4<span class="o">]</span>
+<span class="nb">set</span> port <span class="o">[</span>lrange <span class="nv">$argv</span> <span class="m">4</span> <span class="m">4</span><span class="o">]</span>
 
 
 
@@ -156,7 +156,7 @@ Vared Kardan Ramz
 
 spawn su -c <span class="s2">"/home/shahin/bin/sshuttle/sshuttle --dns -r </span><span class="nv">$username</span><span class="s2">@</span><span class="nv">$server</span><span class="s2">:</span><span class="nv">$port</span><span class="s2"> 0/0 -vv"</span>
 
-match_max 100000
+match_max <span class="m">100000</span>
 
 expect <span class="s2">"Password:*"</span>
 
@@ -235,7 +235,7 @@ expect eof
   </div>
 
   <footer id="footer" class="site-footer">
-    Contents © 2016         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    Contents © 2017         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
     
   </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("fa");
