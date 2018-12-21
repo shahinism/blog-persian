@@ -1,279 +1,120 @@
-<!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" dir="rtl" lang="fa">
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-<meta charset="utf-8">
-<meta name="wot-verification" content="1e0ce5594a67af53269c">
-<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
-<meta name="author" content="شاهین آزاد">
-<meta name="description" content="چهاردیواری شخصی یک برنامه‌نویس که در آن یاد می‌گیرد‌، به اشتراک می‌گذارد و گاها غرغر می‌کند!">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>وبلاگ شاهین | صفحهٔ نخست</title>
-<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
-<link rel="canonical" href="https://5hah.in/">
-<link rel="next" href="index-49.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
-      {
-        "@context" : "http://schema.org",
-        "@type" : "Organization",
-        "name" : "وبلاگ شاهین",
-        "url" : "https://5hah.in",
-        "sameAs" : [
-        "https://twitter.com/shahinism",
-        "https://plus.google.com/117086743723717964659",
-        "https://www.facebook.com/shahinism",
-        "https://www.linkedin.com/in/shahinism"
-        ]
-      }
-    </script><link rel="prefetch" href="posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" type="text/html">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shahinism</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-naskh" type="text/css"/>
+    <!-- Place favicon.ico in the root directory -->
+    <style>
+        body {
+            font-family: 'Fjalla One', 'DroidArabicNaskhRegular', sans-serif;
+            background-color: #f8dd74;
+            color: #030000;
+        }
+
+        #introduction {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0px 15px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: white;
+            background-color: #3a8075;
+            padding: 10px;
+            text-decoration: none;
+            line-height: 1em;
+        }
+
+        a:hover {
+            color: #030000;
+            background-color: #fff;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #introduction p {
+            font-size: 3em;
+            margin: 5px;
+        }
+
+        .inverse {
+            background-color: #030000;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 15px;
+        }
+
+        @media only screen and (max-width: 1425px) {
+            #introduction p {
+                font-size: 2.5em;
+                margin: 5px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            #introduction p {
+                font-size: 2em;
+                margin: 5px;
+            }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            li {
+                float: left;
+                margin: 15px 10px;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
-  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+      your experience.
+      </p>
+    <![endif]-->
 
-  <div class="navigator">
-    
-  </div>
+    <div id="container">
+        <ul>
+            <li><a href="fa/">وبلاگ فارسی</a></li>
+            <li><a href="#">English Blog</a></li>
+            <li><a href="https://github.com/shahinism">Github</a></li>
+            <li><a href="https://twitter.com/shahinism">Twitter</a></li>
+        </ul>
 
-  <nav class="navbar navbar-default"><div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="."><img src="assets/images/logo.png"></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-<li>
-<a href="stories/about-me">درباره</a>
-                </li>
-<li>
-<a href="docs/resume.pdf">رزومه</a>
-                </li>
-<li>
-<a href="archive.html">آرشیو</a>
-                </li>
-<li>
-<a href="categories/">دسته‌ها</a>
-                </li>
-<li>
-<a href="rss.xml">خوراک</a>
-
-                    
-        </li>
-</ul>
-<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
-<input type="hidden" name="sites" value="https://5hah.in/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
-</form>
-<!-- End of custom search -->
-
-
-      </div>
-<!-- /.navbar-collapse -->
+        <article id="introduction">
+            <p>Hi, my name is <span class="inverse">Shahin</span>. I'm a software developer.</p>
+            <p>My passion is to <span class="inverse">craft new things</span> and find the best ways to make them <span class="inverse">better</span>!</p>
+        </article>
     </div>
-<!-- /.container-fluid -->
-  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
-      <div class="terminal">
-        <span class="prompt"> <span class="cursor"></span></span>
-      </div>
-    </div>
-  </section><div class="container" id="content" role="main">
-    <!--Body content-->
-    <div class="col-md-7 col-centered">
-      <div class="row">
-        
-  <div class="postindex">
-      <article class="h-entry post-text"><div class="publish-date">
-          <i class="glyphicon glyphicon-calendar"></i>
-          <time class="published dt-published" datetime="2016-10-15T20:03:06+03:30" title="2016-10-15 20:03">2016-10-15 20:03</time>
-</div>
 
-        <h1 class="p-name entry-title"><a href="posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" class="u-url">معجون بهشتی Selenium, PhantomJS و Requests برای web scraping</a></h1>
-
-          <div class="p-summary entry-summary">
-            <div>
-<p>این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی برگ برندهٔ کاربران،
-توسعه‌دهندگان و یا حتی تیم‌های فعال در حوزهٔ نرم‌افزار محسوب می‌شود. از پتانسیل بالای
-درآمد‌زایی‌اش در بعضی شرایط اگر بگذریم‌، کاهش زمان مورد نیاز انجام کار‌ها به میزان
-زیاد و قابلیت اطمینان بسیار بیشتر نسبت به شرایطی که نیروی انسانی وظیفهٔ به پایان
-رساندن کار را بر عهده دارد‌، از جمله دلایلی است که می‌تواند زمان و هزینهٔ مورد نیاز
-جهت خودکار کردن اکثر کار‌ها را به راحتی توجیح کند.</p>
-<p>یکی از زمینه‌های هدف همچین فرآیند‌هایی می‌تواند سرویس‌های تحت وب باشند. روند‌هایی
-تکراری که لازم است در زمان مشخص و با دقت کافی انجام گیرد. مثال‌های زیادی از این
-دست می‌توان نام برد. مثلا‌، انتخاب واحد دانشگاه‌ها… که حقیقتش الان مطمئن نیستم که
-چقدر بهتر شده‌، ولی زمانی که من دانشجو بودم‌، از زمان اعلامی شروع انتخاب واحد‌، اگر
-موفق می‌شدیم طی پنج دقیقهٔ اول انتخاب‌هایمان را انجام دهیم که هیچ‌، و اگرنه‌، همین
-انتخاب واحد ساده (وارد کردن چند کد واحد درسی و زدن کلید ثبت) می‌توانست ساعت‌ها
-وقت‌مان را تلف کند. یا به عنوان مثالی دیگر از این دست می‌توان به روند خرید سهام‌ها
-از روی درگاه‌های کارگزاری‌ها اشاره کرد. عموما در شرایط حساس‌، جدای از سرعت اینترنت
-کافی (اصلا اگر بتوانید)، سرمایه و سیاست لازم جهت انتخاب و خرید سهم مورد نظر‌،
-گاها به یک سرعت عمل خارق‌العاده نیاز دارید که تا به خود بجنبید‌، از قافله عقب
-نمانده باشید. ناسلامتی چنین شرایطی از مزایای ایرانی بودن‌مان است.</p>
-<p class="more"><a href="posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/">بیشتر بخوانید…</a></p>
-</div>
-            </div>
-
-            <div class="left">
-                            <a class="btn btn-success" href="posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/#disqus_thread" data-disqus-identifier="cache/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven.html">Comments</a>
-
-
-            </div>
-            <div class="clear"></div>
-
-      </article><article class="h-entry post-text"><div class="publish-date">
-          <i class="glyphicon glyphicon-calendar"></i>
-          <time class="published dt-published" datetime="2015-12-27T10:49:45+03:30" title="2015-12-27 10:49">2015-12-27 10:49</time>
-</div>
-
-        <h1 class="p-name entry-title"><a href="posts/version-control-is-not-optional/" class="u-url">ورژن کنترل اختیاری نیست!</a></h1>
-
-          <div class="p-summary entry-summary">
-            <div>
-<p>حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم
-که ورژن کنترل یک جورهایی جزء غرایض جامعه‌ی نرم‌افزاری است‌، آن هم با درجه‌ی اهمیتی
-مثل نفس کشیدن. دوستی دارم که حدوداً دو سال پیش روی دیوار فیس‌بوک‌اش از پاک شدن
-اتفاقی فایل‌های یکی از پروژه‌هایش شکایت کرده بود‌، که وا مصیبتا‌، مسلمانان چه
-نشسته‌اید که نتیجه‌ی تلاش چند سال گذشته‌ام به فنا رفت!</p>
-<p>یادم می‌آید‌‌‌ همان موقع با یک لحن خیلی مودبانه پرسیدم «مگه از ورژن کنترل استفاده
-نمی‌کردی؟ خوب خطرناکه حسن…» و جوابی در این حدود‌ها گرفتم که «چون این پروژه‌ها یا
-شخصی بودن یا کوچیک‌، زیاد مباحث مهندسی نرم‌افزار رو توشون رعایت نکردم!». خوب اینکه
-می‌گویم دوست شاید‌، خیال بد کنید‌، ولی خوب خوشبختانه چند سالی هست که حسن را از
-نزدیک ملاقات نکرده‌ام‌، وگرنه احتمالاً آن موقع نمی‌توانستم خودم را کنترل کنم و ایشان
-را به کما می‌فرستادم تا این مشکل دوباره برایش تکرار نشود.</p>
-<p class="more"><a href="posts/version-control-is-not-optional/">بیشتر بخوانید…</a></p>
-</div>
-            </div>
-
-            <div class="left">
-                            <a class="btn btn-success" href="posts/version-control-is-not-optional/#disqus_thread" data-disqus-identifier="cache/posts/version-control-is-not-optional.html">Comments</a>
-
-
-            </div>
-            <div class="clear"></div>
-
-      </article><article class="h-entry post-text"><div class="publish-date">
-          <i class="glyphicon glyphicon-calendar"></i>
-          <time class="published dt-published" datetime="2015-11-16T19:15:57+03:30" title="2015-11-16 19:15">2015-11-16 19:15</time>
-</div>
-
-        <h1 class="p-name entry-title"><a href="posts/no-space-mysql-problem/" class="u-url">وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!</a></h1>
-
-          <div class="p-summary entry-summary">
-            <div>
-<p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که
-برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس
-متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات
-اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به
-حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
-<p><a class="reference external" href="http://navid.kashani.ir/">نوید</a> چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت
-به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین
-اخطاری می‌دهد:</p>
-<p class="more"><a href="posts/no-space-mysql-problem/">بیشتر بخوانید…</a></p>
-</div>
-            </div>
-
-            <div class="left">
-                            <a class="btn btn-success" href="posts/no-space-mysql-problem/#disqus_thread" data-disqus-identifier="cache/posts/no-space-mysql-problem.html">Comments</a>
-
-
-            </div>
-            <div class="clear"></div>
-
-      </article><article class="h-entry post-text"><div class="publish-date">
-          <i class="glyphicon glyphicon-calendar"></i>
-          <time class="published dt-published" datetime="2015-11-09T09:58:21+03:30" title="2015-11-09 09:58">2015-11-09 09:58</time>
-</div>
-
-        <h1 class="p-name entry-title"><a href="posts/multithreading-bug-experiment-on-PyMongo-driver/" class="u-url">وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB</a></h1>
-
-          <div class="p-summary entry-summary">
-            <div>
-<p>استفاده از Mongo و Python برای ایجاد یک RESTFUL API دیگر آن‌چنان هم سناریوی دور
-از انتظاری نیست، خصوصا این که اگر کمی جستجو کنید می‌بینید که افراد زیادی اشاره به
-پایداری و Performance همچین استکی می‌کنند و راه‌کار‌های بسیار زیادی نیز برای بهتر
-کردن آن ارائه کرده‌اند. در یکی از پروژه‌های تیم <a class="reference external" href="http://www.foundersbuddy.com/">فاندرز</a> ما هم با استکی به شرح
-زیر، RESTFUL API مربوط به اپلیکیشمان را طراحی‌کرده‌ایم:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://mongodb.org">Mongo</a></li>
-<li>Python 3</li>
-<li><a class="reference external" href="http://api.mongodb.org/python/">PyMongo</a></li>
-<li><a class="reference external" href="http://djangoproject.com">Django</a></li>
-<li><a class="reference external" href="http://memcached.org">Memcached</a></li>
-<li><a class="reference external" href="https://uwsgi.readthedocs.org/">uWsgi</a></li>
-<li><a class="reference external" href="http://nginx.com">Nginx</a></li>
-</ul>
-<p>در چهار ماه اول لانچ API، هیچ مشکلی در داده‌های دریافتی و پردازش‌های مورد نیاز
-مشاهده نمی‌شد. Performance کلی استک هم در حد قابل قبولی جواب‌گوی نیاز‌ها بود. تا
-این که با تغییری در نحوهٔ ارائهٔ خدمات پروژهٔ اصلی‌، حجم کاربران سرویس به نحو
-چشم‌گیری بالا رفت و ماجرا آغاز شد!</p>
-<p class="more"><a href="posts/multithreading-bug-experiment-on-PyMongo-driver/">بیشتر بخوانید…</a></p>
-</div>
-            </div>
-
-            <div class="left">
-                            <a class="btn btn-success" href="posts/multithreading-bug-experiment-on-PyMongo-driver/#disqus_thread" data-disqus-identifier="cache/posts/multithreading-bug-experiment-on-pymongo-driver.html">Comments</a>
-
-
-            </div>
-            <div class="clear"></div>
-
-      </article><article class="h-entry post-text"><div class="publish-date">
-          <i class="glyphicon glyphicon-calendar"></i>
-          <time class="published dt-published" datetime="2015-07-08T15:55:01+04:30" title="2015-07-08 15:55">2015-07-08 15:55</time>
-</div>
-
-        <h1 class="p-name entry-title"><a href="posts/douglas-crockford-javascript-the-good-parts/" class="u-url">خوبی‌های جاوا اسکریپت؟</a></h1>
-
-          <div class="p-summary entry-summary">
-            <div>
-<p>خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
-این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
-بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
-باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
-فعالیت‌هایم‌، عمدتا تجربه‌های جدید فوق‌العاده‌ای را مزه‌مزه می‌کنم که دوست ندارم زود
-فراموش شوند و فکر می‌کنم بازگویی‌شان در این وبلاگ بتواند کمک کند. این است که:</p>
-<p>نمی‌دانم چقدر با JavaScript آشنایی دارید‌، ولی بعید می‌دانم که پی‌اش رفته باشید و
-اسم داگلاس کراکفورد (<a class="reference external" href="http://www.crockford.com/">Douglas Crockford</a>) به گوشتان نخورده باشد.</p>
-<p>عمدهٔ معروفیت ایشان هم پی کتابی به اسم Javascript the Good Parts شکل گرفته که شاید
-برای خیلی‌ها یک جک به نظر برسد. چطور؟</p>
-<p class="more"><a href="posts/douglas-crockford-javascript-the-good-parts/">بیشتر بخوانید…</a></p>
-</div>
-            </div>
-
-            <div class="left">
-                            <a class="btn btn-success" href="posts/douglas-crockford-javascript-the-good-parts/#disqus_thread" data-disqus-identifier="cache/posts/douglas-crockford-javascript-the-good-parts.html">Comments</a>
-
-
-            </div>
-            <div class="clear"></div>
-
-      </article>
-</div>
-              <nav class="postindexpager"><ul class="pager">
-<li class="next">
-                <a href="index-49.html" rel="next">پست‌های قدیمی‌تر</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
-</div>
-    </div>
-    <!--End of body content-->
-  </div>
-
-  <footer id="footer" class="site-footer">
-    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-    
-  </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("fa");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates -->
 </body>
+
 </html>
