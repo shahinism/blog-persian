@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند! | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/no-space-mysql-problem/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../multithreading-bug-experiment-on-PyMongo-driver/" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB" type="text/html">
+<link rel="next" href="../version-control-is-not-optional/" title="ورژن کنترل اختیاری نیست!" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/no-space-mysql-problem/">
+<meta property="og:description" content="مشکل از آن‌جا شروع شد که نوید خبر داد که چند ساعتی است یک وبلاگ وردپرسی که
+برای یکی از پروژه‌هاست ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس
+متن بعضی از مطالب نشان داده نمی‌شوند. اولین">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-11-16T19:15:57+03:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2015-11-16T19:15:57+03:30" title="2015-11-16 19:15">2015-11-16 19:15</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>مشکل از آن‌جا شروع شد که <a class="reference external" href="http://navid.kashani.ir/">نوید</a> خبر داد که چند ساعتی است یک وبلاگ وردپرسی که
+برای یکی از <a class="reference external" href="http://foundersbuddy.com">پروژه‌هاست</a> ، عکس‌العمل‌های عجیب و غریب نشان می‌دهد! چطور؟ این که باکس
+متن بعضی از مطالب نشان داده نمی‌شوند. اولین حدسم این بود که شاید بخاطر تغییرات
+اخیری که در آدرس وبلاگ داده بودم همچین مشکلی پیش آمده و خواستم که تنظیمات را به
+حالت قبل برگردانند… و مشکل یپچیده‌تر شد! چطور؟ تنظیمات جدید ذخیره نمی‌شد.</p>
+<p><a class="reference external" href="http://navid.kashani.ir/">نوید</a> چند تایی روش پیشنهاد کرد تا شاید بتوانیم اطلاعات بیشتر در رابطه با وضعیت
+به دست بیاوریم. به سرور لاگین می‌کنم و… tab completion کار نمی‌کند. یک همچین
+اخطاری می‌دهد:</p>
+<!-- TEASER_END -->
+<pre class="code bash"><a name="rest_code_03083458c5714ed1a9571c65e3803883-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+</pre>
+<p>خوب راست هم می‌گوید انگار… یک <cite>df -h</cite> معلوم می‌کند که پوشهٔ home کاربر حاضر‌، تا
+خرخره پر شده. یک فایل log که از <a class="reference external" href="http://shahinism.com/archive/fa/posts/multithreading-bug-experiment-on-PyMongo-driver.html">دیباگ</a> قبلی باقیمانده، وزنش به ۵ گیگ رسیده و
+دیگر نمی‌تواند نفس بکشد.</p>
+<pre class="code bash"><a name="rest_code_2c5e8c73d5ff4bfa82b9d49776710cd0-1"></a>rm -rfv PATH_TO_FAT_FILE
+</pre>
+<p>و دوباره <cite>df -h</cite>… و؟ فضا خالی نشده. فایل پاک نشده؟ <cite>ls -lh PATH_TO_FAT_FILE</cite>
+می‌گوید که همچین فایلی نداریم. ها از قرار آن پروسهٔ لاگ همچنان فعال است (این‌طوری
+سیستم فایل فضایش را بعد از پاک کردن فایل مذکور به روز نمی‌کند). پروسه چه بوده
+حالا؟ Only GOD knows :)</p>
+<pre class="code bash"><a name="rest_code_ce0460a5508e47418e92978d5b8befb8-1"></a>ps -aux <span class="p">|</span> grep PATH_TO_FAT_FILE
+</pre>
+<p>امیدوار بودم که با شل پایپ کرده باشند که نه انگار… می‌دانم کار کیست ولی او هم به
+خاطر نمی‌آورد که دستور چه بوده. هوم… لینوکس دیگر اینقدر‌ها هم بی‌شعور نیست. راه حل
+خودش چیست؟ <cite>lsof</cite></p>
+<pre class="code bash"><a name="rest_code_85c80e1a074f4f73a2c05891d31c498b-1"></a>lsof PATH_TO_FAT_FILE
+</pre>
+<p>حل شد؟ نه! همچین پروسه‌ای نداریم. یک کم پرزورتر می‌پرسیم:</p>
+<pre class="code bash"><a name="rest_code_d3f56e868b4c4cdb9f5a1a127399f10b-1"></a>sudo !!
+</pre>
+<p>ها ها، پیدا شد! یک <cite>kill -9</cite> مهمانش کردیم و حالا باید مشکل حل شده باش. ولی…</p>
+<pre class="code bash"><a name="rest_code_a0162c2da1504fe9a0b1fc238dc170e9-1"></a>bash: cannot create temp file <span class="k">for</span> here-document: No space left on device
+</pre>
+<p>هوم… باز هم؟ می‌گوید temp، حالا اگر فرض بگیریم مثل آدم این‌جور فایل‌ها را در ‎/tmp
+ذخیره می‌کند، ۱.۵ گیگابایت فضای خالی داریم. پس این اخطار برای چیست؟ قضیه آن‌جا
+عجیب می‌شود که یک عالمه (عدد جدید است. یک کم بیشتر از خیلی زیاد :)) فایل یک
+کیلوبایتی داخل ‎/tmp ذخیره شده. محتوایش؟ چیز خاصی نیست. ولی چه ربطی می‌تواند به
+مشکل داشته باشد؟ کمی جستجو و <cite>df -i</cite>:</p>
+<pre class="code bash"><a name="rest_code_9c2c405210d545779b4ae0b3eae849a6-1"></a>...
+<a name="rest_code_9c2c405210d545779b4ae0b3eae849a6-2"></a>tmpfs                             494K    494K   <span class="m">0</span>    <span class="m">100</span>% /tmp
+<a name="rest_code_9c2c405210d545779b4ae0b3eae849a6-3"></a>...
+</pre>
+<p>که چه؟ inode پر است؟ چی هست اصلا؟ به نقل از <a class="reference external" href="https://en.wikipedia.org/wiki/Inode">ویکی‌پدیا</a>:</p>
+<blockquote>
+آی‌نود (به انگلیسی: inode) به ساختمان داده‌هایی گفته می‌شود که در سیستم‌فایل‌های
+شبیه به یونیکس مانند UFS استفاده می‌شود. یک inode اطلاعات پایه‌ای در مورد
+فایل‌ها، دایرکتوری‌ها و اشیاء دیگر موجود در فایل‌سیستم را در خود نگهداری می‌کند.</blockquote>
+<p>و خوب طبیعی است. اگر این فضا پر شده که دستور قبل همچین چیزی نشان می‌دهد، امکان
+ساختن فایل جدید وجود ندارد. یک find خوشگل سر هم می‌کنیم که همهٔ فایل‌های با اسم
+عجیب غریب یکسانشان را باطل کند. (در پست بعدی جریان این فایل‌ها را شرح می‌دهنم):</p>
+<pre class="code bash"><a name="rest_code_07b4fed8b7e844de966a15c5d7c0778b-1"></a>find -regextype posix-egrep -type f -regex <span class="s1">'.*[^/]{40}'</span> -delete
+</pre>
+<p>خیلی ساده یعنی هر فایلی که طول اسمش دقیقا ۴۰ کاراکتر است را پاک کن. و تست
+دوباره‌، auto completion به کار افتاده. خوب اصلا برای چه لاگین کرده بودیم؟ مشکل
+دیتابیس MySQL و وردپرس بود. یک بار دیگر صفحه را باز کنیم تا ببینیم دقیقا چه
+اتفاقی می‌افتد… و… عه؟ مشکل حل شده! بریم ببینیم تنظیمات جدید را ذخیره می‌کند؟ ها‌،
+آره آن هم حل شده. ضرب‌المثل ربط … به … این‌جا خیلی قشنگ صدق می‌کند :)</p>
+<p>به هر حال چند تا درس گنده یاد گرفتم، همچین باگ‌هایی ارزش یک کلاس درس واقعی را دارند‌، این‌طور نیست؟</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D9%88%D9%82%D8%A7%DB%8C%D8%B9%20%D9%86%DA%AF%D8%A7%D8%B1%DB%8C%20%DB%8C%DA%A9%20%D8%AF%DB%8C%D8%A8%D8%A7%DA%AF:%20%D9%88%D9%82%D8%AA%DB%8C%20MySQL%20%DA%86%DB%8C%D8%B2%DB%8C%20%D8%B0%D8%AE%DB%8C%D8%B1%D9%87%20%D9%86%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D8%AF!%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/no-space-mysql-problem/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/no-space-mysql-problem/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/no-space-mysql-problem/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../multithreading-bug-experiment-on-PyMongo-driver/" rel="prev" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../version-control-is-not-optional/" rel="next" title="ورژن کنترل اختیاری نیست!">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/no-space-mysql-problem/",
+        disqus_title="\u0648\u0642\u0627\u06cc\u0639 \u0646\u06af\u0627\u0631\u06cc \u06cc\u06a9 \u062f\u06cc\u0628\u0627\u06af: \u0648\u0642\u062a\u06cc MySQL \u0686\u06cc\u0632\u06cc \u0630\u062e\u06cc\u0631\u0647 \u0646\u0645\u06cc\u200c\u06a9\u0646\u062f!",
+        disqus_identifier="cache/posts/no-space-mysql-problem.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

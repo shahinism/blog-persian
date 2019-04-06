@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>وبلاگ شاهین (ارسال‌ها دربارهٔ rsync)</title><link>https://shahinism.com/archive/fa/</link><description></description><atom:link href="https://shahinism.com/archive/fa/categories/rsync.xml" rel="self" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Sat, 26 Aug 2017 17:33:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>پشتیبان‌گیری با rsync, cron, dropbox</title><link>https://shahinism.com/archive/fa/posts/backup_with_dropbox/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خوب قربانش بروم‌، با &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910825wqty-dzdy-mykhnmnyd.html"&gt;اعجوبه‌ای&lt;/a&gt; که به
+نام اینترنت به ما می‌فروشند‌، زیاد سعادت آن را نداریم که از Cloud و امکاناتش در هر
+زمینه که لازم بود بهره ببریم. این است که عمدتا بیخودی مجبوریم به خودمان استرس
+وارد کنیم. مساله این‌جاست که تا همین چند وقت پیش من از سرویس‌های تحت وب برای
+مدیریت برخی از اطلاعات مهم‌ام استفاده می‌کردم. اما الان دیگر بنا به دلایلی به آن‌ها
+بی‌اعتماد شده‌ام. این است که این فایل‌ها و ابزار‌های مورد نیازم را روی سیستم خودم
+دارم و حالا با روش‌هایی که طی پست‌های بعد می‌گویم‌، به روز و نگهداری‌شان می‌کنم.&lt;/p&gt;
+&lt;p&gt;ولی نکته این‌جاست که با این کار مهم‌ترین مزیت سیستم‌های تحت وب را از دست داده‌ام.
+چطور؟ اول این که قابلیت انتقال این فایل‌های مهم را از دست داده‌ام و ثانیا این که
+نمی‌توانم ازشان یک backup درست درمان داشته باشم! نمی‌توانم؟ خوب دروغ گفتم‌، قرار
+است در نگاه اول این‌طور به نظر برسد! با چند ابزار ساده و به درد بخور لینوکسی، کمی
+هم چاشنی &lt;a class="reference external" href="http://dropbox.com"&gt;Dropbox&lt;/a&gt; ‌، هم می‌شود قابلیت انتقال را داشت و هم backup!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://shahinism.com/archive/fa/posts/backup_with_dropbox/"&gt;بیشتر بخوانید…&lt;/a&gt; (3 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>backup</category><category>cron</category><category>crontab</category><category>dropbox</category><category>rsync</category><guid>https://shahinism.com/archive/fa/posts/backup_with_dropbox/</guid><pubDate>Tue, 28 May 2013 05:55:59 GMT</pubDate></item></channel></rss>

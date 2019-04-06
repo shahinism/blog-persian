@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دریافت متن ترانهٔ MP3 با لینوکس | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy/" title="چرا گنو/لینوکس را دوست دارم؟ به سبک شاهینیسم!" type="text/html">
+<link rel="next" href="../yn-ymkhs-dwst-dshtny-mqdmh/" title="این ایمکس دوست داشتنی (مقدمه)" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="دریافت متن ترانهٔ MP3 با لینوکس">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/">
+<meta property="og:description" content="اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبخت">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-02-07T20:03:14+03:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2013-02-07T20:03:14+03:30" title="2013-02-07 20:03">2013-02-07 20:03</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">دریافت متن ترانهٔ MP3 با لینوکس</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>اولین قدم‌، پیدا کردن سایتی بود که هم متن ترانه‌ها را به قدر کفایت داشته باشد‌، هم یک API درست درمان‌، یعنی رابطی که بتوان مثل آدم از طریق برنامه با آن به تبادل داده پرداخت نیز ارائه کند. خوب‌، خوشبختانه‌، این خارجکی‌ها‌، بر خلاف ما‌، سایت بدرد بخور زیاد دارند. پس انتخاب‌هایم خیلی زیاد بودند. اما کمی بیشتر که جستجو کردم دیدم <a title="Fetching lyrics in the command line" href="https://gist.github.com/febuiles/1549991" target="_blank">آدم سالاری</a> قبلا همچین اسکریپتی نوشته که مثل چــی هم کار می‌کند ;-)</p>
+<p>اصل اسکریپت همچین جایی است:</p>
+<pre class="code literal-block"><span></span>curl -s <span class="s2">"http://makeitpersonal.co/lyrics?artist=</span><span class="nv">$artist</span><span class="s2">&amp;amp;title=</span><span class="nv">$title</span><span class="s2">"</span>
+</pre>
+
+
+<p>خیلی ساده با curl یک درخواست به API سایت می‌فرستیم که در آن ‎$artist اسم خوانندهٔ ترانه و ‎$title اسم خود ترانه است. که البته‌، چون url‌ها نحو (Syntax) خاص خودشان را دارند‌، این اسکریپت‌نویس دوست داشتنی ما‌، با دو خط زیر‌، اسم خواننده و ترانه را معتبر می‌کند:</p>
+<pre class="code literal-block"><span></span><span class="nv">artist</span><span class="o">=</span><span class="sb">`</span>perl -MURI::Escape -e <span class="s1">'print uri_escape($ARGV[0]);'</span> <span class="s2">"</span><span class="nv">$artist_name</span><span class="s2">"</span><span class="sb">`</span>
+
+<span class="nv">title</span><span class="o">=</span><span class="sb">`</span>perl -MURI::Escape -e <span class="s1">'print uri_escape($ARGV[0]);'</span> <span class="s2">"</span><span class="nv">$song_title</span><span class="s2">"</span><span class="sb">`</span>
+</pre>
+
+
+<p>همین‌؟ تمام شد؟‌ خوب این اسکریپت کاری که می‌خواستیم را انجام داد. ولی شاهین را که می‌شناسید‌. دوست دارد کار‌هایش را <a title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" href="http://shahinism.com/blog/1390/09/26/%da%86%e2%80%8c%da%86%e2%80%8c%da%86-%db%b9-%da%86%d8%b7%d9%88%d8%b1-%d8%a8%d9%87-%d8%b5%d9%88%d8%b1%d8%aa-%d9%81%d9%84%d9%87%e2%80%8c%d8%a7%db%8c-%d9%84%db%8c%d9%86%da%a9%e2%80%8c%d9%87%d8%a7/" target="_blank">فله‌ای</a> انجام دهد! یک کمی سخت است که هر بار بیایم اسم ترانه و خواننده را به اسکریپت بگویم‌، بعد شیلنگ خروجی را بگیرم توی یک فایلی که می‌خواهم و از این حرف‌ها. پس می‌رویم سراغ دستکاری بیشتر این اسکریپت.</p>
+<h5>خجالت بکش شاهین</h5>
+
+<p>حتما می‌دانید که می‌توان به فایل‌های MP3 تگ زد. همین تگ‌هایی که اسم خواننده و ترانه و ژانر و این‌جور حرف‌ها را می‌توان بهشان خوراند که تا دست آخر با MP3 Player خیلی راحت‌تر بشود سر و سامان‌شان داد. البته اگر راست کار‌تان<a title="موسیقی در وب فارسی‌" href="http://shahinism.com/blog/1389/01/15/%d9%85%d9%88%d8%b3%db%8c%d9%82%db%8c_%d8%af%d8%b1_%d9%88%d8%a8_%d9%81%d8%a7%d8%b1%d8%b3%db%8c%e2%80%8c/" target="_blank"> سایت‌های موسیقی ایرانی</a> است‌، از این تگ‌ها مطمئنا خیری نسیب‌تان نشده‌، چون از دَم مثل ندید بدید‌ها پرش کرده‌اند با آدرس سایت داغان‌شان ;-)</p>
+<p>به هر حال‌، از آن‌جایی که آلبوم موسیقی مورد نظر من‌، مثل آدم تگ خورده بود‌، قصد داشتم تا از این تگ‌ها استفاده کنم. همیشه هم در مخیله‌ام این‌طور تصور می‌کردم که این تگ‌ها با یک روش مخوفی درون فایل موسیقی که اصلا نمی‌دانم چیست قایم شده‌اند و خواندن‌شان نیاز به کتاب‌خانه‌ای چیزی دارد که من از طرز کارش سر در نمی‌آورم. این بود که قصد داشتم اصلا کل اسکریپت را به برنامه‌ای به پایتون تغییر دهم. ولی خوب‌، یک سرچ کوچک کردم و کلی <b>خجالت کشیدم</b>.</p>
+<p>همان‌طور که در<a title="Bash Script: Reading ID3v1 Tags" href="http://phoxis.org/2011/08/24/bash-script-reading-id3v1-tags/" target="_blank"> این لینک</a> توضیح داده شده‌، عموما‌، ۱۲۸ بیت آخر فایل MP3 شامل تگ‌های آن است. و ابزار‌های به ظاهر سادهٔ گنو/لینوکسی‌، مثل چـــی‌، کمک‌مان می‌کنند که این تگ‌ها را بخوانیم‌. ببینید:</p>
+<pre class="code literal-block"><span></span><span class="nv">tag</span><span class="o">=</span><span class="k">$(</span>tail -c128 <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span> <span class="p">|</span> tr <span class="s1">'\0'</span> <span class="s1">' '</span><span class="k">)</span>
+
+<span class="nv">id3</span><span class="o">=</span><span class="k">$(</span>head -c10 <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span> <span class="p">|</span> tr <span class="s1">'\0'</span> <span class="s1">' '</span><span class="k">)</span>
+</pre>
+
+
+<h5>سر هم کردن اسکریپت نهایی</h5>
+
+<p>دیگر حالا‌، هم همهٔ ابزار‌های مورد نیاز‌مان را داریم‌، هم کلی چیز جدید یاد گرفته‌ایم. این است که‌، اسکریپت نهایی را سر هم می‌کنیم. که می‌توانید از <a title="lyric script" href="https://github.com/shahinism/Scripts/blob/master/Shell/lyric" target="_blank">این لینک</a> دریافتش کنید. برای استفاده از آن هم کافیست که اسم هر تعداد ترانهٔ MP3 را که دل‌تان می‌خواهد در جلویش تایپ کنید تا خودش باقی کار‌ها را انجام دهد.</p>
+<p><b>نکته:</b> خوب گاها پیش می‌آید که اسم ترانه‌، شامل کلماتی نظیر (Live) و یا (Bonus) باشد. و یا شاید اسم سایتی‌، چیزی را شامل شود. در این صورت‌، احتمالا API ما بر می‌گرداند که چیزی پیدا نکردم و از این حرف‌ها‌. ولی اسکریپت بیشعور ما آن را هم درون یک فایل هم اسم ترانه با فرمت txt ذخیره می‌کند. این‌جایش را دیگر خودتان می‌توانید با هنر دستکاری فایل لینوکسی‌تان‌، راست و ریست کنید ;-)</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D9%85%D8%AA%D9%86%20%D8%AA%D8%B1%D8%A7%D9%86%D9%87%D9%94%20MP3%20%D8%A8%D8%A7%20%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../chr-gnwlynwkhs-r-dwst-drm-bh-sbkh-shhy/" rel="prev" title="چرا گنو/لینوکس را دوست دارم؟ به سبک شاهینیسم!">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../yn-ymkhs-dwst-dshtny-mqdmh/" rel="next" title="این ایمکس دوست داشتنی (مقدمه)">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs/",
+        disqus_title="\u062f\u0631\u06cc\u0627\u0641\u062a \u0645\u062a\u0646 \u062a\u0631\u0627\u0646\u0647\u0654 MP3 \u0628\u0627 \u0644\u06cc\u0646\u0648\u06a9\u0633",
+        disqus_identifier="cache/posts/wp/dryft-mtn-trnhhy-mp3-b-lynwkhs.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

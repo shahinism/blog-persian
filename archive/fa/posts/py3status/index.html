@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3 | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/py3status/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../coursera-think-again/" title="معرفی دورهٔ آموزش تفکر Coursera" type="text/html">
+<link rel="next" href="../fitness_blender/" title="کلاس ورزش‌، برای گیک‌ها‌، چاق‌ها‌، لاغر‌ها‌، شل‌ها‌، کج‌ها و …" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/py3status/">
+<meta property="og:description" content="قبلا در مورد i3 حرف زده‌ام
+و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش
+بود) اطلاعات وضعیت سیستمم را در i3bar نمایش می‌دهم.
+خوب، حقیقتش بعد از مدتی فهمیدم که شل اسک">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-09-12T11:31:45+04:30">
+<meta property="article:tag" content="i3">
+<meta property="article:tag" content="i3bar">
+<meta property="article:tag" content="i3status">
+<meta property="article:tag" content="py3status">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2013-09-12T11:31:45+04:30" title="2013-09-12 11:31">2013-09-12 11:31</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>قبلا در مورد <a class="reference external" href="http://i3wm.org/">i3</a> <a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">حرف زده‌ام</a>
+و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش
+بود) اطلاعات وضعیت سیستمم را در i3bar <a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">نمایش می‌دهم</a>.
+خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی
+می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> این است که اطلاعات
+را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک
+می‌کند. ولی بدبختی این <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> هم این است که به قدر کافی قابل گسترش نیست و
+ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!</p>
+<p>این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را
+<a class="reference external" href="https://github.com/ultrabug/py3status">شروع کرده</a> که در واقع حکم یک پوشش برای
+<a class="reference external" href="http://i3wm.org/i3status/">i3status</a> را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته
+و آن را با کمک <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما
+هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> استفاده کنید
+و در آخر هم از فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> برای تنظیم هر دو ابزار بهره بگیرید.</p>
+<!-- TEASER_END -->
+<div class="section" id="id4">
+<h2>نصب و ساخت اسکریپت</h2>
+<p>برای شروع کافیست آن را نصب کرده و دستور زیر را در فایل تنظیمات i3‌تان قرار دهید
+(مسیر ‎ ~/‌.‌i3/config):</p>
+<pre class="code bash"><a name="rest_code_f33a4bc56b374930a88d1a6a50ad6e3e-1"></a>bar <span class="o">{</span>
+<a name="rest_code_f33a4bc56b374930a88d1a6a50ad6e3e-2"></a>  status_command py3status -i ~/.i3/py3status -c ~/.i3/i3status.conf
+<a name="rest_code_f33a4bc56b374930a88d1a6a50ad6e3e-3"></a><span class="o">}</span>
+</pre>
+<p>با این دستور ما به <a class="reference external" href="http://i3wm.org/">i3</a> می‌فهمانیم که باید از <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> برای نمایش داده‌های i3bar
+استفاده کند. همینطور به <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> می‌گوییم که فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در کدام
+مسیر واقع شده و در کدام مسیر باید به دنبال اسکریپت‌های پایتونی ما بگردد
+(‎‌~/‌.‌i3/py3status که یک دایرکتوری برای اسکریپت‌های ماست).</p>
+<p>لازمهٔ اسکریپتی که می‌نویسید این است که حتما کلاسی به اسم <a class="reference external" href="https://github.com/ultrabug/py3status">Py3status</a> داشته باشد که
+اطلاعات نهایی را در آن پردازش کرده و نمایش دهد. همچنین این کلاس باید در پاسخ
+فراخوانی‌اش موقعیتی که می‌خواهیم نتیجهٔ اسکریپت در آن نمایش داده شود (به عدد) و کل
+رشتهٔ خروجی را بازگرداند. چیزی مثل return(0, response)‎‌. برای نمونه به این کلاس
+توجه کنید:</p>
+<pre class="code python"><a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-1"></a><span class="k">class</span> <span class="nc">Py3status</span><span class="p">:</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-2"></a>  <span class="sd">"""</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-3"></a><span class="sd">  System status in i3bar</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-4"></a><span class="sd">  """</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-5"></a>  <span class="k">def</span> <span class="nf">ramInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">i3status_config</span><span class="p">):</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-6"></a>      <span class="sd">"""calculate the memory (RAM) status and return it.</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-7"></a>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-8"></a><span class="sd">      """</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-9"></a>      <span class="n">data</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">()</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-10"></a>      <span class="n">response</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'full_text'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'ram_info'</span><span class="p">}</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-11"></a>      <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">memory</span><span class="p">()</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-12"></a>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-13"></a>      <span class="k">if</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-14"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_good'</span><span class="p">]</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-15"></a>      <span class="k">elif</span> <span class="n">used_mem_percent</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">:</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-16"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_degraded'</span><span class="p">]</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-17"></a>      <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-18"></a>          <span class="n">response</span><span class="p">[</span><span class="s1">'color'</span><span class="p">]</span> <span class="o">=</span> <span class="n">i3status_config</span><span class="p">[</span><span class="s1">'color_bad'</span><span class="p">]</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-19"></a>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-20"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'full_text'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"RAM: </span><span class="si">%.2f</span><span class="s2">/</span><span class="si">%.2f</span><span class="s2"> GB (</span><span class="si">%d%%</span><span class="s2">)"</span> <span class="o">%</span> \
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-21"></a>                              <span class="p">(</span><span class="n">used_mem</span><span class="p">,</span> <span class="n">total_mem</span><span class="p">,</span> <span class="n">used_mem_percent</span><span class="p">)</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-22"></a>      <span class="n">response</span><span class="p">[</span><span class="s1">'cached_until'</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-23"></a>
+<a name="rest_code_2e28b4ee982345e7a023ea42f11af77d-24"></a>      <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="id5">
+<h2>پوشهٔ نمونه‌ها</h2>
+<img alt="https://res.cloudinary.com/shahinism/image/upload/v1503767533/BlogPhotos/py3status_in_use.png" src="https://res.cloudinary.com/shahinism/image/upload/v1503767533/BlogPhotos/py3status_in_use.png"><p>کاربران <a class="reference external" href="https://github.com/ultrabug/py3status">py3status</a> ابزارهای مختلفی در این زمینه نوشته‌اند که در پوشهٔ Examples
+پروژه می‌توانید نمونه‌هایی از آن‌ها را ببینید. برای مثال دو اسکریپت netdata (که
+وظیفهٔ بررسی سرعت اینترنت و حجم دریافتی یا ارسالی داده را بر عهده دارد) و sysdata
+(که میزان مصرفی رم را محاسبه می‌کند) را من نوشته‌ام و در پروژه اصلی به اشتراک
+گذاشته‌ام. همینطور یک اسکریپت قابل کنترل با کیبورد برای <a class="reference external" href="http://shahinism.github.io/posts/blog13900424ashnyy-b-tkhnykh-mdyryt-zmn-pmwdwr-.html">pomodoro</a>
+هم ساخته شده که می‌توانید مدیریت زمان فعالیتتان را با آن انجام دهید.</p>
+</div>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=py3status%20%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D8%A8%D8%B1%D8%A7%DB%8C%20%DA%AF%D8%B1%D9%81%D8%AA%D9%86%20%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA%20%D8%AF%D8%B1%20%D9%86%D9%88%D8%A7%D8%B1%20%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1%20i3%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/py3status/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/py3status/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/py3status/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+              <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/i3/" rel="tag">i3</a></li>
+            <li><a class="tag p-category" href="../../categories/i3bar/" rel="tag">i3bar</a></li>
+            <li><a class="tag p-category" href="../../categories/i3status/" rel="tag">i3status</a></li>
+            <li><a class="tag p-category" href="../../categories/py3status/" rel="tag">py3status</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+        </ul>
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../coursera-think-again/" rel="prev" title="معرفی دورهٔ آموزش تفکر Coursera">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../fitness_blender/" rel="next" title="کلاس ورزش‌، برای گیک‌ها‌، چاق‌ها‌، لاغر‌ها‌، شل‌ها‌، کج‌ها و …">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/py3status/",
+        disqus_title="py3status \u0627\u0628\u0632\u0627\u0631 \u0645\u0646\u0627\u0633\u0628 \u0628\u0631\u0627\u06cc \u06af\u0631\u0641\u062a\u0646 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u062f\u0631 \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 i3",
+        disqus_identifier="cache/posts/py3status.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

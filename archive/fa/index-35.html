@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="description" content="چهاردیواری شخصی یک برنامه‌نویس که در آن یاد می‌گیرد‌، به اشتراک می‌گذارد و گاها غرغر می‌کند!">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وبلاگ شاهین (صفحهٔ ارسال‌های قدیمی 35) | وبلاگ شاهین</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/index-35.html">
+<link rel="prev" href="index-36.html" type="text/html">
+<link rel="next" href="index-34.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script>
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="."><img src="assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <div class="postindex">
+      <article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2012-05-25T23:09:58+04:30" title="2012-05-25 23:09">2012-05-25 23:09</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/wp/revelation-dr-myzkhr-awesome/" class="u-url">Revelation در میزکار Awesome</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<pre class="code literal-block"><span></span>git clone https://bioe007@github.com/bioe007/awesome-revelation.git ~/.config/awesome/revelation
+</pre>
+
+
+<p>و سپس در فایل rc.lua همان اویل می‌نویسیم:</p>
+<pre class="code literal-block"><span></span>require<span class="o">(</span><span class="s2">"revelation"</span><span class="o">)</span>
+</pre>
+
+
+<p>و سپس به دنبال این خط می‌گردیم:</p>
+<pre class="code literal-block"><span></span><span class="nv">globalkeys</span> <span class="o">=</span> awful.util.table.join<span class="o">(</span>
+</pre>
+
+
+<p>و دقیقا زیرش این را اضافه می‌کنیم:</p>
+<pre class="code literal-block"><span></span>awful.key<span class="o">({</span>modkey<span class="o">}</span>, <span class="s2">"e"</span>, revelation<span class="o">)</span>,
+</pre>
+
+
+<p>به همین راحتی‌، حالا پس از یک ریست کردن Awesome کافیست که modkey+e را فشار دهید و دقیقا مدل Awesomeای همان چیزی که از KDE برایتان گفتم را مشاهده کنید‌!</p>
+<p></p>
+<p style="text-align: center;"><img class="aligncenter" title="Revelation screenshot" src="http://awesome.naquadah.org/w/images/thumb/Revelation.png/600px-Revelation.png" alt="نمونه تصویری از افزونه revelation در میزکار Awesome" width="420" height="262"></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/revelation-dr-myzkhr-awesome/#disqus_thread" data-disqus-identifier="cache/posts/wp/revelation-dr-myzkhr-awesome.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2012-04-14T20:36:02+04:30" title="2012-04-14 20:36">2012-04-14 20:36</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/wp/mshhdh-lyst-fylhy-mwjwd-dr-ykh-tar-b/" class="u-url">دریافت اطلاعات سیستم بدون استفاده از Conky، یا چطور با عصای جادو‌ی لینوکس یک Conky بسازیم!مشاهده لیست فایل‌های موجود در یک tar‌، بدون باز کردنش‌!</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<pre class="code literal-block"><span></span>lz <span class="m">1</span>.tar.gz
+
+tar -tzf <span class="m">1</span>.tar.gz
+</pre>
+
+
+<p>و دوم این که اگه فایلتون زیپ شده نیست و فقط یه tarه لختیه‌، بزنین:</p>
+<pre class="code literal-block"><span></span>tar -tf <span class="m">1</span>.tar
+</pre>
+
+
+<p>احتمال خیلی خیلی زیاد می‌دم که برای فشرده ساز‌های دیگه هم همچین چیزایی باشه‌! دیگه اوناش بماند برای وقتی که بهشون نیاز پیدا کردیم ;-)</p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/mshhdh-lyst-fylhy-mwjwd-dr-ykh-tar-b/#disqus_thread" data-disqus-identifier="cache/posts/wp/mshhdh-lyst-fylhy-mwjwd-dr-ykh-tar-b.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2012-04-09T02:27:37+04:30" title="2012-04-09 02:27">2012-04-09 02:27</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/wp/yddshty-dr-mwrd-drmn-alzymr-alsa/" class="u-url">یادداشتی در مورد درمان آلزایمر Alsa‌!</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<pre class="code literal-block"><span></span>alsactl -f /var/lib/alsa/asount.state store
+
+alsactl -f /var/lib/alsa/asount.state restore
+</pre>
+
+
+<p>خوب حالا یعنی چه؟ اولی را که اجرا کنی یک فایل حاوی تنظیمات فعلی Alsa‌تان در شاخه‌ی مذکور می‌سازد که طبعا در ادامه توسط خود alsactl قابل خواندن است‌. در خط بعد هم به alsactl می‌گوییم که آن فایل که ساختی را بخوان‌! خوب ما هم که تنبل‌تر از این حرف‌هاییم خط دوم را به فایل rc.local (‌برای اسلکور موجود در شاخه ‏‎/etc/rc.d و برای آرچ در همان etc) کپی می‌کنیم تا دیگر خودش بداند و خودش.</p>
+<p>*: ممنون می‌شوم اگر می‌دانید چطور شد که اینطور شد‌، به ما هم یاد دهید ;-)</p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/yddshty-dr-mwrd-drmn-alzymr-alsa/#disqus_thread" data-disqus-identifier="cache/posts/wp/yddshty-dr-mwrd-drmn-alzymr-alsa.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2012-03-31T07:44:58+04:30" title="2012-03-31 07:44">2012-03-31 07:44</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/wp/tgyyr-pwsth-emacs-b-bsth-color-theme/" class="u-url">تغییر پوسته Emacs با بسته color-theme</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>اولین روشی که برای این کار با آن آشنا شدم‌، فایلی به اسم ‎<a href="http://www.softpanorama.org/Xwindows/Configuration/xdefaults.shtml" title="xdefaults on sofpanaroma" target="_blank">.Xdefaults</a> در پوشه‌ی خانگی بود که از قرار آرگومان‌هایی علاوه بر نمونه‌هایی که خواهیم دید برای کنترل نمایش دیگر نرم‌افزار‌ها نظیر xterm نیز در خود دارد‌. برای استفاده از این روش کافیست این فایل را با ویرایشگر باز کرده‌، و خطوطی به صورت زیر به آن اضافه کنیم‌:</p>
+<pre class="code literal-block"><span></span>Emacs.background: ivory
+
+Emacs.foreground: MidnightBlue
+</pre>
+
+
+<p>که رنگ پس زمینه‌، و رنگ نوشته‌ها را تعیین می‌کند‌. اما مشکل این روش جدای از چندان ایمکسی نبودن‌، وابسته بودن به محیط X است که چندان محیط یک‌پارچه‌ای برای ایمکس در ترمینال و X ارائه نمی‌کند‌. (‌البته شاید هم بکند که من نمی‌دادنم‌) به هر حال در صورت علاقه به آشنایی با این روش می‌توانید <a href="http://www.dsj.net/compedge/emacstips.html" target="_blank">+</a> و <a href="ftp://ftp.pt.xemacs.org/pub/xemacs/Attic/faq/HTML/XEmacs-faq_6.html" target="_blank">+</a> را مطالعه کنید‌.</p>
+<h5>استفاده از ‎.emacs</h5>
+
+<p>روش بعدی استفاده از ویژگی‌های خود ایمکس است‌. در این روش کافیست تنظیماتی به شکل زیر را به فایل ‎.emacs موجود در پوشه‌ی خانگیتان وارد کنید‌:</p>
+<pre class="code literal-block"><span></span><span class="o">(</span>set-face-foreground <span class="s1">'default "blue")</span>
+
+<span class="s1">(set-face-background '</span>default <span class="s2">"green"</span><span class="o">)</span>
+</pre>
+
+
+<p>ویژگی‌های دیگری نیز از این دست نظیر زیر‌خط‌ها و ... موجودند‌. برای این که به تنظیمات نمایش هر بخش از نوشته دست یابید‌، کافیست نشانگر را به آن‌جا برده و M-x describe-face را وارد کنید‌. اطلاعات کاملی در مورد نمایش آن بخش به شما نشان داده خواهد شد که می‌توانید با توجه به سلیقه‌ی خود آن رو تغییر دهید‌.</p>
+<p>جدای از تعریف مستقیم نام رنگ‌ها به صورت red, blue و ... می‌توان از نام Hex رنگ‌ها نیز استفاده کرد. (‌البته توجه داشته باشید که ترمینال شما باید از میزان رنگ متناسب پشتیبانی کند)</p>
+<h5>معرفی color-theme</h5>
+
+<p>خوب تا این‌جای کار با روش‌های تغییر ساختار رنگ پوسته‌ی ایمکس آشنا شدیم‌. اما خوب بالاغیرتا کار طاقت فرساییست که بخواهیم برای تمامی حالات یک پوسته‌ی ایمکس (‌آن هم با این همه قابلیت‌) رنگ‌بندی متناسبی پیدا کنیم‌. این‌جاست که طبق معمول (‌در دنیای آزاد) بسته‌ای به نام <a href="https://gna.org/projects/color-theme" title="color theme official page" target="_blank">color-theme</a> با پنجاه پوسته رنگ پیش‌فرض که قابلیت تغییر نیز دارند در دسترس شماست‌. برای <a href="http://www.emacswiki.org/emacs-en/ColorTheme#toc1" title="colortheme on emacs wiki" target="_blank">نصب آن</a> کافیست پس از<a href="http://download.gna.org/color-theme/" title="download emacs color theme" target="_blank"> دانلودش‌،</a> استخراجش کرده‌، و فایل color-theme.el و پوشه‌ی themes را به یکی از شاخه‌های موجود در load-path‌تان وارد کنید‌. اگر نمی‌دانید load-path چیست <a href="http://www.emacswiki.org/emacs-en/LoadPath" title="loadpath on emacs wiki" target="_blank">این‌جا</a> را مطالعه کنید‌، برای محکم کاری هم می‌توانید از دستورات زیر بهره ببرید‌:</p>
+<pre class="code literal-block"><span></span>wget http://download.gna.org/color-theme/color-theme-6.6.0.tar.gz
+
+mkdir ~/.emacs.d
+
+mkdir ~/.emacs.d/color-theme
+
+tar -xvf color-theme-6.6.0.tar.gz
+
+<span class="nb">cd</span> color-theme-6.6.0.tar.gz
+
+mv color-theme.el ~/.emacs.d/color-theme
+
+mv themes ~/.emacs.d/color-theme
+
+vim ~/.emacs
+</pre>
+
+
+<p>و در آخر خطوط زیر را به فایل اضافه کرده و آن را ذخیره کنید‌:</p>
+<pre class="code literal-block"><span></span><span class="o">(</span>require <span class="err">'</span>color-theme<span class="o">)</span>
+
+<span class="o">(</span>color-theme-initialize<span class="o">)</span>
+
+<span class="o">(</span>color-theme-robin-hood<span class="o">)</span>
+</pre>
+
+
+<p>که در این‌جا پوسته‌ای به نام robin-hood را انتخاب کردیم‌. (‌برای کسب اطلاعات کامل‌تر در این زمینه می‌توانید به <a href="http://www.emacswiki.org/emacs-en/ColorTheme" target="_blank">این صفحه</a> رجوع کنید‌). خوب پوسته‌های این بسته چندان چنگی به دل نمی‌زد‌.</p>
+<p>جستجوی بعدی مرا به <a href="http://slinky.imukuppi.org/zenburnpage/" title="zenburn page" target="_blank">این صفحه</a> رساند‌. معرفی‌نامه‌ی پوسته‌ای به اسم zenburn (‌که قبلا <a href="http://shahinism.com/blog/1391/01/10/%db%8c%da%a9-%d9%be%d9%88%d8%b3%d8%aa%d9%87-%d8%a8%d8%b1%d8%a7%db%8c-%d9%85%d8%af%db%8c%d8%b1-%d9%be%d9%86%d8%ac%d8%b1%d9%87-awesome/" title="یک پوسته برای مدیر پنجره Awesome" target="_blank">افتخار آشنایی</a> با آن را روی Awesome wm داشتم) که ار قرار اولین بار برای Vi منتشر شده و الان توسط دوست‌دارانش برای بسیاری دیگر از نرم‌افزار‌ها توسعه داده شده‌. (‌در آینده در مورد نحوه‌ی استفاده از آن در باقی نرم‌افزار‌ها هم خواهم نوشت‌).</p>
+<p>خوب برای بهره برداری از این پوسته روی emacs به این صورت عمل می‌کنیم‌:</p>
+<pre class="code literal-block"><span></span>git clone https://github.com/dbrock/zenburn-el.git
+
+mkdir ~/.emacs.d/color-theme/themes/zenburn
+
+mv zenburn-el/zenubrn.el ~/.emacs.d/color-theme/themes/zenuburn
+
+vim ~/.emacs
+</pre>
+
+
+<p>و کلا به جای خطوط اضافه شده‌ی قبلی‌، خطوط زیر را اضافه می‌کنیم‌:</p>
+<pre class="code literal-block"><span></span><span class="o">(</span>add-to-list <span class="err">'</span>load-path <span class="s2">"~/.emacs.d/color-theme/"</span><span class="o">)</span>
+
+<span class="o">(</span>load-file <span class="s2">"~/.emacs.d/color-theme/themes/zenburn-el/zenburn.el"</span><span class="o">)</span>
+
+<span class="o">(</span>zenburn<span class="o">)</span>
+</pre>
+
+
+<p>و حالا با اجرای ایمکس از رنگ‌بندی جدید لذت می‌بریم‌:</p>
+<p><img class="aligncenter" src="http://dl.dropbox.com/u/25017694/Blog-photos/emacs-zenburn.png" alt="" width="490" height="345"></p>
+<p>البته طبق معمول اگر جایی چیزی نا خوشایند بود می‌توان دستکاری و بهترش کرد‌.</p>
+<p><strong>نکته‌:</strong> من هنوز در مورد ویرایشگر‌های Vi و Emacs بسیار آماتور هستم‌ و ممکن است در میان آموزش‌های این‌چنینی اشتباهاتی رخ داده باشد‌. (‌کلا نمی‌خواهم ترس از اشتباه جلوی این‌چنین نوشتنم را بگیرد‌) لذا از تمامی دوستانی که دستی بر آتش دارند دعوت می‌کنم در بهتر شدن این نوشتار‌ها یاری‌ام کنند ;-)</p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/tgyyr-pwsth-emacs-b-bsth-color-theme/#disqus_thread" data-disqus-identifier="cache/posts/wp/tgyyr-pwsth-emacs-b-bsth-color-theme.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2012-03-29T21:44:01+04:30" title="2012-03-29 21:44">2012-03-29 21:44</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/wp/ykh-pwsth-bry-mdyr-pnjrh-awesome/" class="u-url">یک پوسته برای مدیر پنجره Awesome</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>پوسته‌ی فعلی من روی Awesome از اسکرین شات زیر قابل مشاهده است:</p>
+<p></p>
+<p style="text-align: center;"><img class="aligncenter" src="https://github.com/shahinism/.configs/raw/master/Awesome-wm-theme/snapshot.png" alt="" width="491" height="369"></p>
+<p>امکاناتش هم به شرح زیر:</p>
+<ul>
+<li>یک ترمینال مثل yakuake در KDE که با Mod+F12 باز می‌شود. که البته از terminator به عنوان ترمینال استفاده می‌کند که در صورت موجود نبودنش روی سیستم‌تان باید نصبش کنید.</li>
+    <li>یک سری ویجت در نوار ابزار که اطلاعات سخت‌افزاری سیستم و شبکه را به نمایش می‌گذارند.</li>
+    <li>میانبر پیش‌فرض Alt+Shift برای تغییر کیبرد بین فارسی و انگلیسی.</li>
+</ul>
+<p>برای نصب هم باید به صورت زیر عمل کرد(<a href="https://github.com/shahinism/.configs/tree/master/Awesome-wm-theme" target="_blank">لینک پوسته روی Git</a>):</p>
+<pre class="code literal-block"><span></span>$ git clone https://github.com/shahinism/Awesome-wm-theme
+
+$ mv ~/.config/awesome ~/.config/awesome.back
+
+$ mv Awesome-wm-theme ~/.config/awesome
+
+$ <span class="nb">cd</span> ~/.config/awesome
+
+$ git clone http://git.sysphere.org/vicious
+
+$ git clone https://github.com/cedlemo/blingbling.git
+
+Restart Awesome
+</pre>
+
+
+<p>همانطور که می‌بینید برای این پوسته دو افزونه vicious و blingblind (کشته‌ی اسمشم) را نیز نصب کردیم‌.</p>
+<p><strong>ویرایش یک:</strong></p>
+<p>به یاد‌آوری Hamed عزیز نرم‌افزار‌های کانفیگ شده روی این پوسته را در زیر ذکر می‌کنم‌. البته تمامی این نرم‌افزار‌ها قابل جایگزینی هستند و تنها کافیست فایل rc.lua ویرایش شود‌. همچنین جدای از لیست نرم‌افزار‌های اختیاری زیر مطمئن شوید که بسته setxkbmap هم روی سیستم نصب است‌. این بسته برای تغییر لایوت کیبورد مورد استفاده قرار می‌گیرد‌.</p>
+<ul>
+<li>terminator به عنوان شبیه ساز ترمینال.</li>
+    <li>dolphin به عنوان فایل منیجر</li>
+    <li>conky برای ویجت روی دسکتاپ</li>
+</ul>
+<p></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/wp/ykh-pwsth-bry-mdyr-pnjrh-awesome/#disqus_thread" data-disqus-identifier="cache/posts/wp/ykh-pwsth-bry-mdyr-pnjrh-awesome.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article>
+</div>
+              <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-36.html" rel="prev">ارسال‌های جدید‌تر</a>
+            </li>
+            <li class="next">
+                <a href="index-34.html" rel="next">پست‌های قدیمی‌تر</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

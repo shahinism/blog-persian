@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../dryft-tlt-systm-bdwn-stfdh-z-conky/" title="dryft-tlt-systm-bdwn-stfdh-z-conky" type="text/html">
+<link rel="next" href="../6-sl-blg-nwsy/" title="۶ سال شاهینیسم" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/">
+<meta property="og:description" content="ولی خوب‌، ایمان هم کالیبرش بالاست‌. شاید هم کمال همنشین… این است که بعد از یک مدتی که خیلی ذوق داشت و همه مدل فلش کارت آماده می‌کرد‌، چون سختش بود‌، کم کم فرمت‌های آماده شده را آنقدر کم کرد که این اوا">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-12-13T21:24:31+03:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2012-12-13T21:24:31+03:30" title="2012-12-13 21:24">2012-12-13 21:24</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">تولید خودکار فلش کارت انگلیسی به فارسی برای Anki با کمی شل اسکریپت</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>ولی خوب‌، ایمان هم کالیبرش بالاست‌. شاید هم کمال همنشین… این است که بعد از یک مدتی که خیلی ذوق داشت و همه مدل فلش کارت آماده می‌کرد‌، چون سختش بود‌، کم کم فرمت‌های آماده شده را آنقدر کم کرد که این اواخر دیگر تنها kvtml آماده می‌کرد‌. فرمتی که آماده کردنش خیلی آسان‌تر از باقی قضایا بود‌، ولی مال نرم‌افزار بسیار به درد نخور kwordquiz میزکار KDE بود! این بود که دو سه هفته پیش‌، این ایده به سرم افتاد که اول کمی از کار ایمان کم کنم‌! بندهٔ خدا زحمت زیادی می‌کشد و به هر حال حیف است که فقط مصرف کننده باشم‌. این شد که با پایتون اسکریپتی برایش نوشتم که kvtml‌ها را خیلی راحت به anki تبدیل کند‌. ذکر خیر این اسکریپت را خودش <a title="kvtml 2 anki in emanlog" href="http://emanlog.com/?p=292" target="_blank">کرده‌</a>.</p>
+<p>معنی این اسکریپت قبلی این بود که حالا حالاها خوراک اضافه خواهم داشت‌. ولی حقیقتش کلمه‌های ایمان‌، حداقل تا این‌جایی که من دیده‌ام‌، اکثریتشان‌ در سطح من نیست‌. اگر هم باشد من خودم خیلی خیلی بیشتر از آن‌ها را در کتاب‌ها و مطالبی که روزانه می‌خوانم می‌بینم! مساله این‌جاست که از روی تنبلی‌، فقط به زور دیکشنری (mdic روی میزکار، google translate روی اینترنت و mobidic روی موبایل) ترجمه‌شان می‌کنم و بعد از چند جمله معنی‌شان از یادم می‌پرد‌. خسته کننده است‌. این طور نیست؟</p>
+<p>خوب کمی با خودم دو دو تا چهارتا می‌کنم و یادم می‌آید که روی آن اسکریپت تبدیل kvtml دوست خوبم anki یک فرمت متنی خیلی تمیزی را به عنوان ورودی می‌گرفت و فلش کارتش می‌کرد‌. (اصلا آن اسکریپت بر همین مبنا کار می‌کند) یک همچین نحوی:</p>
+<pre class="code literal-block"><span></span>English<span class="p">;</span>انگلیسی
+</pre>
+
+
+<p>که البته می‌توان بهش فایل‌های چند رسانه‌ای هم چسباند و یا با HTML خوشگلش کرد‌. خوب این یعنی می‌شود هر وقت که کلمه‌ای ترجمه می‌کنم‌، ترمینالم را باز کنم و مثلا از یک همچین دستوری استفاده کنم:</p>
+<pre class="code literal-block"><span></span><span class="nb">echo</span> <span class="s2">"English;انگلیسی"</span> <span class="p">&amp;</span>gt<span class="p">;&amp;</span>gt<span class="p">;</span> deck.txt
+</pre>
+
+
+<p>یا شایدم همیشه یک ادیتور زیر دستم باز بگذارم‌! ولی نه فکر کنم همان اولی بهتر است‌ (چون ترمینال در دسترس‌تر است). ولی خوب این این‌قدر‌ها هم خوشگل نیست‌. ضمن این که مثل فلش کارت‌های ایمان صدا و عکس ندارد‌. حالا عکس به کنار‌، تلفظ برای من از نان شب واجب‌تر است‌. بعضی کلمات آن‌قدر به چشمم سخت می‌آیند که اصلا نمی‌خوانمشان D:</p>
+<p>خوب تلفظ را هم می‌شود مشکلش را با espeak حل کرد‌ (هر چند صدای روباتیکش خیلی نچسب است!). جهنم‌، شروع می‌کنم به نوشتن یک اسکریپت‌. این ایده‌، در میانهٔ راه آن‌قدر این در و آن در می‌خورد‌. آن‌قدر از ابزار‌ها و وسایلی که بقیه نوشته‌اند توش استفاده می‌شود که می‌شود اسکریپتی که اگر اینترنت دم دستش باشد‌، خودش عبارت وارد شده را با استفاده از google translate ترجمه می‌کند و تلفظ google translate را می‌چسباند تنگش و کار را تمام می‌کند‌.</p>
+<p>چون می‌دانم همه حوصلهٔ خواندن نکات فنی اسکریپت را ندارند‌، این پست را در دو بخش می‌نویسم‌. بخش اول‌، برای کاربرانی که فقط می‌خواهند از آن استفاده کنند‌، و بخش دوم برای اشاره به نکات فنی کار ;-)</p>
+<p></p>
+<h5>معرفی:</h5>
+<p>این اسکریپت برای اجرا به fribidi, ffmpeg, curl و html2text نیاز دارد‌. سه تای اول که عموما وضع و حال‌شان مشخص است‌. اما این آخری یک اسکریپت پایتون است که می‌توانید از مخازن‌تان نصب کنید‌. ولی من پیشنهاد می‌کنم به جای آن distribute یا pysetuptools پایتون را نصب کنید و پس از آن با دستور زیر سر و ته این اسکریپت را هم بیاورید:</p>
+<pre class="code literal-block"><span></span>sudo pip install html2text
+</pre>
+
+
+<p>دلیلش هم ساده است‌. مخازن پایتون خیلی سریع‌تر از مخازن توزیع‌تان به روز می‌شوند و صد البته در آخر کار مدیریت این بسته‌ها با آن‌ها آسان‌تر است‌! حالا اسکریپت را از <a title="fcgenerator on github" href="https://github.com/shahinism/Scripts/blob/master/Shell/fcgenerator.sh" target="_blank">این‌جا</a> دانلود کنید و به صورت زیر چشم‌تان را به جمالش روشن کنید:</p>
+<pre class="code literal-block"><span></span>chmod +x fcgenerator.sh
+
+./fcgenerator.sh -w <span class="s2">"Some english word"</span> -d firstDeck
+</pre>
+
+
+<p>مقدار Some english word که به اپراتور ‎-w نسبت داده شده‌، همان عبارت انگلیسی‌ای است که می‌خواهیم ترجمه‌اش کنیم‌. مقدار firstDeck هم اسم Deckای (مجموعه فلش کارت) که می‌خواهیم این لغت به آن اضافه شود است‌. اگر اینترنت‌تان وصل است که برنامه مثل پلنگ کارش را انجام می‌دهد و فایل‌ها را تولید می‌کند‌. اکر هم نه که می‌توانید به روش‌های دیگری کلمه را اضافه کنید‌.</p>
+<p>مثلا فرض کنید که شما از ترجمهٔ google translate حال نمی‌کنید‌. خوب راحت است‌. کافی است که با استفاده از اپراتور ‎-t ترجمهٔ خودتان را به لغت بچسبانید‌. همین‌طور می‌توانید به جای تلفظ گوگل‌، از espeak استفاده کنید‌. برای این کار هم از اپراتور ‎-e استفاده می‌کنید. طرز کارش ساده است‌، این‌طور نیست؟</p>
+<p>بعد از اجرای فرمان بالا اسکریپت برای ما یک فایل firstDeck.txt و یک دایرکتوری firstDeck.media ساخته‌. اگر کلمات دیگری هم داشتید و خواستید به این فلش کارت اضافه کنید‌، کافیست به دایرکتوری که این فایل‌ها در آن قرار دارند بروید و فقط مقدار ‎-w دستور را با کلمهٔ جدید‌تان عوض کنید‌.</p>
+<p>حالا نوبت نصب Deck جدید‌تان روی Ankiاست‌. اگر Deck‌های شما هم در مسیر ‎~/.anki/decks قرار دارد (اگر توزیع‌تان خوشمزگی نکرده و جای دیگر نریخته باشد‌، بعید می‌دانم این مسیر فرق کند) می‌توانید با دستور زیر دایرکتوری مدیا را در این مسیر کپی کنید:</p>
+<pre class="code literal-block"><span></span>./fcgenerator.sh -i firstDeck
+</pre>
+
+
+<p>اگر هم نه که دستی کپی کنید! حالا Anki را باز کنید‌ و از منوی File گزینهٔ Import را انتخاب کنید‌. در قسمت نام Deck همان چیزی را بنویسید که برای اپراتور ‎-d قرار دادید (در این‌جا firstDeck) و سپس فایل firstDeck.txt را به آن بخورانید‌. تمام شد‌. فلش‌کارت‌های جدید‌تان آماده‌اند‌.</p>
+<p>طرز کار اسکریپت خیلی ساده است‌. دیگر باقی‌اش به خودتان بستگی دارد که چطور از آن استفاده می‌کنید‌. می‌توانید برای راحتی کار آن را به PATHتان انتقال دهید و یا یک alias برای خیلی راحت‌تر شدنش تعریف کنید‌. یا حتی می‌توانید یک اسکریپت کوچک دیگر بنویسید که برای لیستی از لغات این فرمان را ایجاد کند و به صورت خودکار یک لیست بلند بالا از لغات + ترجمه + تلفظ‌شان داشته باشید‌! البته جنبه هم در کنارش خوب است‌. با Google طرفید‌. همچین هم زیاده روی نکنید که IPتان را به خاطر فرستادن درخواست‌های زیادی بلاک کند‌، یا کلا در گوگل ترنسلیت را گل بگیرد! ها در ضمن‌، می‌توانید با استفاده از ‎-T (به چه زبانی) و ‎-F (از چه زبانی) به جای حالت پیش‌فرض انگلیسی به فارسی از زبان‌های دیگر هم استفاده کنید.</p>
+<h5>چطور کار می‌کند؟</h5>
+
+<p>خوب اکثر دستورات اگر سواد شل اسکریپتینگ داشته باشید‌، سر راست‌اند‌. من در این‌جا فقط به چیز‌های جالبی که از کد‌های دیگران بهره گرفتم اشاره می‌کنم‌. یکی از خوشگل‌ترین‌شان برایم این تابع بود:</p>
+<pre class="code literal-block"><span></span><span class="k">function</span> deps<span class="o">(){</span>
+
+<span class="nv">DEPENDENCIES</span><span class="o">=</span><span class="nv">$@</span>
+
+<span class="nv">deps_ok</span><span class="o">=</span>YES
+
+<span class="k">for</span> dep in <span class="nv">$DEPENDENCIES</span>
+
+<span class="k">do</span>
+
+<span class="k">if</span> ! which <span class="nv">$dep</span> <span class="p">&amp;</span>amp<span class="p">;&amp;</span>gt<span class="p">;</span>/dev/null<span class="p">;</span> <span class="k">then</span>
+
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$dep</span><span class="s2"> is not installed. please install it and try again."</span>
+
+<span class="nv">deps_ok</span><span class="o">=</span>NO
+
+<span class="k">fi</span>
+
+<span class="k">done</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$deps_ok</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"NO"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+
+<span class="nb">echo</span> -e <span class="s2">"Unmet dependencies ^"</span>
+
+<span class="nb">echo</span> -e <span class="s2">"Aborting!"</span>
+
+<span class="nb">exit</span> <span class="m">1</span>
+
+<span class="k">else</span>
+
+<span class="k">return</span> <span class="m">0</span>
+
+<span class="k">fi</span>
+
+<span class="o">}</span>
+</pre>
+
+
+<p>خوب می‌دانم چیز ساده‌ای است. ولی حقیقتش من عقلم نمی‌رسید که می‌توان به این خوشگلی پیش‌نیاز‌های اسکریپت را بررسی کرد‌. این اسکریپت را از <a title="bash support function check dependencies" href="http://www.snabelb.net/content/bash_support_function_check_dependencies" target="_blank">این لینک</a> برداشتم و کمی دستکاری‌اش کردم تا به اسکریپت من بیاید‌.</p>
+<p>بخش بعدی ماجرا‌، هیولا‌ترین قسمت اسکریپت است‌. Google مثل همیشه احمق‌بازی در آورده و ما را از داشتن یک API ساده محروم کرده‌. ولی خوب این مرحمت گوگل باعث نشده که <a title="access google translate from a terminal" href="http://crunchbang.org/forums/viewtopic.php?id=17034" target="_blank">این دوست </a>ندیده و نشنیدهٔ عزیزمان دست از انگولک گوگل و نجات ما بردارد‌.</p>
+<pre class="code literal-block"><span></span><span class="nv">result</span><span class="o">=</span><span class="k">$(</span>curl -s -i --user-agent <span class="s2">""</span> -d <span class="s2">"sl=</span><span class="nv">$FROMT</span><span class="s2">"</span> -d <span class="s2">"tl=</span><span class="nv">$TARGETT</span><span class="s2">"</span> --data-urlencode <span class="s2">"text=</span><span class="nv">$WORD</span><span class="s2">"</span> http://translate.google.com<span class="k">)</span>
+
+<span class="nv">encoding</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">'/Content-Type: .* charset=/ {sub(/^.*charset=["'</span><span class="se">\'</span><span class="s1">']?/,""); sub(/[ "'</span><span class="se">\'</span><span class="s1">'].*$/,""); print}'</span> <span class="p">&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;</span><span class="s2">"</span><span class="nv">$result</span><span class="s2">"</span><span class="k">)</span>
+
+<span class="nv">TRANSLATION</span><span class="o">=</span><span class="k">$(</span>iconv -f <span class="nv">$encoding</span> <span class="p">&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;&amp;</span>lt<span class="p">;</span><span class="s2">"</span><span class="nv">$result</span><span class="s2">"</span> <span class="p">|</span> awk <span class="s1">'BEGIN {RS="</span>
+
+
+
+<span class="s1">"};/&amp;lt;span[^&amp;gt;]* id=["'</span><span class="se">\'</span><span class="s1">']?result_box["'</span><span class="se">\'</span><span class="s1">']?/'</span> <span class="p">|</span> html2text<span class="k">)</span>
+</pre>
+
+
+<p>مساله ساده است‌. ما صفحه وبی داریم که می‌توانیم در جای خاصی از آن بگوییم که ترجمهٔ چه کلمه‌ای را می‌خواهیم و این صفحه در مقابل در جای خاص دیگری از خودش ترجمهٔ کلمه را به ما نشان می‌دهد‌. اسم این صفحه http://translate.google.com است که چون از متد GET (اگر درست یادم باشد) استفاده می‌کند‌، می‌توان با تغییر متغیر‌هایش نتیجهٔ کلمات مختلف را در آن دید‌. ضمن این که اضافه کنم که این دوستمان از روش جالبی برای پیدا کردن این متد‌ها (غیر از نگاه کردن به URL استفاده کرده) که هر چند به نظرم استفاده‌اش در این‌جا بی‌خود است‌، ولی کاربرد‌های باحال‌تری می‌توان برایش پیدا کرد. فعلا برای فهمیدن ماجرا از زبان خودش به صفحه‌ای که در بالا گفتم رجوع کنید‌!</p>
+<p>در ادامه کافیست که از صفحه‌ای که گرفته‌ایم‌، آن المنت خاصی که می‌خواهیم را جدا کنیم (جایی که ترجمه نشان داده می‌شود) و به html2text بخورانیم که نهایتا فقط متن به ما نشان داده شود‌. ولی از آن‌جا که html2text فقط یک فرمت یونیکد را می‌فهمد و فرمت کدینگ صفحهٔ نتیجهٔ گوگل با توجه به زبان پاسخ متفاوت است (چرا؟) با استفاده از iconv سعی می‌کند که کدینگ درست را به خوردش بدهد‌. و حالا چون نمی‌خواهد هر بار دستی وارد کند که از کدام کدینگ تبدیل کن‌، با awk سر صفحه را می‌خواند و کدینگ صفحه را پیدا می‌کند ;-)</p>
+<p>و آخرین بخش ماجرا مربوط می‌شود به دانلود صدا. برای این کار از <a title="google translate download sound" href="https://gist.github.com/873364" target="_blank">این اسکریپت</a> کمک گرفتم‌. ولی چون نمی‌خواستم نتیجهٔ کار خیلی شلخته شود (دو فرمت متفاوت در صورت استفاده از espeak و google translate در کنار هم) با ffmpeg کلیه فرمت‌ها را به ‎.ogg تغییر دادم که آقایمان نیز از ما راضی باشد.</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D8%AA%D9%88%D9%84%DB%8C%D8%AF%20%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1%20%D9%81%D9%84%D8%B4%20%DA%A9%D8%A7%D8%B1%D8%AA%20%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3%DB%8C%20%D8%A8%D9%87%20%D9%81%D8%A7%D8%B1%D8%B3%DB%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20Anki%20%D8%A8%D8%A7%20%DA%A9%D9%85%DB%8C%20%D8%B4%D9%84%20%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../dryft-tlt-systm-bdwn-stfdh-z-conky/" rel="prev" title="dryft-tlt-systm-bdwn-stfdh-z-conky">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../6-sl-blg-nwsy/" rel="next" title="۶ سال شاهینیسم">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy/",
+        disqus_title="\u062a\u0648\u0644\u06cc\u062f \u062e\u0648\u062f\u06a9\u0627\u0631 \u0641\u0644\u0634 \u06a9\u0627\u0631\u062a \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc \u0628\u0647 \u0641\u0627\u0631\u0633\u06cc \u0628\u0631\u0627\u06cc Anki \u0628\u0627 \u06a9\u0645\u06cc \u0634\u0644 \u0627\u0633\u06a9\u0631\u06cc\u067e\u062a",
+        disqus_identifier="cache/posts/wp/twlyd-khwdkhr-flsh-khrt-nglysy-bh-frsy.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

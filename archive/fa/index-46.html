@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="description" content="چهاردیواری شخصی یک برنامه‌نویس که در آن یاد می‌گیرد‌، به اشتراک می‌گذارد و گاها غرغر می‌کند!">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وبلاگ شاهین (صفحهٔ ارسال‌های قدیمی 46) | وبلاگ شاهین</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/index-46.html">
+<link rel="prev" href="index-47.html" type="text/html">
+<link rel="next" href="index-45.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script>
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="."><img src="assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <div class="postindex">
+      <article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2013-09-12T11:31:45+04:30" title="2013-09-12 11:31">2013-09-12 11:31</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/py3status/" class="u-url">py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>قبلا در مورد <a class="reference external" href="http://i3wm.org/">i3</a> <a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html">حرف زده‌ام</a>
+و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش
+بود) اطلاعات وضعیت سیستمم را در i3bar <a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html">نمایش می‌دهم</a>.
+خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی
+می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> این است که اطلاعات
+را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک
+می‌کند. ولی بدبختی این <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> هم این است که به قدر کافی قابل گسترش نیست و
+ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!</p>
+<p>این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را
+<a class="reference external" href="https://github.com/ultrabug/py3status">شروع کرده</a> که در واقع حکم یک پوشش برای
+<a class="reference external" href="http://i3wm.org/i3status/">i3status</a> را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته
+و آن را با کمک <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما
+هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> استفاده کنید
+و در آخر هم از فایل تنظیمات <a class="reference external" href="http://i3wm.org/i3status/">i3status</a> برای تنظیم هر دو ابزار بهره بگیرید.</p>
+<p class="more"><a href="posts/py3status/">بیشتر بخوانید…</a></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/py3status/#disqus_thread" data-disqus-identifier="cache/posts/py3status.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2013-09-02T13:58:22+04:30" title="2013-09-02 13:58">2013-09-02 13:58</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/coursera-think-again/" class="u-url">معرفی دورهٔ آموزش تفکر Coursera</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>قبلا در مورد <a class="reference external" href="https://www.coursera.org/">Coursera</a> حرف <a class="reference external" href="http://shahinism.github.io/posts/blog13910630skhrypty-bry-khhsh-hzynh-shrkht-dr-khls.html">زده‌ام</a>
+(و در آینده بیشتر در مورد کلاس‌های آنلاینی که نظرم را جلب می‌کنند حرف خواهم زد).
+آقایان والتر سینات-آرمسترانگ و رم نتا‌، از دانشگاه دوک (Duke) آمریکا جدیدا یک
+دورهٔ آموزشی تحت عنوان <a class="reference external" href="https://www.coursera.org/course/thinkagain">Think again: How to reason and argue</a> را در <a class="reference external" href="https://www.coursera.org/">Coursera</a> شروع کرده‌اند که
+ارزش مطالعه دارد. خصوصا این که جدای از ضعف فرهنگی ما ایرانی جماعت در رابطه با
+پذیرش نظرات مخالف و یا حتی مباحثهٔ خیلی ساده در رابطه با موضوعات کاملا پذیرفته
+شده‌، ما به قول خودمان‌، گیک‌های لینوکسی و نرم‌افزار آزادی هم نتوانسته‌ایم در بسیاری
+از بحث‌هایمان به نتیجه‌ای برسیم!</p>
+<p class="more"><a href="posts/coursera-think-again/">بیشتر بخوانید…</a></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/coursera-think-again/#disqus_thread" data-disqus-identifier="cache/posts/coursera-think-again.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2013-08-29T15:55:33+04:30" title="2013-08-29 15:55">2013-08-29 15:55</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/antigen/" class="u-url">Antigen جعبه ابزار ZSH که فعلا استفاده‌اش نمی‌کنم</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>قبلا در مورد <a class="reference external" href="http://zsh.org">ZSH</a> و یکی دو ابزار به درد بخورش که سعی می‌کنند زندگی ما مقیمان ترمینال را آسان کنند صحبت کرده‌ایم (<a class="reference external" href="http://shahinism.github.io/posts/blog13901127zsh-dwst-shmst.html">اینجا</a> و <a class="reference external" href="http://shahinism.github.io/posts/blog13910102syntax-highlighting-bry-kht-frmn-zsh.html">این جا</a>). اگر خیلی دنبال امکانات و ابزار‌های جدید در ترمینال‌تان می‌گردید و مثل من <a class="reference external" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-ZSH</a> همهٔ زندگی‌تان نیست‌، احتمالا مدیریت پلاگین‌های متنوعی که نصب کرده‌اید‌، برای‌تان سخت خواهد بود. این‌جاست که <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> وارد می‌شود‌، کافیست به راحتی زیر لودش کنید:</p>
+<pre class="code bash"><a name="rest_code_6962ebb66ea646a290b55c2efe9da1e9-1"></a>curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh &gt; antigen.zsh
+<a name="rest_code_6962ebb66ea646a290b55c2efe9da1e9-2"></a><span class="nb">source</span> antigen.zsh
+</pre>
+<p>و پس از آن از دستور <a class="reference external" href="http://antigen.sharats.me/">antigen</a> برای لود یک تم‌، یا یک مجموعه پلاگین خاص در <a class="reference external" href="http://zsh.org">ZSH</a> تان بهره بگیرید‌، مثلا:</p>
+<pre class="code bash"><a name="rest_code_c1d8fa3355f940d795b59f8146844570-1"></a>antigen bundle zsh-users/zsh-syntax-highlighting
+</pre>
+<p>خوب این چه کار می‌کند؟‌ به آن بخش zsh-users/zsh-syntax-highlighting نگاه کنید‌، خیلی شبیه به انتهای آدرس github پروژه است که در پست مربوطه‌اش بهتان معرفی کردم‌، این‌طور نیست؟ خوب این دقیقا کاری است که <a class="reference external" href="http://antigen.sharats.me/">antigen</a> انجام می‌دهد‌، کافیست مسیر مربوط به پلاگین را روی گیت‌هاب نشانش دهید تا خودش برای‌تان دانلود و نصبش کند. دفعهٔ بعد که Promptتان را ببینید‌، این پلاگین رویش فعال است.</p>
+<p>به قول توسعه دهندهٔ <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> کاربران زیادی برای <a class="reference external" href="http://zsh.org">ZSH</a> پلاگین‌های ریز و درشت مختلفی می‌نویسند که همه‌شان بدون نیاز به هیچ تنظیم خاصی قابلیت نصب روی <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> را دارند. این قضیه محدود به پلاگین‌ها نمی‌شود‌ و می‌توان روی تم‌ها نیز از آن استفاده کرد. مثلا:</p>
+<pre class="code bash"><a name="rest_code_f42138c15a6b4d57b2d8bafd440f4111-1"></a>antigen theme XsErG/zsh-themes themes/lazyuser
+</pre>
+<p>خوب حالا اگر احساس نیاز به <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> می‌کنید و می‌خواهید همیشه روی شل‌تان نصب باشد‌، کافیست آن را نصبش کنید و از طریق ‎.zshrc کانفیگش کنید که راهنمای این یکی به تفضیل درون صفحهٔ git پروژه موجود است.</p>
+<p>و اما سوال مهم:</p>
+<div class="section" id="antigen">
+<h2>چرا از <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> استفاده نمی‌کنم؟</h2>
+<p>حقیقتش <a class="reference external" href="http://antigen.sharats.me/">Antigen</a> با تمام خوبی‌هایش‌، سرعت لود prompt را در اولین بازگشایی ترمینال‌، خیلی‌، خیلی پایین می‌آورد (منظورم نهایتا یک ثانیه است D:). این برای منی که دائما در حال تغییر ترمینال هستم‌، خیلی زود خسته کننده می‌شود و به خاطر همین‌، فعلا بی‌خیال آن شده‌ام. به همین راحتی. اما همانطور که توسعه دهنده گفته‌، این اسکریپت هنوز در وضعیت beta قرار دارد و مطمئنا در آینده بهتر از این خواهد بود. این است که دلم خواست معرفی‌اش کنم ;-)</p>
+</div>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/antigen/#disqus_thread" data-disqus-identifier="cache/posts/antigen.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2013-08-26T20:07:22+04:30" title="2013-08-26 20:07">2013-08-26 20:07</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/shahin-in-military-service/" class="u-url">شاهین‌، سربازی‌، وبلاگ</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div class="section" id="id1">
+<h2>سربازی</h2>
+<p>سه ماهی می‌شود که ننوشته‌ام. رفته‌ام اجباری یا به قول این ملت جان بر کف میهن‌،
+سربازی! آخر یکی نیست بگوید گوساله‌، شاهین کجا دلش می‌خواهد سرش را به این راحتی از
+دست بدهد و اسمش بشود سرباز؟ همان عبارت اجباری قدیمی‌ها خیلی بهتر حق مطلب را در
+موردش عدا می‌کند‌، به زور برده‌اندش (-;</p>
+<p>لپ مطلب آن که‌، نمی‌توانستم آن‌طور که باید و شاید وقتم را بگذارم پای وبلاگ و برایش
+بنویسم. راستش خیلی دلم می‌خواهد بنویسم‌، نه برای این که خوانده می‌شود (کسی هم اصلا
+پیدا می‌شود شاهینیسم بخواند؟)، نه! برای این که چیزی یاد بگیرم، برای این که یادم
+بماند‌، برای این که پشت این نقاب گم نشوم.</p>
+<p class="more"><a href="posts/shahin-in-military-service/">بیشتر بخوانید…</a></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/shahin-in-military-service/#disqus_thread" data-disqus-identifier="cache/posts/shahin-in-military-service.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article><article class="h-entry post-text"><div class="publish-date">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <time class="published dt-published" datetime="2013-05-29T14:49:26+04:30" title="2013-05-29 14:49">2013-05-29 14:49</time>
+</div>
+
+        <h1 class="p-name entry-title"><a href="posts/emacs-as-a-terminal-emulator/" class="u-url">این ایمکس دوست داشتنی (استفاده از ایمکس به عنوان ترمینال!)</a></h1>
+
+          <div class="p-summary entry-summary">
+            <div>
+<p>خوب همانطور که می‌دانید من خیلی خیلی وابسته به ترمینال‌ام هستم. خصوصا این که با
+هزار ترفند روی i3 یک چیزی شبیه <a class="reference external" href="http://shahinism.github.io/posts/blog13910801trmynl-dropdown-mthl-quake-dr-mdyr-pnjrh-i3.html">Quake</a> درست کردم تا ترمینال‌ام با کلید F12 در
+دسترس باشد. به هر حال‌، این در دسترس بودن‌، وسوسه‌ام کرد که همین کار را با ایمکس هم
+انجام دهم. چند روز گذشته همچین وضعیتی بود. با F12 ترمینالم را داشتم و با
+Meta+F12 ویرایشگرم را. تا حدی قابل قبول بود. ولی خوب باز آن‌قدر‌ها که باید به دل
+نمی‌نشست.</p>
+<p>مهم‌ترین دلیلش این که به دلیل کوچک بودن صفحهٔ مانیتورم‌، با چند پنجرهٔ باز در آن
+واحد‌، خیلی شلوغ‌کاری می‌شد. این بود که امروز تصمیم گرفتم تا جای ممکن‌، اجزای اضافی
+را حذف کنم. و خوب وقتی پای ایمکس در میان باشد‌، هر ابزار دیگری اضافه است D:</p>
+<p>در دسترس بودن همیشگی ایمکس چند مزیت عمده دارد. اول این که می‌توانم هر وقت که
+خواستم‌، با <a class="reference external" href="http://orgmode.org/">org-mode</a> و آن قابلیت Capture خیلی خیلی به درد بخورش‌، هر Note, Link
+یا TODO‌ای که به ذهنم رسید را سریع ثبت کنم که از دستم نرود (راجع به این یکی خیلی
+حرف خواهیم زد. خیلی هم زود این کار را می‌کنیم). دومندش را هم نمی‌شود این‌جا گفت‌،
+باید اول راجع به یک چیز دیگر بگویم‌!‌</p>
+<p class="more"><a href="posts/emacs-as-a-terminal-emulator/">بیشتر بخوانید…</a></p>
+</div>
+            </div>
+
+            <div class="left">
+                            <a class="btn btn-success" href="posts/emacs-as-a-terminal-emulator/#disqus_thread" data-disqus-identifier="cache/posts/emacs-as-a-terminal-emulator.html">Comments</a>
+
+
+            </div>
+            <div class="clear"></div>
+
+      </article>
+</div>
+              <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-47.html" rel="prev">ارسال‌های جدید‌تر</a>
+            </li>
+            <li class="next">
+                <a href="index-45.html" rel="next">پست‌های قدیمی‌تر</a>
+            </li>
+        </ul></nav><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

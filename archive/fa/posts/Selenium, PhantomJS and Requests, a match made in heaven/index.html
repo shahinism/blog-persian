@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>معجون بهشتی Selenium, PhantomJS و Requests برای web scraping | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../version-control-is-not-optional/" title="ورژن کنترل اختیاری نیست!" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="معجون بهشتی Selenium, PhantomJS و Requests برای web scraping">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/">
+<meta property="og:description" content="این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی برگ برندهٔ کاربران،
+توسعه‌دهندگان و یا حتی تیم‌های فعال در حوزهٔ نرم‌افزار محسوب می‌شود. از پتانسیل بالای
+درآمد‌زایی‌اش در بعضی شرایط اگر بگ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-10-15T20:03:06+03:30">
+<meta property="article:tag" content="phantomjs">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="requests">
+<meta property="article:tag" content="selenium">
+<meta property="article:tag" content="web scrapping">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2016-10-15T20:03:06+03:30" title="2016-10-15 20:03">2016-10-15 20:03</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="../Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" class="u-url">معجون بهشتی Selenium, PhantomJS و Requests برای web scraping</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>این روز‌ها خودکار کردن کار‌های تکراری روزمره‌مان یک جورهایی برگ برندهٔ کاربران،
+توسعه‌دهندگان و یا حتی تیم‌های فعال در حوزهٔ نرم‌افزار محسوب می‌شود. از پتانسیل بالای
+درآمد‌زایی‌اش در بعضی شرایط اگر بگذریم‌، کاهش زمان مورد نیاز انجام کار‌ها به میزان
+زیاد و قابلیت اطمینان بسیار بیشتر نسبت به شرایطی که نیروی انسانی وظیفهٔ به پایان
+رساندن کار را بر عهده دارد‌، از جمله دلایلی است که می‌تواند زمان و هزینهٔ مورد نیاز
+جهت خودکار کردن اکثر کار‌ها را به راحتی توجیح کند.</p>
+<p>یکی از زمینه‌های هدف همچین فرآیند‌هایی می‌تواند سرویس‌های تحت وب باشند. روند‌هایی
+تکراری که لازم است در زمان مشخص و با دقت کافی انجام گیرد. مثال‌های زیادی از این
+دست می‌توان نام برد. مثلا‌، انتخاب واحد دانشگاه‌ها… که حقیقتش الان مطمئن نیستم که
+چقدر بهتر شده‌، ولی زمانی که من دانشجو بودم‌، از زمان اعلامی شروع انتخاب واحد‌، اگر
+موفق می‌شدیم طی پنج دقیقهٔ اول انتخاب‌هایمان را انجام دهیم که هیچ‌، و اگرنه‌، همین
+انتخاب واحد ساده (وارد کردن چند کد واحد درسی و زدن کلید ثبت) می‌توانست ساعت‌ها
+وقت‌مان را تلف کند. یا به عنوان مثالی دیگر از این دست می‌توان به روند خرید سهام‌ها
+از روی درگاه‌های کارگزاری‌ها اشاره کرد. عموما در شرایط حساس‌، جدای از سرعت اینترنت
+کافی (اصلا اگر بتوانید)، سرمایه و سیاست لازم جهت انتخاب و خرید سهم مورد نظر‌،
+گاها به یک سرعت عمل خارق‌العاده نیاز دارید که تا به خود بجنبید‌، از قافله عقب
+نمانده باشید. ناسلامتی چنین شرایطی از مزایای ایرانی بودن‌مان است.</p>
+<!-- TEASER_END -->
+<p>البته محدودهٔ مسائل ممکن به چنین مثال‌هایی ختم نمی‌شود. پیشنهاد می‌کنم ویدئوی زیر را
+در این زمینه از دست ندهید:</p>
+<div class="youtube-video">
+<iframe width="425" height="344" src="https://www.youtube.com/embed/qcTVW95QWyg?rel=0&amp;hd=1&amp;wmode=transparent"></iframe>
+</div>
+<p>خوشبختانه‌ امروزه سرویس‌های زیادی را می‌توان در اینترنت یافت که سعی در کمک به
+خودکار کردن هر چه بیشتر کار‌های تکراری‌مان دارند. <a class="reference external" href="http://ifttt.com">IFTTT</a> و <a class="reference external" href="http://zapier.com">Zapier</a> شاید از
+معروف‌ترین‌های این امر باشند. اما طبیعتا همهٔ شرایط و سرویس‌های مورد نظر ما را شامل
+نمی‌شوند. گاها هم پیش می‌آید که سرویس مورد نظر ما APIای دقیقا به منظور انجام هدف
+ما در اختیارمان می‌گذارد. اما هنوز سرویس‌ها‌، و مسائل بسیار بیشتر وجود دارند که به
+این راحتی‌ها قابل خودکار شدن نیستند.</p>
+<p>در چنین شرایطی می‌توان Web Scraping را راهی معقول برای پیاده‌سازی دانست.
+کتاب‌خانه‌ها‌، ابزار‌ها و شیوه‌های مختلفی‌، برای زبان‌های مختلف در این زمینه موجود است
+که هر شخص می‌تواند بسته به توانایی‌های شخصی و مسئلهٔ مورد نظر از میان آن‌ها انتخاب
+کند.</p>
+<p>چند روز پیش‌، قرار شد نمونه‌ای از همین نوع خودکارسازی را در تیم <a class="reference external" href="http://foundersbuddy.com">FoundersBuddy</a>
+انجام دهیم. مساله از این قرار بود که می‌خواستیم به صورت روزانه از دیتای کاربران
+موجود در حساب <a class="reference external" href="http://customer.io">Customer.io</a> یکی از استارت‌آپ‌ها پشتیبان تهیه کنیم. و خوب خود
+Customer‌، هیچ API‌ای در این زمینه ارائه نمی‌داد.</p>
+<p>کل فرآیند تهیه پشتیبان از طریق مرورگر با انجام مراحل زیر از روی وب‌سایت قابل انجام بود:</p>
+<ul class="simple">
+<li>لاگین به حساب کاربری.</li>
+<li>رفتن به صفحهٔ اطلاعات کاربران.</li>
+<li>کلیک روی دکمهٔ Export to CSV.</li>
+<li>رفتن به صفحهٔ پشتیبان‌های موجود.</li>
+<li>انتظار تا تکمیل درخواست پشتیبان‌گیری (در حدود چند ثانیه).</li>
+<li>کلیک روی لینک دانلود و دانلود فایل.</li>
+</ul>
+<p>بدیهی است که تمام مراحل فوق باید در شرایط لاگین بودن کاربر انجام می‌شد. خوب این
+روند تقریبا ساده به نظر می‌رسد. خصوصا اگر با <a class="reference external" href="http://seleniumhq.com">Selenium</a> آشنا باشید. Selenium یک
+webdriver است. یک جور‌هایی با ارائهٔ کتاب‌خانه‌ای در زبان هدف‌تان‌، امکان تعامل با یک
+مرورگر وب را به صورت نرم‌افزاری برای‌تان فراهم می‌کند که البته کاربرد زیادی هم در
+زمینهٔ تست نرم‌افزار دارد. بزرگترین ویژگی Selenium برای من در مقابل انتخاب‌های
+دیگر‌، سر راست بودن انتخاب روند‌ها و شباهتش به رفتار کاربر است.</p>
+<p>مثلا سابقا در پروژه‌ای از <a class="reference external" href="http://robobrowser.readthedocs.io/">robobrowser</a> استفاده کرده بودیم. و خدا نمی‌کرد اگر
+می‌خواستید روی دکمه‌ای کلیک کنید و نتیجهٔ کلیک اجرای تابعی جاوااسکریپت و ارسال یک
+post request بود. در این شرایط دو راه داشتید‌، یا آن تابع جاوااسکریپت را خودتان
+پیدا کنید و به طور مناسب مقدار دهی و فراخوانی‌اش کنید. یا یک فرم Fake بسازید و
+درخواست را شبیه‌سازی کنید که بسته به شرایط هر کدام از این روش‌ها به نحوی اذیت
+می‌کردند. حال آن که با Selenium کافیست متد click را روی المنت مورد نظر اجرا کنیم.</p>
+<p>به هر حال‌، Selenium برای اجرا نیاز به یک مرورگر دارد. سیستم هدفی که قصد اجرای
+این Scrapper روی آن را داریم‌، یک سرور لینوکسی بدون رابط کاربری است، پس انتخاب
+معقول باید از پس همچین شرایطی بر بیاید. ترکیب <a class="reference external" href="http://phantomjs.org/">PhantomJS</a> با یک صفحه نمایش مجازی
+<a class="reference external" href="https://en.wikipedia.org/wiki/Xvfb">XVFB</a> می‌تواند این مشکل را حل کند. خصوصا که کتابخانهٔ <a class="reference external" href="https://pypi.python.org/pypi/PyVirtualDisplay">Pyvirtualdisplay</a> پایتون
+می‌تواند در مدیریت صفحه نمایش‌های XVFB کمک کند.</p>
+<p>حالا می‌توانیم روش انجام مراحل مورد نیازمان را بررسی کنیم:</p>
+<div class="section" id="id1">
+<h2>شروع فرآیند</h2>
+<p>در ادامه به تعریف‌های زیر نیاز خواهیم داشت:</p>
+<pre class="code python"><a name="rest_code_1ca84a15eee84f75adba7b961077482a-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-2"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-3"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-4"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-5"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-6"></a><span class="kn">from</span> <span class="nn">selenium.common.exceptions</span> <span class="kn">import</span> <span class="n">TimeoutException</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-7"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-8"></a>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-9"></a><span class="n">display</span> <span class="o">=</span> <span class="n">Display</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-10"></a><span class="n">display</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_1ca84a15eee84f75adba7b961077482a-11"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">PhantomJS</span><span class="p">()</span>
+</pre>
+<p>ایمپورت‌های انجام شده که طبیعتا ابزار‌های مورد نیاز از کتاب‌خانهٔ Seleniumاند. ولی
+بخش مهم این تکه کد‌، تعریف display و driver است. display توسط pyvirtualdisplay
+روی xvfb با مشخصات ارائه شده ایجاد می‌شود و driver که حکم مرورگر ما را دارد از
+رابط PhantomJS استفاده می‌کند.</p>
+</div>
+<div class="section" id="id2">
+<h2>لاگین به حساب کاربری</h2>
+<p>برای این کار کافیست صفحهٔ مورد نظر را باز کنیم:</p>
+<pre class="code python"><a name="rest_code_857c93f75fa6456f9571884c0c6b4f5d-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'https://fly.customer.io'</span><span class="p">)</span>
+</pre>
+<p>فیلد‌های فرم مورد نظر را جهت لاگین و دکمهٔ سابمیت را انتخاب کنیم:</p>
+<pre class="code python"><a name="rest_code_770d9d5dea5e434cb6db05aff443ee06-1"></a><span class="n">username</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_email"</span><span class="p">)</span>
+<a name="rest_code_770d9d5dea5e434cb6db05aff443ee06-2"></a><span class="n">password</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s2">"user_password"</span><span class="p">)</span>
+<a name="rest_code_770d9d5dea5e434cb6db05aff443ee06-3"></a><span class="n">submit</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s2">"//input[@name='commit']"</span><span class="p">)</span>
+</pre>
+<p>و نهایتا فیلد‌ها را تکمیل و روی سابمیت کلیک کنیم:</p>
+<pre class="code python"><a name="rest_code_ef2fbdf3e338445da9d799105ffabd6b-1"></a><span class="n">username</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"shahinism"</span><span class="p">)</span>
+<a name="rest_code_ef2fbdf3e338445da9d799105ffabd6b-2"></a><span class="n">password</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s2">"mypassword"</span><span class="p">)</span>
+<a name="rest_code_ef2fbdf3e338445da9d799105ffabd6b-3"></a><span class="n">submit</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre>
+<p>احتمالا اگر قدری HTML و پایتون بدانید‌، دستورات به قدر کافی گویا هستند. اگر هم که
+نه می‌توانید به <a class="reference external" href="../Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/selenium-python.readthedocs.io">مستندات کتابخانه پایتون Selenium</a> مراجعه کنید.</p>
+</div>
+<div class="section" id="id3">
+<h2>رفتن به صفحهٔ اطلاعات کاربر</h2>
+<p>این صفحه بسته به حساب کاربری‌، URL متفاوتی دارد و به همین دلیل نمی‌توان از
+<tt class="docutils literal">driver.get</tt> استفاده کرد. در عوض باید دنبال لینک حاوی آن بگردیم و رویش کلیک کنیم:</p>
+<pre class="code python"><a name="rest_code_b58759c38d1441a1b7575a44dc4b6d64-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">)</span>
+<a name="rest_code_b58759c38d1441a1b7575a44dc4b6d64-2"></a><span class="n">people</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre>
+<p>شبیه به مراحل قبل. اما این کد در اکثر مواقع به درستی کار نخواهد کرد. آن هم به
+دلیل این که به خاطر سرعت زیاد پردازش این خطوط‌، قبل از این که المنت با شناسه آیدی
+مورد نظر به صفحه اضافه شود، ما به دنبالش می‌گردیم ولی چیزی پیدا نمی‌کنیم و نتیجه‌اش
+می‌شود یک Exception.</p>
+<p>البته این را اضافه کنم که اگر با JavaScript و خصوصا JQuery کار کرده باشید‌، ممکن
+است فکر کنید که مساله مشابه چیزی است که <tt class="docutils literal">document.ready</tt> برای‌مان انجام می‌دهد.
+ولی خوشبختانه خود Selenium کار خیلی خوبی در این زمینه انجام می‌دهد و تا زمانی که
+کد کل صفحه بارگذاری نشده باشد‌، این خطوط را اجرا نمی‌کند.</p>
+<p>مشکل این‌جاست که رابط کاربری کاستومر‌، با <a class="reference external" href="http://emberjs.com/">Ember</a> نوشته شده‌، و المنت مورد نظر ما
+بعد از لود صفحه به آن اضافه می‌شوند (دقیقا داخل همان <tt class="docutils literal">document.ready</tt>). این است
+که ما باید منتظر اضافه شدن این المنت بمانیم. ولی چطور؟</p>
+<pre class="code python"><a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-1"></a><span class="k">def</span> <span class="nf">wait_and_get</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-2"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-3"></a>        <span class="n">element_present</span> <span class="o">=</span> <span class="n">EC</span><span class="o">.</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">))</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-4"></a>        <span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">element_present</span><span class="p">)</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-5"></a>    <span class="k">except</span> <span class="n">TimeoutException</span><span class="p">:</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Loading took too much time!"</span><span class="p">)</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-7"></a>        <span class="n">close_browser</span><span class="p">()</span>
+<a name="rest_code_4ba0a61d47494774bd8842ae7c5c4354-8"></a>    <span class="k">return</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">by</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre>
+<p>در تابع فوق‌، سعی می‌کنیم از درایور بخواهیم به مدت ۵ ثانیه در انتظار اضافه شدن این
+المنت بماند و اگر اضافه شد آن را به ما برگرداند و در غیر این صورت‌، خارج شود. (آن
+تکهٔ <tt class="docutils literal">close_browser</tt> را در آخر شرح می‌دهم).</p>
+<p>مقدار query در این تابع یک سلکتور متنی است که by مشخص می‌کند که از چه نوعی است.
+مثلا در مثال فوق‌، ما می‌خواهیم منتظر المنتی با شناسه آیدی‌، <tt class="docutils literal"><span class="pre">people-nav-link</span></tt> بمانیم‌،
+پس مقدار query می‌شود <tt class="docutils literal"><span class="pre">people-nav-link</span></tt> و مقدار by می‌شود‌، <tt class="docutils literal">By.ID</tt>:</p>
+<pre class="code python"><a name="rest_code_0f12004e002343caa6f8b4c8a4ee303b-1"></a><span class="n">people</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'people-nav-link'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="export-to-csv">
+<h2>کلیک روی دکمهٔ Export to CSV</h2>
+<p>این دکمه متاسفانه هیچ ID یا Class سر راستی ندارد که بتوان از آن برای پیدا کردنش
+استفاده کرد و از قرار همان شناسه‌های موجود هم بسته به ساختار صفحه عوض می‌شوند. ولی
+خوب یک چیز ثابت در همهٔ شرایط وجود دارد. و آن این که اسم این دکمه همیشه Export to
+CSV است. پس می‌توان به همین صورت هم انتخابش کرد:</p>
+<pre class="code python"><a name="rest_code_65d963c82d75474891afb57bebfaf7a4-1"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Requesting new export..."</span><span class="p">)</span>
+<a name="rest_code_65d963c82d75474891afb57bebfaf7a4-2"></a><span class="n">export</span> <span class="o">=</span> <span class="n">wait_and_get</span><span class="p">(</span><span class="s1">'//button[text()="Export to CSV"]'</span><span class="p">,</span> <span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">)</span>
+<a name="rest_code_65d963c82d75474891afb57bebfaf7a4-3"></a><span class="n">export</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="id4">
+<h2>رفتن به صفحهٔ پشتیبان‌های موجود</h2>
+<p>این تغییر صفحه برخلاف قبلی خیلی آسان است:</p>
+<pre class="code python"><a name="rest_code_558b6dc9c399467b879cf7dfa64daa81-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://fly.customer.io/account/exports"</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="id5">
+<h2>انتظار تا تکمیل درخواست پشتیبان‌گیری</h2>
+<p>این روند به این صورت است که پس از درخواست‌، چند ثانیه‌ای طول می‌کشد تا پشتیبان حاضر
+شود و این چند ثانیه با نمایش متن Processing به جای دکمهٔ دانلود مشخص می‌شود.
+احتمالا راه‌های متفاوتی برای این کار وجود دارد‌، ولی من ساده‌ترینش به نظر خودم را انتخاب کردم:</p>
+<pre class="code python"><a name="rest_code_356d84cae2db495c8a0f8bfe9985334c-1"></a><span class="k">while</span> <span class="s1">'Processing'</span> <span class="ow">in</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span><span class="p">:</span>
+<a name="rest_code_356d84cae2db495c8a0f8bfe9985334c-2"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"Processing..."</span><span class="p">)</span>
+<a name="rest_code_356d84cae2db495c8a0f8bfe9985334c-3"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_356d84cae2db495c8a0f8bfe9985334c-4"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</pre>
+<p>خیلی ساده به درایور می‌گویم تا زمانی که عبارت Processing در صفحه وجود دارد‌، ۲ ثانیه
+استراحت کن و بعد صفحه را رفرش کن و آنقدر ادامه بده تا این عبارت حذف شود :)</p>
+</div>
+<div class="section" id="id6">
+<h2>کلیک روی لینک دانلود و دانلود فایل</h2>
+<p>لینک دانلود را به صورت زیر پیدا می‌کنیم:</p>
+<pre class="code python"><a name="rest_code_aab35a07dcac4410b37e7f7974e7f52f-1"></a><span class="n">latest_download</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span>
+<a name="rest_code_aab35a07dcac4410b37e7f7974e7f52f-2"></a>    <span class="s1">'a.fly-btn.fly-btn--sm'</span><span class="p">)</span>
+<a name="rest_code_aab35a07dcac4410b37e7f7974e7f52f-3"></a><span class="n">latest_link</span> <span class="o">=</span> <span class="n">latest_download</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span>
+</pre>
+<p>ولی متاسفانه PhantomJS با همهٔ خوبی‌هایش‌، در حال حاضر امکان دانلود فایل ندارد. و
+خوب راستش را بخواهید وقتی به این‌جای مساله رسیدم‌، دیگر خیلی دیر شده بود :)</p>
+<p>برای دانلود‌، نیاز است که به عنوان یک کاربر لاگین شناسایی شویم‌، در غیر این صورت
+لینک دانلود استخراجی‌، به صفحهٔ لاگین ریدایرکت می‌شود. اینجاست که کتابخانهٔ محبوب
+پایتونیست‌ها <a class="reference external" href="https://github.com/kennethreitz/requests">Requests</a> وارد می‌شود. requests امکان استفاده از session در هنگام
+ارسال درخواست‌ها را دارد. و درایور هم یک کپی از کوکی‌های مورد نیاز لاگین را در
+اختیار دارد پس:</p>
+<pre class="code python"><a name="rest_code_d8d223f63b764812be3dc6740aa4b8d1-1"></a><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<a name="rest_code_d8d223f63b764812be3dc6740aa4b8d1-2"></a><span class="n">cookies</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>
+<a name="rest_code_d8d223f63b764812be3dc6740aa4b8d1-3"></a><span class="k">for</span> <span class="n">cookie</span> <span class="ow">in</span> <span class="n">cookies</span><span class="p">:</span>
+<a name="rest_code_d8d223f63b764812be3dc6740aa4b8d1-4"></a>    <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cookie</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="n">cookie</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+</pre>
+<p>حالا requests می‌تواند لینک را دانلود کند:</p>
+<pre class="code python"><a name="rest_code_1b3b372cfc6644518aa7274bcf6424c0-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">latest_link</span><span class="p">)</span>
+<a name="rest_code_1b3b372cfc6644518aa7274bcf6424c0-2"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">result_file</span><span class="p">,</span> <span class="s1">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">result_file</span><span class="p">:</span>
+<a name="rest_code_1b3b372cfc6644518aa7274bcf6424c0-3"></a>      <span class="n">result_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre>
+</div>
+<div class="section" id="id7">
+<h2>بستن مرورگر</h2>
+<p>احتمالا دیدید در موقع ایجاد مشکل‌، تابع <tt class="docutils literal">close_browser</tt> را صدا می‌کردم. دلیلش هم
+این بود که مطمئن شوم فرآیند‌های ایجاد شده PhantomJS و XVFB به درستی بسته می‌شوند.</p>
+<pre class="code python"><a name="rest_code_57c718c0426e4cf5a494e1ee1563ed30-1"></a><span class="k">def</span> <span class="nf">close_browser</span><span class="p">():</span>
+<a name="rest_code_57c718c0426e4cf5a494e1ee1563ed30-2"></a>    <span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+<a name="rest_code_57c718c0426e4cf5a494e1ee1563ed30-3"></a>    <span class="n">display</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre>
+</div>
+<div class="section" id="id8">
+<h2>نتیجه‌گیری</h2>
+<p>همانطور که گفتم‌، ابزار‌های زیادی در این زمینه وجود دارد که هر کدام بسته به شرایط
+مورد نیاز‌، عملکرد مناسب‌تری دارند. مثلا سر قضیهٔ مشکل دانلود فایل PhantomJS، اکثر
+منابع اشاره به <a class="reference external" href="http://casperjs.org/">CasperJS</a> کرده بود که این امکان را فراهم می‌کرد. ولی متاسفانه
+ریکوئست به دامنه‌های SSL تایم‌اوت می‌گرفت. و در مورد کاستومر حتی دستور زیر هم
+نتیجه‌ای نداشت:</p>
+<pre class="code sh"><a name="rest_code_32948e2a228547dfa6189eeb48a7629a-1"></a>casperjs --ssl-protocol<span class="o">=</span>tlsv1  --ignore-ssl-errors<span class="o">=</span>yes index.js
+</pre>
+<p>فعلا برای من این مجموعه‌، در مورد مسائل مشابه‌، انتخاب مناسبی به نظر می‌رسد.</p>
+</div>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D9%85%D8%B9%D8%AC%D9%88%D9%86%20%D8%A8%D9%87%D8%B4%D8%AA%DB%8C%20Selenium,%20PhantomJS%20%D9%88%20Requests%20%D8%A8%D8%B1%D8%A7%DB%8C%20web%20scraping%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+              <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/phantomjs/" rel="tag">phantomjs</a></li>
+            <li><a class="tag p-category" href="../../categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../categories/requests/" rel="tag">requests</a></li>
+            <li><a class="tag p-category" href="../../categories/selenium/" rel="tag">selenium</a></li>
+            <li><a class="tag p-category" href="../../categories/web-scrapping/" rel="tag">web scrapping</a></li>
+        </ul>
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../version-control-is-not-optional/" rel="prev" title="ورژن کنترل اختیاری نیست!">ارسال پیشین</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/",
+        disqus_title="\u0645\u0639\u062c\u0648\u0646 \u0628\u0647\u0634\u062a\u06cc Selenium, PhantomJS \u0648 Requests \u0628\u0631\u0627\u06cc web scraping",
+        disqus_identifier="cache/posts/selenium-phantomjs-and-requests-a-match-made-in-heaven.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

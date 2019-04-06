@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../chchch-7bstn-ykh-hsb-khrbry-dr-gnw/" title="چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس" type="text/html">
+<link rel="next" href="../chchch-9-chtwr-bh-swrt-flhy-lynkhh/" title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/">
+<meta property="og:description" content="برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:
+ls --color
+
+
+
+که خو">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-12-02T18:03:08+03:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2011-12-02T18:03:08+03:30" title="2011-12-02 18:03">2011-12-02 18:03</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">چ‌چ‌چ‌ (۸)‌: رنگی کردن خروجی فرمان ls در BASH</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>برای رنگ کردن نتیجه‌ی خروجی خود دستور ls یه آرگومانی به این صورت داره ‎-‎‎-color که خروجی رو رنگی می‌کنه‌. یعنی هر بار که می‌خواین خروجی رنگی بگیرین باید یه همچین دستوری رو بزنین‌:</p>
+<pre class="code literal-block"><span></span>ls --color
+</pre>
+
+
+<p>که خوب این یه کم ممکنه خسته کننده باشه‌. برای رفع مشکلش هم که طبیعیه می‌تونین از alias استفاده کنین‌، و برای ماندگار شدنش یه همچین خطی رو به فایل ‎.bashrc تون اضافه کنین:</p>
+<pre class="code literal-block"><span></span><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">"ls --color=always"</span>
+</pre>
+
+
+<p>این دقیقا کاریه که خیلی از توزیع‌ها به صورت پیش‌فرض انجامش می‌دن‌. ولی خوب همونطور که گفتم دوست عزیزم پیروزان یه چیز جالب‌تر هم معرفی کرده بود‌. ماجرا از این قراره که این آرگومان ‎-‎‎-color که بحثش رو کردیم‌، بر می‌گرده از یه فایلی به اسم DIR_COLORS توی شاخه‌ی etc الگوی رنگ‌بندیش رو بر می‌داره‌ (‌که البته با توجه به توزیع‌های مختلف ممکنه جای این فایل فرق کنه‌). حالا یه آدم باحال نشسته و رنگ‌بندی متنوعی برای سیصد نوع فایل مختلف آماده کرده و توی این <a title="LS_COLORS on github" href="https://github.com/trapd00r/LS_COLORS" target="_blank">کانال git</a> منتشر کرده‌. برای استفاده از این فایل اول اون رو دانلود کنین و برای مثال توی شاخه‌ی خانگی لینوکستون ذخیره کنین‌. حالا با اضافه کردن خط زیر توی فایل ‎.bashrc از رنگ‌بندی جدید لذت ببرین‌:</p>
+<pre class="code literal-block"><span></span><span class="nb">eval</span> <span class="k">$(</span>dircolors -b LS_COLORS<span class="k">)</span>
+</pre>
+
+
+<p>نمونه‌ای از خروجی این فایل به صورت زیره‌:</p>
+<p><img class="aligncenter" title="LS_COLOR" src="https://a248.e.akamai.net/assets.github.com/img/e235af63c2be86cf4e4167b7f098e28192b63488/687474703a2f2f646576656c2e6a6170682e73652f4c535f434f4c4f52532f4c535f434f4c4f52532e706e67" alt="نمونه‌ای از خروجی فایل LS_COLOR" width="238" height="136"></p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%DA%86%E2%80%8C%DA%86%E2%80%8C%DA%86%E2%80%8C%20(%DB%B8)%E2%80%8C:%20%D8%B1%D9%86%DA%AF%DB%8C%20%DA%A9%D8%B1%D8%AF%D9%86%20%D8%AE%D8%B1%D9%88%D8%AC%DB%8C%20%D9%81%D8%B1%D9%85%D8%A7%D9%86%20ls%20%D8%AF%D8%B1%20BASH%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../chchch-7bstn-ykh-hsb-khrbry-dr-gnw/" rel="prev" title="چ‌چ‌چ (۷)‌: بستن یک حساب کاربری در گنو‌/‌لینوکس">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../chchch-9-chtwr-bh-swrt-flhy-lynkhh/" rel="next" title="چ‌چ‌چ (۹): چطور به صورت فله‌ای لینک‌های یوتیوب را از وب‌سایتی استخراج و دانلود کنیم‌!">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash/",
+        disqus_title="\u0686\u200c\u0686\u200c\u0686\u200c (\u06f8)\u200c: \u0631\u0646\u06af\u06cc \u06a9\u0631\u062f\u0646 \u062e\u0631\u0648\u062c\u06cc \u0641\u0631\u0645\u0627\u0646 ls \u062f\u0631 BASH",
+        disqus_identifier="cache/posts/wp/chchch-8-rngy-khrdn-khrwjy-frmn-ls-dr-bash.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کنترل پنل Plesk ( قسمت دوم ) | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../khntrl-pnl-plesk-qsmt-wl/" title="کنترل پنل Plesk (قسمت اول)" type="text/html">
+<link rel="next" href="../plesk-cp-part-3/" title="کنترل پنل Plesk ( قسمت آخر )" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="کنترل پنل Plesk ( قسمت دوم )">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/">
+<meta property="og:description" content="توجه دوستانی که کنترل پنل هاستشان از پلسک استفاده نمی کند و یا هاست شخصی ندارند ولی می خواهد کار با پلسک را فرا بگیرند هم به لطف شرکت SWsoft می توانند از نسخه ی دموی این نرم افزار استفاده کنند . ( نسخ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2008-07-01T11:04:47+04:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2008-07-01T11:04:47+04:30" title="2008-07-01 11:04">2008-07-01 11:04</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">کنترل پنل Plesk ( قسمت دوم )</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>توجه دوستانی که کنترل پنل هاستشان از پلسک استفاده نمی کند و یا هاست شخصی ندارند ولی می خواهد کار با پلسک را فرا بگیرند هم به لطف شرکت SWsoft می توانند از نسخه ی دموی این نرم افزار استفاده کنند . <a href="http://www.swsoft.com/en/products/plesk/demo/" target="_blank">( نسخه ی دموی کنترل پنل پلسک )</a></p>
+<p>پس از ورود به پلسک شما با محسطس کاملا مشابه پنجره های داخلی ویندوز XP روبرو می شوید که دارای دو بخش است . بخش یک ستون آب رنگ سمت چپ شامل General ( با زیر شاخه ی Home و Desktop ) و System ( با زیر شاخه ی setting و logout ) و help &amp; support که کلا نیاز به توضیح خاصی ندارند . حال به ابزار های موجود در هریک از این زیرشاخه ها می پردازیم :</p>
+<p><strong>General/Deskto : </strong>در این قسمت شما یک داشبورد از ابزار های کاربردی نرم افزار را در اختیار دارید در قسمت Plesk Control Panel News اخبار جدید در مورد نرم افزار پلسک و آخرین تغییرات به نمایش گذاشته مب شود . همچنین در قسمت Statistics و Favorites مجموعه ای از آمارها و پیشنهادها در اختیار شما قرار داده شده است . اصلی ترین بخش این قسمت بخش Tools است که در زیر به توضیح هر یک از گزینه های آن می پردازم :</p>
+<p>Edit Client's Personal Information : در این قسمت شما باید اطلاعات شخصی خود را وارد کنید و یا تغییر دهید .( همان اطلاعاتی که در بدو ورودتان به برنامه از شما گرفته شده بود )</p>
+<p>Edit Client's Preferences : در این قسمت هم می توانید در خود برنامه تغییراتی هم چون تغییرات زبان و پوسته را اعمال کنید .</p>
+<p>Reconfigure Autoresponder : پس از ورود به این قسمت و انتخاب نام دامنه ی مورد نظر خود می توانید به پاسخگویی خود کار تنظیم شده بر روی میل اکانتتان دسترسی پیدا کنید . برای روشن کردن و یا خاموش کردن پاسخگوی خودکار می بایست به بخش Enable or Disable Autoresponders در منوی Tools رجوع کرده و پس از انتخاب نام دامنه و ایمیل اکانت مربوطه آن را فعال یا غیر فعال کنید .</p>
+<p>Set Up Mail Forwarding : در این قسمت نیز می توانید نامه های دریافتی بر روی میل اکانت خاصی را به آدرسی دیگر ( برای نمونه روی آدرس Gmail ) خود ارجاع دهید . همچنین تنظیمات مربوط به میل اکانت ها را می توانید با ورود به بخش Edit Mail Account Properties در منوی Tools انجام دهید .</p>
+<p>Set Up Web Hosting Service : در این قسمت پس از انتخاب نام دامنه می توانید اطلاعات کلی در مورد هاستینگ خود را بدست آورید و یا اینکه پسوورد مربوط به بخش FTP خود را عوض کنید . ( اگر پس از اولین ورود نتوانستید با هیچ برنامه ای به FTP خود متصل شوید کافیست که یک بار رمز خود را در این قسمت تغییر دهید ( دهنم سرویس شد تا این یک مورد رو کشف کنم )).</p>
+<p>Manage Files On Domain : فایل منیجر در پلسک از این قسمت قابل دسترسی است . نحوه ی کار با این بخش نرم افزار فوق العاده ساده است و نسبت به Cpanel از پیچیدگی کمتری برخوردار است .</p>
+<p>Create Subdomain : برای ساخت و یا پاک کردن Sub Domailn تان به این قسمت رجوع کنید . توجه کنید که برای پاک کردن باید در زیر گزینه ی فوق و روی Remove کلیک کنید .</p>
+<p>Create a Database : برای ساخت بانک اطلاعاتی کافیت پس از ورود به این بخش و انتخاب نام دامنه ی خود نام بانک اطلاعاتی را وارد کرده و Creat را بزنید تا تمام شود .</p>
+<p>برای ساختن کاربری دیگر یا ایمیل اکانت و یا پاسخگوی خودکار به ایمیلها می توانید به ترتیب به بخش های Create a Web User Account و Create Mail Account و Create an Autoresponder واقع در بخش Tools رجوع کنید . همچنین اگر هم خواستید پاکشان کنید در زیر هر کدام یک کلید Remove به همین منظور تعبیه شده است .</p>
+<p>اگر خواستید ابزار خاصی را به میز کار خود اضافه و یا کم کنید می توانید از گزینه ی Customize Desktop واقع در شما شرقی صفحه و زیر آرم شرکت پاراللز رجوع کنید .</p>
+<p><strong>General / Home : </strong>در این بخش یک سری ابزار آماری و کاربردی قرار داده شده که نیاز به توضیح خاصی ندارند ولی پس از کلیک روی نام دامنه ی خود ابزار های مهم دیگری نمایان می شوند که در واقع همان ابزار های Desktop هستند اما با نظم بیشتری در اینجا قرار داده شده اند:</p>
+<p>با این تفاوت که اگر به قسمت دیتابیس بروید تمامی اطلاعات مربوط به آن و ابزار های مرتبط نظیر ساخت کاربر و اتصال آن به بانک اطلاعاتی را کنار هم خواهید داشت . همچنین در بخش Domain شما کنترل دامنه یخود حتی نظیر غیر فعال کردن آن دامنه را نیز در اختیار دارید .</p>
+<p><strong>System / Sessions : </strong>در این بخش شما می توانید تمامی اعمالی که در آن لحظه در کنترل پنل هاستتان ( چه در خود پلسک و چه در FTP ) در حال وقوع هست با خبر شوید و اگر کسی بدون اجازه وارد شده باشد را مشاهده کنید.</p>
+<p></p>
+<p class="important">لطفا فید این وبلاگ را از Feeds.feedburner.com/itnegar به فید جدید با آدرس feeds.feedburner.com/rkhani تغییر دهید .</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%DA%A9%D9%86%D8%AA%D8%B1%D9%84%20%D9%BE%D9%86%D9%84%20Plesk%20(%20%D9%82%D8%B3%D9%85%D8%AA%20%D8%AF%D9%88%D9%85%20)%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../khntrl-pnl-plesk-qsmt-wl/" rel="prev" title="کنترل پنل Plesk (قسمت اول)">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../plesk-cp-part-3/" rel="next" title="کنترل پنل Plesk ( قسمت آخر )">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/plesk-cp-part2/",
+        disqus_title="\u06a9\u0646\u062a\u0631\u0644 \u067e\u0646\u0644 Plesk ( \u0642\u0633\u0645\u062a \u062f\u0648\u0645 )",
+        disqus_identifier="cache/posts/wp/plesk-cp-part2.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آموزش HTML بخش ۲ | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../amwzsh-html-bkhsh-1/" title="آموزش HTML بخش ۱" type="text/html">
+<link rel="next" href="../amwzsh-html-bkhsh-3/" title="آموزش HTML بخش 3" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="آموزش HTML بخش ۲">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/">
+<meta property="og:description" content="نکته‌: بعضی از تگ‌های استفاده شده در این آموزش در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از CSS در کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری سریع‌تر CS">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-04-24T00:32:15+04:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2011-04-24T00:32:15+04:30" title="2011-04-24 00:32">2011-04-24 00:32</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">آموزش HTML بخش ۲</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p><span style="color: #ff0000;"><strong>نکته‌: </strong>بعضی از تگ‌های استفاده شده در این آموزش در نسخهٔ جدید HTML دیگر جایی ندارند‌، و آن هم به دلیل استفاده از<span style="color: #800000;"> CSS در کنار HTML است‌. ولی آشنا شدن با آن‌ها می‌تواند کمک فراوانی به یاد‌گیری سریع‌تر CSS -که در آینده قصد بر آن داریم- کند‌.</span></span></p>
+<p></p>
+<h4><strong> انواع تیتر‌ها‌: </strong></h4>
+<p>در HTML تگ‌هایی برای شناساندن <span style="color: #800080;"><strong>تیتر‌ها</strong> به مرور‌گر و در نتیجه نمایش مناسب آن‌ها در نظر گرفته شده است که ساختاری برابر <span style="color: #99cc00;"><strong>&lt;Hn&gt;</strong> دارند‌. در این نوع تگ حرف <span style="color: #ff0000;"><strong>n</strong> برابر با مقداری است که از یک شروع می‌شود‌، و به نسبت بزرگ‌تر شدن این مقدار‌، اندازهٔ تیتر به کوچک‌تر شدن میل می‌کند‌. برای درک بهتر این موضوع سعی می‌کنیم‌، در صفحه‌ای که قبلا ساختیم یک تیتر ایجاد کنیم‌:</span></span></span></p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>title<span class="p">&amp;</span>gt<span class="p">;</span>First HTML!<span class="p">&amp;</span>lt<span class="p">;</span>/title<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span><span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h1<span class="p">&amp;</span>gt<span class="p">;</span>Hello World<span class="p">&amp;</span>lt<span class="p">;</span>/h1<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p>نتیجهٔ این کد برابر با تصویر زیر می‌باشد‌. همانطور که می‌بینید عبارت Hello World به صورت بزرگ نوشته شده است‌.</p>
+<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-7.png"><img class="aligncenter size-medium wp-image-272" title="html1-7" src="http://shahinism.com/wp-content/uploads/2011/04/html1-7-300x74.png" alt="" width="300" height="74"></a></p>
+<p>برای درک بهتر مقدار n در &lt;Hn&gt; از دو مقدار دیگر <span style="color: #cc99ff;"><strong>&lt;h2&gt;&lt;h3&gt;</strong> به صورت زیر استفاده می‌کنم‌:</span></p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>title<span class="p">&amp;</span>gt<span class="p">;</span>First HTML!<span class="p">&amp;</span>lt<span class="p">;</span>/title<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span><span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h1<span class="p">&amp;</span>gt<span class="p">;</span>Hello World<span class="p">&amp;</span>lt<span class="p">;</span>/h1<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h2<span class="p">&amp;</span>gt<span class="p">;</span>This is an HTML Document<span class="p">&amp;</span>lt<span class="p">;</span>/h2<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h3<span class="p">&amp;</span>gt<span class="p">;</span>Season <span class="m">2</span><span class="p">&amp;</span>lt<span class="p">;</span>h3<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-6.png"><img class="aligncenter size-medium wp-image-271" title="html1-6" src="http://shahinism.com/wp-content/uploads/2011/04/html1-6-300x96.png" alt="" width="300" height="96"></a>همانطور که می‌بینید عبارات نوشته شده با اندازه‌های متفاوت به نمایش در آمده‌اند‌. یکی از مهم‌ترین مزایای استفاده از این تگ‌ها در <strong><span style="color: #3366ff;">Seo</span></strong> است که به موتور‌های جستجو امکان می‌دهد که به راحتی بخش‌های مختلف سند را <span style="color: #ffcc00;"><strong>درک</strong> کنند‌.</span></p>
+<h4>انواع نوشته‌ها‌:</h4>
+
+<ul>
+<li><span style="color: #666699;"><strong>Bold :</strong> برای نوشتن به صورت تو پر یا همان bold از تگ <span style="color: #666699;"><strong>&lt;b&gt;&lt;/b&gt;</strong> استفاده می‌شود‌.</span></span></li>
+</ul>
+<ul>
+<li><span style="color: #008080;"><em>Italic : </em>برای نوشتن به صورت مورب نیز از تگ<span style="color: #339966;"><strong>&lt;i&gt;&lt;/i&gt;</strong> استفاده می‌شود‌.</span></span></li>
+</ul>
+<ul>
+<li><span style="color: #808080;"><del>Strike :</del> برای نوستن به صورت رو خط دار از تگ <strong><span style="color: #ff0000;">&lt;strike&gt;&lt;/strike&gt;</span></strong> استفاده می‌شود‌.</span></li>
+</ul>
+<ul>
+<li><span style="color: #00ccff;"><span style="text-decoration: underline;">Underline : برای نوشتن به صورت زیر خط دار از تگ <strong><span style="color: #00ccff;">&lt;u&gt;&lt;/u&gt;</span></strong> استفاده می‌شود‌.</span></span></li>
+</ul>
+<p>خوب می‌خواهیم صفحهٔ ساخته شدمان را اندکی <span style="color: #ff9900;"><strong>زیبا‌تر</strong> کنیم؛ برای این کار از تگ‌هایی که اخیرا یاد گرفتیم استفاده می‌کنیم‌:</span></p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>title<span class="p">&amp;</span>gt<span class="p">;</span>First HTML!<span class="p">&amp;</span>lt<span class="p">;</span>/title<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span><span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h1<span class="p">&amp;</span>gt<span class="p">;</span>Hello World<span class="p">&amp;</span>lt<span class="p">;</span>/h1<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h3<span class="p">&amp;</span>gt<span class="p">;</span>This is an HTML Document <span class="p">&amp;</span>lt<span class="p">;</span>i<span class="p">&amp;</span>gt<span class="p">;</span>season <span class="c1">#2&amp;lt;/i&amp;gt;&amp;lt;/h3&amp;gt;</span>
+
+This is an free tutorial <span class="k">for</span> <span class="p">&amp;</span>lt<span class="p">;</span>b<span class="p">&amp;</span>gt<span class="p">;</span>HTML<span class="p">&amp;</span>lt<span class="p">;</span>/b<span class="p">&amp;</span>gt<span class="p">;</span> from <span class="p">&amp;</span>lt<span class="p">;</span>b<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>u<span class="p">&amp;</span>gt<span class="p">;</span>shahinism.com<span class="p">&amp;</span>lt<span class="p">;</span>/u<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>/b<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-5.png"><img class="aligncenter size-medium wp-image-270" title="html1-5" src="http://shahinism.com/wp-content/uploads/2011/04/html1-5-300x81.png" alt="" width="300" height="81"></a>همانطور که می‌بینید توانستیم با تگ‌هایی ساده یک تایپوگرافی معقول ایجاد کنیم‌. تنها نکته‌ای که در مثال اخیر باید مورد <span style="color: #ff0000;"><strong>توجه</strong> قرار گیرد‌، این قسمت است‌: &lt;b&gt;&lt;u&gt;shahinism.com&lt;/u&gt;&lt;/b&gt;همانطور که می‌بینید از دو تگ زیر خط و نوشتهٔ تو پر به صورت همزمان استفاده شده‌. ولی تگ‌ها از <span style="color: #999999;"><strong>آخر به اول بسته شده‌</strong>.</span></span></p>
+<h4>موقعیت نوشته‌:</h4>
+
+<p>برای تعیین موقعیت نوشته‌ها نیز در HTML امکاناتی در نظر گرفته شده‌. که به تعدادی از آن‌ها اشاره می‌کنیم‌:</p>
+<ul>
+<li>Center: برای <span style="color: #cc99ff;"><strong>وسط‌چین</strong> کردن نوشته استفاده می‌شود‌.</span>
+</li>
+</ul>
+<ul>
+<li>&lt;br&gt; : برای <span style="color: #ff6600;"><strong>شکستن</strong> خط و شروع در خط جدید مورد استفاده قرار می‌گیرد‌.</span>
+</li>
+</ul>
+<ul>
+<li>&lt;sub&gt; و &lt;sub&gt; : که برای نمایش <span style="color: #3366ff;"><strong>اندیس و توان</strong> مورد استفاده قرار می‌گیرد‌.</span>
+</li>
+</ul>
+<p>اکنون می‌خواهیم با کد‌هایی که یاد گرفتیم تغییرات دیگری را نیز در سند ایجاد کنیم‌:</p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>title<span class="p">&amp;</span>gt<span class="p">;</span>First HTML!<span class="p">&amp;</span>lt<span class="p">;</span>/title<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/head<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>body <span class="nv">text</span><span class="o">=</span><span class="s2">"yellow"</span> <span class="nv">bgcolor</span><span class="o">=</span><span class="s2">"brown"</span><span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>center<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>h1<span class="p">&amp;</span>gt<span class="p">;</span>Hello World<span class="p">&amp;</span>lt<span class="p">;</span>/h1<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>/center<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>h3<span class="p">&amp;</span>gt<span class="p">;</span>This is an HTML Document <span class="p">&amp;</span>lt<span class="p">;</span>i<span class="p">&amp;</span>gt<span class="p">;</span>season <span class="p">&amp;</span>lt<span class="p">;</span>sub<span class="p">&amp;</span>gt<span class="p">;</span><span class="c1">#2&amp;lt;/sub&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/h3&amp;gt;</span>
+
+This is an free tutorial <span class="k">for</span> <span class="p">&amp;</span>lt<span class="p">;</span>b<span class="p">&amp;</span>gt<span class="p">;</span>HTML<span class="p">&amp;</span>lt<span class="p">;</span>/b<span class="p">&amp;</span>gt<span class="p">;</span> from: <span class="p">&amp;</span>lt<span class="p">;</span>br<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>b<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>u<span class="p">&amp;</span>gt<span class="p">;</span>shahinism.com<span class="p">&amp;</span>lt<span class="p">;</span>/u<span class="p">&amp;</span>gt<span class="p">;&amp;</span>lt<span class="p">;</span>/b<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p><a href="http://shahinism.com/wp-content/uploads/2011/04/html1-4.png"><img class="aligncenter size-medium wp-image-269" title="html1-4" src="http://shahinism.com/wp-content/uploads/2011/04/html1-4-300x62.png" alt="" width="300" height="62"></a></p>
+<p>همانطور که در تصویر زیر می‌بینیم <span style="color: #0d96f1;"><strong>#</strong><span style="color: #00ccff;"><strong>۲</strong>مقداری به پایین منتقل شده‌، هم‌چنین آدرس سایت نیز با توجه به اینکه در ادامهٔ خط نوشته شده‌، ولی پایین‌تر آمده‌. واضح‌ترین تغییر نیز در این مثال عبارت Hello World است که به وسط صفحه تغییر مکان داده‌.</span></span></p>
+<h4>تغییر قلم‌:</h4>
+
+<p>برای تغییر قلم نوشته <span style="color: #666699;"><strong>(فونت‌)</strong> نیز می‌توانید از تگ فونت استفاده کنید‌. نمونه‌ای از استفاده از این قلم را در کد زیر ببینید‌:</span></p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>title<span class="p">&amp;</span>gt<span class="p">;</span>Font Change<span class="p">&amp;</span>lt<span class="p">;</span>/title<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+Hi my friends <span class="p">&amp;</span>lt<span class="p">;</span>font <span class="nv">face</span><span class="o">=</span><span class="s2">"tahoma"</span> <span class="nv">size</span><span class="o">=</span><span class="m">24</span> <span class="nv">color</span><span class="o">=</span>red<span class="p">&amp;</span>gt<span class="p">;</span>in this page we have <span class="m">2</span><span class="p">&amp;</span>lt<span class="p">;</span>/font<span class="p">&amp;</span>gt<span class="p">;</span> different font.
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/body<span class="p">&amp;</span>gt<span class="p">;</span>
+
+<span class="p">&amp;</span>lt<span class="p">;</span>/html<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p>نتیجه‌ی مثال زیر را در تصویر زیر می‌بینیم‌:</p>
+<p><a href="../wp-content/uploads/2011/04/html1-3.png"><img class="aligncenter" title="html1-3" src="../wp-content/uploads/2011/04/html1-3-300x39.png" alt="" width="300" height="39"></a></p>
+<p>لازم به <span style="color: #ff0000;"><strong>ذکر</strong> است‌، مرور‌گر‌ها به صورت <span style="color: #3366ff;"><strong>پیش‌فرض</strong> فونتی را برای نمایش نوشته در نظر می‌گیرند که با مراجعه به بخش تنظیمات هر مرورگر قابل <span style="color: #ffcc00;">تغییر است‌. فونت تعیین شده در کد بالا در صورتی که روی سیستم کاربر موجود باشد‌، نمایش داده می‌شود‌، در غیر این صورت از فونت پیش‌فرض استفاده می‌شود‌. در بخش آموزش CSS روشی از CSS3 را می‌آموزیم که این <span style="color: #99cc00;"><strong>نقظه ضعف</strong> را پوشش می‌دهد‌.</span></span></span></span></p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20HTML%20%D8%A8%D8%AE%D8%B4%20%DB%B2%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../amwzsh-html-bkhsh-1/" rel="prev" title="آموزش HTML بخش ۱">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../amwzsh-html-bkhsh-3/" rel="next" title="آموزش HTML بخش 3">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/amwzsh-html-bkhsh-2/",
+        disqus_title="\u0622\u0645\u0648\u0632\u0634 HTML \u0628\u062e\u0634 \u06f2",
+        disqus_identifier="cache/posts/wp/amwzsh-html-bkhsh-2.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>وبلاگ شاهین (ارسال‌ها دربارهٔ xchat)</title><link>https://shahinism.com/archive/fa/</link><description></description><atom:link href="https://shahinism.com/archive/fa/categories/xchat.xml" rel="self" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Sat, 26 Aug 2017 17:33:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>مقدمه‌ای بر IRC</title><link>https://shahinism.com/archive/fa/posts/introduction-to-irc/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;مقدمه&lt;/h2&gt;
+&lt;p&gt;شروع کارم با IRC به مدت‌ها قبل بر می‌گردد‌. اما همین چند وقت پیش که نیازم به ارتباط
+همزمان‌، آن هم با دنگ و فنگ‌های چت GMail (که خودتان دلیل عمده‌اش را بهتر از من
+می‌دانید) بیشتر شد سعی کردم با این ابزار و امکاناتش بیشتر آشنا شوم. در این پست
+قصد داریم کمی با این ابزار قدیمی‌، ولی خیلی خیلی کاربردی آشنا شویم. در حد مثلا
+قطره از دریا ;-)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;این دیگر چیست؟&lt;/h2&gt;
+&lt;p&gt;IRC را به صورت ناشیانه می‌توان‌، شهری بزرگ دانست که به محلاتی کوچک (شبکه‌ها) که
+عمدتا‌، هدف خاصی دارند تقسیم شده. مثلا محله‌ای برای نرم‌افزار‌های آزاد (&lt;a class="reference external" href="http://freenode.net"&gt;Freenode&lt;/a&gt;)
+یا مثلا محله‌ای برای هکر‌ها الکترونیک و الی آخر. هر کدام از این محلات به تعداد
+زیادی خانه (Channel) تقسیم شده‌اند که در آن‌ها تنها حول موضوع خاصی صحبت می‌شود.
+مثلا زبان برنامه‌نویسی C یا توزیع Slackware. یک‌جور‌هایی مثل همان &lt;strong&gt;اتاق‌های چت&lt;/strong&gt;
+است که احتمالا اگر هم دوران من باشید‌، خوب به خاطر دارید.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://shahinism.com/archive/fa/posts/introduction-to-irc/"&gt;بیشتر بخوانید…&lt;/a&gt; (8 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>erc</category><category>hexchat</category><category>irc</category><category>xchat</category><guid>https://shahinism.com/archive/fa/posts/introduction-to-irc/</guid><pubDate>Wed, 22 May 2013 06:22:37 GMT</pubDate></item></channel></rss>

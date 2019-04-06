@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خوبی‌های جاوا اسکریپت؟ | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../mary-live-codes-a-javascript-game-from-scratch/" title="کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose" type="text/html">
+<link rel="next" href="../multithreading-bug-experiment-on-PyMongo-driver/" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="خوبی‌های جاوا اسکریپت؟">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/">
+<meta property="og:description" content="خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
+این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
+بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیر">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-07-08T15:55:01+04:30">
+<meta property="article:tag" content="Html5">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2015-07-08T15:55:01+04:30" title="2015-07-08 15:55">2015-07-08 15:55</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">خوبی‌های جاوا اسکریپت؟</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>خیلی وقت است ننوشته‌ام و حقیقتش همین الان هم زیاد مثل گذشته حس نوشتن ندارم. موضوع
+این است که از طرفی چند نفر از شما دوستان در ایمیل‌هایی از من خواستید که باز
+بنویسم (راستش اصلا فکر نمی‌کردم کسی آن بیرون به فکر چرایی آپدیت نشدن این وبلاگ
+باشد.) که ازشان متشکرم. و از طرف دیگر‌، به دلیل شغل جدیدم‌، و هدف‌مند‌تر شدن
+فعالیت‌هایم‌، عمدتا تجربه‌های جدید فوق‌العاده‌ای را مزه‌مزه می‌کنم که دوست ندارم زود
+فراموش شوند و فکر می‌کنم بازگویی‌شان در این وبلاگ بتواند کمک کند. این است که:</p>
+<p>نمی‌دانم چقدر با JavaScript آشنایی دارید‌، ولی بعید می‌دانم که پی‌اش رفته باشید و
+اسم داگلاس کراکفورد (<a class="reference external" href="http://www.crockford.com/">Douglas Crockford</a>) به گوشتان نخورده باشد.</p>
+<p>عمدهٔ معروفیت ایشان هم پی کتابی به اسم Javascript the Good Parts شکل گرفته که شاید
+برای خیلی‌ها یک جک به نظر برسد. چطور؟</p>
+<!-- TEASER_END -->
+<p>خوب بگذارید این‌طور شروع کنم‌: آشنایی من با جاوااسکریپت به کتاب <a class="reference external" href="http://eloquentjavascript.net/">Eloquent
+Javascript</a> بر می‌گردد. و شاید یک آشنایی جزئی با <a class="reference external" href="https://nodejs.org/">Nodejs</a> را بتوان چاشنی
+تجربه‌ام با این زبان دانست. حقیقت امر این است که از این زبان عمرا لذت نمی‌بردم. چه
+می‌دانم شاید اکثریتش بابت معلوم نبودن ریشهٔ درست و حسابی‌اش مثل زبان‌های دیگر
+باشد. شاید همین دلیل اولش باعث شده باشد که بتوان داخل اینترنت هزار و یک گزینهٔ
+چرند را به عنوان Best practices این زبان پیدا کرد که متاسفانه در خیلی از کد‌های
+منتشر شده به این زبان مورد استفاده قرار گرفته‌اند. شاید ساده‌ترین نمونهٔ این‌ها را
+بتوان استفاده نکردن از سمی کولون «;» برای پایان دادن به statement‌ها دانست.</p>
+<p>دلیلشان ساده است‌، می‌گویند خود مفسر جاوا‌اسکریپت سمی‌کولون‌ها را در جای مناسبشان
+می‌گذارد یا حتی بدتر می‌گویند بودن یا نبودن سمی‌کولون در پایان جملات‌، اختیاری
+است. این است که ممکن است فاجعه‌ای مانند کد زیر رخ دهد:</p>
+<pre class="code javascript"><a name="rest_code_41ee556398f744e799337b16ced09357-1"></a><span class="k">return</span>
+<a name="rest_code_41ee556398f744e799337b16ced09357-2"></a><span class="p">{</span>
+<a name="rest_code_41ee556398f744e799337b16ced09357-3"></a>    <span class="nx">done</span><span class="o">:</span> <span class="kc">true</span>
+<a name="rest_code_41ee556398f744e799337b16ced09357-4"></a><span class="p">}</span>
+</pre>
+<p>همه چیزش درست به نظر می‌رسد این‌طور نیست؟ اگر این‌طور فکر می‌کنید، یا نقص قضیه را
+می‌دانید و به همین دلیل از جاوا اسکریپت بی‌زارید‌، پیشنهاد می‌کنم <a class="reference external" href="http://www.youtube.com/watch?v=hQVTIJBZook">این ارائهٔ</a> آقای
+کراکفورد را از دست ندهید.</p>
+<p>نکتهٔ کلی در مورد این زبان این است که نقص‌های طراحی فراوان و به صورت بحرانی
+مشکل‌زایی را می‌توان در آن یافت. همین‌طور نبود منابع یک‌پارچه با وجود پیاده‌سازی‌های
+متنوع (که به قول خود کراکفورد‌، تنها مشکلات طراحی را کپی کردن) باعث کج‌فهمی
+برنامه‌نویسانی که فکر می‌کنند می‌توانند این زبان را به راحتی یاد بگیرند شده است.
+تمام این‌ها در کنار گستردگی پلتفرمی که تقریبا هیچ زبان دیگری حتی به نزدیکی‌اش هم
+نرسیده است (مرورگرها)، و چه می‌دانم شاید امکاناتی که Prototype‌ها به برنامه‌نویس
+می‌دهند‌، آن‌چنان نقش تیغ دو لبه را برای برنامه‌نویسان زیبا ایفا می‌کند که نه می‌توان
+به کلی از خیرش گذشت (و به قول کراکفورد یادش نگرفت تا موقعی که بهش نیاز داریم) نه
+این که بتوان به عنوان یک غول همه چیز تمام برای هر مساله‌ای (سیستم‌عامل NodeJsای رو
+که یادتون می‌آد؟) به آن نگاه کرد (دارم به پایتون فکر می‌کنم، ولی اون هم نمی‌تونه
+جاهایی که جاوااسکریپت خوب عمل می‌کنه‌، خودی نشون بده).</p>
+<a class="reference external image-reference" href="https://xkcd.com/1508/"><img alt="XKCD operation systems" src="https://imgs.xkcd.com/comics/operating_systems.png"></a>
+<p>در پایان این ارائه کسی از کراکفورد نظرش را در مورد HTML5 می‌پرسد و حقیقتش یک
+جورهایی حرف دلم را می‌زند. تا قبل از HTML5 و یا CSS3 تکلیفمان روشن بود. ساختار را
+با HTML و آن DOM چلاغش نشان می‌دادیم. رنگ و لعاب را با CSS می‌گفتیم و هر جینگولک
+دیگر را با جاوااسکریپت. حالا HTML5 و CSS3 عمدتا قابلیت‌هایی را به خودشان اضافه
+کرده‌اند که قبول دارم داشتنشان با جاوااسکریپت شاید کمی دردسر بیشتری داشت‌، ولی
+مربوط به همان حوزه می‌شد و بس. به قول کراکفورد که می‌گوید:</p>
+<pre class="code text"><a name="rest_code_17f8338fb1274fe6961718abcab9df38-1"></a>It's easy to make things bigger, it's harder to make things better.
+</pre>
+<p>قبل از پایان مطلب هم دوباره اشاره کنم که همانطور که در متن گفتم‌، من را فعلا
+نمی‌توان یک برنامه‌نویس جاوااسکریپت دانست و احتمالا از خیلی از کارهای خارق‌العاده‌ای
+که Nodejs می‌تواند بکند بی‌خبرم. هدفم از نوشتن این مطلب برایم حکم ثبت استارت یک
+تجربه جدید را دارد. احتمالا در آینده بیشتر در مورد کلنجارهایم با جاوااسکریپت
+خواهم نوشت. هر چند بعید می‌دانم به این زودی‌ها دوستش داشته باشم :)</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D8%AE%D9%88%D8%A8%DB%8C%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%AC%D8%A7%D9%88%D8%A7%20%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA%D8%9F%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+              <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/html5/" rel="tag">Html5</a></li>
+            <li><a class="tag p-category" href="../../categories/javascript/" rel="tag">javascript</a></li>
+        </ul>
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../mary-live-codes-a-javascript-game-from-scratch/" rel="prev" title="کدنویسی بازی جاوااسکریپت به صورت زنده توسط Mary Rose">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../multithreading-bug-experiment-on-PyMongo-driver/" rel="next" title="وقایع نگاری یک دیباگ: وضعیت عجیب MongoDB">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/douglas-crockford-javascript-the-good-parts/",
+        disqus_title="\u062e\u0648\u0628\u06cc\u200c\u0647\u0627\u06cc \u062c\u0627\u0648\u0627 \u0627\u0633\u06a9\u0631\u06cc\u067e\u062a\u061f",
+        disqus_identifier="cache/posts/douglas-crockford-javascript-the-good-parts.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

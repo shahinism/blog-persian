@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>وبلاگ شاهین (ارسال‌ها دربارهٔ Nikola)</title><link>https://shahinism.com/archive/fa/</link><description></description><atom:link href="https://shahinism.com/archive/fa/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Sat, 26 Aug 2017 17:33:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>از وردپرس به نیکولا</title><link>https://shahinism.com/archive/fa/posts/from-wordpress-to-nikola/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;خیلی وقت بود که به فکر انتقال وبلاگم به یکی از سیستم‌های وبلاگ ایستا (Static)
+بودم. عمده‌ترین دلیلش هم قابلیت خوب Github برای انتشار چنین وبلاگ‌هایی بود. اما
+بیشتر از یک سال این فکر را عقب انداختم تا دیگر کم کم نگهداری از هاست و دامین
+وبلاگ آن هم با نوع سرویس دهی شرکت‌های ایرانی‌، برایم خسته کننده شد. وبلاگ‌نویسی
+قرار نیست تمام فکر و ذکرم را به خودش مشغول کند‌! قرار است یک جای ساده باشد که
+خیلی راحت بتوان تویش نوشت و منتشر کرد. (الان که دارم می‌نویسم‌، دامین اصلی وبلاگم
+Shahinism.com لنگ به هواست و نمی‌توانم DNS را به هاست قبلی منتقل کنم)&lt;/p&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;چرا یک وبلاگ ایستا؟&lt;/h2&gt;
+&lt;p&gt;خوب به طور کلی دلایلش از این قرارند:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;سرعت‌، سرعت‌، سرعت:&lt;/strong&gt; دیگر در این نوع از وبلاگ‌، خبری از پایگاه داده نیست.
+همین‌طور قرار نیست هیچ پردازشی در سمت سرور وبلاگ قرار گیرد. و خوب طبیعتا خیلی
+خیلی امکاناتی که این ابزار‌ها فراهم می‌کنند را نمی‌توانم داشته باشم. اما حقیقتش
+در یک وبلاگ‌، به بسیاری از این ابزار‌ها نیاز ندارم. به هر حال این نبودن‌ها‌، یعنی
+سرعت بیشتر. در مورد من‌، سرعت لود صفحات‌، حدودا سه برابر بیشتر شد.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;سادگی:&lt;/strong&gt; فکر نمی‌کنم چیز زیادی در این زمینه برای گفتن باقی گذاشته باشم.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;امنیت:&lt;/strong&gt; وقتی تنها با صفحات سادهٔ HTML روبرو هستید. وقتی یک سیستم انتشار قابل
+اطمینان دارید‌‌، دیگر نباید نگران آپدیت بودن ابزار وبلاگ‌نویسی‌تان و یا هک شدنش
+باشید. این‌طور نیست؟&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;محدود نبودن پهنای باند:&lt;/strong&gt; این یکی از آن کابوس‌هایی است که بی‌خبر به سراغ‌تان
+می‌آید. ولی خوب خوشبختانه روی گیت‌هاب‌، این نگرانی را نداریم ;-)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;قابلیت بازیابی:&lt;/strong&gt; خوب این یکی زیاد مربوط به خود سیستم وبلاگ‌نویسی نیست. ولی
+چون نتیجهٔ کارش را می‌توان با هر سیستم دلخواهی منتشر کرد و من گیت را انتخاب
+کرده‌ام‌، خیلی راحت می‌توانم در صورت گند زدن‌، بدون هیچ استرسی آن را به حالت قبل
+برگردانم. این قابلیت روی هاست‌های اشتراکی پولی و گران است و در سرور‌های اختصاصی‌،
+خیلی پر دردسر‌تر از چیزی که در این‌جا با آن طرفیم ;-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://shahinism.com/archive/fa/posts/from-wordpress-to-nikola/"&gt;بیشتر بخوانید…&lt;/a&gt; (7 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Nikola</category><category>python</category><category>Wordpress</category><guid>https://shahinism.com/archive/fa/posts/from-wordpress-to-nikola/</guid><pubDate>Mon, 13 May 2013 05:51:43 GMT</pubDate></item></channel></rss>

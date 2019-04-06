@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>وبلاگ شاهین (ارسال‌ها دربارهٔ i3bar)</title><link>https://shahinism.com/archive/fa/</link><description></description><atom:link href="https://shahinism.com/archive/fa/categories/i3bar.xml" rel="self" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Sat, 26 Aug 2017 17:33:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>py3status ابزار مناسب برای گرفتن اطلاعات در نوار ابزار i3</title><link>https://shahinism.com/archive/fa/posts/py3status/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;قبلا در مورد &lt;a class="reference external" href="http://i3wm.org/"&gt;i3&lt;/a&gt; &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910415tjrbh-khr-b-i3-ykh-rgyb-qdr.html"&gt;حرف زده‌ام&lt;/a&gt;
+و نوشته‌ام که چطور با شل اسکریپت، و برای جلوگیری از مصرف زیاد رم (که Conky قاتلش
+بود) اطلاعات وضعیت سیستمم را در i3bar &lt;a class="reference external" href="http://shahinism.github.io/posts/blog13910904dryft-tlt-systm-bdwn-stfdh-z-conky.html"&gt;نمایش می‌دهم&lt;/a&gt;.
+خوب، حقیقتش بعد از مدتی فهمیدم که شل اسکریپتم در ازای اجرای طولانی مدت، رم زیادی
+می‌خورد و از طرفی، خیلی ساده است. خوب یکی از مزیت‌های &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; این است که اطلاعات
+را به صورت رنگی نمایش می‌دهد که جدای از زیبایی بصری، به درک سریع اطلاعات کمک
+می‌کند. ولی بدبختی این &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; هم این است که به قدر کافی قابل گسترش نیست و
+ابزارهایی هم که خودش در اختیارتان می‌گذارد فوق‌العاده محدود است!&lt;/p&gt;
+&lt;p&gt;این وضعیت از قرار تنها مرا آزار نمی‌داده. ultrabug روی github پروژهٔ پایتونی‌ای را
+&lt;a class="reference external" href="https://github.com/ultrabug/py3status"&gt;شروع کرده&lt;/a&gt; که در واقع حکم یک پوشش برای
+&lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; را دارد. وظیفهٔ این پروژه این است که اسکریپت پایتونی شما را تحویل گرفته
+و آن را با کمک &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; در i3bar به نمایش در آورد. خوبی ویژه‌اش این است که شما
+هم می‌توانید خودتان اسکریپت بنویسید و هم از ابزارهای آمادهٔ &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; استفاده کنید
+و در آخر هم از فایل تنظیمات &lt;a class="reference external" href="http://i3wm.org/i3status/"&gt;i3status&lt;/a&gt; برای تنظیم هر دو ابزار بهره بگیرید.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://shahinism.com/archive/fa/posts/py3status/"&gt;بیشتر بخوانید…&lt;/a&gt; (2 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>i3</category><category>i3bar</category><category>i3status</category><category>py3status</category><category>python</category><guid>https://shahinism.com/archive/fa/posts/py3status/</guid><pubDate>Thu, 12 Sep 2013 07:01:45 GMT</pubDate></item></channel></rss>

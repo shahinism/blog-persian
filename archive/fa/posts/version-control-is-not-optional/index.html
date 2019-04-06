@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ورژن کنترل اختیاری نیست! | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/version-control-is-not-optional/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../no-space-mysql-problem/" title="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!" type="text/html">
+<link rel="next" href="../Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" title="معجون بهشتی Selenium, PhantomJS و Requests برای web scraping" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="ورژن کنترل اختیاری نیست!">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/version-control-is-not-optional/">
+<meta property="og:description" content="حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم
+که ورژن کنترل یک جورهایی جزء غرایض جامعه‌ی نرم‌افزاری است‌، آن هم با درجه‌ی اهمیتی
+مثل نفس کشیدن. دوستی دارم که حدوداً ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-12-27T10:49:45+03:30">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Version Control">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2015-12-27T10:49:45+03:30" title="2015-12-27 10:49">2015-12-27 10:49</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">ورژن کنترل اختیاری نیست!</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>حقیقتش انتظار داشتم این موضوع خیلی وقت پیش حل شده باشد. حتی پیش خودم فکر می‌کردم
+که ورژن کنترل یک جورهایی جزء غرایض جامعه‌ی نرم‌افزاری است‌، آن هم با درجه‌ی اهمیتی
+مثل نفس کشیدن. دوستی دارم که حدوداً دو سال پیش روی دیوار فیس‌بوک‌اش از پاک شدن
+اتفاقی فایل‌های یکی از پروژه‌هایش شکایت کرده بود‌، که وا مصیبتا‌، مسلمانان چه
+نشسته‌اید که نتیجه‌ی تلاش چند سال گذشته‌ام به فنا رفت!</p>
+<p>یادم می‌آید‌‌‌ همان موقع با یک لحن خیلی مودبانه پرسیدم «مگه از ورژن کنترل استفاده
+نمی‌کردی؟ خوب خطرناکه حسن…» و جوابی در این حدود‌ها گرفتم که «چون این پروژه‌ها یا
+شخصی بودن یا کوچیک‌، زیاد مباحث مهندسی نرم‌افزار رو توشون رعایت نکردم!». خوب اینکه
+می‌گویم دوست شاید‌، خیال بد کنید‌، ولی خوب خوشبختانه چند سالی هست که حسن را از
+نزدیک ملاقات نکرده‌ام‌، وگرنه احتمالاً آن موقع نمی‌توانستم خودم را کنترل کنم و ایشان
+را به کما می‌فرستادم تا این مشکل دوباره برایش تکرار نشود.</p>
+<!-- TEASER_END -->
+<p>دوباره؟ بله دوباره‌، چند هفته‌ی پیش بود که این حسن آقای گل پستی همراه با نفرین و
+ناله علیه چند تن از رفقای نزدیک‌ترش نوشت که چرا مجبورش کردند که ویندوز (نه انگار
+باید در این رفاقت جدا تجدید نظر کرد ;))) عوض کند (یا یک بلایی سر ویندوزش آوردند
+یا همچین چیزهایی) و فایل‌های دو تا از پروژه‌هایش به فنا رفته…</p>
+<p>البته یک بار خیال برتان ندارد که حسن تازه‌کار است و یا از این حرف‌ها… هر چند هم که
+ویندوزی باشد، یکی از خلاق‌ترین توسعه دهنده‌های PHP است که می‌شناسم.</p>
+<p>ماجرا البته به حسن ختم نمی‌شود. دوست دیگری دارم که ارشد نرم‌افزار خوانده و ورژن
+کنترل را فقط از دهان من در دوره‌ی کارشناسی‌اش شنیده‌. یا سال گذشته در حال استفاده
+از نرم‌افزار اتوماسیون صنعتی یکی از شرکت‌های مطرح این زمینه در محل کارم‌، متوجه شدم
+که نسخه‌های مختلفشان را با فایل‌های زیپ مدیریت می‌کنند. فکرش را بکنید‌، مثلاً
+می‌خواستند یک آپدیت بدهند‌، باید هماهنگ می‌شد تکنسینشان در محل شرکت حاضر شود‌، پشت
+سرور بنشیند‌، فایل زیپ را دانلود و روی پوشه‌ی قبلی overwrite کند‌، تا آپدیت داشته
+باشیم. این روند البته همانطور که گفتم پروژه‌ی دانشگاهی نبود‌، شرکتی مطرح در حوزه‌ی
+نرم‌افزار کشور‌، پروژه‌ی ‎.Net می‌نوشت و آن را این‌طور به مشتری می‌رساند (که البته
+معلوم است خرج دوبله‌اش را از جیب مبارک مشتری کسر می‌کرد). این پروژه حتی مشتری
+خارجی هم داشت (تا جایی که یادم می‌آید از ترکیه) به هر حال خواستم بگویم:</p>
+<div class="section" id="id1">
+<h2>ورژن کنترل اختیاری نیست:</h2>
+<p>مهم نیست پروژه چقدر کوچک است‌، مهم نیست چقدر کم اهمیت است، مهم نیست شما چقدر
+کارتان درست است. همین دلیل کفایت می‌کند «اگر همین الان اتفاقی فایل‌ها پاک شد‌،
+احساس تأسف می‌کنید؟» اگر آره‌، پس استفاده از ورژن کنترل اجباریست! تعارف که نداریم،
+در توسعه‌ی نرم‌افزار هر چقدر هم این‌کاره باشیم‌، باید بار‌ها اشتباه کنیم تا بتوانیم
+به نتیجه‌ی دلخواه برسیم. مجبوریم راه‌هایی را امتحان کنیم که قبلاً کسی نرفته، بار‌ها
+حتی مسیری که خودمان رفته‌ایم را عوض کنیم… جدا چه چیزی قشنگ‌تر از ورژن کنترل
+می‌تواند کمک کند؟</p>
+</div>
+<div class="section" id="id2">
+<h2>ورژن کنترل تنها محدود به توسعه نرم‌افزار نیست:</h2>
+<p>دارید کتاب می‌نویسد؟ مقاله؟ پایان نامه‌ی دانشگاه‌تان؟ اوه شما طراحید؟ سر و کارتان
+فقط با HTML و CSS است؟ ‌ گرافیستید؟ مهم نیست، تا جایی که پروژه‌تان بتواند در قالب
+یک ورژن کنترل توسعه پیدا کند‌، استفاده از آن لطف بزرگی به خودتان است.</p>
+</div>
+<div class="section" id="id3">
+<h2>ورژن کنترل فقط برای توسعه نیست:</h2>
+<p>در <a class="reference external" href="http://foundersbuddy.com">فاندرز بادی</a> ما از ورژن کنترل برای دیپلوی هم استفاده می‌کنیم. این است که حتی
+اگر چیزی را اشتباها دیپلوی کنیم، برای برگشتش دو ثانیه وقت نیاز است! راستش این
+قضیه یک بار اتفاق هم افتاد. در حین دیپلوی تغییرات جدید سایت‌، یک ویژگی که هنوز
+کامل نشده بود هم اشتباهاً روی سایت قرار گرفت… این هم کاری که کردیم:</p>
+<img alt="https://res.cloudinary.com/shahinism/image/upload/v1503767533/BlogPhotos/Screenshot%20at%202015-12-26%2023%3A08%3A26.png" src="https://res.cloudinary.com/shahinism/image/upload/v1503767533/BlogPhotos/Screenshot%20at%202015-12-26%2023%3A08%3A26.png"><p>خوب حالا اگر موافق بحث اصلی متن هستید‌، احتمالاً می‌خواهید بدانید:</p>
+</div>
+<div class="section" id="id4">
+<h2>کدام ورژن کنترل؟</h2>
+<p>جواب کوتاه Git، و بلندش اینکه هر کدامی که دلتان خواست. گیت برای من تا الان
+انتخاب خوبی بوده و هرگز فایلی نداشته‌ام که مرز ۵۰ مگابایتی‌اش را رد کند. ولی اگر
+این سناریوی شماست‌، احتمالاً راه حل‌های خوب دیگری هم بتوانید پیدا کنید.</p>
+</div>
+<div class="section" id="id5">
+<h2>از کجا شروع کنیم؟</h2>
+<p>اگر انتخابتان گیت است‌، و کمی با کلاً بحث ورژن کنترل آشنایی دارید‌، <a class="reference external" href="http://try.github.com">این آموزش
+پویا</a> احتمالاً کارتان را راه بیاندازد. اگر هم این کاره‌اید و یا می‌خواهید سر تا
+پای این ابزار دوست‌داشتنی را بشناسید، <a class="reference external" href="http://udacity.com">Udacity</a> یک <a class="reference external" href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">دوره‌ی فوق‌العاده عالی</a> دارد.
+اگر توانستید فیل‌تر گوگل احمق برای <a class="reference external" href="http://udacity.com">Udacity</a> و تامین کننده اینترنت احمق‌ترتان را
+برای Youtube بردارید‌، احتمالاً از دیدنش لذت خواهید برد. و البته <a class="reference external" href="http://navid.kashani.ir">نوید</a> هم <a class="reference external" href="http://navid.kashani.ir/549/git-commit-good-practice/">پست
+خیلی خوبی</a> برای بهتر کردن تجربهٔ استفاده از ورژن کنترل دارد که می‌تواند استفاده
+از گیت را برای‌تان خیلی خوشمزه‌تر کند ;) همینطور اگر از کافران ویندوزی هستید‌،
+<a class="reference external" href="http://navid.kashani.ir/tag/%DA%AF%DB%8C%D8%AA/">برچسب گیت</a> مطالبش را از دست ندهید…</p>
+</div>
+<div class="section" id="id6">
+<h2>اضافه:</h2>
+<p>اگر کاربر ایمکس هستید‌، <a class="reference external" href="http://magit.vc/">magit</a> را از دست ندهید. تجربه‌ی کار با گیت را برایتان
+واقعاً دلنشین می‌کند. اگر هم مثل من که به تازگی کوچ کرده‌ام (جهت تغییر آب و هوا
+البته) از <a class="reference external" href="https://atom.io">atom</a> استفاده می‌کنید‌، <a class="reference external" href="https://atom.io/packages/git-plus">git-plus</a> همان امکان را به ارمغان می‌آورد.</p>
+</div>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D9%88%D8%B1%DA%98%D9%86%20%DA%A9%D9%86%D8%AA%D8%B1%D9%84%20%D8%A7%D8%AE%D8%AA%DB%8C%D8%A7%D8%B1%DB%8C%20%D9%86%DB%8C%D8%B3%D8%AA!%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/version-control-is-not-optional/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/version-control-is-not-optional/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/version-control-is-not-optional/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+              <ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/git/" rel="tag">Git</a></li>
+            <li><a class="tag p-category" href="../../categories/version-control/" rel="tag">Version Control</a></li>
+        </ul>
+<span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../no-space-mysql-problem/" rel="prev" title="وقایع نگاری یک دیباگ: وقتی MySQL چیزی ذخیره نمی‌کند!">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../Selenium%2C%20PhantomJS%20and%20Requests%2C%20a%20match%20made%20in%20heaven/" rel="next" title="معجون بهشتی Selenium, PhantomJS و Requests برای web scraping">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/version-control-is-not-optional/",
+        disqus_title="\u0648\u0631\u0698\u0646 \u06a9\u0646\u062a\u0631\u0644 \u0627\u062e\u062a\u06cc\u0627\u0631\u06cc \u0646\u06cc\u0633\u062a!",
+        disqus_identifier="cache/posts/version-control-is-not-optional.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,4 @@
+Sitemap: https://shahinism.com/archive/fa/sitemapindex.xml
+
+User-Agent: *
+Host: shahinism.com/archive/fa

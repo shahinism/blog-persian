@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سوار کردن (Mount) خودکار دستگاه‌های خارجی در لینوکس | وبلاگ شاهین</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/udiskie/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../khanacademy%2C%20math/" title="خان‌آکادمی‌، سرگرمی این روز‌های من" type="text/html">
+<link rel="next" href="../bookmark_links_from_firefox_to_emacs_orgmode/" title="این ایمکس دوست داشتنی (بوکمارک لینک‌ها از فایرفاکس به org-mode)" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="سوار کردن (Mount) خودکار دستگاه‌های خارجی در لینوکس">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/udiskie/">
+<meta property="og:description" content="اوایل که با لینوکس آشنا شده بودم‌، این بازی Mount کردن دستگاه‌های خارجی مثل فلش
+درایو یا DVD به نظرم مسخره می‌آمد. اما بعد‌ها به دلم نشست… خصوصا این که در DEها
+عملا نیاز نبود که من کار خاصی برای سوار ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-10-26T10:52:44+03:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../"><img src="../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2013-10-26T10:52:44+03:30" title="2013-10-26 10:52">2013-10-26 10:52</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">سوار کردن (Mount) خودکار دستگاه‌های خارجی در لینوکس</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>اوایل که با لینوکس آشنا شده بودم‌، این بازی <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a> کردن دستگاه‌های خارجی مثل فلش
+درایو یا DVD به نظرم مسخره می‌آمد. اما بعد‌ها به دلم نشست… خصوصا این که در <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_environment">DEها</a>
+عملا نیاز نبود که من کار خاصی برای سوار کردن‌شان انجام دهم. بعد‌تر‌ها هم که به <a class="reference external" href="http://i3wm.org">i3</a>
+کوچ کردم و دیگر خبری از آن خدمات شکیل <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_environment">DEها</a> نبود‌، عموما به صورت دستی کار <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a>
+را انجام می‌دادم و یا اگر تنبلی‌ام می‌آمد از <a class="reference external" href="https://en.wikipedia.org/wiki/Dolphin_(file_manager)">Dolphin</a> استفاده می‌کردم D:</p>
+<p>اما دیروز به حوس کردم یک فکری به حال این موضوع بکنم. کامپیوتری که من از آن
+استفاده می‌کنم عموما شخصی است (می‌گویم عموما چون ممکن است خواهرم هم گاها از آن
+استفاده کند). پس دلیل خاصی نمی‌بینم که زیاد روی <a class="reference external" href="https://en.wikipedia.org/wiki/Mount_(Unix)">Mount</a> خودکار دستگاه‌ها حساس باشم.
+(اشتباه می‌کنم؟ مشتاق گرفتن نظرات جدیدم ;-))</p>
+<p>این بود که با جستجوی در اینترنت و سبک سنگین کردن انتخاب‌ها‌، <a class="reference external" href="https://bitbucket.org/byronclark/udiskie">Udiskie</a> به نظرم
+انتخاب جالبی آمد و نتیجهٔ رضایت‌بخشی داشت. روی آرچ <a class="footnote-reference" href="#id2" id="id1">[1]</a> کافیست به صورت زیر نصبش
+کنیم:</p>
+<!-- TEASER_END -->
+<pre class="code bash"><a name="rest_code_881e2458595b4444bdd6d3842e9375e7-1"></a>sudo pacman -S udiskie
+</pre>
+<p>و در فایل ‎~/.xinitrc قبل از این که مدیر پنجرهٔ مربوطه‌تان را صدا کنید (دقیقش می‌شود
+قبل از exec که ادامهٔ اجرای برنامه‌تان را می‌دزدد D:) این دستور را اضافه کنید:</p>
+<pre class="code bash"><a name="rest_code_742079a80be74cb887d2a855092bb4f5-1"></a>udiskie <span class="p">&amp;</span>
+</pre>
+<p>حالا دیگر کار تمام است. کافیست برای امتحان دستگاه جدیدی را به سیستم وصل کنید و
+نتیج را ببینید. ساده است این‌طور نیست؟‌ حتی می‌توانید محتاط‌تر باشید و به جای این
+کار هر وقتی که لازم شد با همین دستور <a class="reference external" href="https://bitbucket.org/byronclark/udiskie">udiskie</a> را فراخوانی کنید. چه می‌دانم این
+یکی دیگر دست خودتان است.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup>
+<col class="label">
+<col>
+</colgroup>
+<tbody valign="top"><tr>
+<td class="label"><a class="fn-backref" href="#id1">[1]</a></td>
+<td>گقته بودم که مدتی است به آرچ کوچ کرده‌ام؟ نه‌، نه‌، یک وقت راجع به اسلکور
+کبیر فکر بد نکنید‌، دلایلم را بعدا در پستی مجزا توضیح خواهم داد ;-)</td>
+</tr></tbody>
+</table>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D8%B3%D9%88%D8%A7%D8%B1%20%DA%A9%D8%B1%D8%AF%D9%86%20(Mount)%20%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1%20%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C%20%D8%AF%D8%B1%20%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/udiskie/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/udiskie/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/udiskie/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../khanacademy%2C%20math/" rel="prev" title="خان‌آکادمی‌، سرگرمی این روز‌های من">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../bookmark_links_from_firefox_to_emacs_orgmode/" rel="next" title="این ایمکس دوست داشتنی (بوکمارک لینک‌ها از فایرفاکس به org-mode)">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/udiskie/",
+        disqus_title="\u0633\u0648\u0627\u0631 \u06a9\u0631\u062f\u0646 (Mount) \u062e\u0648\u062f\u06a9\u0627\u0631 \u062f\u0633\u062a\u06af\u0627\u0647\u200c\u0647\u0627\u06cc \u062e\u0627\u0631\u062c\u06cc \u062f\u0631 \u0644\u06cc\u0646\u0648\u06a9\u0633",
+        disqus_identifier="cache/posts/udiskie.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>وبلاگ شاهین (ارسال‌ها دربارهٔ org-mode)</title><link>https://shahinism.com/archive/fa/</link><description></description><atom:link href="https://shahinism.com/archive/fa/categories/org-mode.xml" rel="self" type="application/rss+xml"></atom:link><language>fa</language><lastBuildDate>Sat, 26 Aug 2017 17:33:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>این ایمکس دوست داشتنی (بوکمارک لینک‌ها از فایرفاکس به org-mode)</title><link>https://shahinism.com/archive/fa/posts/bookmark_links_from_firefox_to_emacs_orgmode/</link><dc:creator>شاهین</dc:creator><description>&lt;div&gt;&lt;p&gt;نمی‌دانم برای شما هم مثل من پیش آمده که دلتان بخواهد کل لینک‌های جالبی که فکر
+می‌کنید ممکن است در آینده به دردتان بخورد را همراه با نکاتی که در وب پیدا می‌کنید
+در یک فایل متنی ساده و به دور از هر پیچیدگی خاصی روی سیستم خود داشته باشید و هر
+وقت دلتان خواست با ابزار‌های جستجوی عجیب و غریبتان پی موارد مورد نظر‌، شخمش بزنید
+یا نه؟&lt;/p&gt;
+&lt;p&gt;حقیقتش از همان اوایلش که وبگردی یاد گرفتم‌، تمام فهم و درکم از بوکمارک به همین یک
+پاراگراف بالا خلاصه می‌شد. این بود که ابزار‌هایی مثل &lt;a class="reference external" href="http://del.icio.us"&gt;Delicious&lt;/a&gt; یا &lt;a class="reference external" href="http://diigo.com"&gt;Diigo&lt;/a&gt; برایم
+زیادی پیچیده و دور از دسترس (اینترنت ایرانی است دیگر‌، سر بزنگاه خوابش می‌برد D:)
+به نظر می‌رسیدند.&lt;/p&gt;
+&lt;p&gt;این بود که با کمی جستجو و انگول کردن ایمکس و چند تا ابزار دیگر مورد استفاده‌ام‌،‌
+فعلا به نتیجهٔ قابل قبولی رسیده‌ام که در این پست قصد بازگو کردنش را دارم.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://shahinism.com/archive/fa/posts/bookmark_links_from_firefox_to_emacs_orgmode/"&gt;بیشتر بخوانید…&lt;/a&gt; (9 دقیقه برای خواندن باقی مانده)&lt;/p&gt;&lt;/div&gt;</description><category>Emacs</category><category>org-mode</category><category>pentadactyl_</category><guid>https://shahinism.com/archive/fa/posts/bookmark_links_from_firefox_to_emacs_orgmode/</guid><pubDate>Tue, 18 Feb 2014 15:08:09 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="wot-verification" content="1e0ce5594a67af53269c">
+<meta name="keywords" content="برنامه‌نویسی‌، لینوکس، پایتون‌، اندروید‌، روبی‌، جاوا‌، دیتابیس‌، Programming, Python, Linux, Android, Java, Ruby, Rails, Arch, Database">
+<meta name="author" content="شاهین آزاد">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نصب VirtualBox در اسلکور 64 بیتی کارنت و معمولی‌! | وبلاگ شاهین</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "وبلاگ شاهین",
+        "url" : "https://shahinism.com/archive/fa",
+        "sameAs" : [
+        "https://twitter.com/shahinism",
+        "https://plus.google.com/117086743723717964659",
+        "https://www.facebook.com/shahinism",
+        "https://www.linkedin.com/in/shahinism"
+        ]
+      }
+    </script><meta name="author" content="شاهین">
+<link rel="prev" href="../chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2/" title="چطور از خودمان برنامه نویسی بیاموزیم‌؟‌ دو" type="text/html">
+<link rel="next" href="../pngwyn-khwchwlw-20-slh-shd/" title="پنگوئن کوچولو ۲۰ ساله شد" type="text/html">
+<meta property="og:site_name" content="وبلاگ شاهین">
+<meta property="og:title" content="نصب VirtualBox در اسلکور 64 بیتی کارنت و معمولی‌!">
+<meta property="og:url" content="https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/">
+<meta property="og:description" content="اول از همه به قابلیت چند کتاب‌خانه‌ای توی اسلکور نیاز دارید که می‌تونید از سه تا لینک روبرو کمک بگیرین‌: +, +, +. و دوم بسته‌ی Acpci رو از این‌جا دریافت و نصب کنین‌.
+برای نصب مثل آدمی‌زاد این نرم افزا">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-03-31T08:31:47+04:30">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@shahinism">
+</head>
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">متن اصلی را نادیده بگیر</a>
+
+  <div class="navigator">
+    
+  </div>
+
+  <nav class="navbar navbar-default"><div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../"><img src="../../../assets/images/logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+<li>
+<a href="../../../stories/about-me">درباره</a>
+                </li>
+<li>
+<a href="../../../docs/resume.pdf">رزومه</a>
+                </li>
+<li>
+<a href="../../../archive.html">آرشیو</a>
+                </li>
+<li>
+<a href="../../../categories/">دسته‌ها</a>
+                </li>
+<li>
+<a href="../../../rss.xml">خوراک</a>
+
+                    
+        </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form pull-left">
+<input type="hidden" name="sites" value="https://shahinism.com/archive/fa/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="جستجو" class="form-control" style="margin-top: 4px;"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+      </div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container-fluid -->
+  </nav><section class="container"><div id="headerbox" class="col-md-6 col-centered">
+      <div class="terminal">
+        <span class="prompt"> <span class="cursor"></span></span>
+      </div>
+    </div>
+  </section><div class="container" id="content" role="main">
+    <!--Body content-->
+    <div class="col-md-7 col-centered">
+      <div class="row">
+        
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><div class="publish-date">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <time class="published dt-published" datetime="2011-03-31T08:31:47+04:30" title="2011-03-31 08:31">2011-03-31 08:31</time>
+</div>
+
+        <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">نصب VirtualBox در اسلکور 64 بیتی کارنت و معمولی‌!</a></h1>
+
+    
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div>
+<p>اول از همه به قابلیت چند کتاب‌خانه‌ای توی اسلکور نیاز دارید که می‌تونید از سه تا لینک روبرو کمک بگیرین‌: <a title="Alien Multilib" href="http://slackware.com/%7Ealien/multilib/" target="_blank">+</a>, <a title="مساله‌: اسکایپ در اسلکور ۶۴ بیتی" href="http://shahinism.com/1389/12/%d9%85%d8%b3%d8%a7%d9%84%d9%87%e2%80%8c-%d8%a7%d8%b3%da%a9%d8%a7%db%8c%d9%be-%d8%af%d8%b1-%d8%a7%d8%b3%d9%84%da%a9%d9%88%d8%b1-64-%d8%a8%db%8c%d8%aa%db%8c/" target="_blank">+</a>, <a title="اضافه کردن چند کتاب‌خانه‌ای در اسلکور 64 بیتی" href="http://slack-world.com/index.php/articles/43-general-system/85-multilib-slackware64" target="_blank">+</a>. و دوم بسته‌ی Acpci رو از <a title="Acpica Slackbuild" href="http://shahinism.com/wp-admin/post-new.php" target="_blank">این‌جا</a> دریافت و نصب کنین‌.</p>
+<p>برای نصب مثل آدمی‌زاد این نرم افزار کافیه اول با دستور زیر یه گروه برای ویرچوال باکس بسازین‌:</p>
+<pre class="code literal-block"><span></span>groupadd -g <span class="m">215</span> vboxusers
+</pre>
+
+
+<p>و بعد هم با استفاده از این دو Slackbuild <a title="Virtualbox-ose" href="http://slackbuilds.org/repository/13.1/system/virtualbox-ose/" target="_blank">+</a>, <a title="Virtualbox-kernel" href="http://slackbuilds.org/repository/13.1/system/virtualbox-kernel/" target="_blank">+</a> بسته‌های Virtualbox-ose و Virtualbox-kernel رو نصب کنید‌. ( اگه برای دانلود بسته‌های Virtualbox-ose مشکلی داشتین تا مدتی می‌تونین اون رو از روی سرور من یعنی <a title="Virtualbox-3.2.10-ose.tar" href="http://188.40.173.20/pack/virtualbox-3.2.10-ose.tar" target="_blank">اینجا</a> دانلود کنید‌.)</p>
+<p>ولی می‌مونه یه نکته که برای موقعیه که شما از نسخه‌ی کارنت اسلکور استفاده می‌کنین‌. بنا به دلایلی که برام آخرش هم روشن نشد که چرا توی 13.1 این اتفاق نیافتاد‌، ممکنه با این اخطار روبرو بشین‌:</p>
+<pre class="code literal-block"><span></span><span class="p">&amp;</span>lt<span class="p">;</span>code<span class="p">&amp;</span>gt<span class="p">;</span>kmk<span class="o">[</span><span class="m">2</span><span class="o">]</span>: *** Waiting <span class="k">for</span> unfinished jobs....
+
+kmk<span class="o">[</span><span class="m">2</span><span class="o">]</span>: Leaving directory <span class="sb">`</span>/tmp/VirtualBox-3.2.0_OSE<span class="s1">'</span>
+
+<span class="s1">kmk[2]: Entering directory `/tmp/VirtualBox-3.2.0_OSE'</span>
+
+kmk<span class="o">[</span><span class="m">2</span><span class="o">]</span>: *** Exiting with status <span class="m">2</span>
+
+kmk<span class="o">[</span><span class="m">1</span><span class="o">]</span>: *** <span class="o">[</span>pass_binaries_this<span class="o">]</span> Error <span class="m">2</span>
+
+kmk<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Leaving directory <span class="sb">`</span>/tmp/VirtualBox-3.2.0_OSE<span class="err">'</span>
+
+kmk: *** <span class="o">[</span>pass_binaries_order<span class="o">]</span> Error <span class="m">2</span><span class="p">&amp;</span>lt<span class="p">;</span>/code<span class="p">&amp;</span>gt<span class="p">;</span>
+</pre>
+
+
+<p>خوب من چون علاقه‌ای به این نداشتم که از بسته کامپایلش کنم‌، یه روش آرتیستی بهتون می‌گم که برای خودم تا الانش که جواب داده‌. وقتی که Slackbuild شروع به کار کرد‌، خوب کد‌های خروجی رو نگاه کنین‌، تا برسین به جایی که Enjoy رو ببینین‌. می‌شه تقریبا بعد از کامپایل و شروع make . به عبارت دیگه جایی که از پروسه‌ی چک کردن بسته‌های پیش‌نیاز فارغ شده‌. همین‌جا یه Ctrl+z بزنین دستور زیر رو بزنین‌:</p>
+<p><strong>به روز رسانی‌:</strong> آموزشی که این‌جا نوشتم مربوط به 3.2.10 هست ولی توی Virtualbox 4.0.4 هم همین مشکل پا بر‌جاست و با همین روش حل می‌شه‌!</p>
+<p><strong>به روز رسانی‌:</strong> از قرار اگه یه کم توجه می‌کردم نیازی به این آرتیست بازی هم نیست! توی بسته‌ی Slackbuild‌ی که می‌گیریم یه فایل به اسم localConfig.kmk هست که تغییراتی که در ادامه ذکر کردم رو توی همون اعمال کنید حله‌!</p>
+<pre class="code literal-block"><span></span>vim /tmp/SBo/VirtualBox-3.2.10_OSE/LocalConfig.kmk
+</pre>
+
+
+<p>اگه احیانا دیدین که این فایل موجود نبود‌، با fg 1 بزارین یکم دیگه Slackbuild کارش رو بکونه و بعد Ctrl+z رو بزنین و ادامه بدین‌:</p>
+<p>توی آخر فایل اضافه کنین‌:</p>
+<pre class="code literal-block"><span></span>VBOX_WITH_WARNINGS_AS_ERRORS :<span class="o">=</span>
+</pre>
+
+
+<p>و حالا با fg 1 پروسه‌ی Slackbuild‌مون رو که استاپ کرده بودیم‌، بر می‌گردونیم که کارش رو بکنه‌. اگه همه‌چی درست انجام شده باشه دیگه مشکلی نداریم‌.</p>
+<p>حالا که نصب رو انجام دادیم‌، می‌ریم که VirtualBox رو باز کنیم‌، و ماشین مجازیمون رو از توش اجرا کنیم‌. ولی از اون‌جایی که کور خوندیم‌، اجرا نمی‌شه‌. چرا‌؟ بخاطر این که Vboxdrv اجرا نشده‌. چی‌کار کنیم‌؟ می‌زنیم‌:</p>
+<pre class="code literal-block"><span></span>/etc/rc.d/rc.vboxdrv start
+</pre>
+
+
+<p>حالا اجرا می‌شه‌. ولی مشکل این‌جاست که بعد از یه خاموش روشن باس دوباره این کار رو انجام بدیم‌. برای این که از این تکرار ملالت‌بار خلاص بشیم‌، کافیه بزنیم‌:</p>
+<pre class="code literal-block"><span></span>vim /etc/rc.d/rc.local
+</pre>
+
+
+<p>و خط‌های زیر رو بهش اضافه کنیم‌:</p>
+<pre class="code literal-block"><span></span><span class="c1">#start vboxdrv</span>
+   <span class="k">if</span> <span class="o">[</span> -x /etc/rc.d/rc.vboxdrv <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                  /etc/rc.d/rc.vboxdrv start
+                 <span class="k">fi</span>
+
+
+<span class="c1"># Start vboxnet</span>
+   <span class="k">if</span> <span class="o">[</span> -x /etc/rc.d/rc.vboxnet <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                  /etc/rc.d/rc.vboxnet start
+                 <span class="k">fi</span>
+</pre>
+
+
+<p>به فاصله‌ها حتما دقت کنین‌. و برای این که تغییراتی که تو روشن شدن سیستم دادیم‌، موقع خاموش شدن به حالت قبل برگردونیم بزنین‌:</p>
+<pre class="code literal-block"><span></span>vim /etc/rc.d/rc.local_shutdown
+</pre>
+
+
+<p>و توش کد‌های زیر رو وارد کنید‌:</p>
+<pre class="code literal-block"><span></span>top vboxdrv
+   <span class="k">if</span> <span class="o">[</span> -x /etc/rc.d/rc.vboxdrv <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+   /etc/rc.d/rc.vboxdrv stop
+   <span class="k">fi</span>
+
+
+<span class="c1"># Stop vboxnet</span>
+   <span class="k">if</span> <span class="o">[</span> -x /etc/rc.d/rc.vboxnet <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+   /etc/rc.d/rc.vboxnet stop
+   <span class="k">fi</span>
+</pre>
+
+
+<p>همین‌. از مجازی سازی با VirtualBox لذت ببرین‌!</p>
+</div>
+    </div>
+
+    <div class="terminal">
+      <span class="prompt">python ./share.py help</span>
+      <div class="result">
+        <span>
+          If you enjoyed it you can use following links to share this article:
+        </span>
+        <ol>
+<li><a href="https://twitter.com/intent/tweet/?text=%D9%86%D8%B5%D8%A8%20VirtualBox%20%D8%AF%D8%B1%20%D8%A7%D8%B3%D9%84%DA%A9%D9%88%D8%B1%2064%20%D8%A8%DB%8C%D8%AA%DB%8C%20%DA%A9%D8%A7%D8%B1%D9%86%D8%AA%20%D9%88%20%D9%85%D8%B9%D9%85%D9%88%D9%84%DB%8C%E2%80%8C!%20by%20@shahinism&amp;url=https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/" target="_blank">twitter</a></li>
+          <li><a href="https://plus.google.com/share?url=https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/" target="_blank">google_plus</a></li>
+          <li><a href="https://facebook.com/sharer/sharer.php?u=https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/" target="_blank">facebook</a></li>
+        </ol>
+</div>
+      
+      <span class="prompt">ls ./tags</span>
+      
+
+      <span class="prompt"><span class="cursor"></span></span>
+    </div> <!-- .terminal -->
+    <nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../chtwr-z-khwdmn-brnmh-nwysy-bymwzym-2/" rel="prev" title="چطور از خودمان برنامه نویسی بیاموزیم‌؟‌ دو">ارسال پیشین</a>
+            </li>
+            <li class="next">
+                <a href="../pngwyn-khwchwlw-20-slh-shd/" rel="next" title="پنگوئن کوچولو ۲۰ ساله شد">ارسال بعدی</a>
+            </li>
+        </ul></nav><section class="comments hidden-print"><h2>دیدگاه‌‌‌ها</h2>
+                        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="shahinism",
+            disqus_url="https://shahinism.com/archive/fa/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly/",
+        disqus_title="\u0646\u0635\u0628 VirtualBox \u062f\u0631 \u0627\u0633\u0644\u06a9\u0648\u0631 64 \u0628\u06cc\u062a\u06cc \u06a9\u0627\u0631\u0646\u062a \u0648 \u0645\u0639\u0645\u0648\u0644\u06cc\u200c!",
+        disqus_identifier="cache/posts/wp/nsb-virtualbox-dr-slkhwr-64-byty-khrnt-w-mmwly.html",
+        disqus_config = function () {
+            this.language = "fa";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="//disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section></article><script>var disqus_shortname="shahinism";(function(){var a=document.createElement("script");a.async=true;a.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+    </div>
+    <!--End of body content-->
+  </div>
+
+  <footer id="footer" class="site-footer">
+    Contents © 2018         <a href="mailto:me@5hah.in">شاهین</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+    
+  </footer><script src="../../../assets/js/all-nocdn.js"></script><script src="../../../assets/js/colorbox-i18n/jquery.colorbox-fa.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("fa");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates -->
+</body>
+</html>
