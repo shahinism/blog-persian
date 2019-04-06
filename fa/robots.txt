@@ -1,4 +1,4 @@
-Sitemap: https://5hah.in/sitemapindex.xml
+Sitemap: https://shahinism.com/fa/sitemapindex.xml
 
 User-Agent: *
-Host: 5hah.in
+Host: shahinism.com/fa
