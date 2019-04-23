@@ -1,0 +1,20 @@
+{{ partial "top.html" . }}
+
+<article class="posts">
+<h1>{{ .Title }}</h1>
+
+<section>
+    <ul>
+        {{ range .Pages.ByPublishDate.Reverse }}
+        <li>
+
+            <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <br>
+        </li>
+        {{ end }}
+    </ul>
+</section>
+</article>
+
+{{ partial "bottom.html" . }}
