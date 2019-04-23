@@ -1,0 +1,14 @@
+baseURL = "https://shahinism.com/en/"
+languageCode = "en-us"
+title = "Shahinism"
+theme = "journal"
+
+[author]
+  name = "Shahin"
+  homepage = "https://your.homepage.com/"
+
+[params]
+  description = "The personal public journal, written by Shahin."
+  githubUsername = "shahinism"
+  twitterUsername = "shahinism"
+  tagline = "Sometimes you gotta run before you can walk."
