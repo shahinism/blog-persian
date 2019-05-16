@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
     <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
+    {{ partial "twitter-card" . }}
+
   </head>
 
   <body>
