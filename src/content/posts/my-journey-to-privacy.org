@@ -1,0 +1,72 @@
+---
+title: "My Journey to Privacy"
+date: 2019-05-16T18:27:30+04:30
+draft: false
+type: post
+categories: ["privacy"]
+twitter:
+  card: "summary"
+  site: "@twittername"
+  title: "My Journey to Privacy"
+  description: "You can’t unplug yourself by choosing the right color of pill"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1558021215/matrix.png"
+---
+
+A decade ago, it was easier for ordinary people to start using the internet
+without having any concerns about being spied on. Accessibility of the internet
+hadn’t been grown like what we have today, so it wasn’t such a tasty platform
+for most of the people of the world.
+
+However, that was a long long time ago and the accessibility and usability of
+the internet platform have changed dramatically. Some of us can’t even imagine
+living a day without our smartphones (or having the smartphone without
+internet). We schedule our days on it, we communicate to each other using it, we
+surf the internet and read books, watch movies, listen to music and basically a
+huge amount of our daily activities relies on it. Yes we are dependent to
+it. Is it bad?  Not particularly.
+
+This technology is more complicated than any advanced technology that the human
+race ever made. It isn't that simple to categorize it as a good or bad
+technology. The internet can have a lot of benefitical effects on our lives.
+
+However, one of the potentials of the internet technology is that it can be used
+as a weapon. Corporations can use it as a marketing tool to trick people into
+buying their products or manipulate their desires. And the same sword in the
+hands of the state and media can redirect crowds of people to the goals that are
+not beneficial to all residents of the community or future generations. Of
+course in its basic soul, every knife can be used for good or bad reasons, but
+in a world which is fueled by money, it's almost always aiming for the goal of
+making the reach reacher, no matter what.
+
+[[https://en.wikipedia.org/wiki/Yuval_Noah_Harari][Yuval Noah Harari]] has a great talk which describes this matter more in
+depth. The video of this talk is available here:
+
+{{< youtube j0uw7Xc0fLk >}}
+
+[[https://en.wikipedia.org/wiki/Noam_Chomsky][Noam Chomsky]] shares the same mindset in an interview where he quotes [[https://en.wikipedia.org/wiki/Shoshana_Zuboff][Shoshana
+Zuboff]] to call this act [[https://en.wikipedia.org/wiki/Surveillance_capitalism][Surveillance Capitalism]]. This video is available here:
+
+{{< youtube GhpY80qR7zE >}}
+
+As a software developer, I spend a lot of my life using the internet and I can’t
+imagine not using it. Actually, the relation of my country’s government toward
+the internet makes me to always carry the fear of losing access to it someday.
+
+On the other hand, the news of privacy leaks (which are increasing day by day
+especially in the recent years) and learning the potential of these attacks made
+me to decide to learn more about it and try to prevent myself from being exposed to
+their potential harm. Of course, like a lot of ignorant people, I can consider
+myself an ordinary person and claim that there isn’t much interesting data on me
+to make me a potential target. But I don’t like to be played like a puppet in
+the hand of corporations or states.
+
+This may sound easy, but it’s absolutely not. You can’t unplug yourself by
+choosing the right color of pill. To achieve this goal, I should work on my
+personal skill set as well as my computer skills. 
+
+<iframe src="https://giphy.com/embed/yvFyW3wDdrTDq" width="480" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+As a personal goal in 2019, I want to share what I learn through my journey on
+this blog. Some posts may cover the technological aspect of the matter and some
+may share my comments on the ideas I learned within books or speeches. So this
+is it. Let the journey begin.
