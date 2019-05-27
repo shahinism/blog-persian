@@ -6,7 +6,7 @@ type: post
 categories: ["privacy"]
 twitter:
   card: "summary"
-  site: "@twittername"
+  site: "@shahinism"
   title: "My Journey to Privacy"
   description: "You can’t unplug yourself by choosing the right color of pill"
   image: "https://res.cloudinary.com/shahinism/image/upload/v1558021215/matrix.png"
