@@ -1,0 +1,74 @@
+---
+title: "Run Python test suites without leaving Emacs"
+date: 2019-05-27T16:47:50+04:30
+draft: false
+type: post
+categories: ["emacs", "productivity"]
+twitter:
+  card: "summary"
+  site: "@shahinism"
+  title: "Run Python test suites without leaving Emacs"
+  description: "My configuration using the 'python-pytest-emacs' package."
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1558962125/emacs.pytest_ba9pif.png"
+---
+
+Recently, I'm trying to overcome my laziness and incorporate more automated
+testing into my software development procedure. It's not that I wasn't
+developing test suites before, but the problem was that the overall process of
+defining good tests, running and maintaining them was so complicated to me which
+most of the time was pushing me to prefer not to test until I have enough time
+to work on it (which of course was never in real life).
+
+Trying to achieve better quality in the code I write, I learned that the problem
+is not caused by the process itself, but by it’s usually either caused by my
+designs or my lack of experience. And all of that was blocking me to achieve all
+of the promised TDD's benefits.
+
+So, now I'm practicing to resolve my problems (either in design or in workflow)
+and one of the first things I needed was something to help me to run the test
+suite without leaving my editor.
+
+A quick search and I found the [[https://github.com/wbolster/emacs-python-pytest][emacs-python-pytest]] package for Emacs. It's not
+the only implementation of course. But what I like about this package, is that
+it uses [[https://magit.vc][Magit]] popup to help users with finding the proper options they want to
+have in the ~pytest~ call. This feature was very helpful for me with ~git~
+commands, so I don't need to remember all the weird argument combination; I hope
+it'll help me with ~pytest~ as well ;-)
+
+{{<figure
+src="https://res.cloudinary.com/shahinism/image/upload/v1558962125/emacs.pytest_ba9pif.png"
+alt="Running Pytest inside Emacs">}}
+
+Here is the configuration I used to enable this package:
+
+#+BEGIN_SRC lisp
+(use-package python-pytest
+  :after python
+  :custom
+  (python-pytest-arguments
+   '("--color"          ;; colored output in the buffer
+     "--failed-first"   ;; run the previous failed tests first
+     "--maxfail=5"))    ;; exit in 5 continuous failures in a run
+  :config
+  (which-key-declare-prefixes-for-mode 'python-mode "SPC pt" "Testing")
+  (evil-leader/set-key-for-mode 'python-mode
+    "ptp" 'python-pytest-popup
+    "ptt" 'python-pytest
+    "ptf" 'python-pytest-file
+    "ptF" 'python-pytest-file-dwim
+    "ptm" 'python-pytest-function
+    "ptM" 'python-pytest-function-dwim
+    "ptl" 'python-pytest-last-failed)
+  )
+#+END_SRC
+
+There isn't much to describe this configuration, and as you see it's
+heavily dependent on other parts of [[https://github.com/shahinism/emacs.d][my Emacs configuration]]. But I guess the
+features available are self-explanatory. So now, whenever I want to run the full
+test suite, I'll type ~<SPC> ptt~. However the most useful keybinding I have
+here is the ~<SPC> ptm~ which runs the current test function, so I can focus
+exactly on one test at a time.
+
+Using the ~<SPC> ptp~ command I can access to the ~pytest~ popup menu where I
+have options to for example run ~pytest~ with a debugger (~pdb~) invoked on
+failures :yum:.
