@@ -31,8 +31,8 @@ suite without leaving my editor.
 A quick search and I found the [[https://github.com/wbolster/emacs-python-pytest][emacs-python-pytest]] package for Emacs. It's not
 the only implementation of course. But what I like about this package, is that
 it uses [[https://magit.vc][Magit]] popup to help users with finding the proper options they want to
-have in the ~pytest~ call. This feature was very helpful for me with ~git~
-commands, so I don't need to remember all the weird argument combination; I hope
+have in the ~pytest~ call. This feature was very helpful for me with ~git~ commands,
+so I don't need to remember all the weird argument combination; I hope
 it'll help me with ~pytest~ as well ;-)
 
 {{<figure
