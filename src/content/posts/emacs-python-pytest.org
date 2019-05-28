@@ -20,7 +20,7 @@ most of the time was pushing me to prefer not to test until I have enough time
 to work on it (which of course was never in real life).
 
 Trying to achieve better quality in the code I write, I learned that the problem
-is not caused by the process itself, but by it’s usually either caused by my
+is not caused by the process itself, but it’s usually either caused by my
 designs or my lack of experience. And all of that was blocking me to achieve all
 of the promised TDD's benefits.
 
