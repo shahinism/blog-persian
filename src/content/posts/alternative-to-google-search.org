@@ -142,3 +142,8 @@ requires users to solve their stupid captcha (usually multiple times in a row).
    
 This is my experience so far. I’ll be glad to hear yours. Ping me on Twitter by
 [[https://twitter.com/shahinism][@shahinism]] and share and share your ideas.
+
+* Shared on Social
+
+- [[https://www.reddit.com/r/privacy/comments/bwmuhf/how_to_not_use_google_search/][Reddit]]
+- [[https://twitter.com/Shahinism/status/1135845184841965568][Twitter]]

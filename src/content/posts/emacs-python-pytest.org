@@ -72,3 +72,5 @@ exactly on one test at a time.
 Using the ~<SPC> ptp~ command I can access to the ~pytest~ popup menu where I
 have options to for example run ~pytest~ with a debugger (~pdb~) invoked on
 failures :yum:.
+
+- [[https://www.reddit.com/r/emacs/comments/btnn2x/run_python_test_suites_without_leaving_emacs/][Comments on Reddit]]
