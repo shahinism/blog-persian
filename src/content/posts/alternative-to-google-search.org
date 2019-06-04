@@ -1,0 +1,144 @@
+---
+title: "How to not use Google search"
+date: 2019-06-04T12:44:14+04:30
+draft: true
+type: post
+categories: ["privacy"]
+twitter:
+  card: "summary"
+  site: "@shahinism"
+  title: "How to not use Google search"
+  description: "It’s almost about 6 months since the last time I used Google search as my main search engine. This idea of using an alternative search engine was bugging me for a long time. Almost seven years to be exact."
+  image: "https://i.imgur.com/5Y8shRM.png"
+---
+
+It’s almost about 6 months since the last time I used Google search as my main
+search engine. This idea of using an alternative search engine was bugging me
+for a long time. Almost seven years to be exact. I remember the first time I
+heard about some reasons to reconsider my main search engine was from this Ted
+video:
+
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/en/eli_pariser_beware_online_filter_bubbles" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+
+However, I couldn’t leave Google for a long period of time. As a software
+developer and even as a normal internet user, I rely heavily on my search engine
+to find quality content related to subjects I need to know about. This means
+that I not only need to find content related to the search query I put into the
+search box but given the size of the internet, I also need the returned results
+sorted to the best relative order.
+
+As Eli Pariser claims in his Ted talk, bubbling the results may not be necessary
+to give me the most relative results (actually as I experienced in the last
+couple month, it’s really not). But there are other factors like being up to
+date, content quality and such are very effective factors which Google search
+successfully benefits from. The page ranking algorithms on are sophisticated
+enough to scale to the size of the current internet universe.
+
+But the evil Google we know these days, is not much reliable company when it
+comes to privacy and the size of its monopoly and power (considering all
+marketing trackers provided by Google which are the standards of the web, just
+try to imagine where it can’t follow you and collect data about your choices),
+pushes users to dig deeper to find a suitable alternative for it. Here are the
+options I’ve tried so far: 
+
+** [[https://duckduckgo.com][DuckDuckGo]] 
+
+Well, this is probably the first option every one interested in search engines
+alternative to Google search will end up to. DuckDuckGo is presenting itself as
+a privacy-focused search engine and provides some cool utilities to make it a
+worthy option as the user’s main search engine. If you haven’t tried it before,
+I suggest to give it a try for a while (at least a week) and don’t just trust my
+following words.
+
+There are some really great features which will make it more bearable as the main search engine:
+
+- The [[http://duckduckhack.com/][instant answers]]: These are great especially helpful to programmers. Take a
+  look at [[https://gadgets.ndtv.com/internet/features/12-things-duckduckgo-can-do-that-google-cant-596526][this page]] for some examples.
+- [[https://duckduckgo.com/bang][Bangs]]: Well, some people may like this. It’s helpful if you want to use target
+  sites search engine (like IMDB search) to get results of your query instead of
+  the search engine itself. I personally use the search engine itself to query
+  such terms or use a tool like [[https://en.wikipedia.org/wiki/Surfraw][Surfraw]] to achieve the same result.
+  
+I personally, never could completely switch to DDG. Here are some of the reasons
+which pushed me back to Google:
+- The result set was too noisy: It happens all the time with all the search
+  engines. There are some terms which happen to be noisy (like the term
+  serverless which is a term for a [[https://en.wikipedia.org/wiki/Serverless_computing][computing technique]] and a [[https://serverless.com/][framework]] at the
+  same time) and makes searching for related results a bit harder than
+  normal. With DDG it would usually take me more tries and refactor in search
+  criteria to find the proper answer. It may have caused by my thinking model on
+  the search terms I used to express what I really want. DDG has improved over
+  time and it provides much much better results these days.
+- It’s not as open source as it should be: Well there are some [[https://help.duckduckgo.com/duckduckgo-help-pages/open-source/opensource-overview/][open source parts]]
+  for DDG. But the main engine is not one of them. DDG claims that it’s not
+  tracking its users, but there is no proof of that other than the companies
+  words. Of course, they provide some utilities to hide you from most of the
+  user recognition solutions (eg. the [[http://3g2upl4pq6kufc4m.onion/][onion routed]] URL), but still, the user
+  should trust their word for it.
+- It’s a US-based company: Well this may sound like a cliche since I’m a Iran
+  resident at the time of this writing, but my concerns here is not rooted in
+  the Iranian government's propaganda. There are some real concerns that we
+  should worry about which are listed [[https://www.privacytools.io/providers/#ukusa][here on the privacy tools website]].
+- It’s not accessible in Iran: Yes, no surprise here. Our government believes
+  the Google should be the only search engine we should have access to and no
+  matter how much we try, they won’t open direct access to other search
+  engines. I personally tried multiple times emailing them about it (there is an
+  email address to report mistakenly filtered websites), but as we used to,
+  there was no response to it.
+  
+  <iframe src="https://giphy.com/embed/1APaaUc09xFSGHXECL" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+- Not very friendly with [[https://en.wikipedia.org/wiki/Persian_language][Persian]] content: Not much to say here. The results are usually the least related ones and hugely old.
+
+** [[https://startpage.com][Startpage.com]]
+   
+Startpage was the first alternative I could get used to using it instantly. At
+least it proved that I’m not too addicted to the Google search’s interface
+:joy:. The reason is here:
+
+- It’s not a search engine: Well basically we should consider it a meta-search
+  engine which means that it collects the results from other search engines. And
+  that other search engine is Google! So instead of searching directly through
+  Google, I’m using a third party to retrieve my results, so hopefully, Google
+  won’t figure out who asked the question.
+- So I have the quality results of Google without being tracked: Almost true
+  except that I’m out of my Google bubble, so I see the most relative content
+  without Google manipulating them to my interest which has proven to me to be
+  useless almost always so far.
+- The [[https://www.startpage.com/en/search/proxy-help.html][anonymous view]]: This one is even better. I can open search results in a
+  proxy view and hoping that Google marketing tools active on target site won’t
+  get the chance of following me. Of course, there is still the fingerprinting
+  option available, but there are [[https://blog.mozilla.org/firefox/how-to-block-fingerprinting-with-firefox/][some solutions]] to overcome those as well.
+- It’s based on the Netherlands: So we can hope for less creepy surveillance decisions.
+- It’s Persian friendly: Which of course is not a surprise since Google supports Persian pages greatly.
+- The family filter is on by default: So you don’t end up with NSFW pictures on the screen for an unrelated query in :joy:.
+
+*** But these are not enough:
+
+- It’s not open source either
+- It’s not accessible in Iran as well: Hooray :tada:. So how I use it? Well the
+  first thing we should learn as soon as we start to develop our career related
+  to ICT in Iran, is how to set up a VPN and use it. To be honest, I started
+  learning Linux and programming mostly because I was trying to find out a way
+  to not be blocked by internet filtering mechanism in Iran :wink:.
+  
+** [[https://searx.me/][SearX]]
+   
+This one probably will be my ultimate option. A opensource,
+self-hosted/distributed meta-search engine which other than Google supports a
+lot of other engines available out there. Take a look at the Engines tab [[https://searx.me/preferences][in this
+page]] and see it for yourself. Why do I like it? Here is the reason:
+
+- It’s open source.
+- It’s possible to self-host it or use one of the free [[https://github.com/asciimoo/searx/wiki/Searx-instances][instances available]] out there.
+- I don’t need to trust third-party companies with my data.
+- It’s easy to set up or find an instance that is not blocked in Iran.
+
+So why I don’t use it (yet)? Mostly because of [[https://github.com/asciimoo/searx/issues/729][this issue]]. Google is the worst
+evil we have. With all those resources in hand, it blocks requests from IP
+ranges (happens a lot with VPSs from [[https://www.digitalocean.com/][DigitalOcean]]) which requires users to solve
+their stupid captcha (usually multiple times in a row).
+
+** Final Words
+   
+This is my experience so far. I’ll be glad to hear yours. Ping me on Twitter by
+[[https://twitter.com/shahinism][@shahinism]] and share and share your ideas.
