@@ -1,20 +1,26 @@
 {{ partial "top.html" . }}
 
-<article class="post">
+<article class="post h-entry">
     <header class="post-header">
-        <h1 class="post-title">{{ .Title }}</h1>
-        <time class="post-date" datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+        <h1 class="post-title p-name">{{ .Title }}</h1>
+
+        <a class="u-url" href="{{ .Permalink }}">
+	      <span class="p-author h-card" style="display:none;">{{ .Params.author | default .Site.Author.name }}</span>	
+          <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+        </a>
     </header>
     {{ if ne .Params.toc false }}
       {{ partial "toc.html" . }}
     {{ end }}
 
-    {{ emojify .Content }}
+	<div class="e-content" itemprop="articleBody">
+      {{ emojify .Content }}
+    </div>
 
     {{ with .Params.categories }}
       <strong>Categories: </strong>
       {{ range . }}
-        <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
+        <a class="p-category" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
       {{ end }}
     {{ end }}
 
