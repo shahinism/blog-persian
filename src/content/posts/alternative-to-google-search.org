@@ -43,9 +43,9 @@ try to imagine where it can’t follow you and collect data about your choices),
 pushes users to dig deeper to find a suitable alternative for it. Here are the
 options I’ve tried so far: 
 
-** [[https://duckduckgo.com][DuckDuckGo]] 
+** DuckDuckGo
 
-Well, this is probably the first option every one interested in search engines
+Well, [[https://duckduckgo.com][DuckDuckGo]] is probably the first option every one interested in search engines
 alternative to Google search will end up to. DuckDuckGo is presenting itself as
 a privacy-focused search engine and provides some cool utilities to make it a
 worthy option as the user’s main search engine. If you haven’t tried it before,
@@ -88,9 +88,9 @@ which pushed me back to Google:
   <iframe src="https://giphy.com/embed/1APaaUc09xFSGHXECL" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 - *Not very friendly with [[https://en.wikipedia.org/wiki/Persian_language][Persian]] content:* Not much to say here. The results are usually the least related ones and hugely old.
 
-** [[https://startpage.com][Startpage.com]]
+** Startpage.com
    
-Startpage was the first alternative I could get used to using it instantly. At
+[[https://startpage.com][Startpage]] was the first alternative I could get used to using it instantly. At
 least it proved that I’m not too addicted to the Google search’s interface
 :joy:. The reason is here:
 
@@ -120,9 +120,9 @@ least it proved that I’m not too addicted to the Google search’s interface
   learning Linux and programming mostly because I was trying to find out a way
   to not be blocked by internet filtering mechanism in Iran :wink:.
   
-** [[https://searx.me/][SearX]]
+** SearX
    
-This one probably will be my ultimate option. An opensource,
+[[https://searx.me/][This one]] probably will be my ultimate option. An opensource,
 self-hosted/distributed meta-search engine which other than Google supports a
 lot of other engines available out there. Take a look at the Engines tab [[https://searx.me/preferences][in this
 page]] and see it for yourself. Why do I like it? Here are the main reasons:
@@ -143,7 +143,3 @@ requires users to solve their stupid captcha (usually multiple times in a row).
 This is my experience so far. I’ll be glad to hear yours. Ping me on Twitter by
 [[https://twitter.com/shahinism][@shahinism]] and share and share your ideas.
 
-* Shared on Social
-
-- [[https://www.reddit.com/r/privacy/comments/bwmuhf/how_to_not_use_google_search/][Reddit]]
-- [[https://twitter.com/Shahinism/status/1135845184841965568][Twitter]]
