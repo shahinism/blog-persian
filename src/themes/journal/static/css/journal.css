@@ -26,6 +26,9 @@ pre,
 blockquote {
   margin: 0 0 1rem; }
 
+p, ol, ul {
+  text-align: justify; }
+
 hr {
   display: block;
   width: 100%;
