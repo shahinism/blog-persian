@@ -1,0 +1,12 @@
+* Serve GZip from S3 with browser support
+  - Why it's useful?
+  - ~Content-Type~ is required (what are the supported types?)
+  - ~Content-Encoding~ is required (what are the supported encodings?)
+  - Why browser knows it should extract this downloaded content
+  - required ~CORS~ configuration on bucket
+* Overcome Chrome's GZip download's progress issue
+  - What's the problem?
+  - Difference in ~e.progress~'s value between Firefox and Chrome
+  - AWS's custom headers for the objects
+  - Required ~CORS~ configuration on bucket
+* Create serverless rest API in Flask
