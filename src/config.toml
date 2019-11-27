@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Shahinism"
 theme = "journal"
 markup = "org"
+disqusShortname = "shahinism-en"
 
 [author]
   name = "Shahin"
