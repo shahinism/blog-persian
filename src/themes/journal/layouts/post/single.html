@@ -17,20 +17,22 @@
       {{ emojify .Content }}
     </div>
 
+<hr>
     {{ with .Params.categories }}
       <strong>Categories: </strong>
       {{ range . }}
         <a class="p-category" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
       {{ end }}
     {{ end }}
-
     {{ with .Params.tags }}
       <strong>Tags: </strong>
       {{ range . }}
         <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
       {{ end }}
     {{ end }}
-</article>
+
+<br/>
 {{ partial "share.html" . }}
 {{ partial "comments.html" . }}
+</article>
 {{ partial "bottom.html" . }}
