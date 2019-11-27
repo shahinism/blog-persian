@@ -64,7 +64,7 @@ This may sound easy, but it’s absolutely not. You can’t unplug yourself by
 choosing the right color of pill. To achieve this goal, I should work on my
 personal skill set as well as my computer skills. 
 
-<iframe src="https://giphy.com/embed/yvFyW3wDdrTDq" width="480" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+{{<giphy url="https://giphy.com/embed/yvFyW3wDdrTDq">}}
 
 As a personal goal in 2019, I want to share what I learn through my journey on
 this blog. Some posts may cover the technological aspect of the matter and some
