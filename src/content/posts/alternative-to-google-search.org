@@ -20,7 +20,7 @@ for a long time. Almost seven years to be exact. I remember the first time I
 heard about some reasons to reconsider my main search engine was from this Ted
 video:
 
-<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/en/eli_pariser_beware_online_filter_bubbles" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+{{<ted embed_url="https://embed.ted.com/talks/lang/en/eli_pariser_beware_online_filter_bubbles">}}
 
 However, I couldn’t leave Google for a long period of time. As a software
 developer and even as a normal internet user, I rely heavily on my search engine
@@ -85,7 +85,7 @@ which pushed me back to Google:
   email address to report mistakenly filtered websites), but as we used to,
   there was no response to it.
   
-  <iframe src="https://giphy.com/embed/1APaaUc09xFSGHXECL" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  {{< giphy url="https://giphy.com/embed/1APaaUc09xFSGHXECL" >}}
 - *Not very friendly with [[https://en.wikipedia.org/wiki/Persian_language][Persian]] content:* Not much to say here. The results are usually the least related ones and hugely old.
 
 ** Startpage.com
