@@ -1,0 +1,148 @@
+---
+title: "Polyglot Dojo #0: Introduction"
+date: 2019-11-29T11:11:37+03:30
+draft: true
+type: post
+categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+twitter:
+  card: "summary"
+  site: "@shahinism"
+  title: "Polyglot Dojo #0: Introduction"
+  description: "In this series of posts on my blog, I plan to solve programming challenges I find around the internet, in books or throughout my daily job in different languages. However, before we start, I want to set some ground rules to keep myself motivated and also share the point of this series"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg"
+---
+
+* Overview
+In this series of blog posts, I plan to solve programming challenges I find
+around the internet, in books or throughout my daily job in different languages.
+Though, before we start, I want to set some ground rules to keep myself
+motivated and also share the point of this series.
+
+* Language Choice
+I'm a [[python.org][Python]] developer; not a top, highly skilled developer of course, but I'm
+pretty confident in coding and thinking in Python (mostly [[https://github.com/vinta/awesome-python#web-frameworks][web stack]]). So the
+base language I would solve the challenges with, would be Python. It would help
+me to think about the challenge in hand instead of wrestling with unfamiliar
+concepts/limitations of a target new language. As [[https://news.ycombinator.com/item?id=1803815][Peter Norvig stated that]],
+Python is good pseudocode, and I like to benefit from it as long as I can.
+
+However, my actual goal here is to have a set of problems to use with new
+languages I tend to learn. I've learned that I can grasp concepts of new
+languages more effectively when I try to use them.
+
+For the starter of these series, I'm going to use these two languages (together
+with Python) to solve the same problems:
+
+** Clojure
+The lovely lisp dialect. As an [[https://www.gnu.org/software/emacs/][Emacs]] user, I know the general Lisp syntax and
+love it. Still, I'm not yet that much comfortable in expressing my ideas
+persuasively using it. I tried to learn [[clojure.org/][Clojure]] using a set of recommended
+books by the community. But I find out the main focus of almost all of them, is
+to introduce you to the language's syntax or available library. As I said, that
+won't work on me. I still need to read and learn them; but to learn effectively
+to program in a new language, I need to face challenges.
+** Rust
+Throughout my programming career, I've always used languages with dynamic typing
+systems: Python, [[https://en.wikipedia.org/wiki/JavaScript][JavaScript]], [[https://coffeescript.org/][CoffeeScript]] and even [[https://www.ruby-lang.org/en/][Ruby]] for some time. With a
+little background in C/C++ from back in university, I always considered dynamic
+typing a massive win for the language. But after my introduction to [[https://mypy.readthedocs.io/][Mypy]] and
+JavaScript typing mechanisms ([[https://www.typescriptlang.org/][TypeScript]] and [[https://flow.org/][Flow]]), that assumption shattered to
+ashes. Especially, when I learned static typing systems don't need to be painful
+through [[https://www.youtube.com/watch?v=v1CmGbOGb2I][this excellent introduction video]] on [[https://ocaml.org/][OCaml]] (The language used to develop
+JS Flow).
+
+The main reason that I found typing systems fascinating is the way it helps the
+developers to reduce potential bugs through their development process and yet
+make it easier to reason about the code. Of course, there are lots of other
+valid reasons for a typing system in a language. But, this simple fact is so
+shiny and reasonable to me that convinced me to learn the underlying idea
+better. I've witnessed such effects on some of my recent Python projects which I
+developed with Mypy, so I know it's a win.
+
+Yeah, I know, I know. A smart typing system is kind of lame reasoning to choose
+a great language like rust as your next programming language to learn. But I
+believe you can find a lot of other genuine reasons, just by a quick search on
+the internet. I love all those things about the language (who can't), but this
+was my take (and of course I wanted to taste some system-level and compiled
+programming languages).
+** Future Languages
+Well, I'm a language lover (both computers and human languages). I love the
+different levels of abstraction which programs can hire to solve the same
+problem. I also love languages which help to represent your ideas in a
+simplistic easy to read and understand syntax. That's why I love Python. So this
+list of languages would grow in future and I will hopefully, update each post
+with a new solution in a different language which I plan to learn (there are a
+lot of them :sweat_smile:).
+
+* Problem Sets
+For starter and to have a robust structured problem set, I'm going to use the
+[[https://github.com/donnemartin/interactive-coding-challenges][Interactive Coding Challenges]] repository. I'm not sure about the future, but for
+now, I'm mostly trying to improve my skills in Algorithms and data structure.
+
+Concurrently, I may try to solve exciting random challenges, as well, but to
+keep myself committed, I'll need a comprehensive suite like the Interactive
+challenges.
+
+However, I probably won't always stay on small problems. Whenever I feel
+confident with a language, I'll try to solve real projects with it. I would
+decide about the scope of those projects down the road, but potentially they
+would be something that I can take care of in a week of my spare time.
+
+* Why Not Exercism/Codewars/etc
+Well, they are all excellent services, especially, [[https://exercism.io/][Exercism]] with human auditors
+and structured challenges. However, There are some blockers for me:
+** They are not entirely compatible with my goals
+I'm not a fan of cryptic, one-liner solutions, simply because, I can't
+understand them on the first sight (Also I'm not that smart to write such
+codes). Almost every time, I try to solve a problem, in a well-organized
+structured fashion (As [[https://www.youtube.com/watch?v=SXkgYZw0evs][Uncle Bob states, Clean Code style]]), I would get accused
+of overdoing it. Well, they are probably correct. Their goal is to code in
+competitive coding style, and first working/speedy solution would be enough to
+get over with and continue to the next. That's not a habit I want to grow when
+I'm learning a new language.
+
+** The difference in auditors tastes
+Throughout your journey on Exercism, you'll get judged by different auditors.
+You learn something from one of them, and the other considers it an
+over-engineering. You may say that the topic at hand may not be suitable for all
+situations. However, if I'm able to differ such use cases in the first few
+challenges on the Excercism, I'm probably wasting my time there.
+
+** Lack of clear communication
+My problem with services other than Exercism, (let's say [[codewars.com/][Codewars]]), was that you
+face a challenge (effectively a test suite). You solve it, and you are good to
+go. Other than the language's compiler and unit tests, you don't have any
+feedback. So other than solving a potentially useless problem you didn't learn
+anything (I say useless, because you probably won't remember your solution, next
+time you face the same problem in real life -if ever-). Yes, you can learn from
+community solutions, but you'll face a sea of cryptic solutions to decipher
+(which probably is not that much Google-able).
+
+Exercism, supposed to solve that using real human auditors, but in real life:
+
+ 1. You submit your solution.
+ 2. You wait 2 weeks in the queue for an auditor to find the time and review
+    your code.
+ 3. If you haven't already forgotten your idea, you'll get 10-20 words of
+    opinionated comment on your work without any extra clarification.
+ 4. You address the comment and commit your work.
+ 5. And loop keeps going on!
+
+Without a compelling argument, this workflow won't be practical to me. Samples,
+resources and keywords are the minimum necessity of code review when you plan to
+improve the programmer's skill set.
+
+* Why Your Personal Blog Then?
+Ah, I hope I'll get helpful critics from the community who value what I said up
+here. So *Feel Free To Say My Coding Skills SUCKS, But Please Tell Me Why* :blush:.
+
+I also hope this way, I can grow a personal wiki of my solutions and thoughts,
+so I can review and refactor them in future.
+
+* Updates
+Well, as I said, I'll try to keep this series updated whenever I learn a new
+language. I may also update my solutions based on community feedback or
+improvement in my skill sets. To address those and keep track of that, I'll use
+[[https://repl.it/][Repl.it]] for interactive code boxes and Git for the blog posts.
+
+I guess this is enough for now. Let's the journey begin...
