@@ -21,7 +21,7 @@ Though, before we start, I want to set some ground rules to keep myself
 motivated and also share the point of this series.
 
 * Language Choice
-I'm a [[python.org][Python]] developer; not a top, highly skilled developer of course, but I'm
+I'm a [[https://python.org][Python]] developer; not a top, highly skilled developer of course, but I'm
 pretty confident in coding and thinking in Python (mostly [[https://github.com/vinta/awesome-python#web-frameworks][web stack]]). So the
 base language I would solve the challenges with, would be Python. It would help
 me to think about the challenge in hand instead of wrestling with unfamiliar
@@ -38,7 +38,7 @@ with Python) to solve the same problems:
 ** Clojure
 The lovely lisp dialect. As an [[https://www.gnu.org/software/emacs/][Emacs]] user, I know the general Lisp syntax and
 love it. Still, I'm not yet that much comfortable in expressing my ideas
-persuasively using it. I tried to learn [[clojure.org/][Clojure]] using a set of recommended
+persuasively using it. I tried to learn [[https://clojure.org/][Clojure]] using a set of recommended
 books by the community. But I find out the main focus of almost all of them, is
 to introduce you to the language's syntax or available library. As I said, that
 won't work on me. I still need to read and learn them; but to learn effectively
@@ -111,7 +111,7 @@ situations. However, if I'm able to differ such use cases in the first few
 challenges on the Excercism, I'm probably wasting my time there.
 
 ** Lack of clear communication
-My problem with services other than Exercism, (let's say [[codewars.com/][Codewars]]), was that you
+My problem with services other than Exercism, (let's say [[https://codewars.com/][Codewars]]), was that you
 face a challenge (effectively a test suite). You solve it, and you are good to
 go. Other than the language's compiler and unit tests, you don't have any
 feedback. So other than solving a potentially useless problem you didn't learn
