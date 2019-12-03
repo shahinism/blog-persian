@@ -1,0 +1,152 @@
+---
+title: "Polyglot Dojo #1: Compress String"
+date: 2019-12-03T23:09:00+03:30
+draft: true
+type: post
+categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+twitter:
+  card: "summary"
+  site: "@shahinism"
+  title: "Polyglot Dojo #1: Compress String"
+  description: ""
+  image: ""
+---
+
+* Challenge
+The first challenge we pick to solve, is [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_challenge.ipynb][Compress Challange]]. The description of
+the challenge says:
+
+#+begin_quote
+Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'. Only compress the string if it saves space
+#+end_quote
+
+To solve this challenge we must satisfy following constraints:
+
+- We can assume the string is ASCII
+- The compression should be case sensitive
+- We can use additional data structures
+- We can assume the string will fit into the memory
+
+They also provide following test suite, to check our solution:
+
+#+BEGIN_SRC python
+from nose.tools import assert_equal
+
+
+class TestCompress(object):
+
+    def test_compress(self, func):
+        assert_equal(func(None), None)
+        assert_equal(func(''), '')
+        assert_equal(func('AABBCC'), 'AABBCC')
+        assert_equal(func('AAABCCDDDDE'), 'A3BC2D4E')
+        assert_equal(func('BAAACCDDDD'), 'BA3C2D4')
+        assert_equal(func('AAABAACCDDDD'), 'A3BA2C2D4')
+        print('Success: test_compress')
+
+
+def main():
+    test = TestCompress()
+    compress_string = CompressString()
+    test.test_compress(compress_string.compress)
+
+
+if __name__ == '__main__':
+    main()
+#+END_SRC
+
+* Python Solution
+
+The high level representation of the idea I can think of here, is that we want
+to group continuous alike characters from a string, and then represent their
+group length as a number. Kinda like following picture:
+
+The first approach I tried here, was using [[https://docs.python.org/3/library/collections.html#collections.Counter][collection.Counter]]. Here is an
+example of how we can use it:
+
+#+BEGIN_SRC python :results output
+from collections import Counter
+
+count = Counter("AABBCC")
+
+print(count)
+#+END_SRC
+
+#+RESULTS:
+: Counter({'A': 2, 'B': 2, 'C': 2})
+
+Well, at the first sight, it looks like a correct solution, however, the problem
+is that counter doesn't look for continuity of the characters, so when we pass
+~"AABBAA"~ to it, look what happens:
+
+#+BEGIN_SRC python :results output
+from collections import Counter
+
+print(Counter("AABBAA"))
+#+END_SRC
+
+#+RESULTS:
+: Counter({'A': 4, 'B': 2})
+
+Counter counts a character all over the string, which is not what we want.
+Finding out that is not enough, I knew I need to try another approach.
+Basically, to extract these groups, we can iterate through the characters of the
+string, and check their identity with the previous one. However, it's a bit
+mechanical for my taste, so I preferred to search for ~groupby~ keyword in the
+Python's standard library. And fortunately, I got lucky and found a bit bizarre
+~groupby~ function.
+
+However, before continuing that, I should add, one interesting thing I
+learned while working on this challenges; And that is, having offline access to
+standard library of programming languages, is a huge life saver. In Linux, I'm
+using [[https://zealdocs.org/][Zeal]]. For Mac users, I know there is [[https://kapeli.com/dash][Dash]] which Zeal uses it's document
+format. Also for hardcore Emacs users, there is [[https://github.com/magnars/dash.el][dash.el]] which is quite
+interesting, but I haven't used to it yet.
+
+Anyway, let's get back to our business. I said, ~groupby~ was a little bit
+bizarre to me. Let's look at how it works:
+
+#+BEGIN_SRC python :results output
+from itertools import groupby
+
+for key, group in groupby("AABBCC"):
+    print(f"{key}: {list(group)}")
+#+END_SRC
+
+#+RESULTS:
+: A: ['A', 'A']
+: B: ['B', 'B']
+: C: ['C', 'C']
+
+So it gives us what we want, the what is bizarre about it? The function name
+says, it is going to group *by*. We haven't passed anything as the *by* part; I
+mean something like [[https://www.w3schools.com/sql/sql_groupby.asp][GROUP BY]] phrase in SQL. So, I took a second look at the
+documentation where it says:
+
+#+BEGIN_QUOTE
+The key is a function computing a key value for each element. If not specified
+or is None, key defaults to an *identity function* and returns the element
+unchanged
+#+END_QUOTE
+
+The identity function. So it uses some function to compare each element's
+identity, which is exactly what we want. What is the nature of that function? We
+will discover that in another blog post.
+
+So after finding a single function, that provides us all we need to satisfy the
+basic logic of the problem, we can form it as a solution. Here is mine:
+
+{{<replit url="https://repl.it/@shahinism/Compress-String-Python">}}
+
+All I do here is to basically:
+- iterate through the result of ~groupby~ function, which provides me by a pair
+  of key (the character) and a group (an iterable object of continuous
+  repetition of the paired character).
+- Then I turn that group into a ~list~ and ~count()~ the number of elements
+  there.
+- If the count is bigger than one, I append the count number paired with the
+  character, other wise I just append the character alone.
+
+Then I checked the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_solution.ipynb][original answer]] provided by challenge collection. They have
+chosen the mechanical solution (which we will come back to with our Rust
+experiment), but I've learned about ~groupby~ :wink:.
