@@ -101,9 +101,9 @@ blockquote {
 }
 
 a {
-  border-bottom: 1px solid currentColor;
-  color: currentColor;
-  text-decoration: none;
+    text-decoration: none;
+    padding: 2px 0;
+    color: blue;
 
   &:hover {
     border-bottom-color: currentColor;

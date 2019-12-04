@@ -83,9 +83,9 @@ blockquote cite {
 }
 
 a {
-  border-bottom: 1px solid currentColor;
-  color: currentColor;
   text-decoration: none;
+  padding: 2px 0;
+  color: blue;
 }
 a:hover {
   border-bottom-color: currentColor;
