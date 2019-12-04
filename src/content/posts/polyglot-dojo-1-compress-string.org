@@ -75,9 +75,10 @@ print(count)
 #+RESULTS:
 : Counter({'A': 2, 'B': 2, 'C': 2})
 
-Well, at the first sight, it looks like a correct solution, however, the problem
-is that counter doesn't look for continuity of the characters, so when we pass
-~"AABBAA"~ to it, look what happens:
+Well, at the first sight, it looks like a correct solution, and of course it can
+satisfy all of the assertions from the suggested test case except the last one.
+The problem with the last test is that the ~Counter~ doesn't look for continuity
+of the characters, so when we pass ~"AABBAA"~ to it, look what happens:
 
 #+BEGIN_SRC python :results output
 from collections import Counter
@@ -150,3 +151,37 @@ All I do here is to basically:
 Then I checked the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_solution.ipynb][original answer]] provided by challenge collection. They have
 chosen the mechanical solution (which we will come back to with our Rust
 experiment), but I've learned about ~groupby~ :wink:.
+
+The time complexity of string append (as ~value += "new value"~ is optimized in
+CPython and is equal to \(O(1)\). So this is safe to say the overall algorithm
+for our solution has the time complexity of \(O(N)\).
+
+* Clojure Solution
+
+Since the interactive coding challenges repository only supports Python, we
+first need to port our test suite to Clojure. Here is the same constraints
+expressed in Clojure:
+
+#+BEGIN_SRC clojure
+(deftest compress-test
+  (testing "empty, is empty"
+    (is (= (compress "") "")))
+  (testing "doesn't compress fine strings"
+    (is (= (compress "ABC") "ABC"))
+    (is (= (compress "AABBCC") "AABBCC")))
+  (testing "does compress effectively"
+    (is (= (compress "AAABCCDDDDE") "A3BC2D4E"))
+    (is (= (compress "BAAACCDDDD") "BA3C2D4"))
+    (is (= (compress "AAABAACCDDDD") "A3BA2C2D4"))))
+#+END_SRC
+
+The syntax here is quite straightforward. The lines including ~(is (=...~ are
+defining the main constraints and ~(testing "..."~ are grouping related tests
+with a readable description. The most intersting thing for me here, is the
+readability and simplicity of the code.
+
+Up next, we are ready to tackle the real problem. Since we already used some
+functional techniques while we were trying to solve this problem in Python,
+wondering inside the real functional land of Lisp, I hoped we the basic logic
+won't change much.
+
