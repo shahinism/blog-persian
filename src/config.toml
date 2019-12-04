@@ -4,7 +4,6 @@ title = "Shahinism"
 theme = "journal"
 markup = "org"
 disqusShortname = "shahinism-en"
-pygmentsUseClasses = true
 
 [author]
   name = "Shahin"
