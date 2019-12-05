@@ -1,7 +1,7 @@
 ---
 title: "Polyglot Dojo #1: Compress String"
 date: 2019-12-03T23:09:00+03:30
-draft: true
+draft: false
 type: post
 categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
 twitter:
@@ -13,21 +13,21 @@ twitter:
 ---
 
 * Challenge
-The first challenge we pick to solve, is [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_challenge.ipynb][Compress Challange]]. The description of
+The first challenge we pick to solve is [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_challenge.ipynb][Compress Challange]]. The description of
 the challenge says:
 
 #+begin_quote
 Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'. Only compress the string if it saves space
 #+end_quote
 
-To solve this challenge we must satisfy following constraints:
+To solve this challenge, we must satisfy the following constraints:
 
 - We can assume the string is ASCII
 - The compression should be case sensitive
 - We can use additional data structures
-- We can assume the string will fit into the memory
+- We can assume the string would fit into the memory
 
-They also provide following test suite, to check our solution:
+They also provide the following test suite to check our solution:
 
 #+BEGIN_SRC python
 from nose.tools import assert_equal
@@ -57,11 +57,13 @@ if __name__ == '__main__':
 
 * Python Solution
 
-The high level representation of the idea I can think of here, is that we want
+The high-level representation of the idea I can think of here is that we want
 to group continuous alike characters from a string, and then represent their
-group length as a number. Kinda like following picture:
+group length as a number. Kind of like the following picture:
 
-The first approach I tried here, was using [[https://docs.python.org/3/library/collections.html#collections.Counter][collection.Counter]]. Here is an
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1575530542/BlogPhotos/groupby.png">}}
+
+The first approach I tried here was using [[https://docs.python.org/3/library/collections.html#collections.Counter][collection.Counter]]. Here is an
 example of how we can use it:
 
 #+BEGIN_SRC python :results output
@@ -75,8 +77,8 @@ print(count)
 #+RESULTS:
 : Counter({'A': 2, 'B': 2, 'C': 2})
 
-Well, at the first sight, it looks like a correct solution, and of course it can
-satisfy all of the assertions from the suggested test case except the last one.
+Well, at first sight, it looks like a correct solution, and of course, it can
+satisfy all of the assertions from the suggested test suite except the last one.
 The problem with the last test is that the ~Counter~ doesn't look for continuity
 of the characters, so when we pass ~"AABBAA"~ to it, look what happens:
 
@@ -89,20 +91,19 @@ print(Counter("AABBAA"))
 #+RESULTS:
 : Counter({'A': 4, 'B': 2})
 
-Counter counts a character all over the string, which is not what we want.
-Finding out that is not enough, I knew I need to try another approach.
-Basically, to extract these groups, we can iterate through the characters of the
-string, and check their identity with the previous one. However, it's a bit
-mechanical for my taste, so I preferred to search for ~groupby~ keyword in the
-Python's standard library. And fortunately, I got lucky and found a bit bizarre
-~groupby~ function.
+The ~Counter~ counts a character all over the string, which is not what we want.
+Finding out that is not enough; I knew I need to try another approach. To
+extract these groups, we can iterate through the characters of the string, and
+check their identity with the previous one. However, it's a bit mechanical for
+my taste, so I preferred to search for ~groupby~ keyword in Python's standard
+library. And fortunately, I got lucky and found a bit bizarre ~groupby~
+function.
 
-However, before continuing that, I should add, one interesting thing I
-learned while working on this challenges; And that is, having offline access to
-standard library of programming languages, is a huge life saver. In Linux, I'm
-using [[https://zealdocs.org/][Zeal]]. For Mac users, I know there is [[https://kapeli.com/dash][Dash]] which Zeal uses it's document
-format. Also for hardcore Emacs users, there is [[https://github.com/magnars/dash.el][dash.el]] which is quite
-interesting, but I haven't used to it yet.
+However, before continuing that, I should add, one exciting thing I learned
+while working on these challenges is, usefullness of having a local copy of
+language's documentations. In Linux, I'm using [[https://zealdocs.org/][Zeal]]. For Mac users, I know there
+is [[https://kapeli.com/dash][Dash]] which Zeal uses its document format. Also, for hardcore Emacs users,
+there is a [[https://github.com/magnars/dash.el][dash.el]] which is quite impressive, but I haven't used to it yet.
 
 Anyway, let's get back to our business. I said, ~groupby~ was a little bit
 bizarre to me. Let's look at how it works:
@@ -119,8 +120,8 @@ for key, group in groupby("AABBCC"):
 : B: ['B', 'B']
 : C: ['C', 'C']
 
-So it gives us what we want, the what is bizarre about it? The function name
-says, it is going to group *by*. We haven't passed anything as the *by* part; I
+So it gives us what we want, what is bizarre about it? The function name says it
+is going to group *by* something. We haven't passed anything as the *by* part; I
 mean something like [[https://www.w3schools.com/sql/sql_groupby.asp][GROUP BY]] phrase in SQL. So, I took a second look at the
 documentation where it says:
 
@@ -131,11 +132,11 @@ unchanged
 #+END_QUOTE
 
 The identity function. So it uses some function to compare each element's
-identity, which is exactly what we want. What is the nature of that function? We
+identity, which is what we want. What is the nature of that function? We
 will discover that in another blog post.
 
-So after finding a single function, that provides us all we need to satisfy the
-basic logic of the problem, we can form it as a solution. Here is mine:
+So after finding a single function, that provides us with all we need to satisfy
+the basic logic of the problem, we can form it as a solution. Here is mine:
 
 {{<replit url="https://repl.it/@shahinism/Compress-String-Python">}}
 
@@ -146,7 +147,7 @@ All I do here is to basically:
 - Then I turn that group into a ~list~ and ~count()~ the number of elements
   there.
 - If the count is bigger than one, I append the count number paired with the
-  character, other wise I just append the character alone.
+  character; otherwise, I append the character alone.
 
 Then I checked the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_solution.ipynb][original answer]] provided by challenge collection. They have
 chosen the mechanical solution (which we will come back to with our Rust
@@ -159,7 +160,7 @@ for our solution has the time complexity of \(O(N)\).
 * Clojure Solution
 
 Since the interactive coding challenges repository only supports Python, we
-first need to port our test suite to Clojure. Here is the same constraints
+first need to port our test suite to Clojure. Here are the same constraints
 expressed in Clojure:
 
 #+BEGIN_SRC clojure
@@ -177,11 +178,177 @@ expressed in Clojure:
 
 The syntax here is quite straightforward. The lines including ~(is (=...~ are
 defining the main constraints and ~(testing "..."~ are grouping related tests
-with a readable description. The most intersting thing for me here, is the
+with a readable description. The most exciting thing for me here is the
 readability and simplicity of the code.
 
-Up next, we are ready to tackle the real problem. Since we already used some
+Now, we are ready to tackle the real problem. Since we already used some
 functional techniques while we were trying to solve this problem in Python,
-wondering inside the real functional land of Lisp, I hoped we the basic logic
+wandering inside the real functional land of Lisp, I hoped the underlying logic
 won't change much.
 
+To explore the standard library of Clojure, I used [[https://clojuredocs.org/][Clojure Docs]] website. The
+first search for [[https://clojuredocs.org/clojure.core/group-by][group-by]], I found a function, that is much different from what
+I had in mind. But I remembered, there was a function with a more reasonable
+name I learned about when I was solving [[https://github.com/functional-koans/clojure-koans/][Clojure Koans]]. The functions name was
+[[https://clojuredocs.org/clojure.core/partition-by][partition-by]]. It's described as:
+
+#+BEGIN_QUOTE
+Applies *f* to each value in coll, splitting it each time f returns a new value.
+ Returns a lazy seq of partitions. Returns a stateful transducer when no
+ collection is provided.
+#+END_QUOTE
+
+So, we need a function *f*, which would return a different type, when the input
+character changes. Do you remember how ~groupby()~ function, was splitting the
+input string, to groups of the same continuous characters? Back there, we knew
+Python is using an "identity" function as the default  value for the ~func~
+parameter.
+
+Interestingly enough, I searched for the ~identity~ in Clojure Docs
+and [[https://clojuredocs.org/clojure.core/identity][found it]]. So our grouping logic, in Clojure would be like this:
+
+#+BEGIN_SRC clojure
+(partition-by identity "AABBCC")
+#+END_SRC
+
+Calling this would return a list of character groups like ~((\A \A) (\B \B) (\C
+\C))~, which is quite like what we need. So I turned it into a function:
+
+#+BEGIN_SRC clojure
+(defn group-chars
+  [string]
+  (partition-by identity string))
+#+END_SRC
+
+As you know, must of the functional languages, don't like the usual loops!
+Clojure is not different. However, they provide a more compelling and usually
+more comfortable to reason alternatives (if you understand how they work, of
+course). Since the result of our ~group-char~ function, is an iterable list of
+items, and all we want to do with each item, is to encode them to a ~character +
+count~ format, our best alternative for a loop would be a [[https://clojuredocs.org/clojure.core/map][map]] function. The old
+~map~ we all know about from JavaScript's famous functional toolbox!
+
+However, to use the ~map~, we need to have our encoding logic, implemented as a
+function. Since the logic is a bit bigger than what can fit inside an anonymous
+function, I'm going to define it as a separate function:
+
+#+BEGIN_SRC clojure
+(defn create-part
+  [group]
+  (let [length (count group)
+        char (first group)]
+    (if (= length 1)
+      (str char)
+      (str char length))
+    ))
+#+END_SRC
+
+All it does is:
+- Takes a ~group~ as the input parameter.
+- Uses ~count~ to get the length of the group and stores it inside ~length~.
+- considers the ~first~ character as the group's identity and stores it in ~char~.
+- And finally, if the length of the group is 1, it just returns the ~char~ as a
+  string, otherwise, returns the concatenation of ~char~ and ~length~ as the
+  result.
+
+One main characteristic of this function, is that it assumes the group contains
+a unique set of characters. A better approach here would be to check for that
+explicitly, and probably [[https://clojure.org/guides/spec][clojure.spec]] would be helpful to implement it [[https://en.wikipedia.org/wiki/Design_by_contract][as design
+by contract]].
+
+Yet, I'm not familiar with the concept or how to handle exceptions safely in
+Clojure as of yet. Given our software is a small challenge solution, I'm going
+not to bother myself with this fact, and rely on our pipeline to handle that
+until I learn more about Clojure (even though it's not a good practice! :wink:).
+
+So, with that part in place, we can go forward, and implement our final part of
+the puzzle, which is, getting the input string, split it into groups, feed it to
+create the part, and concatenate the resulting map:
+
+#+BEGIN_SRC clojure
+(defn compress
+  "Compress string."
+  [string]
+  (let [compressed (join "" (map create-part (group-chars string)))]
+    (if (= (count compressed) (count string))
+      string
+      compressed)))
+#+END_SRC
+
+As you see, I also used a condition to return the original string, if
+compressing it didn't reduce the size of the string. Putting it all together, we
+solve the challenge as you can confirm here:
+
+{{<replit url="https://repl.it/@shahinism/Compress-String-Clojure">}}
+
+* Rust Solution
+Well, the most challenging part for me in this journey was solving it using
+Rust, and yet I'm not happy with the results. It's probably because it's the
+language I know far less about comparing to others. However, let's start to
+learn :blush:. Again, let's port the tests:
+
+#+begin_src rust +n
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_compress() {
+        assert_eq!(compress(""), "");
+        assert_eq!(compress("ABC"), "ABC");
+        assert_eq!(compress("AABBCC"), "AABBCC");
+        assert_eq!(compress("AAABCCDDDDE"), "A3BC2D4E");
+        assert_eq!(compress("BAAACCDDDD"), "BA3C2D4");
+        assert_eq!(compress("AAABAACCDDDD"), "A3BA2C2D4");
+        assert_eq!(compress(String::from("AAABAACCDDDD")), "A3BA2C2D4");
+    }
+}
+#+end_src
+
+This is quite usual unit testing syntax, not much interesting. However, as you
+see, I've added an extra test, to make sure it can compress instances of
+~String~ object just like string literals.
+
+And here is a working solution to the problem:
+
+{{<replit url="https://repl.it/@shahinism/Compress-String-Rust">}}
+
+I'm going to describe this solution with a high-level perspective instead of
+focusing on the details. There are two reasons for this:
+
+- As I said, I'm not happy with my solution so far. My experience is quite small
+  on Rust, and I believe all those ~.to_string()~ and ~.as_str()~ should be
+  eliminated somehow. So I plan to refactor this solution gradually, as I learn
+  more about Rust's type system.
+- Don't want my ego or perfectionism, get into the way of my blogging
+  :sweat_smile:. As I said in the [[/en/posts/polyglot-dogo-0/][introduction]] of this series, I started it to
+  help me learn more.
+
+With that out of the way, let's see, what is my Rusty solution to this problem.
+It's quite close to the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_solution.ipynb][original Python answer]] provided in interactive
+challenges.
+
+- I have a function ~create_part~, which handles the encoding of a character,
+  based on the number of continuous repetitions.
+- And the primary ~compress~ function which loops through all the characters of
+  the string counting the number of their continuity and appends each part to a
+  ~result~ string.
+- Finally, I check for the length of the compressed string, and only provide the
+  compressed version as a result, if it's reduced the size of the original
+  string.
+
+* Conclusion
+
+The idea of this series is so exciting to me. Well, I always wanted to improve
+my overall problem-solving skills, and so far, looks like this series is helping
+me in that regard. As you see, different paradigms of these languages, are
+forcing me to solve the problems with different approaches (top-down in Rust and
+bottom-up in Python and Clojure).
+
+Also, the different level of abstractions provided by each language's standard
+library is helping me dive into different levels of problem's basics gradually.
+
+I don't want to lie about it, I some times get mad when something doesn't make
+sense, yet going back and re-reading or repeating the process, is improving my
+overall confidence in coding. No need to say that it's also helping me to learn
+new abilities of a language I thought I already knew (Python) :wink:.
