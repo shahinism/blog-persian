@@ -52,6 +52,10 @@ figure .representation {
   margin: 0 0 0.5rem;
 }
 
+figure {
+  text-align: center;
+}
+
 figcaption {
   padding: 0 0.5rem 0.5rem;
   font-size: 0.8125rem;
