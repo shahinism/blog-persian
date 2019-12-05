@@ -9,10 +9,10 @@ twitter:
   site: "@shahinism"
   title: "Polyglot Dojo #1: Compress String"
   description: "Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'. Only compress the string if it saves space"
-  image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg"
 ---
 
-{{<figure src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80">}}
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg">}}
 
 * Challenge
 The first challenge we pick to solve is [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_challenge.ipynb][Compress Challange]]. The description of
