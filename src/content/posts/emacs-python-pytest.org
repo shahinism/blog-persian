@@ -4,7 +4,7 @@ date: 2019-05-27T16:47:50+04:30
 draft: false
 type: post
 categories: ["emacs", "productivity"]
-twitter:
+social:
   card: "summary"
   site: "@shahinism"
   title: "Run Python test suites without leaving Emacs"

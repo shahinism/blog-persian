@@ -4,7 +4,7 @@ date: 2019-05-16T18:27:30+04:30
 draft: false
 type: post
 categories: ["privacy"]
-twitter:
+social:
   card: "summary"
   site: "@shahinism"
   title: "My Journey to Privacy"
