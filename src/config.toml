@@ -14,3 +14,8 @@ disqusShortname = "shahinism-en"
   githubUsername = "shahinism"
   twitterUsername = "shahinism"
   tagline = "Sometimes you gotta run before you can walk."
+
+[params.gpg]
+  key = "0xCAA76996F3C44A6D"
+  fingerprint = "FC2D 2C1E B4BB A9FF 6645  4511 CAA7 6996 F3C4 4A6D"
+  link = "https://keybase.io/shahinism"

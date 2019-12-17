@@ -22,7 +22,8 @@
           {{- end}}
 
           {{ if isset .Site.Params "gpg" -}}
-          <a itemprop="sameAs" href="{{ .Site.Params.gpg.link }}" title="GPG {{ .Site.Params.gpg.key }} (fingerprint: {{ .Site.Params.gpg.fingerprint }})">GPG</a>
+          <br/>
+          PGP: <a itemprop="sameAs" href="{{ .Site.Params.gpg.link }}" title="GPG {{ .Site.Params.gpg.key }}">{{ .Site.Params.gpg.fingerprint }}</a>
           {{- end }}
         </span>
 
