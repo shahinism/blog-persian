@@ -1,0 +1,148 @@
+---
+title: "Polyglot Dojo #2: FizzBuzz"
+date: 2019-12-19T18:54:57+03:30
+draft: false
+type: post
+categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+social:
+  card: "summary"
+  site: "@shahinism"
+  title: "Polyglot Dojo #2: FizzBuzz"
+  description: "Translate list of number from zero up to a given number with FizzBuzz rules"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1576772617/BlogPhotos/fizzbuzz.png"
+---
+
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1576772617/BlogPhotos/fizzbuzz.png">}}
+
+* Challenge
+
+
+This challenge was disappointingly dull, however, I saw some exciting
+things through the way. We are going to solve [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/fizz_buzz/fizz_buzz_solution.ipynb][FizzBuzz]], with the following
+constraints:
+
+1. What is fizz buzz?
+   Return the string representation of numbers from 1 to n
+   - Multiples of 3 -> 'Fizz'
+   - Multiples of 5 -> 'Buzz'
+   - Multiples of 3 and 5 -> 'FizzBuzz'
+2. Can we assume the inputs are valid? No
+3. Can we assume this fits memory? Yes
+
+And the provided unit test is as this:
+
+#+BEGIN_SRC python
+from nose.tools import assert_equal, assert_raises
+
+
+class TestFizzBuzz(object):
+
+    def test_fizz_buzz(self):
+        solution = Solution()
+        assert_raises(TypeError, solution.fizz_buzz, None)
+        assert_raises(ValueError, solution.fizz_buzz, 0)
+        expected = [ '1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz',
+                     'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz' ]
+        assert_equal(solution.fizz_buzz(15), expected)
+        print('Success: test_fizz_buzz')
+
+
+def main():
+    test = TestFizzBuzz()
+    test.test_fizz_buzz()
+
+
+if __name__ == '__main__':
+    main()
+
+#+END_SRC
+
+So far, so good, let's start.
+
+* Python Solution
+
+To solve this challenge, we first need to implement a function to take care of a
+single input (map an input to a single output). The constraints are so
+straightforward, and we basically need to re-write them in Python:
+
+#+BEGIN_SRC python
+def is_divisible(number, by):
+    if by == 0:
+        raise ValueError("Expects non-zero denominator")
+
+    return number % by == 0
+
+def process_number(number):
+    if is_divisible(number, 3) and is_divisible(number, 5):
+        return "FizzBuzz"
+    elif is_divisible(number, 3):
+        return "Fizz"
+    elif is_divisible(number, 5):
+        return "Buzz"
+
+    return str(number)
+#+END_SRC
+
+To make things a little bit more readable, I defined an ~is_divisible~ function,
+which checks if two numbers are divisible, and used that function to translate
+our main constraints. If none of the rules applies, I return a string cast of
+the input number as the result.
+
+With that part sorted out, I can use a list comprehension as follows, to produce
+my final result:
+
+#+BEGIN_SRC python
+def fizz_buzz(self, number):
+    if not isinstance(number, int):
+        raise TypeError
+    elif number <= 0:
+        raise ValueError
+
+    return [self.process_number(n) for n in range(1, number + 1)]
+#+END_SRC
+
+First, I check for valid input and then used the ~range()~ function inside a
+list comprehension to produce the final result, using our ~process_number~. Here
+is the solution in action:
+
+{{<replit url="https://repl.it/@shahinism/FizzBuzz-Python">}}
+
+Now let's take a look at the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/fizz_buzz/fizz_buzz_solution.ipynb][repository's proposed solution]]. Here it is:
+
+#+BEGIN_SRC python
+
+
+class Solution(object):
+
+    def fizz_buzz(self, num):
+        if num is None:
+            raise TypeError('num cannot be None')
+        if num < 1:
+            raise ValueError('num cannot be less than one')
+        results = []
+        for i in range(1, num + 1):
+            if i % 3 == 0 and i % 5 == 0:
+                results.append('FizzBuzz')
+            elif i % 3 == 0:
+                results.append('Fizz')
+            elif i % 5 == 0:
+                results.append('Buzz')
+            else:
+                results.append(str(i))
+        return results
+
+#+END_SRC
+
+The main logic used here is the same as mine, but there is a subtle difference
+which I like to talk about. From our constraints list, we know we can't assume
+that the input values are valid. So we need to implement the validation logic.
+In my solution, I ensure the input value is a non-zero integer, which given the
+task in hand (we expect to perform mathematical operations on the input, and we
+know the number list should grow by one) integers are quite a reasonable choice.
+
+Yet in repository's solution, they are not ensuring it to be a number type, and
+rely on ~num is not None~. Here the function just expect it to be a value (and
+it can be anything other than ~None~ and negative numbers), so a malicious call
+like ~fizz_buzz('five')~ would easily pass our main constraints but fail due to
+wrong operation error. I usually prefer to limit input types to the minimum
+required, which is helpful in situations like this.
