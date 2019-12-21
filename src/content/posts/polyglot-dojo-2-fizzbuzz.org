@@ -1,5 +1,5 @@
 ---
-title: "Polyglot Dojo #2: FizzBuzz"
+title: "Polyglot Dojo #2: FizzBuzz [1*]"
 date: 2019-12-19T18:54:57+03:30
 draft: false
 type: post
@@ -9,10 +9,13 @@ social:
   site: "@shahinism"
   title: "Polyglot Dojo #2: FizzBuzz"
   description: "Translate list of number from zero up to a given number with FizzBuzz rules"
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1576772617/BlogPhotos/fizzbuzz.png"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1576772617/BlogPhotos/fizzbuzz.png">}}
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png">}}
+
+* Updates
+- *[2019-12-21 Sat]*: Add Clojure Solution.
 
 * Challenge
 
@@ -146,3 +149,75 @@ it can be anything other than ~None~ and negative numbers), so a malicious call
 like ~fizz_buzz('five')~ would easily pass our main constraints but fail due to
 wrong operation error. I usually prefer to limit input types to the minimum
 required, which is helpful in situations like this.
+* Clojure Solution
+
+As usuall, we first need to translate our test suite to Clojure. The main test
+would be as simple as this:
+
+#+BEGIN_SRC clojure
+(ns fizz-buzz-clj.core-test
+  (:require [clojure.test :refer :all]
+            [fizz-buzz-clj.core :refer :all]))
+
+(deftest fizz-buzz-test
+  (testing "calculate the FizzBuzz of 15"
+    (is (= (fizzbuzz 15) ["1" "2" "Fizz" "4" "Buzz" "Fizz" "7" "8",
+                          "Fizz" "Buzz" "11" "Fizz" "13" "14" "FizzBuzz"]))))
+#+END_SRC
+
+Yet, we haven't tested for invalid inputs as our constraints ask for. To cover
+this part of our main function, I plan to use Clojure's [[https://en.wikipedia.org/wiki/Design_by_contract][contract based
+programming]] facility by ~{:pre ...}~ syntax. You can find more information about
+it from [[https://clojure.org/reference/special_forms#_fn_name_param_condition_map_expr_2][here]]. But basically, ~:pre~ gets a set of condition describing the
+constraints of function's parameters, and on each application of the function,
+ensures, the provided arguments satisfy its condition. Otherwise, it'll throw an
+~AssertionError~. So for this part of my unit tests, I can use this:
+
+#+BEGIN_SRC clojure
+(testing "throws error on invalid inputs"
+    (is (thrown? AssertionError (fizzbuzz 0)))
+    (is (thrown? AssertionError (fizzbuzz nil))))
+#+END_SRC
+
+Quite straightforward, right? The main logic for my Clojure approach, is not
+much different from the Python solution, however, it contains, some satisfying
+syntax sugar :sweat_smile:. First I add a function to help me with divisibility
+check:
+
+#+BEGIN_SRC clojure
+(defn is-divisible?
+  [number by]
+  {:pre [(not= by 0)]}
+  (= (mod number by) 0))
+#+END_SRC
+
+Here you can see the first contract I used which ensures the ~is-divisible?~
+function would get executed only if the value of ~by~ is not equal to zero. Now
+I can use this function, to translate a number, to FizzBuzz:
+
+#+BEGIN_SRC clojure
+(defn to-fizz-buzz
+  [number]
+  (cond
+    (and (is-divisible? number 5) (is-divisible? number 3)) "FizzBuzz"
+    (is-divisible? number 3) "Fizz"
+    (is-divisible? number 5) "Buzz"
+    :else (str number)))
+#+END_SRC
+
+Here I used a ~(cond ...)~ expression to express the same logic as we had in
+Python sample. Now with our main logic implemented, we can write a function to
+satisfy our main test case:
+
+#+BEGIN_SRC clojure
+(defn fizz-buzz
+  [number]
+  {:pre [(number? number) (> number 0)]}
+  (map to-fizz-buzz (range 1 (+ number 1))))
+#+END_SRC
+
+Again, you see the ~:pre~ conditions to ensure the input values. The I use a
+~map~ to apply my ~to-fizz-buzz~ function to a range of numbers based on the
+input ~number~. Now you can see the final result in action:
+
+{{<replit url="https://repl.it/@shahinism/FizzBuzz-Clojure">}}
