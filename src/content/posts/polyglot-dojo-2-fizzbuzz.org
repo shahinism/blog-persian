@@ -1,5 +1,5 @@
 ---
-title: "Polyglot Dojo #2: FizzBuzz [1*]"
+title: "Polyglot Dojo #2: FizzBuzz [2*]"
 date: 2019-12-19T18:54:57+03:30
 draft: false
 type: post
@@ -15,7 +15,8 @@ social:
 {{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png">}}
 
 * Updates
-- *[2019-12-21 Sat]*: Add Clojure Solution.
+- *[2019-12-23 Mon]*: Added Rust Solution.
+- *[2019-12-21 Sat]*: Added Clojure Solution.
 
 * Challenge
 
@@ -221,3 +222,84 @@ Again, you see the ~:pre~ conditions to ensure the input values. The I use a
 input ~number~. Now you can see the final result in action:
 
 {{<replit url="https://repl.it/@shahinism/FizzBuzz-Clojure">}}
+
+* Rust Solution
+
+Now is the time to try our skills with Rust. Let's see how the test suite would
+look like:
+
+#+BEGIN_SRC rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_fizzbuzz() {
+        assert_eq!(fizz_buzz(15), vec!["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8",
+                                       "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]);
+    }
+}
+#+END_SRC
+
+As you can see, here I don't test for invalid arguments like in Python or
+Clojure. Here I rely on Rust's type system, which would prevent passing invalid
+data types to the fizzbuzz function. Not is time to port my ~is_divisible~
+function to Rust. Here is the code:
+
+#+BEGIN_SRC rust
+fn is_divisible(number: i32, by: i32) -> bool {
+    number % by == 0
+}
+#+END_SRC
+
+Rust distinguishes between recoverable and unrecoverable errors and provides
+different facilities to express each one of them. In this case, division by zero
+is a potential bug, and I could for example ~panic!~ if the value of ~by~ is
+equal to zero. Something like:
+
+#+BEGIN_SRC rust
+if by == 0 {
+    panic!("the value of by can't be equal to zero!");
+}
+#+END_SRC
+
+However, I decided to not do that, since Rust itself would raise the same error,
+when you try to do that sort of crazy stuff. After all Rust supposed to keep us
+sane :wink::
+
+Now I go forward and implement our main logic, using a match expression like this:
+
+#+BEGIN_SRC rust
+fn to_fizz_buzz<'a>(number: i32) -> String {
+    match number {
+        n if is_divisible(n, 3) && is_divisible(n, 5) => "FizzBuzz".to_string(),
+        n if is_divisible(n, 3) => "Fizz".to_string(),
+        n if is_divisible(n, 5) => "Buzz".to_string(),
+        n => n.to_string()
+    }
+}
+#+END_SRC
+
+The logic here is quite straight forward, I check the value of number for
+different constraints, and return proper instance of ~String~ as the result. Now
+I can use this function, to prepare my final result:
+
+#+BEGIN_SRC rust
+pub fn fizz_buzz(number: i32) -> Vec<String> {
+    let range: Vec<i32> = (1..number + 1).collect();
+    range.into_iter().map(to_fizz_buzz).collect()
+}
+#+END_SRC
+
+In the first line of this function, I create a vector of ~i32~ value types,
+containing the values I like to calculate FizzBuzz for. Then I ~.map~ those
+values into ~to_fizz_buzz~ function, and collect the final result. It's so close
+to the functional approach we took in Clojure and Python. Here you can find the
+final solution and play with it:
+
+{{<replit url="https://repl.it/@shahinism/FizzBuzz-Rust">}}
+
+* Conclusion
+
+Finding solution for this challenge wasn't challenging at all. However, this
+provided me with the opportunity to experiment with each language's syntax a bit
+more and learn new stuff around them.
