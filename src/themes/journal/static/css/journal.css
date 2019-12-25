@@ -89,7 +89,7 @@ blockquote cite {
 a {
   text-decoration: none;
   padding: 2px 0;
-  color: blue;
+  color: #001eff;
 }
 a:hover {
   border-bottom-color: currentColor;
@@ -98,7 +98,7 @@ a:hover {
 
 ol,
 ul {
-  margin: 0 0 1rem 1.25rem;
+  margin: 0 0 1rem 2.25rem;
   padding: 0;
   list-style-position: outside;
 }
@@ -275,6 +275,36 @@ pre.example {
   color: #dcdccc;
   margin-top: -17px;
   border-radius: 0 0 10px 10px;
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+ol > li {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+
+ol > li:before {
+  content: "<" counter(item);
+  color: #ff2b2b;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+}
+
+ol > li:after {
+  content: " />";
+  color: #ff2b2b;
+  opacity: 0.5;
+}
+
+li p {
+  margin: 0;
+  display: inline;
 }
 
 /*# sourceMappingURL=journal.css.map */
