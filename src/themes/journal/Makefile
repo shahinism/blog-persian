@@ -1,4 +1,4 @@
-all: sass
+all: SCSS
 
-sass:
-	sass scss/journal.scss static/css/journal.css
+SCSS:
+	scss scss/journal.scss static/css/journal.css
