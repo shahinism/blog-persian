@@ -2,11 +2,14 @@
 
 <article class="post h-entry">
     <header class="post-header">
-        <h1 class="post-title p-name">{{ .Title }}</h1>
+        <h1 class="post-title p-name glitch" data-text="{{ .Title }}">{{ .Title }}</h1>
 
         <a class="u-url" href="{{ .Permalink }}">
-	      <span class="p-author h-card" style="display:none;">{{ .Params.author | default .Site.Author.name }}</span>	
-          <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+	      <span class="p-author h-card" style="display:none;">{{ .Params.author | default .Site.Author.name }}</span>
+        <time class="post-date dt-published glitch"
+          data-text='{{ .Date.Format "02 Jan 2006" }}' datetime='{{ .Date.Format "2006-01-02 15:04:05 MST" }}'>
+          {{ .Date.Format "02 Jan 2006" }}
+        </time>
         </a>
     </header>
     {{ if ne .Params.toc false }}
@@ -21,13 +24,13 @@
     {{ with .Params.categories }}
       <strong>Categories: </strong>
       {{ range . }}
-        <a class="p-category" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
+        <a class="p-category" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
     {{ end }}
     {{ with .Params.tags }}
       <strong>Tags: </strong>
       {{ range . }}
-        <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>, 
+        <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
     {{ end }}
 

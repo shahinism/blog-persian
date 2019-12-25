@@ -1,5 +1,6 @@
 $black: #303030;
 $gray: #686868;
+$background: #fdf6e3;
 $light-gray: #e5e5e5;
 $white: #fbfbfb;
 $serif: 'Arvo';
@@ -25,7 +26,7 @@ $break-small: 800px;
 }
 
 html {
-  background-color: #fdf6e3;
+  background-color: $background;
 
   color: $black;
 
@@ -114,9 +115,9 @@ blockquote {
 }
 
 a {
-    text-decoration: none;
-    padding: 2px 0;
-    color: $blue;
+  text-decoration: none;
+  padding: 2px 0;
+  color: $blue;
 
   &:hover {
     border-bottom-color: currentColor;
@@ -166,13 +167,13 @@ code {
   padding: .125rem .25rem 0;
 }
 p code {
-    background: #000;
-    color: lime;
-    display: inline-block;
-    border-radius: 5px;
-    font-family: '"Source Code Pro"', monospace;
-    font-size: 0.8rem;
-    padding: 0px 5px 2px;
+  background: #000;
+  color: lime;
+  display: inline-block;
+  border-radius: 5px;
+  font-family: '"Source Code Pro"', monospace;
+  font-size: 0.8rem;
+  padding: 0px 5px 2px;
 }
 
 article,
@@ -339,4 +340,57 @@ ol>li:after {
 li p {
   margin: 0;
   display: inline;
+}
+
+.timestamp {
+  font-family: $monospace, monospace !important;
+  text-transform: uppercase;
+}
+
+.glitch {
+  position: relative;
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 $green;
+    top: 0;
+    background: $background;
+    overflow: hidden;
+    animation: noise-anim 8s infinite linear alternate-reverse;
+  }
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 $blue;
+    top: 0;
+    background: $background;
+    overflow: hidden;
+    animation: noise-anim-2 30s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes noise-anim {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(unquote("#{$top}% 0 #{$bottom}% 0"));
+    }
+  }
+}
+
+@keyframes noise-anim-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(unquote("#{$top}% 0 #{$bottom}% 0"));
+    }
+  }
 }
