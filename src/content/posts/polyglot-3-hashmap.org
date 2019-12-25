@@ -1,0 +1,226 @@
+---
+title: "Polyglot Dojo #3: Hashmap"
+date: 2019-12-25T09:28:32+03:30
+draft: false
+type: post
+categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+social:
+  card: "summary"
+  site: "@shahinism"
+  title: "Polyglot Dojo #3: Hashmap"
+  description: "In this blog post, we tend to implement a hash map!"
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png"
+---
+
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png">}}
+
+* Challenge
+
+The challenge I tend to review in this post is called [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/hash_map/hash_map_challenge.ipynb][hash map]]. To be honest, I
+couldn't understand the requirement of the challenge from the description and
+had almost no idea what a hash map is. Even the test suite didn't help much in
+visualizing the data structure I needed. So I first need to learn what a hash
+map is.
+
+The best resource I could find on the internet which helped me to clarify all
+my question, is this video:
+
+{{<invideous KyUTuwz_b7Q>}}
+
+It gradually answers following questions visually, which is more than enough to
+tackle this challenge:
+
+1. What is a hash table?
+2. Why we use hash tables?
+3. What is the job of a hash function?
+4. What is the hash map?
+5. What is the solution to overcome hash collision?
+
+* Python Solution
+
+The test suite provided for us is like this:
+
+#+BEGIN_SRC python
+from nose.tools import assert_equal, assert_raises
+
+class TestHashMap(object):
+
+    # TODO: It would be better if we had unit tests for each
+    # method in addition to the following end-to-end test
+    def test_end_to_end(self):
+        hash_table = HashTable(10)
+
+        print("Test: get on an empty hash table index")
+        assert_raises(KeyError, hash_table.get, 0)
+
+        print("Test: set on an empty hash table index")
+        hash_table.set(0, 'foo')
+        assert_equal(hash_table.get(0), 'foo')
+        hash_table.set(1, 'bar')
+        assert_equal(hash_table.get(1), 'bar')
+
+        print("Test: set on a non empty hash table index")
+        hash_table.set(10, 'foo2')
+        assert_equal(hash_table.get(0), 'foo')
+        assert_equal(hash_table.get(10), 'foo2')
+
+        print("Test: set on a key that already exists")
+        hash_table.set(10, 'foo3')
+        assert_equal(hash_table.get(0), 'foo')
+        assert_equal(hash_table.get(10), 'foo3')
+
+        print("Test: remove on a key that already exists")
+        hash_table.remove(10)
+        assert_equal(hash_table.get(0), 'foo')
+        assert_raises(KeyError, hash_table.get, 10)
+
+        print("Test: remove on a key that doesn't exist")
+        assert_raises(KeyError, hash_table.remove, -1)
+
+        print('Success: test_end_to_end')
+
+
+def main():
+    test = TestHashMap()
+    test.test_end_to_end()
+
+
+if __name__ == '__main__':
+    main()
+#+END_SRC
+
+It reveals some of the requirements with more details. But it's not enough by
+itself, since all of the tests would get passed by a hash table, while the pared
+solution template, asks us to store values as a map (hash map). You can see it
+by noting to the ~Item~ constructor's signature (it requires ~key~ and ~value~).
+This is the solution template:
+
+#+BEGIN_SRC python
+class Item(object):
+
+    def __init__(self, key, value):
+        # TODO: Implement me
+        pass
+
+
+class HashTable(object):
+
+    def __init__(self, size):
+        # TODO: Implement me
+        pass
+
+    def _hash_function(self, key):
+        # TODO: Implement me
+        pass
+
+    def set(self, key, value):
+        # TODO: Implement me
+        pass
+
+    def get(self, key):
+        # TODO: Implement me
+        pass
+
+    def remove(self, key):
+        # TODO: Implement me
+        pass
+#+END_SRC
+
+First thing I'm going to develop is the body of ~Item()~'s constructor function,
+which would be as simple as this:
+
+#+BEGIN_SRC python
+class Item(object):
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+#+END_SRC
+
+Here we just store the values in the class body, and probably could have used a
+better data structure (like ~Enum~) instead of a class. But this would suffice
+for now.
+
+The next logical step would be the ~_hash_function~ itself. Well I had no idea
+about it. In application level (mostly web-development), I was almost always
+using Python's standard data structure for this kind of task, and never had a
+need for such task. So after trying couple of my lame ideas (including some hash
+methods from Python's standard library, but I knew it should be simpler
+:sweat_smile:), I gave up and looked at the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/hash_map/hash_map_solution.ipynb][solution]] page.
+
+To my surprise, the hash function used was quite simple. Actually this simple:
+
+#+BEGIN_SRC python
+def _hash_function(self, key):
+    return key % self.size
+#+END_SRC
+
+But this simplicity is also based on two of our main constraints:
+
+- The size of hash table should be static. This way, we can always calculate a
+  unique (and valid) index number to place our Item in.
+- The keys will always be integer (to reduce the complexity of challenge. Other
+  wise, we should have a hash function which minimizes collisions and our lookup
+  process would not always be guaranteed to be $O(1)$).
+
+One cool thing I learned here, is the property of modulo which this function
+relies on. The right side operand of the modulo, basically defines the maximum
+value the result of the calculation would be (no matter how big the left side
+operand is). Look at this:
+
+#+BEGIN_SRC python :results output
+result = set([n % 10 for n in range(1000)])
+print(result)
+#+END_SRC
+
+#+RESULTS:
+: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+Cool! So no matter what the value of our numeric key, we would always be sure
+that we have a place for it in our hash map structure. With that explanation,
+the ~__init__~ function's implementation is as straightforward as this:
+
+#+BEGIN_SRC python
+class HashTable(object):
+
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+#+END_SRC
+
+We store the size and create a list of lists to act as our hash table's slots.
+So when we instantiate the ~HashTable~ like ~HashTable(10)~ the ~self.table~
+would contain 10 empty slots. With the main logic implemented, the ~set~, ~get~
+and ~remove~ functions would be so easy to implement. Just using some iterations
+we would have our functions as:
+
+#+BEGIN_SRC python
+def set(self, key, value):
+    idx = self._hash_function(key)
+    for item in self.table[idx]:
+        if item.key == key:
+            item.value = value
+            return
+
+    self.table[idx].append(Item(key, value))
+
+def get(self, key):
+    idx = self._hash_function(key)
+    for item in self.table[idx]:
+        if item.key == key:
+            return item.value
+    raise KeyError
+
+def remove(self, key):
+    idx = self._hash_function(key)
+    for index, item in enumerate(self.table[idx]):
+        if item.key == key:
+            del self.table[idx][index]
+            return
+    raise KeyError
+#+END_SRC
+
+I don't think we require any more explanation here and everything looks as clear
+as it can be. You can also experiment with the final implementation here:
+
+{{<replit url="https://repl.it/@shahinism/HashMap-Python">}}
