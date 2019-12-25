@@ -1,6 +1,7 @@
 $black: #303030;
 $gray: #686868;
 $background: #fdf6e3;
+$border-light: #ffeec1;
 $light-gray: #e5e5e5;
 $white: #fbfbfb;
 $serif: 'Arvo';
@@ -392,5 +393,40 @@ li p {
       $bottom: random(101 - $top);
       clip-path: inset(unquote("#{$top}% 0 #{$bottom}% 0"));
     }
+  }
+}
+
+.post {
+  padding: 25px; /* mind the gap */
+  --aug-border: 2px;
+  --aug-border-bg: #ffeec1;
+  --aug-l-height: 80%;
+  --aug-l-width: 10px;
+}
+
+section#post-list {
+  margin: 35px;
+  padding: 25px; /* mind the gap */
+  --aug-border: 2px;
+  --aug-border-bg: #ffeec1;
+  --aug-l-height: 80%;
+  --aug-l-width: 10px;
+}
+
+#toc, #meta, #comments {
+  padding: 20px 10px; /* mind the gap */
+  margin-bottom: 20px;
+  font-size: 80%;
+  --aug-inset: 5px;
+  --aug-inset-bg: #ffeec1;
+  --aug-border: 2px;
+  --aug-border-bg: #ffeec1;
+  --aug-b-width: 80%;
+  --aug-b-height: 5px;
+  --aug-r-width: 5px;
+
+  p {
+    padding: 0 10px;
+    margin: 0;
   }
 }

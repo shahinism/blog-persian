@@ -3,7 +3,7 @@
   <article class="posts">
 
     {{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
-    <section>
+    <section id="post-list" augmented-ui="tr-clip l-clip-y r-clip-y exe">
       <h2 class="glitch" data-text="{{ .Key }}">{{ .Key }}</h2>
 
       <ul>
