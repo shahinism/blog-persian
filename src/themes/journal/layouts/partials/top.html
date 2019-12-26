@@ -38,13 +38,18 @@
   <body>
     <div class="container">
 
-      {{ if .IsHome -}}
-      <header class="site-header">
+      {{ if .IsHome }}
+      <header class="site-header flick">
         <h1>{{ .Site.Title }}</h1>
         <p>{{ .Site.Params.tagline }}</p>
       </header>
-      {{- else -}}
-      <nav class="site-nav">
-        <a href="{{ .Site.BaseURL }}">Index</a>
+      {{ else }}
+      <nav class="site-nav flick">
+        <a href="{{ .Site.BaseURL }}">cd /</a>
       </nav>
-      {{- end }}
+      {{ if .IsPage }}
+      <header class="site-header flick">
+        <h1>{{ .Title }}</h1>
+      </header>
+      {{ end }}
+      {{ end }}

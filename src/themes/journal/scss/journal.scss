@@ -26,17 +26,42 @@ $break-small: 800px;
   box-sizing: border-box;
 }
 
+@keyframes BackAnim {
+  0%{background-position:51% 0%;}
+  50%{background-position:50% 100%;}
+  100%{background-position:51% 0%;}
+}
+
+@keyframes Flicker {
+  0%{opacity: 0.8}
+  10%{opacity: 0.5}
+  20%{opacity: 0.9}
+  30%{opacity: 0.7}
+  40%{opacity: 0.9}
+  50%{opacity: 1}
+  60%{opacity: 0.9}
+  70%{opacity: 0.6}
+  80%{opacity: 0.9}
+  90%{opacity: 0.8}
+  100%{opacity: 0.9}
+}
+
 html {
-  background-color: $background;
+  background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
 
-  color: $black;
-
-  font-family: $serif, serif;
+  color: #93EDF5;
+  text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.83);
+  font-family: $monospace, monospace;
   font-size: $fs;
+  animation: BackAnim 10s ease-in-out infinite;
 
   @media screen and (min-width: $break-small) {
     font-size: $fs-large;
   }
+}
+
+.flick {
+  animation: Flicker 10s ease-in-out infinite;
 }
 
 body {
@@ -118,11 +143,12 @@ blockquote {
 a {
   text-decoration: none;
   padding: 2px 0;
-  color: $blue;
+  color: $pink;
+  text-shadow: 0px 0px 5px $red;
 
   &:hover {
     border-bottom-color: currentColor;
-    color: $gray;
+    color: $red;
   }
 }
 
@@ -228,7 +254,7 @@ h6 {
 
 .site-header,
 .site-nav {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   h1 {
     margin-bottom: .5rem;
@@ -236,7 +262,7 @@ h6 {
 }
 
 .site-nav a::before {
-  content: '\2190'; // left arrow
+  content: '\21b0';
   margin-right: .25rem;
 }
 
@@ -398,16 +424,35 @@ li p {
 
 .post {
   padding: 25px; /* mind the gap */
-  --aug-border: 2px;
-  --aug-border-bg: #ffeec1;
+  --aug-border: 3px;
+  --aug-border-bg: #{rgba(57, 126, 179, 1)};
+  --aug-inset: 5px;
+  --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
 }
 
+.content {
+  color: $black;
+  text-shadow: none;
+  font-family: $serif, serif;
+
+  a {
+    color: $blue;
+    text-shadow: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
 section#post-list {
   padding: 25px; /* mind the gap */
-  --aug-border: 2px;
-  --aug-border-bg: #ffeec1;
+  --aug-border: 3px;
+  --aug-border-bg: #{rgba(57, 126, 179, 1)};
+  --aug-inset: 5px;
+  --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
 }
@@ -428,4 +473,8 @@ section#post-list {
     padding: 0 10px;
     margin: 0;
   }
+}
+
+#comments {
+  padding: 25px;
 }
