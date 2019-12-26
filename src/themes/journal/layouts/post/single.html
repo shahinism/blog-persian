@@ -10,11 +10,7 @@
       </time>
     </a>
   </header>
-  <div id="toc" augmented-ui="tl-clip r-clip-y b-clip-x exe">
-    <p>
-      <strong>Table of Content:</strong>
-    </p>
-    <br />
+  <div>
     {{ if ne .Params.toc false }}
     {{ partial "toc.html" . }}
     {{ end }}

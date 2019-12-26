@@ -1,19 +1,25 @@
 {{ $headings := findRE "<h2.*?>(.|\n])+?</h2>" .Content }}
-<div class="child-borders">
+{{ if ne (print .TableOfContents) "" }}
+<div id="toc" class="child-borders" augmented-ui="tl-clip r-clip-y b-clip-x exe">
+  <p>
+    <strong>Table of Content:</strong>
+  </p>
+  <br />
   <div class="toc border" aria-labelledby="toc-heading">
     {{.TableOfContents}}
     <ol>
       {{ range $headings }}
-        <li>
-          {{ $id := findRE "id=\".*\"" . }}
-          {{ $id = index $id 0 }}
-          {{ $id = strings.TrimPrefix "id=\"" $id }}
-          {{ $id = strings.TrimSuffix "\"" $id }}
-          <a href="#{{ $id }}">
-            {{ . | htmlUnescape | plainify }}
-          </a>
-        </li>
+      <li>
+        {{ $id := findRE "id=\".*\"" . }}
+        {{ $id = index $id 0 }}
+        {{ $id = strings.TrimPrefix "id=\"" $id }}
+        {{ $id = strings.TrimSuffix "\"" $id }}
+        <a href="#{{ $id }}">
+          {{ . | htmlUnescape | plainify }}
+        </a>
+      </li>
       {{ end }}
     </ol>
   </div>
 </div>
+{{ end }}
