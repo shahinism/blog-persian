@@ -443,6 +443,7 @@ li p {
 
     &:hover {
       color: $red;
+      text-shadow: 0px 0px 1px $red;
     }
   }
 }
