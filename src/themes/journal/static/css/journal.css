@@ -304,95 +304,95 @@ li p {
 
 @keyframes noise-anim {
   0% {
-    clip-path: inset(19% 0 60% 0); }
+    clip-path: inset(53% 0 41% 0); }
   10% {
-    clip-path: inset(63% 0 15% 0); }
+    clip-path: inset(34% 0 25% 0); }
   20% {
-    clip-path: inset(75% 0 24% 0); }
+    clip-path: inset(69% 0 24% 0); }
   30% {
-    clip-path: inset(71% 0 28% 0); }
+    clip-path: inset(19% 0 56% 0); }
   40% {
-    clip-path: inset(24% 0 67% 0); }
+    clip-path: inset(62% 0 8% 0); }
   50% {
-    clip-path: inset(48% 0 16% 0); }
+    clip-path: inset(83% 0 18% 0); }
   60% {
-    clip-path: inset(42% 0 42% 0); }
+    clip-path: inset(85% 0 6% 0); }
   70% {
-    clip-path: inset(77% 0 16% 0); }
+    clip-path: inset(97% 0 3% 0); }
   80% {
-    clip-path: inset(74% 0 3% 0); }
+    clip-path: inset(70% 0 15% 0); }
   90% {
-    clip-path: inset(2% 0 23% 0); }
+    clip-path: inset(83% 0 6% 0); }
   100% {
-    clip-path: inset(72% 0 12% 0); } }
+    clip-path: inset(47% 0 25% 0); } }
 @keyframes noise-anim-2 {
   0% {
-    clip-path: inset(95% 0 2% 0); }
+    clip-path: inset(19% 0 15% 0); }
   3.33333% {
-    clip-path: inset(69% 0 10% 0); }
+    clip-path: inset(40% 0 54% 0); }
   6.66667% {
-    clip-path: inset(51% 0 10% 0); }
+    clip-path: inset(20% 0 54% 0); }
   10% {
-    clip-path: inset(6% 0 78% 0); }
+    clip-path: inset(42% 0 15% 0); }
   13.33333% {
-    clip-path: inset(58% 0 7% 0); }
+    clip-path: inset(94% 0 1% 0); }
   16.66667% {
-    clip-path: inset(95% 0 2% 0); }
+    clip-path: inset(13% 0 83% 0); }
   20% {
-    clip-path: inset(48% 0 10% 0); }
+    clip-path: inset(86% 0 11% 0); }
   23.33333% {
-    clip-path: inset(12% 0 58% 0); }
+    clip-path: inset(60% 0 8% 0); }
   26.66667% {
-    clip-path: inset(56% 0 42% 0); }
+    clip-path: inset(49% 0 32% 0); }
   30% {
-    clip-path: inset(11% 0 21% 0); }
+    clip-path: inset(73% 0 18% 0); }
   33.33333% {
-    clip-path: inset(31% 0 44% 0); }
+    clip-path: inset(53% 0 35% 0); }
   36.66667% {
-    clip-path: inset(5% 0 52% 0); }
+    clip-path: inset(84% 0 15% 0); }
   40% {
-    clip-path: inset(72% 0 27% 0); }
+    clip-path: inset(48% 0 52% 0); }
   43.33333% {
-    clip-path: inset(100% 0 1% 0); }
+    clip-path: inset(30% 0 36% 0); }
   46.66667% {
-    clip-path: inset(47% 0 43% 0); }
+    clip-path: inset(28% 0 4% 0); }
   50% {
-    clip-path: inset(66% 0 35% 0); }
+    clip-path: inset(91% 0 8% 0); }
   53.33333% {
-    clip-path: inset(90% 0 6% 0); }
+    clip-path: inset(46% 0 12% 0); }
   56.66667% {
-    clip-path: inset(82% 0 12% 0); }
+    clip-path: inset(96% 0 4% 0); }
   60% {
-    clip-path: inset(67% 0 15% 0); }
+    clip-path: inset(6% 0 61% 0); }
   63.33333% {
-    clip-path: inset(78% 0 23% 0); }
+    clip-path: inset(35% 0 21% 0); }
   66.66667% {
-    clip-path: inset(59% 0 8% 0); }
+    clip-path: inset(59% 0 41% 0); }
   70% {
-    clip-path: inset(12% 0 55% 0); }
+    clip-path: inset(76% 0 22% 0); }
   73.33333% {
-    clip-path: inset(99% 0 1% 0); }
+    clip-path: inset(10% 0 57% 0); }
   76.66667% {
-    clip-path: inset(2% 0 76% 0); }
+    clip-path: inset(91% 0 10% 0); }
   80% {
-    clip-path: inset(42% 0 10% 0); }
+    clip-path: inset(14% 0 49% 0); }
   83.33333% {
-    clip-path: inset(27% 0 39% 0); }
+    clip-path: inset(11% 0 58% 0); }
   86.66667% {
-    clip-path: inset(79% 0 3% 0); }
+    clip-path: inset(93% 0 7% 0); }
   90% {
-    clip-path: inset(1% 0 2% 0); }
+    clip-path: inset(59% 0 27% 0); }
   93.33333% {
-    clip-path: inset(76% 0 13% 0); }
+    clip-path: inset(20% 0 54% 0); }
   96.66667% {
-    clip-path: inset(31% 0 68% 0); }
+    clip-path: inset(2% 0 26% 0); }
   100% {
-    clip-path: inset(59% 0 33% 0); } }
+    clip-path: inset(64% 0 34% 0); } }
 .post {
   padding: 25px;
   /* mind the gap */
-  --aug-border: 3px;
-  --aug-border-bg: #397eb3;
+  --aug-border: 2px;
+  --aug-border-bg: #03efef;
   --aug-inset: 5px;
   --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
@@ -411,8 +411,8 @@ li p {
 section#post-list {
   padding: 25px;
   /* mind the gap */
-  --aug-border: 3px;
-  --aug-border-bg: #397eb3;
+  --aug-border: 2px;
+  --aug-border-bg: #03efef;
   --aug-inset: 5px;
   --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
