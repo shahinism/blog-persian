@@ -32,7 +32,13 @@
     </div>
 
   <script src="{{ "js/highlight.pack.js" | relURL }}"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="{{ "js/scrambler.min.js" | relURL }}"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+
+    // Scramble headers and links on page open!
+    Scrambler({target: 'h1, h2, h3, h4, h5, h6, a', random: [500, 1000], speed: 50})
+  </script>
 
   <div class="h-card" style="display:none;">
     <img src="https://www.gravatar.com/avatar/5b548c24fb12dcde259a7b07c0bb1361?s=300" alt="photo of " class="u-photo"/>
