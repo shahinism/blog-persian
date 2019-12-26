@@ -1,10 +1,8 @@
-{{ with .Get "url" }}
-<iframe height="800px" width="100%"
-        src="{{ . }}?lite=true"
-        scrolling="no"
-        frameborder="no"
-        allowtransparency="true"
-        allowfullscreen="true"
-        sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
-</iframe>
-{{ end }}
+{{ $url := .Get "url" | default (.Get 0) }}
+<a href="{{ $url }}" target=”_blank” rel=”noopener noreferrer”>
+  <div id="replit" augmented-ui="tr-clip-x bl-clip exe">
+    <div class="title">
+      $ open {{ replace $url "https://" "" }}<span class="blinking-cursor"> █</span>
+    </div>
+  </div>
+</a>

@@ -46,6 +46,7 @@ $break-small: 800px;
   100%{opacity: 0.9}
 }
 
+
 html {
   background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
 
@@ -478,4 +479,30 @@ section#post-list {
 
 #comments {
   padding: 25px;
+}
+
+#replit {
+  background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
+  animation: BackAnim 10s ease-in-out infinite;
+  padding: 10px;
+  font-family: $monospace, monospace;
+  text-transform: lowercase;
+  font-size: 90%;
+  cursor: pointer;
+
+  a {
+    color: #03efef;
+    &:hover {
+      color: $light-green;
+      text-shadow: 0px 0px 1px $green;
+    }
+  }
+}
+
+@keyframes Blink {
+  50% { opacity: 0.0; }
+}
+
+.blinking-cursor {
+  animation: Blink 1s linear infinite;
 }
