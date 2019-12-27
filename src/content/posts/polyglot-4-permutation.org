@@ -1,0 +1,193 @@
+---
+title: "Polyglot Dojo #4: Permutation"
+date: 2019-12-27T11:29:34+03:30
+draft: false
+type: post
+categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+social:
+  card: "summary"
+  site: "@shahinism"
+  title: "Polyglot Dojo #4: Permutation"
+  description: "In this post I'm going to talk about the permutation challenge. What we require to accomplish here is to compare to input strings and check if they have the same length with same set of characters case sensitively."
+  image: "https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png"
+---
+
+{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png">}}
+
+* Challenge
+
+In this post I'm going to talk about the [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/permutation/permutation_challenge.ipynb][permutation challenge]]. What we require
+to accomplish here is to compare two input strings and check if they have the
+same length with the same set of characters case sensitively.
+
+Our main constraints are defined as:
+
++ Can we assume the string is ASCII?
+  - Yes
+  - *Note*: Unicode strings could require special handling depending on your language
++ Is whitespace important?
+  - Yes
++ Is this case sensitive?  'Nib', 'bin' is not a match?
+  - Yes
++ Can we use additional data structures?
+  - Yes
++ Can we assume this fits in memory?
+  - Yes
+
+* Python Solution
+
+The unit tests provided for this challenge is as follows:
+
+#+BEGIN_SRC python
+from nose.tools import assert_equal
+
+class TestPermutation(object):
+
+    def test_permutation(self, func):
+        assert_equal(func(None, 'foo'), False)
+        assert_equal(func('', 'foo'), False)
+        assert_equal(func('Nib', 'bin'), False)
+        assert_equal(func('act', 'cat'), True)
+        assert_equal(func('a ct', 'ca t'), True)
+        assert_equal(func('dog', 'doggo'), False)
+        print('Success: test_permutation')
+
+
+def main():
+    test = TestPermutation()
+    permutations = Permutations()
+    test.test_permutation(permutations.is_permutation)
+    try:
+        permutations_alt = PermutationsAlt()
+        test.test_permutation(permutations_alt.is_permutation)
+    except NameError:
+        # Alternate solutions are only defined
+        # in the solutions file
+        pass
+
+
+if __name__ == '__main__':
+    main()
+#+END_SRC
+
+First I'm going to make sure the input arguments, have the valid type and the
+same length (passing the first two cases):
+
+#+BEGIN_SRC python
+class Permutations(object):
+
+    def is_permutation(self, str1, str2):
+        if not (isinstance(str1, str) and isinstance(str2, str)):
+            return False
+
+        if not len(str1) == len(str2):
+            return False
+
+#+END_SRC
+
+Now that we know that our inputs are valid and have the same length, it's time
+to check the permutation. For that we should make sure that they have the same
+set characters (ignoring the order). I know that the ~set~ data structure has
+some cool features for comparing two sets by each other, and reading [[https://docs.python.org/3/library/stdtypes.html#frozenset.symmetric_difference][its
+document]] I found ~symmetric_difference~ function which sounds like a good match:
+
+#+BEGIN_QUOTE
+Return a new set with elements in either the set or other but not both.
+#+END_QUOTE
+
+So if the resulting value of this function applied on our input strings is
+empty, we can be sure they have the same set of characters:
+
+#+BEGIN_SRC python
+str1 = set(str1)
+str2 = set(str2)
+return not str1.symmetric_difference(str2)
+#+END_SRC
+
+And it passes the test suite as you can confirm on replit:
+
+{{<replit "https://repl.it/@shahinism/Permutation-Python">}}
+
+The time complexity of ~symmetric_difference~ based on Python's [[https://wiki.python.org/moin/TimeComplexity][time complexity]]
+is $O(len(s))$ where s is the left most set in average case. And in the worst
+case it's $O(s * t)$ where t is the right most set. So it should be tolerable
+for our use case (considering the normal length of words).
+
+So far so good. Now let's look at the [[https://nbviewer.jupyter.org/github/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/permutation/permutation_solution.ipynb][two interesting answers]] provided by the
+challenge repository. The first one is what I like the most:
+
+#+BEGIN_SRC python
+class Permutations(object):
+
+    def is_permutation(self, str1, str2):
+        if str1 is None or str2 is None:
+            return False
+        return sorted(str1) == sorted(str2)
+#+END_SRC
+
+The value type validation is not what I like to use. Even in my own
+implementation I would like to raise a ~TypeError~ instead of returning ~False~,
+however, I returned ~False~ because it was expected in unit tests.
+
+Let's quit ranting and look at the brilliant part of the solution ~sorted(str1)
+== sorted(str2)~. The return value of ~sorted~ function is a sorted list of
+individual characters available in the string. The comparison between the lists
+returns ~True~ only if they have the same length and each element should
+have the same index in both of the lists.
+
+However the cleverness of this solution can become costly when the size of our
+strings is bigger (probably won't happen in this use-case). The reason for that
+is the builtin ~sorted~ function in Python has the complexity of $O(n\ log\ n)$
+for [[https://wiki.python.org/moin/TimeComplexity][average case]].
+
+Now it's time for the second solution they have provided:
+
+#+BEGIN_SRC python
+from collections import defaultdict
+
+
+class PermutationsAlt(object):
+
+    def is_permutation(self, str1, str2):
+        if str1 is None or str2 is None:
+            return False
+        if len(str1) != len(str2):
+            return False
+        unique_counts1 = defaultdict(int)
+        unique_counts2 = defaultdict(int)
+        for char in str1:
+            unique_counts1[char] += 1
+        for char in str2:
+            unique_counts2[char] += 1
+        return unique_counts1 == unique_counts2
+#+END_SRC
+
+This is probably the most solid solution time wise (having time complexity of
+$O(n)$. How this solution works is based on the comparison of two ~dict~ where
+the keys are unique characters and values are the number of repetitions. As a
+matter of fact this solution (comparing dict of repetition counter) is enough by
+itself and makes the length comparison a redundant part of the source code. The
+following version would work the same:
+
+#+BEGIN_SRC python
+from collections import defaultdict
+
+
+class PermutationsAlt(object):
+
+    def is_permutation(self, str1, str2):
+        if str1 is None or str2 is None:
+            return False
+
+        unique_counts1 = defaultdict(int)
+        unique_counts2 = defaultdict(int)
+        for char in str1:
+            unique_counts1[char] += 1
+        for char in str2:
+            unique_counts2[char] += 1
+        return unique_counts1 == unique_counts2
+#+END_SRC
+
+You can confirm it in my replit entry as well:
+
+{{<replit "https://repl.it/@shahinism/Permutation-Python">}}
