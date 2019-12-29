@@ -25,21 +25,59 @@
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="webmention" href="https://webmention.io/username/webmention" />
 
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" type="text/css" href="{{ "css/highlight.css" | relURL }}"  as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
-      <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
-      <link rel="stylesheet" href="{{ "css/highlight.css" | relURL }}">
-    </noscript>
-
-    <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
     <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
     {{ partial "twitter-card" . }}
     {{ partial "facebook-card" . }}
     {{ partial "analytics" . }}
+    <style>
+      html {
+        background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
+
+        color: #93EDF5;
+        text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.83);
+        font-family: $monospace, monospace;
+        font-size: 1rem;
+      }
+
+      body {
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 38rem;
+        margin: 0 auto;
+        padding: .5rem;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .content {
+        background-color: #fdf6e3;
+        color: #000;
+        text-shadow: none;
+        font-family: $serif, serif;
+      }
+
+      .content a {
+        color: #001eff;
+      }
+
+    </style>
+
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" type="text/css" href="{{ "css/highlight.css" | relURL }}"  as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" type="text/css" href="{{ "css/journal.css" | relURL }}"  as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
+      <link rel="stylesheet" href="{{ "css/highlight.css" | relURL }}">
+      <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
+    </noscript>
   </head>
 
   <body>

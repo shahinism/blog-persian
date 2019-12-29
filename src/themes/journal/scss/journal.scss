@@ -437,6 +437,7 @@ li p {
   color: $black;
   text-shadow: none;
   font-family: $serif, serif;
+  background-color: transparent;
 
   a {
     color: $blue;
@@ -457,16 +458,6 @@ section#post-list {
   --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
-
-  ul {
-    // To make text readable while the augmentet style is side loading
-    background: #fdf6e3;
-  }
-}
-
-.e-content {
-  // To make text readable while the augmentet style is side loading
-  background: #fdf6e3;
 }
 
 #toc, #meta, #comments {
