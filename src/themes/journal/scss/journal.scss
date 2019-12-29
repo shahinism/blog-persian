@@ -485,7 +485,7 @@ section#post-list {
   padding: 25px;
 }
 
-#replit {
+.replit {
   background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
   animation: BackAnim 10s ease-in-out infinite;
   padding: 10px;
@@ -493,13 +493,12 @@ section#post-list {
   text-transform: lowercase;
   font-size: 90%;
   cursor: pointer;
+  display: block;
 
-  a {
-    color: #03efef;
-    &:hover {
-      color: $light-green;
-      text-shadow: 0px 0px 1px $green;
-    }
+  color: #03efef !important;
+  &:hover {
+    color: $light-green !important;
+    text-shadow: 0px 0px 1px $green !important;
   }
 }
 

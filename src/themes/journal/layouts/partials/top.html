@@ -19,15 +19,15 @@
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="og:type" content="article">
-    <meta name="description" content="{{ .Description }}">
+    <meta name="description" content="{{ .Params.social.description }}">
     {{- end }}
 
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="webmention" href="https://webmention.io/username/webmention" />
 
-    <link rel="preload" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" rel="stylesheet" type="text/css" href="{{ "css/highlight.css" | relURL }}"  as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" type="text/css" href="{{ "css/highlight.css" | relURL }}"  as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
       <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">

@@ -37,16 +37,18 @@
     hljs.initHighlightingOnLoad()
 
     // Scramble headers and links on page open!
-    Scrambler({target: 'h1, h2, h3, h4, h5, h6, a', random: [500, 1000], speed: 50})
+    window.onload = function () {
+      Scrambler({target: 'h1, h2, h3, h4, h5, h6, a', random: [500, 1000], speed: 50})
+    }
   </script>
 
   <div class="h-card" style="display:none;">
-    <img src="https://www.gravatar.com/avatar/5b548c24fb12dcde259a7b07c0bb1361?s=300" alt="photo of " class="u-photo" loading="lazy"/>
+    <img src="https://res.cloudinary.com/shahinism/image/upload/v1577605467/BlogPhotos/5b548c24fb12dcde259a7b07c0bb1361.jpg" alt="photo of " class="u-photo" loading="lazy" />
     <a class="p-name u-url" href="https://shahinism.com">Reza Khanipour (Shahin)</a>
     <a class="u-email" href="mailto:ishahinism@gmail.com">ishahinism@gmail.com</a>
     <span class="nickname">Shahinism</span>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/loadCSS/2.1.0/cssrelpreload.min.js" integrity="sha256-Gc/KiOM8sfVulX8aZT06ytl/fMkn0LLjKagOrSZFeNM=" crossorigin="anonymous"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/loadCSS/2.1.0/cssrelpreload.min.js" integrity="sha256-Gc/KiOM8sfVulX8aZT06ytl/fMkn0LLjKagOrSZFeNM=" crossorigin="anonymous"></script>
   </body>
 </html>
