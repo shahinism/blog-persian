@@ -457,6 +457,10 @@ section#post-list {
   --aug-inset-bg: #fdf6e3;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
+
+  ul {
+    background: #fdf6e3;
+  }
 }
 
 #toc, #meta, #comments {
