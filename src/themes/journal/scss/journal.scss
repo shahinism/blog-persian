@@ -459,8 +459,14 @@ section#post-list {
   --aug-l-width: 10px;
 
   ul {
+    // To make text readable while the augmentet style is side loading
     background: #fdf6e3;
   }
+}
+
+.e-content {
+  // To make text readable while the augmentet style is side loading
+  background: #fdf6e3;
 }
 
 #toc, #meta, #comments {
