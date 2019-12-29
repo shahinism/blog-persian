@@ -12,7 +12,7 @@ social:
   image: "https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png">}}
+{{<figure alt="fizzbuzz poster" src="https://res.cloudinary.com/shahinism/image/upload/v1576943116/BlogPhotos/fizzbuzz.png">}}
 
 * Updates
 - *[2019-12-23 Mon]*: Added Rust Solution.

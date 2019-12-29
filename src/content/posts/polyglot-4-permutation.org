@@ -12,7 +12,7 @@ social:
   image: "https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png">}}
+{{<figure alt="permutation poster" src="https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png">}}
 
 * Challenge
 

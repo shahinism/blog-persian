@@ -12,7 +12,7 @@ social:
   image: "https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png">}}
+{{<figure alt="hashmap poster" src="https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png">}}
 
 * Challenge
 

@@ -12,7 +12,7 @@ social:
   image: "https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg">}}
+{{<figure alt="matrix dojo" src="https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg">}}
 
 * Overview
 In this series of blog posts, I plan to solve programming challenges I find

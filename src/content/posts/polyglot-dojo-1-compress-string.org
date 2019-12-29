@@ -12,7 +12,7 @@ social:
   image: "https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg"
 ---
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg">}}
+{{<figure alt="character mess poster" src="https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg">}}
 
 * Challenge
 The first challenge we pick to solve is [[https://github.com/donnemartin/interactive-coding-challenges/blob/master/arrays_strings/compress/compress_challenge.ipynb][Compress Challange]]. The description of
@@ -63,7 +63,7 @@ The high-level representation of the idea I can think of here is that we want
 to group continuous alike characters from a string, and then represent their
 group length as a number. Kind of like the following picture:
 
-{{<figure src="https://res.cloudinary.com/shahinism/image/upload/v1575530542/BlogPhotos/groupby.png">}}
+{{<figure alt="groupby visualization" src="https://res.cloudinary.com/shahinism/image/upload/v1575530542/BlogPhotos/groupby.png">}}
 
 The first approach I tried here was using [[https://docs.python.org/3/library/collections.html#collections.Counter][collection.Counter]]. Here is an
 example of how we can use it:
