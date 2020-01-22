@@ -124,8 +124,6 @@ ul {
 
 li {
   margin: 0; }
-  li:not(last-of-type) {
-    margin-bottom: .4rem; }
 
 abbr {
   border-bottom: 1px dashed currentColor;
