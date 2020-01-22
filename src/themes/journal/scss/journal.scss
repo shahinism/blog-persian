@@ -375,54 +375,6 @@ li p {
   text-transform: uppercase;
 }
 
-.glitch {
-  position: relative;
-
-  &::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 2px;
-    text-shadow: -1px 0 $green;
-    top: 0;
-    background: $background;
-    overflow: hidden;
-    animation: noise-anim 8s infinite linear alternate-reverse;
-  }
-
-  &::before {
-    content: attr(data-text);
-    position: absolute;
-    left: -2px;
-    text-shadow: 1px 0 $blue;
-    top: 0;
-    background: $background;
-    overflow: hidden;
-    animation: noise-anim-2 30s infinite linear alternate-reverse;
-  }
-}
-
-@keyframes noise-anim {
-  $steps: 10;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-      clip-path: inset(unquote("#{$top}% 0 #{$bottom}% 0"));
-    }
-  }
-}
-
-@keyframes noise-anim-2 {
-  $steps: 30;
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-      clip-path: inset(unquote("#{$top}% 0 #{$bottom}% 0"));
-    }
-  }
-}
-
 .post {
   padding: 25px; /* mind the gap */
   --aug-border: 2px;

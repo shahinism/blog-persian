@@ -4,7 +4,7 @@
   <header class="post-header">
     <a class="u-url" href="{{ .Permalink }}">
       <span class="p-author h-card" style="display:none;">{{ .Params.author | default .Site.Author.name }}</span>
-      <time class="post-date dt-published glitch"
+      <time class="post-date dt-published"
         data-text='{{ .Date.Format "02 Jan 2006" }}' datetime='{{ .Date.Format "2006-01-02 15:04:05 MST" }}'>
         {{ .Date.Format "02 Jan 2006" }}
       </time>

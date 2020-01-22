@@ -4,13 +4,13 @@
 
     {{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
     <section id="post-list" class="content" augmented-ui="tr-clip l-clip-y r-clip-y exe">
-      <h2 class="glitch" data-text="{{ .Key }}">{{ .Key }}</h2>
+      <h2 data-text="{{ .Key }}">{{ .Key }}</h2>
 
       <ul>
         {{ range .Pages -}}
         <li>
           <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">
-            <div class="timestamp glitch" data-text='{{ .Date.Format "[Jan 02]"}}'>{{ .Date.Format "[Jan 02]"}}</div>
+            <div class="timestamp" data-text='{{ .Date.Format "[Jan 02]"}}'>{{ .Date.Format "[Jan 02]"}}</div>
           </time>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
