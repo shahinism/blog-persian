@@ -1,10 +1,8 @@
 $black: #303030;
 $gray: #686868;
-$background: #fdf6e3;
-$border-light: #ffeec1;
 $light-gray: #e5e5e5;
 $white: #fbfbfb;
-$serif: 'Arvo';
+$serif: 'Sans-Serif';
 // https://www.color-hex.com/color-palette/77451
 // https://www.color-hex.com/color-palette/85528
 $blue: #001eff;
@@ -14,9 +12,9 @@ $green: #3fff2d;
 $light-green: #00ff9f;
 $red: #ff2b2b;
 $pink: #fd34b2;
-$monospace: '"Source Code Pro"';
+$monospace: monospace;
 $fs: 1rem;
-$fs-large: 1.1rem;
+$fs-large: 1rem;
 $std-margin: 0 0 1rem;
 $break-small: 800px;
 
@@ -48,13 +46,12 @@ $break-small: 800px;
 
 
 html {
-  background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
+  background: #000;
 
   color: #93EDF5;
   text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.83);
-  font-family: $monospace, monospace;
+  font-family: $monospace;
   font-size: $fs;
-  animation: BackAnim 10s ease-in-out infinite;
 
   @media screen and (min-width: $break-small) {
     font-size: $fs-large;
@@ -182,7 +179,7 @@ abbr {
 kbd,
 code,
 pre {
-  font-family: $monospace, monospace;
+  font-family: $monospace;
 }
 
 pre {
@@ -199,9 +196,13 @@ p code {
   color: lime;
   display: inline-block;
   border-radius: 5px;
-  font-family: '"Source Code Pro"', monospace;
-  font-size: 0.8rem;
+  font-family: $monospace;
+  font-size: 0.9rem;
   padding: 0px 5px 2px;
+}
+
+.hljs {
+  font-size: 0.9rem;
 }
 
 article,
@@ -326,10 +327,6 @@ h6 {
   }
 }
 
-.hljs {
-  font-size: .7rem;
-}
-
 // Shahin
 pre.example {
   background: #3f3f3f;
@@ -371,7 +368,7 @@ li p {
 }
 
 .timestamp {
-  font-family: $monospace, monospace !important;
+  font-family: $monospace !important;
   text-transform: uppercase;
 }
 
@@ -380,7 +377,7 @@ li p {
   --aug-border: 2px;
   --aug-border-bg: #03efef;
   --aug-inset: 5px;
-  --aug-inset-bg: #fdf6e3;
+  --aug-inset-bg: #fdfdfd;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
 }
@@ -407,7 +404,7 @@ section#post-list {
   --aug-border: 2px;
   --aug-border-bg: #03efef;
   --aug-inset: 5px;
-  --aug-inset-bg: #fdf6e3;
+  --aug-inset-bg: #fdfdfd;
   --aug-l-height: 80%;
   --aug-l-width: 10px;
 }
@@ -415,11 +412,9 @@ section#post-list {
 #toc, #meta, #comments {
   padding: 20px 10px; /* mind the gap */
   margin-bottom: 20px;
-  font-size: 80%;
   --aug-inset: 5px;
-  --aug-inset-bg: #ffeec1;
-  --aug-border: 2px;
-  --aug-border-bg: #ffeec1;
+  --aug-border:1px;
+  --aug-border-bg: #e8e8e8;
   --aug-b-width: 80%;
   --aug-b-height: 5px;
   --aug-r-width: 5px;
@@ -435,12 +430,10 @@ section#post-list {
 }
 
 .replit {
-  background: #051D29  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAIAQMAAAAC1AcCAAAABlBMVEUAAAEAAAAd296qAAAAAnRSTlMzGn+aUXIAAAANSURBVAjXY2iAQigAABgQAgEG08l5AAAAAElFTkSuQmCC') repeat 300% 300%;
-  animation: BackAnim 10s ease-in-out infinite;
+  background: #000;
   padding: 10px;
-  font-family: $monospace, monospace;
+  font-family: $monospace;
   text-transform: lowercase;
-  font-size: 90%;
   cursor: pointer;
   display: block;
 
