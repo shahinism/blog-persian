@@ -1,0 +1,17 @@
+<nav class="main-nav">
+  <div id="navbar">
+    <ul>
+      {{ if not .IsHome }}
+      <li>
+        <a href='{{ .Site.BaseURL }}'>{{ .Site.Params.home | default "../Home" }}</a>
+      </li>
+      {{ end }}
+
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href='{{ .URL }}'>{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

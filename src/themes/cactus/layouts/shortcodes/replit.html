@@ -1,0 +1,4 @@
+{{ $url := .Get "url" | default (.Get 0) }}
+<a class="replit" augmented-ui="tr-clip-x bl-clip exe" href="{{ $url }}" target=”_blank” rel=”noopener noreferrer”>
+  $ open {{ replace $url "https://" "" }}<span class="blinking-cursor"> █</span>
+</a>

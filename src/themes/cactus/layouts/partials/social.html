@@ -1,0 +1,9 @@
+<div id="social">
+  <ul>
+  {{ range $key, $val := .Site.Social }}
+    <li>
+      <a href="{{ $val }}">{{ $key }}</a>
+    </li>
+  {{ end }}
+  </ul>
+</div>

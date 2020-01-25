@@ -1,0 +1,9 @@
+<script src="{{ "js/main.js" | absURL }}"></script>
+<script src="{{ "js/highlight.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{{ range .Site.Params.customJS }}
+<script src="{{ . | absURL }}"></script>
+{{ end }}
+
+{{ template "_internal/google_analytics.html" . }}

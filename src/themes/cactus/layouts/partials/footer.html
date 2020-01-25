@@ -1,0 +1,13 @@
+<footer id="footer">
+  <div class="wrapper">
+    {{ if .Site.Social }}
+    <h2>[Social]</h2>
+    {{ partial "social.html" . }}
+    {{ end }}
+
+    {{ if isset .Site.Params "gpg" -}}
+    <h2>[PGP]</h2>
+    <a itemprop="sameAs" href="{{ .Site.Params.gpg.link }}" title="PGP {{ .Site.Params.gpg.key }}">{{ .Site.Params.gpg.fingerprint }}</a>
+    {{ end }}
+  </div>
+</footer>

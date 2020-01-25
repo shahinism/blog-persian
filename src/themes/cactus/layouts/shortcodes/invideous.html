@@ -1,0 +1,10 @@
+{{ $id := .Get "id" | default (.Get 0) }}
+{{- $class := .Get "class" | default (.Get 1) }}
+<div {{ with $class }}class="{{ . }}"{{ else }}style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; text-align: center;"{{ end }}>
+    <iframe id='ivplayer'
+            type='text/html'
+            width='640'
+            height='360'
+            src='https://invidio.us/embed/{{ $id }}'
+            frameborder='0'></iframe>
+</div>

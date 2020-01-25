@@ -1,7 +1,7 @@
 baseURL = "https://shahinism.com/en/"
 languageCode = "en-us"
 title = "Shahinism"
-theme = "journal"
+theme = "cactus"
 markup = "org"
 disqusShortname = "shahinism-en"
 
@@ -10,15 +10,37 @@ disqusShortname = "shahinism-en"
   homepage = "https://shahinism.com/"
 
 [params]
+  name = "Shahinism"
   description = "The personal public journal, written by Shahin."
   githubUsername = "shahinism"
   twitterUsername = "shahinism"
   tagline = "Sometimes you gotta run before you can walk."
+  aboutAuthor = "Data engineer by day; Software craftner by night."
+
+  # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+  iconFont = "mono-social"
+  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+  socialIconStyle = "circle"
 
 [params.gpg]
   key = "0xCAA76996F3C44A6D"
   fingerprint = "FC2D 2C1E B4BB A9FF 6645  4511 CAA7 6996 F3C4 4A6D"
   link = "https://keybase.io/shahinism"
 
-[params.comments]
-url = "https://comments.shahinism.com"
+
+[social]
+    twitter  = "https://twitter.com/shahinism"
+    github   = "https://www.github.com/shahinism"
+
+
+[menu]
+  [[menu.main]]
+    # identifier = "twitter"
+    # name = "/Twitter"
+    # pre = "<i class='fa fa-heart'></i>"
+    # url = "https://github.com/shahinism"
+  [[menu.main]]
+    # identifier = "github"
+    # name = "/Github"
+    # pre = "<i class='fa fa-heart'></i>"
+    # url = "https://github.com/shahinism"
