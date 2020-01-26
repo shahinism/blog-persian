@@ -1,0 +1,77 @@
+---
+title: "TIL IPython SQL"
+date: 2020-01-26T18:03:28+03:30
+draft: false
+type: post
+tags: ["jupyter", "python", "sql"]
+site: "@shahinism"
+description: ""
+---
+
+It has been a long time since I started using Jupyter Notebooks for my
+experiments (back then it was called IPython Notebook, and I had no idea about
+the data related stuff yet). I've used different kernels, mostly while I was
+learning different languages. However, somehow I've never been happier than
+today!
+
+I never was too fond of the idea of embedding SQL snippets inside string
+literals. It works for small queries, but as soon as your query logic grows,
+it'll get painful — no syntax highlighting, no auto-completion, no linting and so
+on. I know about Emacs's [[https://www.emacswiki.org/emacs/MultipleModes][MultiModes]], but they are not suitable when you are in a
+team where each of your colleagues prefers a different editor. When it comes to
+Python source files, I will create software interfaces to take care of this
+complication, or if possible, I use [[https://www.sqlalchemy.org/][SQLAlchemy]].
+
+However, when it comes to quick experimenting with your data, there was no easy
+way around it. All of those solutions need some boilerplate codes. Usually, it's
+hard to develop a general enough helper to be suitable for every scenario (other
+than a [[https://github.com/shahinism/PersonalDojo/blob/master/data_engineering/1-data-modeling/project_1/sql_functions.py#L4][simple SQL runner]] of course).
+
+This was my state until I learned some beautiful mind out there has developed
+something called [[https://github.com/catherinedevlin/ipython-sql][ipython-notebook]] which allows you to run ad-hoc SQL inside
+Python notebooks.
+
+If you've used Jupyter for some time, you might have heard of those helpful
+~%~-sign syntaxes called magics. After installing:
+
+#+BEGIN_SRC bash
+$ pip install ipython-sql
+#+END_SRC
+
+And loading it as an extension:
+
+#+BEGIN_SRC python
+%load_ext sql
+#+END_SRC
+
+You can prefix your normal SQL scripts with ~%sql~ and run them directly:
+
+#+BEGIN_SRC python
+conn_string = f"postgresql://{username}:{password}@{host}/{database}"
+%sql conn_string
+# Connected user@db
+%sql SELECT * FROM mytable LIMIT 5
+#+END_SRC
+
+As always Jupyter will automatically style the tabular data and, you can quickly
+examine the results. You can also use ~%%sql~ to run multi-line queries:
+
+#+BEGIN_SRC python
+%%sql
+SELECT
+    product,
+    count(*) AS n
+FROM inventor
+GROUP BY product
+ORDER BY n;
+#+END_SRC
+
+And the cool stuff, doesn't end there. You can also assign the result to a
+normal python variable:
+
+#+BEGIN_SRC python
+result = %sql SELECT * FROM product;
+#+END_SRC
+
+If you as well somehow missed this cool extension, you can learn more about it
+from its [[https://github.com/catherinedevlin/ipython-sql][main repository here]].
