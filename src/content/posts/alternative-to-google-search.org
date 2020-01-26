@@ -3,17 +3,14 @@ title: "How to not use Google search"
 date: 2019-06-04T12:44:14+04:30
 draft: false
 type: post
-categories: ["privacy"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "How to not use Google search"
-  description: "It’s almost about 6 months since the last time I used Google search as my main search engine. This idea of using an alternative search engine was bugging me for a long time. Almost seven years to be exact."
-  image: "https://i.imgur.com/5Y8shRM.png"
+tags: ["privacy"]
+site: "@shahinism"
+description: "It’s almost about 6 months since the last time I used Google search as my main search engine. This idea of using an alternative search engine was bugging me for a long time. Almost seven years to be exact."
+image: "https://i.imgur.com/5Y8shRM.png"
 ---
 
 ** Prelude
-   
+
 It’s almost about 6 months since the last time I used Google search as my main
 search engine. This idea of using an alternative search engine was bugging me
 for a long time. Almost seven years to be exact. I remember the first time I
@@ -41,7 +38,7 @@ comes to privacy and the size of its monopoly and power (considering all
 marketing trackers provided by Google which are the standards of the web, just
 try to imagine where it can’t follow you and collect data about your choices),
 pushes users to dig deeper to find a suitable alternative for it. Here are the
-options I’ve tried so far: 
+options I’ve tried so far:
 
 ** DuckDuckGo
 
@@ -56,7 +53,7 @@ There are some really great features which will make it more bearable as the mai
 
 - *The [[http://duckduckhack.com/][instant answers]]:* These are great and especially helpful to programmers. Take a look at [[https://gadgets.ndtv.com/internet/features/12-things-duckduckgo-can-do-that-google-cant-596526][this page]] for some examples.
 - *[[https://duckduckgo.com/bang][Bangs]]:* Well, some people may like these. It’s helpful if you want to use target site's search engine (like IMDB search) to get results of your query instead of the search engine itself. I personally use the search engine itself to query such terms or use a tool like [[https://en.wikipedia.org/wiki/Surfraw][Surfraw]] to achieve the same result.
-  
+
 I personally, never could completely switch to DDG. Here are some of the reasons
 which pushed me back to Google:
 
@@ -84,12 +81,12 @@ which pushed me back to Google:
   engines. I personally tried multiple times emailing them about it (there is an
   email address to report mistakenly filtered websites), but as we used to,
   there was no response to it.
-  
+
   {{< giphy url="https://giphy.com/embed/1APaaUc09xFSGHXECL" >}}
 - *Not very friendly with [[https://en.wikipedia.org/wiki/Persian_language][Persian]] content:* Not much to say here. The results are usually the least related ones and hugely old.
 
 ** Startpage.com
-   
+
 [[https://startpage.com][Startpage]] was the first alternative I could get used to using it instantly. At
 least it proved that I’m not too addicted to the Google search’s interface
 :joy:. The reason is here:
@@ -119,9 +116,9 @@ least it proved that I’m not too addicted to the Google search’s interface
   to ICT in Iran, is how to set up a VPN and use it. To be honest, I started
   learning Linux and programming mostly because I was trying to find out a way
   to not be blocked by internet filtering mechanism in Iran :wink:.
-  
+
 ** SearX
-   
+
 [[https://searx.me/][This one]] probably will be my ultimate option. An opensource,
 self-hosted/distributed meta-search engine which other than Google supports a
 lot of other engines available out there. Take a look at the Engines tab [[https://searx.me/preferences][in this
@@ -139,7 +136,7 @@ DDOS attacks) from IP ranges (happens a lot with VPSs from [[https://www.digital
 requires users to solve their stupid captcha (usually multiple times in a row).
 
 ** Final Words
-   
+
 This is my experience so far. I’ll be glad to hear yours. Ping me on Twitter by
 [[https://twitter.com/shahinism][@shahinism]] and share and share your ideas.
 

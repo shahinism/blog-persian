@@ -3,13 +3,10 @@ title: "My Journey to Privacy"
 date: 2019-05-16T18:27:30+04:30
 draft: false
 type: post
-categories: ["privacy"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "My Journey to Privacy"
-  description: "You can’t unplug yourself by choosing the right color of pill"
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1558021215/matrix.png"
+tags: ["privacy"]
+site: "@shahinism"
+description: "You can’t unplug yourself by choosing the right color of pill"
+image: "https://res.cloudinary.com/shahinism/image/upload/v1558021215/matrix.png"
 ---
 
 A decade ago, it was easier for ordinary people to start using the internet
@@ -62,7 +59,7 @@ the hand of corporations or states.
 
 This may sound easy, but it’s absolutely not. You can’t unplug yourself by
 choosing the right color of pill. To achieve this goal, I should work on my
-personal skill set as well as my computer skills. 
+personal skill set as well as my computer skills.
 
 {{<giphy url="https://giphy.com/embed/yvFyW3wDdrTDq">}}
 

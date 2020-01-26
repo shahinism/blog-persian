@@ -3,13 +3,10 @@ title: "Polyglot Dojo #3: Hashmap"
 date: 2019-12-25T09:28:32+03:30
 draft: false
 type: post
-categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "Polyglot Dojo #3: Hashmap"
-  description: "In this blog post, we tend to implement a hash map!"
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png"
+tags: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+site: "@shahinism"
+description: "In this blog post, we tend to implement a hash map!"
+image: "https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png"
 ---
 
 {{<figure alt="hashmap poster" src="https://res.cloudinary.com/shahinism/image/upload/v1577254503/BlogPhotos/hashmap.png">}}

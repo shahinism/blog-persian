@@ -3,7 +3,7 @@ title: "First Post"
 date: 2019-04-23T17:11:24+04:30
 type: post
 draft: false
-categories: ["personal"]
+tags: ["personal"]
 ---
 
 A couple of years ago I was considering myself a blogger, with a decent

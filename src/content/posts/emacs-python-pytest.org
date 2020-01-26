@@ -3,13 +3,10 @@ title: "Run Python test suites without leaving Emacs"
 date: 2019-05-27T16:47:50+04:30
 draft: false
 type: post
-categories: ["emacs", "productivity"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "Run Python test suites without leaving Emacs"
-  description: "My configuration using the 'python-pytest-emacs' package."
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1558962125/emacs.pytest_ba9pif.png"
+tags: ["emacs", "productivity"]
+site: "@shahinism"
+description: "My configuration using the 'python-pytest-emacs' package."
+image: "https://res.cloudinary.com/shahinism/image/upload/v1558962125/emacs.pytest_ba9pif.png"
 ---
 
 Recently, I'm trying to overcome my laziness and incorporate more automated

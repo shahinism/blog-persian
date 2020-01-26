@@ -3,13 +3,10 @@ title: "Polyglot Dojo #0: Introduction"
 date: 2019-11-29T11:11:37+03:30
 draft: false
 type: post
-categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "Polyglot Dojo #0: Introduction"
-  description: "In this series of posts on my blog, I plan to solve programming challenges I find around the internet, in books or throughout my daily job in different languages. However, before we start, I want to set some ground rules to keep myself motivated and also share the point of this series"
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg"
+tags: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+site: "@shahinism"
+description: "In this series of posts on my blog, I plan to solve programming challenges I find around the internet, in books or throughout my daily job in different languages. However, before we start, I want to set some ground rules to keep myself motivated and also share the point of this series"
+image: "https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg"
 ---
 
 {{<figure alt="matrix dojo" src="https://res.cloudinary.com/shahinism/image/upload/v1575032486/BlogPhotos/matrixdojo.jpg">}}

@@ -3,13 +3,10 @@ title: "Polyglot Dojo #1: Compress String"
 date: 2019-12-03T23:09:00+03:30
 draft: false
 type: post
-categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "Polyglot Dojo #1: Compress String"
-  description: "Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'. Only compress the string if it saves space"
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg"
+tags: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+site: "@shahinism"
+description: "Compress a string such that 'AAABCCDDDD' becomes 'A3BC2D4'. Only compress the string if it saves space"
+image: "https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg"
 ---
 
 {{<figure alt="character mess poster" src="https://res.cloudinary.com/shahinism/image/upload/v1575554289/BlogPhotos/photo-1516259762381-22954d7d3ad2.jpg">}}

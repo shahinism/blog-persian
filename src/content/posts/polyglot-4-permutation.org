@@ -3,13 +3,10 @@ title: "Polyglot Dojo #4: Permutation"
 date: 2019-12-27T11:29:34+03:30
 draft: false
 type: post
-categories: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
-social:
-  card: "summary"
-  site: "@shahinism"
-  title: "Polyglot Dojo #4: Permutation"
-  description: "In this post I'm going to talk about the permutation challenge. What we require to accomplish here is to compare to input strings and check if they have the same length with same set of characters case sensitively."
-  image: "https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png"
+tags: ["python", "clojure", "rust", "programming challange", "polygot dojo"]
+site: "@shahinism"
+description: "In this post I'm going to talk about the permutation challenge. What we require to accomplish here is to compare to input strings and check if they have the same length with same set of characters case sensitively."
+image: "https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png"
 ---
 
 {{<figure alt="permutation poster" src="https://res.cloudinary.com/shahinism/image/upload/v1577438023/BlogPhotos/permutation.png">}}

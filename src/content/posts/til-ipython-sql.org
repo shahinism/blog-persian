@@ -5,7 +5,7 @@ draft: false
 type: post
 tags: ["jupyter", "python", "sql"]
 site: "@shahinism"
-description: ""
+description: "I learned some beautiful mind out there has developed something called ipython-notebook which allows you to run ad-hoc SQL inside Python notebooks."
 ---
 
 It has been a long time since I started using Jupyter Notebooks for my
