@@ -1,8 +1,11 @@
 <ul class="post-list">
+    <h2 style="text-transform: capitalize;">[{{ .Title }}]</h2>
     {{ range where .Paginator.Pages "Section" "ne" "" }}
         <li>
-            <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2 2006" }}</aside></a>
-            <a href='{{ .Permalink }}'>{{ .LinkTitle }}<h2>{{ .Description | markdownify }}</h2></a>
+          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">
+            <aside class="dates">{{ .Date.Format "[Jan 02]"}}</aside>
+          </time>
+          <a href='{{ .Permalink }}'>{{ .LinkTitle }}</a>
         </li>
     {{ end }}
 </ul>
