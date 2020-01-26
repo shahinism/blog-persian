@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ range (where .Data.Pages "Type" "post").GroupByDate "[2006]" -}}
+    {{ range (where .Site.RegularPages "Type" "post").GroupByDate "[2006]" -}}
 
       <ul id="post-list">
         <h2>{{ .Key }}</h2>
