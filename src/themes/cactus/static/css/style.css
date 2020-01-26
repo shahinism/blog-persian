@@ -126,7 +126,7 @@ a {
   font-weight: bold;
 }
 
-a:hover, #post-list a:hover {
+a:hover, .post-list a:hover {
   color: #fd5e53;
 }
 
@@ -211,7 +211,7 @@ em, i { font-style: italic; }
   display: inline-block;
 }
 
-#post-list h2 {
+.post-list h2 {
   font: normal 17px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #aaa;
   max-width: 400px;
@@ -336,21 +336,21 @@ Post List
   margin-top: 100px;
 }
 
-#post-list, li p {
+.post-list, li p {
   margin-bottom: 0;
 }
 
-#post-list li,#archive-list li {
+.post-list li,#archive-list li {
   border-top: 1px solid #eee;
   list-style-type: none;
   margin-bottom: 0;
 }
 
-#post-list li:last-child {
+.post-list li:last-child {
   border-bottom: 1px solid #eee;
 }
 
-#post-list a {
+.post-list a {
   color: #333;
   display: block;
   font: bold 19px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
@@ -358,7 +358,7 @@ Post List
   padding-bottom: 20px;
 }
 
-#post-list .dates {
+.post-list .dates {
   float: right;
   position: relative;
   top: 1px;
@@ -369,7 +369,7 @@ Post List
   padding-bottom: 20px;
 }
 
-#post-list-footer {
+.post-list-footer {
   border-top: 1px solid #eee;
   margin-top: 20px;
   padding-top: 100px;
@@ -543,22 +543,22 @@ h2.month {
   box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
 }
 
-#post-list.archive.readmore h3{
+.post-list.archive.readmore h3{
 
   font: 400 20px "Helvetica Neue", Helvetica,Arial,sans-serif;
   font-weight: bold;
 }
 
-#post-list.archive.readmore a{
+.post-list.archive.readmore a{
   font: 400 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
   color: #5694f1;
 }
 
-#post-list.archive.readmore a:hover{
+.post-list.archive.readmore a:hover{
   opacity: 0.8;
 }
 
-#post-list.archive.readmore .dates{
+.post-list.archive.readmore .dates{
   font: 300 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
 }
 #sharing a.facebook {
@@ -583,13 +583,13 @@ h2.month {
   .wrapper { padding:20px 20px 20px 20px;}
   .post { margin: 40px 0; }
 
-  #post-list, #archive-list { margin-top: 0; }
+  .post-list, #archive-list { margin-top: 0; }
   #post-meta { margin-top: 60px; }
 
   #title { font-size: 17px; }
-  #post-list .dates { display: none; }
+  .post-list .dates { display: none; }
 
-  #post-list-footer { margin-top: 20px; padding-top: 40px; }
+  .post-list-footer { margin-top: 20px; padding-top: 40px; }
 
   h1 { font-size: 26px; }
   .post h2.headline { font-size: 13px; }
@@ -636,7 +636,7 @@ code {
   font-weight: 600;
 }
 
-#post-list h2 {
+.post-list h2 {
   font-size: 35px;
   font-weight: bold;
   width: 100%;

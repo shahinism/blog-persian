@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ range (where .Site.RegularPages "Type" "post").GroupByDate "[2006]" -}}
 
-      <ul id="post-list">
+      <ul class="post-list">
         <h2>{{ .Key }}</h2>
         {{ range .Pages -}}
         <li>
@@ -12,6 +12,6 @@
         </li>
         {{- end }}
       </ul>
-    </section>
     {{ end }}
+    </section>
 {{ end }}
