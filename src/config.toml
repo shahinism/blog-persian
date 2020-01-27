@@ -16,7 +16,7 @@ disqusShortname = "shahinism-en"
   twitterUsername = "shahinism"
   tagline = "Sometimes you gotta run before you can walk."
   aboutAuthor = "Data engineer by day; Software craftner by night."
-
+  enableRSS = true
   # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
   iconFont = "mono-social"
   # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
