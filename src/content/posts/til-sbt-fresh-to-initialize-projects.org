@@ -1,0 +1,85 @@
+---
+title: "TIL: sbt-fresh a Helper to Initialize new Scala Projects"
+date: 2020-08-29T17:44:05+04:30
+draft: false
+type: post
+tags: ["scala"]
+site: "@shahinism"
+description: "Some of us don't like to use fully bloated IDEs to start our projects. SBT Fresh would be helpful in that case."
+---
+
+* Preface
+  
+  It's a while that I was looking for a solution to automate project
+  initialization for Scala projects. When you start a new project, there
+  are a lot of boilerplates you need to set up to keep you
+  going. Unfortunately, most of the community rely on IDEs especially
+  idea, and the solution is pretty obvious there. You click through some
+  menus, and it's ready.
+
+  I prefer to not use IDEs as much as I can. There is nothing bad
+  about them IMO, I'm just afraid of them acting smart or playing some
+  games irrelevant to what I'm focused on. If you use them, you've
+  probably seen such behaviours:
+
+  1. The function runs perfectly inside the IDE, but after packaging, you
+     get a bizarre error.
+  2. You are able to compile your package from the command line, but when
+     you are in the IDE, it rants about some dependency missing.
+  3. That test function runs completely when you run the whole test
+     suite, but it fails when you run it individually.
+  4. And others along the same line.
+
+  I'm not saying it's the fault of IDEs or if you use Emacs/Vim, they'll
+  vanish. My idea is that you need to master your editor, and IDEs are
+  so opinionated and tailored around the target language, which usually
+  takes much more learning effort to master it for different languages
+  or setups. 
+
+  I personally prefer to keep my setup as centralised as possible, so
+  I can spend my learning abilities more on the things that matter the
+  most. Of course, this approach has its own downside as well. I
+  should actively take responsibility for improving my workflows (in
+  the absence of Jetbrains designing editing workflows for me), and
+  improve it. However, I can manage it by bite-sizing my improvements.
+
+  Every once in a while I try to improve one small thing and adapt it
+  into my workflow. It may be a slow down for starters, but after some
+  time, the compound benefits would be much higher. OK, more on this
+  later. Let's talk about ~sbt-fresh~.
+
+* sbt-fresh
+  
+  Today, I searched to improve another part of my workflow. A solution
+  to improve how I create new Scala projects, and I found [[https://github.com/sbt/sbt-fresh][sbt-fresh]]. A
+  plugin for ~sbt~, which helps with the exact problem in hand. It's
+  something like Rust's ~cargo new my_project~[[https://github.com/rust-lang/cargo][+]] (or the same for
+  Clojure's [[https://leiningen.org/][Leiningen]]).
+
+** How to Install and Use
+
+   Edit ~~/.sbt/1.0/plugins/plugins.sbt~ and add the following inside
+   (for updated instruction always refer to the [[https://github.com/sbt/sbt-fresh][repository]]):
+
+   #+begin_src scala
+   addSbtPlugin("de.heikoseeberger" % "sbt-fresh" % "5.8.8")
+   #+end_src
+
+   And if you like, configured it by editing ~~/.sbt/1.0/build.sbt~
+   and add the following lines:
+
+   #+begin_src scala
+     freshSetUpGit         := true
+     freshSetUpTravis      := false
+     freshSetUpWartremover := true  // refer to www.wartremover.org for more information
+   #+end_src
+
+   Now, go inside your target directory and trigger:
+
+   #+begin_src sh
+   sbt fresh
+   #+end_src
+   
+   And voila, it's ready to use.
+
+
