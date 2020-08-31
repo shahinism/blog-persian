@@ -6,7 +6,6 @@ type: post
 tags: ["scala", "spark", "pyspark", "python", "big data"]
 site: "@shahinism"
 description: "In this post I'm sharing a quick tip on how to apply column name transformation on Spark dataframs"
-image: "https://res.cloudinary.com/shahinism/image/upload/v1598883015/BlogPhotos/little_samurai.jpg"
 ---
 
 This is a quick and useful tip I learned recently. It's quite normal
