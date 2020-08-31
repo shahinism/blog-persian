@@ -1,0 +1,34 @@
+---
+title: "TIL: Quick Dataframe Column Rename in Spark"
+date: 2020-08-31T18:03:19+04:30
+draft: false
+type: post
+tags: ["scala", "spark", "pyspark", "python", "big data"]
+site: "@shahinism"
+description: "In this post I'm sharing a quick tip on how to apply column name transformation on Spark dataframs"
+image: "https://res.cloudinary.com/shahinism/image/upload/v1598883015/BlogPhotos/little_samurai.jpg"
+---
+
+This is a quick and useful tip I learned recently. It's quite normal
+that you need to apply some renames on columns of a data frame. Well
+it turned out, it's quite straightforward in Spark. In the following
+example you can see how you can replace ~.~ characters in column
+names:
+
+#+begin_src scala
+  df.toDF(df.columns.map(x => x.replace("." "_")): _*)
+#+end_src
+
+The same thing can be acheived in PySpark as follows:
+
+#+begin_src python
+  df.toDf(*[c.replace(".", "_") for c in df.columns])
+#+end_src
+
+I'm using replace dot function as an example of course, any other text
+transformation can take place here. However, this dot replacement is
+quite useful when you consume data from sources where `.` doesn't have
+special meaning. Without this whenever we want to use these columns,
+we should use ~`column.name`~ to skip nested column structure. Of
+course, other solution here would be casting data as a nested column,
+which requires another post :wink:.
