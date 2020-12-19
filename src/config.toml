@@ -23,8 +23,8 @@ disqusShortname = "shahinism-en"
   socialIconStyle = "circle"
 
 [params.gpg]
-  key = "0xCAA76996F3C44A6D"
-  fingerprint = "FC2D 2C1E B4BB A9FF 6645  4511 CAA7 6996 F3C4 4A6D"
+  key = "0x11299CE09CAB2676"
+  fingerprint = "A00D 9679 49DD 99E5 9E8B 470C 1129 9CE0 9CAB 2676"
   link = "https://keybase.io/shahinism"
 
 
